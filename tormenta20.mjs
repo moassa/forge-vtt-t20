@@ -59,7 +59,6 @@ import * as utils from "./module/utils.mjs";
 import TemplateLayerT20 from "./module/canvas/template-layer.mjs";
 import ActorDirectoryTormenta20 from "./module/sidebar/actor-directory.mjs";
 import ChatLogTormenta20 from "./module/sidebar/chat-log.mjs";
-import CompendiumDirectoryT20 from "./module/sidebar/compendium-directory.mjs";
 
 /* -------------------------------------------- */
 /*  Foundry VTT Initialization                  */
@@ -141,7 +140,6 @@ Hooks.once("init", async function () {
 	CONFIG.ui.actors = ActorDirectoryTormenta20;
 	CONFIG.ui.chat = ChatLogTormenta20;
 	// CONFIG.ui.combat = CombatTrackerT20;
-	CONFIG.ui.compendium = CompendiumDirectoryT20;
 
 	CONFIG.ChatMessage.documentClass = ChatMessageTormenta20;
 	CONFIG.Combat.initiative = {
@@ -236,7 +234,6 @@ Hooks.once("init", async function () {
 	});
 
 	// Core Application Overrides
-	// CONFIG.ui.compendium = CompendiumDirectoryT20;
 	// Preload Handlebars Templates
 	preloadHandlebarsTemplates();
 	registerHandlebarsHelpers();
