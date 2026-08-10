@@ -2,11 +2,11 @@
   "id": "tormenta20",
   "title": "Tormenta20",
   "description": "Sistema NÃO OFICIAL de Tormenta20 para FoundryVTT!",
-  "version": "1.5.015",
+  "version": "1.6.0",
   "compatibility": {
-    "minimum": "13",
-    "verified": "13",
-    "maximum": "13"
+    "minimum": "14",
+    "verified": "14",
+    "maximum": "14"
   },
   "authors": [{ "name": "Vizael" }],
   "esmodules": ["tormenta20.mjs"],
