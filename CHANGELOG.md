@@ -1,5 +1,11 @@
 # Lista de Mudanças
 
+# Versão 1.6.0
+- Conversões para v14
+- Corrigido: Configuração de deslocamentos;
+- Removido: Implementação da Busca por documentos na aba de Compêndios, feature é nativa.
+
+
 # Versão 1.5.015
 - Corrigido: Perda de Vida era afetada por RD;
 - Corrigido: Exibição de Tipo de Habilidade/Poder na ficha padrão.
