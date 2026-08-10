@@ -1,6 +1,6 @@
 // import { T20 } from "../config.mjs";
 
-import { simplifyRollFormula } from "../dice/dice.mjs";
+import { simplifyRollFormula } from "./dice.mjs";
 
 const { DiceTerm, Die, OperatorTerm, NumericTerm } = foundry.dice.terms;
 

@@ -3,8 +3,9 @@
 # Versão 1.6.0
 - Conversões para v14
 - Corrigido: Configuração de deslocamentos;
-- Removido: Implementação da Busca por documentos na aba de Compêndios, feature é nativa.
-
+- Removido: Implementação da Busca por documentos na aba de Compêndios, a feature agora é nativa do Foundry.
+- Removido: Implementação de Measured Templates, substituida pelas Regiões;
+- Adicionado: Implementação de Region Templates para controle de areas de efeito;
 
 # Versão 1.5.015
 - Corrigido: Perda de Vida era afetada por RD;

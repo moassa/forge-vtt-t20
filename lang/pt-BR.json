@@ -1228,8 +1228,6 @@
     "SettingEmcumbrancreRuleSlots": "Regra de Espaços, Dragão Brasil #171",
     "SettingsCampaignSettingRule": "Cenário de Jogo",
     "SettingsCampaignSettingHint": "Altera regras de acordo com cenários de Jogo.",
-    "SettingsOverrideMeasuredTemplates": "Áreas de Efeitos do Sistema",
-    "SettingsOverrideMeasuredTemplatesHint": "Áreas de efeito seguem as regras do Livro Básico.",
 
     "SettingEquipmentSlots": "Controlar Itens Equipáveis",
     "SettingEquipmentSlotsHint": "Itens empunháveis passam a ser limitados pela quantidade de mãos do personagem e itens vestidos passam a ser limitados pelo limite de itens vestidos.",

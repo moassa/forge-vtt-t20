@@ -10,16 +10,15 @@ import { SystemSettings } from "./module/settings.mjs";
 import { preloadHandlebarsTemplates } from "./module/templates.mjs";
 
 // Import Documents
+import RollT20 from "./module/dice/roll.mjs";
 import ActiveEffectT20 from "./module/documents/active-effects.mjs";
 import ActorT20 from "./module/documents/actor.mjs";
-import ChatMessageTormenta20 from "./module/documents/chat-message.mjs";
+import ChatMessageT20 from "./module/documents/chat-message.mjs";
 import ItemT20 from "./module/documents/item.mjs";
-import RollT20 from "./module/documents/roll.mjs";
 import TokenDocumentT20 from "./module/documents/token.mjs";
 globalThis.Roll = RollT20;
 
 // Import Canvas
-import AbilityTemplate from "./module/canvas/ability-template.mjs";
 import TokenRulerT20 from "./module/canvas/token-ruler.mjs";
 import TokenT20 from "./module/canvas/token.mjs";
 
@@ -47,6 +46,9 @@ import TraitSelector from "./module/apps/trait-selector.mjs";
 // import CombatTrackerT20 from "./module/apps/combat.mjs";
 
 // Import Helpers
+import * as canvas from "./module/canvas/_module.mjs";
+import * as documents from "./module/documents/_module.mjs";
+
 import * as models from "./module/dataModel/_module.mjs";
 import * as fields from "./module/dataModel/fields/_module.mjs";
 import * as dice from "./module/dice/dice.mjs";
@@ -56,7 +58,8 @@ import "./module/modules.mjs";
 import * as utils from "./module/utils.mjs";
 
 // import {getSystemActorData,  getSystemItemData} from "./dataModel/data.mjs";
-import TemplateLayerT20 from "./module/canvas/template-layer.mjs";
+import RegionLayerT20 from "./module/canvas/region-layer.mjs";
+
 import ActorDirectoryTormenta20 from "./module/sidebar/actor-directory.mjs";
 import ChatLogTormenta20 from "./module/sidebar/chat-log.mjs";
 
@@ -64,6 +67,8 @@ import ChatLogTormenta20 from "./module/sidebar/chat-log.mjs";
 /*  Foundry VTT Initialization                  */
 /* -------------------------------------------- */
 globalThis.tormenta20 = {
+	canvas,
+	documents,
 	applications: {
 		AbilityUseDialog,
 		ActorSheetT20Character,
@@ -81,11 +86,6 @@ globalThis.tormenta20 = {
 	data: {
 		fields,
 		models
-	},
-	canvas: {
-		AbilityTemplate,
-		TemplateLayerT20,
-		TokenT20
 	},
 	config: T20,
 	dice: dice,
@@ -117,9 +117,9 @@ Hooks.once("init", async function () {
 	TokenRulerT20.applyMovementConfig();
 	CONFIG.time.roundTime = 6;
 
-	CONFIG.Canvas.layers.templates.layerClass = TemplateLayerT20;
-	CONFIG.MeasuredTemplate.defaults.angle = 90;
-	CONFIG.MeasuredTemplate.objectClass = AbilityTemplate;
+	/* DOCUMENT: Region */
+	CONFIG.Canvas.layers.regions.layerClass = RegionLayerT20;
+
 
 	// Register T20 stuff
 	CONFIG.statusEffects = T20.statusEffectIcons;
@@ -141,7 +141,7 @@ Hooks.once("init", async function () {
 	CONFIG.ui.chat = ChatLogTormenta20;
 	// CONFIG.ui.combat = CombatTrackerT20;
 
-	CONFIG.ChatMessage.documentClass = ChatMessageTormenta20;
+	CONFIG.ChatMessage.documentClass = ChatMessageT20;
 	CONFIG.Combat.initiative = {
 		formula: "1d20 + @pericias.inic.value",
 		decimals: 2

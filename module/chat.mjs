@@ -270,34 +270,27 @@ export function _onChatCardToggleDamage(event) {
 }
 
 /**
- * Retrieve AbilityTemplate data and Draw on Canvas
+ * Place a new Region from ability data
  * @param {Event} event   The originating click event
  * @private
  */
 export function _onChatPlaceTemplate(event) {
 	event.preventDefault();
-	const chatCardId = event.currentTarget.closest(".chat-message").dataset.messageId;
-	const chatCard = game.messages.get(chatCardId);
+	const messageId = event.currentTarget.closest(".chat-message").dataset.messageId;
+	const message = game.messages.get(messageId);
 	const button = event.currentTarget;
 	const card = button.closest(".chat-card");
 
 	const actor = game.actors.get(card.dataset.actorId);
 	if (!actor) return;
 
-	// const storedData = chatCard.getFlag("tormenta20", "itemData");
-	const storedTemplate = chatCard.getFlag("tormenta20", "template");
-	// let item = new game.tormenta20.entities.ItemT20(storedData, {name:'temp',type:'tesouro',parent: actor});
-	let item = { system: storedTemplate, actor: actor };
-	// new game.tormenta20.entities.ItemT20()
-	// new game.tormenta20.canvas.AbilityTemplate()
-	if (!item) return;
-	item.system.area = storedTemplate.area;
-	item.system.alcance = storedTemplate.alcance;
-
-	const template = game.tormenta20.canvas.AbilityTemplate.fromItem(item);
-	if (template) {
-		template.drawPreview();
+	const storedTemplate = message.getFlag("tormenta20", "template");
+	const { alcance, area } = storedTemplate;
+	const item = {
+		name: card.querySelector(".item-name").innerText,
+		system: { alcance, area },
 	}
+	canvas.regions.placeRegionT20(false, { item, message });
 }
 
 /**

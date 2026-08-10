@@ -1,9 +1,51 @@
-export default class ChatMessageTormenta20 extends ChatMessage {
+export default class ChatMessageT20 extends ChatMessage {
 	async renderHTML({ canDelete, canClose = false, ...rest } = {}) {
 		const html = await super.renderHTML({ canDelete, canClose, ...rest });
 		this._highlightCriticalSuccessFailure(html);
 		this._hideDC(html);
 		return html;
+	}
+
+	/**
+	 * 
+	 * @param {*} message 
+	 * @param {*} html 
+	 * @param {*} _messageData 
+	 */
+	static onRenderHTMLHook(message, html, _messageData) {
+		chat.hideDieFlavor(app, html, data);
+		chat.ApplyButtons(app, html, data);
+		// Highlight critical success or failure die
+		// chat.highlightCriticalSuccessFailure(app, html, data);
+
+		// Optionally collapse the content
+		const cardContent = html.querySelector(".card-content");
+		const cardDamageDetails = html.querySelector(".card-damage-details");
+		if (cardContent && (!cardContent.textContent.trim() || game.settings.get("tormenta20", "autoCollapseItemCards"))) {
+			cardContent.style.display = "none";
+		}
+
+		if (cardDamageDetails) cardDamageDetails.style.display = "none";
+
+		html
+			.querySelectorAll(".item-name")
+			.forEach((el) => el.addEventListener("click", chat._onChatCardToggleContent.bind(this)));
+		html
+			.querySelectorAll(".chat-message")
+			.forEach((el) => el.addEventListener("click", chat._onChatCardToggleDamage.bind(this)));
+		html
+			.querySelectorAll(".chat-apply-ae")
+			.forEach((el) => el.addEventListener("click", chat._onChatCardApplyEffect.bind(this)));
+		html
+			.querySelectorAll(".chat-place-template")
+			.forEach((el) => el.addEventListener("click", chat._onChatPlaceTemplate.bind(this)));
+
+		html
+			.querySelectorAll(".apply-dmg")
+			.forEach((el) => el.addEventListener("click", chat._onChatApplyDamage.bind(this)));
+		html
+			.querySelectorAll(".chat-spend-mana")
+			.forEach((el) => el.addEventListener("click", chat._onChatSpendMana.bind(this)));
 	}
 
 	_highlightCriticalSuccessFailure(html) {

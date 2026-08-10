@@ -773,20 +773,12 @@ export default class ItemT20 extends Item {
 			return ChatMessage.create({ content: msg });
 		}
 
-		// Reference aspects of the item data necessary for usage
-		const hasArea = item.hasAreaTarget; // Is the ability usage an AoE?
-		// Define follow-up actions resulting from the item usage
-		createMeasuredTemplate = hasArea; // Trigger a template creation
-		// Initiate measured template creation
-		if (canvas.scene && createMeasuredTemplate) {
-			const template = game.tormenta20.canvas.AbilityTemplate.fromItem(item);
-			if (template) {
-				template.drawPreview();
-				options.template = {
-					area: item.system.area,
-					alcance: item.system.alcance
-				};
-			}
+		// Add region template data
+		if (canvas.scene && item.hasAreaTarget) {
+			options.template = {
+				area: item.system.area,
+				alcance: item.system.alcance
+			};
 		}
 
 		options.itemId = this.id;

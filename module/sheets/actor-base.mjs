@@ -190,7 +190,7 @@ export default class ActorSheetT20 extends foundry.appv1.sheets.ActorSheet {
 		});
 	}
 
-	async _prepareItems(data) {}
+	async _prepareItems(data) { }
 
 	async enrichHTML(text, data) {
 		return await foundry.applications.ux.TextEditor.implementation.enrichHTML(text, {
@@ -461,8 +461,7 @@ export default class ActorSheetT20 extends foundry.appv1.sheets.ActorSheet {
 				icon: "<i class='fas fa-ruler-combined'></i>",
 				condition: item.hasAreaTarget,
 				callback: () => {
-					const template = game.tormenta20.canvas.AbilityTemplate.fromItem(item);
-					if (template) template.drawPreview();
+					canvas.regions.placeRegionT20(false, { item });
 				}
 			});
 			options.push({

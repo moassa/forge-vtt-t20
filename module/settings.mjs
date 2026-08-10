@@ -281,16 +281,6 @@ export const SystemSettings = function () {
 		type: Boolean
 	});
 
-	game.settings.register("tormenta20", "overrideMeasuredTemplates", {
-		name: "T20.SettingsOverrideMeasuredTemplates",
-		hint: "T20.SettingsOverrideMeasuredTemplatesHint",
-		scope: "world",
-		config: true,
-		default: true,
-		type: Boolean,
-		requiresReload: true
-	});
-
 	game.settings.register("tormenta20", "drawRanges", {
 		scope: "user",
 		config: false,

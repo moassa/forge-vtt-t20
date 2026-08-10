@@ -260,6 +260,7 @@ export default function () {
 	});
 
 	/* Chat Hooks */
+	// Hooks.on("renderChatMessageHTML", tormenta20.documents.ChatMessageT20);
 	Hooks.on("renderChatMessageHTML", (app, html, data) => {
 		chat.hideDieFlavor(app, html, data);
 		chat.ApplyButtons(app, html, data);
