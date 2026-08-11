@@ -5,7 +5,7 @@ import { effectMigration } from "./migrations.mjs";
 /**
  * Extend the base ActiveEffect class to implement system-specific logic.
  */
-export default class ActiveEffectT20 extends ActiveEffect {
+export default class ActiveEffectT20 extends foundry.documents.ActiveEffect {
 	/** @inheritdoc */
 	static migrateData(data) {
 		super.migrateData(data);
