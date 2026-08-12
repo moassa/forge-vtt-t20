@@ -160,10 +160,9 @@ export default class ActiveEffectT20 extends foundry.documents.ActiveEffect {
 	 * @type {boolean}
 	 */
 	get isTemporary() {
-		const scene = this.getFlag("tormenta20", "durationScene");
-		const duration = this.duration.seconds ?? (this.duration.rounds || this.duration.turns) ?? 0;
-		return scene || duration > 0 || this.statuses.size;
+		return !!this.duration.expiry || Number.isFinite(this.duration.value);
 	}
+
 	/* --------------------------------------------- */
 
 	/** @inheritdoc */
@@ -207,7 +206,7 @@ export default class ActiveEffectT20 extends foundry.documents.ActiveEffect {
 	 * @internal
 	 */
 	_prepareDuration() {
-		// const d = this.duration;
+		return super._prepareDuration();
 		const isScene = this.getFlag("tormenta20", "durationScene");
 
 		// Scene-based duration

@@ -46,14 +46,16 @@ import TraitSelector from "./module/apps/trait-selector.mjs";
 // import CombatTrackerT20 from "./module/apps/combat.mjs";
 
 // Import Helpers
-import * as canvas from "./module/canvas/_module.mjs";
-import * as documents from "./module/documents/_module.mjs";
+import * as applications from "./module/applications/_module.mjs";
 
-import * as models from "./module/dataModel/_module.mjs";
+import * as canvas from "./module/canvas/_module.mjs";
+import * as dataModels from "./module/dataModel/_module.mjs";
 import * as fields from "./module/dataModel/fields/_module.mjs";
 import * as dice from "./module/dice/dice.mjs";
+import * as documents from "./module/documents/_module.mjs";
 import * as hooks from "./module/hooks.mjs";
 import * as macros from "./module/macros.mjs";
+import * as models from "./module/models/_module.mjs";
 import "./module/modules.mjs";
 import * as utils from "./module/utils.mjs";
 
@@ -69,7 +71,9 @@ import ChatLogTormenta20 from "./module/sidebar/chat-log.mjs";
 globalThis.tormenta20 = {
 	canvas,
 	documents,
+	models,
 	applications: {
+		...applications,
 		AbilityUseDialog,
 		ActorSheetT20Character,
 		ActorSheetT20CharacterTabbed,
@@ -85,7 +89,7 @@ globalThis.tormenta20 = {
 	},
 	data: {
 		fields,
-		models
+		models: dataModels
 	},
 	config: T20,
 	dice: dice,
@@ -158,25 +162,50 @@ Hooks.once("init", async function () {
 	CONFIG.Dice.rolls.DamageRoll = dice.damageRoll;
 
 	// DATA MODEL
+	CONFIG.Actor.dataModels = {
+		bases: tormenta20.data.models.BasesData,
+		character: tormenta20.data.models.CharacterData,
+		npc: tormenta20.data.models.MenaceData,
+		simple: tormenta20.data.models.SimpleData,
+		hazard: tormenta20.data.models.HazardData,
+	}
 
-	CONFIG.Actor.dataModels.bases = tormenta20.data.models.BasesData;
-	CONFIG.Actor.dataModels.character = tormenta20.data.models.CharacterData;
-	CONFIG.Actor.dataModels.npc = tormenta20.data.models.MenaceData;
-	CONFIG.Actor.dataModels.simple = tormenta20.data.models.SimpleData;
-	CONFIG.Actor.dataModels.hazard = tormenta20.data.models.HazardData;
+	CONFIG.Item.dataModels = {
+		arma: tormenta20.data.models.WeaponData,
+		classe: tormenta20.data.models.ClassData,
+		comodo: tormenta20.data.models.RoomData,
+		consumivel: tormenta20.data.models.ConsumableData,
+		equipamento: tormenta20.data.models.EquipmentData,
+		magia: tormenta20.data.models.SpellData,
+		mobilia: tormenta20.data.models.FurnitureData,
+		poder: tormenta20.data.models.PowerData,
+		race: tormenta20.data.models.RaceData,
+		tesouro: tormenta20.data.models.LootData,
+	}
 
-	CONFIG.Item.dataModels.arma = tormenta20.data.models.WeaponData;
-	CONFIG.Item.dataModels.classe = tormenta20.data.models.ClassData;
-	CONFIG.Item.dataModels.comodo = tormenta20.data.models.RoomData;
-	CONFIG.Item.dataModels.consumivel = tormenta20.data.models.ConsumableData;
-	CONFIG.Item.dataModels.equipamento = tormenta20.data.models.EquipmentData;
-	CONFIG.Item.dataModels.magia = tormenta20.data.models.SpellData;
-	CONFIG.Item.dataModels.mobilia = tormenta20.data.models.FurnitureData;
-	CONFIG.Item.dataModels.poder = tormenta20.data.models.PowerData;
-	CONFIG.Item.dataModels.race = tormenta20.data.models.RaceData;
-	CONFIG.Item.dataModels.tesouro = tormenta20.data.models.LootData;
+	CONFIG.ActiveEffect.dataModels = {
+		base: tormenta20.models.effect.BaseEffect,
+	}
+
+	CONFIG.ActiveEffect.expiryEvents = {
+		sceneEnd: "T20.TimeScene"
+	}
 
 	// Register sheet application classes
+	const { DocumentSheetConfig } = foundry.applications.apps;
+	DocumentSheetConfig.registerSheet(ActiveEffect,
+		"tormenta20",
+		ActiveEffectConfigT20,
+		{ makeDefault: false, label: "T20.ActiveEffectSheet" }
+	);
+
+	DocumentSheetConfig.registerSheet(ActiveEffect,
+		"tormenta20",
+		tormenta20.applications.sheets.effect.ActiveEffectConfigT20,
+		{ makeDefault: true, label: "T20.ActiveEffectSheet" }
+	);
+
+	/* Old */
 	foundry.documents.collections.Actors.unregisterSheet("core", foundry.appv1.sheets.ActorSheet);
 	foundry.documents.collections.Actors.registerSheet("tormenta20", ActorSheetT20Bases, {
 		types: ["bases"],
@@ -221,16 +250,6 @@ Hooks.once("init", async function () {
 		makeDefault: true,
 		types: ["race"],
 		label: "T20.ItemSheet"
-	});
-
-	foundry.applications.apps.DocumentSheetConfig.unregisterSheet(
-		ActiveEffect,
-		"core",
-		foundry.applications.sheets.ActiveEffectConfig
-	);
-	foundry.applications.apps.DocumentSheetConfig.registerSheet(ActiveEffect, "tormenta20", ActiveEffectConfigT20, {
-		makeDefault: true,
-		label: "T20.ActiveEffectSheet"
 	});
 
 	// Core Application Overrides

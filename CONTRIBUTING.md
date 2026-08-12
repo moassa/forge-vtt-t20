@@ -6,6 +6,9 @@ Se você quer contribuir com o projeto, seja bem-vindo. Se você é (ou quer ser
 
 ## Começando
 
+> ** Inteligência Artificial e Vibe Coding **
+> EVITE. PRs criados com auxilio de IA não serão aceitos. Este módulo é desenvolvido gratuitamente e no tempo livre dos desenvolvedores. Tempo este que é precioso de mais pra ser desperdiçado revisando e corrigindo alucinações geradas por IA.
+
 >  **_ANTES DE COMEÇAR_**
 > Você não conseguirá criar compêndios com o FoundryVTT aberto, então feche-o quando for criar ou atualizar os compêndios.
 > Você não conseguirá extrair dados de compêndios se um mundo com o sistema estiver ativo, então volte ao Setup do Foundry antes de tentar extrair.

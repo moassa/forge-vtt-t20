@@ -1,0 +1,37 @@
+<header class="sheet-header flexrow">
+	<div class="image" style="flex: 0 0 56px;">
+		<img src="{{source.img}}" data-action="editImage" data-edit="img" alt="{{localize " EFFECT.FIELDS.img.label"}}" width="56px">
+	</div>
+	<div>
+		<div class="name">
+			{{formInput
+				document.schema.fields.name
+				value=document.name
+			}}
+		</div>
+		<div class="flexrow">
+			<div class="document-image">
+				{{formInput
+					document.schema.fields.img
+					value=document.img
+				}}
+			</div>
+			<div>
+				{{formInput
+					fields.tint
+					value=source.tint
+					rootId=rootId
+					placeholder="#ffffff"
+				}}
+			</div>
+		</div>
+	</div>
+	{{#unless document.item}}
+		{{formGroup
+			fields.origin
+			value=source.origin
+			rootId=rootId
+			disabled=true
+		}}
+	{{/unless}}
+</header>

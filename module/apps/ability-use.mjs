@@ -94,7 +94,7 @@ const applyRollChanges = (ch, qty, ef, item, id, rollMods, options) => {
 	ch.key = ch.key.toString();
 	if (ch.value.toString().match(/^:/)) {
 		ch.value = ch.value.replace(":", ";").split(";")[qty];
-		ef.flags.tormenta20.aumenta = false;
+		ef.system.abilityUse.aumenta = false;
 	}
 	for (let r of rolls) {
 		let sourceName = ef.sourceName;
@@ -588,13 +588,13 @@ function applyOnUseEffects(rolledItem, configuration = {}) {
 	// Get Active Effects From Item
 	const effectList = item.effects.filter(
 		(ef) =>
-			(ef.flags.tormenta20.onuse && ef.flags.tormenta20.durationScene && !ef.disabled)
-			|| (!ef.flags.tormenta20.onuse && !ef.disabled)
+			(ef.system.onuse && ef.duration.expiry == "sceneEnd" && !ef.disabled)
+			|| (!ef.system.onuse && !ef.disabled)
 	);
 	const optEffectList = item.effects.filter(
 		(ef) =>
-			(ef.flags.tormenta20.onuse && ef.flags.tormenta20.durationScene && ef.disabled)
-			|| (!ef.flags.tormenta20.onuse && ef.disabled)
+			(ef.system.onuse && ef.duration.expiry == "sceneEnd" && ef.disabled)
+			|| (!ef.system.onuse && ef.disabled)
 	);
 
 	//
@@ -706,9 +706,11 @@ function applyOnUseEffects(rolledItem, configuration = {}) {
 		let children = [];
 		let durValue = Number(id.duracao?.value) || 1;
 		let flags = { temp: true, tormenta20: { durationScene: false } };
-		if (id.duracao?.units == "scene" || ef.flags.tormenta20.durationScene) {
+		// TODO FIND OUT IF TEMP Is NEEDED
+		let updateData = { temp: true };
+		if (id.duracao?.units == "scene" || ef.duration.expiry == "sceneEnd") {
 			flags.tormenta20.durationScene = ef.flags.tormenta20.durationScene ?? true;
-			duration.rounds = 99;
+			updateData.duration = { expiry: "sceneEnd", units: "seconds", value: null };
 		}
 		if (id.duracao?.units == "turn") duration.turns = durValue;
 		if (id.duracao?.units == "round") duration.rounds = durValue;

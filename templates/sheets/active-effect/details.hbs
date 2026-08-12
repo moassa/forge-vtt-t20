@@ -1,0 +1,31 @@
+<section class="tab details {{#if tab.active}}active{{/if}}" data-group="{{tab.group}}" data-tab="{{tab.id}}">
+	{{formGroup
+		fields.disabled
+		value=source.disabled
+		rootId=rootId
+	}}
+	{{formGroup
+		fields.transfer
+		value=source.transfer
+		rootId=rootId
+	}}
+	{{formGroup
+		fields.showIcon
+		value=source.showIcon
+		options=showIconOptions
+		rootId=rootId
+	}}
+
+	{{formGroup
+		fields.statuses
+		value=source.statuses
+		options=statuses
+		rootId=rootId
+		classes="statuses"
+	}}
+	{{formGroup
+		fields.description
+		value=source.description
+		rootId=rootId
+	}}
+</section>

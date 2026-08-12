@@ -143,12 +143,6 @@ export async function migration_1_5_007() {
 	ui.notifications.info("Conserto concluído", { console: false, permanent: true });
 }
 
-
-export async function migration_1_5_007() {
-
-}
-
-
 export async function migration_1_5_010() {
 	const packs = game.packs.filter((p) => p.metadata.type === "Actor" && p.metadata.packageType !== "system");
 	const consertaAtores = async (actors, pack) => {

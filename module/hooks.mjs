@@ -1,6 +1,7 @@
 import { endSegment } from "./apps/time-segment.mjs";
 import * as chat from "./chat.mjs";
 import * as macros from "./macros.mjs";
+import { migrateWorld } from "./models/migrations.mjs";
 
 export default function () {
 	/**
@@ -16,7 +17,7 @@ export default function () {
 		});
 	});
 
-	// Hooks.once("ready", migrateWorld);
+	Hooks.once("ready", migrateWorld);
 
 	/* -------------------------------------------- */
 	/*  Other Hooks                                 */

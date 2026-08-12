@@ -1,5 +1,5 @@
 import * as m_v13 from "./migrations/v13.mjs";
-// import * as m_v14 from "./migrations/v14.mjs";
+import * as m_v14 from "./migrations/v14.mjs";
 
 export async function migrateWorld() {
 	if (!game.user.isActiveGM) {
@@ -32,29 +32,10 @@ export async function migrateWorld() {
 	if (foundry.utils.isNewerVersion("1.5.013", systemMigrationVersion)) {
 		await m_v13.migration_1_5_013();
 	}
-
-	if (foundry.utils.isNewerVersion("1.6.001", systemMigrationVersion)) {
-		await migration_1_6_0();
+	if (foundry.utils.isNewerVersion("1.6.1", systemMigrationVersion)) {
+		await m_v14.migration_1_6_0();
 	}
 
 	return game.settings.set("tormenta20", "systemMigrationVersion", game.system.version);
-
-}
-
-
-
-async function migration_1_6_0(params) {
-	// Update Active Effect
-	// - Update item effects with changes from the transfered copy
-	// - Remove effects transfered to actors;
-	for (const actor of game.actors) {
-		for (const effect of actor.effects) {
-			// 
-		}
-	}
-}
-
-
-async function migration_1_6_2(params) {
 
 }

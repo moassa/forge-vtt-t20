@@ -43,7 +43,7 @@ Hooks.on("updateCombat", (combat, data, options, userId) => {
 		// Effects Applied to CurrentCombatant Activated on Own Turn
 		if (curActor.id === actor.id) {
 			let eff = actor.effects.filter(function (ae) {
-				return !ae.flags.tormenta20.onuse && ae.changes.find((c) => ["sustentado", "dano"].includes(c.key));
+				return !ae.system.onuse && ae.changes.find((c) => ["sustentado", "dano"].includes(c.key));
 			});
 			let e;
 			for (let ef of eff) {
@@ -63,7 +63,7 @@ Hooks.on("updateCombat", (combat, data, options, userId) => {
 		 */
 		else {
 			let eff = actor.effects.filter(function (ae) {
-				return !ae.flags.tormenta20.onuse && ae.origin?.match(curActor.id) && ae.changes.find((c) => c.key === "@dano");
+				return !ae.system.onuse && ae.origin?.match(curActor.id) && ae.changes.find((c) => c.key === "@dano");
 			});
 			let e;
 			for (let ef of eff) {

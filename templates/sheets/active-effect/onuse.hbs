@@ -1,0 +1,46 @@
+<section class="tab details {{#if tab.active}}active{{/if}}" data-group="{{tab.group}}" data-tab="{{tab.id}}">
+
+	{{formGroup
+		schema.fields.onuse
+		value=source.system.onuse
+		localize=true
+		rootId=rootId
+	}}
+	{{formGroup
+		schema.fields.abilityUse.fields.description
+		value= source.system.abilityUse.description
+		localize=true
+		rootId=rootId
+	}}
+	{{formGroup
+		schema.fields.abilityUse.fields.automatic
+		value= source.system.abilityUse.automatic
+		localize=true
+		rootId=rootId
+	}}
+	{{formGroup
+		schema.fields.abilityUse.fields.aumenta
+		value= source.system.abilityUse.aumenta
+		localize=true
+		rootId=rootId
+	}}
+	{{formGroup
+		schema.fields.abilityUse.fields.custo
+		value= source.system.abilityUse.custo
+		localize=true
+		rootId=rootId
+	}}
+	{{formGroup
+		schema.fields.abilityUse.fields.names
+		value= source.system.abilityUse.names
+		localize=true
+		rootId=rootId
+	}}
+	{{formGroup
+		schema.fields.abilityUse.fields.types
+		value= source.system.abilityUse.types
+		type="checkboxes"
+		localize=true
+		rootId=rootId
+	}}
+</section>

@@ -2,10 +2,15 @@
 
 # Versão 1.6.0
 - Conversões para v14
-- Corrigido: Configuração de deslocamentos;
+- Corrigido: Configuração de deslocamentos.
 - Removido: Implementação da Busca por documentos na aba de Compêndios, a feature agora é nativa do Foundry.
-- Removido: Implementação de Measured Templates, substituida pelas Regiões;
-- Adicionado: Implementação de Region Templates para controle de areas de efeito;
+- Removido: Implementação de Measured Templates, substituida pelas Regiões.
+- Adicionado: Implementação de Region Templates para controle de areas de efeito.
+- Removido: LegacyTranferal Efeitos passivos transferidos para o ator são aplicados diretamente do item.
+- Adicionado: Efeitos do sistema possuem campos próprios, não mais sendo guardados em flags.
+- 
+
+
 
 # Versão 1.5.015
 - Corrigido: Perda de Vida era afetada por RD;
