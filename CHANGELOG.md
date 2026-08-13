@@ -7,9 +7,9 @@
 - Removido: Implementação de Measured Templates, substituida pelas Regiões.
 - Adicionado: Implementação de Region Templates para controle de areas de efeito.
 - Removido: LegacyTranferal Efeitos passivos transferidos para o ator são aplicados diretamente do item.
-- Adicionado: Efeitos do sistema possuem campos próprios, não mais sendo guardados em flags.
-- 
-
+- Adicionado: Propriedades guardadas nas `flags` dos Efeitos foram movidas para o campos próprios.
+- Adicionado: Compêndios de Efeitos para Condições, Melhorias e Encantos. O sistema também criara Compêndios locais para facilitar a customização de efeitos e criar efeitos de suplementos.
+- Atualizado: `ActiveEffect._fromStatusEffect` copiara efeitos do compêndio;
 
 
 # Versão 1.5.015

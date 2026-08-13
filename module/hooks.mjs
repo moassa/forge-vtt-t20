@@ -16,30 +16,62 @@ export default function () {
 			}
 		});
 
-		if (!game.packs.get("world.statuses")) createStatusCompendium();
-		if (!game.packs.get("world.upgrades")) createUpgradesCompendium();
+		prepareStatusesCompendium();
+		prepareUpgradesCompendium();
 	});
 
 	/**
 	 * Create World Status Compendiums and populate with system effects;
 	 */
-	async function createStatusCompendium() {
-		const pack = await foundry.documents.collections.CompendiumCollection.createCompendium({
-			label: "Condições",
-			name: "statuses",
-			type: "ActiveEffect",
-			ownership
+	async function prepareStatusesCompendium() {
+		let pack = game.packs.get("world.statuses");
+		console.log(pack);
+		if (!pack) {
+			pack = await foundry.documents.collections.CompendiumCollection.createCompendium({
+				label: "Condições",
+				name: "statuses",
+				type: "ActiveEffect",
+				ownership
+			});
+		}
+		const docs = await pack.getDocuments();
+		CONFIG.statusEffects = {};
+		docs.forEach(effect => {
+			const identifier = effect.statuses.first();
+			CONFIG.statusEffects[identifier] = {
+				id: identifier,
+				uuid: effect.uuid,
+				name: effect.name,
+				img: effect.img,
+				description: effect.description,
+			}
 		});
+
+		CONFIG.controlIcons.defeated = CONFIG.statusEffects["inconsciente"].img;
+		CONFIG.specialStatusEffects.BLIND = "cego";
+		CONFIG.specialStatusEffects.DEFEATED = "morto";
+		CONFIG.specialStatusEffects.INVISIBLE = "invisivel";
 	}
 
 	/**
 	 * Create World Equipment Upgrade Compendium and populate with system effects;
 	 */
-	async function createUpgradesCompendium() {
-		const pack = await foundry.documents.collections.CompendiumCollection.createCompendium({
-			label: "Melhorias e Encantos",
-			name: "upgrades",
-			type: "ActiveEffect",
+	async function prepareUpgradesCompendium() {
+		let pack = game.packs.get("world.upgrades");
+		if (!pack) {
+			pack = await foundry.documents.collections.CompendiumCollection.createCompendium({
+				label: "Melhorias e Encantos",
+				name: "upgrades",
+				type: "ActiveEffect",
+			});
+		}
+		CONFIG.upgradeEffects = [];
+		const docs = await pack.getDocuments();
+		docs.forEach(effect => {
+			const { category, item } = effect.system.upgrade;
+			CONFIG.upgradeEffects.category = {
+
+			}
 		});
 	}
 

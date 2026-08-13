@@ -6,6 +6,8 @@ import { effectMigration } from "./migrations.mjs";
  * Extend the base ActiveEffect class to implement system-specific logic.
  */
 export default class ActiveEffectT20 extends foundry.documents.ActiveEffect {
+
+
 	/** @inheritdoc */
 	static migrateData(data) {
 		super.migrateData(data);
@@ -13,6 +15,20 @@ export default class ActiveEffectT20 extends foundry.documents.ActiveEffect {
 		effectMigration.migrateResistancesPath(data);
 		return data;
 	}
+
+
+	/**
+	 * Verify if the entry has an uuid and retrieve a cloned document if true
+	 *  @inheritdoc */
+	static async _fromStatusEffect(statusId, effectData, options) {
+		const uuid = CONFIG.statusEffects[statusId]?.uuid;
+		if (uuid) {
+			const effect = await foundry.utils.fromUuid(uuid);
+			if (!effect) return effect.clone({}, { keepId: false });
+		}
+		return new this(effectData, options);
+	}
+
 
 	async _preCreate(data, options, user) {
 		await super._preCreate(data, options, user);

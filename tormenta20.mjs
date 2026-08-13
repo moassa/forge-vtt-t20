@@ -126,16 +126,8 @@ Hooks.once("init", async function () {
 
 
 	// Register T20 stuff
-	CONFIG.statusEffects = T20.statusEffectIcons;
+	// CONFIG.statusEffects = T20.statusEffectIcons;
 	CONFIG.conditions = T20.conditions;
-
-	CONFIG.controlIcons.defeated = CONFIG.statusEffects.filter((x) => x.id === "inconsciente")[0].icon;
-	CONFIG.specialStatusEffects.BLIND = "cego";
-	CONFIG.specialStatusEffects.DEFEATED = "morto";
-	CONFIG.specialStatusEffects.INVISIBLE = "invisivel";
-
-	// T20 cone RAW should be 53.13 degrees
-	// CONFIG.MeasuredTemplate.defaults.angle = 53.13;
 
 	// Register System Settings
 	SystemSettings();

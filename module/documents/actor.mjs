@@ -305,46 +305,6 @@ export default class ActorT20 extends Actor {
 		);
 	}
 
-	/**
-	 * Update Actor Attributes following NPC builder guide
-	 * @param {String} cr    - The Challenge Rating to get values from;
-	 * @param {String} attr  - The attribute being changed;
-	 */
-	// _setCRAttrs(cr, attr) {
-	// 	if (this.type != "npc") return;
-	// 	let updateData = {};
-	// 	const crData = CONFIG.T20.NPCParams(cr);
-	// 	let skills = {};
-	// 	skills.fort = this.system.builder.attributes.fort ?? {};
-	// 	skills.refl = this.system.builder.attributes.refl ?? {};
-	// 	skills.vont = this.system.builder.attributes.vont ?? {};
-	// 	const ranks = ["botsave", "midsave", "topsave"];
-	// 	const attrs = ["attack", "damage", "defense", "hp", "dc", "topsave", "midsave", "botsave", "skills"];
-
-	// 	if (attr === "all") {
-	// 		for (let att of attrs) {
-	// 			updateData[`system.builder.attributes.${att}.value`] = crData[att];
-	// 			updateData[`system.builder.attributes.${att}.cr`] = cr;
-	// 		}
-	// 	} else if (attr === "skills") {
-	// 		updateData[`system.builder.attributes.${attr}.value`] = crData.topskill;
-	// 		updateData[`system.builder.attributes.${attr}.cr`] = cr;
-	// 	} else {
-	// 		updateData[`system.builder.attributes.${attr}.value`] = crData[attr];
-	// 		updateData[`system.builder.attributes.${attr}.cr`] = cr;
-	// 	}
-	// 	if (["all", "topsave", "midsave", "botsave"].includes(attr)) {
-	// 		for (let [key, skill] of Object.entries(skills)) {
-	// 			let r = skill.rank ?? 0;
-	// 			if (attr === "all" || attr === ranks[r]) {
-	// 				updateData[`system.builder.attributes.${key}.value`] = crData[ranks[r]];
-	// 				updateData[`system.builder.attributes.${key}.cr`] = cr;
-	// 			}
-	// 		}
-	// 	}
-	// 	this.update(updateData);
-	// }
-
 	/* -------------------------------------------- */
 	/*  Event Handlers                              */
 	/* -------------------------------------------- */

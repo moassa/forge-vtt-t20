@@ -92,7 +92,6 @@ const applyRollChanges = (ch, qty, ef, item, id, rollMods, options) => {
 			);
 		});
 	}
-	ch.key = ch.key.toString();
 	if (ch.value.toString().match(/^:/)) {
 		ch.value = ch.value.replace(":", ";").split(";")[qty];
 		ef.system.abilityUse.aumenta = false;
@@ -677,6 +676,7 @@ function applyOnUseEffects(rolledItem, configuration = {}) {
 				continue;
 			}
 
+			ch.value = ch.value.toString();
 			if (ch.key.match(/^\?/)) continue;
 			if (itemFields[ch.key]) applyItemChanges(ch, ouEff.qty, ef, item, id);
 			else if (actorFields[ch.key]) applyActorChanges(ch, ouEff.qty, ef, item, id, ad);
