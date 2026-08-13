@@ -230,7 +230,6 @@ export async function rollChatMessage({
 	// Create the ChatMessage data object
 	const chatData = {
 		user: game.user._id,
-		// type: CONST.CHAT_MESSAGE_STYLES.ROLL,
 		content: html,
 		rolls: rolls,
 		speaker: ChatMessage.getSpeaker()

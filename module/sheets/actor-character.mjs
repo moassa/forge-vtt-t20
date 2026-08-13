@@ -161,7 +161,7 @@ export default class ActorSheetT20Character extends ActorSheetT20 {
 					{
 						key: `system.pericias.${pericia}.treinado`,
 						value: true,
-						mode: CONST.ACTIVE_EFFECT_MODES.OVERRIDE,
+						type: "override",
 						priority: 20
 					}
 				],

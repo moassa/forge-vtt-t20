@@ -10,9 +10,10 @@ export const endSegment = async function (app, html) {
 			for await (const token of canvas.tokens.placeables) {
 				const actor = !token.actorLink ? token.actor : game.actors.get(token.actor.id);
 				if (actor.type != "character") continue;
-				let efeitos = token.actor.effects.filter((e) => e.getFlag("tormenta20", "durationScene")).map((e) => e.id);
+
+				let efeitos = token.actor.effects.filter((e) => e.duration.expiry == "sceneEnd").map((e) => e.id);
 				let labels = token.actor.effects
-					.filter((e) => e.getFlag("tormenta20", "durationScene"))
+					.filter((e) => e.duration.expiry == "sceneEnd")
 					.map((e) => `<i>${e.name}</i>`);
 				if (efeitos.length) {
 					historico += `<br><b>${token.actor.name}</b> ${labels.join(", ")}`;
@@ -23,7 +24,6 @@ export const endSegment = async function (app, html) {
 			let toChat = (message) => {
 				let chatData = {
 					user: game.user._id,
-					type: CONST.CHAT_MESSAGE_STYLES.OTHER,
 					content: message,
 					speaker: ChatMessage.getSpeaker()
 				};

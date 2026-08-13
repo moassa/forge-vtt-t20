@@ -1,7 +1,8 @@
 import { T20 } from "../config/T20.js";
 import { simplifyRollFormula } from "../dice/dice.mjs";
 const C = T20;
-const CHANGEMODES = CONST.ACTIVE_EFFECT_MODES;
+const { CHANGE_TYPES } = CONFIG.ActiveEffect.documentClass;
+
 /* -------------------------------------------- */
 /*  Helpers                                     */
 /* -------------------------------------------- */
@@ -120,7 +121,7 @@ const applyRollChanges = (ch, qty, ef, item, id, rollMods, options) => {
 			if (p == -1) continue;
 		}
 		// CUSTOM CHANGES
-		if (ch.mode == CHANGEMODES.CUSTOM) {
+		if (ch.type == "custom") {
 			// To Change die => d12 (d#NUMBEROFFACES)
 			if (ch.value.match(re.faces)) {
 				rollMods[r.key][p].die = ch.value;
@@ -172,7 +173,7 @@ const applyRollChanges = (ch, qty, ef, item, id, rollMods, options) => {
 			}
 		}
 		// MULTIPLY CHANGES
-		else if (ch.mode == 1) {
+		else if (ch.type == "multiply") {
 			// Only multiply from the same src
 			if (rollMods[r.key].find((m) => m.src == sourceName)) {
 				let temp = r.parts.pop();
@@ -180,7 +181,7 @@ const applyRollChanges = (ch, qty, ef, item, id, rollMods, options) => {
 			}
 		}
 		// ADD CHANGES
-		else if (ch.mode == 2) {
+		else if (ch.type == "add") {
 			// ADD ROLL FROM ITEM
 			if (ch.value == "roll") {
 				const itr = item.actor.items.get(ef.origin.split(".")[3]).system.rolls.find((r) => r.type == "dano");
@@ -247,7 +248,7 @@ const applyRollChanges = (ch, qty, ef, item, id, rollMods, options) => {
 			}
 		}
 		// OVERRIDE CHANGES
-		else if (ch.mode == 5) {
+		else if (ch.type == "override") {
 			if (r.type == "dano") {
 				if (item.type == "arma" && ch.key == "atributoDano") {
 					r.parts[1][0] = ch.value.charAt(0) == "@" ? ch.value : `@${ch.value}`;
@@ -312,16 +313,16 @@ const applyItemChanges = (ch, qty, ef, item, id) => {
 	const campos = itemFields;
 	const _campos = {};
 	// CUSTOM CHANGES
-	if (ch.mode == 0) _campos;
+	if (ch.type == "custom") _campos;
 	// MULTIPLY CHANGES
-	else if (ch.mode == 1) {
+	else if (ch.type == "multiply") {
 		if (Number(ch.value)) {
 			const temp = foundry.utils.getProperty(id, campos[ch.key][0]);
 			if (Number.isNumeric(temp)) _campos[campos[ch.key][0]] = Number(temp) * (Number(ch.value) * qty);
 		}
 	}
 	// ADD CHANGES
-	else if (ch.mode == 2) {
+	else if (ch.type == "add") {
 		re.float = /[\d+]?[.|,]?\d+/;
 		if (ch.value.match(re.float) && ch.key == "area") {
 			let n1 = id.area.match(re.float)[0].replace(",", ".");
@@ -336,7 +337,7 @@ const applyItemChanges = (ch, qty, ef, item, id) => {
 		}
 	}
 	// OVERRIDE CHANGES
-	else if (ch.mode == 5) {
+	else if (ch.type == "override") {
 		if (campos[ch.key][1]) {
 			if (ch.key == "duracao") {
 				let str = ch.value.match(/[A-z]+/);
@@ -370,23 +371,23 @@ const applyActorChanges = (ch, qty, ef, item, id, ad) => {
 	const campos = actorFields;
 	const _campos = {};
 	// CUSTOM CHANGES
-	if (ch.mode == 0) ch;
+	if (ch.type == "custom") ch;
 	// MULTIPLY CHANGES
-	else if (ch.mode == 1) {
+	else if (ch.type == "multiply") {
 		if (Number(ch.value)) {
 			const temp = foundry.utils.getProperty(id, campos[ch.key][0]);
 			if (Number(temp)) _campos[campos[ch.key][0]] = Number(temp) * (Number(ch.value) * qty);
 		}
 	}
 	// ADD CHANGES
-	else if (ch.mode == 2) {
+	else if (ch.type == "add") {
 		if (Number(ch.value)) {
 			const temp = foundry.utils.getProperty(id, campos[ch.key][0]);
 			if (Number(temp)) _campos[campos[ch.key][0]] = Number(temp) + Number(ch.value) * qty;
 		}
 	}
 	// OVERRIDE CHANGES
-	else if (ch.mode == 5) {
+	else if (ch.type == "override") {
 		if (ch.key == "treinado") {
 			_campos.treino = !ch.value ? 0 : ad.attributes.treino;
 		} else if (campos[ch.key]) _campos[campos[ch.key][0]] = ch.value;
@@ -445,12 +446,12 @@ const applyEffectChanges = (ch, qty, ef, optEffectList, effectList, effectChange
 	// 	// }
 	// 	for (const _ch of _ef.changes) {
 	// 		if (_ch.key != m[2]) continue;
-	// 		if (ch.mode == CHANGEMODES.CUSTOM) {
-	// 		} else if (ch.mode == CHANGEMODES.MULTIPLY) {
-	// 		} else if (ch.mode == CHANGEMODES.ADD) {
-	// 		} else if (ch.mode == CHANGEMODES.DOWNGRADE) {
-	// 		} else if (ch.mode == CHANGEMODES.UPGRADE) {
-	// 		} else if (ch.mode == CHANGEMODES.OVERRIDE) {
+	// 		if (ch.type == "custom") {
+	// 		} else if (ch.type == "multiply") {
+	// 		} else if (ch.type == "add") {
+	// 		} else if (ch.type == "downgrade") {
+	// 		} else if (ch.type == "upgrade") {
+	// 		} else if (ch.type == "override") {
 	// 			_ch.value = ch.value;
 	// 			console.log(ch.value);
 	// 		}
@@ -563,6 +564,7 @@ function applyOnUseEffects(rolledItem, configuration = {}) {
 
 	let rollMods;
 	if (item.type != "pericia" && item.type != "atributo") {
+
 		rollMods = id.rolls.reduce(function (acc, r) {
 			acc[r.key] = r.parts.map((i) => ({
 				die: null,
@@ -578,13 +580,19 @@ function applyOnUseEffects(rolledItem, configuration = {}) {
 			return acc;
 		}, {});
 	} else {
-		item.validOnUseEffects = item.validOnUseEffects ?? [];
+		console.warn("NonItem applicableOnUseEffects", item);
+		// item.validOnUseEffects = item.validOnUseEffects ?? [];
+		// item.validOnUseEffects = [];
+		// item.applicableOnUseEffects = item._allApplicableOnUseEffects() ?? [];
 		item.effects = [];
 	}
+	console.log("%cDEBUG ITEM", "text-transform:uppercase; font-size: 28px; color: #ff0000", item);
+	console.log("%cDEBUG OPTIONS", "text-transform:uppercase; font-size: 28px; color: #ff0000", options);
+	console.log("%cDEBUG CONFIGURATION", "text-transform:uppercase; font-size: 28px; color: #ff0000", configuration);
 
 	// Get Applied On Use Effects
 	const applied = foundry.utils.expandObject(configuration).aprs ?? {};
-	const onUseEffects = item.validOnUseEffects.filter((ef) => applied[ef.id]?.aplica);
+	const onUseEffects = item.applicableOnUseEffects.filter((ef) => applied[ef.id]?.aplica);
 	// Get Active Effects From Item
 	const effectList = item.effects.filter(
 		(ef) =>
@@ -607,7 +615,7 @@ function applyOnUseEffects(rolledItem, configuration = {}) {
 				changes[index].push({
 					key: ch.key,
 					value: Number(ch.value) || ch.value,
-					mode: ch.mode,
+					type: ch.type,
 					priority: ch.priority
 				});
 			});
@@ -616,19 +624,30 @@ function applyOnUseEffects(rolledItem, configuration = {}) {
 
 	// SORT
 	onUseEffects.sort((a, b) =>
-		a.changes.some((ch) => ch.mode == 5) && !b.changes.some((ch) => ch.mode == 5)
+		a.changes.some((ch) => ch.type == "override") && !b.changes.some((ch) => ch.type == "override")
 			? -1
-			: b.changes.some((ch) => ch.mode == 5) && !a.changes.some((ch) => ch.mode == 5)
+			: b.changes.some((ch) => ch.type == "override") && !a.changes.some((ch) => ch.type == "override")
 				? 1
 				: 0
 	);
 
 	// Prepare chatData and rollModifiers for onUseEffects
 	for (let ef of onUseEffects) {
+
+		console.log(ef);
 		// Prepare onUseEffects chat content;
 		let ouEff = {};
-		ouEff.description =
-			item.type !== "arma" ? ef.name : item.id == ef.parent.id ? `${ef.parent.name} - ${ef.name}` : ef.sourceName;
+		ouEff.description = ef.description
+			? item.id == ef.parent.id
+				? foundry.utils.parseHTML(ef.description).innerText
+				: `${ef.name} - ` + foundry.utils.parseHTML(ef.description).innerText
+			: ef.name;
+		// ouEff.descriptionOld = item.type == "arma"
+		// 	? item.id == ef.parent.id 
+		// 		? `${ef.parent.name} - ${ef.name}`
+		// 		: ef.sourceName
+		// 	: ef.name;
+
 		if ([game.i18n.localize("Unknown"), actor.name].includes(ouEff.description)) ouEff.description = ef.name;
 		ouEff.cost = Number(applied[ef.id]?.custo) * applied[ef.id]?.aplica || applied[ef.id]?.custo;
 		// Number(aplicados[ef.id]?.custo) * aplicados[ef.id]?.aplica || aplicados[ef.id]?.custo;
@@ -665,7 +684,7 @@ function applyOnUseEffects(rolledItem, configuration = {}) {
 			else applyRollChanges(ch, ouEff.qty, ef, item, id, rollMods, options);
 
 			changes.forEach(function (efch) {
-				if (!ef.flags.tormenta20.aumenta || (ef.flags.tormenta20.aumenta && efch.map((i) => i.key).includes(ch.key))) {
+				if (!ef.system.abilityUse?.aumenta || (ef.system.abilityUse?.aumenta && efch.map((i) => i.key).includes(ch.key))) {
 					if (ch.key == "system.tamanho" && efch.findIndex((i) => i.key == "system.tamanho")) {
 						efch.splice(
 							efch.findIndex((i) => i.key == "system.tamanho"),
@@ -676,7 +695,7 @@ function applyOnUseEffects(rolledItem, configuration = {}) {
 					efch.push({
 						key: ch.key,
 						value: Number(ch.value * ouEff.qty) || ch.value,
-						mode: ch.mode,
+						type: ch.type,
 						priority: ch.priority
 					});
 				}
@@ -705,19 +724,20 @@ function applyOnUseEffects(rolledItem, configuration = {}) {
 		let duration = {};
 		let children = [];
 		let durValue = Number(id.duracao?.value) || 1;
-		let flags = { temp: true, tormenta20: { durationScene: false } };
-		// TODO FIND OUT IF TEMP Is NEEDED
-		let updateData = { temp: true };
-		if (id.duracao?.units == "scene" || ef.duration.expiry == "sceneEnd") {
-			flags.tormenta20.durationScene = ef.flags.tormenta20.durationScene ?? true;
-			updateData.duration = { expiry: "sceneEnd", units: "seconds", value: null };
+		let flags = { temp: true };
+		// TODO FIND OUT IF TEMP IS NEEDED
+		if (id.duracao) {
+			const { value, units } = id.duracao;
+			if (CONST.ACTIVE_EFFECT_DURATION_UNITS.includes(`${units}s`)) {
+				duration.units = `${units}s`;
+				duration.value = Number(value) ?? 1;
+				duration.expiry = "turnStart";
+			} else if (units == "scene") {
+				duration.expiry = "sceneEnd";
+				duration.units = "rounds";
+				duration.value = null;
+			}
 		}
-		if (id.duracao?.units == "turn") duration.turns = durValue;
-		if (id.duracao?.units == "round") duration.rounds = durValue;
-		if (id.duracao?.units == "minute") duration.seconds = durValue * 60;
-		if (id.duracao?.units == "hour") duration.seconds = durValue * 60 * 60;
-		if (id.duracao?.units == "day") duration.seconds = durValue * 60 * 60 * 24;
-		if (id.duracao?.units == "month") duration.seconds = durValue * 60 * 60 * 24 * 30;
 		let statusName = ef.name.slugify().replace("-", "");
 		if (T20.conditions[statusName]) {
 			tempEffect = foundry.utils.deepClone(T20.conditions[statusName]);
@@ -734,12 +754,12 @@ function applyOnUseEffects(rolledItem, configuration = {}) {
 				let m = efch.key.match(/\$(.*)#(.*)/);
 				for (const _ch of tempEffect.changes) {
 					if (_ch.key != m[2]) continue;
-					if (efch.mode == CHANGEMODES.CUSTOM) {
-					} else if (efch.mode == CHANGEMODES.MULTIPLY) {
-					} else if (efch.mode == CHANGEMODES.ADD) {
-					} else if (efch.mode == CHANGEMODES.DOWNGRADE) {
-					} else if (efch.mode == CHANGEMODES.UPGRADE) {
-					} else if (efch.mode == CHANGEMODES.OVERRIDE) {
+					if (efch.type == "custom") {
+					} else if (efch.type == "multiply") {
+					} else if (efch.type == "add") {
+					} else if (efch.type == "downgrade") {
+					} else if (efch.type == "upgrade") {
+					} else if (efch.type == "override") {
 						_ch.value = efch.value;
 					}
 				}
@@ -750,7 +770,7 @@ function applyOnUseEffects(rolledItem, configuration = {}) {
 				tempEffect.changes = tempEffect.changes.reduce((object, ch) => {
 					let key = ch.key.match(/efeito.\w+/) ? ch.key.toString().split(".")[1] : ch.key;
 					let idx = object.map((ob) => ob.key).indexOf(key);
-					if (ch.mode == 2 && idx == -1 && ch.key.match(/efeito.\w+/)) {
+					if (ch.type == "add" && idx == -1 && ch.key.match(/efeito.\w+/)) {
 						ch.key = key;
 					}
 					if (ch.value.toString().match(/^@[^\s|+|-]+/)) {
@@ -759,11 +779,11 @@ function applyOnUseEffects(rolledItem, configuration = {}) {
 
 					if (idx >= 0) {
 						try {
-							if (ch.mode == 5) {
+							if (ch.type == "override") {
 								if (ch.key.match(/efeito.\w+/)) {
 									object[idx].value = ch.value;
 								}
-							} else if (ch.mode == 1) {
+							} else if (ch.type == "multiply") {
 								if (ch.key.match(/efeito.\w+/)) {
 									if (Number(object[idx].value)) {
 										object[idx].value = Number(object[idx].value) * Number(ch.value);
@@ -773,13 +793,13 @@ function applyOnUseEffects(rolledItem, configuration = {}) {
 								} else {
 									object[idx].value = Number(object[idx].value) + Number(ch.value);
 								}
-							} else if (ch.mode == 2) {
+							} else if (ch.type == "add") {
 								if (ch.key.match(/efeito.\w+/)) {
 									object[idx].value = Number(object[idx].value) + Number(ch.value);
 								} else {
 									object[idx].value = Number(object[idx].value) + Number(ch.value);
 								}
-							} else if (ch.mode == 0 && ch.value.toString().match(/\*\d+/)) {
+							} else if (ch.type == "custom" && ch.value.toString().match(/\*\d+/)) {
 								if (ch.key.match(/efeito.\w+/)) {
 									object[idx].value = ch.value;
 								} else {
@@ -788,13 +808,13 @@ function applyOnUseEffects(rolledItem, configuration = {}) {
 								}
 							}
 						} catch (error) {
-							if (ch.mode == 2) {
+							if (ch.type == "add") {
 								if (ch.key.match(/efeito.\w+/)) {
 									object[idx].value = ch.value;
 								} else {
 									object[idx].value += `+${ch.value}`;
 								}
-							} else if (ch.mode == 0 && ch.value.toString().match(/\*\d+/)) {
+							} else if (ch.type == "custom" && ch.value.toString().match(/\*\d+/)) {
 								if (ch.key.match(/efeito.\w+/)) {
 									object[idx].value = ch.value;
 								} else {
@@ -805,7 +825,7 @@ function applyOnUseEffects(rolledItem, configuration = {}) {
 					} else {
 						object.push({
 							key: ch.key,
-							mode: ch.mode,
+							type: ch.type,
 							value: ch.value,
 							priority: ch.priority
 						});
@@ -827,6 +847,7 @@ function applyOnUseEffects(rolledItem, configuration = {}) {
 	if (configuration.brew) options.brew = configuration.brew;
 	// Logs
 	// console.log(item, rollMods, changes, options);
+	console.log("%cDEBUG applyEffects final", "text-transform:uppercase; font-size: 28px; color: #ff0000", options);
 	return options;
 }
 

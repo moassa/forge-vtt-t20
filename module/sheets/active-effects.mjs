@@ -1,7 +1,7 @@
 export default class ActiveEffectConfigT20 extends foundry.applications.sheets.ActiveEffectConfig {
 	/* override*/
 	get title() {
-		if (this.document.flags?.tormenta20?.onuse) {
+		if (this.document.system.onuse) {
 			return `Efeito de Uso: ${this.document.name}`;
 		}
 		return `${game.i18n.localize(`DOCUMENT.${this.document.documentName}`)}: ${this.document.name}`;

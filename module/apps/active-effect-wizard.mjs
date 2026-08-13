@@ -438,10 +438,10 @@ export default class ActiveEffectWizard extends HandlebarsApplicationMixin(Appli
 	}
 
 	#prepareChanges() {
-		this.#effect.changes = this.#changes.map((c) => {
+		this.#effect.system.changes = this.#changes.map((c) => {
 			return {
 				key: c.key,
-				mode: c.mode,
+				type: c.type,
 				value: c.value
 			};
 		});
@@ -505,7 +505,7 @@ export default class ActiveEffectWizard extends HandlebarsApplicationMixin(Appli
 		this.#changes?.push({
 			label: label,
 			key: key,
-			mode: foundry.CONST.ACTIVE_EFFECT_MODES.ADD,
+			type: "add",
 			boolean,
 			choices,
 			field

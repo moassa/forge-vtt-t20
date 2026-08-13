@@ -42,35 +42,43 @@ export default class ChatLogTormenta20 extends foundry.applications.sidebar.tabs
 		return [
 			...context,
 			{
-				name: "Aplicar Dano",
+				label: "Aplicar Dano",
 				icon: '<i class="fas fa-user-minus" style="color: #CC0000;"></i>',
 				value: 1,
-				condition: canApply,
-				callback: (li) => applyChatCardDamage(li, 1)
+				visible: canApply,
+				onClick: (li) => applyChatCardDamage(li, 1)
 			},
 			{
-				name: "Aplicar Dano em Dobro",
+				label: "Aplicar Dano em Dobro",
 				icon: '<i style="color: #CC0000;">2x </i>',
-				condition: canApply,
-				callback: (li) => applyChatCardDamage(li, 2)
+				visible: canApply,
+				onClick: (li) => applyChatCardDamage(li, 2)
 			},
 			{
-				name: "Aplicar Dano pela Metade",
+				label: "Aplicar Dano pela Metade",
 				icon: '<i style="color: #CC0000;">½ </i>',
-				condition: canApply,
-				callback: (li) => applyChatCardDamage(li, 0.5)
+				visible: canApply,
+				onClick: (li) => applyChatCardDamage(li, 0.5)
 			},
 			{
-				name: "Aplicar Cura",
+				label: "Aplicar Cura",
 				icon: '<i class="fas fa-user-plus" style="color: #00AA00;"></i>',
-				condition: canApplyHeal,
-				callback: (li) => applyChatCardDamage(li, -1, "curapv")
+				visible: canApplyHeal,
+				onClick: (li) => applyChatCardDamage(li, -1, "curapv")
 			},
 			{
-				name: "Gastar Mana",
+				label: "Gastar Mana",
 				icon: '<i class="fas fa-star" style="color: #33A0FF;"></i>',
-				condition: canApplyMana,
-				callback: (li) => applyChatManaSpend(li, 0)
+				visible: canApplyMana,
+				onClick: (li) => applyChatManaSpend(li, 0)
+			}, {
+				label: "Log to Console",
+				icon: "fa-solid fa-code",
+				visible: (li) => true,
+				onClick: (event, li) => {
+					const message = game.messages.get(li.dataset.messageId);
+					console.log(message);
+				}
 			}
 		];
 	}

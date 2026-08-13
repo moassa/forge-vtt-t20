@@ -15,9 +15,37 @@ export default function () {
 				return false;
 			}
 		});
+
+		if (!game.packs.get("world.statuses")) createStatusCompendium();
+		if (!game.packs.get("world.upgrades")) createUpgradesCompendium();
 	});
 
+	/**
+	 * Create World Status Compendiums and populate with system effects;
+	 */
+	async function createStatusCompendium() {
+		const pack = await foundry.documents.collections.CompendiumCollection.createCompendium({
+			label: "Condições",
+			name: "statuses",
+			type: "ActiveEffect",
+			ownership
+		});
+	}
+
+	/**
+	 * Create World Equipment Upgrade Compendium and populate with system effects;
+	 */
+	async function createUpgradesCompendium() {
+		const pack = await foundry.documents.collections.CompendiumCollection.createCompendium({
+			label: "Melhorias e Encantos",
+			name: "upgrades",
+			type: "ActiveEffect",
+		});
+	}
+
 	Hooks.once("ready", migrateWorld);
+
+
 
 	/* -------------------------------------------- */
 	/*  Other Hooks                                 */

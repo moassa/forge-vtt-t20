@@ -7,6 +7,13 @@ export default class BaseEffect extends ActiveEffectTypeDataModel {
 	/** @inheritDoc */
 	static defineSchema() {
 		const schema = super.defineSchema();
+		schema.status = new fields.SchemaField({
+			category: new fields.StringField({ required: true, blank: true }),
+			stack: new fields.StringField({ required: true, blank: true }),
+			childEffect: new fields.SetField(new fields.StringField({
+				required: true, blank: false
+			})),
+		}, { nullable: true, initial: null });
 
 		schema.onuse = new fields.BooleanField({
 			required: true, initial: false,
@@ -70,6 +77,9 @@ export default class BaseEffect extends ActiveEffectTypeDataModel {
 	/*  Getters/Setters                             */
 	/* -------------------------------------------- */
 
+	get isCantrip() {
+		return this.onuse && this.parent.item?.type == "magia" && this.abilityUse.custo == null && this.abilityUse.types.has("self");
+	}
 
 	/* -------------------------------------------- */
 	/*  Migration                                   */
@@ -94,7 +104,14 @@ export default class BaseEffect extends ActiveEffectTypeDataModel {
 	/* -------------------------------------------- */
 
 	/** @inheritDoc */
-	prepareDerivedData() { }
+	prepareDerivedData() {
+		// prepareCostLabel
+		if (this.onuse) {
+			if (this.isCantrip) this.abilityUse.costLabel = _loc("T20.Cantrip");
+			else if (this.abilityUse.custo == null) this.abilityUse.costLabel = "—";
+			else this.abilityUse.costLabel = `${this.abilityUse.custo} ${_loc("T20.MP")}`;
+		}
+	}
 
 	/* -------------------------------------------- */
 

@@ -32,28 +32,30 @@
 				{{#each aprimoramentos as |ap|}}
 					<li class="item flexrow">
 						<div class="item-cost flexrow">
-							{{#if ap.flags.tormenta20.aumenta}}
+							{{#if ap.system.abilityUse.aumenta}}
 								<!-- <input type="button" value="-" class="numCtrl" /> -->
 								<button class="numCtrl" value="-"><i class="fa-solid fa-minus"></i></button>
 								<input type="number" name="aprs.{{ap.id}}.aplica" min="0" value="0" step="1" class="numInp" data-dtype="Number" style="max-width: 25px; height: auto;" onkeydown="return false" />
 								<!-- <input type="button" value="+" class="numCtrl" /> -->
 								<button class="numCtrl" value="+"><i class="fa-solid fa-plus"></i></button>
 							{{else}}
-								<input type="checkbox" name="aprs.{{ap.id}}.aplica" value="1" {{#unless ap.disabled}}checked{{/unless}} />
+								<input type="checkbox" name="aprs.{{ap.id}}.aplica" value="1" {{#if ap.system.abilityUse.automatic}}checked{{/if}} />
 							{{/if}}
-
-							{{#if (and (eq ../itype "magia") (eq ap.flags.tormenta20.custo "") ap.flags.tormenta20.self )}}
+							{{!-- (and (eq ../itype "magia") (eq ap.system.abilityUse.custo "") ap.system.abilityUse.types "self" )  --}}
+							{{#if ap.system.isCantrip }}
 								<label>{{ localize 'T20.Cantrip'}}</label>
 								<input type="hidden" name="aprs.{{ap.id}}.custo" value="Truque">
-							{{else if (eq ap.flags.tormenta20.custo "")}}
+							{{else if (eq ap.system.abilityUse.custo null)}}
 								-
 								<input type="hidden" name="aprs.{{ap.id}}.custo" value="0">
-							{{else if ap.flags.tormenta20.custo}}
-								<label>{{ap.flags.tormenta20.custo}} {{ localize 'T20.MP'}}</label>
-								<input type="hidden" name="aprs.{{ap.id}}.custo" value="{{ap.flags.tormenta20.custo}}">
+							{{else if ap.system.abilityUse.custo}}
+								<label>{{ap.system.abilityUse.custo}} {{ localize 'T20.MP'}}</label>
+								<input type="hidden" name="aprs.{{ap.id}}.custo" value="{{ap.system.abilityUse.custo}}">
 							{{/if}}
 						</div>
-						<h4 class="item-name" style="flex: 2">{{{ap.name}}}</h4>
+						<div class="item-name" style="flex: 2">
+							{{{ap.descriptionEnriched}}}
+						</div>
 						{{#if (eq ../itype "arma")}}
 							<small>{{ap.sourceName}}</small>
 						{{/if}}
@@ -65,7 +67,7 @@
 
 	<div class="form-group total-cost">
 		<label>Custo de Mana Total</label>
-		<input disabled class="cost" value="{{initialCost}}" data-initial-cost="{{custo}}">
+		<input disabled class="cost" value="{{initialCost}}" data-initial-cost="{{initialCost}}">
 	</div>
 	<div class="form-group">
 		<label>Melhor/Pior de 2d20</label>
@@ -74,9 +76,9 @@
 		</select>
 	</div>
 	<div class="form-group">
-		<label>Roll Mode</label>
-		<select name="rollMode">
-			{{selectOptions rollModes selected=rollMode localize=true }}
+		<label>Mensagem</label>
+		<select name="messageMode">
+			{{selectOptions messageModes selected=messageMode localize=true }}
 		</select>
 	</div>
 	<!-- <footer class="sheet-footer">

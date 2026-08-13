@@ -1,4 +1,5 @@
 @import "./variables.less";
+
 .tormenta20.sheet.item {
   min-height: 400px;
   max-height: 95%;
@@ -56,16 +57,20 @@
         min-width: max-content;
         background: unset;
       }
+
       .tox-toolbar__group {
         padding: 0;
       }
+
       .tox-tbtn {
         width: 24px;
         height: 24px;
       }
+
       .tox-tbtn--select {
         width: auto;
       }
+
       .tox-tbtn--bespoke {
         width: 90px;
         font-size: 12px;
@@ -75,6 +80,7 @@
 
   nav.sheet-tabs {
     margin-bottom: 5px;
+
     .item {
       font-size: 18px;
     }
@@ -93,6 +99,7 @@
           .form-fields i {
             flex: 0;
           }
+
           i.fa-solid.fa-circle-info {
             opacity: 0;
 
@@ -118,12 +125,15 @@
 
       .form-group {
         margin: 0;
+
         label {
           line-height: 18px;
           font-size: 14px;
         }
+
         input {
           text-align: right;
+
           &[type="checkbox"] {
             flex: 0 0 15px;
             width: 15px;
@@ -160,6 +170,7 @@
 
   .sheet-body .form-group {
     margin: 0;
+
     label {
       line-height: 18px;
       font-size: 14px;
@@ -171,6 +182,7 @@
   /* ----------------------------------------- */
 
   .details {
+
     // Item Sheet form fields
     input[type="text"],
     input[type="number"],
@@ -228,14 +240,17 @@
       .form-fields {
         flex-wrap: nowrap;
       }
+
       input {
         flex: 0 0 32px;
       }
+
       span {
         flex: 0 0 16px;
         margin: 0 4px 0 0;
       }
     }
+
     span.sep {
       flex: 0 0 8px;
     }
@@ -251,6 +266,7 @@
       flex: 0 0 100%;
       margin: 0.25em 0;
       justify-content: flex-end;
+
       label {
         flex: 0 0 64px;
         text-align: right;
@@ -258,6 +274,7 @@
         font-size: 12px;
         line-height: 24px;
       }
+
       input[type="text"] {
         flex: 0 0 48px;
         margin-right: 10px;
@@ -278,16 +295,20 @@
           flex: 0;
         }
       }
+
       .choiceset-item {
         .item {
           gap: 0.5rem;
+
           img {
             flex: 0 0 30px;
           }
+
           .item-name {
             align-content: center;
           }
         }
+
         .item-summary {
           flex: 0 0 100%;
           // font-size: 12px;
@@ -297,6 +318,7 @@
           border-top: 1px solid @colorFaint;
         }
       }
+
       .drop-zone {
         margin: 5px 0;
         text-align: center;
@@ -308,6 +330,7 @@
     h3 {
       border: 0;
     }
+
     .rolls-controls {
       flex: initial;
     }
@@ -333,9 +356,11 @@
     .damage-part {
       flex: 0 0 100%;
       padding: 0;
+
       input {
         flex: 3;
       }
+
       select {
         margin-left: 5px;
         flex: 1;
@@ -362,6 +387,7 @@
 
   .roll-parts {
     flex-direction: column;
+
     .roll-part {
       width: 100%;
     }
@@ -383,6 +409,7 @@
   .effects-list {
     .item-list {
       padding: 0;
+
       .effects {
         line-height: normal;
       }

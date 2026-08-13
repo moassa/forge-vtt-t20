@@ -24,34 +24,17 @@
 			{{#each section.effects as |effect|}}
 				<li class="item effect flexrow" data-effect-id="{{effect.id}}" data-action="edit">
 					<div class="item-name effect-name flexrow">
-						{{#unless (or (eq sid 'onuse') (eq sid 'onuseTemp'))}}
+						{{#if effect.system.onuse}}
+							{{{effect.descriptionEnriched}}}
+						{{else}}
 							<img class="item-image" src="{{effect.img}}" />
 							<h4 class="item-name">{{effect.name}}</h4>
-						{{else}}
-							<h4 class="item-name">
-								<b>
-									{{#if (not effect.flags.tormenta20.custo)}}
-										{{#if (eq ../../item.type 'magia')}}
-											{{localize 'T20.Cantrip'}}:
-										{{else}}
-											—
-										{{/if}}
-									{{else}}
-										{{effect.flags.tormenta20.custo}} {{localize 'T20.MP'}}:
-									{{/if}}
-								</b>
-								{{effect.name}}
-							</h4>
-						{{/unless}}
+						{{/if}}
 					</div>
 					{{#unless (or (eq sid 'onuse') (eq sid 'onuseTemp'))}}
 						<div class="effect-source">{{effect.sourceName}}</div>
 						<div class="effect-duration">
-							{{#if effect.duration.expiry == "sceneEnd"}}
-								{{localize 'T20.TimeScene'}}
-							{{else}}
-								{{effect.duration.label}}
-							{{/if}}
+							{{effect.duration.label}}
 						</div>
 					{{/unless}}
 					<div class="item-controls effect-controls flexrow">

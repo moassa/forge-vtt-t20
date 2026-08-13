@@ -153,14 +153,22 @@ export function migrateEffectsSystemFlags(parentDocument, operations) {
 		const flags = effect.flags.tormenta20;
 		const typeKeys = ["self", "ability", "attack", "consumable", "equipment", "power", "skill", "spell"];
 		const types = [];
-		for (const key of typeKeys) {
-			if (flags[key]) types.push(key);
+		const isSpell = parentDocument.type == "magia" || (parentDocument.type == "consumivel" && parentDocument.system.tipo == "scroll");
+		if (isSpell && flags.onuse && !effect.isTemporary) {
+			types.push("self");
+		} else {
+			for (const key of typeKeys) {
+				if (flags[key]) types.push(key);
+			}
 		}
-		const items = flags.items?.replaceAll(",", ";").split(";") ?? [];
+
+		const items = flags.items?.replaceAll(",", ";").split(";").filter(Boolean) ?? [];
 		const updateData = {
 			_id: effect.id,
+			disabled: flags.onuse ? true : effect.disabled,
 			system: {
 				onuse: flags.onuse,
+				automatic: effect.disabled,
 				duration: { scene: flags.durationScene },
 				abilityUse: {
 					aumenta: flags.aumenta ?? false,
@@ -177,7 +185,7 @@ export function migrateEffectsSystemFlags(parentDocument, operations) {
 			updateData.duration = {
 				expiry: "sceneEnd",
 				value: null,
-				units: "seconds",
+				units: "rounds",
 			}
 		}
 		if (flags.onuse && parentDocument.name != effect.name) {

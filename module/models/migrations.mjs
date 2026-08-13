@@ -32,7 +32,7 @@ export async function migrateWorld() {
 	if (foundry.utils.isNewerVersion("1.5.013", systemMigrationVersion)) {
 		await m_v13.migration_1_5_013();
 	}
-	if (foundry.utils.isNewerVersion("1.6.1", systemMigrationVersion)) {
+	if (foundry.utils.isNewerVersion("1.6.0", systemMigrationVersion)) {
 		await m_v14.migration_1_6_0();
 	}
 

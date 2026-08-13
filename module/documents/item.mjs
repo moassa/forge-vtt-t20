@@ -107,19 +107,51 @@ export default class ItemT20 extends Item {
 		};
 
 		for (let i of this.effects.values()) {
-			if (!i.getFlag("tormenta20", "onuse")) continue;
-			if (i.getFlag("tormenta20", "self")) effects.push(i);
+			if (!i.system.onuse) continue;
+			if (i.system.abilityUse.types.has("self")) effects.push(i);
 		}
 
 		for (let i of this.actor.effects.values()) {
-			if (!i.getFlag("tormenta20", "onuse")) continue;
-			let items = i.getFlag("tormenta20", "items");
-			if (i.getFlag("tormenta20", types[type])) {
-				effects.push(i);
-			} else if (items && items.match(name) >= 0) effects.push(i);
+			if (!i.system.onuse) continue;
+			if (i.system.abilityUse.types.has(types[type])) effects.push(i);
+			else if (i.system.abilityUse.names.has(name)) effects.push(i);
 		}
 
 		return effects;
+	}
+
+	/**
+	 * Traverse parent actor and filter all applicable on use Effects
+	 * @returns {object[]}
+	 */
+	_allApplicableOnUseEffects() {
+		if (!this.isEmbedded) return [];
+		const relate = {
+			atributo: "ability",
+			pericia: "skill",
+			arma: "attack",
+			magia: "spell",
+			poder: "power",
+			consumivel: "consumable",
+			equipamento: "equipment"
+		};
+		const itemAbilityUseType = relate[this.type];
+		// Filter on use effects applied automatic
+		const applicableOnUseEffects = [];
+		for (let [path, doc] of this.actor.traverseEmbeddedDocuments()) {
+			if (doc.documentName != "ActiveEffect") continue;
+			// Temporary effectt may only be applied when they are on actors
+			if (doc.isTemporary && path != "effects") continue;
+			const type = doc.parent.id == this.id ? "self" : itemAbilityUseType;
+			if (!doc.system.onuse) continue;
+			const { types, names } = doc.system.abilityUse;
+			if (!types.has(type)) continue;
+			if (names.size && !names.has(this.name)) continue;
+			applicableOnUseEffects.push(doc);
+		}
+		// Embedded Effects must appear first
+		applicableOnUseEffects.sort((a, b) => a.parent.id == this.id ? -1 : 1);
+		return applicableOnUseEffects;
 	}
 
 	/**
@@ -147,14 +179,6 @@ export default class ItemT20 extends Item {
 	/* -------------------------------------------- */
 	/*  Data Initialization                         */
 	/* -------------------------------------------- */
-
-	clone(data = {}, options = {}) {
-		const item = super.clone(data, options);
-		if (item.parent) {
-			item.prepareFinalAttributes();
-		}
-		return item;
-	}
 
 	/* -------------------------------------------- */
 	/*  DataPreparation                             */
@@ -587,13 +611,14 @@ export default class ItemT20 extends Item {
 	 *                                        the prepared chat message data (if false).
 	 * @return {Promise<ChatMessage|object|void>}
 	 */
-	async roll({ configureDialog = true, rollMode, createMessage = true, extra = {} } = {}) {
-		const item = this.clone({ keepId: true });
-		rollMode = game.settings.get("core", "rollMode");
+	async roll({ configureDialog = true, rollMode, createMessage = true, event, extra = {} } = {}) {
+		const usageConfig = game.settings.get("tormenta20", "UsageConfig") === "default";
+		const item = this.clone({}, { keepId: true });
+		if (item.parent) item.prepareFinalAttributes();
+		rollMode = game.settings.get("core", "messageMode");
 		const equipmentSlots = game.settings.get("tormenta20", "equipmentSlots");
 		const id = this.system; // Item system data
 		const actor = this.actor;
-
 		let createMeasuredTemplate;
 		const resource = id.consume || {}; // Resource consumption
 
@@ -617,42 +642,69 @@ export default class ItemT20 extends Item {
 		let hasManaCost = id.ativacao?.custo > 0;
 		let options = {};
 
+		item.applicableOnUseEffects = item._allApplicableOnUseEffects();
+		const hasEffectsOrRolls = !!item.applicableOnUseEffects.length || !!item.system.rolls.length;
+		configureDialog = hasEffectsOrRolls && (usageConfig ? !event.shiftKey : event.shiftKey);
 		// Display a configuration dialog to customize the usage
 		const needsConfiguration = consumeResource || consumeMana;
 		let configuration = {};
 		if (configureDialog) {
 			configuration = await AbilityUseDialog.create(item);
-			// configuration = await new AbilityUseDialog(item).render(true);
 			if (!configuration) return;
-
 			options = configuration;
-			// Determine consumption preferences
-			// createMeasuredTemplate = Boolean(configuration.placeTemplate);
-			// consumeSelf = Boolean(configuration.consumeSelf);
-			// consumeQuantity = Boolean(configuration.consumeUse);
-			// consumeResource = Boolean(configuration.consumeResource);
-			// consumeMana = Boolean(configuration.consumeMana);
 			rollMode = configuration.rollMode ?? rollMode;
 		} else {
-			let itActive = this.actor.effects.filter((ef) => ef.getFlag("tormenta20", "onuse") && !ef.disabled);
-			let acActive = this.effects.filter((ef) => ef.getFlag("tormenta20", "onuse") && !ef.disabled);
-			let active = itActive.concat(acActive);
-			const relate = {
-				atributo: "ability",
-				pericia: "skill",
-				arma: "attack",
-				magia: "spell",
-				poder: "power",
-				consumivel: "consumable",
-				equipamento: "equipment"
-			};
-			let efType = relate[item.type];
-			active = active.filter((ef) => ef.flags.tormenta20[efType] || ef.flags.tormenta20.self);
-			configuration.aprs = active.reduce((o, ef) => {
-				o[ef.id] = { aplica: 1, custo: ef.flags.tormenta20.custo || "0" };
-				return o;
+			configuration.aprs = item.applicableOnUseEffects.reduce((acc, ef) => {
+				if (!ef.system.abilityUse.automatic) return acc;
+				acc[ef.id] = { aplica: 1, custo: ef.system.abilityUse.custo || 0 };
+				return acc;
 			}, {});
 			options = applyOnUseEffects(item, configuration);
+
+			if (false) {
+				const relate = {
+					atributo: "ability",
+					pericia: "skill",
+					arma: "attack",
+					magia: "spell",
+					poder: "power",
+					consumivel: "consumable",
+					equipamento: "equipment"
+				};
+				const itemAbilityUseType = relate[item.type];
+				// Filter on use effects applied automatic
+				const automaticEffects = [];
+				for (let [path, doc] of this.actor.traverseEmbeddedDocuments()) {
+					if (doc.documentName != "ActiveEffect") continue;
+					if (!doc.system.onuse) continue;
+					if (!doc.system.abilityUse.automatic) continue;
+					const { types, names } = doc.system.abilityUse;
+					if (!types.has(itemAbilityUseType) && !types.has("self")) continue;
+					if (names.size && !names.has(item.name)) continue;
+					automaticEffects.push(doc);
+				}
+				// Effects from this Item Appear First
+				automaticEffects.sort((a, b) => a.parent.id == item.id ? -1 : 1);
+				configuration.aprs = automaticEffects.reduce((acc, ef) => {
+					acc[ef.id] = { aplica: 1, custo: ef.system.abilityUse.custo || 0 };
+					return acc;
+				}, {});
+				options = applyOnUseEffects(item, configuration);
+			}
+			// OLD
+			if (false) {
+				let itActive = this.actor.effects.filter((ef) => ef.system.onuse && !ef.system.abilityUse.automatic);
+				let acActive = this.effects.filter((ef) => ef.system.onuse && !ef.system.abilityUse.automatic);
+				let active = itActive.concat(acActive);
+
+				let efType = relate[item.type];
+				active = active.filter((ef) => ef.system.abilityUse.types.has(efType) || ef.system.abilityUse.types.has("self"));
+				configuration.aprs = active.reduce((o, ef) => {
+					o[ef.id] = { aplica: 1, custo: ef.flags.tormenta20.custo || "0" };
+					return o;
+				}, {});
+				options = applyOnUseEffects(item, configuration);
+			}
 		}
 		consumeMana = consumeMana ? consumeMana : consumeMana != item.system.ativacao?.custo > 0;
 		hasManaCost = hasManaCost ? hasManaCost : hasManaCost != item.system.ativacao?.custo > 0;
@@ -1044,6 +1096,7 @@ export default class ItemT20 extends Item {
 		// Create the ChatMessage data object
 		const chatData = {
 			user: game.user.id,
+			type: "base",
 			rolls,
 			content: html,
 			flavor: options.chatFlavor || this.system.chatFlavor || "",

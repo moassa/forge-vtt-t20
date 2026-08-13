@@ -15,7 +15,7 @@ T20GeneralUpgrades.golden = {
 		{
 			key: "system.pericias.dipl.bonus",
 			value: "2",
-			mode: 2,
+			type: "add",
 			priority: 0
 		}
 	],
@@ -39,7 +39,7 @@ T20GeneralUpgrades.gems = {
 		{
 			key: "system.pericias.enga.bonus",
 			value: "2",
-			mode: 2,
+			type: "add",
 			priority: 0
 		}
 	],
@@ -63,13 +63,13 @@ T20GeneralUpgrades.discreet = {
 		{
 			key: "system.attributes.carga.bonus",
 			value: "-1",
-			mode: 2,
+			type: "add",
 			priority: 0
 		},
 		{
 			key: "system.pericias.furt.bonus",
 			value: "5",
-			mode: 2,
+			type: "add",
 			priority: 0
 		}
 	],
@@ -93,13 +93,13 @@ T20GeneralUpgrades.macabre = {
 		{
 			key: "system.pericias.inti.bonus",
 			value: "2",
-			mode: 2,
+			type: "add",
 			priority: 0
 		},
 		{
 			key: "system.pericias.dipl.bonus",
 			value: "-2",
-			mode: 2,
+			type: "add",
 			priority: 0
 		}
 	],

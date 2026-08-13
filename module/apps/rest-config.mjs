@@ -53,7 +53,6 @@ export default class RestConfigDialog extends foundry.applications.api.DialogV2 
 			const html = await foundry.applications.handlebars.renderTemplate(template, content);
 			const chatData = {
 				user: game.user.id,
-				type: CONST.CHAT_MESSAGE_STYLES.OTHER,
 				content: html
 			};
 			ChatMessage.create(chatData);

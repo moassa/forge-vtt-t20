@@ -195,7 +195,7 @@ export default class ItemSheetT20 extends foundry.appv1.sheets.ItemSheet {
 			},
 
 			// Prepare Active Effects
-			effects: ActiveEffectT20.prepareActiveEffectCategories(item.effects),
+			effects: await ActiveEffectT20.prepareActiveEffectCategories(item.effects),
 			// Resource to Consume
 			abilityConsumptionTargets: this._getItemConsumptionTargets(item.system),
 			rolltags: foundry.applications.elements.HTMLStringTagsElement.create({

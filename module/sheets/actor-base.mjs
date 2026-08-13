@@ -101,7 +101,7 @@ export default class ActorSheetT20 extends foundry.appv1.sheets.ActorSheet {
 			uuid: this.actor.uuid,
 			// data: actorData.system.toObject(false),
 			items: actorData.items,
-			effects: ActiveEffectT20.prepareActiveEffectCategories(this.actor.effects),
+			effects: await ActiveEffectT20.prepareActiveEffectCategories(this.actor.effects),
 			owner: this.actor.isOwner,
 			limited: this.actor.limited,
 			options: this.options,
@@ -771,7 +771,7 @@ export default class ActorSheetT20 extends foundry.appv1.sheets.ActorSheet {
 	 */
 	_onItemRoll(event) {
 		event.preventDefault();
-		const usageConfig = game.settings.get("tormenta20", "UsageConfig") === "default";
+
 		let itemId;
 
 		if (event.currentTarget.closest(".item").dataset.itemId) {
@@ -779,7 +779,10 @@ export default class ActorSheetT20 extends foundry.appv1.sheets.ActorSheet {
 		} else itemId = event.currentTarget.dataset.itemId;
 		const item = this.actor.items.get(itemId);
 		if (!item) return;
-		const hasEffectsOrRolls = !!item.validOnUseEffects.length || !!item.system.rolls.length;
+		return item.roll({ event });
+
+		const usageConfig = game.settings.get("tormenta20", "UsageConfig") === "default";
+		const hasEffectsOrRolls = !!item.applicableOnUseEffects.length || !!item.system.rolls.length;
 		const rollConfigs = {
 			configureDialog: hasEffectsOrRolls && (usageConfig ? !event.shiftKey : event.shiftKey),
 			event
