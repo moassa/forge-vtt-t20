@@ -1,7 +1,6 @@
-import { endSegment } from "./apps/time-segment.mjs";
 import * as chat from "./chat.mjs";
+import { migrateWorld } from "./data/migrations.mjs";
 import * as macros from "./macros.mjs";
-import { migrateWorld } from "./models/migrations.mjs";
 
 export default function () {
 	/**
@@ -106,8 +105,8 @@ export default function () {
 	});
 
 	/* Chat Hooks */
-	// Hooks.on("renderChatMessageHTML", tormenta20.documents.ChatMessageT20);
-	Hooks.on("renderChatMessageHTML", (app, html, data) => {
+	Hooks.on("renderChatMessageHTML", tormenta20.documents.ChatMessageT20.renderChatMessageHTML);
+	Hooks.on("renderChatMessageHTML_DEPRECATED", (app, html, data) => {
 		chat.hideDieFlavor(app, html, data);
 		chat.ApplyButtons(app, html, data);
 		// Highlight critical success or failure die
@@ -142,9 +141,6 @@ export default function () {
 			.querySelectorAll(".chat-spend-mana")
 			.forEach((el) => el.addEventListener("click", chat._onChatSpendMana.bind(this)));
 	});
-
-	/* Add hook for End of Scene */
-	Hooks.on("renderCombatTracker", async (app, html) => endSegment(app, html));
 
 	/* Debug hook */
 	// Hooks.on("modifyTokenAttribute", async (attribute, value, isDelta, isBar) => {

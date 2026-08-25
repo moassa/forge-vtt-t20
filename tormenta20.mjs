@@ -18,11 +18,10 @@ import ItemT20 from "./module/documents/item.mjs";
 import TokenDocumentT20 from "./module/documents/token.mjs";
 globalThis.Roll = RollT20;
 
-// Import Canvas
+// Import canvas data
 import TokenRulerT20 from "./module/canvas/token-ruler.mjs";
 import TokenT20 from "./module/canvas/token.mjs";
 
-// Import Sheets
 import ActiveEffectConfigT20 from "./module/sheets/active-effects.mjs";
 import ActorSheetT20Bases from "./module/sheets/actor-bases.mjs";
 import ActorSheetT20Character from "./module/sheets/actor-character.mjs";
@@ -33,7 +32,6 @@ import ActorSheetT20CharacterTabbed from "./module/sheets/actor-tabbed.mjs";
 import RaceSheetT20 from "./module/sheets/item-race-sheet.mjs";
 import ItemSheetT20 from "./module/sheets/item-sheet.mjs";
 
-// Import Applications
 import AbilityUseDialog from "./module/apps/ability-use-dialog.mjs";
 import ActorSettings from "./module/apps/actor-settings.mjs";
 import CharacterProgression from "./module/apps/character-progression.mjs";
@@ -45,25 +43,23 @@ import TokenHUDT20 from "./module/apps/token-hud.mjs";
 import TraitSelector from "./module/apps/trait-selector.mjs";
 // import CombatTrackerT20 from "./module/apps/combat.mjs";
 
-// Import Helpers
+// UPDATED
 import * as applications from "./module/applications/_module.mjs";
-
 import * as canvas from "./module/canvas/_module.mjs";
+import * as models from "./module/data/_module.mjs";
+import * as documents from "./module/documents/_module.mjs";
+
+// NOT UPDATED
 import * as dataModels from "./module/dataModel/_module.mjs";
 import * as fields from "./module/dataModel/fields/_module.mjs";
 import * as dice from "./module/dice/dice.mjs";
-import * as documents from "./module/documents/_module.mjs";
 import * as hooks from "./module/hooks.mjs";
 import * as macros from "./module/macros.mjs";
-import * as models from "./module/models/_module.mjs";
 import "./module/modules.mjs";
 import * as utils from "./module/utils.mjs";
 
 // import {getSystemActorData,  getSystemItemData} from "./dataModel/data.mjs";
 import RegionLayerT20 from "./module/canvas/region-layer.mjs";
-
-import ActorDirectoryTormenta20 from "./module/sidebar/actor-directory.mjs";
-import ChatLogTormenta20 from "./module/sidebar/chat-log.mjs";
 
 /* -------------------------------------------- */
 /*  Foundry VTT Initialization                  */
@@ -96,7 +92,10 @@ globalThis.tormenta20 = {
 	conditions: T20.conditions,
 	entities: {
 		ActorT20,
-		ItemT20
+		ItemT20,
+		ActiveEffectT20,
+		ChatMessageT20,
+		TokenDocumentT20,
 	},
 	macros: macros,
 	utils,
@@ -107,14 +106,13 @@ globalThis.tormenta20 = {
 Hooks.once("init", async function () {
 	console.log("T20 | Initializing the Tormenta20 Game System");
 	game.tormenta20 = tormenta20;
-	CONFIG.ActiveEffect.legacyTransferral = true;
 	// Record Cnfiguration Values
 	CONFIG.T20 = T20;
-	CONFIG.Actor.documentClass = ActorT20;
-	CONFIG.Item.documentClass = ItemT20;
-	CONFIG.ActiveEffect.documentClass = ActiveEffectT20;
+	CONFIG.Actor.documentClass = documents.ActorT20;
+	CONFIG.Item.documentClass = documents.ItemT20;
+	CONFIG.ActiveEffect.documentClass = documents.ActiveEffectT20;
+	CONFIG.Token.documentClass = documents.TokenDocumentT20;
 
-	CONFIG.Token.documentClass = TokenDocumentT20;
 	CONFIG.Token.objectClass = TokenT20;
 	CONFIG.Token.rulerClass = TokenRulerT20;
 	CONFIG.Token.hudClass = TokenHUDT20;
@@ -132,12 +130,16 @@ Hooks.once("init", async function () {
 	// Register System Settings
 	SystemSettings();
 
-	// Patch Core Functions
-	CONFIG.ui.actors = ActorDirectoryTormenta20;
-	CONFIG.ui.chat = ChatLogTormenta20;
-	// CONFIG.ui.combat = CombatTrackerT20;
+	// Core Apps
+	CONFIG.ui.players = applications.ui.PlayersT20;
+	// Sidebars
+	CONFIG.ui.actors = applications.sidebar.ActorDirectoryT20;
+	CONFIG.ui.chat = applications.sidebar.ChatLogT20;
+	CONFIG.ui.combat = applications.sidebar.CombatTrackerT20;
 
-	CONFIG.ChatMessage.documentClass = ChatMessageT20;
+	CONFIG.ChatMessage.documentClass = documents.ChatMessageT20;
+	CONFIG.Combat.documentClass = documents.CombatT20;
+
 	CONFIG.Combat.initiative = {
 		formula: "1d20 + @pericias.inic.value",
 		decimals: 2
@@ -179,8 +181,10 @@ Hooks.once("init", async function () {
 		base: tormenta20.models.effect.BaseEffect,
 	}
 
+	CONFIG.ActiveEffect.expiryAction = "delete";
 	CONFIG.ActiveEffect.expiryEvents = {
-		sceneEnd: "T20.TimeScene"
+		sceneEnd: "T20.TimeScene",
+		sustainEnd: "T20.sustainEnd",
 	}
 
 	// Register sheet application classes

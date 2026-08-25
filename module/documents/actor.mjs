@@ -1,4 +1,3 @@
-import ItemT20 from "../documents/item.mjs";
 // import { T20 } from '../config.mjs';
 import AbilityUseDialog from "../apps/ability-use-dialog.mjs";
 import { applyOnUseEffects } from "../apps/ability-use.mjs";
@@ -9,39 +8,20 @@ import { d20Roll, simplifyRollFormula } from "../dice/dice.mjs";
  * Extend the base Actor class to implement additional system-specific logic.
  */
 export default class ActorT20 extends Actor {
-	static getDefaultArtwork(itemData) {
-		let img = this.DEFAULT_ICON;
-		if (itemData.type === "npc") {
-			img = "systems/tormenta20/icons/svg/orc-head.svg";
-		} else if (itemData.type === "simple") {
-			img = "systems/tormenta20/icons/svg/portrait.svg";
-		} else if (itemData.type === "bases") {
-			img = "systems/tormenta20/icons/svg/castle.svg";
-		} else if (itemData.type === "hazard") {
-			img = "icons/svg/hazard.svg";
+	static getDefaultArtwork(actorData) {
+		const types = {
+			npc: "systems/tormenta20/icons/svg/orc-head.svg",
+			simple: "systems/tormenta20/icons/svg/portrait.svg",
+			bases: "systems/tormenta20/icons/svg/castle.svg",
+			hazard: "icons/svg/hazard.svg",
 		}
+		const img = types[actorData.type] ?? this.DEFAULT_ICON;
 		return { img, texture: { src: img } };
 	}
 
 	/* -------------------------------------------- */
 	/*  Properties                                  */
 	/* -------------------------------------------- */
-
-	/**
-	 * Provide an object which organizes all augmenting ActiveEffects by their type
-	 * @type {Object<documents.ActiveEffect[]>}
-	 */
-	get aprimoramentosTypes() {
-		const tipos = ["arma", "atributo", "consumivel", "magia", "pericia", "poder"];
-		const types = Object.fromEntries(game.system.documentTypes.Item.map((t) => [t, []]));
-		for (let i of this.effects.values()) {
-			if (!i.system.onuse) continue;
-			for (let j of tipos) {
-				if (i.system.abilityUse.types.has(j)) types[i.type].push(i);
-			}
-		}
-		return types;
-	}
 
 	get modifiedFields() {
 		return this.effects.reduce((acc, ef) => {
@@ -93,13 +73,7 @@ export default class ActorT20 extends Actor {
 	/* -------------------------------------------- */
 
 	get nivel() {
-		return this.items.reduce((acc, item) => {
-			if (item.type === "classe") {
-				const classLevels = parseInt(item.system.niveis) || 1;
-				acc += classLevels;
-			}
-			return acc;
-		}, 0);
+		return this.itemTypes.classe.reduce((acc, i) => acc += i.system.niveis, 0);
 	}
 
 	/* -------------------------------------------- */
@@ -285,24 +259,6 @@ export default class ActorT20 extends Actor {
 	getLevelExp(nivel) {
 		const niveis = T20.xpPorNivel;
 		return niveis[Math.min(nivel, niveis.length - 1)];
-	}
-
-	/* -------------------------------------------- */
-
-	/**
-	 * Add a list of itens to the actor
-	 * TODO at Advancement
-	 * @param {Array.<ItemT20>} itens - The itens being added to the Actor;
-	 * @returns {Promise<ItemT20[]>}
-	 **/
-	async addEmbeddedItems(items) {
-		let itemsToAdd = items;
-		if (itemsToAdd.length === 0) return;
-		// create the selected items with this actor as parent
-		return ItemT20.createDocuments(
-			itemsToAdd.map((i) => i.toJSON()),
-			{ parent: this }
-		);
 	}
 
 	/* -------------------------------------------- */
@@ -625,7 +581,7 @@ export default class ActorT20 extends Actor {
 
 		let rollMode = "publicroll";
 		if (this.type === "npc" && show !== "npcs") rollMode = "selfroll";
-		ChatMessage.applyRollMode(chatData, rollMode);
+		ChatMessage.applyMode(chatData, rollMode);
 		ChatMessage.create(chatData, {});
 	}
 

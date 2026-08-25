@@ -1,6 +1,7 @@
 import * as abstract from "../abstract/_module.mjs";
 
 const { DocumentSheet } = foundry.applications.api;
+const { ActiveEffectConfig } = foundry.applications.sheets;
 const { renderTemplate } = foundry.applications.handlebars;
 const { Tormenta20ApplicationMixin, SheetActionEditImage } = abstract;
 
@@ -16,11 +17,10 @@ const TIME_DURATION_UNITS = CONST.ACTIVE_EFFECT_TIME_DURATION_UNITS;
  * @extends {ApplicationT20, DocumentSheet}
  */
 export default class ActiveEffectBaseSheet extends Tormenta20ApplicationMixin({
-	Base: DocumentSheet,
-	mixins: [SheetActionEditImage]
+	Base: ActiveEffectConfig,
+	hasHAM: true,
+	mixins: []
 }) {
-
-
 	/** @override */
 	static DEFAULT_OPTIONS = {
 		classes: ["active-effect", "active-effect-config"],
@@ -36,6 +36,7 @@ export default class ActiveEffectBaseSheet extends Tormenta20ApplicationMixin({
 		},
 		form: {
 			submitOnChange: true,
+			closeOnSubmit: false,
 		},
 		actions: {
 			resetStart: ActiveEffectBaseSheet.#onResetStart,
@@ -93,23 +94,30 @@ export default class ActiveEffectBaseSheet extends Tormenta20ApplicationMixin({
 	/* -------------------------------------------- */
 
 	/** @override */
-	async _preparePartContext(partId, context) {
+	async _preparePartContext2(partId, context) {
 		const partContext = await super._preparePartContext(partId, context);
 		if (!partContext.tabs) partContext.tabs = this._prepareTabs("sheet");
 		if (partId in partContext.tabs) partContext.tab = partContext.tabs[partId];
+		console.log(partId, Object.keys(partContext));
 		switch (partId) {
-			case "details": await this._prepareDetailsPartContext(partContext, context);
+			case "onuse": await this._prepareOnUsePartContext(partContext, context);
 				break;
-			case "duration": await this._prepareDurationPartContext(partContext, context);
-				break;
-			case "changes": await this._prepareChangesPartContext(partContext, context);
-				break;
+			// case "details": await this._prepareDetailsPartContext(partContext, context);
+			// 	break;
+			// case "duration": await this._prepareDurationPartContext(partContext, context);
+			// 	break;
+			// case "changes": await this._prepareChangesPartContext(partContext, context);
+			// 	break;
 		}
 		return partContext;
 	}
 
 
 	/* -------------------------------------------- */
+
+	async _prepareOnUsePartContext(partContext, context) {
+
+	}
 
 	/**
 	 * Prepare data relative to Details core and system fields
@@ -118,9 +126,10 @@ export default class ActiveEffectBaseSheet extends Tormenta20ApplicationMixin({
 	 */
 	async _prepareDetailsPartContext(partContext, context) {
 		const effect = this.document;
+		partContext.isActorEffect = effect.parent?.documentName === "Actor";
+		partContext.isItemEffect = effect.parent?.documentName === "Item";
 		partContext.statuses = Object.values(CONFIG.statusEffects)
-			.map(s => ({ value: s.id, label: _loc(s.name) }))
-			.sort((a, b) => a.label.localeCompare(b.label, game.i18n.lang));
+			.map(s => ({ value: s.id, label: _loc(s.name) }));
 		partContext.showIconOptions = Object.entries(CONST.ACTIVE_EFFECT_SHOW_ICON).map(([k, value]) => ({
 			value, label: _loc(`EFFECT.SHOW_ICON.${k.toLowerCase()}`)
 		})).reverse();
@@ -134,8 +143,6 @@ export default class ActiveEffectBaseSheet extends Tormenta20ApplicationMixin({
 	 * @param {*} context
 	 */
 	async _prepareDurationPartContext(partContext, context) {
-		const effect = this.document;
-		// Core
 		partContext.start = await this._prepareStartContext();
 		partContext.hasDuration = typeof context.source.duration.value === "number";
 		const groups = {
@@ -186,21 +193,21 @@ export default class ActiveEffectBaseSheet extends Tormenta20ApplicationMixin({
 	 * @param {*} partContext
 	 * @param {*} context
 	 */
-	async _prepareChangesPartContext(partContext, context) {
-		const effect = this.document;
-		const fields = effect.system.schema.fields.changes.element.fields;
-		const changeTypes = Object.entries(ActiveEffect.CHANGE_TYPES)
-			.map(([type, { label }]) => ({ type, label: _loc(label) }))
-			.sort((a, b) => a.label.localeCompare(b.label, game.i18n.lang))
-			.reduce((types, { type, label }) => {
-				types[type] = label;
-				return types;
-			}, {});
-		partContext.changes = await Promise.all(foundry.utils.deepClone(context.source.changes).map((change, index) => {
-			const defaultPriority = ActiveEffect.CHANGE_TYPES[change.type]?.defaultPriority ?? 0;
-			return this._renderChange({ change, index, fields, defaultPriority, changeTypes });
-		}));
-	}
+	// async _prepareChangesPartContext(partContext, context) {
+	// 	const effect = this.document;
+	// 	const fields = effect.system.schema.fields.changes.element.fields;
+	// 	const changeTypes = Object.entries(ActiveEffect.CHANGE_TYPES)
+	// 		.map(([type, { label }]) => ({ type, label: _loc(label) }))
+	// 		.sort((a, b) => a.label.localeCompare(b.label, game.i18n.lang))
+	// 		.reduce((types, { type, label }) => {
+	// 			types[type] = label;
+	// 			return types;
+	// 		}, {});
+	// 	partContext.changes = await Promise.all(foundry.utils.deepClone(context.source.changes).map((change, index) => {
+	// 		const defaultPriority = ActiveEffect.CHANGE_TYPES[change.type]?.defaultPriority ?? 0;
+	// 		return this._renderChange({ change, index, fields, defaultPriority, changeTypes });
+	// 	}));
+	// }
 
 	/**
 	 * Prepare render context for a single change object.
@@ -213,20 +220,20 @@ export default class ActiveEffectBaseSheet extends Tormenta20ApplicationMixin({
 	 * @returns {Promise<string>}
 	 * @protected
 	 */
-	async _renderChange(context) {
-		const { change, index } = context;
-		if (("value" in change) && (typeof change.value !== "string")) change.value = JSON.stringify(change.value);
-		Object.assign(
-			change,
-			["key", "type", "value", "phase", "priority"].reduce((paths, fieldName) => {
-				if (fieldName in change) paths[`${fieldName}Path`] = `system.changes.${index}.${fieldName}`;
-				return paths;
-			}, {}));
-		const changeType = ActiveEffect.CHANGE_TYPES[change.type];
-		context.changeType = changeType;
-		console.log("renderChange", changeType, context);
-		return changeType?.render?.(context) ?? renderTemplate("templates/sheets/active-effect/change.hbs", context);
-	}
+	// async _renderChange(context) {
+	// 	const { change, index } = context;
+	// 	if (("value" in change) && (typeof change.value !== "string")) change.value = JSON.stringify(change.value);
+	// 	Object.assign(
+	// 		change,
+	// 		["key", "type", "value", "phase", "priority"].reduce((paths, fieldName) => {
+	// 			if (fieldName in change) paths[`${fieldName}Path`] = `system.changes.${index}.${fieldName}`;
+	// 			return paths;
+	// 		}, {}));
+	// 	const changeType = ActiveEffect.CHANGE_TYPES[change.type];
+	// 	context.changeType = changeType;
+	// 	console.log("renderChange", changeType, context);
+	// 	return changeType?.render?.(context) ?? renderTemplate("templates/sheets/active-effect/change.hbs", context);
+	// }
 
 	/* -------------------------------------------- */
 
@@ -249,5 +256,4 @@ export default class ActiveEffectBaseSheet extends Tormenta20ApplicationMixin({
 			start: this.document.constructor.getEffectStart()
 		});
 	}
-
 }

@@ -1,4 +1,5 @@
 export const endSegment = async function (app, html) {
+	return;
 	if (game.user.isGM && !app.element.querySelector(".scene-segment")) {
 		const button = document.createElement("button");
 		button.className = "scene-segment flexF";

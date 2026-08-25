@@ -1,6 +1,8 @@
-import { applyChatCardDamage, applyChatManaSpend } from "../chat.mjs";
+import { applyChatCardDamage, applyChatManaSpend } from "../../chat.mjs";
 
-export default class ChatLogTormenta20 extends foundry.applications.sidebar.tabs.ChatLog {
+export default class ChatLogT20 extends foundry.applications.sidebar.tabs.ChatLog {
+
+	/** @inheritdoc */
 	_getEntryContextOptions() {
 		const context = super._getEntryContextOptions();
 		const canApply = (li) => {
@@ -71,7 +73,8 @@ export default class ChatLogTormenta20 extends foundry.applications.sidebar.tabs
 				icon: '<i class="fas fa-star" style="color: #33A0FF;"></i>',
 				visible: canApplyMana,
 				onClick: (li) => applyChatManaSpend(li, 0)
-			}, {
+			},
+			{
 				label: "Log to Console",
 				icon: "fa-solid fa-code",
 				visible: (li) => true,

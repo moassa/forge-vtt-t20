@@ -5,13 +5,21 @@ const { HandlebarsApplicationMixin } = foundry.applications.api;
  * Extends Base Application implementing common sheet interations;
  */
 export default function Tormenta20ApplicationMixin({ Base, dragndrop = false, mixins = [] }) {
+	// Extend the base class to avoid muatiting it
 	const BaseClass = class extends Base {
 		static DEFAULT_OPTIONS = {}
 	};
-	// First mix with HAM and DragNDrop
-	const mixedClass = dragndrop
-		? class extends DragAndDropMixin(HandlebarsApplicationMixin(BaseClass)) { }
-		: class extends HandlebarsApplicationMixin(BaseClass) { };
+	const hasHAM = Base.hasOwnProperty("PARTS");
+
+	const mixedClass = hasHAM
+		? dragndrop
+			? class extends DragAndDropMixin(BaseClass) { }
+			: BaseClass
+		: dragndrop
+			? class extends DragAndDropMixin(HandlebarsApplicationMixin(BaseClass)) { }
+			: class extends HandlebarsApplicationMixin(BaseClass) { };
+
+
 
 	// Then mix with any other template
 	for (const mixin of mixins) {

@@ -188,6 +188,13 @@
       "system": "tormenta20",
       "path": "./packs/macros",
       "type": "Macro"
+    },
+    {
+      "name": "efeitos",
+      "label": "Efeitos",
+      "system": "tormenta20",
+      "path": "./packs/efeitos",
+      "type": "ActiveEffect"
     }
   ],
   "packFolders": [
@@ -227,10 +234,10 @@
       "packs": ["tabelas-de-tesouro"]
     },
     {
-      "name": "Macros",
+      "name": "Outros",
       "sorting": "m",
       "color": "#000000",
-      "packs": ["macros"]
+      "packs": ["efeitos", "macros"]
     }
   ],
   "languages": [

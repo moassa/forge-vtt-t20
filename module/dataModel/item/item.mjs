@@ -31,15 +31,15 @@ export default class Tormenta20ItemData extends Tormenta20TypeData {
 				label: "T20.ItemOrigin",
 				hint: "T20.ItemOriginHint"
 			}),
-			tags: new fields.ArrayField(new fields.StringField(), {
+			tags: new fields.SetField(new fields.StringField({ blank: false }), {
 				label: "T20.ItemTagsList",
 				hint: "T20.ItemTagsListHint"
 			}),
-			rolltags: new fields.ArrayField(new fields.StringField(), {
+			rolltags: new fields.SetField(new fields.StringField({ blank: false }), {
 				label: "T20.ItemTagsList",
 				hint: "T20.ItemTagsListHint"
 			}),
-			automationtags: new fields.ArrayField(new fields.StringField(), {
+			automationtags: new fields.SetField(new fields.StringField({ blank: false }), {
 				label: "T20.ItemAutomationTags",
 				hint: "T20.ItemAutomationTagsHint"
 			}),
@@ -520,6 +520,27 @@ export default class Tormenta20ItemData extends Tormenta20TypeData {
 			const nvl = Math.floor(foundry.utils.getProperty(actor.system, "attributes.nivel.value") / 2);
 			if (actor.type === "npc") this.resistencia.cd = actor.system.attributes.cd;
 			else this.resistencia.cd = 10 + nvl + atr + this.resistencia.bonus;
+		}
+	}
+
+
+	/** @inheritDoc */
+	async _preUpdate(changes, options, user) {
+		const allowed = await super._preUpdate(changes, options, user);
+		if (allowed === false) return false;
+		if (foundry.utils.hasProperty(changes, "system.description.value")) {
+			const description = changes.system.description.value;
+			const html = foundry.utils.parseHTML(`<div>${description}</div>`);
+			html.querySelectorAll("a.content-link").forEach(a => {
+				a.outerHTML = `@UUID[${a.dataset.uuid}]{${a.innerText}}`
+			});
+			html.querySelectorAll(".inline-roll").forEach(a => {
+				const text = a.innerText.split(":");
+				text.pop();
+				const label = text.length ? `{${text.join(":")}}` : "";
+				a.outerHTML = `[[${a.dataset.tooltip}]]${label}`;
+			});
+			changes.system.description.value = html.innerHTML;
 		}
 	}
 }

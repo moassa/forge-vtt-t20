@@ -9,8 +9,13 @@
 - Removido: LegacyTranferal Efeitos passivos transferidos para o ator são aplicados diretamente do item.
 - Adicionado: Propriedades guardadas nas `flags` dos Efeitos foram movidas para o campos próprios.
 - Adicionado: Compêndios de Efeitos para Condições, Melhorias e Encantos. O sistema também criara Compêndios locais para facilitar a customização de efeitos e criar efeitos de suplementos.
-- Atualizado: `ActiveEffect._fromStatusEffect` copiara efeitos do compêndio;
-
+- Atualizado: `ActiveEffect._fromStatusEffect` copiara efeitos do compêndio.
+- Adicionado: Eventos de Expiração de Efeitos. Adicionado Cena e Sustentado.
+- Atualizado: Controle de Encerramento de Cena agora utiliza o método `ActiveEffectRegistry.refresh`.
+- Adicionado: Mensagem e controle de Efeitos Sustentados que serão mantidos/encerrados.
+- Adicionado: Controle de Cena na UI de jogadores.
+- Adicionado: Configuração de Segmentos de Cena da regra de Exploração
+de Masmorras (HdA pg.312).
 
 # Versão 1.5.015
 - Corrigido: Perda de Vida era afetada por RD;

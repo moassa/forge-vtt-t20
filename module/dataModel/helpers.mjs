@@ -494,9 +494,18 @@ function getObjectBaseData() {
 		}),
 		source: new fields.StringField({ initial: "" }),
 		origin: new fields.StringField({ initial: "" }),
-		tags: new fields.ArrayField(new fields.StringField()),
-		rolltags: new fields.ArrayField(new fields.StringField()),
-		automationtags: new fields.ArrayField(new fields.StringField()),
+		tags: new fields.SetField(new fields.StringField({ blank: false }), {
+			label: "T20.ItemTagsList",
+			hint: "T20.ItemTagsListHint"
+		}),
+		rolltags: new fields.SetField(new fields.StringField({ blank: false }), {
+			label: "T20.ItemTagsList",
+			hint: "T20.ItemTagsListHint"
+		}),
+		automationtags: new fields.SetField(new fields.StringField({ blank: false }), {
+			label: "T20.ItemAutomationTags",
+			hint: "T20.ItemAutomationTagsHint"
+		}),
 		chatFlavor: new fields.StringField({
 			required: true,
 			nullable: false,
