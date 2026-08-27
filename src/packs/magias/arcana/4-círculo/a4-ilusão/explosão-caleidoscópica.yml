@@ -64,18 +64,10 @@ system:
 
       <p>Uma criatura s&oacute; pode ser atordoada por esta magia uma vez por
       cena.</p>
-
-      <p><a class="content-link" draggable="true"
-      data-uuid="JournalEntry.s15J5SOYixL3Ajzr.JournalEntryPage.2jgO4I5cMaSKa9fv"
-      data-id="2jgO4I5cMaSKa9fv" data-type="JournalEntryPage" data-tooltip="Text
-      Page">Inconsciente</a></p>
-
-      <p><a class="content-link" draggable="true"
-      data-uuid="JournalEntry.s15J5SOYixL3Ajzr.JournalEntryPage.bD6XAyHQrWYr0BTQ"
-      data-id="bD6XAyHQrWYr0BTQ" data-type="JournalEntryPage" data-tooltip="Text
-      Page">Atordoado</a></p>
-
-      <p>@UUID[JournalEntry.s15J5SOYixL3Ajzr.JournalEntryPage.BUMyxT4YI9mdC8Aj]{Enjoado}</p>
+      
+      <p>@UUID[JournalEntry.s15J5SOYixL3Ajzr.JournalEntryPage.2jgO4I5cMaSKa9fv]</p>
+      <p>@UUID[JournalEntry.s15J5SOYixL3Ajzr.JournalEntryPage.bD6XAyHQrWYr0BTQ]</p>
+      <p>@UUID[JournalEntry.s15J5SOYixL3Ajzr.JournalEntryPage.BUMyxT4YI9mdC8Aj]</p>
     chat: ''
     unidentified: ''
   source: Tormenta20 — Edição Jogo do Ano, p. 193

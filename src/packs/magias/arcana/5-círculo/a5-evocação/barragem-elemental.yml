@@ -123,24 +123,14 @@ system:
       seguintes efeitos em criaturas que falharem em seus respectivos testes de
       resist&ecirc;ncia:</p>
 
-      <p>&bull; <em>&Aacute;cido:</em> <a class="content-link" draggable="true"
-      data-uuid="JournalEntry.s15J5SOYixL3Ajzr.JournalEntryPage.iGWU5WVm57STW7am"
-      data-id="iGWU5WVm57STW7am" data-type="JournalEntryPage" data-tooltip="Text
-      Page">Vulner&aacute;vel</a> at&eacute; o fim da cena.</p>
+      <p>&bull; <em>&Aacute;cido:</em> @UUID[JournalEntry.s15J5SOYixL3Ajzr.JournalEntryPage.iGWU5WVm57STW7am] at&eacute; o fim da cena.</p>
 
-      <p>&bull; <em>El&eacute;trica:</em> <a class="content-link"
-      draggable="true"
-      data-uuid="JournalEntry.s15J5SOYixL3Ajzr.JournalEntryPage.bD6XAyHQrWYr0BTQ"
-      data-id="bD6XAyHQrWYr0BTQ" data-type="JournalEntryPage" data-tooltip="Text
-      Page">Atordoado</a> por uma rodada. (apenas uma vez por cena).</p>
+      <p>&bull; <em>El&eacute;trica:</em> @UUID[JournalEntry.s15J5SOYixL3Ajzr.JournalEntryPage.bD6XAyHQrWYr0BTQ] por uma rodada. (apenas uma vez por cena).</p>
 
-      <p>&bull; <em>Fogo: <a class="content-link" draggable="true"
-      data-uuid="JournalEntry.s15J5SOYixL3Ajzr.JournalEntryPage.2M8CXrGavdU6g1ZI"
-      data-id="2M8CXrGavdU6g1ZI" data-type="JournalEntryPage" data-tooltip="Text
-      Page">Em Chamas</a></em>.</p>
+      <p>&bull; <em>Fogo:</em> @UUID[JournalEntry.s15J5SOYixL3Ajzr.JournalEntryPage.2M8CXrGavdU6g1ZI].</p>
 
-      <p>&bull; <em>Frio:
-      @UUID[JournalEntry.s15J5SOYixL3Ajzr.JournalEntryPage.e8JmqkgvL3H26vbi]{Lento}</em>at&eacute;
+      <p>&bull; <em>Frio:</em>
+      @UUID[JournalEntry.s15J5SOYixL3Ajzr.JournalEntryPage.e8JmqkgvL3H26vbi]at&eacute;
       o fim da cena.</p>
     chat: ''
     unidentified: ''

@@ -246,6 +246,7 @@ export default class ActorT20 extends Actor {
 			let healMods = this.system.modificadores?.cura || {};
 			data.curaGeral = simplifyRollFormula(healMods.geral?.filter(Boolean).join(" + "), data) || 0;
 			data.curaMagica = simplifyRollFormula(healMods.mag?.filter(Boolean).join(" + "), data) || 0;
+			data.curaALQ = simplifyRollFormula(healMods.alq?.filter(Boolean).join(" + "), data) || 0;
 		}
 
 		return data;

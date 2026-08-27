@@ -260,6 +260,11 @@ export default class Tormenta20ItemData extends Tormenta20TypeData {
 				label: "T20.ItemAreaOfEffectDescription",
 				hint: "T20.ItemAreaOfEffectDescriptionHint"
 			}),
+			area_behaviors: new fields.JSONField({
+				gmOnly: true,
+				label: "T20.ItemAreaBevariors",
+				hint: "T20.ItemAreaBevariorsHint"
+			}),
 			efeito: new fields.StringField({
 				required: true,
 				nullable: false,
@@ -274,6 +279,7 @@ export default class Tormenta20ItemData extends Tormenta20TypeData {
 			delete schema.range;
 			delete schema.alvo;
 			delete schema.area;
+			delete schema.area_behaviors;
 			delete schema.efeito;
 			delete schema.ativacao.condicao;
 			delete schema.ativacao.execucao;
@@ -284,6 +290,7 @@ export default class Tormenta20ItemData extends Tormenta20TypeData {
 			delete schema.range;
 			delete schema.alvo;
 			delete schema.area;
+			delete schema.area_behaviors;
 			delete schema.alcance;
 			delete schema.efeito;
 			delete schema.consume;

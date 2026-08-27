@@ -814,7 +814,11 @@ export default class CreatureData extends Tormenta20TypeData {
 				mag: new fields.ArrayField(new fields.StringField(), {
 					label: "T20.ModsDamageSpellEffectsValues",
 					hint: "T20.ModsDamageSpellEffectsValuesHint"
-				})
+				}),
+				alq: new fields.ArrayField(new fields.StringField(), {
+					label: "T20.ModsDamageAlchemyEffectsValues",
+					hint: "T20.ModsDamageAlchemyEffectsValuesHint"
+				}),
 			}),
 			dano: new fields.SchemaField({
 				ad: new fields.ArrayField(new fields.StringField(), {

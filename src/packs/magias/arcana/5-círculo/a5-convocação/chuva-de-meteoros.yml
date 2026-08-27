@@ -69,11 +69,8 @@ system:
       <p>Meteoros caem dos c&eacute;us, devastando a &aacute;rea afetada.
       Criaturas na &aacute;rea sofrem 15d6 pontos de dano de impacto, 15d6
       pontos de dano de fogo e ficam
-      @UUID[JournalEntry.s15J5SOYixL3Ajzr.JournalEntryPage.fJFNeZeKmfHMpblz]{Ca&iacute;do}
-      e presas sob os escombros (<a class="content-link" draggable="true"
-      data-uuid="JournalEntry.s15J5SOYixL3Ajzr.JournalEntryPage.TSRZ1cAIIIpsvOfK"
-      data-id="TSRZ1cAIIIpsvOfK" data-type="JournalEntryPage" data-tooltip="Text
-      Page">Agarrado</a>).</p>
+      @UUID[JournalEntry.s15J5SOYixL3Ajzr.JournalEntryPage.fJFNeZeKmfHMpblz]
+      e presas sob os escombros (@UUID[JournalEntry.s15J5SOYixL3Ajzr.JournalEntryPage.TSRZ1cAIIIpsvOfK]).</p>
 
       <p>Uma criatura que passe no teste de resist&ecirc;ncia sofre metade do
       dano total e n&atilde;o fica ca&iacute;da e agarrada. Uma criatura

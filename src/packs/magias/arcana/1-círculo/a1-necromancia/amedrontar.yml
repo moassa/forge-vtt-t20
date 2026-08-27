@@ -177,11 +177,8 @@ system:
   description:
     value: >-
       <p>O alvo &eacute; envolvido por energias sombrias e assustadoras. Se
-      falhar na resist&ecirc;ncia, fica <a class="content-link" draggable="true"
-      data-uuid="JournalEntry.s15J5SOYixL3Ajzr.JournalEntryPage.5n105JaAFlwIfkyX"
-      data-id="5n105JaAFlwIfkyX" data-type="JournalEntryPage" data-tooltip="Text
-      Page">Apavorado</a> por 1 rodada, depois
-      @UUID[JournalEntry.s15J5SOYixL3Ajzr.JournalEntryPage.ccqJXj25EVIzUhzo]{Abalado}.
+      falhar na resist&ecirc;ncia, fica @UUID[JournalEntry.s15J5SOYixL3Ajzr.JournalEntryPage.5n105JaAFlwIfkyX] por 1 rodada, depois
+      @UUID[JournalEntry.s15J5SOYixL3Ajzr.JournalEntryPage.ccqJXj25EVIzUhzo].
       Se passar, fica abalado por 1d4 rodadas.</p>
     chat: ''
     unidentified: ''

@@ -71,17 +71,22 @@ export default class BaseEffect extends ActiveEffectTypeDataModel {
 			range: new fields.NumberField({
 				required: true, min: 0, initial: 0
 			}),
-			transfer: new fields.SetField(
+			behaviors: new fields.JSONField({
+				gmOnly: true,
+				label: "DOCUMENT.RegionBehaviors",
+				hint: "T20.ConfigRegionBehavionHint"
+			}),
+			disposition: new fields.SetField(
 				new fields.StringField({
 					required: true,
 					choices: {
 						self: "T20.Self",
 						allies: "T20.Aliados",
-						enemys: "T20.Enemies",
+						enemies: "T20.Enemies",
 					}
 				}), {
 				label: "T20.AuraTransfer"
-			})
+			}),
 		});
 		return schema;
 	}

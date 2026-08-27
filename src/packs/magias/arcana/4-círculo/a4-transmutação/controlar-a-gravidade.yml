@@ -122,16 +122,10 @@ system:
       de b&ocirc;nus em testes de Atletismo para escalar e saltar. Uma criatura
       levitando fica inst&aacute;vel, sofrendo &ndash;2 de penalidade em testes
       de ataque.</p>
-
-      <p><a class="content-link" draggable="true"
-      data-uuid="JournalEntry.s15J5SOYixL3Ajzr.JournalEntryPage.MCED18aEe4UFeEVf"
-      data-id="MCED18aEe4UFeEVf" data-type="JournalEntryPage" data-tooltip="Text
-      Page">Fatigado</a></p>
-
-      <p><a class="content-link" draggable="true"
-      data-uuid="JournalEntry.s15J5SOYixL3Ajzr.JournalEntryPage.fJFNeZeKmfHMpblz"
-      data-id="fJFNeZeKmfHMpblz" data-type="JournalEntryPage" data-tooltip="Text
-      Page">Ca&iacute;do</a></p>
+      
+      <p>@UUID[JournalEntry.s15J5SOYixL3Ajzr.JournalEntryPage.MCED18aEe4UFeEVf]</p>
+      
+      <p>@UUID[JournalEntry.s15J5SOYixL3Ajzr.JournalEntryPage.fJFNeZeKmfHMpblz]</p>
     chat: ''
     unidentified: ''
   source: Tormenta20 — Edição Jogo do Ano, p. 186

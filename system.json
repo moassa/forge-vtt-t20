@@ -8,9 +8,17 @@
     "verified": "14",
     "maximum": "14"
   },
-  "authors": [{ "name": "Vizael" }],
-  "esmodules": ["tormenta20.mjs"],
-  "styles": ["tormenta20.css"],
+  "authors": [
+    {
+      "name": "Vizael"
+    }
+  ],
+  "esmodules": [
+    "tormenta20.mjs"
+  ],
+  "styles": [
+    "tormenta20.css"
+  ],
   "documentTypes": {
     "Actor": {
       "character": {
@@ -26,49 +34,95 @@
         ]
       },
       "npc": {
-        "htmlFields": ["detalhes.biography.value", "detalhes.biography.public"]
+        "htmlFields": [
+          "detalhes.biography.value",
+          "detalhes.biography.public"
+        ]
       },
       "simple": {
-        "htmlFields": ["detalhes.biography.value", "detalhes.biography.public"]
+        "htmlFields": [
+          "detalhes.biography.value",
+          "detalhes.biography.public"
+        ]
       },
       "bases": {
-        "htmlFields": ["detalhes.biography.value", "detalhes.biography.public"]
+        "htmlFields": [
+          "detalhes.biography.value",
+          "detalhes.biography.public"
+        ]
       },
       "hazard": {
-        "htmlFields": ["detalhes.actions", "detalhes.effects", "detalhes.goal"]
+        "htmlFields": [
+          "detalhes.actions",
+          "detalhes.effects",
+          "detalhes.goal"
+        ]
       }
     },
     "Item": {
       "arma": {
-        "htmlFields": ["description.value", "description.unidentified"]
+        "htmlFields": [
+          "description.value",
+          "description.unidentified"
+        ]
       },
       "equipamento": {
-        "htmlFields": ["description.value", "description.unidentified"]
+        "htmlFields": [
+          "description.value",
+          "description.unidentified"
+        ]
       },
       "classe": {
-        "htmlFields": ["description.value", "description.unidentified"]
+        "htmlFields": [
+          "description.value",
+          "description.unidentified"
+        ]
       },
       "comodo": {
-        "htmlFields": ["description.value", "description.unidentified"]
+        "htmlFields": [
+          "description.value",
+          "description.unidentified"
+        ]
       },
       "consumivel": {
-        "htmlFields": ["description.value", "description.unidentified"]
+        "htmlFields": [
+          "description.value",
+          "description.unidentified"
+        ]
       },
       "magia": {
-        "htmlFields": ["description.value", "description.unidentified"]
+        "htmlFields": [
+          "description.value",
+          "description.unidentified"
+        ]
       },
       "mobilia": {
-        "htmlFields": ["description.value", "description.unidentified"]
+        "htmlFields": [
+          "description.value",
+          "description.unidentified"
+        ]
       },
       "poder": {
-        "htmlFields": ["description.value", "description.unidentified"]
+        "htmlFields": [
+          "description.value",
+          "description.unidentified"
+        ]
       },
       "race": {
-        "htmlFields": ["description.value", "description.unidentified"]
+        "htmlFields": [
+          "description.value",
+          "description.unidentified"
+        ]
       },
       "tesouro": {
-        "htmlFields": ["description.value", "description.unidentified"]
+        "htmlFields": [
+          "description.value",
+          "description.unidentified"
+        ]
       }
+    },
+    "RegionBehavior": {
+      "roll": {}
     }
   },
   "packs": [
@@ -202,7 +256,10 @@
       "name": "Actors",
       "sorting": "m",
       "color": "#000000",
-      "packs": ["ameacas", "convocacoes"]
+      "packs": [
+        "ameacas",
+        "convocacoes"
+      ]
     },
     {
       "name": "Items",
@@ -225,19 +282,26 @@
       "name": "Journals",
       "sorting": "m",
       "color": "#000000",
-      "packs": ["basico"]
+      "packs": [
+        "basico"
+      ]
     },
     {
       "name": "RollTables",
       "sorting": "m",
       "color": "#000000",
-      "packs": ["tabelas-de-tesouro"]
+      "packs": [
+        "tabelas-de-tesouro"
+      ]
     },
     {
       "name": "Outros",
       "sorting": "m",
       "color": "#000000",
-      "packs": ["efeitos", "macros"]
+      "packs": [
+        "efeitos",
+        "macros"
+      ]
     }
   ],
   "languages": [
@@ -254,8 +318,16 @@
   ],
   "flags": {
     "hotReload": {
-      "extensions": ["css", "hbs", "json"],
-      "paths": ["tormenta20.css", "templates", "lang"]
+      "extensions": [
+        "css",
+        "hbs",
+        "json"
+      ],
+      "paths": [
+        "tormenta20.css",
+        "templates",
+        "lang"
+      ]
     }
   },
   "grid": {

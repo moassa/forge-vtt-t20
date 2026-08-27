@@ -1225,7 +1225,10 @@ export default class ItemT20 extends Item {
 			pericia = itemData.rolls.find((i) => i.type === "ataque")?.parts[1][0];
 			lancinante = Object.values(itemData.upgrades)?.includes("lancinating");
 		}
-		for (let r of itemData.rolls.filter((i) => i.type === "dano")) {
+		const recoveryTypes = new Set(["curatpv", "curapm", "curatpm"]);
+		for (let r of itemData.rolls) {
+			if (r.type !== "dano") continue;
+			const isRecovery = r.parts.some((p) => recoveryTypes.has(p[1]));
 			const isHealing = r.parts.some((p) => p[1] === "curapv");
 			const perda = r.parts.some((p) => p[1] === "perda");
 			const isSpell = this.type === "magia";
@@ -1254,11 +1257,13 @@ export default class ItemT20 extends Item {
 				}
 				return [dano, tipo, extra];
 			});
-			if (isHealing) {
+			if (isRecovery) {
+				// Ganho de PVPM Temporários e Recuperação de Mana não aplica modificadores extras
+			} else if (isHealing) {
 				const bonuses = foundry.utils.getProperty(actorData, "modificadores.cura") || {};
 				if (bonuses.geral?.filter(Boolean).length) parts.push(["@curaGeral", "", ""]);
 				if (isSpell && bonuses.mag?.filter(Boolean).length) parts.push(["@curaMagica", "", ""]);
-				else if (isAlchemical && bonuses.alq?.filter(Boolean).length) parts.push(["@danoALQ", "", ""]);
+				else if (isAlchemical && bonuses.alq?.filter(Boolean).length) parts.push(["@curaALQ", "", ""]);
 			} else if (!perda) {
 				const bonuses = foundry.utils.getProperty(actorData, "modificadores.dano") || {};
 				if (bonuses.geral?.filter(Boolean).length) parts.push(["@dano", "", ""]);

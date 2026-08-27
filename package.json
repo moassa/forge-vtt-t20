@@ -13,8 +13,9 @@
     "lint:warnings": "eslint --max-warnings 0 --ext .js,.cjs,.mjs .",
     "lint:errors": "eslint --quiet --ext .js,.cjs,.mjs .",
     "lint:fix:errors": "eslint --quiet --ext .js,.cjs,.mjs --fix .",
-    "postinstall": "npm run build:ci",
-    "update-manifest": "node ./utils/update-manifest.js"
+    "postinstall2": "npm run build:ci",
+    "update-manifest": "node ./utils/update-manifest.js",
+    "fix-content-links": "node ./utils/fix-content-links.mjs"
   },
   "browserslist": [
     "last 3 versions"
@@ -36,6 +37,7 @@
     "autoprefixer": "^10.4.21",
     "rollup": "^4.59.0",
     "rollup-plugin-postcss": "^4.0.2",
-    "showdown": "^2.1.0"
+    "showdown": "^2.1.0",
+    "js-yaml": "^5.4.0"
   }
 }

@@ -99,7 +99,7 @@ export default class ActiveEffectT20 extends foundry.documents.ActiveEffect {
 		if (change.key.startsWith("system.attributes.movement") && change.key.match(/(walk|fly|burrow|climb|swim)$/)) {
 			change.key += change.type == "add" ? ".bonus" : ".base";
 		}
-		if (change.key.match(".*.")) {
+		if (change.key.search(/\.\*\./) > 0) {
 			return this._prepareProxyChange(targetDoc, change, options);
 		}
 		return super.applyChange(targetDoc, change, options);
@@ -182,7 +182,7 @@ export default class ActiveEffectT20 extends foundry.documents.ActiveEffect {
 		let isExpiryEvent = super.isExpiryEvent(event, context);
 		if (event == "sceneEnd" && context.combat) {
 			// Combat related events should also terminate
-			const combatEvents = new Set("sustainEnd", "combatEnd", "roundStart", "roundEnd", "turnStart", "turnEnd");
+			const combatEvents = new Set(["sustainEnd", "combatEnd", "roundStart", "roundEnd", "turnStart", "turnEnd"]);
 			if (combatEvents.has(this.duration.expiry)) isExpiryEvent = true;
 		}
 

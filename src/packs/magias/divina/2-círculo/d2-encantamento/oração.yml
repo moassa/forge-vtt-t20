@@ -19,11 +19,19 @@ effects:
         durationScene: false
         items: ''
     changes:
-      - key: system.modificadores.pericias.geral&bonus
+      - key: system.modificadores.pericias.geral
         mode: 2
         value: '1'
         priority: 0
-      - key: system.modificadores.dano.geral&bonus
+      - key: system.modificadores.dano.geral
+        mode: 2
+        value: '1'
+        priority: 0
+      - key: system.modificadores.pericias.bonus
+        mode: 2
+        value: '1'
+        priority: 0
+      - key: system.modificadores.dano.bonus
         mode: 2
         value: '1'
         priority: 0
@@ -132,11 +140,19 @@ effects:
     disabled: false
     _id: Ee6cpZ5dhIofP9KA
     changes:
-      - key: system.modificadores.pericias.geral&bonus
+      - key: system.modificadores.pericias.geral
         mode: 2
         value: '2'
         priority: null
-      - key: system.modificadores.dano.geral&bonus
+      - key: system.modificadores.dano.geral
+        mode: 2
+        value: '2'
+        priority: null
+      - key: system.modificadores.pericias.bonus
+        mode: 2
+        value: '2'
+        priority: null
+      - key: system.modificadores.dano.bonus
         mode: 2
         value: '2'
         priority: null

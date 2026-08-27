@@ -16,6 +16,7 @@
 - Adicionado: Controle de Cena na UI de jogadores.
 - Adicionado: Configuração de Segmentos de Cena da regra de Exploração
 de Masmorras (HdA pg.312).
+- Corrigido: Rolagem de Recuperação de Mana e PV/PM Temporário aplicavam bonus de dano
 
 # Versão 1.5.015
 - Corrigido: Perda de Vida era afetada por RD;

@@ -143,12 +143,9 @@ system:
     value: >-
       <p>Voc&ecirc; dispara um raio azul esbranqui&ccedil;ado de gelo e ar
       congelante. O alvo sofre 10d8 pontos de dano de frio e fica preso em um
-      bloco de gelo (<a class="content-link" draggable="true"
-      data-uuid="JournalEntry.s15J5SOYixL3Ajzr.JournalEntryPage.3dcJKe2SGu8mnafU"
-      data-id="3dcJKe2SGu8mnafU" data-type="JournalEntryPage" data-tooltip="Text
-      Page">Paralisado</a>). Se passar no teste de resist&ecirc;ncia, sofre
+      bloco de gelo (@UUID[JournalEntry.s15J5SOYixL3Ajzr.JournalEntryPage.3dcJKe2SGu8mnafU]). Se passar no teste de resist&ecirc;ncia, sofre
       metade do dano e, em vez de paralisado, fica
-      @UUID[JournalEntry.s15J5SOYixL3Ajzr.JournalEntryPage.e8JmqkgvL3H26vbi]{Lento}
+      @UUID[JournalEntry.s15J5SOYixL3Ajzr.JournalEntryPage.e8JmqkgvL3H26vbi]
       por uma rodada.</p>
 
       <p>&Eacute; poss&iacute;vel quebrar o gelo para libertar uma criatura
