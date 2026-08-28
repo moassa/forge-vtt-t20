@@ -22,7 +22,6 @@ export default class ChatMessageT20 extends ChatMessage {
 	 * @param {*} html 
 	 */
 	_renderSustainMessage(html) {
-		console.log("Render._renderSustainMessage", html);
 		html.querySelector(".message-content").classList.add("tormenta20", "sustain", "flexcol");
 		if (this.content) return;
 		const button = document.createElement("button");
@@ -148,7 +147,6 @@ export default class ChatMessageT20 extends ChatMessage {
 	 */
 	static async _onSustainEffect(event, target) {
 		target ??= event.target;
-		console.log("_onSustainEffect", event, target);
 		const { createFormGroup, createMultiSelectInput } = foundry.applications.fields;
 		const { messageId } = target.closest("li").dataset;
 		const message = game.messages.get(messageId);

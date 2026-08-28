@@ -59,6 +59,25 @@ export default class CombatT20 extends foundry.documents.Combat {
 
 	async _manageDOTEffects(combatant, context) {
 		if (!combatant.actor) return;
-
+		if (!combatant.actor.isOwner) return;
+		const ongoingDamage = combatant.actor.effects.filter(e => e.isOngoingDamage);
+		const rollData = combatant.actor.getRollData();
+		for (const effect of ongoingDamage) {
+			const messageData = {
+				flavor: effect.name,
+				speaker: ChatMessage.getSpeaker({ actor: combatant.actor }),
+				rolls: [],
+			}
+			for (const change of effect.system.changes) {
+				if (change.key != "danoContinuo") continue;
+				const roll = Roll.create(`${change.value}`, rollData, {
+					title: effect.name,
+				});
+				await roll.evaluate();
+				messageData.rolls.push(roll);
+			}
+			if (!messageData.rolls.length) continue;
+			await ChatMessage.create(messageData);
+		}
 	}
 }

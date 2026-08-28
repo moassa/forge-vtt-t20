@@ -139,6 +139,7 @@ Hooks.once("init", async function () {
 
 	CONFIG.ChatMessage.documentClass = documents.ChatMessageT20;
 	CONFIG.Combat.documentClass = documents.CombatT20;
+	CONFIG.Region.documentClass = documents.RegionT20;
 
 	CONFIG.Combat.initiative = {
 		formula: "1d20 + @pericias.inic.value",

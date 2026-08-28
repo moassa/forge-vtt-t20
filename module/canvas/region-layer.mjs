@@ -15,7 +15,7 @@ export default class RegionLayerT20 extends foundry.canvas.layers.RegionLayer {
 		regionData.name = shape.name;
 		if (message) {
 			Object.assign(regionData, {
-				flags: { tormenta20: { message: message.uuid } }
+				flags: { tormenta20: { message: message.id } }
 			});
 		}
 		shape.quantity ??= 1;
@@ -27,9 +27,17 @@ export default class RegionLayerT20 extends foundry.canvas.layers.RegionLayer {
 			// TODO Automate Behaviors
 		}
 		const placementOptions = {};
+		placementOptions.tormenta20 = { vizael: 10 };
+		if (shape.type == "emanation") {
+			placementOptions.attachToToken = true;
+		}
 		if (["cone", "line"].includes(shape.type)) {
 			placementOptions.onRotate = this._placementOnRotate;
 		};
+		if (true) {
+			placementOptions.onMove = this._placementOnMove;
+			placementOptions.preConfirm = this._placementPreConfirm;
+		}
 		console.log(regionData);
 		await canvas.regions.placeRegion(regionData, placementOptions);
 	}
@@ -114,16 +122,14 @@ export default class RegionLayerT20 extends foundry.canvas.layers.RegionLayer {
 			case "emanation":
 				shapeData.radius = lengthPixels;
 				shapeData.gridBased = true;
-				if (shape.token) {
-					shapeData.base = {
-						type: "token",
-						shape: 4,
-						hole: false,
-						width: 1,
-						height: 1,
-						x: 0,
-						y: 0,
-					}
+				shapeData.base = {
+					type: "token",
+					shape: 4,
+					hole: false,
+					width: 1,
+					height: 1,
+					x: 0,
+					y: 0,
 				}
 			default:
 				break;
@@ -155,8 +161,20 @@ export default class RegionLayerT20 extends foundry.canvas.layers.RegionLayer {
 		return false;
 	}
 
+	/**
+	 *
+	 * @param {*} data
+	 * @returns
+	 */
 	_placementOnMove(data) {
-		// TODO show range
+		// console.log("_placementOnMove", data);
+		if (!data.rangePreview) {
+
+		}
+	}
+
+	_placementPreConfirm(data) {
+		console.log(data);
 	}
 
 }

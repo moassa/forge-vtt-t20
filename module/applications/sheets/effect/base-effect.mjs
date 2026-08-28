@@ -46,7 +46,7 @@ export default class ActiveEffectBaseSheet extends Tormenta20ApplicationMixin({
 
 	static PARTS = {
 		header: {
-			template: "templates/sheets/active-effect/header.hbs"
+			template: "systems/tormenta20/templates/sheets/active-effect/header.hbs"
 		},
 		tabs: {
 			template: "templates/generic/tab-navigation.hbs"

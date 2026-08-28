@@ -29,10 +29,10 @@ export const ApplyButtons = function (app, html, data) {
 
 	const containerCheck = chatHTML.querySelectorAll(".roll:not(.roll--dano)");
 	for (const check of containerCheck) {
+		break;
 		btncontainer = document.createElement("span");
 		btncontainer.classList.add("dice-btn", "formula", "right");
-
-		button = btnCreate('<i class="fas fa-redo"></i>', ["chat-reroll"], "Re-rolar");
+		// button = btnCreate('<i class="fa fa-redo"></i>', ["chat-reroll"], "Re-rolar");
 		btncontainer.append(button);
 
 		check.append(btncontainer);

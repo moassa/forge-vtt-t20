@@ -8,3 +8,5 @@ export { default as TokenDocumentT20 } from "./token.mjs";
 export { default as ChatMessageT20 } from "./chat-message.mjs";
 export { default as CombatT20 } from "./combat.mjs";
 
+export { default as RegionT20 } from "./region.mjs";
+

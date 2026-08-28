@@ -7,6 +7,18 @@ export default class BaseEffect extends ActiveEffectTypeDataModel {
 	/** @inheritDoc */
 	static defineSchema() {
 		const schema = super.defineSchema();
+		schema.targets = new fields.SetField(new fields.StringField({
+			required: true,
+			choices: {
+				self: "T20.Self",
+				ally: "T20.Ally",
+				enemy: "T20.Enemy",
+			}
+		}, {
+			required: true,
+			label: "T20.EffectTargets",
+			initial: []
+		}));
 		schema.status = new fields.SchemaField({
 			category: new fields.StringField({
 				required: true,
@@ -115,6 +127,7 @@ export default class BaseEffect extends ActiveEffectTypeDataModel {
 		if (this.parent.target.documentName != "Actor") return false;
 		let suppressed = super.isSuppressed ?? false;
 		if (!suppressed) suppressed = this.isSupressedByEquipment;
+		if (!suppressed) suppressed = this.isSupressedByTarget;
 		if (this.status) {
 			if (!suppressed) suppressed = this.isSuppressedByInheritance;
 			if (!suppressed) suppressed = this.isSuppressedByDuplicated;
@@ -129,6 +142,28 @@ export default class BaseEffect extends ActiveEffectTypeDataModel {
 	get isSupressedByEquipment() {
 		const item = this.parent.item;
 		if (item) return item.areEffectsSuppressed;
+		return false;
+	}
+
+	/* -------------------------------------------- */
+
+	get isSupressedByTarget() {
+		if (!this.targets?.size) return false;
+		if (!this.origin) return false;
+		const origin = fromUuidSync(this.origin);
+		const originToken = origin.documentName == "Actor"
+			? origin.parent.actor.token ?? origin.parent.actor.getActiveTokens().at(0)
+			: origin.documentName == "RegionBehavior"
+				? origin.region.attachment.token
+				: null;
+
+		const parentToken = this.parent.actor.token ?? this.parent.actor.getActiveTokens().at(0);
+		if (!parentToken || !originToken) return false;
+		const isSelf = parentToken.actor == originToken.actor;
+		const isAlly = parentToken.disposition == originToken.disposition;
+		if (this.targets.has("self") && !isSelf) return true;
+		if (this.targets.has("ally") && !isAlly) return true;
+		if (this.targets.has("enemy") && isAlly) return true;
 		return false;
 	}
 
@@ -219,6 +254,12 @@ export default class BaseEffect extends ActiveEffectTypeDataModel {
 	/* -------------------------------------------- */
 
 	/** @inheritDoc */
+	// async _preCreate(data, options, user) {
+	// 	const allowed = await super._preCreate(data, options, user);
+	// 	if (allowed === false) return false;
+	// }
+
+	/** @inheritDoc */
 	_onCreate(data, options, userId) {
 		super._onCreate(data, options, userId);
 		if (game.userId != userId) return;
@@ -253,7 +294,7 @@ export default class BaseEffect extends ActiveEffectTypeDataModel {
 
 	/* -------------------------------------------- */
 
-	_deleteChildEffects() {
+	_deleteChildStatus() {
 		if (this.parent.parent.documentName != "Actor") return;
 		if (!this.status.childEffect.size) return;
 		const effects = this.parent.actor.effects

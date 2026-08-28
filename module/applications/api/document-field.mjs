@@ -12,6 +12,7 @@ export default class DocumentFieldSheet extends HandlebarsApplicationMixin(Docum
 		sheetConfig: false,
 		classes: ["tormenta20"],
 		form: {
+			handler: DocumentFieldSheet.#onSubmitForm,
 			submitOnChange: true,
 		},
 		position: {
@@ -36,10 +37,30 @@ export default class DocumentFieldSheet extends HandlebarsApplicationMixin(Docum
 		context.schema = this.document.system.schema.fields;
 		context.fields = [];
 		for (const path of this.#fields) {
-			const field = this.document.getFieldForProperty(path);
-			const value = foundry.utils.getProperty(this.document._source, path);
-			context.fields.push({ field, value });
+			const field = {};
+			field.field = this.document.getFieldForProperty(path);
+			if (field.field instanceof foundry.data.fields.JSONField) {
+				field.value = foundry.utils.getProperty(this.document, path);
+			} else {
+				field.value = foundry.utils.getProperty(this.document._source, path);
+			}
+			context.fields.push(field);
 		}
 		return context;
+	}
+
+	static #onSubmitForm(event, form, formData) {
+		const submitData = foundry.utils.expandObject(formData.object);
+		for (const [path, value] of Object.entries(formData.object)) {
+			const field = this.document.getFieldForProperty(path);
+			if (field instanceof foundry.data.fields.JSONField) {
+				try {
+					JSON.parse(value);
+				} catch (error) {
+					return ui.notifications.error("JSON Inválido");
+				}
+			}
+		}
+		this.document.update(submitData);
 	}
 } 

@@ -443,7 +443,7 @@ const applyEffectChanges = (ch, qty, ef, optEffectList, effectList, effectChange
 	// 	// for (const iterator of Object.entries( effectList ) ) {
 
 	// 	// }
-	// 	for (const _ch of _ef.changes) {
+	// 	for (const _ch of _ef.system.changes) {
 	// 		if (_ch.key != m[2]) continue;
 	// 		if (ch.type == "custom") {
 	// 		} else if (ch.type == "multiply") {
@@ -610,7 +610,7 @@ function applyOnUseEffects(rolledItem, configuration = {}) {
 	[effectList, optEffectList].forEach(function (list) {
 		list.forEach(function (ef, index) {
 			changes.push([]);
-			ef.changes.forEach(function (ch) {
+			ef.system.changes.forEach(function (ch) {
 				changes[index].push({
 					key: ch.key,
 					value: Number(ch.value) || ch.value,
@@ -623,9 +623,9 @@ function applyOnUseEffects(rolledItem, configuration = {}) {
 
 	// SORT
 	onUseEffects.sort((a, b) =>
-		a.changes.some((ch) => ch.type == "override") && !b.changes.some((ch) => ch.type == "override")
+		a.system.changes.some((ch) => ch.type == "override") && !b.system.changes.some((ch) => ch.type == "override")
 			? -1
-			: b.changes.some((ch) => ch.type == "override") && !a.changes.some((ch) => ch.type == "override")
+			: b.system.changes.some((ch) => ch.type == "override") && !a.system.changes.some((ch) => ch.type == "override")
 				? 1
 				: 0
 	);
@@ -666,9 +666,9 @@ function applyOnUseEffects(rolledItem, configuration = {}) {
 		id.ativacao.custo += Number(ouEff.cost) || 0;
 		if (!Number(applied[ef.id]?.custo + 1) && item.type == "magia") options.truque = true;
 
-		const temBonusTeste = ef.changes.filter((ch) => ["roll", "ataque"].includes(ch.key)).length > 1;
+		const temBonusTeste = ef.system.changes.filter((ch) => ["roll", "ataque"].includes(ch.key)).length > 1;
 		// Prepare onUseEffects rollModifiers
-		for (let ch of ef.changes) {
+		for (let ch of ef.system.changes) {
 			if (ch.key == "custo") {
 				if (ch.value == "/2") options.halfCost = true;
 			}
@@ -749,10 +749,10 @@ function applyOnUseEffects(rolledItem, configuration = {}) {
 			tempEffect.duration = !foundry.utils.isEmpty(duration) ? duration : ef.duration;
 			// tempEffect.duration ??= undefined; foundry.utils.mergeObject(ef.duration, duration);
 			tempEffect.disabled = false;
-			tempEffect.changes = changes[index] ?? ef.changes;
+			tempEffect.system.changes = changes[index] ?? ef.system.changes;
 			for (const efch of effectChanges) {
 				let m = efch.key.match(/\$(.*)#(.*)/);
-				for (const _ch of tempEffect.changes) {
+				for (const _ch of tempEffect.system.changes) {
 					if (_ch.key != m[2]) continue;
 					if (efch.type == "custom") {
 					} else if (efch.type == "multiply") {
@@ -765,16 +765,16 @@ function applyOnUseEffects(rolledItem, configuration = {}) {
 				}
 			}
 
-			if (tempEffect.changes) {
-				tempEffect.changes.sort((c, d) => (!Number(c.value) || c.key.match(/efeito.\w+/) ? 1 : -1));
-				tempEffect.changes = tempEffect.changes.reduce((object, ch) => {
+			if (tempEffect.system.changes) {
+				tempEffect.system.changes.sort((c, d) => (!Number(c.value) || c.key.match(/efeito.\w+/) ? 1 : -1));
+				tempEffect.system.changes = tempEffect.system.changes.reduce((object, ch) => {
 					let key = ch.key.match(/efeito.\w+/) ? ch.key.toString().split(".")[1] : ch.key;
 					let idx = object.map((ob) => ob.key).indexOf(key);
 					if (ch.type == "add" && idx == -1 && ch.key.match(/efeito.\w+/)) {
 						ch.key = key;
 					}
-					if (ch.value.toString().match(/^@[^\s|+|-]+/)) {
-						ch.value = simplifyRollFormula(ch.value, rollData);
+					if (Roll.validate(`${ch.value}`)) {
+						ch.value = simplifyRollFormula(`${ch.value}`, rollData) || "0";
 					}
 
 					if (idx >= 0) {
@@ -832,7 +832,7 @@ function applyOnUseEffects(rolledItem, configuration = {}) {
 					}
 					return object;
 				}, []);
-				tempEffect.changes.forEach((m) => (m.key = m.key.replace(/\&\w+$/, "")));
+				tempEffect.system.changes.forEach((m) => (m.key = m.key.replace(/\&\w+$/, "")));
 			}
 		}
 		// Set Origin as the Actor who caused the effects

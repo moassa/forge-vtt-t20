@@ -66,7 +66,21 @@ export default class ActiveEffectT20 extends foundry.documents.ActiveEffect {
 	/* -------------------------------------------- */
 
 	get isSustained() {
+		if (this._stats.duplicateSource) {
+			const origin = foundry.utils.fromUuidSync(this._stats.duplicateSource);
+			if (origin != this.actor) return false;
+		}
 		return this.active && this.duration?.expiry == "sustainEnd";
+	}
+
+	/* -------------------------------------------- */
+
+	get isOngoingDamage() {
+		if (this._stats.duplicateSource) {
+			const origin = foundry.utils.fromUuidSync(this._stats.duplicateSource);
+			if (origin != this.actor) return false;
+		}
+		return this.system.changes.some(c => c.key == "danoContinuo");
 	}
 
 	/* -------------------------------------------- */
@@ -223,7 +237,11 @@ export default class ActiveEffectT20 extends foundry.documents.ActiveEffect {
 	async _preCreate(data, options, user) {
 		const allowed = await super._preCreate(data, options, user);
 		if (allowed === false) return false;
-
+		if (this._stats.duplicateSource) {
+			// Avoid duplicate effects from RegionBehaviors
+			const origin = foundry.utils.fromUuidSync(this._stats.duplicateSource);
+			if (origin?.actor == this.parent) return false;
+		}
 		if (this.parent && ["comodo", "mobilia"].includes(this.parent.type)) {
 			this.updateSource({ transfer: !this.parent.system.residentes });
 		}

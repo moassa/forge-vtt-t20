@@ -145,8 +145,7 @@ export default class ItemT20 extends Item {
 			const type = doc.parent.id == this.id ? "self" : itemAbilityUseType;
 			if (!doc.system.onuse) continue;
 			const { types, names } = doc.system.abilityUse;
-			if (!types.has(type)) continue;
-			if (names.size && !names.has(this.name)) continue;
+			if (!types.has(type) && !names.has(this.name)) continue;
 			applicableOnUseEffects.push(doc);
 		}
 		// Embedded Effects must appear first
