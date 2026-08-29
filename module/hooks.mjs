@@ -26,9 +26,6 @@ export default function () {
 				return false;
 			}
 		});
-
-		// prepareStatusesCompendium();
-		// prepareUpgradesCompendium();
 	});
 
 	/**
@@ -59,9 +56,10 @@ export default function () {
 			await ActiveEffect.createDocuments(create, { keepId: true, pack: "world.statuses" });
 			pack.configure({ locked: true });
 		}
+		const TextEditor = foundry.applications.ux.TextEditor.implementation;
 		CONFIG.statusEffects = {};
 		const docs = await pack.getDocuments();
-		docs.forEach(effect => {
+		for (const effect of docs) {
 			const identifier = effect.statuses.first();
 			CONFIG.statusEffects[identifier] = {
 				id: identifier,
@@ -69,9 +67,9 @@ export default function () {
 				name: effect.name,
 				img: effect.img,
 				link: effect.toAnchor().outerHTML,
-				description: effect.description,
+				description: await TextEditor.enrichHTML(effect.description),
 			}
-		});
+		}
 
 		CONFIG.controlIcons.defeated = CONFIG.statusEffects["inconsciente"].img;
 		CONFIG.specialStatusEffects.BLIND = "cego";

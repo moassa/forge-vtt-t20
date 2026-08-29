@@ -57,7 +57,6 @@
 	{{/if}}
 
 	{{#each rolls as |r id|}}
-		<div class="row">{{r.roll.options.title}}</div>
 		<div class="roll {{r.roll.tipo}}" data-roll-title="{{r.roll.options.title}}">{{{r.template}}}</div>
 	{{/each}}
 	{{#if effects}}
@@ -83,6 +82,11 @@
 				<i class="fas fa-ruler-combined"></i>
 				{{localize 'T20.PlaceAbilityTemplate'}}
 			</button>
+		</footer>
+	{{/if}}
+	{{#if statuses }}
+		<footer class="">
+			<p>{{#each statuses as |status|}}@STATUS[{{status}}] {{/each}}</p>
 		</footer>
 	{{/if}}
 </div>

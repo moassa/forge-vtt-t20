@@ -756,6 +756,13 @@ export default class ItemT20 extends Item {
 		if (!options.truque && consumeMana) {
 			consumeMana = Math.max(item.system.ativacao.custo, 1);
 		} else consumeMana = false;
+		options.manaCost = Math.max(item.system.ativacao?.custo, 0) || (options.hasManaCost ? 1 : null);
+		if (this.parent) {
+			const extraCost = this.parent.system.modificadores.custoPM;
+			options.manaCost += extraCost;
+		}
+		if (options.truque) options.manaCost = 0;
+		else if (options.halfCost) options.manaCost = Math.floor(options.manaCost / 2);
 
 		const consumeSettings = consumeResource || consumeMana || consumeQuantity || consumeSelf;
 		if (consumeSettings) {
@@ -777,7 +784,7 @@ export default class ItemT20 extends Item {
 				this.actor.updateEmbeddedDocuments("Item", [itemUpdates]);
 			}
 			if (!foundry.utils.isEmpty(manaUpdate)) {
-				this.actor.spendMana(manaUpdate.value, 0, false);
+				this.actor.spendMana(options.manaCost, 0, false);
 			}
 			if (!foundry.utils.isEmpty(resourceUpdates)) {
 				this.actor.update(resourceUpdates);
@@ -1054,28 +1061,33 @@ export default class ItemT20 extends Item {
 		const token = this.actor.token;
 		let rolls = [];
 
-		let manaCost = Math.max(this.system.ativacao?.custo, 0) || (options.hasManaCost ? 1 : null);
-		if (this.parent) {
-			const extraCost = this.parent.system.modificadores.custoPM;
-			manaCost += extraCost;
-		}
-		if (options.truque) manaCost = 0;
-		else if (options.halfCost) manaCost = Math.floor(manaCost / 2);
-
 		const templateData = {
 			actor: this.actor,
 			tokenId: token?.uuid || null,
 			itemId: options.itemId,
 			item: this,
-			custo: manaCost,
+			custo: options.manaCost,
 			system: await this.getChatData(),
 			labels: this.labels,
 			truque: options.truque,
 			onUseEffects: options.onUseEffects,
 			effects: options.effects,
 			placeTemplate: options.template,
-			rolls: []
+			rolls: [],
+			statuses: new Set(),
 		};
+		const descriptions = [
+			templateData.item.system.description.value.stripDiacritics(),
+			...templateData.onUseEffects.map(i => i.description.stripDiacritics()),
+		];
+		for (const status of CONFIG.statusEffects) {
+			if (["invisivel", "morto", "sustentando"].includes(status.id)) continue;
+			const pattern = new RegExp([status.id, status.id.replace(/o$/, "a")].join("|"), "ig");
+			if (descriptions.some(text => text.match(pattern))) {
+				templateData.statuses.add(status.id);
+			}
+		}
+		templateData.statuses = [...templateData.statuses];
 
 		if (this.system.rolled) {
 			for (let [key, roll] of Object.entries(this.system.rolled)) {
@@ -1110,7 +1122,7 @@ export default class ItemT20 extends Item {
 		};
 
 		// Apply the roll mode to adjust message visibility
-		ChatMessage.applyRollMode(chatData, rollMode || game.settings.get("core", "rollMode"));
+		ChatMessage.applyMode(chatData, rollMode || game.settings.get("core", "rollMode"));
 
 		// Create the Chat Message or return its data
 		return createMessage ? ChatMessage.create(chatData) : chatData;
