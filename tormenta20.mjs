@@ -249,6 +249,10 @@ Hooks.once("init", async function () {
 		label: "T20.ItemSheet"
 	});
 
+	// Register enrichers
+	CONFIG.TextEditor.enrichers = [
+		applications.ux.enrichers.applyEffect,
+	]
 	// Core Application Overrides
 	// Preload Handlebars Templates
 	preloadHandlebarsTemplates();

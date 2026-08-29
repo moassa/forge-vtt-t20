@@ -110,15 +110,16 @@ export async function migration_1_6_0(params) {
 
 
 export function deleteLegacyTranferedEffects(parentDocument, operations) {
-	if (![parentDocument.id, parentDocument.parent?.id].includes("czEU9mC3uaWAfR7L")) return;
+	// if (![parentDocument.id, parentDocument.parent?.id].includes("czEU9mC3uaWAfR7L")) return;
 
 	const updates = [];
 	const deleteIds = [];
 	for (const effect of parentDocument.effects) {
+		if (effect.origin?.startsWith("Compendium")) continue;
 		const origin = foundry.utils.fromUuidSync(effect.origin);
 		if (!origin || origin.parent != effect.parent) continue;
 		const original = origin.effects.getName(effect.name);
-		if (!original.transfer) continue;
+		if (!original?.transfer) continue;
 		deleteIds.push(effect.id);
 		const diff = foundry.utils.diffObject(original._source, effect._source);
 		const hasDiffFlags = foundry.utils.hasProperty(diff, "flags.tormenta20");
@@ -145,7 +146,7 @@ export function deleteLegacyTranferedEffects(parentDocument, operations) {
 }
 
 export function migrateEffectsSystemFlags(parentDocument, operations) {
-	if (![parentDocument.id, parentDocument.parent?.id].includes("czEU9mC3uaWAfR7L")) return;
+	// if (![parentDocument.id, parentDocument.parent?.id].includes("czEU9mC3uaWAfR7L")) return;
 
 	const updates = [];
 	for (const effect of parentDocument.effects) {
@@ -193,6 +194,23 @@ export function migrateEffectsSystemFlags(parentDocument, operations) {
 			updateData.description = `<p>${effect.name}</p>`;
 		}
 		updates.push(updateData);
+	}
+
+	operations.push({
+		updates,
+		action: "update",
+		documentName: "ActiveEffect",
+		parent: parentDocument,
+	});
+}
+
+export function migrateEffectsDuration(parentDocument, operations) {
+	if (parentDocument.system.duracao?.units == "scene") return;
+
+	const updates = [];
+	for (const effect of parentDocument.effects) {
+		if (effect.system.onuse) continue;
+
 	}
 
 	operations.push({

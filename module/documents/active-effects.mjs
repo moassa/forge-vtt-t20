@@ -43,10 +43,6 @@ export default class ActiveEffectT20 extends foundry.documents.ActiveEffect {
 
 		if (this.isCondition && this.parent.documentName == "Actor") {
 			this._createChildEffects(data, options, userId);
-			/**
-			 * TODO: UPGRADE EFFECT
-			 * Ideally the one with shortest duration? (But we don't have the correct durations ^^')
-			 */
 		}
 	}
 

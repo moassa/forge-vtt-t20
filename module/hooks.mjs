@@ -3,6 +3,18 @@ import { migrateWorld } from "./data/migrations.mjs";
 import * as macros from "./macros.mjs";
 
 export default function () {
+
+
+
+	/* -------------------------------------------------- */
+	/*   Setup Hook                                       */
+	/* -------------------------------------------------- */
+
+	Hooks.once("setup", () => {
+		prepareStatusesCompendium();
+		// prepareUpgradesCompendium();
+	});
+
 	/**
 	 * Once the entire VTT framework is initialized, check to see if we should perform a data migration
 	 */
@@ -15,8 +27,8 @@ export default function () {
 			}
 		});
 
-		prepareStatusesCompendium();
-		prepareUpgradesCompendium();
+		// prepareStatusesCompendium();
+		// prepareUpgradesCompendium();
 	});
 
 	/**
@@ -30,11 +42,25 @@ export default function () {
 				label: "Condições",
 				name: "statuses",
 				type: "ActiveEffect",
-				ownership
+				ownership: {
+					ASSISTANT: "OWNER",
+					PLAYER: "OBSERVER"
+				}
 			});
+			// Copy Effects from system compendium;
+			const effects = game.packs.get("tormenta20.efeitos");
+			const docs = await effects.getDocuments();
+			const create = [];
+			for (const doc of docs) {
+				if (doc.folder.id == "69zW3EVSgASXTmsp") {
+					create.push(doc.toObject());
+				}
+			}
+			await ActiveEffect.createDocuments(create, { keepId: true, pack: "world.statuses" });
+			pack.configure({ locked: true });
 		}
-		const docs = await pack.getDocuments();
 		CONFIG.statusEffects = {};
+		const docs = await pack.getDocuments();
 		docs.forEach(effect => {
 			const identifier = effect.statuses.first();
 			CONFIG.statusEffects[identifier] = {
@@ -42,6 +68,7 @@ export default function () {
 				uuid: effect.uuid,
 				name: effect.name,
 				img: effect.img,
+				link: effect.toAnchor().outerHTML,
 				description: effect.description,
 			}
 		});

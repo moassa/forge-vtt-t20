@@ -10,7 +10,7 @@ export default class CombatT20 extends foundry.documents.Combat {
 		const segmentedScene = game.settings.get("tormenta20", "segmentedScene");
 		if (segmentedScene.max > 0) return await super.endCombat();
 		else {
-			await tormenta20.helpers.endScene(this);
+			await tormenta20.utils.endScene(this);
 			return this;
 		}
 	}

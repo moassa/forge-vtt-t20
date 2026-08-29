@@ -36,7 +36,6 @@ export default class RegionLayerT20 extends foundry.canvas.layers.RegionLayer {
 		};
 		if (true) {
 			placementOptions.onMove = this._placementOnMove;
-			placementOptions.preConfirm = this._placementPreConfirm;
 		}
 		console.log(regionData);
 		await canvas.regions.placeRegion(regionData, placementOptions);
@@ -172,9 +171,4 @@ export default class RegionLayerT20 extends foundry.canvas.layers.RegionLayer {
 
 		}
 	}
-
-	_placementPreConfirm(data) {
-		console.log(data);
-	}
-
 }

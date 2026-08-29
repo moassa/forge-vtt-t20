@@ -398,6 +398,7 @@ const applyActorChanges = (ch, qty, ef, item, id, ad) => {
 const effectFields = (key) => {
 	if (["efeito", "condicao", "treino"].includes(key)) return true;
 	else if (key.startsWith("$")) return true;
+	else if (key.startsWith("+")) return true;
 	return false;
 };
 const effectFields2 = {
@@ -428,6 +429,12 @@ const applyEffectChanges = (ch, qty, ef, optEffectList, effectList, effectChange
 		if (tef) effectList.push(new ActiveEffect(tef));
 	}
 	// Modify effect
+	else if (ch.key.startsWith("+")) {
+		ch.key = ch.key.replace("+", "");
+		effectList.forEach((ef) => ef.system.changes.push(ch));
+		// optEffectList.forEach((ef) => ef.system.changes.push(ch));
+		// effectChanges.push(ch);
+	}
 	// else if (false && ch.key.match(/\$([^\#]+)\#/)) {
 	// 	if (qty && !ch.value.startsWith("@")) {
 	// 		ch.value = new Roll(ch.value).alter(qty, 0, {
@@ -593,33 +600,33 @@ function applyOnUseEffects(rolledItem, configuration = {}) {
 	const applied = foundry.utils.expandObject(configuration).aprs ?? {};
 	const onUseEffects = item.applicableOnUseEffects.filter((ef) => applied[ef.id]?.aplica);
 	// Get Active Effects From Item
-	const effectList = item.effects.filter(
-		(ef) =>
-			(ef.system.onuse && ef.duration.expiry == "sceneEnd" && !ef.disabled)
+	const effectList = item.effects.filter((ef) => {
+		return (ef.system.onuse && ef.isTemporary && !ef.disabled)
 			|| (!ef.system.onuse && !ef.disabled)
-	);
-	const optEffectList = item.effects.filter(
-		(ef) =>
-			(ef.system.onuse && ef.duration.expiry == "sceneEnd" && ef.disabled)
+	});
+	const optEffectList = item.effects.filter((ef) => {
+		return (ef.system.onuse && ef.isTemporary && ef.disabled)
 			|| (!ef.system.onuse && ef.disabled)
-	);
+	});
 
 	//
 	const effectChanges = [];
-	const changes = [];
-	[effectList, optEffectList].forEach(function (list) {
-		list.forEach(function (ef, index) {
-			changes.push([]);
-			ef.system.changes.forEach(function (ch) {
-				changes[index].push({
-					key: ch.key,
-					value: Number(ch.value) || ch.value,
-					type: ch.type,
-					priority: ch.priority
+	if (false) {
+		const changes = [];
+		[effectList, optEffectList].forEach(function (list) {
+			list.forEach(function (ef, index) {
+				changes.push([]);
+				ef.system.changes.forEach(function (ch) {
+					changes[index].push({
+						key: ch.key,
+						value: Number(ch.value) || ch.value,
+						type: ch.type,
+						priority: ch.priority
+					});
 				});
 			});
 		});
-	});
+	}
 
 	// SORT
 	onUseEffects.sort((a, b) =>
@@ -683,23 +690,60 @@ function applyOnUseEffects(rolledItem, configuration = {}) {
 			else if (effectFields(ch.key)) applyEffectChanges(ch, ouEff.qty, ef, optEffectList, effectList, effectChanges);
 			else applyRollChanges(ch, ouEff.qty, ef, item, id, rollMods, options);
 
-			changes.forEach(function (efch) {
-				if (!ef.system.abilityUse?.aumenta || (ef.system.abilityUse?.aumenta && efch.map((i) => i.key).includes(ch.key))) {
-					if (ch.key == "system.tamanho" && efch.findIndex((i) => i.key == "system.tamanho")) {
-						efch.splice(
-							efch.findIndex((i) => i.key == "system.tamanho"),
-							1
-						);
-					}
-					// Push the change to the changes list
-					efch.push({
-						key: ch.key,
-						value: Number(ch.value * ouEff.qty) || ch.value,
-						type: ch.type,
-						priority: ch.priority
+			const addToChange = function (transferEF) {
+				if (ch.key.startsWith("@")) {
+					transferEF.system.changes.forEach((efch) => {
+						if (efch.key == ch.key) {
+							// efch.value = Number(efch.value * ouEff.qty) || efch.value;
+							efch.value = Number(efch.value) + (Number(ch.value * ouEff.qty) || ch.value);
+						}
 					});
+				} else if (ch.key.startsWith("+")) {
+				} else {
+					/**
+					 * @deprecate
+					 * https://gitlab.com/vizael/Tormenta20/-/blob/91fe89cdd02107b0d7d165208f1ca5bd490990aa/module/apps/ability-use.mjs#L667
+					 * Um dos grandes problemas desse sistema é não ter direcionamentos claros
+					 * Alguns Efeitos de Uso podem adicionar alterações no efeito principal
+					 * Outros Efeitos de Uso podem aumentar os bonus já concedidos
+					 * As configurações são praticamente as mesmas
+					 * O que acaba sendo o fator decisório é
+					 * - Permitir multiplas aplicações & ter o campo presente, para aumentar
+					 * - Não permitir multiplas aplicações para incluir
+					 **/
+					const deveIncluir = ef.system.abilityUse?.aumenta
+						? transferEF.system.changes.some((i) => i.key == ch.key)
+						: true;
+					if (deveIncluir) {
+						transferEF.system.changes.push({
+							key: ch.key,
+							value: Number(ch.value * ouEff.qty) || ch.value,
+							type: ch.type,
+							priority: ch.priority
+						});
+					}
 				}
-			});
+			}
+			effectList.forEach(addToChange);
+			optEffectList.forEach(addToChange);
+
+			// changes.forEach(function (efch) {
+			// 	if (!ef.system.abilityUse?.aumenta || (ef.system.abilityUse?.aumenta && efch.map((i) => i.key).includes(ch.key))) {
+			// 		if (ch.key == "system.tamanho" && efch.findIndex((i) => i.key == "system.tamanho")) {
+			// 			efch.splice(
+			// 				efch.findIndex((i) => i.key == "system.tamanho"),
+			// 				1
+			// 			);
+			// 		}
+			// 		// Push the change to the changes list
+			// 		efch.push({
+			// 			key: ch.key,
+			// 			value: Number(ch.value * ouEff.qty) || ch.value,
+			// 			type: ch.type,
+			// 			priority: ch.priority
+			// 		});
+			// 	}
+			// });
 			// if( ch.key.match(/^(data|system|?)./) ){
 			// }
 		}
@@ -721,6 +765,11 @@ function applyOnUseEffects(rolledItem, configuration = {}) {
 	let rollData = actor.getRollData();
 	effectList.forEach(function (ef, index) {
 		let tempEffect = ef.toObject();
+		console.log({
+			effect: tempEffect.name,
+			changesA: ef.system.changes.map(c => c),
+			changesB: tempEffect.system.changes.map(c => c),
+		});
 		let duration = {};
 		let children = [];
 		let durValue = Number(id.duracao?.value) || 1;
@@ -732,6 +781,10 @@ function applyOnUseEffects(rolledItem, configuration = {}) {
 				duration.units = `${units}s`;
 				duration.value = Number(value) ?? 1;
 				duration.expiry = "turnStart";
+			} else if (units == "sust") {
+				duration.expiry = "sustainEnd";
+				duration.units = "rounds";
+				duration.value = null;
 			} else if (units == "scene") {
 				duration.expiry = "sceneEnd";
 				duration.units = "rounds";
@@ -749,7 +802,7 @@ function applyOnUseEffects(rolledItem, configuration = {}) {
 			tempEffect.duration = !foundry.utils.isEmpty(duration) ? duration : ef.duration;
 			// tempEffect.duration ??= undefined; foundry.utils.mergeObject(ef.duration, duration);
 			tempEffect.disabled = false;
-			tempEffect.system.changes = changes[index] ?? ef.system.changes;
+			tempEffect.system.changes = ef.system.changes;
 			for (const efch of effectChanges) {
 				let m = efch.key.match(/\$(.*)#(.*)/);
 				for (const _ch of tempEffect.system.changes) {
@@ -768,6 +821,14 @@ function applyOnUseEffects(rolledItem, configuration = {}) {
 			if (tempEffect.system.changes) {
 				tempEffect.system.changes.sort((c, d) => (!Number(c.value) || c.key.match(/efeito.\w+/) ? 1 : -1));
 				tempEffect.system.changes = tempEffect.system.changes.reduce((object, ch) => {
+					tempEffect.system.changes.reduce((acc, _ch) => {
+						if (_ch.key.startsWith("@")) {
+							const key = _ch.key.replace("@", "");
+							acc[key] ??= _ch.value;
+						}
+						return acc;
+					}, rollData);
+
 					let key = ch.key.match(/efeito.\w+/) ? ch.key.toString().split(".")[1] : ch.key;
 					let idx = object.map((ob) => ob.key).indexOf(key);
 					if (ch.type == "add" && idx == -1 && ch.key.match(/efeito.\w+/)) {
@@ -838,8 +899,7 @@ function applyOnUseEffects(rolledItem, configuration = {}) {
 		// Set Origin as the Actor who caused the effects
 		// Determine which turn it will be proc an effect over time
 		// tempEffect.origin = ef.uuid ?? item.uuid ?? actor.uuid;
-		tempEffect.origin = item.uuid ?? actor.uuid;
-		tempEffect.origin = tempEffect.origin?.replace(/.?ActiveEffect.\w+/, "");
+		tempEffect.origin = actor.uuid;
 		options.effects.push([tempEffect, ...children]);
 	});
 

@@ -295,7 +295,8 @@ export default class BaseEffect extends ActiveEffectTypeDataModel {
 	/* -------------------------------------------- */
 
 	_deleteChildStatus() {
-		if (this.parent.parent.documentName != "Actor") return;
+		if (!this.parent.isEmbedded) return;
+		if (this.parent.parent?.documentName != "Actor") return;
 		if (!this.status.childEffect.size) return;
 		const effects = this.parent.actor.effects
 			.filter((ef) => ef.origin == this.parent.uuid)
