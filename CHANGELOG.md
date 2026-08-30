@@ -1,7 +1,7 @@
 # Lista de Mudanças
 
 # Versão 1.6.0
-- Conversões para v14
+- Migrações para v14
 - Corrigido: Configuração de deslocamentos.
 - Removido: Implementação da Busca por documentos na aba de Compêndios, a feature agora é nativa do Foundry.
 - Removido: Implementação de Measured Templates, substituida pelas Regiões.
