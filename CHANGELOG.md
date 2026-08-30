@@ -20,10 +20,7 @@ de Masmorras (HdA pg.312).
 - Atualizado: Efeitos de Dano Contínuo, o caminho `dano` foi abandonado em favor de `danoContinuo`. Efeitos com este caminho executarão a formula no campo value no inicio do turno do Ator.
 - Adicionado. Items podem configurar Comportamentos de Regiões (Region Behaviors). Este campo só pode ser editado pelo mestre, por motivos de segurança.
 - Adicionado. Suporte para Aura.
-
-- Atualizado: Compêndio. Items foram atualizados adicionando novas features do Foundry.
-- - Luz. Tocha, Lampião, Luz (Magia), Escuridão. Possuem efeito que adiciona luz ao token.
-- - Habilidades de Efeitos de Àrea, Sustentadas.
+- Adicionado. Enricher para condições. `@STATUS[id]` gera um link pro efeito e um botão para aplicar o efeito aos tokens selecionados.
 
 # Versão 1.5.015
 - Corrigido: Perda de Vida era afetada por RD;
