@@ -284,7 +284,6 @@ export default class BaseEffect extends ActiveEffectTypeDataModel {
 	 * @returns 
 	 */
 	async _createChildStatus() {
-		console.log("_createChildStatus", this.parent);
 		if (!this.parent.isEmbedded) return;
 		if (this.parent.parent.documentName != "Actor") return;
 		const { childEffect } = this.status;

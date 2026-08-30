@@ -581,7 +581,7 @@ export default class ActorT20 extends Actor {
 		};
 
 		let rollMode = "publicroll";
-		if (this.type === "npc" && show !== "npcs") rollMode = "selfroll";
+		if (this.type === "npc" && show !== "npcs") rollMode = "self";
 		ChatMessage.applyMode(chatData, rollMode);
 		ChatMessage.create(chatData, {});
 	}
@@ -727,7 +727,7 @@ export default class ActorT20 extends Actor {
 			// 	acc[ef.id] = { aplica: 1, custo: ef.system.abilityUse.custo };
 			// 	return o;
 			// }, {});
-			rConfig = applyOnUseEffects(itemData, configuration);
+			rConfig = await applyOnUseEffects(itemData, configuration);
 		}
 
 		rConfig.itemData = itemData;
@@ -863,7 +863,7 @@ export default class ActorT20 extends Actor {
 				acc[ef.id] = { aplica: 1, custo: ef.system.abilityUse.custo || 0 };
 				return acc;
 			}, {});
-			rConfig = applyOnUseEffects(itemData, configuration);
+			rConfig = await applyOnUseEffects(itemData, configuration);
 			// OLD
 			if (false) {
 				let active = this.effects.filter(
@@ -873,7 +873,7 @@ export default class ActorT20 extends Actor {
 					o[ef.id] = { aplica: 1, custo: ef.flags.tormenta20.custo };
 					return o;
 				}, {});
-				rConfig = applyOnUseEffects(itemData, configuration);
+				rConfig = await applyOnUseEffects(itemData, configuration);
 			}
 		}
 		rConfig.itemData = itemData;
@@ -971,7 +971,7 @@ export default class ActorT20 extends Actor {
 		// chatData.rolls = options.itemData.rolled;
 
 		// Apply the roll mode to adjust message visibility
-		ChatMessage.applyRollMode(chatData, rollMode || game.settings.get("core", "rollMode"));
+		ChatMessage.applyMode(chatData, rollMode || game.settings.get("core", "rollMode"));
 
 		// Create the Chat Message or return its data
 		if (createMessage) {

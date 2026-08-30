@@ -69,7 +69,11 @@ export default function () {
 				name: effect.name,
 				img: effect.img,
 				link: effect.toAnchor().outerHTML,
+				category: effect.system.status?.category,
 				description: await TextEditor.enrichHTML(effect.description),
+				// SOME PLACES RETRIEVE EFFECT DATA FROM SYNCHRONOUSLY T20.conditions
+				// MORE WORK IS REQUIRED TO CONVERT THOSE PLACES TO ASYNC
+				_source: effect.clone({}, { keepId: false }).toObject(),
 			}
 		}
 

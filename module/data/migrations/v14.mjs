@@ -116,7 +116,7 @@ export function deleteLegacyTranferedEffects(parentDocument, operations) {
 		if (effect.origin?.startsWith("Compendium")) continue;
 		const origin = foundry.utils.fromUuidSync(effect.origin);
 		if (!origin || origin.parent != effect.parent) continue;
-		const original = origin.effects.getName(effect.name);
+		const original = origin.effects?.getName(effect.name);
 		if (!original?.transfer) continue;
 		deleteIds.push(effect.id);
 		const diff = foundry.utils.diffObject(original._source, effect._source);

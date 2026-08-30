@@ -138,18 +138,21 @@ export default class ItemT20 extends Item {
 		const itemAbilityUseType = relate[this.type];
 		// Filter on use effects applied automatic
 		const applicableOnUseEffects = [];
-		for (let [path, doc] of this.actor.traverseEmbeddedDocuments()) {
-			if (doc.documentName != "ActiveEffect") continue;
-			// Temporary effectt may only be applied when they are on actors
-			if (doc.isTemporary && path != "effects") continue;
-			const type = doc.parent.id == this.id ? "self" : itemAbilityUseType;
-			if (!doc.system.onuse) continue;
-			const { types, names } = doc.system.abilityUse;
-			if (!types.has(type) && !names.has(this.name)) continue;
-			applicableOnUseEffects.push(doc);
+		const includeEffect = (effect) => {
+			if (!effect.system.onuse) return;
+			// Temporary effects may only be applied when they are on actors
+			if (effect.isTemporary && effect.parent.documentName == "Item") return;
+			const type = effect.parent.id == this.id ? "self" : itemAbilityUseType;
+			const { types, names } = effect.system.abilityUse;
+			if (!types.has(type) && !names.has(this.name)) return;
+			applicableOnUseEffects.push(effect);
 		}
-		// Embedded Effects must appear first
-		applicableOnUseEffects.sort((a, b) => a.parent.id == this.id ? -1 : 1);
+		for (const effect of this.effects) includeEffect(effect);
+		for (const item of this.actor.items) {
+			if (item.id == this.id) continue;
+			for (const effect of item.effects) includeEffect(effect);
+		}
+		for (const effect of this.actor.effects) includeEffect(effect);
 		return applicableOnUseEffects;
 	}
 
@@ -658,7 +661,7 @@ export default class ItemT20 extends Item {
 				acc[ef.id] = { aplica: 1, custo: ef.system.abilityUse.custo || 0 };
 				return acc;
 			}, {});
-			options = applyOnUseEffects(item, configuration);
+			options = await applyOnUseEffects(item, configuration);
 
 			if (false) {
 				const relate = {
@@ -688,7 +691,7 @@ export default class ItemT20 extends Item {
 					acc[ef.id] = { aplica: 1, custo: ef.system.abilityUse.custo || 0 };
 					return acc;
 				}, {});
-				options = applyOnUseEffects(item, configuration);
+				options = await applyOnUseEffects(item, configuration);
 			}
 			// OLD
 			if (false) {
@@ -702,7 +705,7 @@ export default class ItemT20 extends Item {
 					o[ef.id] = { aplica: 1, custo: ef.flags.tormenta20.custo || "0" };
 					return o;
 				}, {});
-				options = applyOnUseEffects(item, configuration);
+				options = await applyOnUseEffects(item, configuration);
 			}
 		}
 		consumeMana = consumeMana ? consumeMana : consumeMana != item.system.ativacao?.custo > 0;

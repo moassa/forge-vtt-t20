@@ -412,7 +412,7 @@ const effectFields2 = {
  * @param {Array} optEffectList   List of ActiveEffect from Item
  * @param {Array} effectList      List of ActiveEffect that will go to be applied
  */
-const applyEffectChanges = (ch, qty, ef, optEffectList, effectList, effectChanges) => {
+function applyEffectChanges(ch, qty, ef, optEffectList, effectList, effectChanges) {
 	if (ch.key === "efeito") {
 		let tef = optEffectList.find((e) => e.name === ch.value);
 		// include effect from the item
@@ -425,8 +425,12 @@ const applyEffectChanges = (ch, qty, ef, optEffectList, effectList, effectChange
 	}
 	// include condition
 	else if (ch.key === "condicao") {
-		let tef = game.tormenta20.conditions[ch.value.toLowerCase().trim()];
-		if (tef) effectList.push(new ActiveEffect(tef));
+		let status = CONFIG.statusEffects[ch.value.toLowerCase().trim()]?._source;
+		if (status) effectList.push(new ActiveEffect(status));
+		if (false) {
+			let tef = game.tormenta20.conditions[ch.value.toLowerCase().trim()];
+			if (tef) effectList.push(new ActiveEffect(tef));
+		}
 	}
 	// Modify effect
 	else if (ch.key.startsWith("+")) {
@@ -721,25 +725,6 @@ function applyOnUseEffects(rolledItem, configuration = {}) {
 			effectList.forEach(addToChange);
 			optEffectList.forEach(addToChange);
 
-			// changes.forEach(function (efch) {
-			// 	if (!ef.system.abilityUse?.aumenta || (ef.system.abilityUse?.aumenta && efch.map((i) => i.key).includes(ch.key))) {
-			// 		if (ch.key == "system.tamanho" && efch.findIndex((i) => i.key == "system.tamanho")) {
-			// 			efch.splice(
-			// 				efch.findIndex((i) => i.key == "system.tamanho"),
-			// 				1
-			// 			);
-			// 		}
-			// 		// Push the change to the changes list
-			// 		efch.push({
-			// 			key: ch.key,
-			// 			value: Number(ch.value * ouEff.qty) || ch.value,
-			// 			type: ch.type,
-			// 			priority: ch.priority
-			// 		});
-			// 	}
-			// });
-			// if( ch.key.match(/^(data|system|?)./) ){
-			// }
 		}
 	}
 
@@ -781,8 +766,9 @@ function applyOnUseEffects(rolledItem, configuration = {}) {
 			}
 		}
 		let statusName = ef.name.slugify().replace("-", "");
-		if (T20.conditions[statusName]) {
-			tempEffect = foundry.utils.deepClone(T20.conditions[statusName]);
+		const statusEffect = CONFIG.statusEffects[statusName]?._source;
+		if (statusEffect) {
+			tempEffect = foundry.utils.deepClone(statusEffect);
 		} else {
 			tempEffect.name ??= ef?.parent?.name ?? "Efeito";
 			tempEffect.img ??= ef?.parent?.img ?? "icons/svg/aura.svg";

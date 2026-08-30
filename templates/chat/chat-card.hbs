@@ -64,12 +64,12 @@
 			{{#each effects as |ef i|}}
 				{{#if ef.length }}
 					<button class="chat-apply-ae" data-effect-index="{{i}}">
-						<img src="{{ef.0.icon}}">
+						<img src="{{ef.0.img}}">
 						{{{ef.0.name}}}
 					</button>
 				{{else}}
 					<button class="chat-apply-ae" data-effect-index="{{i}}">
-						<img src="{{ef.icon}}">
+						<img src="{{ef.img}}">
 						{{{ef.name}}}
 					</button>
 				{{/if}}

@@ -842,13 +842,18 @@ export default class ActorSheetT20 extends foundry.appv1.sheets.ActorSheet {
 		let choices = {};
 		if (a.dataset.options === "conditionTypes") {
 			// Don't bother alphabetically sorting, it's worse UI/UX
-			for (const [fk, fv] of Object.entries(CONFIG.T20.conditions)) {
-				const cat = fv.flags?.tormenta20?.category;
-				if (cat in CONFIG.T20.effectTypes) {
-					if (!choices[cat]) choices[cat] = { label: CONFIG.T20.effectTypes[cat], choices: {} };
-					choices[cat].choices[fk] = fv.name;
+			for (const status of CONFIG.statusEffects) {
+				const category = status.category;
+				if (category in CONFIG.T20.effectTypes) {
+					if (!choices[category]) {
+						choices[category] = {
+							label: CONFIG.T20.effectTypes[category],
+							choices: {}
+						};
+					}
+					choices[category].choices[status.id] = status.name;
 				} else {
-					choices[fk] = { label: fv.name, choices: [] };
+					choices[status.id] = { label: status.name, choices: [] };
 				}
 			}
 		} else {

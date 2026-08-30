@@ -159,7 +159,7 @@ export default class AbilityUseDialog extends Dialog {
 					use: {
 						icon: `<i class="fas ${icon}"></i>`,
 						label: label,
-						callback: (html) => {
+						callback: async (html) => {
 							const fd = new foundry.applications.ux.FormDataExtended(html[0].querySelector("form"));
 							let op = applyOnUseEffects(item, fd.object);
 							resolve(foundry.utils.mergeObject(fd.object, op));
@@ -173,7 +173,7 @@ export default class AbilityUseDialog extends Dialog {
 				dlg.data.buttons.brew = {
 					icon: '<i class="fas fa-flask"></i>',
 					label: game.i18n.localize("T20.BrewPotion"),
-					callback: (html) => {
+					callback: async (html) => {
 						const fd = new foundry.applications.ux.FormDataExtended(html[0].querySelector("form"));
 						fd.object.brew = true;
 						let op = applyOnUseEffects(item, fd.object);
