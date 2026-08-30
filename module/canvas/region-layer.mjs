@@ -37,7 +37,6 @@ export default class RegionLayerT20 extends foundry.canvas.layers.RegionLayer {
 		if (true) {
 			placementOptions.onMove = this._placementOnMove;
 		}
-		console.log(regionData);
 		await canvas.regions.placeRegion(regionData, placementOptions);
 	}
 
@@ -94,7 +93,6 @@ export default class RegionLayerT20 extends foundry.canvas.layers.RegionLayer {
 			y: 0,
 			gridBased: true,
 		};
-		console.log(shape);
 		const lengthPixels = shape.length * canvas.dimensions.distancePixels;
 		switch (shape.type) {
 			case "circle":

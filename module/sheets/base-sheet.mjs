@@ -297,7 +297,6 @@ export default function Tormenta20BaseSheetMixin(Base) {
 			const fieldPath = target.dataset.vary;
 			// const entryId = target.closest(".entry")?.dataset.entryId;
 			// Document
-			console.log("fieldPath", fieldPath, max);
 			const document = await this._getHandlerDocument(entryId);
 			if (!foundry.utils.hasProperty(document, fieldPath)) return;
 
@@ -329,7 +328,7 @@ export default function Tormenta20BaseSheetMixin(Base) {
 			}
 		}
 
-		static async #onFilter(event, target) {}
+		static async #onFilter(event, target) { }
 
 		static async #onExpand(event, target) {
 			const { expand, type, entryId } = target.dataset;

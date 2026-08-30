@@ -586,15 +586,11 @@ function applyOnUseEffects(rolledItem, configuration = {}) {
 			return acc;
 		}, {});
 	} else {
-		console.warn("NonItem applicableOnUseEffects", item);
 		// item.validOnUseEffects = item.validOnUseEffects ?? [];
 		// item.validOnUseEffects = [];
 		// item.applicableOnUseEffects = item._allApplicableOnUseEffects() ?? [];
 		item.effects = [];
 	}
-	console.log("%cDEBUG ITEM", "text-transform:uppercase; font-size: 28px; color: #ff0000", item);
-	console.log("%cDEBUG OPTIONS", "text-transform:uppercase; font-size: 28px; color: #ff0000", options);
-	console.log("%cDEBUG CONFIGURATION", "text-transform:uppercase; font-size: 28px; color: #ff0000", configuration);
 
 	// Get Applied On Use Effects
 	const applied = foundry.utils.expandObject(configuration).aprs ?? {};
@@ -639,8 +635,6 @@ function applyOnUseEffects(rolledItem, configuration = {}) {
 
 	// Prepare chatData and rollModifiers for onUseEffects
 	for (let ef of onUseEffects) {
-
-		console.log(ef);
 		// Prepare onUseEffects chat content;
 		let ouEff = {};
 		ouEff.description = ef.description
@@ -765,11 +759,6 @@ function applyOnUseEffects(rolledItem, configuration = {}) {
 	let rollData = actor.getRollData();
 	effectList.forEach(function (ef, index) {
 		let tempEffect = ef.toObject();
-		console.log({
-			effect: tempEffect.name,
-			changesA: ef.system.changes.map(c => c),
-			changesB: tempEffect.system.changes.map(c => c),
-		});
 		let duration = {};
 		let children = [];
 		let durValue = Number(id.duracao?.value) || 1;
@@ -906,8 +895,6 @@ function applyOnUseEffects(rolledItem, configuration = {}) {
 	// Brew Potion
 	if (configuration.brew) options.brew = configuration.brew;
 	// Logs
-	// console.log(item, rollMods, changes, options);
-	console.log("%cDEBUG applyEffects final", "text-transform:uppercase; font-size: 28px; color: #ff0000", options);
 	return options;
 }
 

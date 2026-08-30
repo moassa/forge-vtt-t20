@@ -110,8 +110,6 @@ export async function migration_1_6_0(params) {
 
 
 export function deleteLegacyTranferedEffects(parentDocument, operations) {
-	// if (![parentDocument.id, parentDocument.parent?.id].includes("czEU9mC3uaWAfR7L")) return;
-
 	const updates = [];
 	const deleteIds = [];
 	for (const effect of parentDocument.effects) {

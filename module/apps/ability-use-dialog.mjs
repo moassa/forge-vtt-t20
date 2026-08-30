@@ -92,7 +92,6 @@ export default class AbilityUseDialog extends Dialog {
 	 * @return {Promise}
 	 */
 	static async create(item) {
-		console.log("AbilityUseDialog", item);
 		if (!item.isOwned) ui.notifications.error(game.i18n.localize("T20.ActionWarningItemNotOwned"));
 		// Prepare data
 		const itemData = item.system;

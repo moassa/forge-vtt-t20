@@ -6,7 +6,6 @@ export default class DiceTest extends FormApplication {
 			roll: new Roll("1d6"),
 			foo: "bar"
 		};
-		console.log(this);
 	}
 
 	/** @override */
@@ -35,16 +34,13 @@ export default class DiceTest extends FormApplication {
 	/** @inheritdoc */
 	async _updateObject(event, formData) {
 		// foundry.utils.mergeObject(this.object, formData);
-		console.log(formData);
 	}
 
 	addTerm(event) {
-		console.log(event);
 		// r.terms.push(new foundry.dice.terms.OperatorTerm({operator:'+'}))
 		// r.terms.push(new foundry.dice.terms.Die({number: 4, faces: 8}))
 	}
 
 	deleteTerm(event) {
-		console.log(event);
 	}
 }

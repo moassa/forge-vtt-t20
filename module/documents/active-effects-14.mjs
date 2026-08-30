@@ -15,7 +15,7 @@ export default class ActiveEffectT20 extends foundry.documents.ActiveEffect {
 		const uuid = CONFIG.statusEffects[statusId]?.uuid;
 		if (uuid) {
 			const effect = await foundry.utils.fromUuid(uuid);
-			if (!effect) return effect.clone({}, { keepId: false });
+			if (effect) return effect.clone({}, { keepId: false });
 		}
 		return new this(effectData, options);
 	}
@@ -252,7 +252,6 @@ export default class ActiveEffectT20 extends foundry.documents.ActiveEffect {
 	/** @inheritDoc */
 	async _preDelete(options, user) {
 		if ((await super._preDelete(options, user)) === false) return false;
-		console.log(options, user);
 	}
 
 	/* -------------------------------------------- */
@@ -260,7 +259,6 @@ export default class ActiveEffectT20 extends foundry.documents.ActiveEffect {
 	/** @inheritDoc */
 	_onDelete(options, userId) {
 		super._onDelete(options, userId);
-		console.log(options, userId);
 	}
 
 	/* -------------------------------------------- */

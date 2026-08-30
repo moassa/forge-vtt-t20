@@ -26,6 +26,10 @@ export default function () {
 				return false;
 			}
 		});
+
+
+		let pack = game.packs.get("world.statuses");
+		if (!pack.locked) await pack.configure({ locked: true });
 	});
 
 	/**
@@ -33,7 +37,6 @@ export default function () {
 	 */
 	async function prepareStatusesCompendium() {
 		let pack = game.packs.get("world.statuses");
-		console.log(pack);
 		if (!pack) {
 			pack = await foundry.documents.collections.CompendiumCollection.createCompendium({
 				label: "Condições",
@@ -54,7 +57,6 @@ export default function () {
 				}
 			}
 			await ActiveEffect.createDocuments(create, { keepId: true, pack: "world.statuses" });
-			pack.configure({ locked: true });
 		}
 		const TextEditor = foundry.applications.ux.TextEditor.implementation;
 		CONFIG.statusEffects = {};
@@ -166,15 +168,6 @@ export default function () {
 			.querySelectorAll(".chat-spend-mana")
 			.forEach((el) => el.addEventListener("click", chat._onChatSpendMana.bind(this)));
 	});
-
-	/* Debug hook */
-	// Hooks.on("modifyTokenAttribute", async (attribute, value, isDelta, isBar) => {
-	// console.log("Debug hook: Debug hook");
-	// }) ;
-	/* Measured Templates*/
-	// Hooks.on("preCreateActiveEffect", (ActiveEffect, object, options, userId) => {
-
-	// });
 
 	Hooks.on("getSceneControlButtons", (controls) => {
 		controls.tokens.tools.range = {

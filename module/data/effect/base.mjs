@@ -172,8 +172,9 @@ export default class BaseEffect extends ActiveEffectTypeDataModel {
 	// If Parent Condition is supressed, child will be supressed too
 	get isSuppressedByInheritance() {
 		if (this.parent.origin) {
-			const id = this.origin.split(".").pop();
-			const origin = this.parent.effects.get(id);
+			const effect = this.parent;
+			const id = effect.origin.split(".").pop();
+			const origin = effect.parent.effects.get(id);
 			if (origin && origin.system.status) return !origin.active;
 		}
 		return false;
@@ -199,7 +200,8 @@ export default class BaseEffect extends ActiveEffectTypeDataModel {
 	// If upgraded version is present
 	get isSuppressedByUpgrade() {
 		const actor = this.parent.actor;
-		return this.status.upgrade && actor.statuses.has(this.status.upgrade);
+		const hasUpgrade = this.status.upgrade ? true : false;
+		return hasUpgrade && actor.statuses.has(this.status.upgrade);
 	}
 
 	/* -------------------------------------------- */
@@ -277,9 +279,14 @@ export default class BaseEffect extends ActiveEffectTypeDataModel {
 
 	/* -------------------------------------------- */
 
+	/**
+	 * 
+	 * @returns 
+	 */
 	async _createChildStatus() {
-		// TODO Move to model
-		if (this.parent.documentName != "Actor") return;
+		console.log("_createChildStatus", this.parent);
+		if (!this.parent.isEmbedded) return;
+		if (this.parent.parent.documentName != "Actor") return;
 		const { childEffect } = this.status;
 		const effects = [];
 		for (const statusId of childEffect) {
@@ -289,7 +296,7 @@ export default class BaseEffect extends ActiveEffectTypeDataModel {
 			effects.push(source);
 		}
 		if (foundry.utils.isEmpty(effects)) return;
-		await this.parent.parent.createEmbeddedDocuments("ActiveEffect", effects);
+		await this.parent.actor.createEmbeddedDocuments("ActiveEffect", effects);
 	}
 
 	/* -------------------------------------------- */
@@ -302,6 +309,6 @@ export default class BaseEffect extends ActiveEffectTypeDataModel {
 			.filter((ef) => ef.origin == this.parent.uuid)
 			.map((ef) => ef.id);
 		if (foundry.utils.isEmpty(effects)) return;
-		this.parent.deleteEmbeddedDocuments("ActiveEffect", effects);
+		this.parent.actor.deleteEmbeddedDocuments("ActiveEffect", effects);
 	}
 }

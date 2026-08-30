@@ -1,0 +1,6 @@
+{{#each statusEffects as |status|}}
+    <div class="effect {{status.cssClass}} flexrow" data-action="effect" data-status-id="{{status.id}}">
+        <img class="effect-control {{status.cssClass}}" src="{{status.src}}">
+        <label class="effect-control {{status.cssClass}}">{{status.title}}</label>
+    </div>
+{{/each}}

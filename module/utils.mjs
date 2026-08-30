@@ -24,8 +24,6 @@ export async function endScene() {
 			: new Set(game.actors.filter(i => i.type == "character")),
 		expiredEffects,
 	}
-	// console.error("TODO REMOVE AFTER TESTING");
-	// context.actors = new Set(game.actors.filter(i => i.id == "Es7wdyymibdGX0om"));
 
 	const segmentedScene = game.settings.get("tormenta20", "segmentedScene");
 	await ActiveEffect.registry.refresh("sceneEnd", context);

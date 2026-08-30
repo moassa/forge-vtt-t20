@@ -98,7 +98,6 @@ export default class ActiveEffectBaseSheet extends Tormenta20ApplicationMixin({
 		const partContext = await super._preparePartContext(partId, context);
 		if (!partContext.tabs) partContext.tabs = this._prepareTabs("sheet");
 		if (partId in partContext.tabs) partContext.tab = partContext.tabs[partId];
-		console.log(partId, Object.keys(partContext));
 		switch (partId) {
 			case "onuse": await this._prepareOnUsePartContext(partContext, context);
 				break;
@@ -185,55 +184,6 @@ export default class ActiveEffectBaseSheet extends Tormenta20ApplicationMixin({
 				: _loc("EFFECT.START.NoInitiative");
 		return { ...start, time, combat, combatant, combatantName, combatantInitiative };
 	}
-
-	/* -------------------------------------------- */
-
-	/**
-	 * Prepare data relative to Changes
-	 * @param {*} partContext
-	 * @param {*} context
-	 */
-	// async _prepareChangesPartContext(partContext, context) {
-	// 	const effect = this.document;
-	// 	const fields = effect.system.schema.fields.changes.element.fields;
-	// 	const changeTypes = Object.entries(ActiveEffect.CHANGE_TYPES)
-	// 		.map(([type, { label }]) => ({ type, label: _loc(label) }))
-	// 		.sort((a, b) => a.label.localeCompare(b.label, game.i18n.lang))
-	// 		.reduce((types, { type, label }) => {
-	// 			types[type] = label;
-	// 			return types;
-	// 		}, {});
-	// 	partContext.changes = await Promise.all(foundry.utils.deepClone(context.source.changes).map((change, index) => {
-	// 		const defaultPriority = ActiveEffect.CHANGE_TYPES[change.type]?.defaultPriority ?? 0;
-	// 		return this._renderChange({ change, index, fields, defaultPriority, changeTypes });
-	// 	}));
-	// }
-
-	/**
-	 * Prepare render context for a single change object.
-	 * @param {object} context                   Data for rendering the change row
-	 * @param {EffectChangeData} context.change  A copy of the change from the Effect"s source array
-	 * @param {number} context.index             The change object"s index in the array
-	 * @param {DataSchema} context.fields        The defined fields of the change data
-	 * @param {number} context.defaultPriority   The change type"s default priority
-	 * @param {Record<string, string>} context.changeTypes All change types and their localized labels
-	 * @returns {Promise<string>}
-	 * @protected
-	 */
-	// async _renderChange(context) {
-	// 	const { change, index } = context;
-	// 	if (("value" in change) && (typeof change.value !== "string")) change.value = JSON.stringify(change.value);
-	// 	Object.assign(
-	// 		change,
-	// 		["key", "type", "value", "phase", "priority"].reduce((paths, fieldName) => {
-	// 			if (fieldName in change) paths[`${fieldName}Path`] = `system.changes.${index}.${fieldName}`;
-	// 			return paths;
-	// 		}, {}));
-	// 	const changeType = ActiveEffect.CHANGE_TYPES[change.type];
-	// 	context.changeType = changeType;
-	// 	console.log("renderChange", changeType, context);
-	// 	return changeType?.render?.(context) ?? renderTemplate("templates/sheets/active-effect/change.hbs", context);
-	// }
 
 	/* -------------------------------------------- */
 

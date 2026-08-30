@@ -1,7 +1,7 @@
 export const T20Conditions = {};
 
 T20Conditions.abalado = {
-	uuid: "Compendium.world.condicoes.ActiveEffect.ABALADO000000000",
+	uuid: "Compendium.world.statuses.ActiveEffect.ABALADO000000000",
 	id: "abalado",
 	name: "Abalado",
 	img: "systems/tormenta20/icons/conditions/abalado.svg",
@@ -27,7 +27,7 @@ T20Conditions.abalado = {
 }
 
 T20Conditions.agarrado = {
-	uuid: "Compendium.world.condicoes.ActiveEffect.AGARRADO00000000",
+	uuid: "Compendium.world.statuses.ActiveEffect.AGARRADO00000000",
 	id: "agarrado",
 	name: "Agarrado",
 	img: "systems/tormenta20/icons/conditions/agarrado.svg",
@@ -61,7 +61,7 @@ T20Conditions.agarrado = {
 }
 
 T20Conditions.alquebrado = {
-	uuid: "Compendium.world.condicoes.ActiveEffect.ALQUEBRADO000000",
+	uuid: "Compendium.world.statuses.ActiveEffect.ALQUEBRADO000000",
 	id: "alquebrado",
 	name: "Alquebrado",
 	img: "systems/tormenta20/icons/conditions/alquebrado.svg",
@@ -86,7 +86,7 @@ T20Conditions.alquebrado = {
 }
 
 T20Conditions.apavorado = {
-	uuid: "Compendium.world.condicoes.ActiveEffect.APAVORADO0000000",
+	uuid: "Compendium.world.statuses.ActiveEffect.APAVORADO0000000",
 	id: "apavorado",
 	name: "Apavorado",
 	img: "systems/tormenta20/icons/conditions/apavorado.svg",
@@ -111,7 +111,7 @@ T20Conditions.apavorado = {
 }
 
 T20Conditions.atordoado = {
-	uuid: "Compendium.world.condicoes.ActiveEffect.ATORDOADO0000000",
+	uuid: "Compendium.world.statuses.ActiveEffect.ATORDOADO0000000",
 	id: "atordoado",
 	name: "Atordoado",
 	img: "systems/tormenta20/icons/conditions/atordoado.svg",
@@ -132,7 +132,7 @@ T20Conditions.atordoado = {
 }
 
 T20Conditions.caido = {
-	uuid: "Compendium.world.condicoes.ActiveEffect.CAIDO00000000000",
+	uuid: "Compendium.world.statuses.ActiveEffect.CAIDO00000000000",
 	id: "caido",
 	name: "Caído",
 	img: "systems/tormenta20/icons/conditions/caido.svg",
@@ -165,7 +165,7 @@ T20Conditions.caido = {
 }
 
 T20Conditions.cego = {
-	uuid: "Compendium.world.condicoes.ActiveEffect.CEGO000000000000",
+	uuid: "Compendium.world.statuses.ActiveEffect.CEGO000000000000",
 	id: "cego",
 	name: "Cego",
 	img: "systems/tormenta20/icons/conditions/cego.svg",
@@ -234,7 +234,7 @@ T20Conditions.cego = {
 }
 
 T20Conditions.confuso = {
-	uuid: "Compendium.world.condicoes.ActiveEffect.CONFUSO000000000",
+	uuid: "Compendium.world.statuses.ActiveEffect.CONFUSO000000000",
 	id: "confuso",
 	name: "Confuso",
 	img: "systems/tormenta20/icons/conditions/confuso.svg",
@@ -252,7 +252,7 @@ T20Conditions.confuso = {
 }
 
 T20Conditions.debilitado = {
-	uuid: "Compendium.world.condicoes.ActiveEffect.DEBILITADO000000",
+	uuid: "Compendium.world.statuses.ActiveEffect.DEBILITADO000000",
 	id: "debilitado",
 	name: "Debilitado",
 	img: "systems/tormenta20/icons/conditions/debilitado.svg",
@@ -337,7 +337,7 @@ T20Conditions.debilitado = {
 }
 
 T20Conditions.desprevenido = {
-	uuid: "Compendium.world.condicoes.ActiveEffect.DESPREVENIDO0000",
+	uuid: "Compendium.world.statuses.ActiveEffect.DESPREVENIDO0000",
 	id: "desprevenido",
 	name: "Desprevenido",
 	img: "systems/tormenta20/icons/conditions/desprevenido.svg",
@@ -365,7 +365,7 @@ T20Conditions.desprevenido = {
 }
 
 T20Conditions.doente = {
-	uuid: "Compendium.world.condicoes.ActiveEffect.DOENTE0000000000",
+	uuid: "Compendium.world.statuses.ActiveEffect.DOENTE0000000000",
 	id: "doente",
 	name: "Doente",
 	img: "systems/tormenta20/icons/conditions/doente.svg",
@@ -383,7 +383,7 @@ T20Conditions.doente = {
 }
 
 T20Conditions.emchamas = {
-	uuid: "Compendium.world.condicoes.ActiveEffect.EMCHAMAS00000000",
+	uuid: "Compendium.world.statuses.ActiveEffect.EMCHAMAS00000000",
 	id: "emchamas",
 	name: "Em Chamas",
 	img: "systems/tormenta20/icons/conditions/em-chamas.svg",
@@ -406,7 +406,7 @@ T20Conditions.emchamas = {
 }
 
 T20Conditions.enfeiticado = {
-	uuid: "Compendium.world.condicoes.ActiveEffect.ENFEITICADO00000",
+	uuid: "Compendium.world.statuses.ActiveEffect.ENFEITICADO00000",
 	id: "enfeiticado",
 	name: "Enfeitiçado",
 	img: "systems/tormenta20/icons/conditions/enfeiticado.svg",
@@ -424,7 +424,7 @@ T20Conditions.enfeiticado = {
 }
 
 T20Conditions.enjoado = {
-	uuid: "Compendium.world.condicoes.ActiveEffect.ENJOADO000000000",
+	uuid: "Compendium.world.statuses.ActiveEffect.ENJOADO000000000",
 	id: "enjoado",
 	name: "Enjoado",
 	img: "systems/tormenta20/icons/conditions/enjoado.svg",
@@ -442,7 +442,7 @@ T20Conditions.enjoado = {
 }
 
 T20Conditions.enredado = {
-	uuid: "Compendium.world.condicoes.ActiveEffect.ENREDADO00000000",
+	uuid: "Compendium.world.statuses.ActiveEffect.ENREDADO00000000",
 	id: "enredado",
 	name: "Enredado",
 	img: "systems/tormenta20/icons/conditions/enredado.svg",
@@ -476,7 +476,7 @@ T20Conditions.enredado = {
 }
 
 T20Conditions.envenenado = {
-	uuid: "Compendium.world.condicoes.ActiveEffect.ENVENENADO000000",
+	uuid: "Compendium.world.statuses.ActiveEffect.ENVENENADO000000",
 	id: "envenenado",
 	name: "Envenenado",
 	img: "systems/tormenta20/icons/conditions/envenenado.svg",
@@ -494,7 +494,7 @@ T20Conditions.envenenado = {
 }
 
 T20Conditions.esmorecido = {
-	uuid: "Compendium.world.condicoes.ActiveEffect.ESMORECIDO000000",
+	uuid: "Compendium.world.statuses.ActiveEffect.ESMORECIDO000000",
 	id: "esmorecido",
 	name: "Esmorecido",
 	img: "systems/tormenta20/icons/conditions/esmorecido.svg",
@@ -614,7 +614,7 @@ T20Conditions.esmorecido = {
 }
 
 T20Conditions.exausto = {
-	uuid: "Compendium.world.condicoes.ActiveEffect.EXAUSTO000000000",
+	uuid: "Compendium.world.statuses.ActiveEffect.EXAUSTO000000000",
 	id: "exausto",
 	name: "Exausto",
 	img: "systems/tormenta20/icons/conditions/exausto.svg",
@@ -638,7 +638,7 @@ T20Conditions.exausto = {
 }
 
 T20Conditions.fascinado = {
-	uuid: "Compendium.world.condicoes.ActiveEffect.FASCINADO0000000",
+	uuid: "Compendium.world.statuses.ActiveEffect.FASCINADO0000000",
 	id: "fascinado",
 	name: "Fascinado",
 	img: "systems/tormenta20/icons/conditions/fascinado.svg",
@@ -663,7 +663,7 @@ T20Conditions.fascinado = {
 }
 
 T20Conditions.fatigado = {
-	uuid: "Compendium.world.condicoes.ActiveEffect.FATIGADO00000000",
+	uuid: "Compendium.world.statuses.ActiveEffect.FATIGADO00000000",
 	id: "fatigado",
 	name: "Fatigado",
 	img: "systems/tormenta20/icons/conditions/fatigado.svg",
@@ -686,7 +686,7 @@ T20Conditions.fatigado = {
 }
 
 T20Conditions.fraco = {
-	uuid: "Compendium.world.condicoes.ActiveEffect.FRACO00000000000",
+	uuid: "Compendium.world.statuses.ActiveEffect.FRACO00000000000",
 	id: "fraco",
 	name: "Fraco",
 	img: "systems/tormenta20/icons/conditions/fraco.svg",
@@ -771,7 +771,7 @@ T20Conditions.fraco = {
 }
 
 T20Conditions.frustrado = {
-	uuid: "Compendium.world.condicoes.ActiveEffect.FRUSTRADO0000000",
+	uuid: "Compendium.world.statuses.ActiveEffect.FRUSTRADO0000000",
 	id: "frustrado",
 	name: "Frustrado",
 	img: "systems/tormenta20/icons/conditions/frustrado.svg",
@@ -892,7 +892,7 @@ T20Conditions.frustrado = {
 }
 
 T20Conditions.imovel = {
-	uuid: "Compendium.world.condicoes.ActiveEffect.IMOVEL0000000000",
+	uuid: "Compendium.world.statuses.ActiveEffect.IMOVEL0000000000",
 	id: "imovel",
 	name: "Imóvel",
 	img: "systems/tormenta20/icons/conditions/imovel.svg",
@@ -937,7 +937,7 @@ T20Conditions.imovel = {
 }
 
 T20Conditions.inconsciente = {
-	uuid: "Compendium.world.condicoes.ActiveEffect.INCONSCIENTE0000",
+	uuid: "Compendium.world.statuses.ActiveEffect.INCONSCIENTE0000",
 	id: "inconsciente",
 	name: "Inconsciente",
 	img: "systems/tormenta20/icons/conditions/inconsciente.svg",
@@ -957,7 +957,7 @@ T20Conditions.inconsciente = {
 }
 
 T20Conditions.indefeso = {
-	uuid: "Compendium.world.condicoes.ActiveEffect.INDEFESO00000000",
+	uuid: "Compendium.world.statuses.ActiveEffect.INDEFESO00000000",
 	id: "indefeso",
 	name: "Indefeso",
 	img: "systems/tormenta20/icons/conditions/indefeso.svg",
@@ -984,7 +984,7 @@ T20Conditions.indefeso = {
 }
 
 T20Conditions.invisivel = {
-	uuid: "Compendium.world.condicoes.ActiveEffect.INVISIVEL0000000",
+	uuid: "Compendium.world.statuses.ActiveEffect.INVISIVEL0000000",
 	id: "invisivel",
 	name: "Invisível",
 	img: "icons/svg/invisible.svg",
@@ -1000,7 +1000,7 @@ T20Conditions.invisivel = {
 }
 
 T20Conditions.lento = {
-	uuid: "Compendium.world.condicoes.ActiveEffect.LENTO00000000000",
+	uuid: "Compendium.world.statuses.ActiveEffect.LENTO00000000000",
 	id: "lento",
 	name: "Lento",
 	img: "systems/tormenta20/icons/conditions/lento.svg",
@@ -1018,7 +1018,7 @@ T20Conditions.lento = {
 }
 
 T20Conditions.morto = {
-	uuid: "Compendium.world.condicoes.ActiveEffect.MORTO00000000000",
+	uuid: "Compendium.world.statuses.ActiveEffect.MORTO00000000000",
 	id: "morto",
 	name: "Morto",
 	img: "systems/tormenta20/icons/conditions/morto.svg",
@@ -1034,7 +1034,7 @@ T20Conditions.morto = {
 }
 
 T20Conditions.ofuscado = {
-	uuid: "Compendium.world.condicoes.ActiveEffect.OFUSCADO00000000",
+	uuid: "Compendium.world.statuses.ActiveEffect.OFUSCADO00000000",
 	id: "ofuscado",
 	name: "Ofuscado",
 	img: "systems/tormenta20/icons/conditions/ofuscado.svg",
@@ -1069,7 +1069,7 @@ T20Conditions.ofuscado = {
 }
 
 T20Conditions.paralisado = {
-	uuid: "Compendium.world.condicoes.ActiveEffect.PARALISADO000000",
+	uuid: "Compendium.world.statuses.ActiveEffect.PARALISADO000000",
 	id: "paralisado",
 	name: "Paralisado",
 	img: "systems/tormenta20/icons/conditions/paralisado.svg",
@@ -1091,7 +1091,7 @@ T20Conditions.paralisado = {
 }
 
 T20Conditions.pasmo = {
-	uuid: "Compendium.world.condicoes.ActiveEffect.PASMO00000000000",
+	uuid: "Compendium.world.statuses.ActiveEffect.PASMO00000000000",
 	id: "pasmo",
 	name: "Pasmo",
 	img: "systems/tormenta20/icons/conditions/pasmo.svg",
@@ -1109,7 +1109,7 @@ T20Conditions.pasmo = {
 }
 
 T20Conditions.petrificado = {
-	uuid: "Compendium.world.condicoes.ActiveEffect.PETRIFICADO00000",
+	uuid: "Compendium.world.statuses.ActiveEffect.PETRIFICADO00000",
 	id: "petrificado",
 	name: "Petrificado",
 	img: "systems/tormenta20/icons/conditions/petrificado.svg",
@@ -1137,7 +1137,7 @@ T20Conditions.petrificado = {
 }
 
 T20Conditions.sangrando = {
-	uuid: "Compendium.world.condicoes.ActiveEffect.SANGRANDO0000000",
+	uuid: "Compendium.world.statuses.ActiveEffect.SANGRANDO0000000",
 	id: "sangrando",
 	name: "Sangrando",
 	img: "systems/tormenta20/icons/conditions/sangrando.svg",
@@ -1162,7 +1162,7 @@ T20Conditions.sangrando = {
 }
 
 T20Conditions.sustentando = {
-	uuid: "Compendium.world.condicoes.ActiveEffect.SUSTENTANDO00000",
+	uuid: "Compendium.world.statuses.ActiveEffect.SUSTENTANDO00000",
 	id: "sustentando",
 	name: "Sustentando",
 	img: "systems/tormenta20/icons/conditions/sustentando.svg",
@@ -1185,7 +1185,7 @@ T20Conditions.sustentando = {
 }
 
 T20Conditions.surdo = {
-	uuid: "Compendium.world.condicoes.ActiveEffect.SURDO00000000000",
+	uuid: "Compendium.world.statuses.ActiveEffect.SURDO00000000000",
 	id: "surdo",
 	name: "Surdo",
 	img: "systems/tormenta20/icons/conditions/surdo.svg",
@@ -1210,7 +1210,7 @@ T20Conditions.surdo = {
 }
 
 T20Conditions.surpreendido = {
-	uuid: "Compendium.world.condicoes.ActiveEffect.SURPREENDIDO0000",
+	uuid: "Compendium.world.statuses.ActiveEffect.SURPREENDIDO0000",
 	id: "surpreendido",
 	name: "Surpreendido",
 	img: "systems/tormenta20/icons/conditions/surpreendido.svg",
@@ -1230,7 +1230,7 @@ T20Conditions.surpreendido = {
 }
 
 T20Conditions.vulneravel = {
-	uuid: "Compendium.world.condicoes.ActiveEffect.VULNERAVEL000000",
+	uuid: "Compendium.world.statuses.ActiveEffect.VULNERAVEL000000",
 	id: "vulneravel",
 	name: "Vulnerável",
 	img: "systems/tormenta20/icons/conditions/vulneravel.svg",
@@ -1253,7 +1253,7 @@ T20Conditions.vulneravel = {
 }
 
 T20Conditions.sobrecarregado = {
-	uuid: "Compendium.world.condicoes.ActiveEffect.SOBRECARREGADO00",
+	uuid: "Compendium.world.statuses.ActiveEffect.SOBRECARREGADO00",
 	id: "sobrecarregado",
 	name: "Sobrecarregado",
 	img: "systems/tormenta20/icons/conditions/sobrecarregado.svg",
