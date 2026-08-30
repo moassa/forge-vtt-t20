@@ -1,0 +1,131 @@
+{
+  "name": "Acompanhamento Médico",
+  "type": "poder",
+  "img": "systems/tormenta20/icons/poderes/distincao.webp",
+  "system": {
+    "description": {
+      "value": "<blockquote>\n<p>Um doutor de ateu vai cuidar bem de seu corpo e sua mente.</p>\n</blockquote>\n<p class=\"MsoNormal\">Quando usa cuidados prolongados, seus pacientes recuperam o dobro de PM por descanso. Al&eacute;m disso, pelas pr&oacute;ximas 24 horas eles recebem +2 em Fortitude e seu total de pontos de vida aumenta em +5 para cada poder de M&eacute;dico Ateu que voc&ecirc; possuir.</p>\n<p class=\"MsoNormal\"><em>Pr&eacute;-requisito:</em> Medicina Avan&ccedil;ada.</p>",
+      "chat": "",
+      "unidentified": ""
+    },
+    "source": "Tormenta20 — Distinções, p. 28-29",
+    "ativacao": {
+      "execucao": "",
+      "custo": 0,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "duracao": {
+      "value": 24,
+      "units": "hour",
+      "special": ""
+    },
+    "target": {
+      "value": null,
+      "width": null,
+      "units": "",
+      "type": ""
+    },
+    "range": {
+      "value": null,
+      "units": ""
+    },
+    "consume": {
+      "type": "",
+      "target": "",
+      "amount": null,
+      "mpMultiplier": false
+    },
+    "efeito": "",
+    "alcance": "none",
+    "alvo": "",
+    "area": "",
+    "resistencia": {
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [],
+    "tipo": "distincao",
+    "subtipo": "Médico Ateu",
+    "origin": "",
+    "tags": [
+      "MedicoAteu"
+    ],
+    "chatFlavor": "",
+    "chatGif": ""
+  },
+  "effects": [
+    {
+      "origin": "Item.7vNAFTvNjkDMdPYp",
+      "tint": "#ffffff",
+      "flags": {
+        "tormenta20": {
+          "onuse": false,
+          "durationScene": false
+        }
+      },
+      "duration": {
+        "value": 999,
+        "units": "rounds",
+        "expiry": "turnStart",
+        "expired": false
+      },
+      "disabled": false,
+      "_id": "oHaZiqUv9gs2F7Rc",
+      "transfer": false,
+      "_stats": {
+        "coreVersion": "14.365",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Acompanhamento Médico",
+      "img": "systems/tormenta20/icons/poderes/distincao.webp",
+      "type": "base",
+      "system": {
+        "changes": [
+          {
+            "key": "system.pericias.fort.bonus",
+            "value": 2,
+            "priority": null,
+            "type": "add"
+          }
+        ]
+      },
+      "description": "",
+      "statuses": [],
+      "sort": 0,
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "_key": "!items.effects!7vNAFTvNjkDMdPYp.oHaZiqUv9gs2F7Rc"
+    }
+  ],
+  "flags": {},
+  "_stats": {
+    "systemId": "tormenta20",
+    "systemVersion": "1.4.116",
+    "coreVersion": "14.365",
+    "createdTime": 1667083101946,
+    "modifiedTime": 1684614605298,
+    "lastModifiedBy": "t20builder000000",
+    "duplicateSource": null,
+    "exportSource": null,
+    "compendiumSource": null
+  },
+  "_id": "7vNAFTvNjkDMdPYp",
+  "folder": "EckmJGi0doueXy41",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!7vNAFTvNjkDMdPYp"
+}

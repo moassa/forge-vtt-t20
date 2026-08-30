@@ -1,0 +1,201 @@
+{
+  "name": "Ódio Puro",
+  "type": "poder",
+  "img": "systems/tormenta20/icons/poderes/ameacas/odio-puro.webp",
+  "system": {
+    "description": {
+      "value": "<p>Supremacistas passam por um processo de doutrinação no qual aprendem a obedecer ordens sem questionar e a odiar todas as raças não humanas. Um purista recebe +5 em testes de Vontade quando está seguindo ordens de um superior (qualquer purista com ND maior) e +2 em rolagens de dano contra humanoides não humanos.</p>",
+      "unidentified": ""
+    },
+    "source": "",
+    "ativacao": {
+      "execucao": "",
+      "custo": 0,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "duracao": {
+      "value": 0,
+      "units": "inst",
+      "special": ""
+    },
+    "range": {
+      "value": null,
+      "units": ""
+    },
+    "efeito": "",
+    "alcance": "none",
+    "area": "",
+    "resistencia": {
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [],
+    "tipo": "ability",
+    "subtipo": "",
+    "origin": "",
+    "tags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "rolltags": [],
+    "automationtags": []
+  },
+  "effects": [
+    {
+      "origin": "Item.3vD2WrnThZX4CPkz",
+      "tint": "#ffffff",
+      "flags": {
+        "tormenta20": {}
+      },
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": null,
+        "expired": false
+      },
+      "disabled": true,
+      "_id": "y8l96wfXYtKKKllv",
+      "transfer": true,
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.0",
+        "createdTime": 1788042439017,
+        "modifiedTime": 1788042439017,
+        "lastModifiedBy": "4fJviA1Q4qcjwsna",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Ódio Puro",
+      "img": "icons/svg/upgrade.svg",
+      "type": "base",
+      "system": {
+        "changes": [
+          {
+            "key": "dano",
+            "value": 2,
+            "priority": 0,
+            "type": "add",
+            "phase": "initial"
+          }
+        ],
+        "targets": [],
+        "status": null,
+        "onuse": true,
+        "abilityUse": {
+          "description": "",
+          "automatic": false,
+          "aumenta": false,
+          "custo": null,
+          "names": [],
+          "types": [
+            "attack"
+          ]
+        },
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "disposition": []
+        }
+      },
+      "description": "",
+      "statuses": [],
+      "sort": 0,
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "_key": "!items.effects!3vD2WrnThZX4CPkz.y8l96wfXYtKKKllv"
+    },
+    {
+      "origin": "Item.3vD2WrnThZX4CPkz",
+      "tint": "#ffffff",
+      "flags": {
+        "tormenta20": {}
+      },
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": null,
+        "expired": false
+      },
+      "disabled": true,
+      "_id": "jq4qcpItEzNkilcg",
+      "transfer": true,
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.0",
+        "createdTime": 1788042439017,
+        "modifiedTime": 1788042439017,
+        "lastModifiedBy": "4fJviA1Q4qcjwsna",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Ódio Puro",
+      "img": "icons/svg/upgrade.svg",
+      "type": "base",
+      "system": {
+        "changes": [
+          {
+            "key": "roll",
+            "value": 5,
+            "priority": 0,
+            "type": "add",
+            "phase": "initial"
+          }
+        ],
+        "targets": [],
+        "status": null,
+        "onuse": true,
+        "abilityUse": {
+          "description": "",
+          "automatic": false,
+          "aumenta": false,
+          "custo": null,
+          "names": [
+            "Vontade"
+          ],
+          "types": [
+            "skill"
+          ]
+        },
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "disposition": []
+        }
+      },
+      "description": "",
+      "statuses": [],
+      "sort": 0,
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "_key": "!items.effects!3vD2WrnThZX4CPkz.jq4qcpItEzNkilcg"
+    }
+  ],
+  "flags": {},
+  "_stats": {
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.0",
+    "coreVersion": "14.366",
+    "createdTime": 1788042439017,
+    "modifiedTime": 1788042439017,
+    "lastModifiedBy": "4fJviA1Q4qcjwsna",
+    "duplicateSource": null,
+    "exportSource": null,
+    "compendiumSource": null
+  },
+  "_id": "3vD2WrnThZX4CPkz",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!3vD2WrnThZX4CPkz"
+}

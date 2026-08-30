@@ -1,0 +1,154 @@
+{
+  "_id": "jhdwYNYHEozyC6wy",
+  "name": "Maça do Terror",
+  "type": "arma",
+  "img": "systems/tormenta20/icons/itens/itens-magicos/maca-do-terror.webp",
+  "effects": [],
+  "folder": "9ki1HFV3bfmVkHBh",
+  "sort": 100098,
+  "flags": {},
+  "system": {
+    "description": {
+      "value": "<p style=\"text-align:justify\">Esta maça formidável é feita com um osso e um crânio e permite que você lance a magia Amedrontar (CD For ou Car a sua escolha). Caso já conheça a magia, o custo para lançá-la diminui em –1 PM.</p>",
+      "unidentified": ""
+    },
+    "source": "",
+    "equipado": 0,
+    "equipado2": {
+      "slot": 0,
+      "type": ""
+    },
+    "carregado": true,
+    "peso": 6,
+    "espacos": 0,
+    "qtd": 1,
+    "preco": 0,
+    "pv": {
+      "value": 0,
+      "max": 0
+    },
+    "rd": 0,
+    "rolls": [
+      {
+        "name": "Ataque",
+        "key": "ataque0",
+        "type": "ataque",
+        "parts": [
+          [
+            "1d20",
+            "",
+            ""
+          ],
+          [
+            "luta",
+            "",
+            ""
+          ],
+          [
+            "2",
+            "",
+            ""
+          ]
+        ],
+        "versatil": "",
+        "adaptavel": ""
+      },
+      {
+        "name": "Dano",
+        "key": "dano1",
+        "type": "dano",
+        "parts": [
+          [
+            "1d8",
+            "impacto",
+            ""
+          ],
+          [
+            "@for",
+            "",
+            ""
+          ],
+          [
+            "+2",
+            "impacto",
+            ""
+          ]
+        ],
+        "versatil": "",
+        "adaptavel": ""
+      }
+    ],
+    "criticoM": 20,
+    "criticoX": 2,
+    "alcance": "",
+    "tipoUso": "sim",
+    "propriedades": {
+      "ada": false,
+      "agi": false,
+      "alo": false,
+      "dup": false,
+      "ver": false,
+      "adaptavel": false,
+      "agil": false,
+      "alongada": false,
+      "arremesso": false,
+      "ataqueDistancia": false,
+      "duasMaos": false,
+      "dupla": false,
+      "leve": false,
+      "municao": false,
+      "versatil": false,
+      "des": false
+    },
+    "ativacao": {
+      "custo": null,
+      "condicao": "",
+      "execucao": "",
+      "qtd": "",
+      "special": ""
+    },
+    "consume": {
+      "type": "",
+      "target": "",
+      "amount": null,
+      "mpMultiplier": false
+    },
+    "chatFlavor": "",
+    "origin": "",
+    "tags": [],
+    "chatGif": "",
+    "upgrades": {
+      "melhoria1": "",
+      "melhoria2": "",
+      "melhoria3": "",
+      "melhoria4": "",
+      "material": "",
+      "encanto1": "formidable",
+      "encanto2": "",
+      "encanto3": ""
+    },
+    "ataques": 0,
+    "proficiencia": "simples",
+    "proposito": "corpo-a-corpo",
+    "empunhadura": "uma",
+    "size": "normal",
+    "rolltags": [],
+    "automationtags": [],
+    "enableAutoUpgrades": true
+  },
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.0",
+    "coreVersion": "14.366",
+    "createdTime": 1788042454297,
+    "modifiedTime": 1788042454297,
+    "lastModifiedBy": "4fJviA1Q4qcjwsna",
+    "duplicateSource": null,
+    "exportSource": null,
+    "compendiumSource": null
+  },
+  "_key": "!items!jhdwYNYHEozyC6wy"
+}

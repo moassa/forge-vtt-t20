@@ -1,0 +1,593 @@
+{
+  "_id": "N1xVfw9A8TiYeLae",
+  "name": "Hipnotismo",
+  "type": "magia",
+  "img": "systems/tormenta20/icons/magias/hipnotismo.webp",
+  "effects": [
+    {
+      "_id": "0qnDVKlJ4Y6vIqzN",
+      "flags": {
+        "tormenta20": {}
+      },
+      "disabled": true,
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": null,
+        "expired": false
+      },
+      "origin": "Compendium.tormenta20.magias.N1xVfw9A8TiYeLae",
+      "transfer": false,
+      "tint": "#ffffff",
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.0",
+        "createdTime": 1788042471245,
+        "modifiedTime": 1788042471245,
+        "lastModifiedBy": "4fJviA1Q4qcjwsna",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Hipnotismo",
+      "img": "icons/svg/upgrade.svg",
+      "type": "base",
+      "system": {
+        "changes": [
+          {
+            "key": "alvo",
+            "value": "1 criatura",
+            "priority": 0,
+            "type": "override",
+            "phase": "initial"
+          },
+          {
+            "key": "duracao",
+            "value": "1 rodada",
+            "priority": 0,
+            "type": "override",
+            "phase": "initial"
+          },
+          {
+            "key": "condicao",
+            "value": "fascinado",
+            "priority": 0,
+            "type": "custom",
+            "phase": "initial"
+          },
+          {
+            "key": "condicao",
+            "value": "pasmo",
+            "priority": 0,
+            "type": "custom",
+            "phase": "initial"
+          }
+        ],
+        "targets": [],
+        "status": null,
+        "onuse": true,
+        "abilityUse": {
+          "description": "",
+          "automatic": false,
+          "aumenta": false,
+          "custo": null,
+          "names": [],
+          "types": [
+            "self"
+          ]
+        },
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "disposition": []
+        }
+      },
+      "description": "<p>muda a duração para 1 rodada. Em vez de fascinado, o alvo fica pasmo (apenas uma vez por cena).</p>",
+      "statuses": [],
+      "sort": 0,
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "_key": "!items.effects!N1xVfw9A8TiYeLae.0qnDVKlJ4Y6vIqzN"
+    },
+    {
+      "_id": "jN9vw5EXuCc5hmMq",
+      "flags": {
+        "tormenta20": {}
+      },
+      "disabled": true,
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": null,
+        "expired": false
+      },
+      "origin": "Compendium.tormenta20.magias.N1xVfw9A8TiYeLae",
+      "transfer": false,
+      "tint": "#ffffff",
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.0",
+        "createdTime": 1788042471245,
+        "modifiedTime": 1788042471245,
+        "lastModifiedBy": "4fJviA1Q4qcjwsna",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Hipnotismo",
+      "img": "icons/svg/upgrade.svg",
+      "type": "base",
+      "system": {
+        "changes": [],
+        "targets": [],
+        "status": null,
+        "onuse": true,
+        "abilityUse": {
+          "description": "",
+          "automatic": false,
+          "aumenta": false,
+          "custo": 1,
+          "names": [],
+          "types": [
+            "self"
+          ]
+        },
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "disposition": []
+        }
+      },
+      "description": "<p>como o normal, mas alvos que passem na resistência não sabem que foram vítimas de uma magia.</p>",
+      "statuses": [],
+      "sort": 0,
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "_key": "!items.effects!N1xVfw9A8TiYeLae.jN9vw5EXuCc5hmMq"
+    },
+    {
+      "_id": "n2XIwlHRUXWsyWoe",
+      "flags": {
+        "tormenta20": {}
+      },
+      "disabled": true,
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": null,
+        "expired": false
+      },
+      "origin": "Compendium.tormenta20.magias.N1xVfw9A8TiYeLae",
+      "transfer": false,
+      "tint": "#ffffff",
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.0",
+        "createdTime": 1788042471245,
+        "modifiedTime": 1788042471245,
+        "lastModifiedBy": "4fJviA1Q4qcjwsna",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Hipnotismo",
+      "img": "icons/svg/upgrade.svg",
+      "type": "base",
+      "system": {
+        "changes": [
+          {
+            "key": "duracao",
+            "value": "Cena",
+            "priority": 0,
+            "type": "override",
+            "phase": "initial"
+          }
+        ],
+        "targets": [],
+        "status": null,
+        "onuse": true,
+        "abilityUse": {
+          "description": "",
+          "automatic": false,
+          "aumenta": false,
+          "custo": 2,
+          "names": [],
+          "types": [
+            "self"
+          ]
+        },
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "disposition": []
+        }
+      },
+      "description": "<p>muda o alvo para animais ou humanoides escolhidos.</p>",
+      "statuses": [],
+      "sort": 0,
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "_key": "!items.effects!N1xVfw9A8TiYeLae.n2XIwlHRUXWsyWoe"
+    },
+    {
+      "_id": "yU9cKxRGtCBztsFj",
+      "flags": {
+        "tormenta20": {}
+      },
+      "disabled": true,
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": null,
+        "expired": false
+      },
+      "origin": "Compendium.tormenta20.magias.N1xVfw9A8TiYeLae",
+      "transfer": false,
+      "tint": "#ffffff",
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.0",
+        "createdTime": 1788042471245,
+        "modifiedTime": 1788042471245,
+        "lastModifiedBy": "4fJviA1Q4qcjwsna",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Hipnotismo",
+      "img": "icons/svg/upgrade.svg",
+      "type": "base",
+      "system": {
+        "changes": [
+          {
+            "key": "alcance",
+            "value": "médio",
+            "priority": 0,
+            "type": "override",
+            "phase": "initial"
+          }
+        ],
+        "targets": [],
+        "status": null,
+        "onuse": true,
+        "abilityUse": {
+          "description": "",
+          "automatic": false,
+          "aumenta": false,
+          "custo": 2,
+          "names": [],
+          "types": [
+            "self"
+          ]
+        },
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "disposition": []
+        }
+      },
+      "description": "<p>muda a duração para sustentada.</p>",
+      "statuses": [],
+      "sort": 0,
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "_key": "!items.effects!N1xVfw9A8TiYeLae.yU9cKxRGtCBztsFj"
+    },
+    {
+      "_id": "9h8Bd2cCqHTlY8pk",
+      "flags": {
+        "tormenta20": {}
+      },
+      "disabled": true,
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": null,
+        "expired": false
+      },
+      "origin": "Compendium.tormenta20.magias.N1xVfw9A8TiYeLae",
+      "transfer": false,
+      "tint": "#ffffff",
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.0",
+        "createdTime": 1788042471246,
+        "modifiedTime": 1788042471246,
+        "lastModifiedBy": "4fJviA1Q4qcjwsna",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Hipnotismo",
+      "img": "icons/svg/upgrade.svg",
+      "type": "base",
+      "system": {
+        "changes": [],
+        "targets": [],
+        "status": null,
+        "onuse": true,
+        "abilityUse": {
+          "description": "",
+          "automatic": false,
+          "aumenta": false,
+          "custo": 2,
+          "names": [],
+          "types": [
+            "self"
+          ]
+        },
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "disposition": []
+        }
+      },
+      "description": "<p>também afeta espíritos e monstros na área. Requer 2º círculo.</p>",
+      "statuses": [],
+      "sort": 0,
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "_key": "!items.effects!N1xVfw9A8TiYeLae.9h8Bd2cCqHTlY8pk"
+    },
+    {
+      "_id": "SeBpexrQ8zNDV7tm",
+      "disabled": false,
+      "duration": {
+        "value": 1,
+        "units": "rounds",
+        "expiry": "turnStart",
+        "expired": false
+      },
+      "origin": "Item.7QpJwWrO3AakONv7",
+      "transfer": false,
+      "flags": {
+        "tormenta20": {}
+      },
+      "tint": "#ffffff",
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.0",
+        "createdTime": 1788042471246,
+        "modifiedTime": 1788042471246,
+        "lastModifiedBy": "4fJviA1Q4qcjwsna",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Alvo Hostil",
+      "img": "systems/tormenta20/icons/magias/hipnotismo.webp",
+      "type": "base",
+      "system": {
+        "changes": [
+          {
+            "key": "system.pericias.vont.bonus",
+            "value": 5,
+            "priority": null,
+            "type": "add",
+            "phase": "initial"
+          }
+        ],
+        "targets": [],
+        "status": null,
+        "onuse": false,
+        "abilityUse": {
+          "description": "",
+          "automatic": false,
+          "aumenta": false,
+          "custo": 0,
+          "names": [],
+          "types": []
+        },
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "disposition": []
+        }
+      },
+      "description": "",
+      "statuses": [],
+      "sort": 0,
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "_key": "!items.effects!N1xVfw9A8TiYeLae.SeBpexrQ8zNDV7tm"
+    },
+    {
+      "origin": "Item.N1xVfw9A8TiYeLae",
+      "tint": "#ffffff",
+      "flags": {
+        "tormenta20": {}
+      },
+      "duration": {
+        "value": 1,
+        "units": "rounds",
+        "expiry": "turnStart",
+        "expired": false
+      },
+      "disabled": false,
+      "_id": "9mAowMAjosn37SjU",
+      "transfer": false,
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.0",
+        "createdTime": 1788042471246,
+        "modifiedTime": 1788042471246,
+        "lastModifiedBy": "4fJviA1Q4qcjwsna",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Alvo (s) Hipnotizado(s)",
+      "img": "systems/tormenta20/icons/magias/hipnotismo.webp",
+      "type": "base",
+      "system": {
+        "changes": [],
+        "targets": [],
+        "status": null,
+        "onuse": false,
+        "abilityUse": {
+          "description": "",
+          "automatic": false,
+          "aumenta": false,
+          "custo": 0,
+          "names": [],
+          "types": []
+        },
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "disposition": []
+        }
+      },
+      "description": "",
+      "statuses": [],
+      "sort": 0,
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "_key": "!items.effects!N1xVfw9A8TiYeLae.9mAowMAjosn37SjU"
+    },
+    {
+      "origin": "Item.N1xVfw9A8TiYeLae",
+      "tint": "#ffffff",
+      "flags": {
+        "tormenta20": {}
+      },
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": null,
+        "expired": false
+      },
+      "disabled": true,
+      "_id": "vH6NxRKODI5fhBH7",
+      "transfer": false,
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.0",
+        "createdTime": 1788042471246,
+        "modifiedTime": 1788042471246,
+        "lastModifiedBy": "4fJviA1Q4qcjwsna",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Hipnotismo",
+      "img": "icons/svg/upgrade.svg",
+      "type": "base",
+      "system": {
+        "changes": [],
+        "targets": [],
+        "status": null,
+        "onuse": true,
+        "abilityUse": {
+          "description": "",
+          "automatic": false,
+          "aumenta": false,
+          "custo": 5,
+          "names": [],
+          "types": [
+            "self"
+          ]
+        },
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "disposition": []
+        }
+      },
+      "description": "<p>também afeta construtos, espíritos, monstros e mortos-vivos na área. Requer 3º círculo.</p>",
+      "statuses": [],
+      "sort": 0,
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "_key": "!items.effects!N1xVfw9A8TiYeLae.vH6NxRKODI5fhBH7"
+    }
+  ],
+  "folder": "wqRfH0bDNPgI8ZTq",
+  "sort": 0,
+  "flags": {},
+  "system": {
+    "description": {
+      "value": "<p style=\"text-align:justify\">Suas palavras e movimentos ritmados deixam o alvo fascinado. Esta magia só afeta criaturas que possam perceber você. Se usar esta magia em combate, o alvo recebe +5 em seu teste de resistência. Se a criatura passar, fica imune a este efeito por um dia.</p>",
+      "unidentified": ""
+    },
+    "source": "Tormenta20 — Edição Jogo do Ano, p. 194",
+    "ativacao": {
+      "execucao": "action",
+      "custo": 1,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "duracao": {
+      "value": 0,
+      "units": "special",
+      "special": "1d4 Rodadas"
+    },
+    "range": {
+      "value": null,
+      "units": ""
+    },
+    "consume": {
+      "type": "",
+      "target": "",
+      "amount": null,
+      "mpMultiplier": false
+    },
+    "efeito": "",
+    "alcance": "short",
+    "alvo": "1 animal ou humanoide",
+    "area": "",
+    "resistencia": {
+      "pericia": "",
+      "atributo": "int",
+      "bonus": 0,
+      "txt": "Vontade anula"
+    },
+    "rolls": [],
+    "tipo": "arc",
+    "circulo": 1,
+    "preparada": false,
+    "escola": "enc",
+    "chatFlavor": "",
+    "origin": "",
+    "tags": [],
+    "chatGif": "",
+    "rolltags": [],
+    "automationtags": [],
+    "equipado2": {
+      "slot": 0,
+      "type": ""
+    }
+  },
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.0",
+    "coreVersion": "14.366",
+    "createdTime": 1788042471244,
+    "modifiedTime": 1788042471244,
+    "lastModifiedBy": "4fJviA1Q4qcjwsna",
+    "duplicateSource": null,
+    "exportSource": null,
+    "compendiumSource": null
+  },
+  "_key": "!items!N1xVfw9A8TiYeLae"
+}

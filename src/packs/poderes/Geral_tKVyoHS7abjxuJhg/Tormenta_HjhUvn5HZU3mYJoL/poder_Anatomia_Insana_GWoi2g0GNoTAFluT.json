@@ -1,0 +1,85 @@
+{
+  "_id": "GWoi2g0GNoTAFluT",
+  "name": "Anatomia Insana",
+  "type": "poder",
+  "img": "systems/tormenta20/icons/poderes/tormenta.webp",
+  "effects": [],
+  "folder": "HjhUvn5HZU3mYJoL",
+  "sort": 0,
+  "flags": {},
+  "system": {
+    "description": {
+      "value": "<p style=\"text-align:justify\">Você tem 25% de chance (resultado “1” em 1d4) de ignorar o dano adicional de um acerto crítico ou ataque furtivo. A chance aumenta em +25% para cada dois outros poderes da Tormenta que você possui.</p>",
+      "unidentified": ""
+    },
+    "source": "Tormenta20 — Edição Jogo do Ano, p. 136",
+    "ativacao": {
+      "execucao": "passive",
+      "custo": 0,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "duracao": {
+      "value": 0,
+      "units": "inst",
+      "special": ""
+    },
+    "range": {
+      "value": null,
+      "units": ""
+    },
+    "efeito": "",
+    "alcance": "none",
+    "area": "",
+    "resistencia": {
+      "pericia": "",
+      "atributo": "sab",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [
+      {
+        "name": "Chance",
+        "key": "formula0",
+        "type": "formula",
+        "parts": [
+          [
+            "1d4cs<=1*@Tormenta2",
+            "",
+            ""
+          ]
+        ],
+        "versatil": "",
+        "adaptavel": ""
+      }
+    ],
+    "tipo": "geral",
+    "subtipo": "Tormenta",
+    "chatFlavor": "",
+    "tags": [
+      "Tormenta"
+    ],
+    "origin": "",
+    "chatGif": "",
+    "rolltags": [
+      "Tormenta"
+    ],
+    "automationtags": []
+  },
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.0",
+    "coreVersion": "14.366",
+    "createdTime": 1788042524972,
+    "modifiedTime": 1788042524972,
+    "lastModifiedBy": "4fJviA1Q4qcjwsna",
+    "duplicateSource": null,
+    "exportSource": null,
+    "compendiumSource": null
+  },
+  "_key": "!items!GWoi2g0GNoTAFluT"
+}

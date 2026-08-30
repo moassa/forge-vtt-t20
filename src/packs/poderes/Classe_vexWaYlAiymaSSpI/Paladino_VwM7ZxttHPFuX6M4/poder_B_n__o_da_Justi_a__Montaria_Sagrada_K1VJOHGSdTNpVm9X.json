@@ -1,0 +1,66 @@
+{
+  "_id": "K1VJOHGSdTNpVm9X",
+  "name": "Bênção da Justiça: Montaria Sagrada",
+  "type": "poder",
+  "img": "systems/tormenta20/icons/poderes/classes/combatentes/bencao-justica-montaria.webp",
+  "effects": [],
+  "folder": "VwM7ZxttHPFuX6M4",
+  "sort": 0,
+  "flags": {},
+  "system": {
+    "description": {
+      "value": "<p>No 5º nível, escolha entre égide sagrada e montaria sagrada. Uma vez feita, esta escolha não pode ser mudada.</p>\n\n\n<p>Montaria Sagrada - Você pode gastar uma ação de movimento e 2 PM para invocar uma montaria sagrada. Veja o quadro para mais detalhes.</p>\n\n\n<h3><strong>Montaria Sagrada</strong></h3>\n<p data-pm-slice=\"0 0 []\">Um paladino de 5º nível pode receber uma montaria sagrada, designada pelos deuses. Este animal vai atuar como um fiel companheiro de batalhas. Normalmente será um cavalo de guerra para paladinos de tamanho Médio ou um pônei para Pequenos, mas suplementos futuros trarão outras opções de montarias.</p>\n<p>Para invocar sua montaria você gasta uma ação de movimento e 2 PM. Ela aparece com um brilho de luz dourada ao seu lado e fica até o fim da cena, quando desaparece de volta para o mundo divino de onde veio.</p>\n<p>Como opção para campanhas mais realistas, a montaria sagrada pode ser um animal mundano, em vez de invocado. Neste caso, você nunca precisa gastar uma ação ou PM para ter a montaria — que já estará com você. Por outro lado, o animal pode não ser capaz de acompanhá-lo em todos os lugares (um cavalo, por exemplo, não conseguirá entrar num túnel apertado ou escalar uma montanha).</p>\n<p>Você e sua montaria têm um vínculo mental, sendo sempre capazes de entender um ao outro (não é preciso fazer testes de Adestramento). Ela fornece os benefícios de um parceiro veterano de seu tipo. No 11º nível, passa a fornecer os benefícios de um parceiro mestre. Veja a lista de parceiros na página 260. Uma montaria cumpre qualquer ordem sua, mesmo que signifique arriscar a vida. Se a montaria sagrada morrer, você fica atordoado por uma rodada. Você pode invocar uma nova montaria após um dia de prece e meditação.</p>",
+      "unidentified": ""
+    },
+    "source": "Tormenta20 — Edição Jogo do Ano, p. 84",
+    "ativacao": {
+      "execucao": "move",
+      "custo": 2,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "duracao": {
+      "value": 0,
+      "units": "inst",
+      "special": ""
+    },
+    "range": {
+      "value": null,
+      "units": ""
+    },
+    "efeito": "",
+    "alcance": "none",
+    "area": "",
+    "resistencia": {
+      "pericia": "",
+      "atributo": "sab",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [],
+    "tipo": "ability",
+    "subtipo": "Paladino",
+    "chatFlavor": "",
+    "origin": "",
+    "tags": [],
+    "chatGif": "",
+    "rolltags": [],
+    "automationtags": []
+  },
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.0",
+    "coreVersion": "14.366",
+    "createdTime": 1788042524968,
+    "modifiedTime": 1788042524968,
+    "lastModifiedBy": "4fJviA1Q4qcjwsna",
+    "duplicateSource": null,
+    "exportSource": null,
+    "compendiumSource": null
+  },
+  "_key": "!items!K1VJOHGSdTNpVm9X"
+}

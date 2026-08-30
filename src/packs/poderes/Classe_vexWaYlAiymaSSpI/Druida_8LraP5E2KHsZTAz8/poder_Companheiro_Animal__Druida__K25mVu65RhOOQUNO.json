@@ -1,0 +1,66 @@
+{
+  "_id": "K25mVu65RhOOQUNO",
+  "name": "Companheiro Animal (Druida)",
+  "type": "poder",
+  "img": "systems/tormenta20/icons/classes/druida.webp",
+  "effects": [],
+  "folder": "8LraP5E2KHsZTAz8",
+  "sort": 0,
+  "flags": {},
+  "system": {
+    "description": {
+      "value": "<p>Você recebe um companheiro animal. Você pode escolher este poder quantas vezes quiser, mas deve escolher companheiros diferentes e ainda está sujeito ao limite de parceiros que pode ter (veja a página 260).</p>\n<p><em>Pré-requisitos:</em> Car 1, treinado em Adestramento.</p>\n\n\n<h3><strong>Companheiro Animal</strong></h3>\n<p>Um companheiro animal é um amigo valoroso e fiel. Você decide de qual espécie é seu companheiro. Vocês têm um vínculo mental, sendo capazes de entender um ao outro. Seu companheiro animal obedece a você, mesmo que isso arrisque a vida dele.</p>\n<p>Em termos de jogo, seu companheiro animal é um parceiro ajudante, assassino, atirador, combatente, fortão, guardião, perseguidor, ou uma montaria, do nível iniciante. No 7º nível ele muda para veterano e, no 15º nível, para mestre (se tiver mais de um tipo, todos mudam de nível). Se o companheiro animal morrer, você fica atordoado por uma rodada. Você pode invocar um novo companheiro após um dia inteiro de prece e meditação.</p>\n<p>A seguir, alguns exemplos de animais (mas você é livre para escolher outros). Veja a página 260 para as regras de parceiros.</p>\n<p>• Ajudante. Corvo, macaco, raposa, serpente ou outro animal ágil ou esperto.</p>\n<p>• Assassino. Lince, onça ou outro animal treinado para abater presas.</p>\n<p>• Atirador. Águia, falcão ou outro animal capaz de mergulhar rapidamente nos alvos de seus ataques à distância.</p>\n<p>• Fortão. Crocodilo, javali, leão, lobo ou outro animal capaz de lutar ao seu lado.</p>\n<p>• Guardião. Alce, cão, coruja, tartaruga, urso ou outro animal pesado ou atento.</p>\n<p>• Perseguidor. Gambá, sabujo ou outro animal farejador.</p>",
+      "unidentified": ""
+    },
+    "source": "Tormenta20 — Edição Jogo do Ano, p. 61 e 62",
+    "ativacao": {
+      "execucao": "",
+      "custo": 0,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "duracao": {
+      "value": 0,
+      "units": "inst",
+      "special": ""
+    },
+    "range": {
+      "value": null,
+      "units": ""
+    },
+    "efeito": "",
+    "alcance": "none",
+    "area": "",
+    "resistencia": {
+      "pericia": "",
+      "atributo": "sab",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [],
+    "tipo": "classe",
+    "subtipo": "Druida",
+    "chatFlavor": "",
+    "origin": "",
+    "tags": [],
+    "chatGif": "",
+    "rolltags": [],
+    "automationtags": []
+  },
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.0",
+    "coreVersion": "14.366",
+    "createdTime": 1788042524961,
+    "modifiedTime": 1788042524961,
+    "lastModifiedBy": "4fJviA1Q4qcjwsna",
+    "duplicateSource": null,
+    "exportSource": null,
+    "compendiumSource": null
+  },
+  "_key": "!items!K25mVu65RhOOQUNO"
+}

@@ -1,0 +1,66 @@
+{
+  "_id": "rkB6e5IamctEGp9J",
+  "name": "Imobilização",
+  "type": "poder",
+  "img": "systems/tormenta20/icons/classes/lutador.webp",
+  "effects": [],
+  "folder": "csRpG81AedPycko0",
+  "sort": 0,
+  "flags": {},
+  "system": {
+    "description": {
+      "value": "<p style=\"text-align:justify\">Se estiver agarrando uma criatura, você pode gastar uma ação completa para imobilizá-la. Faça um teste de manobra contra ela. Se você passar, imobiliza a criatura — ela fica indefesa e não pode realizar nenhuma ação, exceto tentar se soltar (o que exige um teste de manobra). Se a criatura se soltar da imobilização, ainda fica agarrada. Enquanto estiver imobilizando uma criatura, você sofre as penalidades de agarrar. Pré-requisitos: Chave, 8º nível de lutador.</p>",
+      "unidentified": ""
+    },
+    "source": "Tormenta20 — Edição Jogo do Ano, p. 77",
+    "ativacao": {
+      "execucao": "full",
+      "custo": 0,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "duracao": {
+      "value": 0,
+      "units": "inst",
+      "special": ""
+    },
+    "range": {
+      "value": null,
+      "units": ""
+    },
+    "efeito": "",
+    "alcance": "none",
+    "area": "",
+    "resistencia": {
+      "pericia": "",
+      "atributo": "sab",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [],
+    "tipo": "classe",
+    "subtipo": "Lutador",
+    "origin": "",
+    "tags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "rolltags": [],
+    "automationtags": []
+  },
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.0",
+    "coreVersion": "14.366",
+    "createdTime": 1788042524966,
+    "modifiedTime": 1788042524966,
+    "lastModifiedBy": "4fJviA1Q4qcjwsna",
+    "duplicateSource": null,
+    "exportSource": null,
+    "compendiumSource": null
+  },
+  "_key": "!items!rkB6e5IamctEGp9J"
+}

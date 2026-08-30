@@ -1,0 +1,154 @@
+{
+  "_id": "iFaZtyir56zrjir9",
+  "name": "Besta Explosiva",
+  "type": "arma",
+  "img": "systems/tormenta20/icons/itens/itens-magicos/besta-explosiva.webp",
+  "effects": [],
+  "folder": "9ki1HFV3bfmVkHBh",
+  "sort": 112500,
+  "flags": {},
+  "system": {
+    "description": {
+      "value": "<p style=\"text-align:justify\">Esta besta pesada formidável é feita de madeira escurecida, similar a carvão. Quando usa uma besta explosiva, você pode gastar 3 PM para transformar o virote disparado por ela em uma Bola de Fogo. Você pode mirar esta Bola de Fogo em uma criatura ou em um ponto em alcance médio.</p><p style=\"text-align:justify\">No primeiro caso, faça um ataque contra o alvo. Se acertar, ele sofre o dano do disparo mais 6d6 de fogo. Além disso, todas as criaturas a até 6m do alvo sofrem 6d6 pontos de dano de fogo (Ref CD Des reduz à metade). Porém, se o ataque errar, o virote se desfaz em uma nuvem de cinzas inofensivas.</p><p style=\"text-align:justify\">No segundo caso, ela funciona como a magia de mesmo nome. Nenhum teste de ataque é necessário e todas as criaturas a 6m do ponto escolhido sofrem 6d6 pontos de dano de fogo (Ref reduz à metade).</p>",
+      "unidentified": ""
+    },
+    "source": "",
+    "equipado": 0,
+    "equipado2": {
+      "slot": 0,
+      "type": ""
+    },
+    "carregado": true,
+    "peso": 4,
+    "espacos": 0,
+    "qtd": 1,
+    "preco": 0,
+    "pv": {
+      "value": 0,
+      "max": 0
+    },
+    "rd": 0,
+    "rolls": [
+      {
+        "name": "Ataque",
+        "key": "ataque0",
+        "type": "ataque",
+        "parts": [
+          [
+            "1d20",
+            "",
+            ""
+          ],
+          [
+            "luta",
+            "",
+            ""
+          ],
+          [
+            "2",
+            "",
+            ""
+          ]
+        ],
+        "versatil": "",
+        "adaptavel": ""
+      },
+      {
+        "name": "Dano",
+        "key": "dano1",
+        "type": "dano",
+        "parts": [
+          [
+            "1d12",
+            "perfuracao",
+            ""
+          ],
+          [
+            "",
+            "",
+            ""
+          ],
+          [
+            "+2",
+            "perfuracao",
+            ""
+          ]
+        ],
+        "versatil": "",
+        "adaptavel": ""
+      }
+    ],
+    "criticoM": 19,
+    "criticoX": 2,
+    "alcance": "",
+    "tipoUso": "sim",
+    "propriedades": {
+      "ada": false,
+      "agi": false,
+      "alo": false,
+      "dup": false,
+      "ver": false,
+      "adaptavel": false,
+      "agil": false,
+      "alongada": false,
+      "arremesso": false,
+      "ataqueDistancia": true,
+      "duasMaos": true,
+      "dupla": false,
+      "leve": false,
+      "municao": true,
+      "versatil": false,
+      "des": false
+    },
+    "ativacao": {
+      "custo": 3,
+      "condicao": "",
+      "execucao": "",
+      "qtd": "",
+      "special": ""
+    },
+    "consume": {
+      "type": "",
+      "target": "",
+      "amount": null,
+      "mpMultiplier": false
+    },
+    "chatFlavor": "",
+    "origin": "",
+    "tags": [],
+    "chatGif": "",
+    "upgrades": {
+      "melhoria1": "",
+      "melhoria2": "",
+      "melhoria3": "",
+      "melhoria4": "",
+      "material": "",
+      "encanto1": "formidable",
+      "encanto2": "",
+      "encanto3": ""
+    },
+    "ataques": 0,
+    "proficiencia": "marcial",
+    "proposito": "disparo",
+    "empunhadura": "duas",
+    "size": "normal",
+    "rolltags": [],
+    "automationtags": [],
+    "enableAutoUpgrades": true
+  },
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.0",
+    "coreVersion": "14.366",
+    "createdTime": 1788042454296,
+    "modifiedTime": 1788042454296,
+    "lastModifiedBy": "4fJviA1Q4qcjwsna",
+    "duplicateSource": null,
+    "exportSource": null,
+    "compendiumSource": null
+  },
+  "_key": "!items!iFaZtyir56zrjir9"
+}

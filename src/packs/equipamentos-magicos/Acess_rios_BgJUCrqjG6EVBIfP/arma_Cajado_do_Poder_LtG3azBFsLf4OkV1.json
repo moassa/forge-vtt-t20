@@ -1,0 +1,153 @@
+{
+  "_id": "LtG3azBFsLf4OkV1",
+  "name": "Cajado do Poder",
+  "type": "arma",
+  "img": "systems/tormenta20/icons/itens/itens-magicos/cajado-do-poder.webp",
+  "effects": [],
+  "folder": "BgJUCrqjG6EVBIfP",
+  "sort": 2300000,
+  "flags": {},
+  "system": {
+    "description": {
+      "value": "<p style=\"text-align:justify\">Este bordão defensor magnífico tem cabo reto e liso, com uma joia cintilante na ponta. Conta como um cajado arcano. Além dos benefícios desse esotérico, o custo de suas magias arcanas diminui em –1 PM (cumulativo com Mestre em Escola) e a CD para resistir a elas aumenta em +2 (para um aumento total de +3).</p>",
+      "unidentified": ""
+    },
+    "source": "",
+    "equipado": 0,
+    "equipado2": {
+      "slot": 0,
+      "type": ""
+    },
+    "carregado": true,
+    "peso": 2,
+    "espacos": 0,
+    "qtd": 1,
+    "preco": 0,
+    "pv": {
+      "value": 0,
+      "max": 0
+    },
+    "rd": 0,
+    "rolls": [
+      {
+        "name": "Ataque",
+        "key": "ataque0",
+        "type": "ataque",
+        "parts": [
+          [
+            "1d20",
+            "",
+            ""
+          ],
+          [
+            "luta",
+            "",
+            ""
+          ],
+          [
+            "2",
+            "",
+            ""
+          ]
+        ],
+        "versatil": "",
+        "adaptavel": ""
+      },
+      {
+        "name": "Dano",
+        "key": "dano1",
+        "type": "dano",
+        "parts": [
+          [
+            "1d6",
+            "impacto",
+            ""
+          ],
+          [
+            "@for",
+            "",
+            ""
+          ],
+          [
+            "+2",
+            "impacto",
+            ""
+          ]
+        ],
+        "versatil": "",
+        "adaptavel": ""
+      }
+    ],
+    "criticoM": 20,
+    "criticoX": 2,
+    "alcance": "-",
+    "tipoUso": "sim",
+    "propriedades": {
+      "ada": false,
+      "agi": false,
+      "alo": false,
+      "dup": false,
+      "ver": false,
+      "adaptavel": false,
+      "agil": false,
+      "alongada": false,
+      "arremesso": false,
+      "ataqueDistancia": false,
+      "duasMaos": false,
+      "dupla": false,
+      "leve": false,
+      "municao": false,
+      "versatil": false
+    },
+    "ativacao": {
+      "custo": null,
+      "condicao": "",
+      "execucao": "",
+      "qtd": "",
+      "special": ""
+    },
+    "consume": {
+      "type": "",
+      "target": "",
+      "amount": null,
+      "mpMultiplier": false
+    },
+    "chatFlavor": "",
+    "origin": "",
+    "tags": [],
+    "chatGif": "",
+    "upgrades": {
+      "melhoria1": "",
+      "melhoria2": "",
+      "melhoria3": "",
+      "melhoria4": "",
+      "material": "",
+      "encanto1": "formidable",
+      "encanto2": "magnificent",
+      "encanto3": ""
+    },
+    "ataques": 0,
+    "proficiencia": "simples",
+    "proposito": "corpo-a-corpo",
+    "empunhadura": "uma",
+    "size": "normal",
+    "rolltags": [],
+    "automationtags": [],
+    "enableAutoUpgrades": true
+  },
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.0",
+    "coreVersion": "14.366",
+    "createdTime": 1788042454293,
+    "modifiedTime": 1788042454293,
+    "lastModifiedBy": "4fJviA1Q4qcjwsna",
+    "duplicateSource": null,
+    "exportSource": null,
+    "compendiumSource": null
+  },
+  "_key": "!items!LtG3azBFsLf4OkV1"
+}

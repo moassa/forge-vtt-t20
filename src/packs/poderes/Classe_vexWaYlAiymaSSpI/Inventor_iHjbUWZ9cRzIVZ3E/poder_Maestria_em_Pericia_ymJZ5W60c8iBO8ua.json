@@ -1,0 +1,72 @@
+{
+  "name": "Maestria em Pericia",
+  "type": "poder",
+  "img": "icons/commodities/tech/cog-brass.webp",
+  "effects": [],
+  "flags": {
+    "scene-packer": {
+      "sourceId": "Item.YQi7wgNyw2XPuIvz",
+      "defaultPermission": 3,
+      "hash": "8ca673fb54df9858f38c74ee6ef933866de8992c"
+    }
+  },
+  "system": {
+    "description": {
+      "value": "<p style=\"text-align:justify\">Escolha um número de perícias treinadas igual a sua Inteligência, exceto bônus temporários. Quando faz um teste dessas perícias, você pode gastar 1 PM para escolher 10 em qualquer situação, exceto testes de ataque.</p>",
+      "unidentified": ""
+    },
+    "source": "Tormenta20 — Edição Jogo do Ano, p. 69",
+    "ativacao": {
+      "execucao": "",
+      "custo": 1,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "duracao": {
+      "value": 0,
+      "units": "inst",
+      "special": ""
+    },
+    "range": {
+      "value": null,
+      "units": ""
+    },
+    "efeito": "",
+    "alcance": "none",
+    "area": "",
+    "resistencia": {
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [],
+    "tipo": "classe",
+    "subtipo": "inventor",
+    "chatFlavor": "",
+    "origin": "",
+    "tags": [],
+    "chatGif": "",
+    "rolltags": [],
+    "automationtags": []
+  },
+  "_stats": {
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.0",
+    "coreVersion": "14.366",
+    "createdTime": 1788042524964,
+    "modifiedTime": 1788042524964,
+    "lastModifiedBy": "4fJviA1Q4qcjwsna",
+    "duplicateSource": null,
+    "exportSource": null,
+    "compendiumSource": null
+  },
+  "_id": "ymJZ5W60c8iBO8ua",
+  "folder": "iHjbUWZ9cRzIVZ3E",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!ymJZ5W60c8iBO8ua"
+}

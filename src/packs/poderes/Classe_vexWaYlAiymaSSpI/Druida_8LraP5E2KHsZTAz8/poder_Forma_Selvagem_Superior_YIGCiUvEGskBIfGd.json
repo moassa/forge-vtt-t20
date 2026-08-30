@@ -1,0 +1,488 @@
+{
+  "_id": "YIGCiUvEGskBIfGd",
+  "name": "Forma Selvagem Superior",
+  "type": "poder",
+  "img": "systems/tormenta20/icons/classes/druida.webp",
+  "effects": [
+    {
+      "origin": "Item.YIGCiUvEGskBIfGd",
+      "tint": "#ffffff",
+      "flags": {
+        "tormenta20": {}
+      },
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": "sceneEnd",
+        "expired": false
+      },
+      "disabled": false,
+      "_id": "JVW8jYQMJQD5dgzc",
+      "transfer": false,
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.0",
+        "createdTime": 1788042525191,
+        "modifiedTime": 1788042525191,
+        "lastModifiedBy": "4fJviA1Q4qcjwsna",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Forma Ágil Superior",
+      "img": "systems/tormenta20/icons/classes/druida.webp",
+      "type": "base",
+      "system": {
+        "changes": [
+          {
+            "key": "system.atributos.des.bonus",
+            "value": 6,
+            "priority": null,
+            "type": "add",
+            "phase": "initial"
+          },
+          {
+            "key": "system.attributes.movement.*.bonus",
+            "value": 6,
+            "priority": null,
+            "type": "add",
+            "phase": "initial"
+          }
+        ],
+        "targets": [],
+        "status": null,
+        "onuse": false,
+        "abilityUse": {
+          "description": "",
+          "automatic": false,
+          "aumenta": false,
+          "custo": 0,
+          "names": [],
+          "types": []
+        },
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "disposition": []
+        }
+      },
+      "description": "",
+      "statuses": [],
+      "sort": 0,
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "_key": "!items.effects!YIGCiUvEGskBIfGd.JVW8jYQMJQD5dgzc"
+    },
+    {
+      "origin": "Item.YIGCiUvEGskBIfGd",
+      "tint": "#ffffff",
+      "flags": {
+        "tormenta20": {}
+      },
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": "sceneEnd",
+        "expired": false
+      },
+      "disabled": false,
+      "_id": "laxHG7JHzTqwlb7R",
+      "transfer": false,
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.0",
+        "createdTime": 1788042525191,
+        "modifiedTime": 1788042525191,
+        "lastModifiedBy": "4fJviA1Q4qcjwsna",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Forma Feroz Superior",
+      "img": "systems/tormenta20/icons/classes/druida.webp",
+      "type": "base",
+      "system": {
+        "changes": [
+          {
+            "key": "system.atributos.for.bonus",
+            "value": 10,
+            "priority": null,
+            "type": "add",
+            "phase": "initial"
+          },
+          {
+            "key": "system.attributes.defesa.bonus",
+            "value": 6,
+            "priority": null,
+            "type": "add",
+            "phase": "initial"
+          }
+        ],
+        "targets": [],
+        "status": null,
+        "onuse": false,
+        "abilityUse": {
+          "description": "",
+          "automatic": false,
+          "aumenta": false,
+          "custo": 0,
+          "names": [],
+          "types": []
+        },
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "disposition": []
+        }
+      },
+      "description": "",
+      "statuses": [],
+      "sort": 0,
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "_key": "!items.effects!YIGCiUvEGskBIfGd.laxHG7JHzTqwlb7R"
+    },
+    {
+      "origin": "Item.YIGCiUvEGskBIfGd",
+      "tint": "#ffffff",
+      "flags": {
+        "tormenta20": {}
+      },
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": "sceneEnd",
+        "expired": false
+      },
+      "disabled": false,
+      "_id": "NCSmyOhkcjmcgTvT",
+      "transfer": false,
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.0",
+        "createdTime": 1788042525192,
+        "modifiedTime": 1788042525192,
+        "lastModifiedBy": "4fJviA1Q4qcjwsna",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Forma Resistente Superior",
+      "img": "systems/tormenta20/icons/classes/druida.webp",
+      "type": "base",
+      "system": {
+        "changes": [
+          {
+            "key": "system.atributos.for.bonus",
+            "value": 5,
+            "priority": null,
+            "type": "add",
+            "phase": "initial"
+          },
+          {
+            "key": "system.attributes.defesa.bonus",
+            "value": 10,
+            "priority": null,
+            "type": "add",
+            "phase": "initial"
+          },
+          {
+            "key": "system.tracos.resistencias.dano.bonus",
+            "value": 10,
+            "priority": null,
+            "type": "add",
+            "phase": "initial"
+          }
+        ],
+        "targets": [],
+        "status": null,
+        "onuse": false,
+        "abilityUse": {
+          "description": "",
+          "automatic": false,
+          "aumenta": false,
+          "custo": 0,
+          "names": [],
+          "types": []
+        },
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "disposition": []
+        }
+      },
+      "description": "",
+      "statuses": [],
+      "sort": 0,
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "_key": "!items.effects!YIGCiUvEGskBIfGd.NCSmyOhkcjmcgTvT"
+    },
+    {
+      "origin": "Item.YIGCiUvEGskBIfGd",
+      "tint": "#ffffff",
+      "flags": {
+        "tormenta20": {}
+      },
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": "sceneEnd",
+        "expired": false
+      },
+      "disabled": false,
+      "_id": "T97ebzOuIkAht5Om",
+      "transfer": false,
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.0",
+        "createdTime": 1788042525192,
+        "modifiedTime": 1788042525192,
+        "lastModifiedBy": "4fJviA1Q4qcjwsna",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Forma Sorrateira Superior",
+      "img": "systems/tormenta20/icons/classes/druida.webp",
+      "type": "base",
+      "system": {
+        "changes": [
+          {
+            "key": "system.atributos.des.bonus",
+            "value": 6,
+            "priority": null,
+            "type": "add",
+            "phase": "initial"
+          },
+          {
+            "key": "system.attributes.movement.fly.base",
+            "value": 18,
+            "priority": null,
+            "type": "override",
+            "phase": "initial"
+          }
+        ],
+        "targets": [],
+        "status": null,
+        "onuse": false,
+        "abilityUse": {
+          "description": "",
+          "automatic": false,
+          "aumenta": false,
+          "custo": 0,
+          "names": [],
+          "types": []
+        },
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "disposition": []
+        }
+      },
+      "description": "",
+      "statuses": [],
+      "sort": 0,
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "_key": "!items.effects!YIGCiUvEGskBIfGd.T97ebzOuIkAht5Om"
+    },
+    {
+      "origin": "Item.YIGCiUvEGskBIfGd",
+      "tint": "#ffffff",
+      "flags": {
+        "tormenta20": {}
+      },
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": "sceneEnd",
+        "expired": false
+      },
+      "disabled": false,
+      "_id": "GY33VsQNBUVbQ8uh",
+      "transfer": false,
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.0",
+        "createdTime": 1788042525192,
+        "modifiedTime": 1788042525192,
+        "lastModifiedBy": "4fJviA1Q4qcjwsna",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Forma Veloz Superior",
+      "img": "systems/tormenta20/icons/classes/druida.webp",
+      "type": "base",
+      "system": {
+        "changes": [
+          {
+            "key": "system.atributos.des.bonus",
+            "value": 6,
+            "priority": null,
+            "type": "add",
+            "phase": "initial"
+          }
+        ],
+        "targets": [],
+        "status": null,
+        "onuse": false,
+        "abilityUse": {
+          "description": "",
+          "automatic": false,
+          "aumenta": false,
+          "custo": 0,
+          "names": [],
+          "types": []
+        },
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "disposition": []
+        }
+      },
+      "description": "",
+      "statuses": [],
+      "sort": 0,
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "_key": "!items.effects!YIGCiUvEGskBIfGd.GY33VsQNBUVbQ8uh"
+    },
+    {
+      "origin": "Item.YIGCiUvEGskBIfGd",
+      "tint": "#ffffff",
+      "flags": {
+        "tormenta20": {}
+      },
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": null,
+        "expired": false
+      },
+      "disabled": true,
+      "_id": "Bwmm5Qky9waEnmYA",
+      "transfer": true,
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.0",
+        "createdTime": 1788042525192,
+        "modifiedTime": 1788042525192,
+        "lastModifiedBy": "4fJviA1Q4qcjwsna",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Forma Selvagem Superior",
+      "img": "icons/svg/upgrade.svg",
+      "type": "base",
+      "system": {
+        "changes": [
+          {
+            "key": "ataque",
+            "value": -2,
+            "priority": 0,
+            "type": "add",
+            "phase": "initial"
+          }
+        ],
+        "targets": [],
+        "status": null,
+        "onuse": true,
+        "abilityUse": {
+          "description": "",
+          "automatic": false,
+          "aumenta": false,
+          "custo": null,
+          "names": [],
+          "types": [
+            "attack"
+          ]
+        },
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "disposition": []
+        }
+      },
+      "description": "<p>Forma Ágil: -2 em ataques quando ataca com as duas armas naturais.</p>",
+      "statuses": [],
+      "sort": 0,
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "_key": "!items.effects!YIGCiUvEGskBIfGd.Bwmm5Qky9waEnmYA"
+    }
+  ],
+  "folder": "8LraP5E2KHsZTAz8",
+  "sort": 0,
+  "flags": {},
+  "system": {
+    "description": {
+      "value": "<p style=\"text-align:justify\">Quando usa Forma Selvagem, você pode gastar 10 PM ao todo para assumir uma forma superior. Pré-requisitos: Forma Selvagem Aprimorada, 12º nível de druida. e</p>",
+      "unidentified": ""
+    },
+    "source": "Tormenta20 — Edição Jogo do Ano, p. 62 e 63",
+    "ativacao": {
+      "execucao": "full",
+      "custo": 10,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "duracao": {
+      "value": 0,
+      "units": "special",
+      "special": ""
+    },
+    "range": {
+      "value": null,
+      "units": ""
+    },
+    "efeito": "",
+    "alcance": "self",
+    "area": "",
+    "resistencia": {
+      "pericia": "",
+      "atributo": "sab",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [],
+    "tipo": "classe",
+    "subtipo": "Druida",
+    "chatFlavor": "",
+    "origin": "",
+    "tags": [],
+    "chatGif": "",
+    "rolltags": [],
+    "automationtags": []
+  },
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.0",
+    "coreVersion": "14.366",
+    "createdTime": 1788042525191,
+    "modifiedTime": 1788042525191,
+    "lastModifiedBy": "4fJviA1Q4qcjwsna",
+    "duplicateSource": null,
+    "exportSource": null,
+    "compendiumSource": null
+  },
+  "_key": "!items!YIGCiUvEGskBIfGd"
+}

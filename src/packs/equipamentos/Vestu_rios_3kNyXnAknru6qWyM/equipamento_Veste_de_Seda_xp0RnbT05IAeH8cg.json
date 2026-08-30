@@ -1,0 +1,143 @@
+{
+  "name": "Veste de Seda",
+  "type": "equipamento",
+  "img": "systems/tormenta20/icons/itens/gerais/veste-de-seda.webp",
+  "system": {
+    "description": {
+      "value": "<p style=\"text-align:justify\">Esta roupa leve e elegante deixa seus movimentos os mais livres possíveis. Fornece +1 em Reflexos.</p>",
+      "unidentified": ""
+    },
+    "source": "Tormenta20 — Edição Jogo do Ano, p. 159",
+    "equipado": false,
+    "equipado2": {
+      "slot": 0,
+      "type": "body"
+    },
+    "carregado": true,
+    "peso": 0,
+    "espacos": 1,
+    "qtd": 1,
+    "preco": 25,
+    "pv": {
+      "value": 0,
+      "max": 0
+    },
+    "rd": 0,
+    "tipo": "traje",
+    "armadura": {
+      "value": 0,
+      "penalidade": 0,
+      "maxAtr": 0
+    },
+    "origin": "",
+    "tags": [],
+    "chatFlavor": "",
+    "ativacao": {
+      "custo": null,
+      "condicao": "",
+      "execucao": "",
+      "qtd": "",
+      "special": ""
+    },
+    "rolls": [],
+    "chatGif": "",
+    "upgrades": {
+      "melhoria1": "",
+      "melhoria2": "",
+      "melhoria3": "",
+      "melhoria4": "",
+      "material": "",
+      "encanto1": "",
+      "encanto2": "",
+      "encanto3": ""
+    },
+    "rolltags": [],
+    "automationtags": [],
+    "enableAutoUpgrades": true
+  },
+  "effects": [
+    {
+      "origin": "Item.xp0RnbT05IAeH8cg",
+      "tint": "#ffffff",
+      "flags": {
+        "tormenta20": {}
+      },
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": null,
+        "expired": false
+      },
+      "disabled": false,
+      "_id": "X8wTzkcz2w0i4rIK",
+      "transfer": true,
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.0",
+        "createdTime": 1788042414303,
+        "modifiedTime": 1788042414303,
+        "lastModifiedBy": "4fJviA1Q4qcjwsna",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Veste de Seda",
+      "img": "systems/tormenta20/icons/itens/gerais/veste-de-seda.webp",
+      "type": "base",
+      "system": {
+        "changes": [
+          {
+            "key": "system.pericias.refl.bonus",
+            "value": 1,
+            "priority": null,
+            "type": "add",
+            "phase": "initial"
+          }
+        ],
+        "targets": [],
+        "status": null,
+        "onuse": false,
+        "abilityUse": {
+          "description": "",
+          "automatic": false,
+          "aumenta": false,
+          "custo": 0,
+          "names": [],
+          "types": []
+        },
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "disposition": []
+        }
+      },
+      "description": "",
+      "statuses": [],
+      "sort": 0,
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "_key": "!items.effects!xp0RnbT05IAeH8cg.X8wTzkcz2w0i4rIK"
+    }
+  ],
+  "flags": {},
+  "_stats": {
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.0",
+    "coreVersion": "14.366",
+    "createdTime": 1788042414303,
+    "modifiedTime": 1788042414303,
+    "lastModifiedBy": "4fJviA1Q4qcjwsna",
+    "duplicateSource": null,
+    "exportSource": null,
+    "compendiumSource": null
+  },
+  "_id": "xp0RnbT05IAeH8cg",
+  "folder": "3kNyXnAknru6qWyM",
+  "sort": 2100000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!xp0RnbT05IAeH8cg"
+}

@@ -1,0 +1,79 @@
+{
+  "_id": "G918QZzj9ln4mpMn",
+  "name": "Alterar Destino",
+  "type": "magia",
+  "img": "systems/tormenta20/icons/magias/alterar-destino.webp",
+  "effects": [],
+  "folder": "SfUO0nNPwnoFC3gT",
+  "sort": 0,
+  "flags": {},
+  "system": {
+    "description": {
+      "value": "<p style=\"text-align:justify\">Sua mente visualiza todas as possibilidades de um evento, permitindo a você escolher o melhor curso de ação. Você pode rolar novamente um teste de resistência com um bônus de +10 ou um inimigo deve rolar novamente um ataque contra você com uma penalidade de –10.</p>",
+      "unidentified": ""
+    },
+    "source": "Tormenta20 — Edição Jogo do Ano, p. 179",
+    "ativacao": {
+      "execucao": "reaction",
+      "custo": 15,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "duracao": {
+      "value": 0,
+      "units": "inst",
+      "special": ""
+    },
+    "range": {
+      "value": null,
+      "units": ""
+    },
+    "consume": {
+      "type": "",
+      "target": "",
+      "amount": null,
+      "mpMultiplier": false
+    },
+    "efeito": "",
+    "alcance": "self",
+    "alvo": "Você",
+    "area": "",
+    "resistencia": {
+      "pericia": "",
+      "atributo": "int",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [],
+    "tipo": "arc",
+    "circulo": 5,
+    "preparada": false,
+    "escola": "abj",
+    "chatFlavor": "",
+    "origin": "",
+    "tags": [],
+    "chatGif": "",
+    "rolltags": [],
+    "automationtags": [],
+    "equipado2": {
+      "slot": 0,
+      "type": ""
+    }
+  },
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.0",
+    "coreVersion": "14.366",
+    "createdTime": 1788042471046,
+    "modifiedTime": 1788042471046,
+    "lastModifiedBy": "4fJviA1Q4qcjwsna",
+    "duplicateSource": null,
+    "exportSource": null,
+    "compendiumSource": null
+  },
+  "_key": "!items!G918QZzj9ln4mpMn"
+}

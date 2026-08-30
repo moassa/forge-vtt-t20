@@ -1,0 +1,123 @@
+{
+  "_id": "e7wxI2LiyckI1zJo",
+  "name": "Espírito dos Equinócios",
+  "type": "poder",
+  "img": "systems/tormenta20/icons/classes/druida.webp",
+  "effects": [
+    {
+      "origin": "Item.e7wxI2LiyckI1zJo",
+      "tint": "#ffffff",
+      "flags": {
+        "tormenta20": {}
+      },
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": "sceneEnd",
+        "expired": false
+      },
+      "disabled": false,
+      "_id": "pzz8u9dEcLa8p9sG",
+      "transfer": false,
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.0",
+        "createdTime": 1788042525021,
+        "modifiedTime": 1788042525021,
+        "lastModifiedBy": "4fJviA1Q4qcjwsna",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Espírito dos Equinócios",
+      "img": "systems/tormenta20/icons/classes/druida.webp",
+      "type": "base",
+      "system": {
+        "changes": [],
+        "targets": [],
+        "status": null,
+        "onuse": false,
+        "abilityUse": {
+          "description": "",
+          "automatic": false,
+          "aumenta": false,
+          "custo": 0,
+          "names": [],
+          "types": []
+        },
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "disposition": []
+        }
+      },
+      "description": "",
+      "statuses": [],
+      "sort": 0,
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "_key": "!items.effects!e7wxI2LiyckI1zJo.pzz8u9dEcLa8p9sG"
+    }
+  ],
+  "folder": "8LraP5E2KHsZTAz8",
+  "sort": 0,
+  "flags": {},
+  "system": {
+    "description": {
+      "value": "<p style=\"text-align:justify\">Você pode gastar 4 PM para ficar em equilíbrio com o mundo. Até o final da cena, quando rola um dado, pode rolar novamente qualquer resultado 1. Pré-requisitos: Aspecto da Primavera, Aspecto do Outono, 10º nível de druida. e</p>",
+      "unidentified": ""
+    },
+    "source": "Tormenta20 — Edição Jogo do Ano, p. 62",
+    "ativacao": {
+      "execucao": "",
+      "custo": 4,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "duracao": {
+      "value": 0,
+      "units": "inst",
+      "special": ""
+    },
+    "range": {
+      "value": null,
+      "units": ""
+    },
+    "efeito": "",
+    "alcance": "none",
+    "area": "",
+    "resistencia": {
+      "pericia": "",
+      "atributo": "sab",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [],
+    "tipo": "classe",
+    "subtipo": "Druida",
+    "origin": "",
+    "tags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "rolltags": [],
+    "automationtags": []
+  },
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.0",
+    "coreVersion": "14.366",
+    "createdTime": 1788042525021,
+    "modifiedTime": 1788042525021,
+    "lastModifiedBy": "4fJviA1Q4qcjwsna",
+    "duplicateSource": null,
+    "exportSource": null,
+    "compendiumSource": null
+  },
+  "_key": "!items!e7wxI2LiyckI1zJo"
+}

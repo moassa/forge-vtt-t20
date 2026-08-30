@@ -1,0 +1,130 @@
+{
+  "name": "Visão Ampla",
+  "type": "poder",
+  "img": "systems/tormenta20/icons/poderes/ameacas/visao-ampla.webp",
+  "system": {
+    "description": {
+      "value": "<p>Um lefeu recebe +5 em Percepção e não pode ser flanqueado.</p>",
+      "unidentified": ""
+    },
+    "source": "",
+    "ativacao": {
+      "execucao": "",
+      "custo": 0,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "duracao": {
+      "value": 0,
+      "units": "inst",
+      "special": ""
+    },
+    "range": {
+      "value": null,
+      "units": ""
+    },
+    "efeito": "",
+    "alcance": "none",
+    "area": "",
+    "resistencia": {
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [],
+    "tipo": "ability",
+    "subtipo": "",
+    "origin": "",
+    "tags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "rolltags": [],
+    "automationtags": []
+  },
+  "effects": [
+    {
+      "name": "Visão Ampla",
+      "origin": "Compendium.tormenta20.habilidades-de-criaturas.Item.EIYfP5jU2e73gtyR",
+      "tint": "#ffffff",
+      "flags": {
+        "tormenta20": {}
+      },
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": null,
+        "expired": false
+      },
+      "disabled": false,
+      "_id": "hzHR5CmkAoSjbmwI",
+      "description": "",
+      "transfer": true,
+      "statuses": [],
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.0",
+        "createdTime": 1788042439014,
+        "modifiedTime": 1788042439014,
+        "lastModifiedBy": "4fJviA1Q4qcjwsna",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "img": "systems/tormenta20/icons/poderes/ameacas/visao-ampla.webp",
+      "type": "base",
+      "system": {
+        "changes": [
+          {
+            "key": "system.pericias.perc.bonus",
+            "value": 5,
+            "type": "add",
+            "phase": "initial"
+          }
+        ],
+        "targets": [],
+        "status": null,
+        "onuse": false,
+        "abilityUse": {
+          "description": "",
+          "automatic": false,
+          "aumenta": false,
+          "custo": 0,
+          "names": [],
+          "types": []
+        },
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "disposition": []
+        }
+      },
+      "sort": 0,
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "_key": "!items.effects!EIYfP5jU2e73gtyR.hzHR5CmkAoSjbmwI"
+    }
+  ],
+  "flags": {},
+  "_stats": {
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.0",
+    "coreVersion": "14.366",
+    "createdTime": 1788042439013,
+    "modifiedTime": 1788042439013,
+    "lastModifiedBy": "4fJviA1Q4qcjwsna",
+    "duplicateSource": null,
+    "exportSource": null,
+    "compendiumSource": null
+  },
+  "_id": "EIYfP5jU2e73gtyR",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!EIYfP5jU2e73gtyR"
+}

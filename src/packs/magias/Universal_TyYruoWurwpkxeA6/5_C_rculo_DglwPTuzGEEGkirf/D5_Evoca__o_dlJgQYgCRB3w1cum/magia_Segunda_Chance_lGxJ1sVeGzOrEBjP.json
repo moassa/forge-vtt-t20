@@ -1,0 +1,300 @@
+{
+  "_id": "lGxJ1sVeGzOrEBjP",
+  "name": "Segunda Chance",
+  "type": "magia",
+  "img": "systems/tormenta20/icons/magias/segunda-chance.webp",
+  "effects": [
+    {
+      "_id": "I3oHcP1DmIn6LHYi",
+      "flags": {
+        "tormenta20": {}
+      },
+      "disabled": true,
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": null,
+        "expired": false
+      },
+      "origin": "Compendium.tormenta20.magias.lGxJ1sVeGzOrEBjP",
+      "transfer": false,
+      "tint": "#ffffff",
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.0",
+        "createdTime": 1788042471107,
+        "modifiedTime": 1788042471107,
+        "lastModifiedBy": "4fJviA1Q4qcjwsna",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Segunda Chance",
+      "img": "icons/svg/upgrade.svg",
+      "type": "base",
+      "system": {
+        "changes": [
+          {
+            "key": "dano",
+            "value": 20,
+            "priority": null,
+            "type": "add",
+            "phase": "initial"
+          }
+        ],
+        "targets": [],
+        "status": null,
+        "onuse": true,
+        "abilityUse": {
+          "description": "",
+          "automatic": false,
+          "aumenta": true,
+          "custo": 1,
+          "names": [],
+          "types": [
+            "self"
+          ]
+        },
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "disposition": []
+        }
+      },
+      "description": "<p>aumenta a cura em +20 PV.</p>",
+      "statuses": [],
+      "sort": 0,
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "_key": "!items.effects!lGxJ1sVeGzOrEBjP.I3oHcP1DmIn6LHYi"
+    },
+    {
+      "_id": "1BVxrSXyv3h9o9X5",
+      "flags": {
+        "tormenta20": {}
+      },
+      "disabled": true,
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": null,
+        "expired": false
+      },
+      "origin": "Compendium.tormenta20.magias.lGxJ1sVeGzOrEBjP",
+      "transfer": false,
+      "tint": "#ffffff",
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.0",
+        "createdTime": 1788042471107,
+        "modifiedTime": 1788042471107,
+        "lastModifiedBy": "4fJviA1Q4qcjwsna",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Segunda Chance",
+      "img": "icons/svg/upgrade.svg",
+      "type": "base",
+      "system": {
+        "changes": [
+          {
+            "key": "alcance",
+            "value": "curto",
+            "priority": null,
+            "type": "override",
+            "phase": "initial"
+          },
+          {
+            "key": "alvo",
+            "value": "até 5 criaturas",
+            "priority": null,
+            "type": "override",
+            "phase": "initial"
+          }
+        ],
+        "targets": [],
+        "status": null,
+        "onuse": true,
+        "abilityUse": {
+          "description": "",
+          "automatic": false,
+          "aumenta": false,
+          "custo": 2,
+          "names": [],
+          "types": [
+            "self"
+          ]
+        },
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "disposition": []
+        }
+      },
+      "description": "<p>muda o alcance para curto e o alvo para até 5 criaturas.</p>",
+      "statuses": [],
+      "sort": 0,
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "_key": "!items.effects!lGxJ1sVeGzOrEBjP.1BVxrSXyv3h9o9X5"
+    },
+    {
+      "_id": "Kg9fAT3uWVkFysDS",
+      "flags": {
+        "tormenta20": {}
+      },
+      "disabled": true,
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": null,
+        "expired": false
+      },
+      "origin": "Compendium.tormenta20.magias.lGxJ1sVeGzOrEBjP",
+      "transfer": false,
+      "tint": "#ffffff",
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.0",
+        "createdTime": 1788042471107,
+        "modifiedTime": 1788042471107,
+        "lastModifiedBy": "4fJviA1Q4qcjwsna",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Segunda Chance",
+      "img": "icons/svg/upgrade.svg",
+      "type": "base",
+      "system": {
+        "changes": [
+          {
+            "key": "alvo",
+            "value": "uma criatura que tenha morrido há até uma rodada",
+            "priority": 0,
+            "type": "override",
+            "phase": "initial"
+          }
+        ],
+        "targets": [],
+        "status": null,
+        "onuse": true,
+        "abilityUse": {
+          "description": "",
+          "automatic": false,
+          "aumenta": false,
+          "custo": 5,
+          "names": [],
+          "types": [
+            "self"
+          ]
+        },
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "disposition": []
+        }
+      },
+      "description": "<p>muda o alvo para uma criatura que tenha morrido há até uma rodada. Esta magia pode curá-la.</p>",
+      "statuses": [],
+      "sort": 0,
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "_key": "!items.effects!lGxJ1sVeGzOrEBjP.Kg9fAT3uWVkFysDS"
+    }
+  ],
+  "folder": "dlJgQYgCRB3w1cum",
+  "sort": 0,
+  "flags": {},
+  "system": {
+    "description": {
+      "value": "<p style=\"text-align:justify\">Um brilho de luz, na forma de asas de fênix, emana do alvo. Ele recupera 200 pontos de vida e se cura de qualquer das seguintes condições: abalado, apavorado, alquebrado, atordoado, cego, confuso, debilitado, enjoado, envenenado, esmorecido, exausto, fascinado, fatigado, fraco, frustrado, lento, ofuscado, paralisado, pasmo ou surdo.</p>",
+      "unidentified": ""
+    },
+    "source": "Tormenta20 — Edição Jogo do Ano, p. 205",
+    "ativacao": {
+      "execucao": "action",
+      "custo": 15,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "duracao": {
+      "value": 0,
+      "units": "inst",
+      "special": ""
+    },
+    "range": {
+      "value": null,
+      "units": ""
+    },
+    "consume": {
+      "type": "",
+      "target": "",
+      "amount": null,
+      "mpMultiplier": false
+    },
+    "efeito": "",
+    "alcance": "touch",
+    "alvo": "1 criatura",
+    "area": "",
+    "resistencia": {
+      "pericia": "",
+      "atributo": "sab",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [
+      {
+        "name": "Cura",
+        "key": "dano0",
+        "type": "dano",
+        "parts": [
+          [
+            "200",
+            "curapv",
+            ""
+          ]
+        ],
+        "versatil": "",
+        "adaptavel": ""
+      }
+    ],
+    "tipo": "div",
+    "circulo": 5,
+    "preparada": false,
+    "escola": "evo",
+    "chatFlavor": "",
+    "origin": "",
+    "tags": [],
+    "chatGif": "",
+    "rolltags": [],
+    "automationtags": [],
+    "equipado2": {
+      "slot": 0,
+      "type": ""
+    }
+  },
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.0",
+    "coreVersion": "14.366",
+    "createdTime": 1788042471107,
+    "modifiedTime": 1788042471107,
+    "lastModifiedBy": "4fJviA1Q4qcjwsna",
+    "duplicateSource": null,
+    "exportSource": null,
+    "compendiumSource": null
+  },
+  "_key": "!items!lGxJ1sVeGzOrEBjP"
+}

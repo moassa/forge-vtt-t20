@@ -1,0 +1,23 @@
+{
+  "folder": "vexWaYlAiymaSSpI",
+  "name": "Inventor",
+  "sorting": "a",
+  "type": "Item",
+  "_id": "iHjbUWZ9cRzIVZ3E",
+  "sort": 0,
+  "flags": {},
+  "_stats": {
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.0",
+    "coreVersion": "14.366",
+    "createdTime": 1788042524595,
+    "modifiedTime": 1788042524595,
+    "lastModifiedBy": "4fJviA1Q4qcjwsna",
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "description": "",
+  "color": null,
+  "_key": "!folders!iHjbUWZ9cRzIVZ3E"
+}

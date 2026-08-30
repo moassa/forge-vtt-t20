@@ -1,0 +1,138 @@
+{
+  "_id": "oMhqpjjWQzvHdIlc",
+  "name": "Preparação de Batalha",
+  "type": "magia",
+  "img": "systems/tormenta20/icons/magias/preparacao-de-batalha.webp",
+  "effects": [
+    {
+      "_id": "Stlr7Ll69XLIQaVi",
+      "flags": {
+        "tormenta20": {}
+      },
+      "disabled": true,
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": null,
+        "expired": false
+      },
+      "origin": "Compendium.tormenta20.magias.oMhqpjjWQzvHdIlc",
+      "transfer": false,
+      "tint": "#ffffff",
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.0",
+        "createdTime": 1788042471032,
+        "modifiedTime": 1788042471032,
+        "lastModifiedBy": "4fJviA1Q4qcjwsna",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Preparação de Batalha",
+      "img": "icons/svg/upgrade.svg",
+      "type": "base",
+      "system": {
+        "changes": [],
+        "targets": [],
+        "status": null,
+        "onuse": true,
+        "abilityUse": {
+          "description": "",
+          "automatic": false,
+          "aumenta": false,
+          "custo": 1,
+          "names": [],
+          "types": [
+            "self"
+          ]
+        },
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "disposition": []
+        }
+      },
+      "description": "<p>Aumenta o número de alvos em dois e o custo adicional em 1 PM.</p>",
+      "statuses": [],
+      "sort": 0,
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "_key": "!items.effects!oMhqpjjWQzvHdIlc.Stlr7Ll69XLIQaVi"
+    }
+  ],
+  "folder": "QXjjLbseUkA81Kns",
+  "sort": 0,
+  "flags": {},
+  "system": {
+    "description": {
+      "value": "<p><strong>Custo Adicional:</strong> penalidade de 1 PM</p>\n<p>Essa magia é muito utilizada por clérigos e bardos que não precisam (ou não podem) estar sempre com suas armas ou armaduras. A magia é lançada sobre até dois itens que você possua. A partir daí, em qualquer momento, você pode usar uma ação completa para convocar os itens, que aparecem sobre seu corpo e em suas mãos. O efeito é espalhafatoso, sendo praticamente impossível utilizá-lo sem chamar atenção. A magia funciona independentemente da distância dos itens, contanto que estejam no mesmo plano, mas termina se você perder a posse deles.</p>",
+      "unidentified": ""
+    },
+    "source": "Guia de NPCs, p. 16 (1.2)",
+    "ativacao": {
+      "execucao": "action",
+      "custo": 3,
+      "qtd": "",
+      "condicao": "Custo Adicional: penalidade de 1 PM",
+      "special": ""
+    },
+    "duracao": {
+      "value": 0,
+      "units": "special",
+      "special": "Permanente até ser descarregada"
+    },
+    "range": {
+      "value": null,
+      "units": ""
+    },
+    "consume": {
+      "type": "",
+      "target": "",
+      "amount": null,
+      "mpMultiplier": false
+    },
+    "efeito": "",
+    "alcance": "touch",
+    "alvo": "até dois itens que você possua, entre armas, armaduras e escudos",
+    "area": "",
+    "resistencia": {
+      "pericia": "",
+      "atributo": "int",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [],
+    "tipo": "uni",
+    "circulo": 2,
+    "preparada": false,
+    "escola": "con",
+    "chatFlavor": "Custo adicional: penalidade de 1 PM.",
+    "origin": "",
+    "tags": [],
+    "chatGif": "",
+    "rolltags": [],
+    "automationtags": [],
+    "equipado2": {
+      "slot": 0,
+      "type": ""
+    }
+  },
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.0",
+    "coreVersion": "14.366",
+    "createdTime": 1788042471032,
+    "modifiedTime": 1788042471032,
+    "lastModifiedBy": "4fJviA1Q4qcjwsna",
+    "duplicateSource": null,
+    "exportSource": null,
+    "compendiumSource": null
+  },
+  "_key": "!items!oMhqpjjWQzvHdIlc"
+}

@@ -1,0 +1,72 @@
+{
+  "name": "Mestre Alquimista",
+  "type": "poder",
+  "img": "icons/commodities/tech/cog-brass.webp",
+  "effects": [],
+  "flags": {
+    "scene-packer": {
+      "sourceId": "Item.rIZqrA7uAFQzu8Rn",
+      "defaultPermission": 3,
+      "hash": "4a37f388886a24c6a47dc5e9abfc577e56ddf7d6"
+    }
+  },
+  "system": {
+    "description": {
+      "value": "<p>Você pode fabricar poções com fórmulas que conheça de qualquer círculo. Pré-requisitos: Int 3, Sab 3, Alquimista Iniciado, 10º nível de inventor.</p>",
+      "unidentified": ""
+    },
+    "source": "Tormenta20 — Edição Jogo do Ano, p. 69",
+    "ativacao": {
+      "execucao": "",
+      "custo": 0,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "duracao": {
+      "value": 0,
+      "units": "inst",
+      "special": ""
+    },
+    "range": {
+      "value": null,
+      "units": ""
+    },
+    "efeito": "",
+    "alcance": "none",
+    "area": "",
+    "resistencia": {
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [],
+    "tipo": "classe",
+    "subtipo": "inventor",
+    "chatFlavor": "",
+    "origin": "",
+    "tags": [],
+    "chatGif": "",
+    "rolltags": [],
+    "automationtags": []
+  },
+  "_stats": {
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.0",
+    "coreVersion": "14.366",
+    "createdTime": 1788042524964,
+    "modifiedTime": 1788042524964,
+    "lastModifiedBy": "4fJviA1Q4qcjwsna",
+    "duplicateSource": null,
+    "exportSource": null,
+    "compendiumSource": null
+  },
+  "_id": "anGFgBM64UpxWdiL",
+  "folder": "iHjbUWZ9cRzIVZ3E",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!anGFgBM64UpxWdiL"
+}

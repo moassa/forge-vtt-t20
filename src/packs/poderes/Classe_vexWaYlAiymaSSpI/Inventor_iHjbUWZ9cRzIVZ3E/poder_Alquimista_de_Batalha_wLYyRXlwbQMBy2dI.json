@@ -1,0 +1,139 @@
+{
+  "name": "Alquimista de Batalha",
+  "type": "poder",
+  "img": "systems/tormenta20/icons/classes/inventor.webp",
+  "effects": [
+    {
+      "_id": "RxIKyHHa5FVdk2Uf",
+      "disabled": true,
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": null,
+        "expired": false
+      },
+      "origin": "Item.Sae0HU2rLnUfjp0a",
+      "transfer": true,
+      "flags": {
+        "tormenta20": {}
+      },
+      "tint": "#ffffff",
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.0",
+        "createdTime": 1788042525036,
+        "modifiedTime": 1788042525036,
+        "lastModifiedBy": "4fJviA1Q4qcjwsna",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Alquimista de Batalha",
+      "img": "icons/svg/upgrade.svg",
+      "type": "base",
+      "system": {
+        "changes": [
+          {
+            "key": "dano",
+            "value": "@int",
+            "priority": 0,
+            "type": "add",
+            "phase": "initial"
+          }
+        ],
+        "targets": [],
+        "status": null,
+        "onuse": true,
+        "abilityUse": {
+          "description": "",
+          "automatic": false,
+          "aumenta": false,
+          "custo": null,
+          "names": [],
+          "types": [
+            "consumable"
+          ]
+        },
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "disposition": []
+        }
+      },
+      "description": "",
+      "statuses": [],
+      "sort": 0,
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "_key": "!items.effects!wLYyRXlwbQMBy2dI.RxIKyHHa5FVdk2Uf"
+    }
+  ],
+  "flags": {
+    "scene-packer": {
+      "sourceId": "Item.Sae0HU2rLnUfjp0a",
+      "defaultPermission": 3,
+      "hash": "e1aad2efacccf30e9c1a9a29bb3fbe06a2b445ea"
+    }
+  },
+  "system": {
+    "description": {
+      "value": "<p style=\"text-align:justify\">Quando usa um preparado alquímico ou poção que cause dano, você soma sua Inteligência na rolagem de dano. Pré-requisito: Alquimista Iniciado.</p>",
+      "unidentified": ""
+    },
+    "source": "Tormenta20 — Edição Jogo do Ano, p. 68",
+    "ativacao": {
+      "execucao": "",
+      "custo": 0,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "duracao": {
+      "value": 0,
+      "units": "inst",
+      "special": ""
+    },
+    "range": {
+      "value": null,
+      "units": ""
+    },
+    "efeito": "",
+    "alcance": "none",
+    "area": "",
+    "resistencia": {
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [],
+    "tipo": "classe",
+    "subtipo": "inventor",
+    "chatFlavor": "",
+    "origin": "",
+    "tags": [],
+    "chatGif": "",
+    "rolltags": [],
+    "automationtags": []
+  },
+  "_stats": {
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.0",
+    "coreVersion": "14.366",
+    "createdTime": 1788042525036,
+    "modifiedTime": 1788042525036,
+    "lastModifiedBy": "4fJviA1Q4qcjwsna",
+    "duplicateSource": null,
+    "exportSource": null,
+    "compendiumSource": null
+  },
+  "_id": "wLYyRXlwbQMBy2dI",
+  "folder": "iHjbUWZ9cRzIVZ3E",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!wLYyRXlwbQMBy2dI"
+}

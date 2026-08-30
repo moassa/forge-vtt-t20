@@ -1,0 +1,109 @@
+{
+  "_id": "JC6bm2uh4g7oaGge",
+  "name": "Essência de mana",
+  "type": "consumivel",
+  "img": "systems/tormenta20/icons/itens/gerais/essencia-mana.webp",
+  "effects": [],
+  "folder": "FUrcrKKV6smuHI1v",
+  "sort": 600000,
+  "flags": {},
+  "system": {
+    "description": {
+      "value": "<p style=\"text-align:justify\">Esta poção feita de ervas raras e compostos alquímicos recupera energia pessoal. Beber a essência de mana é uma ação padrão e recupera 1d4 pontos de mana.</p>",
+      "unidentified": ""
+    },
+    "source": "Tormenta20 — Edição Jogo do Ano, p. 160",
+    "carregado": true,
+    "peso": 0.1,
+    "espacos": 0.5,
+    "qtd": 1,
+    "preco": 50,
+    "pv": {
+      "value": 0,
+      "max": 0
+    },
+    "rd": 0,
+    "ativacao": {
+      "execucao": "action",
+      "custo": 0,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "duracao": {
+      "value": 0,
+      "units": "inst",
+      "special": ""
+    },
+    "range": {
+      "value": null,
+      "units": ""
+    },
+    "consume": {
+      "type": "",
+      "target": "",
+      "amount": null,
+      "mpMultiplier": false
+    },
+    "efeito": "",
+    "alcance": "none",
+    "alvo": "",
+    "area": "",
+    "resistencia": {
+      "pericia": "",
+      "atributo": "sab",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [
+      {
+        "name": "Dano",
+        "key": "dano0",
+        "type": "dano",
+        "parts": [
+          [
+            "1d4",
+            "curapm",
+            ""
+          ]
+        ],
+        "versatil": "",
+        "adaptavel": ""
+      }
+    ],
+    "tipo": "alchemy",
+    "chatFlavor": "",
+    "origin": "",
+    "tags": [],
+    "chatGif": "",
+    "upgrades": {
+      "melhoria1": "",
+      "melhoria2": "",
+      "melhoria3": "",
+      "melhoria4": "",
+      "material": "",
+      "encanto1": "",
+      "encanto2": "",
+      "encanto3": ""
+    },
+    "subtipo": "",
+    "rolltags": [],
+    "automationtags": [],
+    "enableAutoUpgrades": true
+  },
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.0",
+    "coreVersion": "14.366",
+    "createdTime": 1788042414269,
+    "modifiedTime": 1788042414269,
+    "lastModifiedBy": "4fJviA1Q4qcjwsna",
+    "duplicateSource": null,
+    "exportSource": null,
+    "compendiumSource": null
+  },
+  "_key": "!items!JC6bm2uh4g7oaGge"
+}

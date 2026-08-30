@@ -1,0 +1,72 @@
+{
+  "name": "Kliren",
+  "type": "race",
+  "img": "systems/tormenta20/icons/racas/kliren.webp",
+  "system": {
+    "description": {
+      "value": "<p>@EMBED[Compendium.tormenta20-dev-env.basico-rules.JournalEntry.D5UPztr7I9a68jWW.JournalEntryPage.6iNKEOtQDiDrwhHN]{Kliren}</p>",
+      "unidentified": ""
+    },
+    "source": "",
+    "origin": "",
+    "tags": [],
+    "rolltags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "atributos": {
+      "for": -1,
+      "des": 0,
+      "con": 0,
+      "int": 2,
+      "sab": 0,
+      "car": 1
+    },
+    "atributosDinamicos": {
+      "value": [],
+      "description": "+1 em Três Atributos Diferentes"
+    },
+    "grants": [
+      {
+        "title": "",
+        "desc": "",
+        "type": "multi",
+        "choices": [
+          {
+            "uuid": "Compendium.tormenta20.poderes.Item.5W1KPafxjV4C7EmB"
+          },
+          {
+            "uuid": "Compendium.tormenta20.poderes.Item.9LjWgSEYKGmd0ix9"
+          },
+          {
+            "uuid": "Compendium.tormenta20.poderes.Item.YlgdiUlZOAsflTvN"
+          },
+          {
+            "uuid": "Compendium.tormenta20.poderes.Item.kV4orwvtjHg0Ao2M"
+          }
+        ]
+      }
+    ],
+    "automationtags": [],
+    "skills": []
+  },
+  "effects": [],
+  "folder": null,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.0",
+    "createdTime": 1788042553944,
+    "modifiedTime": 1788042553944,
+    "lastModifiedBy": "4fJviA1Q4qcjwsna",
+    "compendiumSource": null
+  },
+  "_id": "wMJ1gB4FmwlO5fzT",
+  "sort": 900000,
+  "_key": "!items!wMJ1gB4FmwlO5fzT"
+}

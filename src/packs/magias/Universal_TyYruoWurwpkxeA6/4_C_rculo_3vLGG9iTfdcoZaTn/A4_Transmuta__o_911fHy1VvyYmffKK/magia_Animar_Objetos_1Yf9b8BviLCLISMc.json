@@ -1,0 +1,845 @@
+{
+  "_id": "1Yf9b8BviLCLISMc",
+  "name": "Animar Objetos",
+  "type": "magia",
+  "img": "systems/tormenta20/icons/magias/animar-objetos.webp",
+  "effects": [
+    {
+      "_id": "nvRCsxCslDKhoyVy",
+      "flags": {
+        "tormenta20": {}
+      },
+      "disabled": true,
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": null,
+        "expired": false
+      },
+      "origin": "Item.XKoBewFS6ExI3ACX",
+      "tint": "#ffffff",
+      "transfer": false,
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.0",
+        "createdTime": 1788042471268,
+        "modifiedTime": 1788042471268,
+        "lastModifiedBy": "4fJviA1Q4qcjwsna",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Animar Objetos",
+      "img": "icons/svg/upgrade.svg",
+      "type": "base",
+      "system": {
+        "changes": [
+          {
+            "key": "duracao",
+            "value": "permanente",
+            "priority": null,
+            "type": "override",
+            "phase": "initial"
+          }
+        ],
+        "targets": [],
+        "status": null,
+        "onuse": true,
+        "abilityUse": {
+          "description": "",
+          "automatic": false,
+          "aumenta": false,
+          "custo": 5,
+          "names": [],
+          "types": [
+            "self"
+          ]
+        },
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "disposition": []
+        }
+      },
+      "description": "<p>muda a duração para permanente e adiciona componente material (prataria no valor de T$ 1.000). Você pode ter um máximo de objetos animados igual à metade do seu nível.</p>",
+      "statuses": [],
+      "sort": 0,
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "_key": "!items.effects!1Yf9b8BviLCLISMc.nvRCsxCslDKhoyVy"
+    },
+    {
+      "_id": "LVWr9OeGA8h0V5e0",
+      "disabled": true,
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": "sceneEnd",
+        "expired": false
+      },
+      "origin": "Item.jGRtWpsdNPtWdjfl",
+      "transfer": false,
+      "flags": {
+        "tormenta20": {}
+      },
+      "tint": "#ffffff",
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.0",
+        "createdTime": 1788042471268,
+        "modifiedTime": 1788042471268,
+        "lastModifiedBy": "4fJviA1Q4qcjwsna",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Animar Objetos",
+      "img": "systems/tormenta20/icons/magias/animar-objetos.webp",
+      "type": "base",
+      "system": {
+        "changes": [
+          {
+            "key": "dano",
+            "value": "1d6",
+            "priority": 0,
+            "type": "add",
+            "phase": "initial"
+          }
+        ],
+        "targets": [],
+        "status": null,
+        "onuse": true,
+        "abilityUse": {
+          "description": "",
+          "automatic": false,
+          "aumenta": false,
+          "custo": 0,
+          "names": [],
+          "types": [
+            "attack"
+          ]
+        },
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "disposition": []
+        }
+      },
+      "description": "<p>Assassino Iniciante</p>",
+      "statuses": [],
+      "sort": 0,
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "_key": "!items.effects!1Yf9b8BviLCLISMc.LVWr9OeGA8h0V5e0"
+    },
+    {
+      "_id": "EDkq7Fox5zvNJAF7",
+      "disabled": true,
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": "sceneEnd",
+        "expired": false
+      },
+      "origin": "Item.jGRtWpsdNPtWdjfl",
+      "transfer": false,
+      "flags": {
+        "tormenta20": {}
+      },
+      "tint": "#ffffff",
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.0",
+        "createdTime": 1788042471268,
+        "modifiedTime": 1788042471268,
+        "lastModifiedBy": "4fJviA1Q4qcjwsna",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Animar Objetos",
+      "img": "systems/tormenta20/icons/magias/animar-objetos.webp",
+      "type": "base",
+      "system": {
+        "changes": [
+          {
+            "key": "ataque",
+            "value": 1,
+            "priority": 0,
+            "type": "add",
+            "phase": "initial"
+          }
+        ],
+        "targets": [],
+        "status": null,
+        "onuse": true,
+        "abilityUse": {
+          "description": "",
+          "automatic": false,
+          "aumenta": false,
+          "custo": 0,
+          "names": [],
+          "types": [
+            "attack"
+          ]
+        },
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "disposition": []
+        }
+      },
+      "description": "<p>Combatente Iniciante</p>",
+      "statuses": [],
+      "sort": 0,
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "_key": "!items.effects!1Yf9b8BviLCLISMc.EDkq7Fox5zvNJAF7"
+    },
+    {
+      "_id": "SRhyjfOAY7qFcZUR",
+      "disabled": false,
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": "sceneEnd",
+        "expired": false
+      },
+      "origin": "Item.jGRtWpsdNPtWdjfl",
+      "transfer": false,
+      "flags": {
+        "tormenta20": {}
+      },
+      "tint": "#ffffff",
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.0",
+        "createdTime": 1788042471269,
+        "modifiedTime": 1788042471269,
+        "lastModifiedBy": "4fJviA1Q4qcjwsna",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Guardião Iniciante",
+      "img": "systems/tormenta20/icons/magias/animar-objetos.webp",
+      "type": "base",
+      "system": {
+        "changes": [
+          {
+            "key": "system.attributes.defesa.bonus",
+            "value": 2,
+            "priority": null,
+            "type": "add",
+            "phase": "initial"
+          }
+        ],
+        "targets": [],
+        "status": null,
+        "onuse": false,
+        "abilityUse": {
+          "description": "",
+          "automatic": false,
+          "aumenta": false,
+          "custo": 0,
+          "names": [],
+          "types": []
+        },
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "disposition": []
+        }
+      },
+      "description": "",
+      "statuses": [],
+      "sort": 0,
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "_key": "!items.effects!1Yf9b8BviLCLISMc.SRhyjfOAY7qFcZUR"
+    },
+    {
+      "_id": "w19yGST3w1x59WvG",
+      "disabled": true,
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": "sceneEnd",
+        "expired": false
+      },
+      "origin": "Item.jGRtWpsdNPtWdjfl",
+      "transfer": false,
+      "flags": {
+        "tormenta20": {}
+      },
+      "tint": "#ffffff",
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.0",
+        "createdTime": 1788042471269,
+        "modifiedTime": 1788042471269,
+        "lastModifiedBy": "4fJviA1Q4qcjwsna",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Animar Objetos",
+      "img": "systems/tormenta20/icons/magias/animar-objetos.webp",
+      "type": "base",
+      "system": {
+        "changes": [
+          {
+            "key": "ataque",
+            "value": 2,
+            "priority": 0,
+            "type": "add",
+            "phase": "initial"
+          }
+        ],
+        "targets": [],
+        "status": null,
+        "onuse": true,
+        "abilityUse": {
+          "description": "",
+          "automatic": false,
+          "aumenta": false,
+          "custo": 0,
+          "names": [],
+          "types": [
+            "attack"
+          ]
+        },
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "disposition": []
+        }
+      },
+      "description": "<p>Combatente Veterano</p>",
+      "statuses": [],
+      "sort": 0,
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "_key": "!items.effects!1Yf9b8BviLCLISMc.w19yGST3w1x59WvG"
+    },
+    {
+      "_id": "aMocXzYNa7G9gtgI",
+      "disabled": true,
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": "sceneEnd",
+        "expired": false
+      },
+      "origin": "Item.jGRtWpsdNPtWdjfl",
+      "transfer": false,
+      "flags": {
+        "tormenta20": {}
+      },
+      "tint": "#ffffff",
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.0",
+        "createdTime": 1788042471269,
+        "modifiedTime": 1788042471269,
+        "lastModifiedBy": "4fJviA1Q4qcjwsna",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Animar Objetos",
+      "img": "systems/tormenta20/icons/magias/animar-objetos.webp",
+      "type": "base",
+      "system": {
+        "changes": [
+          {
+            "key": "dano",
+            "value": "1d12",
+            "priority": 0,
+            "type": "add",
+            "phase": "initial"
+          }
+        ],
+        "targets": [],
+        "status": null,
+        "onuse": true,
+        "abilityUse": {
+          "description": "",
+          "automatic": false,
+          "aumenta": false,
+          "custo": 0,
+          "names": [],
+          "types": [
+            "attack"
+          ]
+        },
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "disposition": []
+        }
+      },
+      "description": "<p>Fortão Veterano</p>",
+      "statuses": [],
+      "sort": 0,
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "_key": "!items.effects!1Yf9b8BviLCLISMc.aMocXzYNa7G9gtgI"
+    },
+    {
+      "_id": "2iXzddxfOPshryt4",
+      "disabled": false,
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": "sceneEnd",
+        "expired": false
+      },
+      "origin": "Item.jGRtWpsdNPtWdjfl",
+      "transfer": false,
+      "flags": {
+        "tormenta20": {}
+      },
+      "tint": "#ffffff",
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.0",
+        "createdTime": 1788042471269,
+        "modifiedTime": 1788042471269,
+        "lastModifiedBy": "4fJviA1Q4qcjwsna",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Guardião Veterano",
+      "img": "systems/tormenta20/icons/magias/animar-objetos.webp",
+      "type": "base",
+      "system": {
+        "changes": [
+          {
+            "key": "system.attributes.defesa.bonus",
+            "value": 3,
+            "priority": null,
+            "type": "add",
+            "phase": "initial"
+          }
+        ],
+        "targets": [],
+        "status": null,
+        "onuse": false,
+        "abilityUse": {
+          "description": "",
+          "automatic": false,
+          "aumenta": false,
+          "custo": 0,
+          "names": [],
+          "types": []
+        },
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "disposition": []
+        }
+      },
+      "description": "",
+      "statuses": [],
+      "sort": 0,
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "_key": "!items.effects!1Yf9b8BviLCLISMc.2iXzddxfOPshryt4"
+    },
+    {
+      "_id": "uhkiNFv0IbTaQdxC",
+      "disabled": false,
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": "sceneEnd",
+        "expired": false
+      },
+      "origin": "Item.jGRtWpsdNPtWdjfl",
+      "transfer": false,
+      "flags": {
+        "tormenta20": {}
+      },
+      "tint": "#ffffff",
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.0",
+        "createdTime": 1788042471269,
+        "modifiedTime": 1788042471269,
+        "lastModifiedBy": "4fJviA1Q4qcjwsna",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Montaria (Cavalo) Veterana",
+      "img": "systems/tormenta20/icons/magias/animar-objetos.webp",
+      "type": "base",
+      "system": {
+        "changes": [
+          {
+            "key": "system.attibutes.movement.walk",
+            "value": 15,
+            "priority": null,
+            "type": "override",
+            "phase": "initial"
+          },
+          {
+            "key": "system.modificadores.ataque.cac",
+            "value": 2,
+            "priority": null,
+            "type": "add",
+            "phase": "initial"
+          },
+          {
+            "key": "system.modificadores.ataque.ad",
+            "value": 2,
+            "priority": null,
+            "type": "add",
+            "phase": "initial"
+          }
+        ],
+        "targets": [],
+        "status": null,
+        "onuse": false,
+        "abilityUse": {
+          "description": "",
+          "automatic": false,
+          "aumenta": false,
+          "custo": 0,
+          "names": [],
+          "types": []
+        },
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "disposition": []
+        }
+      },
+      "description": "",
+      "statuses": [],
+      "sort": 0,
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "_key": "!items.effects!1Yf9b8BviLCLISMc.uhkiNFv0IbTaQdxC"
+    },
+    {
+      "_id": "tUeZTBdHGqgnRFVD",
+      "disabled": true,
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": "sceneEnd",
+        "expired": false
+      },
+      "origin": "Item.jGRtWpsdNPtWdjfl",
+      "transfer": false,
+      "flags": {
+        "tormenta20": {}
+      },
+      "tint": "#ffffff",
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.0",
+        "createdTime": 1788042471270,
+        "modifiedTime": 1788042471270,
+        "lastModifiedBy": "4fJviA1Q4qcjwsna",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Animar Objetos",
+      "img": "systems/tormenta20/icons/magias/animar-objetos.webp",
+      "type": "base",
+      "system": {
+        "changes": [
+          {
+            "key": "dano",
+            "value": "3d6",
+            "priority": 0,
+            "type": "add",
+            "phase": "initial"
+          }
+        ],
+        "targets": [],
+        "status": null,
+        "onuse": true,
+        "abilityUse": {
+          "description": "",
+          "automatic": false,
+          "aumenta": false,
+          "custo": 0,
+          "names": [],
+          "types": [
+            "attack"
+          ]
+        },
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "disposition": []
+        }
+      },
+      "description": "<p>Fortão Mestre</p>",
+      "statuses": [],
+      "sort": 0,
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "_key": "!items.effects!1Yf9b8BviLCLISMc.tUeZTBdHGqgnRFVD"
+    },
+    {
+      "_id": "c1i3PINi3DqPYjaT",
+      "disabled": false,
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": "sceneEnd",
+        "expired": false
+      },
+      "origin": "Item.jGRtWpsdNPtWdjfl",
+      "transfer": false,
+      "flags": {
+        "tormenta20": {}
+      },
+      "tint": "#ffffff",
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.0",
+        "createdTime": 1788042471270,
+        "modifiedTime": 1788042471270,
+        "lastModifiedBy": "4fJviA1Q4qcjwsna",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Guardião Mestre",
+      "img": "systems/tormenta20/icons/magias/animar-objetos.webp",
+      "type": "base",
+      "system": {
+        "changes": [
+          {
+            "key": "system.attributes.defesa.bonus",
+            "value": 4,
+            "priority": null,
+            "type": "add",
+            "phase": "initial"
+          },
+          {
+            "key": "system.pericias.refl.bonus",
+            "value": 2,
+            "priority": null,
+            "type": "add",
+            "phase": "initial"
+          },
+          {
+            "key": "system.pericias.fort.bonus",
+            "value": 2,
+            "priority": null,
+            "type": "add",
+            "phase": "initial"
+          },
+          {
+            "key": "system.pericias.vont.bonus",
+            "value": 2,
+            "priority": null,
+            "type": "add",
+            "phase": "initial"
+          }
+        ],
+        "targets": [],
+        "status": null,
+        "onuse": false,
+        "abilityUse": {
+          "description": "",
+          "automatic": false,
+          "aumenta": false,
+          "custo": 0,
+          "names": [],
+          "types": []
+        },
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "disposition": []
+        }
+      },
+      "description": "",
+      "statuses": [],
+      "sort": 0,
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "_key": "!items.effects!1Yf9b8BviLCLISMc.c1i3PINi3DqPYjaT"
+    },
+    {
+      "_id": "pYJA0nFOkvHfjPub",
+      "disabled": false,
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": "sceneEnd",
+        "expired": false
+      },
+      "origin": "Item.jGRtWpsdNPtWdjfl",
+      "transfer": false,
+      "flags": {
+        "tormenta20": {}
+      },
+      "tint": "#ffffff",
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.0",
+        "createdTime": 1788042471270,
+        "modifiedTime": 1788042471270,
+        "lastModifiedBy": "4fJviA1Q4qcjwsna",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Montaria (Cavalo) Mestre",
+      "img": "systems/tormenta20/icons/magias/animar-objetos.webp",
+      "type": "base",
+      "system": {
+        "changes": [
+          {
+            "key": "system.modificadores.ataque.cac",
+            "value": 2,
+            "priority": null,
+            "type": "add",
+            "phase": "initial"
+          },
+          {
+            "key": "system.modificadores.ataque.ad",
+            "value": 2,
+            "priority": null,
+            "type": "add",
+            "phase": "initial"
+          },
+          {
+            "key": "system.attributes.movement.walk.base",
+            "value": 15,
+            "priority": null,
+            "type": "override",
+            "phase": "initial"
+          }
+        ],
+        "targets": [],
+        "status": null,
+        "onuse": false,
+        "abilityUse": {
+          "description": "",
+          "automatic": false,
+          "aumenta": false,
+          "custo": 0,
+          "names": [],
+          "types": []
+        },
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "disposition": []
+        }
+      },
+      "description": "",
+      "statuses": [],
+      "sort": 0,
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "_key": "!items.effects!1Yf9b8BviLCLISMc.pYJA0nFOkvHfjPub"
+    }
+  ],
+  "folder": "911fHy1VvyYmffKK",
+  "sort": 0,
+  "flags": {},
+  "system": {
+    "description": {
+      "value": "<p style=\"text-align:justify\">Você concede vida a objetos inanimados. Cada objeto se torna um parceiro sob seu controle. O tipo dele é escolhido da lista de tamanho e ele não conta em seu limite de parceiros. Com uma ação de movimento, você pode comandar mentalmente qualquer objeto animado dentro do alcance para que auxilie você ou outra criatura. Outros usos criativos para os objetos ficam a cargo do mestre. Objetos animados são construtos com valores de Força, Destreza e PV de acordo com seu tamanho. Todos os outros atributos são nulos, eles não têm valor de Defesa ou testes de resistência e falham automaticamente em qualquer teste oposto. Diferente de parceiros comuns, um objeto pode ser alvo de ações hostis. Esta magia não afeta itens mágicos, nem objetos que estejam sendo carregados por outra criatura.</p><p style=\"text-align:justify\">Estatísticas de objetos animados</p><p style=\"text-align:justify\">Minúsculo: For –3, Des 4, 5 PV; Assassino ou Combatente Iniciante.</p><p style=\"text-align:justify\">Pequeno: For –2, Des 2, 10 PV; Combatente ou Guardião Iniciante.</p><p style=\"text-align:justify\">Médio: For 0, Des 1, 20 PV; Combatente ou Guardião Veterano.</p><p style=\"text-align:justify\">Grande: For 2, Des 0, 40 PV; Fortão, Guardião ou Montaria (cavalo) Veterano.</p><p style=\"text-align:justify\">Enorme: For 4, Des –2, 80 PV; Fortão, Guardião ou Montaria (cavalo) Mestre.</p>",
+      "unidentified": ""
+    },
+    "source": "Tormenta20 — Edição Jogo do Ano, p. 179",
+    "ativacao": {
+      "execucao": "action",
+      "custo": 10,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "duracao": {
+      "value": 0,
+      "units": "scene",
+      "special": ""
+    },
+    "range": {
+      "value": null,
+      "units": ""
+    },
+    "consume": {
+      "type": "",
+      "target": "",
+      "amount": null,
+      "mpMultiplier": false
+    },
+    "efeito": "",
+    "alcance": "medium",
+    "alvo": "Até 8 objetos Minúsculos ou Pequenos, 4 objetos Médios, 2 objetos Grandes ou 1 objeto Enorme",
+    "area": "",
+    "resistencia": {
+      "pericia": "",
+      "atributo": "int",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [],
+    "tipo": "arc",
+    "circulo": 4,
+    "preparada": false,
+    "escola": "tra",
+    "chatFlavor": "",
+    "origin": "",
+    "tags": [],
+    "chatGif": "",
+    "rolltags": [],
+    "automationtags": [],
+    "equipado2": {
+      "slot": 0,
+      "type": ""
+    }
+  },
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.0",
+    "coreVersion": "14.366",
+    "createdTime": 1788042471267,
+    "modifiedTime": 1788042471267,
+    "lastModifiedBy": "4fJviA1Q4qcjwsna",
+    "duplicateSource": null,
+    "exportSource": null,
+    "compendiumSource": null
+  },
+  "_key": "!items!1Yf9b8BviLCLISMc"
+}

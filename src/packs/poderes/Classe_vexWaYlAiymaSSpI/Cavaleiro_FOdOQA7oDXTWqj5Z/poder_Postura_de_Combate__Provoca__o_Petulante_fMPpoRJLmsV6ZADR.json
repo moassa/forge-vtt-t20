@@ -1,0 +1,66 @@
+{
+  "_id": "fMPpoRJLmsV6ZADR",
+  "name": "Postura de Combate: Provocação Petulante",
+  "type": "poder",
+  "img": "systems/tormenta20/icons/classes/cavaleiro.webp",
+  "effects": [],
+  "folder": "FOdOQA7oDXTWqj5Z",
+  "sort": 0,
+  "flags": {},
+  "system": {
+    "description": {
+      "value": "<p style=\"text-align:justify\">Enquanto esta postura estiver ativa, todos os inimigos que iniciarem seus turnos em alcance curto devem fazer um teste de Vontade (CD Car). Se falharem, qualquer ação hostil que realizarem deve ter você como alvo (mas suas outras ações não têm esta restrição). Ações hostis incluem ataques e outras ações que causem dano e/ou condições negativas. Mental.</p><p><strong>Posturas de Combate</strong></p><p style=\"text-align:justify\">Alguns poderes do cavaleiro são Posturas de Combate. Esses poderes compartilham as seguintes regras.</p><ul><li><p>Assumir uma postura gasta uma ação de movimento e 2 PM.</p></li><li><p>Os efeitos de uma postura duram até o final da cena, a menos que sua descrição diga o contrário.</p></li><li><p>Você só pode manter uma postura por vez.</p></li></ul>",
+      "unidentified": ""
+    },
+    "source": "Tormenta20 — Edição Jogo do Ano, p. 54",
+    "ativacao": {
+      "execucao": "move",
+      "custo": 2,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "duracao": {
+      "value": 0,
+      "units": "inst",
+      "special": ""
+    },
+    "range": {
+      "value": null,
+      "units": ""
+    },
+    "efeito": "",
+    "alcance": "none",
+    "area": "",
+    "resistencia": {
+      "pericia": "",
+      "atributo": "car",
+      "bonus": 0,
+      "txt": "Vontade"
+    },
+    "rolls": [],
+    "tipo": "classe",
+    "subtipo": "Cavaleiro",
+    "origin": "",
+    "tags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "rolltags": [],
+    "automationtags": []
+  },
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.0",
+    "coreVersion": "14.366",
+    "createdTime": 1788042524961,
+    "modifiedTime": 1788042524961,
+    "lastModifiedBy": "4fJviA1Q4qcjwsna",
+    "duplicateSource": null,
+    "exportSource": null,
+    "compendiumSource": null
+  },
+  "_key": "!items!fMPpoRJLmsV6ZADR"
+}

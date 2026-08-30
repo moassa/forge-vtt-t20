@@ -1,0 +1,137 @@
+{
+  "name": "Couraceiro",
+  "type": "poder",
+  "img": "icons/commodities/tech/cog-brass.webp",
+  "effects": [
+    {
+      "origin": "Item.XbndSZpX3PC0tiWv",
+      "tint": "#ffffff",
+      "flags": {
+        "tormenta20": {}
+      },
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": null,
+        "expired": false
+      },
+      "disabled": false,
+      "_id": "7th2Z9Rheq6XuBUb",
+      "transfer": true,
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.0",
+        "createdTime": 1788042525038,
+        "modifiedTime": 1788042525038,
+        "lastModifiedBy": "4fJviA1Q4qcjwsna",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Couraceiro",
+      "img": "icons/commodities/tech/cog-brass.webp",
+      "type": "base",
+      "system": {
+        "changes": [
+          {
+            "key": "system.attributes.defesa.bonus",
+            "value": "@int",
+            "priority": null,
+            "type": "add",
+            "phase": "initial"
+          }
+        ],
+        "targets": [],
+        "status": null,
+        "onuse": false,
+        "abilityUse": {
+          "description": "",
+          "automatic": false,
+          "aumenta": false,
+          "custo": 0,
+          "names": [],
+          "types": []
+        },
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "disposition": []
+        }
+      },
+      "description": "",
+      "statuses": [],
+      "sort": 0,
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "_key": "!items.effects!XbndSZpX3PC0tiWv.7th2Z9Rheq6XuBUb"
+    }
+  ],
+  "flags": {
+    "scene-packer": {
+      "sourceId": "Item.GZ7cWm67y0usx8dL",
+      "defaultPermission": 3,
+      "hash": "368f30ffe894755f715f580be6a8be736485c4bb"
+    }
+  },
+  "system": {
+    "description": {
+      "value": "<p style=\"text-align:justify\">Você recebe proficiência com armaduras pesadas e escudos. Quando usa armadura, pode usar sua Inteligência em vez de Destreza na Defesa (mas continua não podendo somar um atributo na Defesa quando usa armadura pesada). Pré-requisito: treinado em Ofício (armeiro).</p>",
+      "unidentified": ""
+    },
+    "source": "Tormenta20 — Edição Jogo do Ano, p. 69",
+    "ativacao": {
+      "execucao": "",
+      "custo": 0,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "duracao": {
+      "value": 0,
+      "units": "inst",
+      "special": ""
+    },
+    "range": {
+      "value": null,
+      "units": ""
+    },
+    "efeito": "",
+    "alcance": "none",
+    "area": "",
+    "resistencia": {
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [],
+    "tipo": "classe",
+    "subtipo": "inventor",
+    "chatFlavor": "",
+    "origin": "",
+    "tags": [],
+    "chatGif": "",
+    "rolltags": [],
+    "automationtags": []
+  },
+  "_stats": {
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.0",
+    "coreVersion": "14.366",
+    "createdTime": 1788042525038,
+    "modifiedTime": 1788042525038,
+    "lastModifiedBy": "4fJviA1Q4qcjwsna",
+    "duplicateSource": null,
+    "exportSource": null,
+    "compendiumSource": null
+  },
+  "_id": "XbndSZpX3PC0tiWv",
+  "folder": "iHjbUWZ9cRzIVZ3E",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!XbndSZpX3PC0tiWv"
+}

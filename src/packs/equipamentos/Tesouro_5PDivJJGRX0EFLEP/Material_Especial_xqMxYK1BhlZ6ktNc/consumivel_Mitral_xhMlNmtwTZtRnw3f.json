@@ -1,0 +1,94 @@
+{
+  "name": "Mitral",
+  "type": "consumivel",
+  "img": "systems/tormenta20/icons/itens/gerais/mitral.webp",
+  "system": {
+    "description": {
+      "value": "<p><span><strong>[Material Especial]</strong></span></p>\n<p>Metal raro e valioso, o mitral é prateado, brilhante e mais leve que aço. Itens de mitral ocupam –1 espaço (mínimo 1).<br><strong>Arma.</strong> Aumenta sua margem de ameaça em 1. Por exemplo, uma espada longa de mitral tem margem de ameaça 18-20.<br><strong>Armadura e Escudo. </strong>Tem sua penalidade de armadura diminuída em 2. Armaduras pesadas de mitral permitem que você aplique até dois pontos de sua Destreza na Defesa.<br><strong>Esotérico.</strong> Permite que você pague +2 PM ao lançar uma magia para aumentar a CD dela em +2.</p>\n\n\n<p><span><strong>Preços:</strong></span></p>\n<p><span><span>Armas,</span></span><span style=\"font-family:var(--font-primary);font-size:var(--font-size-14)\">Armaduras leves e Escudo: +T$ 1500</span></p>\n<p><span><span>Armaduras pesadas: +T$ 12000</span></span></p>\n<p><span><span>Esotéricos: +T$ 3000</span></span></p>",
+      "unidentified": ""
+    },
+    "source": "Tormenta20 — Edição Jogo do Ano, p. 167",
+    "carregado": true,
+    "peso": 0,
+    "espacos": 1,
+    "qtd": 1,
+    "preco": 12000,
+    "pv": {
+      "value": 0,
+      "max": 0
+    },
+    "rd": 0,
+    "ativacao": {
+      "execucao": "",
+      "custo": 0,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "duracao": {
+      "value": 0,
+      "units": "inst",
+      "special": ""
+    },
+    "range": {
+      "value": null,
+      "units": ""
+    },
+    "consume": {
+      "type": "",
+      "target": "",
+      "amount": null,
+      "mpMultiplier": false
+    },
+    "efeito": "",
+    "alcance": "none",
+    "alvo": "",
+    "area": "",
+    "resistencia": {
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [],
+    "tipo": "material",
+    "chatFlavor": "",
+    "origin": "",
+    "subtipo": "",
+    "tags": [],
+    "chatGif": "",
+    "upgrades": {
+      "melhoria1": "",
+      "melhoria2": "",
+      "melhoria3": "",
+      "melhoria4": "",
+      "material": "",
+      "encanto1": "",
+      "encanto2": "",
+      "encanto3": ""
+    },
+    "rolltags": [],
+    "automationtags": [],
+    "enableAutoUpgrades": true
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.0",
+    "coreVersion": "14.366",
+    "createdTime": 1788042414276,
+    "modifiedTime": 1788042414276,
+    "lastModifiedBy": "4fJviA1Q4qcjwsna",
+    "duplicateSource": null,
+    "exportSource": null,
+    "compendiumSource": null
+  },
+  "_id": "xhMlNmtwTZtRnw3f",
+  "folder": "xqMxYK1BhlZ6ktNc",
+  "sort": 600000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!xhMlNmtwTZtRnw3f"
+}

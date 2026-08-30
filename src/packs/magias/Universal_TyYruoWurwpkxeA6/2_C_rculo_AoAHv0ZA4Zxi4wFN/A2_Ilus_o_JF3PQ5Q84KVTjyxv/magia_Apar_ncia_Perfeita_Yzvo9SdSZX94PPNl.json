@@ -1,0 +1,309 @@
+{
+  "_id": "Yzvo9SdSZX94PPNl",
+  "name": "Aparência Perfeita",
+  "type": "magia",
+  "img": "systems/tormenta20/icons/magias/aparencia-perfeita.webp",
+  "effects": [
+    {
+      "_id": "eZYZ5KPkIH2a6fjO",
+      "flags": {
+        "tormenta20": {}
+      },
+      "disabled": true,
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": null,
+        "expired": false
+      },
+      "origin": "Item.CRLvBrcWaySC2yYi",
+      "tint": "#ffffff",
+      "transfer": false,
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.0",
+        "createdTime": 1788042471074,
+        "modifiedTime": 1788042471074,
+        "lastModifiedBy": "4fJviA1Q4qcjwsna",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Aparência Perfeita",
+      "img": "icons/svg/upgrade.svg",
+      "type": "base",
+      "system": {
+        "changes": [
+          {
+            "key": "alcance",
+            "value": "Toque",
+            "priority": null,
+            "type": "override",
+            "phase": "initial"
+          },
+          {
+            "key": "alvo",
+            "value": "1 humanoide",
+            "priority": null,
+            "type": "override",
+            "phase": "initial"
+          }
+        ],
+        "targets": [],
+        "status": null,
+        "onuse": true,
+        "abilityUse": {
+          "description": "",
+          "automatic": false,
+          "aumenta": false,
+          "custo": 1,
+          "names": [],
+          "types": [
+            "self"
+          ]
+        },
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "disposition": []
+        }
+      },
+      "description": "<p>muda o alcance para toque e o alvo para 1 humanoide.</p>",
+      "statuses": [],
+      "sort": 0,
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "_key": "!items.effects!Yzvo9SdSZX94PPNl.eZYZ5KPkIH2a6fjO"
+    },
+    {
+      "_id": "AOxASZv1uaoyhTyD",
+      "flags": {
+        "tormenta20": {}
+      },
+      "disabled": false,
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": "sceneEnd",
+        "expired": false
+      },
+      "origin": "Item.CRLvBrcWaySC2yYi",
+      "tint": "#ffffff",
+      "transfer": false,
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.0",
+        "createdTime": 1788042471074,
+        "modifiedTime": 1788042471074,
+        "lastModifiedBy": "4fJviA1Q4qcjwsna",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Aparência Perfeita (Car 5)",
+      "img": "systems/tormenta20/icons/magias/aparencia-perfeita.webp",
+      "type": "base",
+      "system": {
+        "changes": [
+          {
+            "key": "system.atributos.car.bonus",
+            "value": 5,
+            "priority": null,
+            "type": "override",
+            "phase": "initial"
+          },
+          {
+            "key": "system.pericias.dipl.bonus",
+            "value": 5,
+            "priority": null,
+            "type": "add",
+            "phase": "initial"
+          },
+          {
+            "key": "system.pericias.enga.bonus",
+            "value": 5,
+            "priority": null,
+            "type": "add",
+            "phase": "initial"
+          }
+        ],
+        "targets": [],
+        "status": null,
+        "onuse": false,
+        "abilityUse": {
+          "description": "",
+          "automatic": false,
+          "aumenta": false,
+          "custo": 0,
+          "names": [],
+          "types": []
+        },
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "disposition": []
+        }
+      },
+      "description": "",
+      "statuses": [],
+      "sort": 0,
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "_key": "!items.effects!Yzvo9SdSZX94PPNl.AOxASZv1uaoyhTyD"
+    },
+    {
+      "_id": "eRKzguN7fqoNtNS1",
+      "flags": {
+        "tormenta20": {}
+      },
+      "disabled": false,
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": "sceneEnd",
+        "expired": false
+      },
+      "origin": "Item.CRLvBrcWaySC2yYi",
+      "tint": "#ffffff",
+      "transfer": false,
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.0",
+        "createdTime": 1788042471074,
+        "modifiedTime": 1788042471074,
+        "lastModifiedBy": "4fJviA1Q4qcjwsna",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Aparência Perfeita (Car +2)",
+      "img": "systems/tormenta20/icons/magias/aparencia-perfeita.webp",
+      "type": "base",
+      "system": {
+        "changes": [
+          {
+            "key": "system.atributos.car.bonus",
+            "value": 2,
+            "priority": null,
+            "type": "add",
+            "phase": "initial"
+          },
+          {
+            "key": "system.pericias.dipl.bonus",
+            "value": 5,
+            "priority": null,
+            "type": "add",
+            "phase": "initial"
+          },
+          {
+            "key": "system.pericias.enga.bonus",
+            "value": 5,
+            "priority": null,
+            "type": "add",
+            "phase": "initial"
+          }
+        ],
+        "targets": [],
+        "status": null,
+        "onuse": false,
+        "abilityUse": {
+          "description": "",
+          "automatic": false,
+          "aumenta": false,
+          "custo": 0,
+          "names": [],
+          "types": []
+        },
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "disposition": []
+        }
+      },
+      "description": "",
+      "statuses": [],
+      "sort": 0,
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "_key": "!items.effects!Yzvo9SdSZX94PPNl.eRKzguN7fqoNtNS1"
+    }
+  ],
+  "folder": "JF3PQ5Q84KVTjyxv",
+  "sort": 0,
+  "flags": {},
+  "system": {
+    "description": {
+      "value": "<p style=\"text-align:justify\">Esta magia lhe concede um rosto idealizado, porte físico garboso, voz melodiosa e olhar sedutor. Caso seu Carisma seja 5 ou mais, você recebe +2 neste atributo. Do contrário, ele se torna 5 (isso conta como um bônus). Além disso, você recebe +5 em Diplomacia e Enganação. Quando a magia acaba, quaisquer observadores percebem a mudança e tendem a suspeitar de você. Da mesma maneira, pessoas que o viram sob o efeito da magia sentirão que “algo está errado” ao vê-lo em condições normais. Quando a cena acabar, você pode gastar os PM da magia novamente como uma ação livre para mantê-la ativa. Este efeito não fornece PV ou PM adicionais.</p>",
+      "unidentified": ""
+    },
+    "source": "Tormenta20 — Edição Jogo do Ano, p. 180",
+    "ativacao": {
+      "execucao": "action",
+      "custo": 3,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "duracao": {
+      "value": 0,
+      "units": "scene",
+      "special": ""
+    },
+    "range": {
+      "value": null,
+      "units": ""
+    },
+    "consume": {
+      "type": "",
+      "target": "",
+      "amount": null,
+      "mpMultiplier": false
+    },
+    "efeito": "",
+    "alcance": "self",
+    "alvo": "Você",
+    "area": "",
+    "resistencia": {
+      "pericia": "",
+      "atributo": "int",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [],
+    "tipo": "arc",
+    "circulo": 2,
+    "preparada": false,
+    "escola": "ilu",
+    "chatFlavor": "",
+    "origin": "",
+    "tags": [],
+    "chatGif": "",
+    "rolltags": [],
+    "automationtags": [],
+    "equipado2": {
+      "slot": 0,
+      "type": ""
+    }
+  },
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.0",
+    "coreVersion": "14.366",
+    "createdTime": 1788042471073,
+    "modifiedTime": 1788042471073,
+    "lastModifiedBy": "4fJviA1Q4qcjwsna",
+    "duplicateSource": null,
+    "exportSource": null,
+    "compendiumSource": null
+  },
+  "_key": "!items!Yzvo9SdSZX94PPNl"
+}

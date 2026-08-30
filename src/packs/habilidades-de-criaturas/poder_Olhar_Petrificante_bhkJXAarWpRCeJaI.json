@@ -1,0 +1,179 @@
+{
+  "name": "Olhar Petrificante",
+  "type": "poder",
+  "img": "systems/tormenta20/icons/poderes/ameacas/olhar-petrificante.webp",
+  "effects": [
+    {
+      "origin": "Item.gzTi2g0xClcXNUA6",
+      "tint": "#ffffff",
+      "flags": {
+        "tormenta20": {}
+      },
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": "sceneEnd",
+        "expired": false
+      },
+      "disabled": false,
+      "_id": "TnXSqqNFVOJ9W9KA",
+      "transfer": false,
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.0",
+        "createdTime": 1788042439015,
+        "modifiedTime": 1788042439015,
+        "lastModifiedBy": "4fJviA1Q4qcjwsna",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Lento",
+      "img": "systems/tormenta20/icons/conditions/lento.svg",
+      "type": "base",
+      "system": {
+        "changes": [],
+        "targets": [],
+        "status": null,
+        "onuse": false,
+        "abilityUse": {
+          "description": "",
+          "automatic": false,
+          "aumenta": false,
+          "custo": 0,
+          "names": [],
+          "types": []
+        },
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "disposition": []
+        }
+      },
+      "description": "",
+      "statuses": [],
+      "sort": 0,
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "_key": "!items.effects!bhkJXAarWpRCeJaI.TnXSqqNFVOJ9W9KA"
+    },
+    {
+      "origin": "Item.bhkJXAarWpRCeJaI",
+      "tint": "#ffffff",
+      "flags": {
+        "tormenta20": {}
+      },
+      "duration": {
+        "value": 1,
+        "units": "rounds",
+        "expiry": "turnStart",
+        "expired": false
+      },
+      "disabled": false,
+      "_id": "GAVSDa8Qij9ymMpB",
+      "transfer": false,
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.0",
+        "createdTime": 1788042439016,
+        "modifiedTime": 1788042439016,
+        "lastModifiedBy": "4fJviA1Q4qcjwsna",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Petrificado",
+      "img": "systems/tormenta20/icons/conditions/petrificado.svg",
+      "type": "base",
+      "system": {
+        "changes": [],
+        "targets": [],
+        "status": null,
+        "onuse": false,
+        "abilityUse": {
+          "description": "",
+          "automatic": false,
+          "aumenta": false,
+          "custo": 0,
+          "names": [],
+          "types": []
+        },
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "disposition": []
+        }
+      },
+      "description": "",
+      "statuses": [],
+      "sort": 0,
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "_key": "!items.effects!bhkJXAarWpRCeJaI.GAVSDa8Qij9ymMpB"
+    }
+  ],
+  "flags": {},
+  "system": {
+    "description": {
+      "value": "<p>No início de seu turno, cada personagem em alcance curto do basilisco deve fazer um teste de Reflexos (CD 18). Se passar, desvia o olhar. Se falhar, fica lento. Se já estiver lento, fica petrificado permanentemente. Um personagem pode fechar os olhos para ficar imune a esta habilidade, mas sofrerá os efeitos de estar cego. Efeitos que removem paralisia revertem a petrificação. Metamorfose.</p>",
+      "unidentified": ""
+    },
+    "source": "",
+    "ativacao": {
+      "execucao": "move",
+      "custo": 1,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "duracao": {
+      "value": 0,
+      "units": "inst",
+      "special": ""
+    },
+    "range": {
+      "value": null,
+      "units": ""
+    },
+    "efeito": "",
+    "alcance": "none",
+    "area": "",
+    "resistencia": {
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0,
+      "txt": "Fortitude"
+    },
+    "rolls": [],
+    "tipo": "racial",
+    "subtipo": "",
+    "origin": "",
+    "tags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "rolltags": [],
+    "automationtags": []
+  },
+  "_stats": {
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.0",
+    "coreVersion": "14.366",
+    "createdTime": 1788042439015,
+    "modifiedTime": 1788042439015,
+    "lastModifiedBy": "4fJviA1Q4qcjwsna",
+    "duplicateSource": null,
+    "exportSource": null,
+    "compendiumSource": null
+  },
+  "_id": "bhkJXAarWpRCeJaI",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!bhkJXAarWpRCeJaI"
+}

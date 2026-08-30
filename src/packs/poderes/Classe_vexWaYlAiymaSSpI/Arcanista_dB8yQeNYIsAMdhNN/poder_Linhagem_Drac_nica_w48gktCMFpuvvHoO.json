@@ -1,0 +1,68 @@
+{
+  "_id": "w48gktCMFpuvvHoO",
+  "name": "Linhagem Dracônica",
+  "type": "poder",
+  "img": "systems/tormenta20/icons/poderes/classes/conjuradores/linhagem-draconica.webp",
+  "effects": [],
+  "folder": "dB8yQeNYIsAMdhNN",
+  "sort": 0,
+  "flags": {},
+  "system": {
+    "description": {
+      "value": "<p style=\"text-align:justify\">Um de seus antepassados foi um majestoso dragão. Escolha um tipo de dano entre ácido, eletricidade, fogo ou frio.</p><p style=\"text-align:justify\"><strong>Básica.</strong> Você soma seu Carisma em seus pontos de vida iniciais e recebe redução de dano 5 ao tipo escolhido.</p><p style=\"text-align:justify\"><strong>Aprimorada.</strong> Suas magias do tipo escolhido custam –1 PM e causam +1 ponto de dano por dado.</p><p style=\"text-align:justify\"><strong>Superior.</strong> Você passa a somar o dobro do seu Carisma em seus pontos de vida iniciais e se torna imune a dano do tipo escolhido. Além disso, sempre que reduz um ou mais inimigos a 0 PV ou menos com uma magia do tipo escolhido, você recebe uma quantidade de PM temporários igual ao círculo da magia.</p>",
+      "unidentified": ""
+    },
+    "source": "Tormenta20 — Edição Jogo do Ano, p. 39",
+    "ativacao": {
+      "execucao": "",
+      "custo": 0,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "duracao": {
+      "value": 0,
+      "units": "inst",
+      "special": ""
+    },
+    "range": {
+      "value": null,
+      "units": ""
+    },
+    "efeito": "",
+    "alcance": "none",
+    "area": "",
+    "resistencia": {
+      "pericia": "",
+      "atributo": "sab",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [],
+    "tipo": "ability",
+    "subtipo": "Arcanista",
+    "tags": [
+      "Arcanista"
+    ],
+    "origin": "",
+    "chatFlavor": "",
+    "chatGif": "",
+    "rolltags": [],
+    "automationtags": []
+  },
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.0",
+    "coreVersion": "14.366",
+    "createdTime": 1788042524956,
+    "modifiedTime": 1788042524956,
+    "lastModifiedBy": "4fJviA1Q4qcjwsna",
+    "duplicateSource": null,
+    "exportSource": null,
+    "compendiumSource": null
+  },
+  "_key": "!items!w48gktCMFpuvvHoO"
+}

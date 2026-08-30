@@ -1,0 +1,137 @@
+{
+  "name": "Bolsa de Pó",
+  "type": "equipamento",
+  "img": "systems/tormenta20/icons/itens/gerais/bolsa-de-po.webp",
+  "effects": [
+    {
+      "origin": "Item.Ye9upc42yVz6pHwH",
+      "tint": "#ffffff",
+      "flags": {
+        "tormenta20": {}
+      },
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": null,
+        "expired": false
+      },
+      "disabled": true,
+      "_id": "eHWCJclZDfxaVxFQ",
+      "transfer": true,
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.0",
+        "createdTime": 1788042414291,
+        "modifiedTime": 1788042414291,
+        "lastModifiedBy": "4fJviA1Q4qcjwsna",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Bolsa de Pó",
+      "img": "icons/svg/upgrade.svg",
+      "type": "base",
+      "system": {
+        "changes": [],
+        "targets": [],
+        "status": null,
+        "onuse": true,
+        "abilityUse": {
+          "description": "",
+          "automatic": false,
+          "aumenta": false,
+          "custo": null,
+          "names": [],
+          "types": [
+            "spell"
+          ]
+        },
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "disposition": []
+        }
+      },
+      "description": "<p>Bolsa de Pó: Quando lança uma magia de encantamento ou ilusão, você recebe +2 PM para gastar em aprimoramentos.</p>",
+      "statuses": [],
+      "sort": 0,
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "_key": "!items.effects!KncQ047S2f8rBvK2.eHWCJclZDfxaVxFQ"
+    }
+  ],
+  "flags": {},
+  "system": {
+    "description": {
+      "value": "<p style=\"text-align:justify\">Uma bolsa com pó multicolorido, fabricado a partir das pétalas trituradas de flores que nascem apenas na Pondsmânia. Quando lança uma magia de encantamento ou ilusão, você recebe +2 PM para gastar em aprimoramentos.</p>",
+      "unidentified": ""
+    },
+    "source": "Tormenta20 — Edição Jogo do Ano, p. 159",
+    "equipado": false,
+    "equipado2": {
+      "slot": 0,
+      "type": "hand"
+    },
+    "carregado": true,
+    "peso": 0,
+    "espacos": 1,
+    "qtd": 1,
+    "preco": 300,
+    "pv": {
+      "value": 0,
+      "max": 0
+    },
+    "rd": 0,
+    "tipo": "esoterico",
+    "armadura": {
+      "value": 0,
+      "penalidade": 0,
+      "maxAtr": 0
+    },
+    "rolls": [],
+    "origin": "",
+    "tags": [],
+    "chatFlavor": "",
+    "ativacao": {
+      "custo": null,
+      "condicao": "",
+      "execucao": "",
+      "qtd": "",
+      "special": ""
+    },
+    "chatGif": "",
+    "upgrades": {
+      "melhoria1": "",
+      "melhoria2": "",
+      "melhoria3": "",
+      "melhoria4": "",
+      "material": "",
+      "encanto1": "",
+      "encanto2": "",
+      "encanto3": ""
+    },
+    "rolltags": [],
+    "automationtags": [],
+    "enableAutoUpgrades": true
+  },
+  "_stats": {
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.0",
+    "coreVersion": "14.366",
+    "createdTime": 1788042414291,
+    "modifiedTime": 1788042414291,
+    "lastModifiedBy": "4fJviA1Q4qcjwsna",
+    "duplicateSource": null,
+    "exportSource": null,
+    "compendiumSource": null
+  },
+  "_id": "KncQ047S2f8rBvK2",
+  "folder": "q5xr48fQpaZDdVTn",
+  "sort": 100000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!KncQ047S2f8rBvK2"
+}

@@ -1,0 +1,23 @@
+{
+  "folder": "WLMWYYg9fshNSVpV",
+  "name": "D2 Encantamento",
+  "sorting": "a",
+  "type": "Item",
+  "_id": "eDRs6rp0uirDl74f",
+  "sort": 0,
+  "flags": {},
+  "_stats": {
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.0",
+    "coreVersion": "14.366",
+    "createdTime": 1788042470653,
+    "modifiedTime": 1788042470653,
+    "lastModifiedBy": "4fJviA1Q4qcjwsna",
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "description": "",
+  "color": null,
+  "_key": "!folders!eDRs6rp0uirDl74f"
+}

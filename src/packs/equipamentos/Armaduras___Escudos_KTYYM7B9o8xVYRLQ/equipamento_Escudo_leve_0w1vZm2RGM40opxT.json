@@ -1,0 +1,78 @@
+{
+  "_id": "0w1vZm2RGM40opxT",
+  "name": "Escudo leve",
+  "type": "equipamento",
+  "img": "systems/tormenta20/icons/itens/equipamentos/escudo-leve.webp",
+  "effects": [],
+  "folder": "KTYYM7B9o8xVYRLQ",
+  "sort": 101563,
+  "flags": {},
+  "system": {
+    "description": {
+      "value": "<p style=\"text-align:justify\">Tipicamente feito de madeira, este escudo é amarrado no antebraço, deixando a mão livre. Você pode carregar um objeto na mão que empunha o escudo, mas não manusear uma arma.</p>",
+      "unidentified": ""
+    },
+    "source": "Tormenta20 — Edição Jogo do Ano, p. 154",
+    "equipado": false,
+    "equipado2": {
+      "slot": 0,
+      "type": "hand"
+    },
+    "carregado": true,
+    "peso": 3,
+    "espacos": 1,
+    "qtd": 1,
+    "preco": 5,
+    "pv": {
+      "value": 0,
+      "max": 0
+    },
+    "rd": 0,
+    "tipo": "escudo",
+    "armadura": {
+      "value": 1,
+      "penalidade": -1,
+      "maxAtr": 0
+    },
+    "rolls": [],
+    "origin": "",
+    "tags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "ativacao": {
+      "custo": 0,
+      "condicao": "",
+      "execucao": "",
+      "qtd": "",
+      "special": ""
+    },
+    "upgrades": {
+      "melhoria1": "",
+      "melhoria2": "",
+      "melhoria3": "",
+      "melhoria4": "",
+      "material": "",
+      "encanto1": "",
+      "encanto2": "",
+      "encanto3": ""
+    },
+    "rolltags": [],
+    "automationtags": [],
+    "enableAutoUpgrades": true
+  },
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.0",
+    "coreVersion": "14.366",
+    "createdTime": 1788042414262,
+    "modifiedTime": 1788042414262,
+    "lastModifiedBy": "4fJviA1Q4qcjwsna",
+    "duplicateSource": null,
+    "exportSource": null,
+    "compendiumSource": null
+  },
+  "_key": "!items!0w1vZm2RGM40opxT"
+}

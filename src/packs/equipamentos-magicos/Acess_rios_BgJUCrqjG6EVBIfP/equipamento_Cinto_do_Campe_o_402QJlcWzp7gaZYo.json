@@ -1,0 +1,143 @@
+{
+  "_id": "402QJlcWzp7gaZYo",
+  "name": "Cinto do Campeão",
+  "type": "equipamento",
+  "img": "systems/tormenta20/icons/itens/itens-magicos/cinto-do-campeao.webp",
+  "effects": [
+    {
+      "origin": "Item.402QJlcWzp7gaZYo",
+      "tint": "#ffffff",
+      "flags": {
+        "tormenta20": {}
+      },
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": null,
+        "expired": false
+      },
+      "disabled": false,
+      "_id": "2F2h8pqnK77FT9eA",
+      "transfer": true,
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.0",
+        "createdTime": 1788042454301,
+        "modifiedTime": 1788042454301,
+        "lastModifiedBy": "4fJviA1Q4qcjwsna",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Cinto do Campeão",
+      "img": "systems/tormenta20/icons/itens/itens-magicos/cinto-do-campeao.webp",
+      "type": "base",
+      "system": {
+        "changes": [
+          {
+            "key": "system.atributos.for.bonus",
+            "value": 1,
+            "priority": null,
+            "type": "add",
+            "phase": "initial"
+          }
+        ],
+        "targets": [],
+        "status": null,
+        "onuse": false,
+        "abilityUse": {
+          "description": "",
+          "automatic": false,
+          "aumenta": false,
+          "custo": 0,
+          "names": [],
+          "types": []
+        },
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "disposition": []
+        }
+      },
+      "description": "",
+      "statuses": [],
+      "sort": 0,
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "_key": "!items.effects!402QJlcWzp7gaZYo.2F2h8pqnK77FT9eA"
+    }
+  ],
+  "folder": "BgJUCrqjG6EVBIfP",
+  "sort": 2600000,
+  "flags": {},
+  "system": {
+    "description": {
+      "value": "<p style=\"text-align:justify\">Este cinturão de ouro é cravejado de joias e possui gravuras de gladiadores e pugilistas minotauros. Você recebe +1 em Força e a habilidade Briga (veja a página 76; somente após um dia de uso). Caso já a possua, seu dano desarmado será calculado como se você possuísse quatro níveis de lutador a mais (máximo 2d12). Por fim, caso possua o poder Torcida, o bônus que você recebe por ele aumenta para +3. Estes cintos eram dados aos vencedores dos jogos gladiatoriais do Império de Tauron. A cada ano, diversos combatentes de Arton viajavam a Tiberus para competir e ter uma chance de ganhar um destes itens.</p>",
+      "unidentified": ""
+    },
+    "source": "Tormenta20 — Edição Jogo do Ano, p. 343",
+    "equipado": false,
+    "equipado2": {
+      "slot": 0,
+      "type": "body"
+    },
+    "carregado": true,
+    "peso": 0,
+    "espacos": 1,
+    "qtd": 1,
+    "preco": 51000,
+    "pv": {
+      "value": 0,
+      "max": 0
+    },
+    "rd": 0,
+    "tipo": "acessorio",
+    "armadura": {
+      "value": 0,
+      "penalidade": 0,
+      "maxAtr": 0
+    },
+    "rolls": [],
+    "origin": "",
+    "tags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "ativacao": {
+      "custo": 0,
+      "condicao": "",
+      "execucao": "",
+      "qtd": "",
+      "special": ""
+    },
+    "upgrades": {
+      "melhoria1": "",
+      "melhoria2": "",
+      "melhoria3": "",
+      "melhoria4": "",
+      "material": "",
+      "encanto1": "",
+      "encanto2": "",
+      "encanto3": ""
+    },
+    "rolltags": [],
+    "automationtags": [],
+    "enableAutoUpgrades": true
+  },
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.0",
+    "coreVersion": "14.366",
+    "createdTime": 1788042454301,
+    "modifiedTime": 1788042454301,
+    "lastModifiedBy": "4fJviA1Q4qcjwsna",
+    "duplicateSource": null,
+    "exportSource": null,
+    "compendiumSource": null
+  },
+  "_key": "!items!402QJlcWzp7gaZYo"
+}

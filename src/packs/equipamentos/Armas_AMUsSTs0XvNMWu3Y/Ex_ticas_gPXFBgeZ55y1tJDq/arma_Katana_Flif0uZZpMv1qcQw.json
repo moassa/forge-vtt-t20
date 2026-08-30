@@ -1,0 +1,149 @@
+{
+  "_id": "Flif0uZZpMv1qcQw",
+  "name": "Katana",
+  "type": "arma",
+  "img": "systems/tormenta20/icons/itens/equipamentos/katana.webp",
+  "effects": [],
+  "folder": "gPXFBgeZ55y1tJDq",
+  "sort": 400000,
+  "flags": {},
+  "system": {
+    "description": {
+      "value": "<p style=\"text-align:justify\">A espada tradicional do samurai tem lâmina levemente curva e apenas um gume. A katana é uma arma adaptável e ágil. É muito grande para ser empunhada com uma só mão sem treinamento especial; por isso, é uma arma exótica. Ela pode ser usada como uma arma marcial de duas mãos.</p>",
+      "unidentified": ""
+    },
+    "source": "Tormenta20 — Edição Jogo do Ano, p. 148",
+    "equipado": 0,
+    "equipado2": {
+      "slot": 0,
+      "type": "hand"
+    },
+    "carregado": true,
+    "peso": 2.5,
+    "espacos": 1,
+    "qtd": 1,
+    "preco": 100,
+    "pv": {
+      "value": 0,
+      "max": 0
+    },
+    "rd": 0,
+    "rolls": [
+      {
+        "name": "Ataque",
+        "key": "ataque0",
+        "type": "ataque",
+        "parts": [
+          [
+            "1d20",
+            "",
+            ""
+          ],
+          [
+            "luta",
+            "",
+            ""
+          ],
+          [
+            "0",
+            "",
+            ""
+          ]
+        ],
+        "versatil": "",
+        "adaptavel": ""
+      },
+      {
+        "name": "Dano",
+        "key": "dano1",
+        "type": "dano",
+        "parts": [
+          [
+            "1d8",
+            "corte",
+            ""
+          ],
+          [
+            "@for",
+            "",
+            ""
+          ]
+        ],
+        "adaptavel": "1d10",
+        "versatil": ""
+      }
+    ],
+    "criticoM": 19,
+    "criticoX": 2,
+    "alcance": "",
+    "tipoUso": "sim",
+    "propriedades": {
+      "ada": true,
+      "agi": true,
+      "alo": false,
+      "dup": false,
+      "ver": false,
+      "adaptavel": true,
+      "agil": true,
+      "alongada": false,
+      "arremesso": false,
+      "ataqueDistancia": false,
+      "duasMaos": false,
+      "dupla": false,
+      "leve": false,
+      "municao": false,
+      "versatil": false,
+      "des": false
+    },
+    "ativacao": {
+      "custo": null,
+      "condicao": "",
+      "execucao": "",
+      "qtd": "",
+      "special": ""
+    },
+    "chatFlavor": "",
+    "consume": {
+      "type": "",
+      "target": "",
+      "amount": null,
+      "mpMultiplier": false
+    },
+    "origin": "",
+    "tags": [],
+    "chatGif": "",
+    "upgrades": {
+      "melhoria1": "",
+      "melhoria2": "",
+      "melhoria3": "",
+      "melhoria4": "",
+      "material": "",
+      "encanto1": "",
+      "encanto2": "",
+      "encanto3": ""
+    },
+    "ataques": 0,
+    "proficiencia": "exotica",
+    "proposito": "corpo-a-corpo",
+    "empunhadura": "uma",
+    "size": "normal",
+    "rolltags": [],
+    "automationtags": [],
+    "enableAutoUpgrades": true
+  },
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.0",
+    "coreVersion": "14.366",
+    "createdTime": 1788042414264,
+    "modifiedTime": 1788042414264,
+    "lastModifiedBy": "4fJviA1Q4qcjwsna",
+    "duplicateSource": null,
+    "exportSource": null,
+    "compendiumSource": null
+  },
+  "_key": "!items!Flif0uZZpMv1qcQw"
+}

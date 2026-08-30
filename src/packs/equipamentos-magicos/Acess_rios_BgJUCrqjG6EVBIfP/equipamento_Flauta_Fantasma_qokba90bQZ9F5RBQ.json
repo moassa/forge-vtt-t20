@@ -1,0 +1,78 @@
+{
+  "_id": "qokba90bQZ9F5RBQ",
+  "name": "Flauta Fantasma",
+  "type": "equipamento",
+  "img": "systems/tormenta20/icons/itens/itens-magicos/flauta-fantasma.webp",
+  "effects": [],
+  "folder": "BgJUCrqjG6EVBIfP",
+  "sort": 3000000,
+  "flags": {},
+  "system": {
+    "description": {
+      "value": "<p style=\"text-align:justify\">Se for treinado em Atuação, você pode lançar Esculpir Sons (CD Car) sem pagar seu custo em PM.</p>",
+      "unidentified": ""
+    },
+    "source": "Tormenta20 — Edição Jogo do Ano, p. 344",
+    "equipado": false,
+    "equipado2": {
+      "slot": 0,
+      "type": "hand"
+    },
+    "carregado": true,
+    "peso": 0,
+    "espacos": 1,
+    "qtd": 1,
+    "preco": 6000,
+    "pv": {
+      "value": 0,
+      "max": 0
+    },
+    "rd": 0,
+    "tipo": "acessorio",
+    "armadura": {
+      "value": 0,
+      "penalidade": 0,
+      "maxAtr": 0
+    },
+    "origin": "",
+    "tags": [],
+    "chatFlavor": "",
+    "ativacao": {
+      "custo": null,
+      "condicao": "",
+      "execucao": "",
+      "qtd": "",
+      "special": ""
+    },
+    "rolls": [],
+    "chatGif": "",
+    "upgrades": {
+      "melhoria1": "",
+      "melhoria2": "",
+      "melhoria3": "",
+      "melhoria4": "",
+      "material": "",
+      "encanto1": "",
+      "encanto2": "",
+      "encanto3": ""
+    },
+    "rolltags": [],
+    "automationtags": [],
+    "enableAutoUpgrades": true
+  },
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.0",
+    "coreVersion": "14.366",
+    "createdTime": 1788042454294,
+    "modifiedTime": 1788042454294,
+    "lastModifiedBy": "4fJviA1Q4qcjwsna",
+    "duplicateSource": null,
+    "exportSource": null,
+    "compendiumSource": null
+  },
+  "_key": "!items!qokba90bQZ9F5RBQ"
+}

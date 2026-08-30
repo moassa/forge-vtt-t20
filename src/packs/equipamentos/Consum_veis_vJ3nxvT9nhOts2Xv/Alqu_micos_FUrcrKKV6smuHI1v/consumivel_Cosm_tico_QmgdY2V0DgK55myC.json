@@ -1,0 +1,94 @@
+{
+  "name": "Cosmético",
+  "type": "consumivel",
+  "img": "systems/tormenta20/icons/itens/gerais/cosmetico.webp",
+  "system": {
+    "description": {
+      "value": "<p style=\"text-align:justify\">Perfume ou maquiagem. Usá-lo é uma ação completa e fornece +2 em testes de perícias baseadas em Carisma até o fim da cena.</p>",
+      "unidentified": ""
+    },
+    "source": "Tormenta20 — Edição Jogo do Ano, p. 160",
+    "carregado": true,
+    "peso": 0,
+    "espacos": 0.5,
+    "qtd": 1,
+    "preco": 30,
+    "pv": {
+      "value": 0,
+      "max": 0
+    },
+    "rd": 0,
+    "ativacao": {
+      "execucao": "",
+      "custo": 0,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "duracao": {
+      "value": 0,
+      "units": "inst",
+      "special": ""
+    },
+    "range": {
+      "value": null,
+      "units": ""
+    },
+    "consume": {
+      "type": "",
+      "target": "",
+      "amount": null,
+      "mpMultiplier": false
+    },
+    "efeito": "",
+    "alcance": "none",
+    "alvo": "",
+    "area": "",
+    "resistencia": {
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [],
+    "tipo": "alchemy",
+    "origin": "",
+    "tags": [],
+    "chatFlavor": "",
+    "subtipo": "",
+    "chatGif": "",
+    "upgrades": {
+      "melhoria1": "",
+      "melhoria2": "",
+      "melhoria3": "",
+      "melhoria4": "",
+      "material": "",
+      "encanto1": "",
+      "encanto2": "",
+      "encanto3": ""
+    },
+    "rolltags": [],
+    "automationtags": [],
+    "enableAutoUpgrades": true
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.0",
+    "coreVersion": "14.366",
+    "createdTime": 1788042414269,
+    "modifiedTime": 1788042414269,
+    "lastModifiedBy": "4fJviA1Q4qcjwsna",
+    "duplicateSource": null,
+    "exportSource": null,
+    "compendiumSource": null
+  },
+  "_id": "QmgdY2V0DgK55myC",
+  "folder": "FUrcrKKV6smuHI1v",
+  "sort": 400000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!QmgdY2V0DgK55myC"
+}

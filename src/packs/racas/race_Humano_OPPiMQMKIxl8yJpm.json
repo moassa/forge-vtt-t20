@@ -1,0 +1,70 @@
+{
+  "name": "Humano",
+  "type": "race",
+  "img": "systems/tormenta20/icons/racas/humano.webp",
+  "system": {
+    "description": {
+      "value": "<p>@EMBED[Compendium.tormenta20-dev-env.basico-rules.JournalEntry.D5UPztr7I9a68jWW.JournalEntryPage.tjDr9hZr87p1xy10]{Humanos}</p>",
+      "unidentified": ""
+    },
+    "source": "",
+    "origin": "",
+    "tags": [],
+    "rolltags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "atributos": {
+      "for": 0,
+      "des": 0,
+      "con": 0,
+      "int": 0,
+      "sab": 0,
+      "car": 0
+    },
+    "atributosDinamicos": {
+      "value": [
+        "for",
+        "des",
+        "con",
+        "int",
+        "sab",
+        "car"
+      ],
+      "description": "+1 em Três Atributos Diferentes"
+    },
+    "grants": [
+      {
+        "title": "",
+        "desc": "",
+        "type": "multi",
+        "choices": [
+          {
+            "uuid": "Compendium.tormenta20.poderes.Item.9QQnUgUh5ThF96Cd"
+          }
+        ]
+      }
+    ],
+    "automationtags": [],
+    "skills": []
+  },
+  "effects": [],
+  "folder": null,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.0",
+    "createdTime": 1788042553944,
+    "modifiedTime": 1788042553944,
+    "lastModifiedBy": "4fJviA1Q4qcjwsna",
+    "compendiumSource": null
+  },
+  "_id": "OPPiMQMKIxl8yJpm",
+  "sort": 1500000,
+  "_key": "!items!OPPiMQMKIxl8yJpm"
+}

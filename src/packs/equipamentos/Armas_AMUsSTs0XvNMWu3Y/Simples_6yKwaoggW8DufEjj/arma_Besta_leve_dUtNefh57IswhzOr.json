@@ -1,0 +1,149 @@
+{
+  "_id": "dUtNefh57IswhzOr",
+  "name": "Besta leve",
+  "type": "arma",
+  "img": "systems/tormenta20/icons/itens/equipamentos/besta-leve.webp",
+  "effects": [],
+  "folder": "6yKwaoggW8DufEjj",
+  "sort": 150000,
+  "flags": {},
+  "system": {
+    "description": {
+      "value": "<p style=\"text-align:justify\">Um arco montado sobre uma coronha de madeira com um gatilho, a besta leve é uma arma que dispara virotes com grande potência. Recarregar uma besta leve é uma ação de movimento.</p>",
+      "unidentified": ""
+    },
+    "source": "Tormenta20 — Edição Jogo do Ano, p. 146",
+    "equipado": 0,
+    "equipado2": {
+      "slot": 0,
+      "type": "hand"
+    },
+    "carregado": true,
+    "peso": 3,
+    "espacos": 1,
+    "qtd": 1,
+    "preco": 35,
+    "pv": {
+      "value": 0,
+      "max": 0
+    },
+    "rd": 0,
+    "rolls": [
+      {
+        "name": "Ataque",
+        "key": "ataque0",
+        "type": "ataque",
+        "parts": [
+          [
+            "1d20",
+            "",
+            ""
+          ],
+          [
+            "pont",
+            "",
+            ""
+          ],
+          [
+            "0",
+            "",
+            ""
+          ]
+        ],
+        "adaptavel": "",
+        "versatil": ""
+      },
+      {
+        "name": "Dano",
+        "key": "dano1",
+        "type": "dano",
+        "parts": [
+          [
+            "1d8",
+            "perfuracao",
+            ""
+          ],
+          [
+            "",
+            "",
+            ""
+          ]
+        ],
+        "versatil": "",
+        "adaptavel": ""
+      }
+    ],
+    "criticoM": 19,
+    "criticoX": 2,
+    "alcance": "medium",
+    "tipoUso": "sim",
+    "propriedades": {
+      "ada": false,
+      "agi": false,
+      "alo": false,
+      "dup": false,
+      "ver": false,
+      "adaptavel": false,
+      "agil": false,
+      "alongada": false,
+      "arremesso": false,
+      "ataqueDistancia": true,
+      "duasMaos": true,
+      "dupla": false,
+      "leve": false,
+      "municao": true,
+      "versatil": false,
+      "des": false
+    },
+    "ativacao": {
+      "custo": null,
+      "condicao": "",
+      "execucao": "",
+      "qtd": "",
+      "special": ""
+    },
+    "chatFlavor": "",
+    "consume": {
+      "type": "",
+      "target": "",
+      "amount": null,
+      "mpMultiplier": false
+    },
+    "origin": "",
+    "tags": [],
+    "chatGif": "",
+    "upgrades": {
+      "melhoria1": "",
+      "melhoria2": "",
+      "melhoria3": "",
+      "melhoria4": "",
+      "material": "",
+      "encanto1": "",
+      "encanto2": "",
+      "encanto3": ""
+    },
+    "ataques": 0,
+    "proficiencia": "simples",
+    "proposito": "disparo",
+    "empunhadura": "duas",
+    "size": "normal",
+    "rolltags": [],
+    "automationtags": [],
+    "enableAutoUpgrades": true
+  },
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.0",
+    "coreVersion": "14.366",
+    "createdTime": 1788042414267,
+    "modifiedTime": 1788042414267,
+    "lastModifiedBy": "4fJviA1Q4qcjwsna",
+    "duplicateSource": null,
+    "exportSource": null,
+    "compendiumSource": null
+  },
+  "_key": "!items!dUtNefh57IswhzOr"
+}

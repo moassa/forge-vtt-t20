@@ -1,0 +1,137 @@
+{
+  "name": "Blindagem",
+  "type": "poder",
+  "img": "icons/commodities/tech/cog-brass.webp",
+  "effects": [
+    {
+      "origin": "Item.IWpWSfSXeQbEPw4Z",
+      "tint": "#ffffff",
+      "flags": {
+        "tormenta20": {}
+      },
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": null,
+        "expired": false
+      },
+      "disabled": false,
+      "_id": "okKdUuTe3Potb7fU",
+      "transfer": true,
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.0",
+        "createdTime": 1788042525037,
+        "modifiedTime": 1788042525037,
+        "lastModifiedBy": "4fJviA1Q4qcjwsna",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Blindagem",
+      "img": "icons/commodities/tech/cog-brass.webp",
+      "type": "base",
+      "system": {
+        "changes": [
+          {
+            "key": "system.attributes.defesa.bonus",
+            "value": "@int",
+            "priority": null,
+            "type": "add",
+            "phase": "initial"
+          }
+        ],
+        "targets": [],
+        "status": null,
+        "onuse": false,
+        "abilityUse": {
+          "description": "",
+          "automatic": false,
+          "aumenta": false,
+          "custo": 0,
+          "names": [],
+          "types": []
+        },
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "disposition": []
+        }
+      },
+      "description": "",
+      "statuses": [],
+      "sort": 0,
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "_key": "!items.effects!IWpWSfSXeQbEPw4Z.okKdUuTe3Potb7fU"
+    }
+  ],
+  "flags": {
+    "scene-packer": {
+      "sourceId": "Item.C7NhXZepS8p8Jg38",
+      "defaultPermission": 3,
+      "hash": "e64d08caff2831f86b1bf63fc9f93f82814fc593"
+    }
+  },
+  "system": {
+    "description": {
+      "value": "<p style=\"text-align:justify\">Você pode usar sua Inteligência na Defesa quando usa armadura pesada. Se fizer isso, não pode somar sua Destreza, mesmo que outras habilidades ou efeitos permitam isso. Pré-requisitos: Couraceiro, 8º nível de inventor.</p>",
+      "unidentified": ""
+    },
+    "source": "Tormenta20 — Edição Jogo do Ano, p. 69",
+    "ativacao": {
+      "execucao": "",
+      "custo": 0,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "duracao": {
+      "value": 0,
+      "units": "inst",
+      "special": ""
+    },
+    "range": {
+      "value": null,
+      "units": ""
+    },
+    "efeito": "",
+    "alcance": "none",
+    "area": "",
+    "resistencia": {
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [],
+    "tipo": "classe",
+    "subtipo": "inventor",
+    "chatFlavor": "",
+    "origin": "",
+    "tags": [],
+    "chatGif": "",
+    "rolltags": [],
+    "automationtags": []
+  },
+  "_stats": {
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.0",
+    "coreVersion": "14.366",
+    "createdTime": 1788042525037,
+    "modifiedTime": 1788042525037,
+    "lastModifiedBy": "4fJviA1Q4qcjwsna",
+    "duplicateSource": null,
+    "exportSource": null,
+    "compendiumSource": null
+  },
+  "_id": "IWpWSfSXeQbEPw4Z",
+  "folder": "iHjbUWZ9cRzIVZ3E",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!IWpWSfSXeQbEPw4Z"
+}

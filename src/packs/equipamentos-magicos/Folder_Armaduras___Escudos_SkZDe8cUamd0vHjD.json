@@ -1,0 +1,23 @@
+{
+  "name": "Armaduras & Escudos",
+  "sorting": "a",
+  "folder": null,
+  "type": "Item",
+  "_id": "SkZDe8cUamd0vHjD",
+  "sort": 0,
+  "color": null,
+  "flags": {},
+  "_stats": {
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.0",
+    "coreVersion": "14.366",
+    "createdTime": 1788042454219,
+    "modifiedTime": 1788042454219,
+    "lastModifiedBy": "4fJviA1Q4qcjwsna",
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "description": "",
+  "_key": "!folders!SkZDe8cUamd0vHjD"
+}

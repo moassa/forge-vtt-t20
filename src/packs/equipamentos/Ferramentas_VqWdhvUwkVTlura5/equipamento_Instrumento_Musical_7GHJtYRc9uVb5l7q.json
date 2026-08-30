@@ -1,0 +1,78 @@
+{
+  "name": "Instrumento Musical",
+  "type": "equipamento",
+  "img": "systems/tormenta20/icons/itens/gerais/instrumento-musical.webp",
+  "system": {
+    "description": {
+      "value": "<p style=\"text-align:justify\">Um instrumento típico, como um bandolim, flauta ou lira. Veja o quadro acima para as regras deste item.</p>",
+      "unidentified": ""
+    },
+    "source": "Tormenta20 — Edição Jogo do Ano, p. 158",
+    "equipado": false,
+    "equipado2": {
+      "slot": 0,
+      "type": "hand"
+    },
+    "carregado": true,
+    "peso": 0,
+    "espacos": 1,
+    "qtd": 1,
+    "preco": 35,
+    "pv": {
+      "value": 0,
+      "max": 0
+    },
+    "rd": 0,
+    "tipo": "ferramenta",
+    "armadura": {
+      "value": 0,
+      "penalidade": 0,
+      "maxAtr": 0
+    },
+    "rolls": [],
+    "origin": "",
+    "tags": [],
+    "chatFlavor": "",
+    "ativacao": {
+      "custo": null,
+      "condicao": "",
+      "execucao": "",
+      "qtd": "",
+      "special": ""
+    },
+    "chatGif": "",
+    "upgrades": {
+      "melhoria1": "",
+      "melhoria2": "",
+      "melhoria3": "",
+      "melhoria4": "",
+      "material": "",
+      "encanto1": "",
+      "encanto2": "",
+      "encanto3": ""
+    },
+    "rolltags": [],
+    "automationtags": [],
+    "enableAutoUpgrades": true
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.0",
+    "coreVersion": "14.366",
+    "createdTime": 1788042414272,
+    "modifiedTime": 1788042414272,
+    "lastModifiedBy": "4fJviA1Q4qcjwsna",
+    "duplicateSource": null,
+    "exportSource": null,
+    "compendiumSource": null
+  },
+  "_id": "7GHJtYRc9uVb5l7q",
+  "folder": "VqWdhvUwkVTlura5",
+  "sort": 103125,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!7GHJtYRc9uVb5l7q"
+}

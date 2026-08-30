@@ -1,0 +1,47 @@
+{
+  "_id": "VnjstNLqk1lgxsEn",
+  "name": "Paladino",
+  "type": "classe",
+  "img": "systems/tormenta20/icons/classes/paladino.webp",
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "system": {
+    "description": {
+      "value": "",
+      "unidentified": ""
+    },
+    "source": "",
+    "niveis": 1,
+    "pvPorNivel": 5,
+    "pmPorNivel": 3,
+    "inicial": false,
+    "rolls": [],
+    "origin": "",
+    "tags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "pericias": {
+      "inatas": "Luta (For) e Vontade (Sab) mais 2 a sua escolha entre Adestramento (Car), Atletismo (For), Cavalgar (Des), Cura (Sab), Diplomacia (Car), Fortitude (Con), Guerra (Int), Iniciativa (Des), Intuição (Sab), Nobreza (Int), Percepção (Sab) e Religião (Sab).",
+      "numero": 2
+    },
+    "rolltags": [],
+    "automationtags": []
+  },
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.0",
+    "coreVersion": "14.366",
+    "createdTime": 1788042388016,
+    "modifiedTime": 1788042388016,
+    "lastModifiedBy": "4fJviA1Q4qcjwsna",
+    "duplicateSource": null,
+    "exportSource": null,
+    "compendiumSource": null
+  },
+  "_key": "!items!VnjstNLqk1lgxsEn"
+}

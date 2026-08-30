@@ -1,0 +1,66 @@
+{
+  "name": "Almejar o Impossível",
+  "type": "poder",
+  "img": "systems/tormenta20/icons/poderes/concedidos.webp",
+  "system": {
+    "description": {
+      "value": "<p style=\"text-align:justify\">Quando faz um teste de perícia, um resultado de 19 ou mais no dado sempre é um sucesso, não importando o valor a ser alcançado.</p>",
+      "unidentified": ""
+    },
+    "source": "Tormenta20 — Edição Jogo do Ano, p. 132",
+    "ativacao": {
+      "execucao": "passive",
+      "custo": 0,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "duracao": {
+      "value": 0,
+      "units": "inst",
+      "special": ""
+    },
+    "range": {
+      "value": null,
+      "units": ""
+    },
+    "efeito": "",
+    "alcance": "none",
+    "area": "",
+    "resistencia": {
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [],
+    "tipo": "concedido",
+    "subtipo": "Ambição, Goblinóides",
+    "origin": "",
+    "tags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "rolltags": [],
+    "automationtags": []
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.0",
+    "coreVersion": "14.366",
+    "createdTime": 1788042524969,
+    "modifiedTime": 1788042524969,
+    "lastModifiedBy": "4fJviA1Q4qcjwsna",
+    "duplicateSource": null,
+    "exportSource": null,
+    "compendiumSource": null
+  },
+  "_id": "07Lj0txt3V5tfos6",
+  "folder": "YecyaP8aCEt2zBJV",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!07Lj0txt3V5tfos6"
+}

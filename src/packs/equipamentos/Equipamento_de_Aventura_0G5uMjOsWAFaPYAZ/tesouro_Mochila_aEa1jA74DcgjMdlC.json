@@ -1,0 +1,82 @@
+{
+  "_id": "aEa1jA74DcgjMdlC",
+  "name": "Mochila",
+  "type": "tesouro",
+  "img": "systems/tormenta20/icons/itens/gerais/mochila.webp",
+  "effects": [],
+  "folder": "0G5uMjOsWAFaPYAZ",
+  "sort": 300000,
+  "flags": {},
+  "system": {
+    "description": {
+      "value": "<p style=\"text-align:justify\">Uma bolsa de lona com tiras para ser carregada nas costas. Não conta como item vestido.</p>",
+      "unidentified": ""
+    },
+    "source": "Tormenta20 — Edição Jogo do Ano, p. 155",
+    "carregado": true,
+    "peso": 1,
+    "espacos": 0,
+    "qtd": 1,
+    "preco": 2,
+    "pv": {
+      "value": 0,
+      "max": 0
+    },
+    "rd": 0,
+    "container": false,
+    "rolls": [],
+    "origin": "",
+    "tags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "ativacao": {
+      "custo": 0,
+      "condicao": "",
+      "execucao": "",
+      "qtd": "",
+      "special": ""
+    },
+    "consume": {
+      "amount": 0,
+      "mpMultiplier": false,
+      "target": "",
+      "type": ""
+    },
+    "duracao": {
+      "units": "inst",
+      "value": 0,
+      "special": ""
+    },
+    "range": {
+      "units": "",
+      "value": 0
+    },
+    "alcance": "",
+    "alvo": "",
+    "area": "",
+    "efeito": "",
+    "resistencia": {
+      "txt": "",
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0
+    },
+    "rolltags": [],
+    "automationtags": []
+  },
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.0",
+    "coreVersion": "14.366",
+    "createdTime": 1788042414271,
+    "modifiedTime": 1788042414271,
+    "lastModifiedBy": "4fJviA1Q4qcjwsna",
+    "duplicateSource": null,
+    "exportSource": null,
+    "compendiumSource": null
+  },
+  "_key": "!items!aEa1jA74DcgjMdlC"
+}

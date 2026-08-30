@@ -1,0 +1,187 @@
+{
+  "_id": "nTGtbkxrFRRY7fXc",
+  "name": "Relâmpago Flamejante",
+  "type": "magia",
+  "img": "systems/tormenta20/icons/magias/relampago-flamejante.webp",
+  "effects": [
+    {
+      "_id": "lXssXpcmsW7fnX1J",
+      "flags": {
+        "tormenta20": {}
+      },
+      "disabled": true,
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": null,
+        "expired": false
+      },
+      "origin": "Compendium.tormenta20.magias.nTGtbkxrFRRY7fXc",
+      "transfer": false,
+      "tint": "#ffffff",
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.0",
+        "createdTime": 1788042471043,
+        "modifiedTime": 1788042471043,
+        "lastModifiedBy": "4fJviA1Q4qcjwsna",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Relâmpago Flamejante",
+      "img": "icons/svg/upgrade.svg",
+      "type": "base",
+      "system": {
+        "changes": [
+          {
+            "key": "dano:fogo",
+            "value": "1d6",
+            "priority": 0,
+            "type": "custom",
+            "phase": "initial"
+          },
+          {
+            "key": "dano:eletricidade",
+            "value": "1d6",
+            "priority": 0,
+            "type": "custom",
+            "phase": "initial"
+          }
+        ],
+        "targets": [],
+        "status": null,
+        "onuse": true,
+        "abilityUse": {
+          "description": "",
+          "automatic": false,
+          "aumenta": true,
+          "custo": 3,
+          "names": [],
+          "types": [
+            "self"
+          ]
+        },
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "disposition": []
+        }
+      },
+      "description": "<p>aumenta o dano das rajadas em +1d6 e o dano da rajada mista em +2d12.</p>",
+      "statuses": [],
+      "sort": 0,
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "_key": "!items.effects!nTGtbkxrFRRY7fXc.lXssXpcmsW7fnX1J"
+    }
+  ],
+  "folder": "dxIW3dYs0c4ADJzO",
+  "sort": 0,
+  "flags": {},
+  "system": {
+    "description": {
+      "value": "<p style=\"text-align:justify\">Esta é uma magia poderosa, desenvolvida pelo metódico e impassível arquimago Reynard. Você invoca as energias elementais do fogo e do relâmpago, fazendo com que uma de suas mãos fique em chamas e a outra mão eletrificada. Pela duração da magia, você pode gastar uma ação de movimento para disparar uma bola de fogo (10d6 pontos de dano de fogo numa esfera com 6m de raio) ou um relâmpago (10d6 pontos de dano de eletricidade numa linha). Você também pode, como uma ação padrão, usar as duas mãos num ataque de energia mista (20d12 pontos de dano, metade de fogo e metade de eletricidade, numa esfera com 9m de raio). Você precisa estar com as duas mãos livres para invocar o efeito misto e isso consome toda a energia da magia, terminando-a imediatamente. Por se tratar de um ritual complexo, o tempo de execução dessa magia não pode ser reduzido.</p>",
+      "unidentified": ""
+    },
+    "source": "Tormenta20 — Edição Jogo do Ano, p. 203",
+    "ativacao": {
+      "execucao": "special",
+      "custo": 10,
+      "qtd": "",
+      "condicao": "",
+      "special": "Duas Rodadas"
+    },
+    "duracao": {
+      "value": 0,
+      "units": "sust",
+      "special": ""
+    },
+    "range": {
+      "value": null,
+      "units": ""
+    },
+    "consume": {
+      "type": "",
+      "target": "",
+      "amount": null,
+      "mpMultiplier": false
+    },
+    "efeito": "bolas de fogo e relâmpagos",
+    "alcance": "medium",
+    "alvo": "",
+    "area": "",
+    "resistencia": {
+      "pericia": "",
+      "atributo": "int",
+      "bonus": 0,
+      "txt": "Reflexos reduz à metade"
+    },
+    "rolls": [
+      {
+        "name": "Dano de Fogo/Elétrico",
+        "key": "dano0",
+        "type": "dano",
+        "parts": [
+          [
+            "10d6",
+            "fogo",
+            ""
+          ],
+          [
+            "10d6",
+            "eletricidade",
+            ""
+          ]
+        ],
+        "adaptavel": "",
+        "versatil": ""
+      },
+      {
+        "name": "Dano Misto",
+        "key": "dano1",
+        "type": "dano",
+        "parts": [
+          [
+            "20d12",
+            "dano",
+            ""
+          ]
+        ],
+        "adaptavel": "",
+        "versatil": ""
+      }
+    ],
+    "tipo": "arc",
+    "circulo": 4,
+    "preparada": false,
+    "escola": "evo",
+    "chatFlavor": "",
+    "origin": "",
+    "tags": [],
+    "chatGif": "",
+    "rolltags": [],
+    "automationtags": [],
+    "equipado2": {
+      "slot": 0,
+      "type": ""
+    }
+  },
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.0",
+    "coreVersion": "14.366",
+    "createdTime": 1788042471043,
+    "modifiedTime": 1788042471043,
+    "lastModifiedBy": "4fJviA1Q4qcjwsna",
+    "duplicateSource": null,
+    "exportSource": null,
+    "compendiumSource": null
+  },
+  "_key": "!items!nTGtbkxrFRRY7fXc"
+}

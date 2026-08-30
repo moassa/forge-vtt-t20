@@ -1,0 +1,155 @@
+{
+  "_id": "zKL5mWuHBsXAm4Fy",
+  "name": "Espada Baronial",
+  "type": "arma",
+  "img": "systems/tormenta20/icons/itens/itens-magicos/espada-baronial.webp",
+  "effects": [],
+  "folder": "9ki1HFV3bfmVkHBh",
+  "sort": 106250,
+  "flags": {},
+  "system": {
+    "description": {
+      "value": "<p style=\"text-align:justify\">Esta espada longa de guarda reta fornece +1 em testes de ataque e rolagens de dano. Este bônus aumenta em +1 se você possuir um código de conduta (de honra, do herói...), for devoto de Khalmyr ou for treinado em Nobreza. Os bônus são cumulativos — um personagem com um código de conduta, devoto de Khalmyr e treinado em Nobreza recebe +4 em ataque e dano.</p>",
+      "unidentified": ""
+    },
+    "source": "",
+    "equipado": 0,
+    "equipado2": {
+      "slot": 0,
+      "type": "hand"
+    },
+    "carregado": true,
+    "peso": 2,
+    "espacos": 0,
+    "qtd": 1,
+    "preco": 0,
+    "pv": {
+      "value": 0,
+      "max": 0
+    },
+    "rd": 0,
+    "rolls": [
+      {
+        "name": "Ataque",
+        "key": "ataque0",
+        "type": "ataque",
+        "parts": [
+          [
+            "1d20",
+            "",
+            ""
+          ],
+          [
+            "luta",
+            "",
+            ""
+          ],
+          [
+            "1",
+            "",
+            ""
+          ]
+        ],
+        "versatil": "",
+        "adaptavel": ""
+      },
+      {
+        "name": "Dano",
+        "key": "dano1",
+        "type": "dano",
+        "parts": [
+          [
+            "1d8",
+            "impacto",
+            ""
+          ],
+          [
+            "@for",
+            "",
+            ""
+          ],
+          [
+            "1",
+            "impacto",
+            ""
+          ]
+        ],
+        "versatil": "",
+        "adaptavel": ""
+      }
+    ],
+    "criticoM": 19,
+    "criticoX": 2,
+    "alcance": "",
+    "tipoUso": "sim",
+    "propriedades": {
+      "ada": false,
+      "agi": false,
+      "alo": false,
+      "dup": false,
+      "ver": false,
+      "adaptavel": false,
+      "agil": false,
+      "alongada": false,
+      "arremesso": false,
+      "ataqueDistancia": false,
+      "duasMaos": false,
+      "dupla": false,
+      "leve": false,
+      "municao": false,
+      "versatil": false,
+      "des": false,
+      "hib": false
+    },
+    "ativacao": {
+      "custo": null,
+      "condicao": "",
+      "execucao": "",
+      "qtd": "",
+      "special": ""
+    },
+    "consume": {
+      "type": "",
+      "target": "",
+      "amount": null,
+      "mpMultiplier": false
+    },
+    "chatFlavor": "",
+    "origin": "",
+    "tags": [],
+    "chatGif": "",
+    "upgrades": {
+      "melhoria1": "",
+      "melhoria2": "",
+      "melhoria3": "",
+      "melhoria4": "",
+      "material": "",
+      "encanto1": "",
+      "encanto2": "",
+      "encanto3": ""
+    },
+    "ataques": 0,
+    "proficiencia": "marcial",
+    "proposito": "corpo-a-corpo",
+    "empunhadura": "uma",
+    "size": "normal",
+    "rolltags": [],
+    "automationtags": [],
+    "enableAutoUpgrades": true
+  },
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.0",
+    "coreVersion": "14.366",
+    "createdTime": 1788042454296,
+    "modifiedTime": 1788042454296,
+    "lastModifiedBy": "4fJviA1Q4qcjwsna",
+    "duplicateSource": null,
+    "exportSource": null,
+    "compendiumSource": null
+  },
+  "_key": "!items!zKL5mWuHBsXAm4Fy"
+}

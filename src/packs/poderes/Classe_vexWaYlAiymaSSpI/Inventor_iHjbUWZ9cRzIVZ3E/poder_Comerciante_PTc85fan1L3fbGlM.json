@@ -1,0 +1,72 @@
+{
+  "name": "Comerciante",
+  "type": "poder",
+  "img": "systems/tormenta20/icons/poderes/classes/especialistas/comerciante.webp",
+  "effects": [],
+  "flags": {
+    "scene-packer": {
+      "sourceId": "Item.Mh7xqsRcDPg2EHVH",
+      "defaultPermission": 3,
+      "hash": "4c9803ee462c8bce4b725112552d12fb37eaa084"
+    }
+  },
+  "system": {
+    "description": {
+      "value": "<p style=\"text-align:justify\">No 3º nível, você pode vender itens 10% mais caro (não cumulativo com barganha).</p>",
+      "unidentified": ""
+    },
+    "source": "Tormenta20 — Edição Jogo do Ano, p. 69",
+    "ativacao": {
+      "execucao": "",
+      "custo": 0,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "duracao": {
+      "value": 0,
+      "units": "inst",
+      "special": ""
+    },
+    "range": {
+      "value": null,
+      "units": ""
+    },
+    "efeito": "",
+    "alcance": "none",
+    "area": "",
+    "resistencia": {
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [],
+    "tipo": "ability",
+    "subtipo": "Inventor",
+    "chatFlavor": "",
+    "origin": "",
+    "tags": [],
+    "chatGif": "",
+    "rolltags": [],
+    "automationtags": []
+  },
+  "_stats": {
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.0",
+    "coreVersion": "14.366",
+    "createdTime": 1788042524964,
+    "modifiedTime": 1788042524964,
+    "lastModifiedBy": "4fJviA1Q4qcjwsna",
+    "duplicateSource": null,
+    "exportSource": null,
+    "compendiumSource": null
+  },
+  "_id": "PTc85fan1L3fbGlM",
+  "folder": "iHjbUWZ9cRzIVZ3E",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!PTc85fan1L3fbGlM"
+}

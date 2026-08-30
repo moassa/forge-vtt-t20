@@ -1,0 +1,82 @@
+{
+  "_id": "k9mpsAd6FWQjqYpB",
+  "name": "Barraca",
+  "type": "tesouro",
+  "img": "systems/tormenta20/icons/itens/gerais/barraca.webp",
+  "effects": [],
+  "folder": "0G5uMjOsWAFaPYAZ",
+  "sort": 75000,
+  "flags": {},
+  "system": {
+    "description": {
+      "value": "<p style=\"text-align:justify\">Esta barraca de lona conta como um saco de dormir para duas pessoas e fornece +2 em testes de Sobrevivência para acampar.</p>",
+      "unidentified": ""
+    },
+    "source": "Tormenta20 — Edição Jogo do Ano, p. 155",
+    "carregado": true,
+    "peso": 10,
+    "espacos": 1,
+    "qtd": 1,
+    "preco": 10,
+    "pv": {
+      "value": 0,
+      "max": 0
+    },
+    "rd": 0,
+    "container": false,
+    "rolls": [],
+    "origin": "",
+    "tags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "ativacao": {
+      "custo": 0,
+      "condicao": "",
+      "execucao": "",
+      "qtd": "",
+      "special": ""
+    },
+    "consume": {
+      "amount": 0,
+      "mpMultiplier": false,
+      "target": "",
+      "type": ""
+    },
+    "duracao": {
+      "units": "inst",
+      "value": 0,
+      "special": ""
+    },
+    "range": {
+      "units": "",
+      "value": 0
+    },
+    "alcance": "",
+    "alvo": "",
+    "area": "",
+    "efeito": "",
+    "resistencia": {
+      "txt": "",
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0
+    },
+    "rolltags": [],
+    "automationtags": []
+  },
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.0",
+    "coreVersion": "14.366",
+    "createdTime": 1788042414270,
+    "modifiedTime": 1788042414270,
+    "lastModifiedBy": "4fJviA1Q4qcjwsna",
+    "duplicateSource": null,
+    "exportSource": null,
+    "compendiumSource": null
+  },
+  "_key": "!items!k9mpsAd6FWQjqYpB"
+}

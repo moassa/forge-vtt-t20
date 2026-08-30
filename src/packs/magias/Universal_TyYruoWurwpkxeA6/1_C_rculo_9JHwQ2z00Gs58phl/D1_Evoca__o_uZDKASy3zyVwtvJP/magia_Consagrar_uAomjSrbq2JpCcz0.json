@@ -1,0 +1,430 @@
+{
+  "_id": "uAomjSrbq2JpCcz0",
+  "name": "Consagrar",
+  "type": "magia",
+  "img": "systems/tormenta20/icons/magias/consagrar.webp",
+  "effects": [
+    {
+      "_id": "zjkaNWLGzSmvwWLX",
+      "flags": {
+        "tormenta20": {}
+      },
+      "disabled": true,
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": null,
+        "expired": false
+      },
+      "origin": "Compendium.tormenta20.magias.uAomjSrbq2JpCcz0",
+      "transfer": false,
+      "tint": "#ffffff",
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.0",
+        "createdTime": 1788042471145,
+        "modifiedTime": 1788042471145,
+        "lastModifiedBy": "4fJviA1Q4qcjwsna",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Consagrar",
+      "img": "icons/svg/upgrade.svg",
+      "type": "base",
+      "system": {
+        "changes": [
+          {
+            "key": "@penalidade",
+            "type": "add",
+            "value": 2,
+            "phase": "initial",
+            "priority": null
+          }
+        ],
+        "targets": [],
+        "status": null,
+        "onuse": true,
+        "abilityUse": {
+          "description": "",
+          "automatic": false,
+          "aumenta": false,
+          "custo": 1,
+          "names": [],
+          "types": [
+            "self"
+          ]
+        },
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "disposition": []
+        }
+      },
+      "description": "<p>além do normal, mortos-vivos na área sofrem –2 em testes e Defesa.</p>",
+      "statuses": [],
+      "sort": 0,
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "_key": "!items.effects!uAomjSrbq2JpCcz0.zjkaNWLGzSmvwWLX"
+    },
+    {
+      "_id": "TQzuS6ucn9K3jaZO",
+      "flags": {
+        "tormenta20": {}
+      },
+      "disabled": true,
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": null,
+        "expired": false
+      },
+      "origin": "Compendium.tormenta20.magias.uAomjSrbq2JpCcz0",
+      "transfer": false,
+      "tint": "#ffffff",
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.0",
+        "createdTime": 1788042471145,
+        "modifiedTime": 1788042471145,
+        "lastModifiedBy": "4fJviA1Q4qcjwsna",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Consagrar",
+      "img": "icons/svg/upgrade.svg",
+      "type": "base",
+      "system": {
+        "changes": [
+          {
+            "key": "@penalidade",
+            "type": "add",
+            "value": 1,
+            "phase": "initial",
+            "priority": null
+          }
+        ],
+        "targets": [],
+        "status": null,
+        "onuse": true,
+        "abilityUse": {
+          "description": "",
+          "automatic": false,
+          "aumenta": true,
+          "custo": 2,
+          "names": [],
+          "types": [
+            "self"
+          ]
+        },
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "disposition": []
+        }
+      },
+      "description": "<p>aumenta as penalidades para mortos-vivos em –1.</p>",
+      "statuses": [],
+      "sort": 0,
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "_key": "!items.effects!uAomjSrbq2JpCcz0.TQzuS6ucn9K3jaZO"
+    },
+    {
+      "_id": "6wnjMrwszCAfHMwN",
+      "flags": {
+        "tormenta20": {}
+      },
+      "disabled": true,
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": null,
+        "expired": false
+      },
+      "origin": "Compendium.tormenta20.magias.uAomjSrbq2JpCcz0",
+      "transfer": false,
+      "tint": "#ffffff",
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.0",
+        "createdTime": 1788042471145,
+        "modifiedTime": 1788042471145,
+        "lastModifiedBy": "4fJviA1Q4qcjwsna",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Consagrar",
+      "img": "icons/svg/upgrade.svg",
+      "type": "base",
+      "system": {
+        "changes": [
+          {
+            "key": "execucao",
+            "value": "1 hora",
+            "priority": null,
+            "type": "override",
+            "phase": "initial"
+          },
+          {
+            "key": "duracao",
+            "value": "permanente",
+            "priority": null,
+            "type": "override",
+            "phase": "initial"
+          }
+        ],
+        "targets": [],
+        "status": null,
+        "onuse": true,
+        "abilityUse": {
+          "description": "",
+          "automatic": false,
+          "aumenta": false,
+          "custo": 9,
+          "names": [],
+          "types": [
+            "self"
+          ]
+        },
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "disposition": []
+        }
+      },
+      "description": "<p>muda a execução para 1 hora, a duração para permanente e adiciona componente material (incenso e óleos no valor de T$ 1.000). Requer 4º círculo.</p>",
+      "statuses": [],
+      "sort": 0,
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "_key": "!items.effects!uAomjSrbq2JpCcz0.6wnjMrwszCAfHMwN"
+    },
+    {
+      "_id": "m53luwH5h5g7ihnZ",
+      "disabled": false,
+      "duration": {
+        "value": 1,
+        "units": "days",
+        "expiry": "roundStart",
+        "expired": false
+      },
+      "origin": "Item.2AmeIlEpP4vtCqyF",
+      "transfer": false,
+      "flags": {
+        "tormenta20": {}
+      },
+      "tint": "#ffffff",
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.0",
+        "createdTime": 1788042471146,
+        "modifiedTime": 1788042471146,
+        "lastModifiedBy": "4fJviA1Q4qcjwsna",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Consagrar - Penalidade",
+      "img": "systems/tormenta20/icons/magias/consagrar.webp",
+      "type": "base",
+      "system": {
+        "changes": [
+          {
+            "key": "@penalidade",
+            "type": "add",
+            "value": 0,
+            "phase": "initial",
+            "priority": null
+          },
+          {
+            "key": "system.modificadores.pericias.geral",
+            "type": "add",
+            "value": "-@penalidade",
+            "phase": "initial",
+            "priority": null
+          },
+          {
+            "key": "system.attributes.defesa.bonus",
+            "type": "add",
+            "value": "-@penalidade",
+            "phase": "initial",
+            "priority": null
+          }
+        ],
+        "targets": [],
+        "status": null,
+        "onuse": false,
+        "abilityUse": {
+          "description": "",
+          "automatic": false,
+          "aumenta": false,
+          "custo": 0,
+          "names": [],
+          "types": []
+        },
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "disposition": []
+        }
+      },
+      "description": "<p>Penalidade em Mortos-Vivos</p>",
+      "statuses": [],
+      "sort": 0,
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "_key": "!items.effects!uAomjSrbq2JpCcz0.m53luwH5h5g7ihnZ"
+    },
+    {
+      "name": "Consagrar - Cura",
+      "img": "systems/tormenta20/icons/magias/consagrar.webp",
+      "origin": null,
+      "tint": "#ffffff",
+      "transfer": false,
+      "system": {
+        "onuse": true,
+        "changes": [
+          {
+            "key": "dano",
+            "type": "custom",
+            "value": "max",
+            "phase": "initial",
+            "priority": null
+          }
+        ],
+        "targets": [],
+        "status": null,
+        "abilityUse": {
+          "description": "",
+          "automatic": false,
+          "aumenta": false,
+          "custo": null,
+          "names": [],
+          "types": [
+            "consumable",
+            "power",
+            "spell"
+          ]
+        },
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "disposition": []
+        }
+      },
+      "duration": {
+        "units": "days",
+        "expiry": "roundStart",
+        "value": 1,
+        "expired": false
+      },
+      "disabled": false,
+      "_id": "KPXklzopAmqYyZyK",
+      "type": "base",
+      "start": null,
+      "description": "<p>Maximiza cura de Luz.</p>",
+      "statuses": [],
+      "showIcon": 1,
+      "folder": null,
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.0",
+        "createdTime": 1788042471145,
+        "modifiedTime": 1788042471145,
+        "lastModifiedBy": "4fJviA1Q4qcjwsna",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!items.effects!uAomjSrbq2JpCcz0.KPXklzopAmqYyZyK"
+    }
+  ],
+  "folder": "uZDKASy3zyVwtvJP",
+  "sort": 0,
+  "flags": {},
+  "system": {
+    "description": {
+      "value": "<p style=\"text-align:justify\">Você enche a área com energia positiva. Pontos de vida curados por efeitos de luz são maximizados dentro da área. Isso também afeta dano causado em mortos-vivos por esses efeitos. Por exemplo, Curar Ferimentos cura automaticamente 18 PV. Esta magia não pode ser lançada em uma área contendo um símbolo visível dedicado a uma divindade que não a sua. Consagrar anula Profanar.</p>",
+      "unidentified": ""
+    },
+    "source": "Tormenta20 — Edição Jogo do Ano, p. 186",
+    "ativacao": {
+      "execucao": "action",
+      "custo": 1,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "duracao": {
+      "value": 1,
+      "units": "day",
+      "special": ""
+    },
+    "range": {
+      "value": null,
+      "units": ""
+    },
+    "consume": {
+      "type": "",
+      "target": "",
+      "amount": null,
+      "mpMultiplier": false
+    },
+    "efeito": "",
+    "alcance": "long",
+    "alvo": "",
+    "area": "esfera com 9m de raio",
+    "resistencia": {
+      "pericia": "",
+      "atributo": "sab",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [],
+    "tipo": "div",
+    "circulo": 1,
+    "preparada": false,
+    "escola": "evo",
+    "chatFlavor": "",
+    "origin": "",
+    "tags": [],
+    "chatGif": "",
+    "rolltags": [],
+    "automationtags": [],
+    "equipado2": {
+      "slot": 0,
+      "type": ""
+    },
+    "area_behaviors": "[\n  {\n    \"type\": \"applyActiveEffect\",\n    \"name\": \"Consagrar\",\n    \"system\": {\n      \"effects\": [\n        \"Consagrar - Cura\",\n        \"Consagrar - Penalidade\"\n      ]\n    }\n  }\n]"
+  },
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.0",
+    "coreVersion": "14.366",
+    "createdTime": 1788042471145,
+    "modifiedTime": 1788042471145,
+    "lastModifiedBy": "4fJviA1Q4qcjwsna",
+    "duplicateSource": null,
+    "exportSource": null,
+    "compendiumSource": null
+  },
+  "_key": "!items!uAomjSrbq2JpCcz0"
+}

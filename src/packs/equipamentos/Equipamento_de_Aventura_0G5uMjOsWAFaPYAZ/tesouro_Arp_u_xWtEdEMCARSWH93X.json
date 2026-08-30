@@ -1,0 +1,82 @@
+{
+  "name": "Arpéu",
+  "type": "tesouro",
+  "img": "systems/tormenta20/icons/itens/gerais/arpeu.webp",
+  "system": {
+    "description": {
+      "value": "<p style=\"text-align:justify\">Um gancho de aço amarrado na ponta de uma corda para se fixar em muros, janelas, parapeitos de prédios... Prender um arpéu exige um teste de Pontaria (CD 15). Subir um muro com a ajuda de uma corda fornece +5 no teste de Atletismo.</p>",
+      "unidentified": ""
+    },
+    "source": "Tormenta20 — Edição Jogo do Ano, p. 155",
+    "carregado": true,
+    "peso": 0,
+    "espacos": 1,
+    "qtd": 1,
+    "preco": 5,
+    "pv": {
+      "value": 0,
+      "max": 0
+    },
+    "rd": 0,
+    "container": false,
+    "origin": "",
+    "tags": [],
+    "chatFlavor": "",
+    "rolls": [],
+    "chatGif": "",
+    "ativacao": {
+      "custo": 0,
+      "condicao": "",
+      "execucao": "",
+      "qtd": "",
+      "special": ""
+    },
+    "consume": {
+      "amount": 0,
+      "mpMultiplier": false,
+      "target": "",
+      "type": ""
+    },
+    "duracao": {
+      "units": "inst",
+      "value": 0,
+      "special": ""
+    },
+    "range": {
+      "units": "",
+      "value": 0
+    },
+    "alcance": "",
+    "alvo": "",
+    "area": "",
+    "efeito": "",
+    "resistencia": {
+      "txt": "",
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0
+    },
+    "rolltags": [],
+    "automationtags": []
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.0",
+    "coreVersion": "14.366",
+    "createdTime": 1788042414270,
+    "modifiedTime": 1788042414270,
+    "lastModifiedBy": "4fJviA1Q4qcjwsna",
+    "duplicateSource": null,
+    "exportSource": null,
+    "compendiumSource": null
+  },
+  "_id": "xWtEdEMCARSWH93X",
+  "folder": "0G5uMjOsWAFaPYAZ",
+  "sort": 50000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!xWtEdEMCARSWH93X"
+}

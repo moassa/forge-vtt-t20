@@ -1,0 +1,94 @@
+{
+  "name": "Gelo eterno",
+  "type": "consumivel",
+  "img": "systems/tormenta20/icons/itens/gerais/gelo-eterno.webp",
+  "system": {
+    "description": {
+      "value": "<p><strong>[Material Especial]</strong></p>\n<p><span>As gélidas Montanhas Uivantes produzem gelo que nunca derrete. Expedições de aventureiros exploram essa região glacial perigosa à caça deste material fantástico.<br><strong>Arma.</strong> Causa +2 pontos de dano por frio.<br><strong>Armadura e Escudo.</strong> Fornece redução de fogo: armaduras leves e escudos, resistência 5; armaduras pesadas, resistência 10.<br><strong>Esóterico.</strong> Quando causa dano com uma magia de frio, você pode rolar novamente qualquer resultado 1.</span></p>\n\n\n<p><span><strong>Preços:</strong></span></p>\n<p><span><span>Armas +T$ 600</span></span></p>\n<p><span><span>Armaduras pesadas e Esotéricos +T$ 3000</span></span></p>\n<p><span><span>Armaduras leves e Escudo +T$ 1500</span></span></p>",
+      "unidentified": ""
+    },
+    "source": "Tormenta20 — Edição Jogo do Ano, p. 166",
+    "carregado": true,
+    "peso": 0,
+    "espacos": 1,
+    "qtd": 1,
+    "preco": 3000,
+    "pv": {
+      "value": 0,
+      "max": 0
+    },
+    "rd": 0,
+    "ativacao": {
+      "execucao": "",
+      "custo": 0,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "duracao": {
+      "value": 0,
+      "units": "inst",
+      "special": ""
+    },
+    "range": {
+      "value": null,
+      "units": ""
+    },
+    "consume": {
+      "type": "",
+      "target": "",
+      "amount": null,
+      "mpMultiplier": false
+    },
+    "efeito": "",
+    "alcance": "none",
+    "alvo": "",
+    "area": "",
+    "resistencia": {
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [],
+    "tipo": "material",
+    "origin": "",
+    "chatFlavor": "",
+    "subtipo": "",
+    "tags": [],
+    "chatGif": "",
+    "upgrades": {
+      "melhoria1": "",
+      "melhoria2": "",
+      "melhoria3": "",
+      "melhoria4": "",
+      "material": "",
+      "encanto1": "",
+      "encanto2": "",
+      "encanto3": ""
+    },
+    "rolltags": [],
+    "automationtags": [],
+    "enableAutoUpgrades": true
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.0",
+    "coreVersion": "14.366",
+    "createdTime": 1788042414275,
+    "modifiedTime": 1788042414275,
+    "lastModifiedBy": "4fJviA1Q4qcjwsna",
+    "duplicateSource": null,
+    "exportSource": null,
+    "compendiumSource": null
+  },
+  "_id": "aiANlquiTcxxKaix",
+  "folder": "xqMxYK1BhlZ6ktNc",
+  "sort": 300000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!aiANlquiTcxxKaix"
+}

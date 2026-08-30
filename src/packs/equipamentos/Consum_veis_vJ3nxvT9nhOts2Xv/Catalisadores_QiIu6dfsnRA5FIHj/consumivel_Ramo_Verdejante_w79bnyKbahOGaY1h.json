@@ -1,0 +1,161 @@
+{
+  "name": "Ramo Verdejante",
+  "type": "consumivel",
+  "img": "icons/consumables/plants/fern-stem-curved-green.webp",
+  "system": {
+    "description": {
+      "value": "<p style=\"text-align:justify\">Esta combinação de ervas potencializa magias de cura, aumentando sua cura em +1 PV por dado.</p>",
+      "unidentified": ""
+    },
+    "source": "",
+    "carregado": true,
+    "peso": 0,
+    "espacos": 0,
+    "qtd": 0,
+    "preco": 0,
+    "pv": {
+      "value": 0,
+      "max": 3
+    },
+    "rd": 0,
+    "ativacao": {
+      "execucao": "",
+      "custo": 0,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "duracao": {
+      "value": 0,
+      "units": "inst",
+      "special": ""
+    },
+    "range": {
+      "value": 0,
+      "units": ""
+    },
+    "consume": {
+      "type": "",
+      "target": "",
+      "amount": 0,
+      "mpMultiplier": false
+    },
+    "efeito": "",
+    "alcance": "none",
+    "alvo": "",
+    "area": "",
+    "resistencia": {
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [],
+    "tipo": "alchemy",
+    "origin": "",
+    "tags": [],
+    "rolltags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "upgrades": {
+      "melhoria1": "",
+      "melhoria2": "",
+      "melhoria3": "",
+      "melhoria4": "",
+      "material": "",
+      "encanto1": "",
+      "encanto2": "",
+      "encanto3": ""
+    },
+    "subtipo": "",
+    "automationtags": [],
+    "enableAutoUpgrades": true
+  },
+  "effects": [
+    {
+      "name": "Ramo Verdejante",
+      "origin": "Item.T55ThywaLuAge1YV",
+      "tint": "#ffffff",
+      "flags": {
+        "tormenta20": {}
+      },
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": null,
+        "expired": false
+      },
+      "disabled": true,
+      "_id": "7CUCJ8NabSZLwPSv",
+      "description": "",
+      "transfer": true,
+      "statuses": [],
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.0",
+        "createdTime": 1788042414284,
+        "modifiedTime": 1788042414284,
+        "lastModifiedBy": "4fJviA1Q4qcjwsna",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "img": "icons/svg/upgrade.svg",
+      "type": "base",
+      "system": {
+        "changes": [
+          {
+            "key": "dano",
+            "value": "d*1",
+            "priority": 0,
+            "type": "custom",
+            "phase": "initial"
+          }
+        ],
+        "targets": [],
+        "status": null,
+        "onuse": true,
+        "abilityUse": {
+          "description": "",
+          "automatic": false,
+          "aumenta": false,
+          "custo": null,
+          "names": [],
+          "types": [
+            "spell"
+          ]
+        },
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "disposition": []
+        }
+      },
+      "sort": 0,
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "_key": "!items.effects!w79bnyKbahOGaY1h.7CUCJ8NabSZLwPSv"
+    }
+  ],
+  "folder": "QiIu6dfsnRA5FIHj",
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.0",
+    "coreVersion": "14.366",
+    "createdTime": 1788042414284,
+    "modifiedTime": 1788042414284,
+    "lastModifiedBy": "4fJviA1Q4qcjwsna",
+    "duplicateSource": null,
+    "exportSource": null,
+    "compendiumSource": null
+  },
+  "_id": "w79bnyKbahOGaY1h",
+  "sort": 0,
+  "_key": "!items!w79bnyKbahOGaY1h"
+}

@@ -1,0 +1,152 @@
+{
+  "_id": "B1hiWU8eEI1NHwcv",
+  "name": "Arco longo",
+  "type": "arma",
+  "img": "systems/tormenta20/icons/itens/equipamentos/arco-longo.webp",
+  "effects": [],
+  "folder": "HkeRANb2t5R9UKLQ",
+  "sort": 300000,
+  "flags": {},
+  "system": {
+    "description": {
+      "value": "<p style=\"text-align:justify\">Este arco reforçado tem a altura de uma pessoa. Ao contrário da versão curta, é primariamente uma arma de guerra. Por ter uma puxada pesada, permite que você aplique sua Força às rolagens de dano (ao contrário de outras armas de disparo). Porém, um arco longo não pode ser usado se você estiver montado.</p>",
+      "unidentified": ""
+    },
+    "source": "Tormenta20 — Edição Jogo do Ano, p. 146",
+    "equipado": 0,
+    "equipado2": {
+      "slot": 0,
+      "type": "hand"
+    },
+    "carregado": true,
+    "peso": 1.5,
+    "espacos": 2,
+    "qtd": 1,
+    "preco": 100,
+    "pv": {
+      "value": 0,
+      "max": 0
+    },
+    "rd": 0,
+    "rolls": [
+      {
+        "name": "Ataque",
+        "key": "ataque0",
+        "type": "ataque",
+        "parts": [
+          [
+            "1d20",
+            "",
+            ""
+          ],
+          [
+            "pont",
+            "",
+            ""
+          ],
+          [
+            "0",
+            "",
+            ""
+          ]
+        ],
+        "adaptavel": "",
+        "versatil": ""
+      },
+      {
+        "name": "Dano",
+        "key": "dano1",
+        "type": "dano",
+        "parts": [
+          [
+            "1d8",
+            "perfuracao",
+            ""
+          ],
+          [
+            "@for",
+            "",
+            ""
+          ]
+        ],
+        "versatil": "",
+        "adaptavel": ""
+      }
+    ],
+    "criticoM": 20,
+    "criticoX": 3,
+    "alcance": "medium",
+    "tipoUso": "sim",
+    "propriedades": {
+      "ada": false,
+      "agi": false,
+      "alo": false,
+      "arr": false,
+      "dst": true,
+      "dup": false,
+      "mun": true,
+      "ver": false,
+      "adaptavel": false,
+      "agil": false,
+      "alongada": false,
+      "arremesso": false,
+      "ataqueDistancia": true,
+      "duasMaos": true,
+      "dupla": false,
+      "leve": false,
+      "municao": true,
+      "versatil": false,
+      "des": false
+    },
+    "ativacao": {
+      "custo": null,
+      "condicao": "",
+      "execucao": "",
+      "qtd": "",
+      "special": ""
+    },
+    "chatFlavor": "",
+    "consume": {
+      "type": "ammo",
+      "target": "",
+      "amount": null,
+      "mpMultiplier": false
+    },
+    "proposito": "disparo",
+    "origin": "",
+    "tags": [],
+    "chatGif": "",
+    "upgrades": {
+      "melhoria1": "",
+      "melhoria2": "",
+      "melhoria3": "",
+      "melhoria4": "",
+      "material": "",
+      "encanto1": "",
+      "encanto2": "",
+      "encanto3": ""
+    },
+    "ataques": 0,
+    "proficiencia": "marcial",
+    "empunhadura": "duas",
+    "size": "normal",
+    "rolltags": [],
+    "automationtags": [],
+    "enableAutoUpgrades": true
+  },
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.0",
+    "coreVersion": "14.366",
+    "createdTime": 1788042414265,
+    "modifiedTime": 1788042414265,
+    "lastModifiedBy": "4fJviA1Q4qcjwsna",
+    "duplicateSource": null,
+    "exportSource": null,
+    "compendiumSource": null
+  },
+  "_key": "!items!B1hiWU8eEI1NHwcv"
+}

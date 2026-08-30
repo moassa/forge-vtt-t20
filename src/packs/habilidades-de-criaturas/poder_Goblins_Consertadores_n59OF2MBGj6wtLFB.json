@@ -1,0 +1,131 @@
+{
+  "name": "Goblins Consertadores",
+  "type": "poder",
+  "img": "systems/tormenta20/icons/poderes/ameacas/goblins-consertadores.webp",
+  "system": {
+    "description": {
+      "value": "<p>Goblins especialmente pequenos rastejam por dentro dos dutos do colosso fazendo reparos, sendo a fonte da cura acelerada do construto. Por estarem dentro do colosso, os goblins são imunes a dano, mas ainda podem ser afetados por efeitos mentais. Eles possuem Vontade +3 (mas recebem a resistência a magia do colosso) e, se forem afetados por qualquer condição, a cura acelerada deixa de funcionar.</p>",
+      "unidentified": ""
+    },
+    "source": "",
+    "ativacao": {
+      "execucao": "",
+      "custo": 0,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "duracao": {
+      "value": 0,
+      "units": "inst",
+      "special": ""
+    },
+    "range": {
+      "value": null,
+      "units": ""
+    },
+    "efeito": "",
+    "alcance": "none",
+    "area": "",
+    "resistencia": {
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [],
+    "tipo": "ability",
+    "subtipo": "",
+    "origin": "",
+    "tags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "rolltags": [],
+    "automationtags": []
+  },
+  "effects": [
+    {
+      "origin": "Item.n59OF2MBGj6wtLFB",
+      "tint": "#ffffff",
+      "flags": {
+        "tormenta20": {}
+      },
+      "duration": {
+        "value": 1,
+        "units": "rounds",
+        "expiry": "turnStart",
+        "expired": false
+      },
+      "disabled": false,
+      "_id": "MCUvln3aGbaEJM8o",
+      "transfer": true,
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.0",
+        "createdTime": 1788042439006,
+        "modifiedTime": 1788042439006,
+        "lastModifiedBy": "4fJviA1Q4qcjwsna",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Cura Acelerada",
+      "img": "icons/skills/trades/construction-carpentry-hammer-gray.webp",
+      "type": "base",
+      "system": {
+        "changes": [
+          {
+            "key": "roll",
+            "value": 20,
+            "priority": null,
+            "type": "custom",
+            "phase": "initial"
+          }
+        ],
+        "targets": [],
+        "status": null,
+        "onuse": false,
+        "abilityUse": {
+          "description": "",
+          "automatic": false,
+          "aumenta": false,
+          "custo": 0,
+          "names": [],
+          "types": []
+        },
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "disposition": []
+        }
+      },
+      "description": "",
+      "statuses": [],
+      "sort": 0,
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "_key": "!items.effects!n59OF2MBGj6wtLFB.MCUvln3aGbaEJM8o"
+    }
+  ],
+  "flags": {},
+  "_stats": {
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.0",
+    "coreVersion": "14.366",
+    "createdTime": 1788042439006,
+    "modifiedTime": 1788042439006,
+    "lastModifiedBy": "4fJviA1Q4qcjwsna",
+    "duplicateSource": null,
+    "exportSource": null,
+    "compendiumSource": null
+  },
+  "_id": "n59OF2MBGj6wtLFB",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!n59OF2MBGj6wtLFB"
+}

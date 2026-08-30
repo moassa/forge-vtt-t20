@@ -1,0 +1,72 @@
+{
+  "name": "Manutenção Eficiente",
+  "type": "poder",
+  "img": "icons/commodities/tech/cog-brass.webp",
+  "effects": [],
+  "flags": {
+    "scene-packer": {
+      "sourceId": "Item.msvkmNYOt70F0lk9",
+      "defaultPermission": 3,
+      "hash": "ce1867cff5db931b0feef8785134e0050c10f115"
+    }
+  },
+  "system": {
+    "description": {
+      "value": "<p style=\"text-align:justify\">A quantidade de engenhocas que você pode manter aumenta em +3. Além disso, cada engenhoca passa a ocupar meio espaço. Pré-requisitos: Engenhoqueiro, 5º nível de inventor.</p>",
+      "unidentified": ""
+    },
+    "source": "Tormenta20 — Edição Jogo do Ano, p. 69",
+    "ativacao": {
+      "execucao": "",
+      "custo": 0,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "duracao": {
+      "value": 0,
+      "units": "inst",
+      "special": ""
+    },
+    "range": {
+      "value": null,
+      "units": ""
+    },
+    "efeito": "",
+    "alcance": "none",
+    "area": "",
+    "resistencia": {
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [],
+    "tipo": "classe",
+    "subtipo": "inventor",
+    "chatFlavor": "",
+    "origin": "",
+    "tags": [],
+    "chatGif": "",
+    "rolltags": [],
+    "automationtags": []
+  },
+  "_stats": {
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.0",
+    "coreVersion": "14.366",
+    "createdTime": 1788042524964,
+    "modifiedTime": 1788042524964,
+    "lastModifiedBy": "4fJviA1Q4qcjwsna",
+    "duplicateSource": null,
+    "exportSource": null,
+    "compendiumSource": null
+  },
+  "_id": "houHK39zXtWwR310",
+  "folder": "iHjbUWZ9cRzIVZ3E",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!houHK39zXtWwR310"
+}

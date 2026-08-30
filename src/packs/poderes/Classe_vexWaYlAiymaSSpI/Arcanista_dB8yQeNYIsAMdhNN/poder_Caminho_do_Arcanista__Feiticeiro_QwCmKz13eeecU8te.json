@@ -1,0 +1,131 @@
+{
+  "_id": "QwCmKz13eeecU8te",
+  "name": "Caminho do Arcanista: Feiticeiro",
+  "type": "poder",
+  "img": "systems/tormenta20/icons/poderes/classes/conjuradores/caminho-arcanista-feiticeiro.webp",
+  "effects": [
+    {
+      "name": "Caminho do Arcanista: Feiticeiro",
+      "img": "systems/tormenta20/icons/poderes/classes/conjuradores/caminho-arcanista-feiticeiro.webp",
+      "origin": "Compendium.tormenta20.poderes.Item.QwCmKz13eeecU8te",
+      "tint": "#ffffff",
+      "flags": {
+        "tormenta20": {}
+      },
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": null,
+        "expired": false
+      },
+      "disabled": false,
+      "_id": "MbBqro4KZhCXdutf",
+      "type": "base",
+      "system": {
+        "changes": [
+          {
+            "key": "system.attributes.pm.atributos.car",
+            "value": true,
+            "priority": null,
+            "type": "override",
+            "phase": "initial"
+          }
+        ],
+        "targets": [],
+        "status": null,
+        "onuse": false,
+        "abilityUse": {
+          "description": "",
+          "automatic": false,
+          "aumenta": false,
+          "custo": null,
+          "names": [],
+          "types": []
+        },
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "disposition": []
+        }
+      },
+      "description": "",
+      "transfer": true,
+      "statuses": [],
+      "sort": 0,
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.0",
+        "createdTime": 1788042524978,
+        "modifiedTime": 1788042524978,
+        "lastModifiedBy": "4fJviA1Q4qcjwsna"
+      },
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "_key": "!items.effects!QwCmKz13eeecU8te.MbBqro4KZhCXdutf"
+    }
+  ],
+  "folder": "dB8yQeNYIsAMdhNN",
+  "sort": 0,
+  "flags": {},
+  "system": {
+    "description": {
+      "value": "<p>Você lança magias através de um poder inato que corre em seu sangue. Escolha uma linhagem como origem de seus poderes (veja a página 39). Você recebe a herança básica da linhagem escolhida. Você não depende de nenhum item ou estudo, mas sua capacidade de aprender magias é limitada — você aprende uma magia nova a cada nível ímpar (3º, 5º, 7º etc.), em vez de a cada nível. Seu atributo-chave para magias é Carisma.</p>",
+      "unidentified": ""
+    },
+    "source": "Tormenta20 — Edição Jogo do Ano, p. 37",
+    "ativacao": {
+      "execucao": "passive",
+      "custo": 0,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "duracao": {
+      "value": 0,
+      "units": "inst",
+      "special": ""
+    },
+    "range": {
+      "value": null,
+      "units": ""
+    },
+    "efeito": "",
+    "alcance": "none",
+    "area": "",
+    "resistencia": {
+      "pericia": "",
+      "atributo": "sab",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [],
+    "tipo": "ability",
+    "subtipo": "Arcanista",
+    "chatFlavor": "",
+    "origin": "",
+    "tags": [],
+    "chatGif": "",
+    "rolltags": [],
+    "automationtags": []
+  },
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.0",
+    "coreVersion": "14.366",
+    "createdTime": 1788042524978,
+    "modifiedTime": 1788042524978,
+    "lastModifiedBy": "4fJviA1Q4qcjwsna",
+    "duplicateSource": null,
+    "exportSource": null,
+    "compendiumSource": null
+  },
+  "_key": "!items!QwCmKz13eeecU8te"
+}

@@ -1,0 +1,23 @@
+{
+  "folder": "VzNpCz1wSE1Ln6lH",
+  "name": "Vida",
+  "sorting": "a",
+  "type": "Item",
+  "_id": "qMH9dFHhYkOmlTmF",
+  "sort": 0,
+  "flags": {},
+  "_stats": {
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.0",
+    "coreVersion": "14.366",
+    "createdTime": 1788042524597,
+    "modifiedTime": 1788042524597,
+    "lastModifiedBy": "4fJviA1Q4qcjwsna",
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "description": "",
+  "color": null,
+  "_key": "!folders!qMH9dFHhYkOmlTmF"
+}

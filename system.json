@@ -145,13 +145,6 @@
       "type": "Item"
     },
     {
-      "name": "poderes-distincao",
-      "label": "Poderes de Distinção",
-      "system": "tormenta20",
-      "path": "./packs/poderes-distincao",
-      "type": "Item"
-    },
-    {
       "name": "equipamentos",
       "label": "Equipamentos",
       "system": "tormenta20",

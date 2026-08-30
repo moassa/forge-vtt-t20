@@ -1,0 +1,192 @@
+{
+  "name": "Domínio de Terreno: Colina",
+  "type": "poder",
+  "img": "systems/tormenta20/icons/poderes/distincao.webp",
+  "system": {
+    "description": {
+      "value": "<blockquote>\n<p>Outros exploradores conhecem determinados tipos de terreno. O andarilho do horizonte os domina.</p>\n</blockquote>\n<p>Escolha dois tipos de terreno entre os tipos a seguir. Voc&ecirc; recebe os benef&iacute;cios dos tipos escolhidos mesmo que n&atilde;o esteja neste terreno. Voc&ecirc; pode escolher este poder outras vezes para terrenos diferentes. <em>Pr&eacute;-requisitos:</em> treinado em Conhecimento, Fortitude e Sobreviv&ecirc;ncia.</p>\n<p><strong>Colina.</strong> Voc&ecirc; recebe resist&ecirc;ncia a eletricidade 5 e +2 em suas rolagens de dano em posi&ccedil;&atilde;o elevada.</p>",
+      "chat": "",
+      "unidentified": ""
+    },
+    "source": "Tormenta20 — Distinções, p. 12",
+    "ativacao": {
+      "execucao": "passive",
+      "custo": 0,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "duracao": {
+      "value": 0,
+      "units": "",
+      "special": ""
+    },
+    "target": {
+      "value": null,
+      "width": null,
+      "units": "",
+      "type": ""
+    },
+    "range": {
+      "value": null,
+      "units": ""
+    },
+    "consume": {
+      "type": "",
+      "target": "",
+      "amount": null,
+      "mpMultiplier": false
+    },
+    "efeito": "",
+    "alcance": "none",
+    "alvo": "",
+    "area": "",
+    "resistencia": {
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [],
+    "tipo": "distincao",
+    "subtipo": "Andarilho do Horizonte",
+    "origin": "",
+    "tags": [
+      "AndarilhodoHorizonte"
+    ],
+    "chatFlavor": "",
+    "chatGif": ""
+  },
+  "effects": [
+    {
+      "origin": "Item.Rs60BNVuRq5v29on",
+      "tint": "#ffffff",
+      "flags": {
+        "tormenta20": {
+          "onuse": false,
+          "durationScene": false
+        }
+      },
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": null,
+        "expired": false
+      },
+      "disabled": false,
+      "_id": "TVFYksR4wfPEgFja",
+      "transfer": true,
+      "_stats": {
+        "coreVersion": "14.365",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Domínio de Terreno: Colina",
+      "img": "systems/tormenta20/icons/poderes/distincao.webp",
+      "type": "base",
+      "system": {
+        "changes": [
+          {
+            "key": "system.tracos.resistencias.eletricidade.value",
+            "value": 5,
+            "priority": null,
+            "type": "add"
+          }
+        ]
+      },
+      "description": "",
+      "statuses": [],
+      "sort": 0,
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "_key": "!items.effects!Rs60BNVuRq5v29on.TVFYksR4wfPEgFja"
+    },
+    {
+      "origin": "Item.Rs60BNVuRq5v29on",
+      "tint": "#ffffff",
+      "flags": {
+        "tormenta20": {
+          "onuse": true,
+          "durationScene": false,
+          "self": false,
+          "attack": true,
+          "skill": false,
+          "ability": false,
+          "power": false,
+          "equipment": false,
+          "spell": false,
+          "consumable": false,
+          "items": "",
+          "aumenta": false,
+          "custo": ""
+        }
+      },
+      "duration": {
+        "value": 5,
+        "units": "rounds",
+        "expiry": "turnStart",
+        "expired": false
+      },
+      "disabled": true,
+      "_id": "exMr9ksvqq6DXDPD",
+      "transfer": true,
+      "_stats": {
+        "coreVersion": "14.365",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "+2 em posições elevadas",
+      "img": "icons/svg/upgrade.svg",
+      "type": "base",
+      "system": {
+        "changes": [
+          {
+            "key": "system.modificadores.ataque.geral",
+            "value": 2,
+            "priority": 0,
+            "type": "add"
+          }
+        ]
+      },
+      "description": "",
+      "statuses": [],
+      "sort": 0,
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "_key": "!items.effects!Rs60BNVuRq5v29on.exMr9ksvqq6DXDPD"
+    }
+  ],
+  "flags": {},
+  "_stats": {
+    "systemId": "tormenta20",
+    "systemVersion": "1.4.116",
+    "coreVersion": "14.365",
+    "createdTime": 1665850170299,
+    "modifiedTime": 1684614605298,
+    "lastModifiedBy": "t20builder000000",
+    "duplicateSource": null,
+    "exportSource": null,
+    "compendiumSource": null
+  },
+  "_id": "Rs60BNVuRq5v29on",
+  "folder": "CivN4iqFKpA5ogfm",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!Rs60BNVuRq5v29on"
+}

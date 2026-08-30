@@ -1,0 +1,23 @@
+{
+  "folder": "bqJPqUN7JkJ6M8UE",
+  "name": "U1 Necromancia",
+  "sorting": "a",
+  "type": "Item",
+  "_id": "JYkPCpeuzCN0Fc4I",
+  "sort": 0,
+  "flags": {},
+  "_stats": {
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.0",
+    "coreVersion": "14.366",
+    "createdTime": 1788042470655,
+    "modifiedTime": 1788042470655,
+    "lastModifiedBy": "4fJviA1Q4qcjwsna",
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "description": "",
+  "color": null,
+  "_key": "!folders!JYkPCpeuzCN0Fc4I"
+}

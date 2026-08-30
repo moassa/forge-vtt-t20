@@ -1,0 +1,82 @@
+{
+  "name": "Gemas preciosas",
+  "type": "tesouro",
+  "img": "systems/tormenta20/icons/itens/gerais/gemas-preciosas.webp",
+  "system": {
+    "description": {
+      "value": "<p><strong>[Item de Origem]</strong><br><br><br><br><br><br><br><br><br><br></p>",
+      "unidentified": ""
+    },
+    "source": "Tormenta20 — Edição Jogo do Ano, p. 93",
+    "carregado": true,
+    "peso": 1,
+    "espacos": 0,
+    "qtd": 1,
+    "preco": 100,
+    "pv": {
+      "value": 0,
+      "max": 0
+    },
+    "rd": 0,
+    "container": false,
+    "rolls": [],
+    "origin": "",
+    "chatFlavor": "",
+    "tags": [],
+    "chatGif": "",
+    "ativacao": {
+      "custo": 0,
+      "condicao": "",
+      "execucao": "",
+      "qtd": "",
+      "special": ""
+    },
+    "consume": {
+      "amount": 0,
+      "mpMultiplier": false,
+      "target": "",
+      "type": ""
+    },
+    "duracao": {
+      "units": "inst",
+      "value": 0,
+      "special": ""
+    },
+    "range": {
+      "units": "",
+      "value": 0
+    },
+    "alcance": "",
+    "alvo": "",
+    "area": "",
+    "efeito": "",
+    "resistencia": {
+      "txt": "",
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0
+    },
+    "rolltags": [],
+    "automationtags": []
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.0",
+    "coreVersion": "14.366",
+    "createdTime": 1788042414275,
+    "modifiedTime": 1788042414275,
+    "lastModifiedBy": "4fJviA1Q4qcjwsna",
+    "duplicateSource": null,
+    "exportSource": null,
+    "compendiumSource": null
+  },
+  "_id": "mtYCAxyyPgevtFvX",
+  "folder": "5PDivJJGRX0EFLEP",
+  "sort": 101563,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!mtYCAxyyPgevtFvX"
+}

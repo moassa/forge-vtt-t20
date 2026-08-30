@@ -1,0 +1,23 @@
+{
+  "folder": "LZ2k92nnx4pnVojl",
+  "name": "U5 Necromancia",
+  "sorting": "a",
+  "type": "Item",
+  "_id": "P0UceOxL7WH3yyPb",
+  "sort": 0,
+  "flags": {},
+  "_stats": {
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.0",
+    "coreVersion": "14.366",
+    "createdTime": 1788042470656,
+    "modifiedTime": 1788042470656,
+    "lastModifiedBy": "4fJviA1Q4qcjwsna",
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "description": "",
+  "color": null,
+  "_key": "!folders!P0UceOxL7WH3yyPb"
+}

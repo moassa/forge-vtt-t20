@@ -1,0 +1,94 @@
+{
+  "name": "Madeira negra",
+  "type": "consumivel",
+  "img": "systems/tormenta20/icons/itens/gerais/madeira-magica.webp",
+  "system": {
+    "description": {
+      "value": "<p><span><strong>[Material Especial]</strong></span></p>\n<p>A Floresta produz um tipo de madeira negra, dura como aço e dotada de propriedades mágicas. Apenas armas de madeira — arcos, bordões, clavas, lanças, piques e tacapes —, escudos leves e esotéricos podem ser feitos com madeira Tollon.<br><strong>Arma.</strong> Conta como mágica para vencer redução de dano. Além disso, habilidades ativadas ao se fazer um ataque ou usar a ação agredir têm seu custo em PM reduzido em –1.<br><strong>Escudo e Esotérico.</strong> Fornece resistência a magia +2.</p>\n\n\n<p><span><strong>Preços:</strong></span></p>\n<p><span><span>Armas +T$ 600</span></span></p>\n<p><span><span>Escudos e Esotéricos +T$ 1500</span></span></p>",
+      "unidentified": ""
+    },
+    "source": "Tormenta20 — Edição Jogo do Ano, p. 167",
+    "carregado": true,
+    "peso": 0,
+    "espacos": 1,
+    "qtd": 1,
+    "preco": 1500,
+    "pv": {
+      "value": 0,
+      "max": 0
+    },
+    "rd": 0,
+    "ativacao": {
+      "execucao": "",
+      "custo": 0,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "duracao": {
+      "value": 0,
+      "units": "inst",
+      "special": ""
+    },
+    "range": {
+      "value": null,
+      "units": ""
+    },
+    "consume": {
+      "type": "",
+      "target": "",
+      "amount": null,
+      "mpMultiplier": false
+    },
+    "efeito": "",
+    "alcance": "none",
+    "alvo": "",
+    "area": "",
+    "resistencia": {
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [],
+    "tipo": "material",
+    "origin": "",
+    "chatFlavor": "",
+    "subtipo": "",
+    "tags": [],
+    "chatGif": "",
+    "upgrades": {
+      "melhoria1": "",
+      "melhoria2": "",
+      "melhoria3": "",
+      "melhoria4": "",
+      "material": "",
+      "encanto1": "",
+      "encanto2": "",
+      "encanto3": ""
+    },
+    "rolltags": [],
+    "automationtags": [],
+    "enableAutoUpgrades": true
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.0",
+    "coreVersion": "14.366",
+    "createdTime": 1788042414275,
+    "modifiedTime": 1788042414275,
+    "lastModifiedBy": "4fJviA1Q4qcjwsna",
+    "duplicateSource": null,
+    "exportSource": null,
+    "compendiumSource": null
+  },
+  "_id": "BLWTKPBK6oRPeAoJ",
+  "folder": "xqMxYK1BhlZ6ktNc",
+  "sort": 400000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!BLWTKPBK6oRPeAoJ"
+}

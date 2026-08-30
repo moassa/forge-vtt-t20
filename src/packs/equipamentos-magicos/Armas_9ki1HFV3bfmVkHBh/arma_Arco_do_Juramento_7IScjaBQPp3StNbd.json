@@ -1,0 +1,375 @@
+{
+  "name": "Arco do Juramento",
+  "type": "arma",
+  "img": "systems/tormenta20/icons/itens/itens-magicos/arco-do-juramento.webp",
+  "system": {
+    "description": {
+      "value": "<p>Criado pelos lendários arqueiros arcanos de Lenórienn com a intenção de assassinar os líderes da aliança Negra, esse <em>arco longo formidável </em>tem um poder especial: o usuário pode jurar em voz alta que irá mtar o seu alvo, fazendo com o que o arco se torne uma arma <em>magnífica anticriatura ameaçadora e lancinante</em>, mas apenas contra o alvo jurado. Contra todas as outras criaturas, o arco se torna uma arma mundana. Além disso, seu usuário sofre -2 nos ataques e jogadas de dano se usar qualquer outra arma ou atacar qualquer outro alvo.</p>\n<p>Esse efeito dura até o alvo jurado morrer ou sete dias se passarem, o que vier primeiro. O usuário só pode jurar outro alvo depois de matar o primeiro, ou após sete dias, o que vier primeiro. Sempre que é disparado contra um alvo jurado, o arco do juramento grita \"morte rápida a meus inimigos\", em élfico.</p>",
+      "unidentified": ""
+    },
+    "source": "Marca pag T20, 002",
+    "equipado": 0,
+    "equipado2": {
+      "slot": 0,
+      "type": "hand"
+    },
+    "carregado": true,
+    "peso": 1.5,
+    "espacos": 2,
+    "qtd": 1,
+    "preco": 25600,
+    "pv": {
+      "value": 0,
+      "max": 0
+    },
+    "rd": 0,
+    "rolls": [
+      {
+        "name": "Ataque",
+        "key": "ataque0",
+        "type": "ataque",
+        "parts": [
+          [
+            "1d20",
+            "",
+            ""
+          ],
+          [
+            "pont",
+            "",
+            ""
+          ],
+          [
+            "0",
+            "",
+            ""
+          ]
+        ],
+        "versatil": "",
+        "adaptavel": ""
+      },
+      {
+        "name": "Dano",
+        "key": "dano1",
+        "type": "dano",
+        "parts": [
+          [
+            "1d8",
+            "perfuracao",
+            ""
+          ],
+          [
+            "@for",
+            "",
+            ""
+          ]
+        ],
+        "versatil": "",
+        "adaptavel": ""
+      }
+    ],
+    "criticoM": 20,
+    "criticoX": 3,
+    "alcance": "medium",
+    "tipoUso": "sim",
+    "propriedades": {
+      "ada": false,
+      "agi": false,
+      "alo": false,
+      "arr": false,
+      "dst": false,
+      "dms": false,
+      "dup": false,
+      "lev": false,
+      "mun": false,
+      "ver": false,
+      "adaptavel": false,
+      "agil": false,
+      "alongada": false,
+      "arremesso": false,
+      "ataqueDistancia": true,
+      "duasMaos": true,
+      "dupla": false,
+      "leve": false,
+      "municao": true,
+      "versatil": false,
+      "des": false,
+      "hib": false
+    },
+    "ativacao": {
+      "custo": null,
+      "condicao": "",
+      "execucao": "",
+      "qtd": "",
+      "special": ""
+    },
+    "chatFlavor": "",
+    "consume": {
+      "type": "",
+      "target": "",
+      "amount": null,
+      "mpMultiplier": false
+    },
+    "origin": "",
+    "tags": [],
+    "chatGif": "",
+    "upgrades": {
+      "melhoria1": "",
+      "melhoria2": "",
+      "melhoria3": "",
+      "melhoria4": "",
+      "material": "",
+      "encanto1": "",
+      "encanto2": "",
+      "encanto3": ""
+    },
+    "proficiencia": "marcial",
+    "proposito": "disparo",
+    "empunhadura": "duas",
+    "size": "normal",
+    "ataques": 0,
+    "rolltags": [],
+    "automationtags": [],
+    "enableAutoUpgrades": true
+  },
+  "effects": [
+    {
+      "origin": "Item.GI5p93ztzcG49pXu",
+      "tint": "#ffffff",
+      "flags": {
+        "tormenta20": {}
+      },
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": null,
+        "expired": false
+      },
+      "disabled": true,
+      "_id": "LaDqNgPelC6toKbT",
+      "transfer": false,
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.0",
+        "createdTime": 1788042454326,
+        "modifiedTime": 1788042454326,
+        "lastModifiedBy": "4fJviA1Q4qcjwsna",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Arco do Juramento",
+      "img": "icons/svg/upgrade.svg",
+      "type": "base",
+      "system": {
+        "changes": [
+          {
+            "key": "ataque",
+            "value": 2,
+            "priority": 0,
+            "type": "add",
+            "phase": "initial"
+          },
+          {
+            "key": "dano",
+            "value": 2,
+            "priority": 0,
+            "type": "add",
+            "phase": "initial"
+          },
+          {
+            "key": "criticoM",
+            "value": -1,
+            "priority": 0,
+            "type": "add",
+            "phase": "initial"
+          }
+        ],
+        "targets": [],
+        "status": null,
+        "onuse": true,
+        "abilityUse": {
+          "description": "",
+          "automatic": false,
+          "aumenta": false,
+          "custo": null,
+          "names": [],
+          "types": [
+            "self"
+          ]
+        },
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "disposition": []
+        }
+      },
+      "description": "<p>Jurar (magnífica ameaçadora e lancinante)</p>",
+      "statuses": [],
+      "sort": 0,
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "_key": "!items.effects!7IScjaBQPp3StNbd.LaDqNgPelC6toKbT"
+    },
+    {
+      "origin": "Item.GI5p93ztzcG49pXu",
+      "tint": "#ffffff",
+      "flags": {
+        "tormenta20": {}
+      },
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": null,
+        "expired": false
+      },
+      "disabled": true,
+      "_id": "EKeFiqjGqRChXmXt",
+      "transfer": false,
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.0",
+        "createdTime": 1788042454326,
+        "modifiedTime": 1788042454326,
+        "lastModifiedBy": "4fJviA1Q4qcjwsna",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Arco do Juramento",
+      "img": "icons/svg/upgrade.svg",
+      "type": "base",
+      "system": {
+        "changes": [
+          {
+            "key": "dano",
+            "value": "4d8",
+            "priority": 0,
+            "type": "add",
+            "phase": "initial"
+          }
+        ],
+        "targets": [],
+        "status": null,
+        "onuse": true,
+        "abilityUse": {
+          "description": "",
+          "automatic": false,
+          "aumenta": false,
+          "custo": 2,
+          "names": [],
+          "types": [
+            "self"
+          ]
+        },
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "disposition": []
+        }
+      },
+      "description": "<p>Jurar (Anticriatura)</p>",
+      "statuses": [],
+      "sort": 0,
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "_key": "!items.effects!7IScjaBQPp3StNbd.EKeFiqjGqRChXmXt"
+    },
+    {
+      "origin": "Item.GI5p93ztzcG49pXu",
+      "tint": "#ffffff",
+      "flags": {
+        "tormenta20": {}
+      },
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": null,
+        "expired": false
+      },
+      "disabled": true,
+      "_id": "xFZ98UPNeelZxwz7",
+      "transfer": false,
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.0",
+        "createdTime": 1788042454326,
+        "modifiedTime": 1788042454326,
+        "lastModifiedBy": "4fJviA1Q4qcjwsna",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Arco do Juramento",
+      "img": "icons/svg/upgrade.svg",
+      "type": "base",
+      "system": {
+        "changes": [
+          {
+            "key": "ataque",
+            "value": 2,
+            "priority": 0,
+            "type": "add",
+            "phase": "initial"
+          },
+          {
+            "key": "dano",
+            "value": 2,
+            "priority": 0,
+            "type": "add",
+            "phase": "initial"
+          }
+        ],
+        "targets": [],
+        "status": null,
+        "onuse": true,
+        "abilityUse": {
+          "description": "",
+          "automatic": false,
+          "aumenta": false,
+          "custo": null,
+          "names": [],
+          "types": [
+            "self"
+          ]
+        },
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "disposition": []
+        }
+      },
+      "description": "<p>formidavel</p>",
+      "statuses": [],
+      "sort": 0,
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "_key": "!items.effects!7IScjaBQPp3StNbd.xFZ98UPNeelZxwz7"
+    }
+  ],
+  "flags": {},
+  "_stats": {
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.0",
+    "coreVersion": "14.366",
+    "createdTime": 1788042454326,
+    "modifiedTime": 1788042454326,
+    "lastModifiedBy": "4fJviA1Q4qcjwsna",
+    "duplicateSource": null,
+    "exportSource": null,
+    "compendiumSource": null
+  },
+  "_id": "7IScjaBQPp3StNbd",
+  "folder": "9ki1HFV3bfmVkHBh",
+  "sort": 100000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!7IScjaBQPp3StNbd"
+}

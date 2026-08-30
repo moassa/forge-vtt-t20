@@ -1,0 +1,47 @@
+{
+  "name": "Inventor",
+  "type": "classe",
+  "img": "systems/tormenta20/icons/classes/inventor.webp",
+  "system": {
+    "description": {
+      "value": "",
+      "unidentified": ""
+    },
+    "source": "",
+    "niveis": 1,
+    "pvPorNivel": 3,
+    "pmPorNivel": 4,
+    "inicial": false,
+    "origin": "",
+    "tags": [],
+    "chatFlavor": "",
+    "rolls": [],
+    "chatGif": "",
+    "pericias": {
+      "inatas": "Ofício (Int) e Vontade (Sab), mais 4 a sua escolha entre Conhecimento (Int), Cura (Sab), Diplomacia (Car), Fortitude (Con), Iniciativa (Des), Investigação (Int), Luta (For), Misticismo (Int), Ofício (Int), Pilotagem (Des), Percepção (Sab) e Pontaria (Des).",
+      "numero": 4
+    },
+    "rolltags": [],
+    "automationtags": []
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.0",
+    "coreVersion": "14.366",
+    "createdTime": 1788042388015,
+    "modifiedTime": 1788042388015,
+    "lastModifiedBy": "4fJviA1Q4qcjwsna",
+    "duplicateSource": null,
+    "exportSource": null,
+    "compendiumSource": null
+  },
+  "_id": "WAyBowpFRVKRr0mq",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!WAyBowpFRVKRr0mq"
+}

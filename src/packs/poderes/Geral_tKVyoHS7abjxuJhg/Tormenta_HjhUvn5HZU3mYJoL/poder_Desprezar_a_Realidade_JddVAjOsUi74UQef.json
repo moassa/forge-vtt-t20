@@ -1,0 +1,85 @@
+{
+  "name": "Desprezar a Realidade",
+  "type": "poder",
+  "img": "systems/tormenta20/icons/poderes/tormenta.webp",
+  "effects": [],
+  "flags": {},
+  "system": {
+    "description": {
+      "value": "<p style=\"text-align:justify\">Você pode gastar 2 PM para ficar no limiar da realidade até o início de seu próximo turno. Nesse estado, você ignora terreno difícil e causa 20% de chance de falha em efeitos usados contra você (não apenas ataques). Para cada dois outros poderes de Tormenta que você possuir, essa chance aumenta em 5% (máximo de 50%). Pré-requisito: quatro outros poderes da Tormenta.</p>",
+      "unidentified": ""
+    },
+    "source": "Tormenta20 — Edição Jogo do Ano, p. 137",
+    "ativacao": {
+      "execucao": "",
+      "custo": 2,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "duracao": {
+      "value": 0,
+      "units": "inst",
+      "special": ""
+    },
+    "range": {
+      "value": null,
+      "units": ""
+    },
+    "efeito": "",
+    "alcance": "none",
+    "area": "",
+    "resistencia": {
+      "pericia": "",
+      "atributo": "sab",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [
+      {
+        "name": "Chance de Falha",
+        "key": "formula0",
+        "type": "formula",
+        "parts": [
+          [
+            "1d100cs<(min(20+(@Tormenta2*5),50))",
+            "",
+            ""
+          ]
+        ],
+        "adaptavel": "",
+        "versatil": ""
+      }
+    ],
+    "tipo": "geral",
+    "subtipo": "Tormenta",
+    "chatFlavor": "",
+    "origin": "",
+    "tags": [
+      "Tormenta"
+    ],
+    "chatGif": "",
+    "rolltags": [
+      "Tormenta"
+    ],
+    "automationtags": []
+  },
+  "_stats": {
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.0",
+    "coreVersion": "14.366",
+    "createdTime": 1788042524972,
+    "modifiedTime": 1788042524972,
+    "lastModifiedBy": "4fJviA1Q4qcjwsna",
+    "duplicateSource": null,
+    "exportSource": null,
+    "compendiumSource": null
+  },
+  "_id": "JddVAjOsUi74UQef",
+  "folder": "HjhUvn5HZU3mYJoL",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!JddVAjOsUi74UQef"
+}

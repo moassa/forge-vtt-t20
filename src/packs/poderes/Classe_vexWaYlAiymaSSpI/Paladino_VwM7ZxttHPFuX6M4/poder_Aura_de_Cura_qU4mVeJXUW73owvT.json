@@ -1,0 +1,146 @@
+{
+  "_id": "qU4mVeJXUW73owvT",
+  "name": "Aura de Cura",
+  "type": "poder",
+  "img": "systems/tormenta20/icons/classes/paladino.webp",
+  "effects": [
+    {
+      "name": "Aura de Cura",
+      "img": "icons/svg/upgrade.svg",
+      "origin": null,
+      "tint": "#ffffff",
+      "transfer": false,
+      "system": {
+        "onuse": true,
+        "changes": [
+          {
+            "key": "danoContinuo",
+            "type": "custom",
+            "value": "5[cura] + @car",
+            "phase": "initial",
+            "priority": null
+          }
+        ],
+        "targets": [],
+        "status": null,
+        "abilityUse": {
+          "description": "",
+          "automatic": false,
+          "aumenta": false,
+          "custo": null,
+          "names": [
+            "Aura Sagrada"
+          ],
+          "types": []
+        },
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "disposition": []
+        }
+      },
+      "duration": {
+        "units": "seconds",
+        "expiry": null,
+        "value": null,
+        "expired": false
+      },
+      "disabled": true,
+      "_id": "x2wDEINEN32bP85G",
+      "type": "base",
+      "start": null,
+      "description": "",
+      "statuses": [],
+      "showIcon": 1,
+      "folder": null,
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.0",
+        "createdTime": 1788042525060,
+        "modifiedTime": 1788042525060,
+        "lastModifiedBy": "4fJviA1Q4qcjwsna",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!items.effects!qU4mVeJXUW73owvT.x2wDEINEN32bP85G"
+    }
+  ],
+  "folder": "VwM7ZxttHPFuX6M4",
+  "sort": 0,
+  "flags": {},
+  "system": {
+    "description": {
+      "value": "<p style=\"text-align:justify\">Enquanto sua aura estiver ativa, no início de seus turnos, você e os aliados a sua escolha dentro dela curam um número de PV igual a 5 + seu Carisma. Pré-requisito: 6° nível de paladino. e</p>",
+      "unidentified": ""
+    },
+    "source": "Tormenta20 — Edição Jogo do Ano, p. 83",
+    "ativacao": {
+      "execucao": "passive",
+      "custo": 0,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "duracao": {
+      "value": 0,
+      "units": "inst",
+      "special": ""
+    },
+    "range": {
+      "value": null,
+      "units": ""
+    },
+    "efeito": "",
+    "alcance": "none",
+    "area": "",
+    "resistencia": {
+      "pericia": "",
+      "atributo": "sab",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [
+      {
+        "name": "Cura",
+        "key": "dano0",
+        "type": "dano",
+        "parts": [
+          [
+            "5+@car",
+            "curapv",
+            ""
+          ]
+        ],
+        "versatil": "",
+        "adaptavel": ""
+      }
+    ],
+    "tipo": "classe",
+    "subtipo": "Paladino",
+    "chatFlavor": "",
+    "origin": "",
+    "tags": [],
+    "chatGif": "",
+    "rolltags": [],
+    "automationtags": []
+  },
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.0",
+    "coreVersion": "14.366",
+    "createdTime": 1788042525059,
+    "modifiedTime": 1788042525059,
+    "lastModifiedBy": "4fJviA1Q4qcjwsna",
+    "duplicateSource": null,
+    "exportSource": null,
+    "compendiumSource": null
+  },
+  "_key": "!items!qU4mVeJXUW73owvT"
+}
