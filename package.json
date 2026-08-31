@@ -37,7 +37,6 @@
     "autoprefixer": "^10.4.21",
     "rollup": "^4.59.0",
     "rollup-plugin-postcss": "^4.0.2",
-    "showdown": "^2.1.0",
-    "js-yaml": "^5.4.0"
+    "showdown": "^2.1.0"
   }
 }
