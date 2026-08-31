@@ -7,81 +7,102 @@ export default class BaseEffect extends ActiveEffectTypeDataModel {
 	/** @inheritDoc */
 	static defineSchema() {
 		const schema = super.defineSchema();
-		schema.targets = new fields.SetField(new fields.StringField({
-			required: true,
-			choices: {
-				self: "T20.Self",
-				ally: "T20.Ally",
-				enemy: "T20.Enemy",
-			}
-		}, {
-			required: true,
-			label: "T20.EffectTargets",
-			initial: []
-		}));
-		schema.status = new fields.SchemaField({
-			category: new fields.StringField({
-				required: true,
-				blank: true,
-			}),
-			ignoreImunity: new fields.BooleanField({
-				required: true,
-				initial: false,
-			}),
-			upgrade: new fields.StringField({ required: true, blank: true }),
-			childEffect: new fields.SetField(new fields.StringField({
-				required: true, blank: false
-			})),
-		}, { nullable: true, initial: null });
+		schema.targets = new fields.SetField(
+			new fields.StringField(
+				{
+					required: true,
+					choices: {
+						self: "T20.Self",
+						ally: "T20.Ally",
+						enemy: "T20.Enemy"
+					}
+				},
+				{
+					required: true,
+					label: "T20.EffectTargets",
+					initial: []
+				}
+			)
+		);
+		schema.status = new fields.SchemaField(
+			{
+				category: new fields.StringField({
+					required: true,
+					blank: true
+				}),
+				ignoreImunity: new fields.BooleanField({
+					required: true,
+					initial: false
+				}),
+				upgrade: new fields.StringField({ required: true, blank: true }),
+				childEffect: new fields.SetField(
+					new fields.StringField({
+						required: true,
+						blank: false
+					})
+				)
+			},
+			{ nullable: true, initial: null }
+		);
 
 		schema.onuse = new fields.BooleanField({
-			required: true, initial: false,
-			label: "T20.OnUseEffect",
+			required: true,
+			initial: false,
+			label: "T20.OnUseEffect"
 		});
 		schema.abilityUse = new fields.SchemaField({
 			description: new fields.StringField({
 				required: true,
-				label: "T20.Description",
+				label: "T20.Description"
 			}),
 			automatic: new fields.BooleanField({
-				required: true, initial: false,
-				label: "T20.AlwaysApply",
+				required: true,
+				initial: false,
+				label: "T20.AlwaysApply"
 			}),
 			aumenta: new fields.BooleanField({
-				required: true, initial: false,
-				label: "T20.AllowMultApply",
+				required: true,
+				initial: false,
+				label: "T20.AllowMultApply"
 			}),
 			custo: new fields.NumberField({
-				required: true, nullable: true,
+				required: true,
+				nullable: true,
 				initial: null,
-				label: "T20.PMCost",
+				label: "T20.PMCost"
 			}),
 			names: new fields.SetField(new fields.StringField({ blank: false }), {
-				label: "T20.SpecificItems",
+				label: "T20.SpecificItems"
 			}),
-			types: new fields.SetField(new fields.StringField({
-				blank: false,
-				choices: {
-					self: "T20.ApplyToSelf",
-					ability: "T20.Ability",
-					attack: "T20.Attack",
-					consumable: "T20.Consumable",
-					equipment: "T20.Equipment",
-					power: "T20.Power",
-					skill: "T20.Skill",
-					spell: "T20.Spell",
+			types: new fields.SetField(
+				new fields.StringField({
+					blank: false,
+					choices: {
+						self: "T20.ApplyToSelf",
+						ability: "T20.Ability",
+						attack: "T20.Attack",
+						consumable: "T20.Consumable",
+						equipment: "T20.Equipment",
+						power: "T20.Power",
+						skill: "T20.Skill",
+						spell: "T20.Spell"
+					}
+				}),
+				{
+					label: "T20.ApplyTo"
 				}
-			}), {
-				label: "T20.ApplyTo",
-			})
+			)
 		});
 		schema.aura = new fields.SchemaField({
 			isAura: new fields.BooleanField({
-				required: true, initial: false,
-				label: "T20.TimeScene",
+				required: true,
+				initial: false,
+				label: "T20.TimeScene"
 			}),
 			range: new fields.NumberField({
-				required: true, min: 0, initial: 0
+				required: true,
+				min: 0,
+				initial: 0
 			}),
 			behaviors: new fields.JSONField({
 				gmOnly: true,
@@ -94,11 +115,13 @@ export default class BaseEffect extends ActiveEffectTypeDataModel {
 					choices: {
 						self: "T20.Self",
 						allies: "T20.Aliados",
-						enemies: "T20.Enemies",
+						enemies: "T20.Enemies"
 					}
-				}), {
-				label: "T20.AuraTransfer"
-			}),
+				}),
+				{
+					label: "T20.AuraTransfer"
+				}
+			)
 		});
 		return schema;
 	}
@@ -116,7 +139,12 @@ export default class BaseEffect extends ActiveEffectTypeDataModel {
 	/* -------------------------------------------- */
 
 	get isCantrip() {
-		return this.onuse && this.parent.item?.type == "magia" && this.abilityUse.custo == null && this.abilityUse.types.has("self");
+		return (
+			this.onuse
+			&& this.parent.item?.type == "magia"
+			&& this.abilityUse.custo == null
+			&& this.abilityUse.types.has("self")
+		);
 	}
 
 	/* -------------------------------------------- */
@@ -151,11 +179,12 @@ export default class BaseEffect extends ActiveEffectTypeDataModel {
 		if (!this.targets?.size) return false;
 		if (!this.origin) return false;
 		const origin = fromUuidSync(this.origin);
-		const originToken = origin.documentName == "Actor"
-			? origin.parent.actor.token ?? origin.parent.actor.getActiveTokens().at(0)
-			: origin.documentName == "RegionBehavior"
-				? origin.region.attachment.token
-				: null;
+		const originToken =
+			origin.documentName == "Actor"
+				? (origin.parent.actor.token ?? origin.parent.actor.getActiveTokens().at(0))
+				: origin.documentName == "RegionBehavior"
+					? origin.region.attachment.token
+					: null;
 
 		const parentToken = this.parent.actor.token ?? this.parent.actor.getActiveTokens().at(0);
 		if (!parentToken || !originToken) return false;
@@ -187,11 +216,10 @@ export default class BaseEffect extends ActiveEffectTypeDataModel {
 		const actor = this.parent.actor;
 		const item = this.parent.item;
 		const statusId = this.parent.statuses.first();
-		const duplicate = actor.effects
-			.some((ef) => ef.id != this.parent.id
-				&& ef.statuses.has(statusId)
-				&& ef._stats.createdTime > this.parent._stats.createdTime
-			);
+		const duplicate = actor.effects.some(
+			(ef) =>
+				ef.id != this.parent.id && ef.statuses.has(statusId) && ef._stats.createdTime > this.parent._stats.createdTime
+		);
 		return duplicate;
 	}
 
@@ -200,7 +228,7 @@ export default class BaseEffect extends ActiveEffectTypeDataModel {
 	// If upgraded version is present
 	get isSuppressedByUpgrade() {
 		const actor = this.parent.actor;
-		const hasUpgrade = this.status.upgrade ? true : false;
+		const hasUpgrade = !!this.status.upgrade;
 		return hasUpgrade && actor.statuses.has(this.status.upgrade);
 	}
 
@@ -231,13 +259,12 @@ export default class BaseEffect extends ActiveEffectTypeDataModel {
 	/*  System Operations                           */
 	/* -------------------------------------------- */
 
-
 	/* -------------------------------------------- */
 	/* Data Preparation                             */
 	/* -------------------------------------------- */
 
 	/** @inheritDoc */
-	prepareBaseData() { }
+	prepareBaseData() {}
 
 	/* -------------------------------------------- */
 
@@ -280,8 +307,8 @@ export default class BaseEffect extends ActiveEffectTypeDataModel {
 	/* -------------------------------------------- */
 
 	/**
-	 * 
-	 * @returns 
+	 *
+	 * @returns
 	 */
 	async _createChildStatus() {
 		if (!this.parent.isEmbedded) return;
@@ -304,9 +331,7 @@ export default class BaseEffect extends ActiveEffectTypeDataModel {
 		if (!this.parent.isEmbedded) return;
 		if (this.parent.parent?.documentName != "Actor") return;
 		if (!this.status.childEffect.size) return;
-		const effects = this.parent.actor.effects
-			.filter((ef) => ef.origin == this.parent.uuid)
-			.map((ef) => ef.id);
+		const effects = this.parent.actor.effects.filter((ef) => ef.origin == this.parent.uuid).map((ef) => ef.id);
 		if (foundry.utils.isEmpty(effects)) return;
 		this.parent.actor.deleteEmbeddedDocuments("ActiveEffect", effects);
 	}

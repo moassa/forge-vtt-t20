@@ -22,10 +22,10 @@ export default class ConsumableData extends Tormenta20ItemData {
 					alchemy: "T20.ConsumableTypeAlchemy",
 					potion: "T20.ConsumableTypePotion",
 					material: "T20.ConsumableTypeMaterial",
-					food: "T20.ConsumableTypeFood",
+					food: "T20.ConsumableTypeFood"
 				},
 				initial: "",
-				label: "T20.ItemType",
+				label: "T20.ItemType"
 			}),
 			subtipo: new fields.StringField({
 				required: true,

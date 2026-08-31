@@ -2,7 +2,6 @@
  *
  */
 export default class RegionLayerT20 extends foundry.canvas.layers.RegionLayer {
-
 	/**
 	 *
 	 * @param {Object} shape ShapeData required for creating the shape
@@ -33,7 +32,7 @@ export default class RegionLayerT20 extends foundry.canvas.layers.RegionLayer {
 		}
 		if (["cone", "line"].includes(shape.type)) {
 			placementOptions.onRotate = this._placementOnRotate;
-		};
+		}
 		if (true) {
 			placementOptions.onMove = this._placementOnMove;
 		}
@@ -45,16 +44,16 @@ export default class RegionLayerT20 extends foundry.canvas.layers.RegionLayer {
 		const area = item.system.area.stripDiacritics().replace(",", ".");
 		const shape = {
 			name: item.name
-		}
+		};
 		if (area.match(/cone/)) shape.type = "cone";
 		else if (area.match(/linha|parede|muralha/)) shape.type = "line";
 		else if (area.match(/quadrado|cubo/)) shape.type = "square";
 		else if (area.match(/esfera|circulo|raio|cilindro/)) shape.type = "circle";
-		else if (area.match(/aura/)) shape.type = "emanation"
+		else if (area.match(/aura/)) shape.type = "emanation";
 
 		const ranges = { short: 9, medium: 30, long: 90 };
 		const length = area.match(/(\d+[,|.]?\d?)[m|km|q]/)?.at(1);
-		shape.length = length ? Number(length) : ranges[alcance] ?? 9;
+		shape.length = length ? Number(length) : (ranges[alcance] ?? 9);
 		const quantity = area.match(/^\d+/);
 		shape.quantity = quantity ? quantity[0] : 1;
 		return shape;
@@ -72,13 +71,12 @@ export default class RegionLayerT20 extends foundry.canvas.layers.RegionLayer {
 			restriction: {
 				enabled: true,
 				priority: 0,
-				type: "move",
+				type: "move"
 			},
 			visibility: CONST.REGION_VISIBILITY.OBSERVER,
-			ownership: { [game.user.id]: CONST.DOCUMENT_OWNERSHIP_LEVELS.OWNER },
-		}
+			ownership: { [game.user.id]: CONST.DOCUMENT_OWNERSHIP_LEVELS.OWNER }
+		};
 	}
-
 
 	/**
 	 *
@@ -91,7 +89,7 @@ export default class RegionLayerT20 extends foundry.canvas.layers.RegionLayer {
 			type: shape.type,
 			x: 0,
 			y: 0,
-			gridBased: true,
+			gridBased: true
 		};
 		const lengthPixels = shape.length * canvas.dimensions.distancePixels;
 		switch (shape.type) {
@@ -116,6 +114,7 @@ export default class RegionLayerT20 extends foundry.canvas.layers.RegionLayer {
 			case "line":
 				shapeData.width = (shape.width ?? 1) * canvas.dimensions.distancePixels;
 				shapeData.length = lengthPixels;
+				break;
 			case "emanation":
 				shapeData.radius = lengthPixels;
 				shapeData.gridBased = true;
@@ -126,8 +125,9 @@ export default class RegionLayerT20 extends foundry.canvas.layers.RegionLayer {
 					width: 1,
 					height: 1,
 					x: 0,
-					y: 0,
-				}
+					y: 0
+				};
+				break;
 			default:
 				break;
 		}
@@ -166,7 +166,6 @@ export default class RegionLayerT20 extends foundry.canvas.layers.RegionLayer {
 	_placementOnMove(data) {
 		// console.log("_placementOnMove", data);
 		if (!data.rangePreview) {
-
 		}
 	}
 }

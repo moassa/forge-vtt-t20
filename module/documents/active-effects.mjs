@@ -6,8 +6,6 @@ import { effectMigration } from "./migrations.mjs";
  * Extend the base ActiveEffect class to implement system-specific logic.
  */
 export default class ActiveEffectT20 extends foundry.documents.ActiveEffect {
-
-
 	/** @inheritdoc */
 	static migrateData(data) {
 		super.migrateData(data);
@@ -15,7 +13,6 @@ export default class ActiveEffectT20 extends foundry.documents.ActiveEffect {
 		effectMigration.migrateResistancesPath(data);
 		return data;
 	}
-
 
 	/**
 	 * Verify if the entry has an uuid and retrieve a cloned document if true
@@ -28,7 +25,6 @@ export default class ActiveEffectT20 extends foundry.documents.ActiveEffect {
 		}
 		return new this(effectData, options);
 	}
-
 
 	async _preCreate(data, options, user) {
 		await super._preCreate(data, options, user);
@@ -224,7 +220,8 @@ export default class ActiveEffectT20 extends foundry.documents.ActiveEffect {
 			duration.value = 1;
 			duration.label = _loc(CONFIG.ActiveEffect.expiryEvents.sceneEnd);
 			return duration;
-		} else return super._prepareDuration();
+		}
+		return super._prepareDuration();
 	}
 
 	/* --------------------------------------------- */
@@ -297,7 +294,7 @@ export default class ActiveEffectT20 extends foundry.documents.ActiveEffect {
 					},
 					duration: {
 						units: type === "temporary" || temp ? "rounds" : null,
-						expiry: type === "temporary" || temp ? "sceneEnd" : null,
+						expiry: type === "temporary" || temp ? "sceneEnd" : null
 					},
 					disabled: ["inactive", "onuse"].includes(type)
 				};
@@ -369,7 +366,7 @@ export default class ActiveEffectT20 extends foundry.documents.ActiveEffect {
 		for (let e of effects) {
 			if (e.system.onuse) {
 				const label = document.createElement("label");
-				label.innerText = `${e.system.abilityUse.costLabel} ${e.name}: `
+				label.innerText = `${e.system.abilityUse.costLabel} ${e.name}: `;
 				if (!e.description) {
 					const description = document.createElement("p");
 					description.prepend(label);

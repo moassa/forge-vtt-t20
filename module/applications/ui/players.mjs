@@ -1,17 +1,13 @@
-
-
-
 /**
  * An extension of the core Players display that adds controls for scene end and exploration.
  */
 export default class PlayersT20 extends foundry.applications.ui.Players {
-
 	static DEFAULT_OPTIONS = {
 		actions: {
 			sceneEnd: { handler: PlayersT20.onSceneEnd, buttons: [0] },
-			sceneSegment: { handler: PlayersT20.onSceneSegment, buttons: [0, 2] },
+			sceneSegment: { handler: PlayersT20.onSceneSegment, buttons: [0, 2] }
 		}
-	}
+	};
 
 	/** @inheritdoc */
 	async _onRender(context, options) {
@@ -41,7 +37,7 @@ export default class PlayersT20 extends foundry.applications.ui.Players {
 			for (let index = 1; index <= segmentedScene.max; index++) {
 				const icon = document.createElement("i");
 				if (index > segmentedScene.value) {
-					icon.classList.add("fa-regular", "fa-circle")
+					icon.classList.add("fa-regular", "fa-circle");
 				} else icon.classList.add("fa-regular", "fa-circle-dot");
 				segments.append(icon);
 			}
@@ -50,7 +46,6 @@ export default class PlayersT20 extends foundry.applications.ui.Players {
 
 		this.element.querySelector("#players-active").prepend(sceneControls);
 	}
-
 
 	static async onSceneEnd(event, target) {
 		if (!game.user.isActiveGM) return;

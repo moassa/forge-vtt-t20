@@ -18,8 +18,8 @@ export default class ChatMessageT20 extends ChatMessage {
 	/* --------------------------------------------- */
 
 	/**
-	 * 
-	 * @param {*} html 
+	 *
+	 * @param {*} html
 	 */
 	_renderSustainMessage(html) {
 		html.querySelector(".message-content").classList.add("tormenta20", "sustain", "flexcol");
@@ -33,11 +33,9 @@ export default class ChatMessageT20 extends ChatMessage {
 
 		// Sustain Effects
 		button.addEventListener("click", ChatMessageT20._onSustainEffect.bind(this));
-		return;
 	}
 
 	/* --------------------------------------------- */
-
 
 	_highlightCriticalSuccessFailure(html) {
 		if (!this.isContentVisible || !this.rolls.length) return;
@@ -95,9 +93,9 @@ export default class ChatMessageT20 extends ChatMessage {
 	/**
 	 * Method to add eventListeners to message buttons
 	 * @todo Refactor ChatButtons, maybe add them to a mixin that implements them into ChatLog and ChatPopout classes;
-	 * @param {*} app 
-	 * @param {*} html 
-	 * @param {*} data 
+	 * @param {*} app
+	 * @param {*} html
+	 * @param {*} data
 	 */
 	static renderChatMessageHTML(app, html, data) {
 		chat.hideDieFlavor(app, html, data);
@@ -126,9 +124,7 @@ export default class ChatMessageT20 extends ChatMessage {
 			.querySelectorAll(".chat-place-template")
 			.forEach((el) => el.addEventListener("click", chat._onChatPlaceTemplate.bind(this)));
 
-		html
-			.querySelectorAll(".re-roll")
-			.forEach((el) => el.addEventListener("click", chat._onChatReRoll.bind(this)));
+		html.querySelectorAll(".re-roll").forEach((el) => el.addEventListener("click", chat._onChatReRoll.bind(this)));
 		html
 			.querySelectorAll(".apply-dmg")
 			.forEach((el) => el.addEventListener("click", chat._onChatApplyDamage.bind(this)));
@@ -141,7 +137,7 @@ export default class ChatMessageT20 extends ChatMessage {
 
 	/**
 	 * Prompt the user to select wich effects they want to sustain
-	 * @param {*} event 
+	 * @param {*} event
 	 * @param {*} target
 	 * @this {ChatMessageT20}
 	 */
@@ -151,18 +147,21 @@ export default class ChatMessageT20 extends ChatMessage {
 		const { messageId } = target.closest("li").dataset;
 		const message = game.messages.get(messageId);
 		const actor = message.speakerActor;
-		const effects = actor.effects.filter(e => e.isSustained);
-		const choices = effects.map(e => ({ value: e.id, label: e.name, img: e.img }));
+		const effects = actor.effects.filter((e) => e.isSustained);
+		const choices = effects.map((e) => ({ value: e.id, label: e.name, img: e.img }));
 		// .map(e => `<div class="flexrow"><img src="${e.img}" width="32px"><label>${e.label} <input type="checkbox" name="sustain" value=${e.value}></label></div>`).join("");
 
 		const { sustain } = await foundry.applications.api.Dialog.input({
 			title: "Sustentar Effeitos",
 			content: createFormGroup({
-				label: "Selecionar Efeitos", stacked: true,
+				label: "Selecionar Efeitos",
+				stacked: true,
 				input: createMultiSelectInput({
-					name: "sustain", options: choices, type: "checkboxes"
+					name: "sustain",
+					options: choices,
+					type: "checkboxes"
 				})
-			}).outerHTML,
+			}).outerHTML
 		});
 		if (!sustain) return;
 		const content = document.createElement("ul");
@@ -187,5 +186,4 @@ export default class ChatMessageT20 extends ChatMessage {
 	/* --------------------------------------------- */
 
 	/* --------------------------------------------- */
-
 }

@@ -14,8 +14,7 @@
     "lint:errors": "eslint --quiet --ext .js,.cjs,.mjs .",
     "lint:fix:errors": "eslint --quiet --ext .js,.cjs,.mjs --fix .",
     "postinstall2": "npm run build:ci",
-    "update-manifest": "node ./utils/update-manifest.js",
-    "fix-content-links": "node ./utils/fix-content-links.mjs"
+    "update-manifest": "node ./utils/update-manifest.js"
   },
   "browserslist": [
     "last 3 versions"
@@ -24,15 +23,23 @@
   "license": "MIT",
   "private": true,
   "devDependencies": {
+    "@eslint/js": "^9.26.0",
+    "@foundryvtt/foundryvtt-cli": "^1.0.4",
+    "@guanghechen/rollup-plugin-copy": "^6.0.7",
+    "@html-eslint/eslint-plugin": "^0.26.0",
+    "@html-eslint/parser": "^0.26.0",
+    "@stylistic/eslint-plugin": "^5.5.0",
+    "chalk": "^5.4.1",
+    "eslint": "^9.26.0",
+    "eslint-plugin-jsdoc": "^62.9.0",
+    "less": "^4.6.4",
+    "autoprefixer": "^10.4.21",
+    "rollup": "^4.40.1",
+    "rollup-plugin-postcss": "^4.0.2",
+    "showdown": "^2.1.0",
     "@babel/eslint-parser": "^7.27.0",
     "@eslint/eslintrc": "^3.3.1",
-    "@eslint/js": "^9.27.0",
-    "@foundryvtt/foundryvtt-cli": "^3.0.0",
-    "@guanghechen/rollup-plugin-copy": "^6.0.0",
     "@stylistic/eslint-plugin-js": "^1.8.1",
-    "autoprefixer": "^10.4.21",
-    "chalk": "^5.4.1",
-    "eslint": "^10.2.0",
     "eslint-config-prettier": "^10.1.5",
     "eslint-plugin-prettier": "^5.4.0",
     "fancy-log": "^2.0.0",
@@ -44,14 +51,6 @@
     "lint-staged": "^16.0.0",
     "minisearch": "^7.1.2",
     "prettier": "3.5.3",
-    "rollup": "^4.59.0",
-    "rollup-plugin-postcss": "^4.0.2",
-    "yargs": "^17.7.2",
-    "@html-eslint/eslint-plugin": "^0.26.0",
-    "@html-eslint/parser": "^0.26.0",
-    "@stylistic/eslint-plugin": "^5.5.0",
-    "eslint-plugin-jsdoc": "^62.9.0",
-    "less": "^4.6.4",
-    "showdown": "^2.1.0"
+    "yargs": "^17.7.2"
   }
 }

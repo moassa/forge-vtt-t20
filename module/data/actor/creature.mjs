@@ -1,3 +1,4 @@
+import Tormenta20TypeData from "../../dataModel/base.mjs";
 
 const fields = foundry.data.fields;
 const _fields = tormenta20.data.fields;
@@ -19,7 +20,6 @@ export default class CreatureData extends Tormenta20TypeData {
 		return schema;
 	}
 
-
 	/* -------------------------------------------- */
 	/*  Schema Factory                              */
 	/* -------------------------------------------- */
@@ -31,9 +31,7 @@ export default class CreatureData extends Tormenta20TypeData {
 		return new fields.SchemaField(schema);
 	}
 
-
 	/* -------------------------------------------- */
 	/*  Schema Factory                              */
 	/* -------------------------------------------- */
-
 }

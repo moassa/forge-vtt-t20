@@ -78,7 +78,7 @@ export default function DragAndDropMixin(Base) {
 		 * @param {DragEvent} event
 		 * @protected
 		 */
-		_onDragOver(event) { }
+		_onDragOver(event) {}
 
 		/* -------------------------------------------- */
 
@@ -190,5 +190,5 @@ export default function DragAndDropMixin(Base) {
 		async _onDropFolder(event, folder) {
 			return null;
 		}
-	}
+	};
 }

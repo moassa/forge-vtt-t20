@@ -27,21 +27,23 @@ export default class ActiveEffectBaseSheet extends Tormenta20ApplicationMixin({
 		window: {
 			contentClasses: ["standard-form"],
 			icon: "fa-solid fa-person-rays",
-			controls: [{
-				icon: "fa-solid fa-clock-rotate-left",
-				label: "Reset Tempo de ínicio",
-				action: "resetStart",
-				visible: true,
-			}],
+			controls: [
+				{
+					icon: "fa-solid fa-clock-rotate-left",
+					label: "Reset Tempo de ínicio",
+					action: "resetStart",
+					visible: true
+				}
+			]
 		},
 		form: {
 			submitOnChange: true,
-			closeOnSubmit: false,
+			closeOnSubmit: false
 		},
 		actions: {
-			resetStart: ActiveEffectBaseSheet.#onResetStart,
+			resetStart: ActiveEffectBaseSheet.#onResetStart
 		},
-		position: { width: 560 },
+		position: { width: 560 }
 	};
 
 	static PARTS = {
@@ -52,7 +54,8 @@ export default class ActiveEffectBaseSheet extends Tormenta20ApplicationMixin({
 			template: "templates/generic/tab-navigation.hbs"
 		},
 		details: {
-			template: "templates/sheets/active-effect/details.hbs", scrollable: [""]
+			template: "templates/sheets/active-effect/details.hbs",
+			scrollable: [""]
 		},
 		duration: {
 			template: "templates/sheets/active-effect/duration.hbs"
@@ -64,9 +67,8 @@ export default class ActiveEffectBaseSheet extends Tormenta20ApplicationMixin({
 			template: "templates/sheets/active-effect/changes.hbs",
 			templates: ["templates/sheets/active-effect/change.hbs"],
 			scrollable: ["ol[data-changes]"]
-		},
+		}
 	};
-
 
 	/** @override */
 	static TABS = {
@@ -80,7 +82,7 @@ export default class ActiveEffectBaseSheet extends Tormenta20ApplicationMixin({
 			initial: "details",
 			labelPrefix: "EFFECT.TABS"
 		}
-	}
+	};
 
 	/* -------------------------------------------- */
 	/* Rendering                                    */
@@ -99,7 +101,8 @@ export default class ActiveEffectBaseSheet extends Tormenta20ApplicationMixin({
 		if (!partContext.tabs) partContext.tabs = this._prepareTabs("sheet");
 		if (partId in partContext.tabs) partContext.tab = partContext.tabs[partId];
 		switch (partId) {
-			case "onuse": await this._prepareOnUsePartContext(partContext, context);
+			case "onuse":
+				await this._prepareOnUsePartContext(partContext, context);
 				break;
 			// case "details": await this._prepareDetailsPartContext(partContext, context);
 			// 	break;
@@ -111,12 +114,9 @@ export default class ActiveEffectBaseSheet extends Tormenta20ApplicationMixin({
 		return partContext;
 	}
 
-
 	/* -------------------------------------------- */
 
-	async _prepareOnUsePartContext(partContext, context) {
-
-	}
+	async _prepareOnUsePartContext(partContext, context) {}
 
 	/**
 	 * Prepare data relative to Details core and system fields
@@ -127,11 +127,13 @@ export default class ActiveEffectBaseSheet extends Tormenta20ApplicationMixin({
 		const effect = this.document;
 		partContext.isActorEffect = effect.parent?.documentName === "Actor";
 		partContext.isItemEffect = effect.parent?.documentName === "Item";
-		partContext.statuses = Object.values(CONFIG.statusEffects)
-			.map(s => ({ value: s.id, label: _loc(s.name) }));
-		partContext.showIconOptions = Object.entries(CONST.ACTIVE_EFFECT_SHOW_ICON).map(([k, value]) => ({
-			value, label: _loc(`EFFECT.SHOW_ICON.${k.toLowerCase()}`)
-		})).reverse();
+		partContext.statuses = Object.values(CONFIG.statusEffects).map((s) => ({ value: s.id, label: _loc(s.name) }));
+		partContext.showIconOptions = Object.entries(CONST.ACTIVE_EFFECT_SHOW_ICON)
+			.map(([k, value]) => ({
+				value,
+				label: _loc(`EFFECT.SHOW_ICON.${k.toLowerCase()}`)
+			}))
+			.reverse();
 	}
 
 	/* -------------------------------------------- */
@@ -148,13 +150,11 @@ export default class ActiveEffectBaseSheet extends Tormenta20ApplicationMixin({
 			time: _loc("EFFECT.DURATION.UNITS.GROUPS.time"),
 			combat: _loc("EFFECT.DURATION.UNITS.GROUPS.combat")
 		};
-		partContext.durationUnits = DURATION_UNITS.map(
-			value => ({
-				value,
-				label: _loc(`EFFECT.DURATION.UNITS.${value}`),
-				group: TIME_DURATION_UNITS.includes(value) ? groups.time : groups.combat
-			})
-		);
+		partContext.durationUnits = DURATION_UNITS.map((value) => ({
+			value,
+			label: _loc(`EFFECT.DURATION.UNITS.${value}`),
+			group: TIME_DURATION_UNITS.includes(value) ? groups.time : groups.combat
+		}));
 		partContext.expiryEvents = Object.entries(ActiveEffect.EXPIRY_EVENTS)
 			.map(([value, label]) => ({ value, label: _loc(label) }))
 			.sort((a, b) => a.label.localeCompare(b.label, game.i18n.lang))
@@ -177,11 +177,12 @@ export default class ActiveEffectBaseSheet extends Tormenta20ApplicationMixin({
 		const combat = effect.start.combat ?? null;
 		const combatant = combat?.combatants.get(start.combatant) ?? null;
 		const combatantName = combatant?.visible ? combatant.name : "???";
-		const combatantInitiative = combatant?.visible === false
-			? "???"
-			: typeof combatant?.initiative === "number"
-				? combatant.initiative
-				: _loc("EFFECT.START.NoInitiative");
+		const combatantInitiative =
+			combatant?.visible === false
+				? "???"
+				: typeof combatant?.initiative === "number"
+					? combatant.initiative
+					: _loc("EFFECT.START.NoInitiative");
 		return { ...start, time, combat, combatant, combatantName, combatantInitiative };
 	}
 
@@ -195,7 +196,6 @@ export default class ActiveEffectBaseSheet extends Tormenta20ApplicationMixin({
 		console.groupEnd();
 		return context;
 	}
-
 
 	/* -------------------------------------------- */
 	/*  Event Listeners & Handlers                  */

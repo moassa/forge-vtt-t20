@@ -1,21 +1,17 @@
-
-
 /**
  * A custom combat tracker that supports Draw Steel's initiative system.
  */
-
 
 /**
  * An extension of the base CombatTracker class to provide some Tormenta20-specific functionality.
  * @extends {CombatTracker}
  */
 export default class CombatTrackerT20 extends foundry.applications.sidebar.tabs.CombatTracker {
-
 	/** @inheritdoc */
 	static DEFAULT_OPTIONS = {
 		actions: {
-			endScene: CombatTrackerT20.#endScene,
-		},
+			endScene: CombatTrackerT20.#endScene
+		}
 	};
 
 	/* -------------------------------------------- */

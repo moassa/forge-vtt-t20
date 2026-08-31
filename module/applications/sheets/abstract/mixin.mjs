@@ -7,19 +7,17 @@ const { HandlebarsApplicationMixin } = foundry.applications.api;
 export default function Tormenta20ApplicationMixin({ Base, dragndrop = false, mixins = [] }) {
 	// Extend the base class to avoid muatiting it
 	const BaseClass = class extends Base {
-		static DEFAULT_OPTIONS = {}
+		static DEFAULT_OPTIONS = {};
 	};
 	const hasHAM = Base.hasOwnProperty("PARTS");
 
 	const mixedClass = hasHAM
 		? dragndrop
-			? class extends DragAndDropMixin(BaseClass) { }
+			? class extends DragAndDropMixin(BaseClass) {}
 			: BaseClass
 		: dragndrop
-			? class extends DragAndDropMixin(HandlebarsApplicationMixin(BaseClass)) { }
-			: class extends HandlebarsApplicationMixin(BaseClass) { };
-
-
+			? class extends DragAndDropMixin(HandlebarsApplicationMixin(BaseClass)) {}
+			: class extends HandlebarsApplicationMixin(BaseClass) {};
 
 	// Then mix with any other template
 	for (const mixin of mixins) {
@@ -44,13 +42,12 @@ export default function Tormenta20ApplicationMixin({ Base, dragndrop = false, mi
 
 	// return class ApplicationT20 extends HandlebarsApplicationMixin(mixedClass) { }
 	return class ApplicationT20 extends mixedClass {
-
 		static DEFAULT_OPTIONS = {
 			classes: ["tormenta20-v2"],
 			actions: {
-				logToConsole: { handler: this.logToConsole, buttons: [0] },
+				logToConsole: { handler: this.logToConsole, buttons: [0] }
 			}
-		}
+		};
 
 		/* -------------------------------------------- */
 		/* Getters                                      */
@@ -72,7 +69,7 @@ export default function Tormenta20ApplicationMixin({ Base, dragndrop = false, mi
 		 * Register context menu entries and fire hooks.
 		 * @protected
 		 */
-		_createContextMenus() { }
+		_createContextMenus() {}
 
 		/* -------------------------------------------- */
 
@@ -132,5 +129,5 @@ export default function Tormenta20ApplicationMixin({ Base, dragndrop = false, mi
 		/* -------------------------------------------- */
 		/* Methods                                      */
 		/* -------------------------------------------- */
-	}
+	};
 }

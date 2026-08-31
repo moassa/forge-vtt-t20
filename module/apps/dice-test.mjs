@@ -41,6 +41,5 @@ export default class DiceTest extends FormApplication {
 		// r.terms.push(new foundry.dice.terms.Die({number: 4, faces: 8}))
 	}
 
-	deleteTerm(event) {
-	}
+	deleteTerm(event) {}
 }

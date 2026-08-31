@@ -28,7 +28,6 @@ export async function migration_1_5_0() {
 	);
 }
 
-
 export async function migration_1_5_006() {
 	const packs = game.packs.filter((p) => p.metadata.type === "Actor" && p.metadata.packageType !== "system");
 	const consertaAtores = async (actors, pack) => {
@@ -104,7 +103,6 @@ export async function migration_1_5_006() {
 	ui.notifications.info("Conserto concluído", { console: false, permanent: true });
 }
 
-
 export async function migration_1_5_007() {
 	const packs = game.packs.filter((p) => p.metadata.type === "Actor" && p.metadata.packageType !== "system");
 	const consertaAtores = async (actors, pack) => {
@@ -154,11 +152,7 @@ export async function migration_1_5_010() {
 				const cls = CONFIG.Actor.dataModels[actor.type];
 				if (actor.system.pericias.ofi0) changes["system.pericias.-=ofi0"] = null;
 				if (actor.system.pericias._pc0) changes["system.pericias.-=_pc0"] = null;
-				if (
-					actor.system.pericias.acro?.st
-					&& actor.system.pericias.reli?.pda
-					&& actor.system.pericias.guer?.pda
-				) {
+				if (actor.system.pericias.acro?.st && actor.system.pericias.reli?.pda && actor.system.pericias.guer?.pda) {
 					for (const [key, value] of Object.entries(actor.system.pericias)) {
 						changes[`system.pericias.${key}`] = cls._initialSkillValue(key, initial, value);
 					}
@@ -177,13 +171,10 @@ export async function migration_1_5_010() {
 			}
 		}
 	};
-	ui.notifications.info(
-		"Iniciando migração do sistema Tormenta20 1.5.010. Espere um momento e não feche o jogo",
-		{
-			console: false,
-			permanent: true
-		}
-	);
+	ui.notifications.info("Iniciando migração do sistema Tormenta20 1.5.010. Espere um momento e não feche o jogo", {
+		console: false,
+		permanent: true
+	});
 	for (const pack of packs) {
 		const wasLocked = pack.locked;
 		try {
@@ -217,13 +208,14 @@ export async function migration_1_5_013() {
 	const oldActors = game.actors.filter((f) => !f._stats.systemVersion || f._stats.systemVersion < "1.5.000");
 	for (const actor of oldActors) {
 		const updateData = {};
-		updateData.items = actor.items.filter((item) => item.flags?.favorito)
-			.map(item => {
+		updateData.items = actor.items
+			.filter((item) => item.flags?.favorito)
+			.map((item) => {
 				return {
 					_id: item.id,
 					"flags.favorito": _del,
-					"flags.tormenta20.favorito": true,
-				}
+					"flags.tormenta20.favorito": true
+				};
 			});
 		if (updateData.items.length) await actor.update(updateData);
 	}

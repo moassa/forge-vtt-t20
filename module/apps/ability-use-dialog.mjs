@@ -144,9 +144,8 @@ export default class AbilityUseDialog extends Dialog {
 
 		// Create the Dialog and return data as a Promise
 		const icon = item.type === "magia" ? "fa-hand-sparkles" : "fa-hand-fist";
-		const label = item.type === "magia"
-			? game.i18n.localize("T20.AbilityUseCast")
-			: game.i18n.localize("T20.AbilityUseUse");
+		const label =
+			item.type === "magia" ? game.i18n.localize("T20.AbilityUseCast") : game.i18n.localize("T20.AbilityUseUse");
 
 		return await new Promise((resolve) => {
 			const dlg = new this(item, {
@@ -189,7 +188,7 @@ export default class AbilityUseDialog extends Dialog {
 
 	static async prepareDescription(effect) {
 		const label = document.createElement("label");
-		label.innerText = `${effect.name}:`
+		label.innerText = `${effect.name}:`;
 		if (!effect.description) {
 			const description = document.createElement("p");
 			description.prepend(label);
@@ -201,48 +200,4 @@ export default class AbilityUseDialog extends Dialog {
 			effect.descriptionEnriched = description.outerHTML;
 		}
 	}
-
-	filterEffects() {
-		function filterAE(ae, keys = [], tags = []) {
-			const name = item.name;
-			let items = ae.getFlag("tormenta20", "items");
-			items = items ? items.split(";").map((i) => i.trim()) : [];
-			if (!foundry.utils.isEmpty(items) && !items.includes(name)) return false;
-			for (let k of keys) {
-				if (!ae.flags?.tormenta20 || !ae.flags?.tormenta20[k]) return false;
-			}
-			return true;
-		}
-
-		const relate = {
-			atributo: "ability",
-			pericia: "skill",
-			arma: "attack",
-			magia: "spell",
-			poder: "power",
-			consumivel: "consumable",
-			equipamento: "equipment"
-		};
-		let utype = "";
-		switch (item.type) {
-			case "atributo":
-			case "pericia":
-				utype = relate[item.type];
-				aprimoramentos = [...item.actor.effects.filter((ae) => filterAE(ae, ["onuse", utype]))];
-				break;
-			case "arma":
-			case "magia":
-			case "poder":
-			case "equipamento":
-			case "consumivel":
-				utype = relate[item.type];
-				aprimoramentos = [
-					...item.effects.filter((ae) => filterAE(ae, ["onuse", "self"])),
-					...item.actor.effects.filter((ae) => filterAE(ae, ["onuse", utype]))
-				];
-				break;
-		}
-	}
 }
-
-

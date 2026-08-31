@@ -1,4 +1,3 @@
-
 /* -------------------------------------- */
 /*  Helpers                               */
 /* -------------------------------------- */
@@ -18,7 +17,6 @@ export function allowCompendiumMigration(pack) {
 	return false;
 }
 
-
 /* -------------------------------------- */
 /*  V14 1.6.0                             */
 /* -------------------------------------- */
@@ -29,18 +27,18 @@ export async function migration_1_6_0(params) {
 	// - Remove effects transfered to actors;
 	const progress = ui.notifications.info("Applying Migration [1.6.0]", { console: true, progress: true });
 	// Migrate World Actors
-	progress.update({ pct: 0.10, message: "Applying Migration to World Actors" });
+	progress.update({ pct: 0.1, message: "Applying Migration to World Actors" });
 	for (const actor of game.actors) {
 		const toDelete = [];
 		deleteLegacyTransferedEffects(actor, toDelete);
 		await foundry.documents.modifyBatch(toDelete);
 
-		// Actor Effects 
+		// Actor Effects
 		const operations = [];
 		migrateEffectsV2(actor, operations);
 		await foundry.documents.modifyBatch(operations);
 	}
-	progress.update({ pct: 0.20, message: "Applying Migration to World Items" });
+	progress.update({ pct: 0.2, message: "Applying Migration to World Items" });
 
 	// Migrate World Items
 	for (const item of game.items) {
@@ -48,7 +46,7 @@ export async function migration_1_6_0(params) {
 		migrateEffectsV2(item, operations);
 		await foundry.documents.modifyBatch(operations);
 	}
-	progress.update({ pct: 0.40, message: "Applying Migration to Actor Tokens" });
+	progress.update({ pct: 0.4, message: "Applying Migration to Actor Tokens" });
 
 	// Migrate Token Actors
 	for (const scene of game.scenes) {
@@ -69,7 +67,7 @@ export async function migration_1_6_0(params) {
 
 	// Migrate Compendium Pacts
 
-	progress.update({ pct: 0.60, message: "Applying Migration to Compendium Actors" });
+	progress.update({ pct: 0.6, message: "Applying Migration to Compendium Actors" });
 	for (const pack of game.packs) {
 		if (pack.documentName != "Actor") continue;
 		if (!allowCompendiumMigration(pack)) continue;
@@ -81,7 +79,7 @@ export async function migration_1_6_0(params) {
 			deleteLegacyTransferedEffects(actor, toDelete);
 		}
 		await foundry.documents.modifyBatch(toDelete);
-		// Actor Effects 
+		// Actor Effects
 		const operations = [];
 		for (const actor of documents) {
 			migrateEffectsV2(actor, operations);
@@ -90,7 +88,7 @@ export async function migration_1_6_0(params) {
 		if (wasLocked) await pack.configure({ locked: true });
 	}
 
-	progress.update({ pct: 0.80, message: "Applying Migration to Compendium Items" });
+	progress.update({ pct: 0.8, message: "Applying Migration to Compendium Items" });
 	for (const pack of game.packs) {
 		if (pack.documentName != "Item") continue;
 		if (!allowCompendiumMigration(pack)) continue;
@@ -109,8 +107,8 @@ export async function migration_1_6_0(params) {
 
 /**
  * Effects may now be applied to actors directly form items remove the copy created on creation.
- * @param {*} parentDocument 
- * @param {*} operations 
+ * @param {*} parentDocument
+ * @param {*} operations
  */
 export function deleteLegacyTransferedEffects(parentDocument, operations) {
 	const deleteIds = [];
@@ -132,7 +130,7 @@ export function deleteLegacyTransferedEffects(parentDocument, operations) {
 				updates: [updateData],
 				action: "update",
 				documentName: "ActiveEffect",
-				parent: origin,
+				parent: origin
 			});
 		}
 	}
@@ -141,15 +139,15 @@ export function deleteLegacyTransferedEffects(parentDocument, operations) {
 		ids: deleteIds,
 		action: "delete",
 		documentName: "ActiveEffect",
-		parent: parentDocument,
+		parent: parentDocument
 	});
 }
 
 /**
  * Migrate ActiveEffect data to the new ActiveEffectV2 standards
- * @param {*} parentDocument 
- * @param {*} operations 
- * @returns 
+ * @param {*} parentDocument
+ * @param {*} operations
+ * @returns
  */
 export function migrateEffectsV2(parentDocument, operations) {
 	const updates = [];
@@ -171,7 +169,8 @@ export function migrateEffectsV2(parentDocument, operations) {
 		if (flags?.onuse) {
 			const typeKeys = ["self", "ability", "attack", "consumable", "equipment", "power", "skill", "spell"];
 			const types = [];
-			const isSpell = effect.parent?.type == "magia"
+			const isSpell =
+				effect.parent?.type == "magia"
 				|| (effect.parent?.type == "consumivel" && effect.parent?.system.tipo == "scroll");
 			if (isSpell && flags.onuse && !effect.isTemporary) {
 				types.push("self");
@@ -185,13 +184,13 @@ export function migrateEffectsV2(parentDocument, operations) {
 			if (effect.parent.name != effect.name) {
 				Object.assign(updateData, {
 					name: origin.type == "magia" ? "Aprimoramento" : effect.parent.name,
-					description: `<p>${effect.name}</p>`,
+					description: `<p>${effect.name}</p>`
 				});
 			}
 			Object.assign(updateData, {
 				disabled: flags.onuse ? true : effect.disabled,
 				flags: {
-					tormenta20: _replace({}),
+					tormenta20: _replace({})
 				},
 				system: {
 					onuse: flags.onuse,
@@ -200,7 +199,7 @@ export function migrateEffectsV2(parentDocument, operations) {
 						aumenta: flags.aumenta ?? false,
 						custo: flags.custo,
 						names: items,
-						types: types,
+						types: types
 					}
 				}
 			});
@@ -211,7 +210,7 @@ export function migrateEffectsV2(parentDocument, operations) {
 					category: flags.category,
 					ignoreImunity: flags.ignoreImunity,
 					upgrade: flags.stack,
-					childEffect: flags.childEffect,
+					childEffect: flags.childEffect
 				}
 			});
 		}
@@ -220,11 +219,10 @@ export function migrateEffectsV2(parentDocument, operations) {
 				duration: {
 					expiry: "sceneEnd",
 					value: null,
-					units: "rounds",
+					units: "rounds"
 				}
 			});
 		}
-
 
 		if (foundry.utils.isEmpty(updateData)) continue;
 		updateData._id = effect.id;
@@ -234,7 +232,7 @@ export function migrateEffectsV2(parentDocument, operations) {
 		updates,
 		action: "update",
 		documentName: "ActiveEffect",
-		parent: parentDocument,
+		parent: parentDocument
 	});
 
 	if (parentDocument.documentName != "Actor") return;
@@ -242,7 +240,6 @@ export function migrateEffectsV2(parentDocument, operations) {
 		migrateEffectsV2(item, operations);
 	}
 }
-
 
 /* -------------------------------------- */
 /*  V14 1.6.X                             */

@@ -2,8 +2,6 @@
  * Extend the base RegionT20 class to implement system-specific logic.
  */
 export default class RegionT20 extends foundry.documents.RegionDocument {
-
-
 	/* -------------------------------------------- */
 	/*  Database Operations                         */
 	/* -------------------------------------------- */
@@ -12,7 +10,6 @@ export default class RegionT20 extends foundry.documents.RegionDocument {
 	_onCreate(data, options, userId) {
 		super._onCreate(data, options, userId);
 		this._onCreateBehaviors(data, options, userId);
-
 	}
 
 	async _onCreateBehaviors(data, options, userId) {
@@ -29,20 +26,20 @@ export default class RegionT20 extends foundry.documents.RegionDocument {
 				if (behavior.type == "applyActiveEffect") {
 					const uuids = [];
 					for (const name of behavior.system.effects) {
-						const chatEffects = effects.find(e => e.at(0).name == name);
+						const chatEffects = effects.find((e) => e.at(0).name == name);
 						if (chatEffects) {
 							chatEffects.at(0)._id = foundry.utils.randomID();
 							chatEffects.at(0).origin = `${this.uuid}.RegionBehavior.${behavior._id}`;
-							const created = await message.speakerActor.createEmbeddedDocuments("ActiveEffect", chatEffects, { keepId: true });
-							if (created.length) uuids.push(created.map(c => c.uuid));
+							const created = await message.speakerActor.createEmbeddedDocuments("ActiveEffect", chatEffects, {
+								keepId: true
+							});
+							if (created.length) uuids.push(created.map((c) => c.uuid));
 						}
 					}
 					behavior.system.effects = uuids;
 				}
 			}
 			this.createEmbeddedDocuments("RegionBehavior", behaviors, { keepId: true });
-		} catch {
-			return;
-		}
+		} catch {}
 	}
 }

@@ -1,7 +1,6 @@
 import { applyChatCardDamage, applyChatManaSpend } from "../../chat.mjs";
 
 export default class ChatLogT20 extends foundry.applications.sidebar.tabs.ChatLog {
-
 	/** @inheritdoc */
 	_getEntryContextOptions() {
 		const context = super._getEntryContextOptions();

@@ -146,7 +146,7 @@ export default class ItemT20 extends Item {
 			const { types, names } = effect.system.abilityUse;
 			if (!types.has(type) && !names.has(this.name)) return;
 			applicableOnUseEffects.push(effect);
-		}
+		};
 		for (const effect of this.effects) includeEffect(effect);
 		for (const item of this.actor.items) {
 			if (item.id == this.id) continue;
@@ -686,24 +686,10 @@ export default class ItemT20 extends Item {
 					automaticEffects.push(doc);
 				}
 				// Effects from this Item Appear First
-				automaticEffects.sort((a, b) => a.parent.id == item.id ? -1 : 1);
+				automaticEffects.sort((a, b) => (a.parent.id == item.id ? -1 : 1));
 				configuration.aprs = automaticEffects.reduce((acc, ef) => {
 					acc[ef.id] = { aplica: 1, custo: ef.system.abilityUse.custo || 0 };
 					return acc;
-				}, {});
-				options = await applyOnUseEffects(item, configuration);
-			}
-			// OLD
-			if (false) {
-				let itActive = this.actor.effects.filter((ef) => ef.system.onuse && !ef.system.abilityUse.automatic);
-				let acActive = this.effects.filter((ef) => ef.system.onuse && !ef.system.abilityUse.automatic);
-				let active = itActive.concat(acActive);
-
-				let efType = relate[item.type];
-				active = active.filter((ef) => ef.system.abilityUse.types.has(efType) || ef.system.abilityUse.types.has("self"));
-				configuration.aprs = active.reduce((o, ef) => {
-					o[ef.id] = { aplica: 1, custo: ef.flags.tormenta20.custo || "0" };
-					return o;
 				}, {});
 				options = await applyOnUseEffects(item, configuration);
 			}
@@ -1077,16 +1063,16 @@ export default class ItemT20 extends Item {
 			effects: options.effects,
 			placeTemplate: options.template,
 			rolls: [],
-			statuses: new Set(),
+			statuses: new Set()
 		};
 		const descriptions = [
 			templateData.item.system.description.value.stripDiacritics(),
-			...templateData.onUseEffects.map(i => i.description.stripDiacritics()),
+			...templateData.onUseEffects.map((i) => i.description.stripDiacritics())
 		];
 		for (const status of CONFIG.statusEffects) {
 			if (["invisivel", "morto", "sustentando"].includes(status.id)) continue;
 			const pattern = new RegExp([status.id, status.id.replace(/o$/, "a")].join("|"), "ig");
-			if (descriptions.some(text => text.match(pattern))) {
+			if (descriptions.some((text) => text.match(pattern))) {
 				templateData.statuses.add(status.id);
 			}
 		}

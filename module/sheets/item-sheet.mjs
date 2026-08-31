@@ -568,7 +568,8 @@ export default class ItemSheetT20 extends foundry.appv1.sheets.ItemSheet {
 	_onBehaviorsControl(event) {
 		event.preventDefault();
 		new tormenta20.applications.api.DocumentFieldSheet({
-			document: this.document, fields: ["system.area_behaviors"]
+			document: this.document,
+			fields: ["system.area_behaviors"]
 		}).render(true);
 	}
 

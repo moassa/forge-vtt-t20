@@ -5,9 +5,7 @@ T20Conditions.abalado = {
 	id: "abalado",
 	name: "Abalado",
 	img: "systems/tormenta20/icons/conditions/abalado.svg",
-	statuses: [
-		"abalado"
-	],
+	statuses: ["abalado"],
 	duration: {
 		expiry: "sceneEnd"
 	},
@@ -24,16 +22,14 @@ T20Conditions.abalado = {
 			stack: "apavorado"
 		}
 	}
-}
+};
 
 T20Conditions.agarrado = {
 	uuid: "Compendium.world.statuses.ActiveEffect.AGARRADO00000000",
 	id: "agarrado",
 	name: "Agarrado",
 	img: "systems/tormenta20/icons/conditions/agarrado.svg",
-	statuses: [
-		"agarrado"
-	],
+	statuses: ["agarrado"],
 	duration: {
 		expiry: "sceneEnd"
 	},
@@ -52,22 +48,17 @@ T20Conditions.agarrado = {
 		],
 		status: {
 			category: "movimento",
-			childEffect: [
-				"desprevenido",
-				"imovel"
-			]
+			childEffect: ["desprevenido", "imovel"]
 		}
 	}
-}
+};
 
 T20Conditions.alquebrado = {
 	uuid: "Compendium.world.statuses.ActiveEffect.ALQUEBRADO000000",
 	id: "alquebrado",
 	name: "Alquebrado",
 	img: "systems/tormenta20/icons/conditions/alquebrado.svg",
-	statuses: [
-		"alquebrado"
-	],
+	statuses: ["alquebrado"],
 	duration: {
 		expiry: "sceneEnd"
 	},
@@ -83,16 +74,14 @@ T20Conditions.alquebrado = {
 			category: "mental"
 		}
 	}
-}
+};
 
 T20Conditions.apavorado = {
 	uuid: "Compendium.world.statuses.ActiveEffect.APAVORADO0000000",
 	id: "apavorado",
 	name: "Apavorado",
 	img: "systems/tormenta20/icons/conditions/apavorado.svg",
-	statuses: [
-		"apavorado"
-	],
+	statuses: ["apavorado"],
 	duration: {
 		expiry: "sceneEnd"
 	},
@@ -108,37 +97,31 @@ T20Conditions.apavorado = {
 			category: "medo"
 		}
 	}
-}
+};
 
 T20Conditions.atordoado = {
 	uuid: "Compendium.world.statuses.ActiveEffect.ATORDOADO0000000",
 	id: "atordoado",
 	name: "Atordoado",
 	img: "systems/tormenta20/icons/conditions/atordoado.svg",
-	statuses: [
-		"atordoado"
-	],
+	statuses: ["atordoado"],
 	duration: {
 		expiry: "sceneEnd"
 	},
 	system: {
 		status: {
 			category: "mental",
-			childEffect: [
-				"desprevenido"
-			]
+			childEffect: ["desprevenido"]
 		}
 	}
-}
+};
 
 T20Conditions.caido = {
 	uuid: "Compendium.world.statuses.ActiveEffect.CAIDO00000000000",
 	id: "caido",
 	name: "Caído",
 	img: "systems/tormenta20/icons/conditions/caido.svg",
-	statuses: [
-		"caido"
-	],
+	statuses: ["caido"],
 	duration: {
 		expiry: "sceneEnd"
 	},
@@ -162,16 +145,14 @@ T20Conditions.caido = {
 		],
 		status: {}
 	}
-}
+};
 
 T20Conditions.cego = {
 	uuid: "Compendium.world.statuses.ActiveEffect.CEGO000000000000",
 	id: "cego",
 	name: "Cego",
 	img: "systems/tormenta20/icons/conditions/cego.svg",
-	statuses: [
-		"cego"
-	],
+	statuses: ["cego"],
 	duration: {
 		expiry: "sceneEnd"
 	},
@@ -225,22 +206,17 @@ T20Conditions.cego = {
 		],
 		status: {
 			category: "sentidos",
-			childEffect: [
-				"desprevenido",
-				"lento"
-			]
+			childEffect: ["desprevenido", "lento"]
 		}
 	}
-}
+};
 
 T20Conditions.confuso = {
 	uuid: "Compendium.world.statuses.ActiveEffect.CONFUSO000000000",
 	id: "confuso",
 	name: "Confuso",
 	img: "systems/tormenta20/icons/conditions/confuso.svg",
-	statuses: [
-		"confuso"
-	],
+	statuses: ["confuso"],
 	duration: {
 		expiry: "sceneEnd"
 	},
@@ -249,16 +225,14 @@ T20Conditions.confuso = {
 			category: "mental"
 		}
 	}
-}
+};
 
 T20Conditions.debilitado = {
 	uuid: "Compendium.world.statuses.ActiveEffect.DEBILITADO000000",
 	id: "debilitado",
 	name: "Debilitado",
 	img: "systems/tormenta20/icons/conditions/debilitado.svg",
-	statuses: [
-		"debilitado"
-	],
+	statuses: ["debilitado"],
 	duration: {
 		expiry: "sceneEnd"
 	},
@@ -334,16 +308,14 @@ T20Conditions.debilitado = {
 			stack: "inconsciente"
 		}
 	}
-}
+};
 
 T20Conditions.desprevenido = {
 	uuid: "Compendium.world.statuses.ActiveEffect.DESPREVENIDO0000",
 	id: "desprevenido",
 	name: "Desprevenido",
 	img: "systems/tormenta20/icons/conditions/desprevenido.svg",
-	statuses: [
-		"desprevenido"
-	],
+	statuses: ["desprevenido"],
 	duration: {
 		expiry: "sceneEnd"
 	},
@@ -362,16 +334,14 @@ T20Conditions.desprevenido = {
 		],
 		status: {}
 	}
-}
+};
 
 T20Conditions.doente = {
 	uuid: "Compendium.world.statuses.ActiveEffect.DOENTE0000000000",
 	id: "doente",
 	name: "Doente",
 	img: "systems/tormenta20/icons/conditions/doente.svg",
-	statuses: [
-		"doente"
-	],
+	statuses: ["doente"],
 	duration: {
 		expiry: "sceneEnd"
 	},
@@ -380,16 +350,14 @@ T20Conditions.doente = {
 			category: "metabolismo"
 		}
 	}
-}
+};
 
 T20Conditions.emchamas = {
 	uuid: "Compendium.world.statuses.ActiveEffect.EMCHAMAS00000000",
 	id: "emchamas",
 	name: "Em Chamas",
 	img: "systems/tormenta20/icons/conditions/em-chamas.svg",
-	statuses: [
-		"emchamas"
-	],
+	statuses: ["emchamas"],
 	duration: {
 		expiry: "sceneEnd"
 	},
@@ -403,16 +371,14 @@ T20Conditions.emchamas = {
 		],
 		status: {}
 	}
-}
+};
 
 T20Conditions.enfeiticado = {
 	uuid: "Compendium.world.statuses.ActiveEffect.ENFEITICADO00000",
 	id: "enfeiticado",
 	name: "Enfeitiçado",
 	img: "systems/tormenta20/icons/conditions/enfeiticado.svg",
-	statuses: [
-		"enfeiticado"
-	],
+	statuses: ["enfeiticado"],
 	duration: {
 		expiry: "sceneEnd"
 	},
@@ -421,16 +387,14 @@ T20Conditions.enfeiticado = {
 			category: "mental"
 		}
 	}
-}
+};
 
 T20Conditions.enjoado = {
 	uuid: "Compendium.world.statuses.ActiveEffect.ENJOADO000000000",
 	id: "enjoado",
 	name: "Enjoado",
 	img: "systems/tormenta20/icons/conditions/enjoado.svg",
-	statuses: [
-		"enjoado"
-	],
+	statuses: ["enjoado"],
 	duration: {
 		expiry: "sceneEnd"
 	},
@@ -439,16 +403,14 @@ T20Conditions.enjoado = {
 			category: "metabolismo"
 		}
 	}
-}
+};
 
 T20Conditions.enredado = {
 	uuid: "Compendium.world.statuses.ActiveEffect.ENREDADO00000000",
 	id: "enredado",
 	name: "Enredado",
 	img: "systems/tormenta20/icons/conditions/enredado.svg",
-	statuses: [
-		"enredado"
-	],
+	statuses: ["enredado"],
 	duration: {
 		expiry: "sceneEnd"
 	},
@@ -467,22 +429,17 @@ T20Conditions.enredado = {
 		],
 		status: {
 			category: "movimento",
-			childEffect: [
-				"lento",
-				"vulneravel"
-			]
+			childEffect: ["lento", "vulneravel"]
 		}
 	}
-}
+};
 
 T20Conditions.envenenado = {
 	uuid: "Compendium.world.statuses.ActiveEffect.ENVENENADO000000",
 	id: "envenenado",
 	name: "Envenenado",
 	img: "systems/tormenta20/icons/conditions/envenenado.svg",
-	statuses: [
-		"envenenado"
-	],
+	statuses: ["envenenado"],
 	duration: {
 		expiry: "sceneEnd"
 	},
@@ -491,16 +448,14 @@ T20Conditions.envenenado = {
 			category: "veneno"
 		}
 	}
-}
+};
 
 T20Conditions.esmorecido = {
 	uuid: "Compendium.world.statuses.ActiveEffect.ESMORECIDO000000",
 	id: "esmorecido",
 	name: "Esmorecido",
 	img: "systems/tormenta20/icons/conditions/esmorecido.svg",
-	statuses: [
-		"esmorecido"
-	],
+	statuses: ["esmorecido"],
 	duration: {
 		expiry: "sceneEnd"
 	},
@@ -611,40 +566,32 @@ T20Conditions.esmorecido = {
 			category: "mental"
 		}
 	}
-}
+};
 
 T20Conditions.exausto = {
 	uuid: "Compendium.world.statuses.ActiveEffect.EXAUSTO000000000",
 	id: "exausto",
 	name: "Exausto",
 	img: "systems/tormenta20/icons/conditions/exausto.svg",
-	statuses: [
-		"exausto"
-	],
+	statuses: ["exausto"],
 	duration: {
 		expiry: "sceneEnd"
 	},
 	system: {
 		status: {
 			category: "cansaco",
-			childEffect: [
-				"debilitado",
-				"lento",
-				"vulneravel"
-			],
+			childEffect: ["debilitado", "lento", "vulneravel"],
 			stack: "inconsciente"
 		}
 	}
-}
+};
 
 T20Conditions.fascinado = {
 	uuid: "Compendium.world.statuses.ActiveEffect.FASCINADO0000000",
 	id: "fascinado",
 	name: "Fascinado",
 	img: "systems/tormenta20/icons/conditions/fascinado.svg",
-	statuses: [
-		"fascinado"
-	],
+	statuses: ["fascinado"],
 	duration: {
 		expiry: "sceneEnd"
 	},
@@ -660,39 +607,32 @@ T20Conditions.fascinado = {
 			category: "mental"
 		}
 	}
-}
+};
 
 T20Conditions.fatigado = {
 	uuid: "Compendium.world.statuses.ActiveEffect.FATIGADO00000000",
 	id: "fatigado",
 	name: "Fatigado",
 	img: "systems/tormenta20/icons/conditions/fatigado.svg",
-	statuses: [
-		"fatigado"
-	],
+	statuses: ["fatigado"],
 	duration: {
 		expiry: "sceneEnd"
 	},
 	system: {
 		status: {
 			category: "cansaco",
-			childEffect: [
-				"fraco",
-				"vulneravel"
-			],
+			childEffect: ["fraco", "vulneravel"],
 			stack: "exausto"
 		}
 	}
-}
+};
 
 T20Conditions.fraco = {
 	uuid: "Compendium.world.statuses.ActiveEffect.FRACO00000000000",
 	id: "fraco",
 	name: "Fraco",
 	img: "systems/tormenta20/icons/conditions/fraco.svg",
-	statuses: [
-		"fraco"
-	],
+	statuses: ["fraco"],
 	duration: {
 		expiry: "sceneEnd"
 	},
@@ -768,16 +708,14 @@ T20Conditions.fraco = {
 			stack: "debilitado"
 		}
 	}
-}
+};
 
 T20Conditions.frustrado = {
 	uuid: "Compendium.world.statuses.ActiveEffect.FRUSTRADO0000000",
 	id: "frustrado",
 	name: "Frustrado",
 	img: "systems/tormenta20/icons/conditions/frustrado.svg",
-	statuses: [
-		"frustrado"
-	],
+	statuses: ["frustrado"],
 	duration: {
 		expiry: "sceneEnd"
 	},
@@ -889,16 +827,14 @@ T20Conditions.frustrado = {
 			stack: "esmorecido"
 		}
 	}
-}
+};
 
 T20Conditions.imovel = {
 	uuid: "Compendium.world.statuses.ActiveEffect.IMOVEL0000000000",
 	id: "imovel",
 	name: "Imóvel",
 	img: "systems/tormenta20/icons/conditions/imovel.svg",
-	statuses: [
-		"imovel"
-	],
+	statuses: ["imovel"],
 	duration: {
 		expiry: "sceneEnd"
 	},
@@ -934,36 +870,30 @@ T20Conditions.imovel = {
 			category: "movimento"
 		}
 	}
-}
+};
 
 T20Conditions.inconsciente = {
 	uuid: "Compendium.world.statuses.ActiveEffect.INCONSCIENTE0000",
 	id: "inconsciente",
 	name: "Inconsciente",
 	img: "systems/tormenta20/icons/conditions/inconsciente.svg",
-	statuses: [
-		"inconsciente"
-	],
+	statuses: ["inconsciente"],
 	duration: {
 		expiry: "sceneEnd"
 	},
 	system: {
 		status: {
-			childEffect: [
-				"indefeso"
-			]
+			childEffect: ["indefeso"]
 		}
 	}
-}
+};
 
 T20Conditions.indefeso = {
 	uuid: "Compendium.world.statuses.ActiveEffect.INDEFESO00000000",
 	id: "indefeso",
 	name: "Indefeso",
 	img: "systems/tormenta20/icons/conditions/indefeso.svg",
-	statuses: [
-		"indefeso"
-	],
+	statuses: ["indefeso"],
 	duration: {
 		expiry: "sceneEnd"
 	},
@@ -976,37 +906,31 @@ T20Conditions.indefeso = {
 			}
 		],
 		status: {
-			childEffect: [
-				"desprevenido"
-			]
+			childEffect: ["desprevenido"]
 		}
 	}
-}
+};
 
 T20Conditions.invisivel = {
 	uuid: "Compendium.world.statuses.ActiveEffect.INVISIVEL0000000",
 	id: "invisivel",
 	name: "Invisível",
 	img: "icons/svg/invisible.svg",
-	statuses: [
-		"invisivel"
-	],
+	statuses: ["invisivel"],
 	duration: {
 		expiry: "sceneEnd"
 	},
 	system: {
 		status: {}
 	}
-}
+};
 
 T20Conditions.lento = {
 	uuid: "Compendium.world.statuses.ActiveEffect.LENTO00000000000",
 	id: "lento",
 	name: "Lento",
 	img: "systems/tormenta20/icons/conditions/lento.svg",
-	statuses: [
-		"lento"
-	],
+	statuses: ["lento"],
 	duration: {
 		expiry: "sceneEnd"
 	},
@@ -1015,32 +939,28 @@ T20Conditions.lento = {
 			category: "movimento"
 		}
 	}
-}
+};
 
 T20Conditions.morto = {
 	uuid: "Compendium.world.statuses.ActiveEffect.MORTO00000000000",
 	id: "morto",
 	name: "Morto",
 	img: "systems/tormenta20/icons/conditions/morto.svg",
-	statuses: [
-		"morto"
-	],
+	statuses: ["morto"],
 	duration: {
 		expiry: "sceneEnd"
 	},
 	system: {
 		status: {}
 	}
-}
+};
 
 T20Conditions.ofuscado = {
 	uuid: "Compendium.world.statuses.ActiveEffect.OFUSCADO00000000",
 	id: "ofuscado",
 	name: "Ofuscado",
 	img: "systems/tormenta20/icons/conditions/ofuscado.svg",
-	statuses: [
-		"ofuscado"
-	],
+	statuses: ["ofuscado"],
 	duration: {
 		expiry: "sceneEnd"
 	},
@@ -1066,38 +986,31 @@ T20Conditions.ofuscado = {
 			category: "sentidos"
 		}
 	}
-}
+};
 
 T20Conditions.paralisado = {
 	uuid: "Compendium.world.statuses.ActiveEffect.PARALISADO000000",
 	id: "paralisado",
 	name: "Paralisado",
 	img: "systems/tormenta20/icons/conditions/paralisado.svg",
-	statuses: [
-		"paralisado"
-	],
+	statuses: ["paralisado"],
 	duration: {
 		expiry: "sceneEnd"
 	},
 	system: {
 		status: {
 			category: "movimento",
-			childEffect: [
-				"imovel",
-				"indefeso"
-			]
+			childEffect: ["imovel", "indefeso"]
 		}
 	}
-}
+};
 
 T20Conditions.pasmo = {
 	uuid: "Compendium.world.statuses.ActiveEffect.PASMO00000000000",
 	id: "pasmo",
 	name: "Pasmo",
 	img: "systems/tormenta20/icons/conditions/pasmo.svg",
-	statuses: [
-		"pasmo"
-	],
+	statuses: ["pasmo"],
 	duration: {
 		expiry: "sceneEnd"
 	},
@@ -1106,16 +1019,14 @@ T20Conditions.pasmo = {
 			category: "mental"
 		}
 	}
-}
+};
 
 T20Conditions.petrificado = {
 	uuid: "Compendium.world.statuses.ActiveEffect.PETRIFICADO00000",
 	id: "petrificado",
 	name: "Petrificado",
 	img: "systems/tormenta20/icons/conditions/petrificado.svg",
-	statuses: [
-		"petrificado"
-	],
+	statuses: ["petrificado"],
 	duration: {
 		expiry: "sceneEnd"
 	},
@@ -1129,21 +1040,17 @@ T20Conditions.petrificado = {
 		],
 		status: {
 			category: "metamorfose",
-			childEffect: [
-				"inconsciente"
-			]
+			childEffect: ["inconsciente"]
 		}
 	}
-}
+};
 
 T20Conditions.sangrando = {
 	uuid: "Compendium.world.statuses.ActiveEffect.SANGRANDO0000000",
 	id: "sangrando",
 	name: "Sangrando",
 	img: "systems/tormenta20/icons/conditions/sangrando.svg",
-	statuses: [
-		"sangrando"
-	],
+	statuses: ["sangrando"],
 	duration: {
 		expiry: "sceneEnd"
 	},
@@ -1159,16 +1066,14 @@ T20Conditions.sangrando = {
 			category: "metabolismo"
 		}
 	}
-}
+};
 
 T20Conditions.sustentando = {
 	uuid: "Compendium.world.statuses.ActiveEffect.SUSTENTANDO00000",
 	id: "sustentando",
 	name: "Sustentando",
 	img: "systems/tormenta20/icons/conditions/sustentando.svg",
-	statuses: [
-		"sustentando"
-	],
+	statuses: ["sustentando"],
 	duration: {
 		expiry: "sceneEnd"
 	},
@@ -1182,16 +1087,14 @@ T20Conditions.sustentando = {
 		],
 		status: {}
 	}
-}
+};
 
 T20Conditions.surdo = {
 	uuid: "Compendium.world.statuses.ActiveEffect.SURDO00000000000",
 	id: "surdo",
 	name: "Surdo",
 	img: "systems/tormenta20/icons/conditions/surdo.svg",
-	statuses: [
-		"surdo"
-	],
+	statuses: ["surdo"],
 	duration: {
 		expiry: "sceneEnd"
 	},
@@ -1207,36 +1110,30 @@ T20Conditions.surdo = {
 			category: "sentidos"
 		}
 	}
-}
+};
 
 T20Conditions.surpreendido = {
 	uuid: "Compendium.world.statuses.ActiveEffect.SURPREENDIDO0000",
 	id: "surpreendido",
 	name: "Surpreendido",
 	img: "systems/tormenta20/icons/conditions/surpreendido.svg",
-	statuses: [
-		"surpreendido"
-	],
+	statuses: ["surpreendido"],
 	duration: {
 		expiry: "sceneEnd"
 	},
 	system: {
 		status: {
-			childEffect: [
-				"desprevenido"
-			]
+			childEffect: ["desprevenido"]
 		}
 	}
-}
+};
 
 T20Conditions.vulneravel = {
 	uuid: "Compendium.world.statuses.ActiveEffect.VULNERAVEL000000",
 	id: "vulneravel",
 	name: "Vulnerável",
 	img: "systems/tormenta20/icons/conditions/vulneravel.svg",
-	statuses: [
-		"vulneravel"
-	],
+	statuses: ["vulneravel"],
 	duration: {
 		expiry: "sceneEnd"
 	},
@@ -1250,16 +1147,14 @@ T20Conditions.vulneravel = {
 		],
 		status: {}
 	}
-}
+};
 
 T20Conditions.sobrecarregado = {
 	uuid: "Compendium.world.statuses.ActiveEffect.SOBRECARREGADO00",
 	id: "sobrecarregado",
 	name: "Sobrecarregado",
 	img: "systems/tormenta20/icons/conditions/sobrecarregado.svg",
-	statuses: [
-		"sobrecarregado"
-	],
+	statuses: ["sobrecarregado"],
 	duration: {
 		expiry: "sceneEnd"
 	},
@@ -1275,4 +1170,4 @@ T20Conditions.sobrecarregado = {
 			category: "movimento"
 		}
 	}
-}
+};

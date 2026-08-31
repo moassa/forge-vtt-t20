@@ -3,8 +3,6 @@
  * @extends {Token}
  */
 export default class TokenRulerT20 extends foundry.canvas.placeables.tokens.TokenRuler {
-
-
 	static #MOVEMENT_ACTIONS = {
 		blink: {
 			label: "T20.MovementTeleport"
@@ -48,7 +46,7 @@ export default class TokenRulerT20 extends foundry.canvas.placeables.tokens.Toke
 		walk: {
 			label: "T20.MovementWalk"
 		}
-	}
+	};
 
 	/**
 	 * @inheritdoc
@@ -78,7 +76,6 @@ export default class TokenRulerT20 extends foundry.canvas.placeables.tokens.Toke
 			else style.color = colors[index] ?? 0xffffff;
 		}
 	}
-
 
 	static applyMovementConfig() {
 		foundry.utils.mergeObject(CONFIG.Token.movement.actions, this.#MOVEMENT_ACTIONS);

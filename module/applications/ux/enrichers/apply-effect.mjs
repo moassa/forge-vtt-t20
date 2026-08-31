@@ -1,10 +1,3 @@
-
-
-
-
-
-
-
 export const id = "applyEffect";
 export const pattern = new RegExp("@STATUS\\[(?<identifier>\\w+)\\]", "ig");
 
@@ -28,7 +21,6 @@ export async function onRender(element) {
 	apply.addEventListener("click", onClickApply);
 }
 
-
 async function onClickApply() {
 	const tokens = canvas?.tokens?.controlled ?? [];
 	if (!tokens.length) {
@@ -46,11 +38,9 @@ async function onClickApply() {
 			parent: token.actor,
 			documentName: "ActiveEffect",
 			data: [source],
-			keepId: false,
-		})
+			keepId: false
+		});
 	}
 
 	await foundry.documents.modifyBatch(operations);
 }
-
-

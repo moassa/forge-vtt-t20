@@ -18,7 +18,4 @@ const TIME_DURATION_UNITS = CONST.ACTIVE_EFFECT_TIME_DURATION_UNITS;
 export default class CharacterSheet extends Tormenta20ApplicationMixin({
 	Base: DocumentSheet,
 	mixins: [SheetActionEditImage]
-}) {
-
-
-}
+}) {}

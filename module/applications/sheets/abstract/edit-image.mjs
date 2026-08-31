@@ -1,13 +1,12 @@
-
 export default class SheetActionEditImage {
-
 	static allowed = ["DEFAULT_OPTIONS", "onEditImage"];
+
 	/** @override */
 	static DEFAULT_OPTIONS = {
 		actions: {
-			editImage: { handler: this.onEditImage, buttons: [0] },
+			editImage: { handler: this.onEditImage, buttons: [0] }
 		}
-	}
+	};
 
 	static async onEditImage(event, target) {
 		if (!this.isEditable) return;
@@ -16,7 +15,7 @@ export default class SheetActionEditImage {
 		const fp = new foundry.applications.apps.FilePicker.implementation({
 			type: "image",
 			current: current,
-			callback: path => this.document.update({ img: path }),
+			callback: (path) => this.document.update({ img: path }),
 			top: this.position.top + 40,
 			left: this.position.left + 10
 		});

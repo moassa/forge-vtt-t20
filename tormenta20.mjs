@@ -95,7 +95,7 @@ globalThis.tormenta20 = {
 		ItemT20,
 		ActiveEffectT20,
 		ChatMessageT20,
-		TokenDocumentT20,
+		TokenDocumentT20
 	},
 	macros: macros,
 	utils,
@@ -121,7 +121,6 @@ Hooks.once("init", async function () {
 
 	/* DOCUMENT: Region */
 	CONFIG.Canvas.layers.regions.layerClass = RegionLayerT20;
-
 
 	// Register T20 stuff
 	// CONFIG.statusEffects = T20.statusEffectIcons;
@@ -162,8 +161,8 @@ Hooks.once("init", async function () {
 		character: tormenta20.data.models.CharacterData,
 		npc: tormenta20.data.models.MenaceData,
 		simple: tormenta20.data.models.SimpleData,
-		hazard: tormenta20.data.models.HazardData,
-	}
+		hazard: tormenta20.data.models.HazardData
+	};
 
 	CONFIG.Item.dataModels = {
 		arma: tormenta20.data.models.WeaponData,
@@ -175,28 +174,28 @@ Hooks.once("init", async function () {
 		mobilia: tormenta20.data.models.FurnitureData,
 		poder: tormenta20.data.models.PowerData,
 		race: tormenta20.data.models.RaceData,
-		tesouro: tormenta20.data.models.LootData,
-	}
+		tesouro: tormenta20.data.models.LootData
+	};
 
 	CONFIG.ActiveEffect.dataModels = {
-		base: tormenta20.models.effect.BaseEffect,
-	}
+		base: tormenta20.models.effect.BaseEffect
+	};
 
 	CONFIG.ActiveEffect.expiryAction = "delete";
 	CONFIG.ActiveEffect.expiryEvents = {
 		sceneEnd: "T20.TimeScene",
-		sustainEnd: "T20.sustainEnd",
-	}
+		sustainEnd: "T20.sustainEnd"
+	};
 
 	// Register sheet application classes
 	const { DocumentSheetConfig } = foundry.applications.apps;
-	DocumentSheetConfig.registerSheet(ActiveEffect,
-		"tormenta20",
-		ActiveEffectConfigT20,
-		{ makeDefault: false, label: "T20.ActiveEffectSheet" }
-	);
+	DocumentSheetConfig.registerSheet(ActiveEffect, "tormenta20", ActiveEffectConfigT20, {
+		makeDefault: false,
+		label: "T20.ActiveEffectSheet"
+	});
 
-	DocumentSheetConfig.registerSheet(ActiveEffect,
+	DocumentSheetConfig.registerSheet(
+		ActiveEffect,
 		"tormenta20",
 		tormenta20.applications.sheets.effect.ActiveEffectConfigT20,
 		{ makeDefault: true, label: "T20.ActiveEffectSheet" }
@@ -250,9 +249,7 @@ Hooks.once("init", async function () {
 	});
 
 	// Register enrichers
-	CONFIG.TextEditor.enrichers = [
-		applications.ux.enrichers.applyEffect,
-	]
+	CONFIG.TextEditor.enrichers = [applications.ux.enrichers.applyEffect];
 	// Core Application Overrides
 	// Preload Handlebars Templates
 	preloadHandlebarsTemplates();

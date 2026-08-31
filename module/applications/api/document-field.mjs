@@ -3,7 +3,8 @@ const { HandlebarsApplicationMixin, DocumentSheet } = foundry.applications.api;
 export default class DocumentFieldSheet extends HandlebarsApplicationMixin(DocumentSheet) {
 	constructor(options) {
 		super(options);
-		if (foundry.utils.isEmpty(options.fields)) throw new Error("DocumentFieldSheet must receive an array of field paths");
+		if (foundry.utils.isEmpty(options.fields))
+			throw new Error("DocumentFieldSheet must receive an array of field paths");
 		this.#fields = options.fields;
 	}
 
@@ -13,19 +14,19 @@ export default class DocumentFieldSheet extends HandlebarsApplicationMixin(Docum
 		classes: ["tormenta20"],
 		form: {
 			handler: DocumentFieldSheet.#onSubmitForm,
-			submitOnChange: true,
+			submitOnChange: true
 		},
 		position: {
 			width: 400,
-			height: "auto",
-		},
-	}
+			height: "auto"
+		}
+	};
 
 	static PARTS = {
 		body: {
 			template: "systems/tormenta20/templatesV2/api/document-field.hbs"
 		}
-	}
+	};
 
 	#fields = [];
 
@@ -63,4 +64,4 @@ export default class DocumentFieldSheet extends HandlebarsApplicationMixin(Docum
 		}
 		this.document.update(submitData);
 	}
-} 
+}

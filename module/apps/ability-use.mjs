@@ -473,7 +473,7 @@ function applyEffectChanges(ch, qty, ef, optEffectList, effectList, effectChange
 	// 	// effectList[index] = _ef;
 	// 	console.log(effectList.find((ef) => ef.name == m[1]));
 	// }
-};
+}
 
 /**
  * TODO
@@ -574,7 +574,6 @@ function applyOnUseEffects(rolledItem, configuration = {}) {
 
 	let rollMods;
 	if (item.type != "pericia" && item.type != "atributo") {
-
 		rollMods = id.rolls.reduce(function (acc, r) {
 			acc[r.key] = r.parts.map((i) => ({
 				die: null,
@@ -601,12 +600,10 @@ function applyOnUseEffects(rolledItem, configuration = {}) {
 	const onUseEffects = item.applicableOnUseEffects.filter((ef) => applied[ef.id]?.aplica);
 	// Get Active Effects From Item
 	const effectList = item.effects.filter((ef) => {
-		return (ef.system.onuse && ef.isTemporary && !ef.disabled)
-			|| (!ef.system.onuse && !ef.disabled)
+		return (ef.system.onuse && ef.isTemporary && !ef.disabled) || (!ef.system.onuse && !ef.disabled);
 	});
 	const optEffectList = item.effects.filter((ef) => {
-		return (ef.system.onuse && ef.isTemporary && ef.disabled)
-			|| (!ef.system.onuse && ef.disabled)
+		return (ef.system.onuse && ef.isTemporary && ef.disabled) || (!ef.system.onuse && ef.disabled);
 	});
 
 	//
@@ -644,10 +641,10 @@ function applyOnUseEffects(rolledItem, configuration = {}) {
 		ouEff.description = ef.description
 			? item.id == ef.parent.id
 				? foundry.utils.parseHTML(ef.description).innerText
-				: `${ef.name} - ` + foundry.utils.parseHTML(ef.description).innerText
+				: `${ef.name} - ${foundry.utils.parseHTML(ef.description).innerText}`
 			: ef.name;
 		// ouEff.descriptionOld = item.type == "arma"
-		// 	? item.id == ef.parent.id 
+		// 	? item.id == ef.parent.id
 		// 		? `${ef.parent.name} - ${ef.name}`
 		// 		: ef.sourceName
 		// 	: ef.name;
@@ -721,10 +718,9 @@ function applyOnUseEffects(rolledItem, configuration = {}) {
 						});
 					}
 				}
-			}
+			};
 			effectList.forEach(addToChange);
 			optEffectList.forEach(addToChange);
-
 		}
 	}
 
@@ -753,7 +749,7 @@ function applyOnUseEffects(rolledItem, configuration = {}) {
 			const { value, units } = id.duracao;
 			if (CONST.ACTIVE_EFFECT_DURATION_UNITS.includes(`${units}s`)) {
 				duration.units = `${units}s`;
-				duration.value = Number(value) ?? 1;
+				duration.value = Number(value) || 1;
 				duration.expiry = "turnStart";
 			} else if (units == "sust") {
 				duration.expiry = "sustainEnd";

@@ -289,7 +289,7 @@ export const SystemSettings = function () {
 		default: { value: null, max: null },
 		type: new foundry.data.fields.SchemaField({
 			value: new foundry.data.fields.NumberField({ nullable: true, initial: null }),
-			max: new foundry.data.fields.NumberField({ nullable: true, initial: null }),
+			max: new foundry.data.fields.NumberField({ nullable: true, initial: null })
 		}),
 		onChange: () => {
 			return ui.players.render();

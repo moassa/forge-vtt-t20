@@ -1,6 +1,1 @@
-
-
-export default class RecordField extends foundry.data.fields.TypedObjectField {
-
-}
-
+export default class RecordField extends foundry.data.fields.TypedObjectField {}

@@ -128,15 +128,6 @@ export default class CreatureData extends Tormenta20TypeData {
 			initial[key] = data;
 		}
 		return initial;
-		const config = T20.pericias[key];
-		if (!config) return existing ?? initial;
-		const target = foundry.utils.deepClone(existing ?? initial);
-		target.atributo = config.abl ?? initial.atributo;
-		target.pda = config.armorPenalty ?? initial.st;
-		target.st = config.trainedOnly ?? initial.pda;
-		target.size = config.sizeMod ?? initial.size;
-		target.custom = config.custom ?? initial.custom;
-		return target;
 	}
 
 	/* ACTOR SCHEMAS */
@@ -236,6 +227,7 @@ export default class CreatureData extends Tormenta20TypeData {
 		};
 		return new fields.SchemaField(schema);
 	}
+
 	static schemaDefense(type = "character") {
 		let schema = {
 			atributo: new fields.StringField({

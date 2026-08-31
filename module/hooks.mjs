@@ -3,9 +3,6 @@ import { migrateWorld } from "./data/migrations.mjs";
 import * as macros from "./macros.mjs";
 
 export default function () {
-
-
-
 	/* -------------------------------------------------- */
 	/*   Setup Hook                                       */
 	/* -------------------------------------------------- */
@@ -26,7 +23,6 @@ export default function () {
 				return false;
 			}
 		});
-
 
 		let pack = game.packs.get("world.statuses");
 		if (!pack.locked) await pack.configure({ locked: true });
@@ -73,11 +69,11 @@ export default function () {
 				description: await TextEditor.enrichHTML(effect.description),
 				// SOME PLACES RETRIEVE EFFECT DATA FROM SYNCHRONOUSLY T20.conditions
 				// MORE WORK IS REQUIRED TO CONVERT THOSE PLACES TO ASYNC
-				_source: effect.clone({}, { keepId: false }).toObject(),
-			}
+				_source: effect.clone({}, { keepId: false }).toObject()
+			};
 		}
 
-		CONFIG.controlIcons.defeated = CONFIG.statusEffects["inconsciente"].img;
+		CONFIG.controlIcons.defeated = CONFIG.statusEffects.inconsciente.img;
 		CONFIG.specialStatusEffects.BLIND = "cego";
 		CONFIG.specialStatusEffects.DEFEATED = "morto";
 		CONFIG.specialStatusEffects.INVISIBLE = "invisivel";
@@ -92,22 +88,18 @@ export default function () {
 			pack = await foundry.documents.collections.CompendiumCollection.createCompendium({
 				label: "Melhorias e Encantos",
 				name: "upgrades",
-				type: "ActiveEffect",
+				type: "ActiveEffect"
 			});
 		}
 		CONFIG.upgradeEffects = [];
 		const docs = await pack.getDocuments();
-		docs.forEach(effect => {
+		docs.forEach((effect) => {
 			const { category, item } = effect.system.upgrade;
-			CONFIG.upgradeEffects.category = {
-
-			}
+			CONFIG.upgradeEffects.category = {};
 		});
 	}
 
 	Hooks.once("ready", migrateWorld);
-
-
 
 	/* -------------------------------------------- */
 	/*  Other Hooks                                 */

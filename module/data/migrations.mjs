@@ -44,5 +44,4 @@ export async function migrateWorld() {
 	}
 
 	return game.settings.set("tormenta20", "systemMigrationVersion", game.system.version);
-
 }

@@ -263,8 +263,8 @@ export function _onChatPlaceTemplate(event) {
 	const { alcance, area } = storedTemplate;
 	const item = {
 		name: card.querySelector(".item-name").innerText,
-		system: { alcance, area },
-	}
+		system: { alcance, area }
+	};
 	canvas.regions.placeRegionT20(false, { item, message });
 }
 

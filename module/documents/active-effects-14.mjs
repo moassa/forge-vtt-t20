@@ -1,10 +1,10 @@
+import ActiveEffectWizard from "../apps/active-effect-wizard.mjs";
 import { effectMigration } from "./migrations.mjs";
 
 /**
  * Extend the base ActiveEffect class to implement system-specific logic.
  */
 export default class ActiveEffectT20 extends foundry.documents.ActiveEffect {
-
 	/* Boolean cache supressed status between updates */
 	#suppressed;
 
@@ -80,7 +80,7 @@ export default class ActiveEffectT20 extends foundry.documents.ActiveEffect {
 			const origin = foundry.utils.fromUuidSync(this._stats.duplicateSource);
 			if (origin != this.actor) return false;
 		}
-		return this.active && this.system.changes.some(c => c.key == "danoContinuo");
+		return this.active && this.system.changes.some((c) => c.key == "danoContinuo");
 	}
 
 	/* -------------------------------------------- */
@@ -156,10 +156,10 @@ export default class ActiveEffectT20 extends foundry.documents.ActiveEffect {
 
 	/**
 	 * Apply a change to multiple entries from an object.
-	 * @param {*} targetDoc 
-	 * @param {*} change 
-	 * @param {*} options 
-	 * @returns 
+	 * @param {*} targetDoc
+	 * @param {*} change
+	 * @param {*} options
+	 * @returns
 	 */
 	static _prepareProxyChange(targetDoc, change, options) {
 		const PROXY_KEYS = [
@@ -226,7 +226,8 @@ export default class ActiveEffectT20 extends foundry.documents.ActiveEffect {
 			duration.value = 1;
 			duration.label = _loc(CONFIG.ActiveEffect.expiryEvents.sceneEnd);
 			return duration;
-		} else return super._prepareDuration();
+		}
+		return super._prepareDuration();
 	}
 
 	/* -------------------------------------------- */
@@ -296,7 +297,7 @@ export default class ActiveEffectT20 extends foundry.documents.ActiveEffect {
 					},
 					duration: {
 						units: type === "temporary" || temp ? "rounds" : null,
-						expiry: type === "temporary" || temp ? "sceneEnd" : null,
+						expiry: type === "temporary" || temp ? "sceneEnd" : null
 					},
 					disabled: ["inactive", "onuse"].includes(type)
 				};
@@ -368,7 +369,7 @@ export default class ActiveEffectT20 extends foundry.documents.ActiveEffect {
 		for (let e of effects) {
 			if (e.system.onuse) {
 				const label = document.createElement("label");
-				label.innerText = `${e.system.abilityUse.costLabel} ${e.name}: `
+				label.innerText = `${e.system.abilityUse.costLabel} ${e.name}: `;
 				if (!e.description) {
 					const description = document.createElement("p");
 					description.prepend(label);

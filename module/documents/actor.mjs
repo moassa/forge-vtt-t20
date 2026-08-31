@@ -13,8 +13,8 @@ export default class ActorT20 extends Actor {
 			npc: "systems/tormenta20/icons/svg/orc-head.svg",
 			simple: "systems/tormenta20/icons/svg/portrait.svg",
 			bases: "systems/tormenta20/icons/svg/castle.svg",
-			hazard: "icons/svg/hazard.svg",
-		}
+			hazard: "icons/svg/hazard.svg"
+		};
 		const img = types[actorData.type] ?? this.DEFAULT_ICON;
 		return { img, texture: { src: img } };
 	}
@@ -73,7 +73,7 @@ export default class ActorT20 extends Actor {
 	/* -------------------------------------------- */
 
 	get nivel() {
-		return this.itemTypes.classe.reduce((acc, i) => acc += i.system.niveis, 0);
+		return this.itemTypes.classe.reduce((acc, i) => (acc += i.system.niveis), 0);
 	}
 
 	/* -------------------------------------------- */
@@ -704,7 +704,6 @@ export default class ActorT20 extends Actor {
 		const UsageConfig = game.settings.get("tormenta20", "UsageConfig");
 		if (UsageConfig === "default") needsConfiguration = !(options.event?.shiftKey ?? false);
 		else needsConfiguration = options.event?.shiftKey ?? false;
-
 
 		let configuration = {};
 		if (needsConfiguration) {

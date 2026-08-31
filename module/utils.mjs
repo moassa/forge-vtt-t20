@@ -4,7 +4,7 @@
 
 /**
  * Search the actors that must have their effects refreshed and call the registry
- * @param {*} combat 
+ * @param {*} combat
  */
 export async function endScene() {
 	const combat = game.combat;
@@ -21,10 +21,10 @@ export async function endScene() {
 	const context = {
 		combat: combat,
 		actors: combat
-			? new Set(combat.combatants.map(i => i.actor))
-			: new Set(game.actors.filter(i => i.type == "character")),
-		expiredEffects: expiredEffects,
-	}
+			? new Set(combat.combatants.map((i) => i.actor))
+			: new Set(game.actors.filter((i) => i.type == "character")),
+		expiredEffects: expiredEffects
+	};
 
 	const segmentedScene = game.settings.get("tormenta20", "segmentedScene");
 	await ActiveEffect.registry.refresh("sceneEnd", context);
@@ -34,7 +34,7 @@ export async function endScene() {
 	}
 	if (combat) await combat.delete(); // Ending a scene should end a combat too;
 	const content = document.createElement("div");
-	content.innerHTML = `<h3 class="scene-ended"><i class="fa-solid fa-clapperboard"></i> ${_loc("T20.sceneEnded")}</h3>`
+	content.innerHTML = `<h3 class="scene-ended"><i class="fa-solid fa-clapperboard"></i> ${_loc("T20.sceneEnded")}</h3>`;
 	const list = document.createElement("ul");
 	for (const expired of Object.values(expiredEffects)) {
 		const li = document.createElement("li");
@@ -43,10 +43,9 @@ export async function endScene() {
 	}
 	content.append(list);
 	ChatMessage.create({
-		content: content.outerHTML,
+		content: content.outerHTML
 	});
 }
-
 
 /* -------------------------------------------- */
 /*  Config Pre-Localization (From 5e)           */

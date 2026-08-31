@@ -530,7 +530,6 @@ export default class Tormenta20ItemData extends Tormenta20TypeData {
 		}
 	}
 
-
 	/** @inheritDoc */
 	async _preUpdate(changes, options, user) {
 		const allowed = await super._preUpdate(changes, options, user);
@@ -538,10 +537,10 @@ export default class Tormenta20ItemData extends Tormenta20TypeData {
 		if (foundry.utils.hasProperty(changes, "system.description.value")) {
 			const description = changes.system.description.value;
 			const html = foundry.utils.parseHTML(`<div>${description}</div>`);
-			html.querySelectorAll("a.content-link").forEach(a => {
-				a.outerHTML = `@UUID[${a.dataset.uuid}]{${a.innerText}}`
+			html.querySelectorAll("a.content-link").forEach((a) => {
+				a.outerHTML = `@UUID[${a.dataset.uuid}]{${a.innerText}}`;
 			});
-			html.querySelectorAll(".inline-roll").forEach(a => {
+			html.querySelectorAll(".inline-roll").forEach((a) => {
 				const text = a.innerText.split(":");
 				text.pop();
 				const label = text.length ? `{${text.join(":")}}` : "";

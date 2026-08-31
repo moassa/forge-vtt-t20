@@ -1,7 +1,5 @@
-
 export { default as DragAndDropMixin } from "./dragndrop-mixin.mjs";
 export { default as Tormenta20ApplicationMixin } from "./mixin.mjs";
-
 
 // export { default as SheetActionsT20 } from "./base.mjs";
 // export { default as SheetActionCreate } from "./create.mjs";
