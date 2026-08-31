@@ -7,22 +7,23 @@
  * @param {*} combat 
  */
 export async function endScene() {
-	const confirm = await foundry.applications.api.DialogV2.confirm({
-		window: { icon: "fa-solid fa-xmark", title: "COMBAT.EndTitle" },
-		content: `<p>${_loc("COMBAT.EndConfirmation")}</p>`,
-		yes: { callback: () => true },
-		modal: true
-	});
-	if (!confirm) return;
-
 	const combat = game.combat;
+	if (combat) {
+		const confirm = await foundry.applications.api.DialogV2.confirm({
+			window: { icon: "fa-solid fa-xmark", title: "COMBAT.EndTitle" },
+			content: `<p>${_loc("COMBAT.EndConfirmation")}</p>`,
+			yes: { callback: () => true },
+			modal: true
+		});
+		if (!confirm) return;
+	}
 	const expiredEffects = {};
 	const context = {
 		combat: combat,
 		actors: combat
 			? new Set(combat.combatants.map(i => i.actor))
 			: new Set(game.actors.filter(i => i.type == "character")),
-		expiredEffects,
+		expiredEffects: expiredEffects,
 	}
 
 	const segmentedScene = game.settings.get("tormenta20", "segmentedScene");
@@ -32,7 +33,6 @@ export async function endScene() {
 		game.settings.set("tormenta20", "segmentedScene", segmentedScene);
 	}
 	if (combat) await combat.delete(); // Ending a scene should end a combat too;
-	if (foundry.utils.isEmpty(expiredEffects)) return;
 	const content = document.createElement("div");
 	content.innerHTML = `<h3 class="scene-ended"><i class="fa-solid fa-clapperboard"></i> ${_loc("T20.sceneEnded")}</h3>`
 	const list = document.createElement("ul");

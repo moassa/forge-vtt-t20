@@ -8,7 +8,9 @@ export async function migrateWorld() {
 	}
 
 	const systemMigrationVersion = game.settings.get("tormenta20", "systemMigrationVersion");
-
+	if (!systemMigrationVersion) {
+		return game.settings.set("tormenta20", "systemMigrationVersion", game.system.version);
+	}
 	if (foundry.utils.isNewerVersion("1.4.100", systemMigrationVersion)) {
 		await m_v13.migration_1_4_100();
 	}
@@ -33,7 +35,12 @@ export async function migrateWorld() {
 		await m_v13.migration_1_5_013();
 	}
 	if (foundry.utils.isNewerVersion("1.6.0", systemMigrationVersion)) {
-		await m_v14.migration_1_6_0();
+		try {
+			await m_v14.migration_1_6_0();
+		} catch (error) {
+			ui.notifications.error("Migration [1.6.0] went wrong. Check console for more information.");
+			return console.error(error);
+		}
 	}
 
 	return game.settings.set("tormenta20", "systemMigrationVersion", game.system.version);

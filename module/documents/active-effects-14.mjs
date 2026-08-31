@@ -80,7 +80,7 @@ export default class ActiveEffectT20 extends foundry.documents.ActiveEffect {
 			const origin = foundry.utils.fromUuidSync(this._stats.duplicateSource);
 			if (origin != this.actor) return false;
 		}
-		return this.system.changes.some(c => c.key == "danoContinuo");
+		return this.active && this.system.changes.some(c => c.key == "danoContinuo");
 	}
 
 	/* -------------------------------------------- */
@@ -194,7 +194,7 @@ export default class ActiveEffectT20 extends foundry.documents.ActiveEffect {
 	/** @inheritdoc */
 	isExpiryEvent(event, context) {
 		let isExpiryEvent = super.isExpiryEvent(event, context);
-		if (event == "sceneEnd" && context.combat) {
+		if (event == "sceneEnd") {
 			// Combat related events should also terminate
 			const combatEvents = new Set(["sustainEnd", "combatEnd", "roundStart", "roundEnd", "turnStart", "turnEnd"]);
 			if (combatEvents.has(this.duration.expiry)) isExpiryEvent = true;
