@@ -22,13 +22,13 @@ for (const pack of packs) {
 	console.log("Packing " + pack);
 	await compilePack(
 		`${SYSTEM_ID}/src/packs/${pack}`,
-		`${SYSTEM_ID}/packs/${pack}`,
+		`${SYSTEM_ID}/dist/packs/${pack}`,
 		{ yaml, recursive: folders, transformEntry },
 	);
 }
 
 /**
- * Add in wiki docs from `src/docs`.
+ * 
  * @param {object} entry The entry data.
  * @returns {Promise<false|void>}  Return boolean false to indicate that this entry should be discarded.
  */

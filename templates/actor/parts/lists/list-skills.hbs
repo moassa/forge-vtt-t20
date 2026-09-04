@@ -24,7 +24,7 @@
 					{{selectOptions @root.config.atributosAbr selected=skill.atributo}}
 				</select>
 			{{else}}
-				<span>{{skill.atributo}}</span>
+				<span>{{lookup @root.config.atributosAbr skill.atributo}}</span>
 			{{/if}}
 		</div>
 		{{#if @root.editMode}}
@@ -41,7 +41,6 @@
 				<span>{{numberFormat skill.value sign=true}}</span>
 			</div>
 		{{/if}}
-		<input type="hidden" data-dtype="Number" name="system.pericias.{{skill.key}}.condi" value="0" />
 	</li>
 {{/inline}}
 
@@ -58,6 +57,7 @@
 	</li>
 	{{#each skills as |skill|}}
 		{{#if skill.exibir}}
+			{{log "SKILL" skill}}
 			{{> pericia skill=skill}}
 		{{/if}}
 	{{/each}}

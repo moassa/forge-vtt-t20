@@ -118,7 +118,9 @@ export default class AttributesFields {
 	}
 
 	static prepareDamageResistances(rollData) {
+		const field = this.getFieldForProperty("tracos.resistencias");
 		for (const [key, res] of Object.entries(this.tracos.resistencias)) {
+			if (!field.has(key)) continue;
 			let parts = [res.base, ...res.bonus].filter(Boolean);
 			const result = simplifyRollFormula(parts.join("+"), rollData, {
 				constantFirst: true

@@ -197,7 +197,7 @@ export function migrateEffectsV2(parentDocument, operations) {
 					abilityUse: {
 						automatic: !effect.disabled,
 						aumenta: flags.aumenta ?? false,
-						custo: flags.custo,
+						custo: Number.isNumeric(flags.custo) ? Number(flags.custo) : null,
 						names: items,
 						types: types
 					}
