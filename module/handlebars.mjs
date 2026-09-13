@@ -1,4 +1,16 @@
 export function registerHandlebarsHelpers() {
+	Handlebars.registerHelper("derivedTooltip", function (modifiers) {
+		const ul = foundry.utils.parseHTML(`<ul class="derived-tooltip"></ul>`);
+		for (const { value, label, total } of modifiers) {
+			const li = foundry.utils.parseHTML(
+				`<li class="flexrow"><label>${_loc(label)}:</label><span>${Number(value).signedString()}`
+			);
+			if (total) ul.append(document.createElement("hr"));
+			ul.append(li);
+		}
+		return ul.outerHTML;
+	});
+
 	Handlebars.registerHelper("fieldBonuses", function (path, options) {
 		const { root: sheet } = options.data;
 		const actor = game.actors.get(sheet.actor._id) || fromUuidSync(sheet.uuid);
@@ -130,33 +142,36 @@ export function registerHandlebarsHelpers() {
 				break;
 			}
 			case "defesa": {
-				// ['base', 'atributo', 'outros', 'condi', 'armadura', 'escudo', 'acessorio' ...efeitos]
-				const defesa = actor.system.attributes.defesa;
-				const equipmentSlots = game.settings.get("tormenta20", "equipmentSlots");
-				const armaduras = actor.itemTypes.equipamento
-					.filter((i) => i.system.armadura.value && (equipmentSlots ? i.system.equipado2.slot : i.system.equipado))
-					.map((i) => ({
-						label: i.name,
-						value: i.system.armadura.value,
-						tipo: i.system.tipo
-					}));
-				const armaduraPesada = armaduras.some((i) => i.tipo === "pesada");
-				const meioNivel = actor.type === "character" && game.settings.get("tormenta20", "progressiveDefense");
-				listEffects = [
-					{ label: "Base", value: defesa.base },
-					meioNivel ? { label: "Metade do Nível", value: rollData.meionivel } : false,
-					defesa.atributo && !armaduraPesada
-						? {
-								label: CONFIG.T20.atributos[defesa.atributo],
-								value: rollData[defesa.atributo]
-							}
-						: false,
-					...armaduras,
-					defesa.outros ? { label: "Outros", value: defesa.outros } : false,
-					// (rollData.armadura ? { label: "Armadura", value: rollData.armadura } : false),
-					// (rollData.escudo ? { label: "Escudo", value: rollData.escudo } : false),
-					...(modFields[path] ?? [])
-				];
+				if (key == "pda") {
+				} else {
+					// ['base', 'atributo', 'outros', 'condi', 'armadura', 'escudo', 'acessorio' ...efeitos]
+					const defesa = actor.system.attributes.defesa;
+					const equipmentSlots = game.settings.get("tormenta20", "equipmentSlots");
+					const armaduras = actor.itemTypes.equipamento
+						.filter((i) => i.system.armadura.value && (equipmentSlots ? i.system.equipado2.slot : i.system.equipado))
+						.map((i) => ({
+							label: i.name,
+							value: i.system.armadura.value,
+							tipo: i.system.tipo
+						}));
+					const armaduraPesada = armaduras.some((i) => i.tipo === "pesada");
+					const meioNivel = actor.type === "character" && game.settings.get("tormenta20", "progressiveDefense");
+					listEffects = [
+						{ label: "Base", value: defesa.base },
+						meioNivel ? { label: "Metade do Nível", value: rollData.meionivel } : false,
+						defesa.atributo && !armaduraPesada
+							? {
+									label: CONFIG.T20.atributos[defesa.atributo],
+									value: rollData[defesa.atributo]
+								}
+							: false,
+						...armaduras,
+						defesa.outros ? { label: "Outros", value: defesa.outros } : false,
+						// (rollData.armadura ? { label: "Armadura", value: rollData.armadura } : false),
+						// (rollData.escudo ? { label: "Escudo", value: rollData.escudo } : false),
+						...(modFields[path] ?? [])
+					];
+				}
 				break;
 			}
 			case "rd":

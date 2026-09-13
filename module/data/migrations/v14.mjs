@@ -157,9 +157,8 @@ export function migrateEffectsV2(parentDocument, operations) {
 			/** Remove duration from Effects at equippable items  */
 			if (["arma", "equipamento"].includes(effect.parent.type)) {
 				updateData.duration = { value: null, expiry: null };
-			}
-			/** Fix items with Temporary Effects that are transfered to the actor */
-			else if (effect._source.duration.value > 0 || effect._source.duration.expiry) {
+			} else if (effect._source.duration.value > 0 || effect._source.duration.expiry) {
+				/** Fix items with Temporary Effects that are transfered to the actor */
 				updateData.transfer = false;
 			}
 		}
