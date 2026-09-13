@@ -153,11 +153,13 @@ export function migrateEffectsV2(parentDocument, operations) {
 	const updates = [];
 	for (const effect of parentDocument.effects) {
 		const updateData = {};
-		/**
-		 * Fix items with Temporary Effects that are transfered to the actor
-		 */
 		if (effect.parent.documentName == "Item") {
-			if (effect._source.duration.value > 0 || effect._source.duration.expiry) {
+			/** Remove duration from Effects at equippable items  */
+			if (["arma", "equipamento"].includes(effect.parent.type)) {
+				updateData.duration = { value: null, expiry: null };
+			}
+			/** Fix items with Temporary Effects that are transfered to the actor */
+			else if (effect._source.duration.value > 0 || effect._source.duration.expiry) {
 				updateData.transfer = false;
 			}
 		}

@@ -22,7 +22,6 @@ globalThis.Roll = RollT20;
 import TokenRulerT20 from "./module/canvas/token-ruler.mjs";
 import TokenT20 from "./module/canvas/token.mjs";
 
-import ActiveEffectConfigT20 from "./module/sheets/active-effects.mjs";
 import ActorSheetT20Bases from "./module/sheets/actor-bases.mjs";
 import ActorSheetT20Character from "./module/sheets/actor-character.mjs";
 import HazardSheetT20 from "./module/sheets/actor-hazard.mjs";
@@ -189,10 +188,6 @@ Hooks.once("init", async function () {
 
 	// Register sheet application classes
 	const { DocumentSheetConfig } = foundry.applications.apps;
-	DocumentSheetConfig.registerSheet(ActiveEffect, "tormenta20", ActiveEffectConfigT20, {
-		makeDefault: false,
-		label: "T20.ActiveEffectSheet"
-	});
 
 	DocumentSheetConfig.registerSheet(
 		ActiveEffect,

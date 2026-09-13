@@ -24,7 +24,7 @@ export default class ActorT20 extends Actor {
 	/* -------------------------------------------- */
 
 	get modifiedFields() {
-		return this.effects.reduce((acc, ef) => {
+		return this.appliedEffects.reduce((acc, ef) => {
 			if (ef.modifiesActor) {
 				for (let ch of ef.changes) {
 					if ([3, 4].includes(ch.value)) continue;
