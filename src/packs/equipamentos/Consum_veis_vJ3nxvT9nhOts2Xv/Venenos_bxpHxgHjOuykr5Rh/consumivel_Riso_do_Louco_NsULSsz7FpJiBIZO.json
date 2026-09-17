@@ -1,0 +1,213 @@
+{
+  "name": "Riso do Louco",
+  "type": "consumivel",
+  "img": "systems/tormenta20/icons/itens/gerais/veneno.webp",
+  "effects": [
+    {
+      "origin": "Item.NsULSsz7FpJiBIZO",
+      "tint": "#ffffff",
+      "flags": {
+        "tormenta20": {}
+      },
+      "duration": {
+        "value": 1,
+        "units": "rounds",
+        "expiry": "turnStart",
+        "expired": false
+      },
+      "disabled": false,
+      "_id": "uvgrb13vjEZ5szVH",
+      "transfer": false,
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.0",
+        "createdTime": 1788042414305,
+        "modifiedTime": 1788042414305,
+        "lastModifiedBy": "4fJviA1Q4qcjwsna",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Veneno",
+      "img": "systems/tormenta20/icons/conditions/envenenado.svg",
+      "type": "base",
+      "system": {
+        "changes": [],
+        "targets": [],
+        "status": null,
+        "onuse": false,
+        "abilityUse": {
+          "description": "",
+          "automatic": false,
+          "aumenta": false,
+          "custo": 0,
+          "names": [],
+          "types": []
+        },
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "disposition": []
+        }
+      },
+      "description": "",
+      "statuses": [],
+      "sort": 0,
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "_key": "!items.effects!NsULSsz7FpJiBIZO.uvgrb13vjEZ5szVH"
+    },
+    {
+      "origin": "Item.NsULSsz7FpJiBIZO",
+      "tint": "#ffffff",
+      "flags": {
+        "tormenta20": {}
+      },
+      "duration": {
+        "value": 1,
+        "units": "rounds",
+        "expiry": "turnStart",
+        "expired": false
+      },
+      "disabled": false,
+      "_id": "X5wMMnLxH1S11gww",
+      "transfer": false,
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.0",
+        "createdTime": 1788042414305,
+        "modifiedTime": 1788042414305,
+        "lastModifiedBy": "4fJviA1Q4qcjwsna",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Confuso",
+      "img": "systems/tormenta20/icons/conditions/confuso.svg",
+      "type": "base",
+      "system": {
+        "changes": [],
+        "targets": [],
+        "status": null,
+        "onuse": false,
+        "abilityUse": {
+          "description": "",
+          "automatic": false,
+          "aumenta": false,
+          "custo": 0,
+          "names": [],
+          "types": []
+        },
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "disposition": []
+        }
+      },
+      "description": "",
+      "statuses": [],
+      "sort": 0,
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "_key": "!items.effects!NsULSsz7FpJiBIZO.X5wMMnLxH1S11gww"
+    }
+  ],
+  "flags": {
+    "scene-packer": {
+      "sourceId": "Item.zNvgJw5ApQiPD2jZ",
+      "defaultPermission": 2,
+      "hash": "d07237c3649a06d840853ff0b5e0bc5d8a3a05e0"
+    }
+  },
+  "system": {
+    "description": {
+      "value": "<p>Este gás púrpura faz a vítima rir descontroladamente e agir de forma caótica.</p>\n<p><strong>Tipo: </strong><em>Inalação.</em></p>\n<p><strong>Efeito:</strong> <em>Vítima fica confusa (confusa por 1 rodada).</em></p>",
+      "unidentified": ""
+    },
+    "source": "Tormenta20 — Edição Jogo do Ano, p. 162",
+    "carregado": true,
+    "peso": 0.5,
+    "espacos": 0.5,
+    "qtd": 1,
+    "preco": 150,
+    "pv": {
+      "value": 0,
+      "max": 0
+    },
+    "rd": 0,
+    "ativacao": {
+      "execucao": "passive",
+      "custo": 0,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "duracao": {
+      "value": 0,
+      "units": "inst",
+      "special": ""
+    },
+    "range": {
+      "value": null,
+      "units": ""
+    },
+    "consume": {
+      "type": "",
+      "target": "",
+      "amount": null,
+      "mpMultiplier": false
+    },
+    "efeito": "",
+    "alcance": "none",
+    "alvo": "",
+    "area": "",
+    "resistencia": {
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [],
+    "tipo": "alchemy",
+    "chatFlavor": "",
+    "origin": "",
+    "tags": [],
+    "subtipo": "",
+    "chatGif": "",
+    "upgrades": {
+      "melhoria1": "",
+      "melhoria2": "",
+      "melhoria3": "",
+      "melhoria4": "",
+      "material": "",
+      "encanto1": "",
+      "encanto2": "",
+      "encanto3": ""
+    },
+    "rolltags": [],
+    "automationtags": [],
+    "enableAutoUpgrades": true
+  },
+  "_stats": {
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.0",
+    "coreVersion": "14.366",
+    "createdTime": 1788042414305,
+    "modifiedTime": 1788042414305,
+    "lastModifiedBy": "4fJviA1Q4qcjwsna",
+    "duplicateSource": null,
+    "exportSource": null,
+    "compendiumSource": null
+  },
+  "_id": "NsULSsz7FpJiBIZO",
+  "folder": "bxpHxgHjOuykr5Rh",
+  "sort": 1000000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!NsULSsz7FpJiBIZO"
+}

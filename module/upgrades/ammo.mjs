@@ -22,7 +22,7 @@ T20AmmoUpgrades.accurate = {
 		{
 			key: "ataque",
 			value: "1",
-			mode: 2,
+			type: "add",
 			priority: 0
 		}
 	],
@@ -47,7 +47,7 @@ T20AmmoUpgrades.pungent = {
 		{
 			key: "ataque",
 			value: "2",
-			mode: 2,
+			type: "add",
 			priority: 0
 		}
 	],
@@ -72,7 +72,7 @@ T20AmmoUpgrades.cruel = {
 		{
 			key: "dano",
 			value: "1",
-			mode: 2,
+			type: "add",
 			priority: 0
 		}
 	],
@@ -97,7 +97,7 @@ T20AmmoUpgrades.atrocious = {
 		{
 			key: "dano",
 			value: "2",
-			mode: 2,
+			type: "add",
 			priority: 0
 		}
 	],
@@ -122,7 +122,7 @@ T20AmmoUpgrades.balanced = {
 		{
 			key: "system.pericias.luta.outros",
 			value: "2",
-			mode: 2,
+			type: "add",
 			priority: 0
 		}
 	],
@@ -168,7 +168,7 @@ T20AmmoUpgrades.massive = {
 		{
 			key: "criticoX",
 			value: "1",
-			mode: 2,
+			type: "add",
 			priority: 0
 		}
 	],
@@ -193,7 +193,7 @@ T20AmmoUpgrades.precise = {
 		{
 			key: "criticoM",
 			value: "-1",
-			mode: 2,
+			type: "add",
 			priority: 0
 		}
 	],

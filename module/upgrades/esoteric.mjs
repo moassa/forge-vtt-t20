@@ -17,7 +17,7 @@ T20EsotericUpgrades.energetic = {
 		{
 			key: "dano",
 			value: "1d6",
-			mode: 2,
+			type: "add",
 			priority: 0
 		}
 	],
@@ -61,7 +61,7 @@ T20EsotericUpgrades.vigilant = {
 		{
 			key: "system.attributes.defesa.bonus",
 			value: "2",
-			mode: 2,
+			type: "add",
 			priority: 0
 		}
 	],

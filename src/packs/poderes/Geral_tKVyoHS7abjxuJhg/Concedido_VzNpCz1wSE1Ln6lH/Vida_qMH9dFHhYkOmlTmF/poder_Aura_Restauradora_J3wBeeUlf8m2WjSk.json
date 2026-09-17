@@ -1,0 +1,133 @@
+{
+  "_id": "J3wBeeUlf8m2WjSk",
+  "name": "Aura Restauradora",
+  "type": "poder",
+  "img": "systems/tormenta20/icons/poderes/concedidos-vida.webp",
+  "effects": [
+    {
+      "name": "Aura Restauradora",
+      "img": "systems/tormenta20/icons/poderes/concedidos-vida.webp",
+      "origin": null,
+      "tint": "#ffffff",
+      "transfer": false,
+      "system": {
+        "onuse": false,
+        "changes": [
+          {
+            "key": "system.modificadores.cura.geral",
+            "type": "add",
+            "value": 1,
+            "phase": "initial",
+            "priority": null
+          }
+        ],
+        "targets": [
+          "ally",
+          "self"
+        ],
+        "status": null,
+        "abilityUse": {
+          "description": "",
+          "automatic": false,
+          "aumenta": false,
+          "custo": null,
+          "names": [],
+          "types": []
+        },
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "disposition": []
+        }
+      },
+      "duration": {
+        "units": "seconds",
+        "expiry": "sceneEnd",
+        "value": null,
+        "expired": false
+      },
+      "disabled": false,
+      "_id": "wyAfvNFSXCdqosUR",
+      "type": "base",
+      "start": null,
+      "description": "",
+      "statuses": [],
+      "showIcon": 1,
+      "folder": null,
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.0",
+        "createdTime": 1788042525089,
+        "modifiedTime": 1788042525089,
+        "lastModifiedBy": "4fJviA1Q4qcjwsna",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!items.effects!J3wBeeUlf8m2WjSk.wyAfvNFSXCdqosUR"
+    }
+  ],
+  "folder": "qMH9dFHhYkOmlTmF",
+  "sort": 0,
+  "flags": {},
+  "system": {
+    "description": {
+      "value": "<p>Efeitos de cura usados por você e seus aliados em um raio de 9m recuperam +1 PV por dado.</p>",
+      "unidentified": ""
+    },
+    "source": "Tormenta20 — Edição Jogo do Ano, p. 132",
+    "ativacao": {
+      "execucao": "passive",
+      "custo": 0,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "duracao": {
+      "value": 0,
+      "units": "inst",
+      "special": ""
+    },
+    "range": {
+      "value": null,
+      "units": ""
+    },
+    "efeito": "",
+    "alcance": "short",
+    "area": "aura",
+    "resistencia": {
+      "pericia": "",
+      "atributo": "sab",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [],
+    "tipo": "concedido",
+    "subtipo": "Vida",
+    "chatFlavor": "",
+    "origin": "",
+    "tags": [],
+    "chatGif": "",
+    "rolltags": [],
+    "automationtags": [],
+    "area_behaviors": "[\n  {\n    \"type\": \"applyActiveEffect\",\n    \"name\": \"Aura Restauradora\",\n    \"system\": {\n      \"effects\": [\n        \"Aura Restauradora\"\n      ]\n    }\n  }\n]"
+  },
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.0",
+    "coreVersion": "14.366",
+    "createdTime": 1788042525089,
+    "modifiedTime": 1788042525089,
+    "lastModifiedBy": "4fJviA1Q4qcjwsna",
+    "duplicateSource": null,
+    "exportSource": null,
+    "compendiumSource": null
+  },
+  "_key": "!items!J3wBeeUlf8m2WjSk"
+}

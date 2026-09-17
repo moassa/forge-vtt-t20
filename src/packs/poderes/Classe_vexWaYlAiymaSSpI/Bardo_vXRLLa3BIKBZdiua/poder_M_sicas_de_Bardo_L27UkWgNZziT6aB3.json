@@ -1,0 +1,67 @@
+{
+  "folder": "vXRLLa3BIKBZdiua",
+  "name": "Músicas de Bardo",
+  "type": "poder",
+  "_id": "L27UkWgNZziT6aB3",
+  "img": "icons/skills/trades/music-singing-voice-blue.webp",
+  "system": {
+    "description": {
+      "value": "<p style=\"text-align:justify\">Alguns poderes do bardo são Músicas. Esses poderes compartilham as seguintes regras.</p><ul><li><p style=\"text-align:justify\">Para ativar uma música, você precisa ser treinado em Atuação e empunhar um instrumento musical (veja a página 158).</p></li><li><p style=\"text-align:justify\">Ativar uma música gasta uma ação padrão e 1 PM.</p></li><li><p style=\"text-align:justify\">Efeitos de músicas têm alcance curto.</p></li></ul>",
+      "unidentified": ""
+    },
+    "source": "",
+    "origin": "",
+    "tags": [],
+    "rolltags": [],
+    "automationtags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "ativacao": {
+      "custo": 0,
+      "condicao": "",
+      "execucao": "passive",
+      "qtd": "",
+      "special": ""
+    },
+    "duracao": {
+      "units": "inst",
+      "value": 0,
+      "special": ""
+    },
+    "range": {
+      "units": "",
+      "value": 0
+    },
+    "alcance": "none",
+    "area": "",
+    "efeito": "",
+    "resistencia": {
+      "txt": "",
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0
+    },
+    "rolls": [],
+    "tipo": "geral",
+    "subtipo": ""
+  },
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "zhRxGJbYp4ZMHpPs": 3
+  },
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.0",
+    "createdTime": 1787933074976,
+    "modifiedTime": 1787933208940,
+    "lastModifiedBy": "zhRxGJbYp4ZMHpPs",
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "_key": "!items!L27UkWgNZziT6aB3"
+}

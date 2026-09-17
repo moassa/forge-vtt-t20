@@ -15,10 +15,17 @@ export default class ConsumableData extends Tormenta20ItemData {
 			...this.schemaRolls(),
 			tipo: new fields.StringField({
 				required: true,
-				nullable: false,
+				blank: true,
+				choices: {
+					ammo: "T20.ConsumableTypeAmmo",
+					scroll: "T20.ConsumableTypeScroll",
+					alchemy: "T20.ConsumableTypeAlchemy",
+					potion: "T20.ConsumableTypePotion",
+					material: "T20.ConsumableTypeMaterial",
+					food: "T20.ConsumableTypeFood"
+				},
 				initial: "",
-				label: "T20.ItemType",
-				hint: "T20.ItemTypeHint"
+				label: "T20.ItemType"
 			}),
 			subtipo: new fields.StringField({
 				required: true,

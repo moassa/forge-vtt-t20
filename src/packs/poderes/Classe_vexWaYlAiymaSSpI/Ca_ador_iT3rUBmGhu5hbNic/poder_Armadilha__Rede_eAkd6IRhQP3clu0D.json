@@ -1,0 +1,141 @@
+{
+  "_id": "eAkd6IRhQP3clu0D",
+  "name": "Armadilha: Rede",
+  "type": "poder",
+  "img": "systems/tormenta20/icons/classes/cacador.webp",
+  "effects": [
+    {
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": "sceneEnd",
+        "expired": false
+      },
+      "flags": {
+        "core": {
+          "statusId": "enredado"
+        },
+        "tormenta20": {}
+      },
+      "transfer": false,
+      "_id": "dPv1b0Jb3U9DmmL2",
+      "disabled": false,
+      "origin": null,
+      "tint": "#ffffff",
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.0",
+        "createdTime": 1788042525005,
+        "modifiedTime": 1788042525005,
+        "lastModifiedBy": "4fJviA1Q4qcjwsna",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Enredado",
+      "img": "systems/tormenta20/icons/conditions/enredado.svg",
+      "type": "base",
+      "system": {
+        "changes": [
+          {
+            "key": "system.pericias.luta.condi",
+            "value": -2,
+            "priority": null,
+            "type": "downgrade",
+            "phase": "initial"
+          },
+          {
+            "key": "system.pericias.pont.condi",
+            "value": -2,
+            "priority": null,
+            "type": "downgrade",
+            "phase": "initial"
+          }
+        ],
+        "targets": [],
+        "status": null,
+        "onuse": false,
+        "abilityUse": {
+          "description": "",
+          "automatic": false,
+          "aumenta": false,
+          "custo": 0,
+          "names": [],
+          "types": []
+        },
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "disposition": []
+        }
+      },
+      "description": "",
+      "statuses": [],
+      "sort": 0,
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "_key": "!items.effects!eAkd6IRhQP3clu0D.dPv1b0Jb3U9DmmL2"
+    }
+  ],
+  "folder": "iT3rUBmGhu5hbNic",
+  "sort": 2100000,
+  "flags": {},
+  "system": {
+    "description": {
+      "value": "<p style=\"text-align:justify\">Todas as criaturas na área ficam enredadas e não podem sair da área. Uma vítima pode se libertar com uma ação padrão e um teste de Força ou Acrobacia (CD 25). Além disso, a área ocupada pela rede é considerada terreno difícil. Nesta armadilha você escolhe quantas criaturas precisam estar na área para ativá-la.</p><p><strong>Armadilhas</strong></p><p style=\"text-align:justify\">Alguns poderes do caçador são Armadilhas. Esses poderes compartilham as seguintes regras.</p><p style=\"text-align:justify\">Preparar uma armadilha gasta uma ação completa e 3 PM.</p><p style=\"text-align:justify\">Uma armadilha afeta uma área de 3m de lado adjacente a você e é acionada pela primeira criatura que entrar na área.</p><p style=\"text-align:justify\">Uma criatura que o veja preparando a armadilha saberá que ela está lá. Uma criatura que não o veja preparando a armadilha pode encontrá-la se gastar uma ação padrão procurando e passar em um teste de Investigação (CD Sab).</p><p style=\"text-align:justify\">É possível aplicar veneno a uma armadilha, como se ela fosse uma arma.</p><p style=\"text-align:justify\">Você não precisa de nenhum item para criar a armadilha, pois usa materiais naturais, como galhos e cipós. Porém, precisa estar em um ambiente propício, como uma floresta, um beco repleto de entulhos etc.</p>",
+      "unidentified": ""
+    },
+    "source": "Tormenta20 — Edição Jogo do Ano, p. 50",
+    "ativacao": {
+      "execucao": "full",
+      "custo": 3,
+      "qtd": "",
+      "condicao": "criatura entra na área",
+      "special": ""
+    },
+    "duracao": {
+      "value": 0,
+      "units": "inst",
+      "special": ""
+    },
+    "range": {
+      "value": null,
+      "units": ""
+    },
+    "efeito": "",
+    "alcance": "none",
+    "area": "quadrado 3m",
+    "resistencia": {
+      "pericia": "",
+      "atributo": "sab",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [],
+    "tipo": "classe",
+    "subtipo": "Caçador",
+    "chatFlavor": "",
+    "origin": "",
+    "tags": [],
+    "chatGif": "",
+    "rolltags": [],
+    "automationtags": []
+  },
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.0",
+    "coreVersion": "14.366",
+    "createdTime": 1788042525005,
+    "modifiedTime": 1788042525005,
+    "lastModifiedBy": "4fJviA1Q4qcjwsna",
+    "duplicateSource": null,
+    "exportSource": null,
+    "compendiumSource": null
+  },
+  "_key": "!items!eAkd6IRhQP3clu0D"
+}

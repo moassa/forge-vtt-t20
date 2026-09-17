@@ -5,13 +5,25 @@ import { effectMigration } from "./migrations.mjs";
 /**
  * Extend the base ActiveEffect class to implement system-specific logic.
  */
-export default class ActiveEffectT20 extends ActiveEffect {
+export default class ActiveEffectT20 extends foundry.documents.ActiveEffect {
 	/** @inheritdoc */
 	static migrateData(data) {
 		super.migrateData(data);
 		effectMigration.migrateAbilitiesPath(data);
 		effectMigration.migrateResistancesPath(data);
 		return data;
+	}
+
+	/**
+	 * Verify if the entry has an uuid and retrieve a cloned document if true
+	 *  @inheritdoc */
+	static async _fromStatusEffect(statusId, effectData, options) {
+		const uuid = CONFIG.statusEffects[statusId]?.uuid;
+		if (uuid) {
+			const effect = await foundry.utils.fromUuid(uuid);
+			if (!effect) return effect.clone({}, { keepId: false });
+		}
+		return new this(effectData, options);
 	}
 
 	async _preCreate(data, options, user) {
@@ -27,10 +39,6 @@ export default class ActiveEffectT20 extends ActiveEffect {
 
 		if (this.isCondition && this.parent.documentName == "Actor") {
 			this._createChildEffects(data, options, userId);
-			/**
-			 * TODO: UPGRADE EFFECT
-			 * Ideally the one with shortest duration? (But we don't have the correct durations ^^')
-			 */
 		}
 	}
 
@@ -148,7 +156,7 @@ export default class ActiveEffectT20 extends ActiveEffect {
 
 	/** @override */
 	get isUsage() {
-		return this.getFlag("tormenta20", "onuse");
+		return this.system.onuse;
 	}
 
 	get isCondition() {
@@ -160,10 +168,9 @@ export default class ActiveEffectT20 extends ActiveEffect {
 	 * @type {boolean}
 	 */
 	get isTemporary() {
-		const scene = this.getFlag("tormenta20", "durationScene");
-		const duration = this.duration.seconds ?? (this.duration.rounds || this.duration.turns) ?? 0;
-		return scene || duration > 0 || this.statuses.size;
+		return !!this.duration.expiry || Number.isFinite(this.duration.value);
 	}
+
 	/* --------------------------------------------- */
 
 	/** @inheritdoc */
@@ -171,7 +178,7 @@ export default class ActiveEffectT20 extends ActiveEffect {
 		if (change.key.match(/\.\?+\./)) return null;
 		if (change.key.startsWith("flags.tormenta20.")) change = this._prepareFlagChange(actor, change);
 		if (change.key.startsWith("system.attributes.movement") && change.key.match(/(walk|fly|burrow|climb|swim)$/)) {
-			change.key += change.mode == 2 ? ".bonus" : ".base";
+			change.key += change.type == "add" ? ".bonus" : ".base";
 		}
 		const wildcardPatterns = [
 			"system.atributos.*.value",
@@ -207,18 +214,12 @@ export default class ActiveEffectT20 extends ActiveEffect {
 	 * @internal
 	 */
 	_prepareDuration() {
-		// const d = this.duration;
-		const isScene = this.getFlag("tormenta20", "durationScene");
-
-		// Scene-based duration
-		if (isScene) {
-			return {
-				type: "scene",
-				duration: null,
-				remaining: null,
-				label: game.i18n.localize("T20.TimeScene"),
-				_worldTime: game.time.worldTime
-			};
+		if (this.duration.expiry == "sceneEnd") {
+			let duration = this.duration;
+			duration.expired = false;
+			duration.value = 1;
+			duration.label = _loc(CONFIG.ActiveEffect.expiryEvents.sceneEnd);
+			return duration;
 		}
 		return super._prepareDuration();
 	}
@@ -279,14 +280,22 @@ export default class ActiveEffectT20 extends ActiveEffect {
 			case "create": {
 				const isOnUse = type === "onuse";
 				const itemEffect = owner.documentName === "Item";
+				const abilityUseTypes = [];
+				if (owner.type === "magia") abilityUseTypes.push("self");
 				const effectData = {
 					name: isOnUse || !itemEffect ? game.i18n.localize("T20.EffectNewLabel") : owner.name,
 					img: isOnUse ? "icons/svg/upgrade.svg" : itemEffect ? owner.img : "icons/svg/aura.svg",
-					origin: owner.uuid,
+					origin: itemEffect ? null : owner.uuid,
 					tint: "#FFFFFF",
-					flags: { tormenta20: { onuse: isOnUse, durationScene: temp, self: owner.type === "magia" } },
-					"duration.rounds": type === "temporary" || temp ? 1 : undefined,
-					"duration.seconds": undefined,
+					transfer: false,
+					system: {
+						onuse: isOnUse,
+						abilisyUse: { types: abilityUseTypes }
+					},
+					duration: {
+						units: type === "temporary" || temp ? "rounds" : null,
+						expiry: type === "temporary" || temp ? "sceneEnd" : null
+					},
 					disabled: ["inactive", "onuse"].includes(type)
 				};
 				if (event.type == "contextmenu") {
@@ -316,7 +325,7 @@ export default class ActiveEffectT20 extends ActiveEffect {
 	 * @param {ActiveEffect[]} effects    The array of Active Effect instances to prepare sheet data for
 	 * @return {object}                   Data for rendering
 	 */
-	static prepareActiveEffectCategories(effects) {
+	static async prepareActiveEffectCategories(effects) {
 		// Define effect header categories
 		const categories = {
 			onuse: {
@@ -351,12 +360,28 @@ export default class ActiveEffectT20 extends ActiveEffect {
 				info: [game.i18n.localize("T20.EffectSuppressedHint")]
 			}
 		};
+		const TextEditor = await foundry.applications.ux.TextEditor.implementation;
+
 		// Iterate over active effects, classifying them into categories
 		for (let e of effects) {
-			// e.sourceName // Trigger a lookup for the source name
+			if (e.system.onuse) {
+				const label = document.createElement("label");
+				label.innerText = `${e.system.abilityUse.costLabel} ${e.name}: `;
+				if (!e.description) {
+					const description = document.createElement("p");
+					description.prepend(label);
+					e.descriptionEnriched = description.outerHTML;
+				} else {
+					let description = await TextEditor.enrichHTML(e.description);
+					description = foundry.utils.parseHTML(description);
+					description.prepend(label);
+					e.descriptionEnriched = description.outerHTML;
+				}
+			}
+
 			if (e.isSuppressed) categories.suppressed.effects.push(e);
-			else if (e.flags.tormenta20?.onuse && e.isTemporary) categories.onuseTemp.effects.push(e);
-			else if (e.flags.tormenta20?.onuse) categories.onuse.effects.push(e);
+			else if (e.system.onuse && e.isTemporary) categories.onuseTemp.effects.push(e);
+			else if (e.system.onuse) categories.onuse.effects.push(e);
 			else if (e.disabled) categories.inactive.effects.push(e);
 			else if (e.isTemporary) categories.temporary.effects.push(e);
 			else categories.passive.effects.push(e);

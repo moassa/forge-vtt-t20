@@ -18,7 +18,7 @@ export default class AttributesFields {
 		);
 
 		const armor = items.find((i) => ["leve", "pesada"].includes(i.system.tipo));
-		const shield = items.find((i) => i.type === "equipamento" && i.system.tipo === "escudo");
+		const shield = items.find((i) => i.system.tipo === "escudo");
 		const accessories = items.filter((i) => !["escudo", "leve", "pesada"].includes(i.system.tipo));
 		const accDef = accessories.map((m) => m.system.armadura.value).reduce((sum, v) => sum + v, 0);
 		const accPda = accessories.map((m) => m.system.armadura.penalidade).reduce((sum, v) => sum + v, 0);
@@ -118,7 +118,9 @@ export default class AttributesFields {
 	}
 
 	static prepareDamageResistances(rollData) {
+		const field = this.getFieldForProperty("tracos.resistencias");
 		for (const [key, res] of Object.entries(this.tracos.resistencias)) {
+			if (!field.has(key)) continue;
 			let parts = [res.base, ...res.bonus].filter(Boolean);
 			const result = simplifyRollFormula(parts.join("+"), rollData, {
 				constantFirst: true

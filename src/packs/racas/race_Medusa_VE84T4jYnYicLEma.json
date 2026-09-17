@@ -1,0 +1,69 @@
+{
+  "name": "Medusa",
+  "type": "race",
+  "img": "systems/tormenta20/icons/racas/medusa.webp",
+  "system": {
+    "description": {
+      "value": "<p>@EMBED[Compendium.tormenta20-dev-env.basico-rules.JournalEntry.D5UPztr7I9a68jWW.JournalEntryPage.L2RRss6x11d4ZObX]{Medusa}</p>",
+      "unidentified": ""
+    },
+    "source": "",
+    "origin": "",
+    "tags": [],
+    "rolltags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "atributos": {
+      "for": 0,
+      "des": 2,
+      "con": 0,
+      "int": 0,
+      "sab": 0,
+      "car": 1
+    },
+    "atributosDinamicos": {
+      "value": [],
+      "description": "+1 em Três Atributos Diferentes"
+    },
+    "grants": [
+      {
+        "title": "",
+        "desc": "",
+        "type": "multi",
+        "choices": [
+          {
+            "uuid": "Compendium.tormenta20.poderes.Item.dGMrbRgfwB3mDK7a"
+          },
+          {
+            "uuid": "Compendium.tormenta20.poderes.Item.HSB1rlovnC4GjdgV"
+          },
+          {
+            "uuid": "Compendium.tormenta20.poderes.Item.gzTi2g0xClcXNUA6"
+          }
+        ]
+      }
+    ],
+    "automationtags": [],
+    "skills": []
+  },
+  "effects": [],
+  "folder": null,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.0",
+    "createdTime": 1788042553944,
+    "modifiedTime": 1788042553944,
+    "lastModifiedBy": "4fJviA1Q4qcjwsna",
+    "compendiumSource": null
+  },
+  "_id": "VE84T4jYnYicLEma",
+  "sort": 1000000,
+  "_key": "!items!VE84T4jYnYicLEma"
+}

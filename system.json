@@ -2,15 +2,23 @@
   "id": "tormenta20",
   "title": "Tormenta20",
   "description": "Sistema NÃO OFICIAL de Tormenta20 para FoundryVTT!",
-  "version": "1.5.015",
+  "version": "1.6.2",
   "compatibility": {
-    "minimum": "13",
-    "verified": "13",
-    "maximum": "13"
+    "minimum": "14",
+    "verified": "14",
+    "maximum": "14"
   },
-  "authors": [{ "name": "Vizael" }],
-  "esmodules": ["tormenta20.mjs"],
-  "styles": ["tormenta20.css"],
+  "authors": [
+    {
+      "name": "Vizael"
+    }
+  ],
+  "esmodules": [
+    "tormenta20.mjs"
+  ],
+  "styles": [
+    "tormenta20.css"
+  ],
   "documentTypes": {
     "Actor": {
       "character": {
@@ -26,48 +34,91 @@
         ]
       },
       "npc": {
-        "htmlFields": ["detalhes.biography.value", "detalhes.biography.public"]
+        "htmlFields": [
+          "detalhes.biography.value",
+          "detalhes.biography.public"
+        ]
       },
       "simple": {
-        "htmlFields": ["detalhes.biography.value", "detalhes.biography.public"]
+        "htmlFields": [
+          "detalhes.biography.value",
+          "detalhes.biography.public"
+        ]
       },
       "bases": {
-        "htmlFields": ["detalhes.biography.value", "detalhes.biography.public"]
+        "htmlFields": [
+          "detalhes.biography.value",
+          "detalhes.biography.public"
+        ]
       },
       "hazard": {
-        "htmlFields": ["detalhes.actions", "detalhes.effects", "detalhes.goal"]
+        "htmlFields": [
+          "detalhes.actions",
+          "detalhes.effects",
+          "detalhes.goal"
+        ]
       }
     },
     "Item": {
       "arma": {
-        "htmlFields": ["description.value", "description.unidentified"]
+        "htmlFields": [
+          "description.value",
+          "description.unidentified"
+        ]
       },
       "equipamento": {
-        "htmlFields": ["description.value", "description.unidentified"]
+        "htmlFields": [
+          "description.value",
+          "description.unidentified"
+        ]
       },
       "classe": {
-        "htmlFields": ["description.value", "description.unidentified"]
+        "htmlFields": [
+          "description.value",
+          "description.unidentified"
+        ]
       },
       "comodo": {
-        "htmlFields": ["description.value", "description.unidentified"]
+        "htmlFields": [
+          "description.value",
+          "description.unidentified"
+        ]
       },
       "consumivel": {
-        "htmlFields": ["description.value", "description.unidentified"]
+        "htmlFields": [
+          "description.value",
+          "description.unidentified"
+        ]
       },
       "magia": {
-        "htmlFields": ["description.value", "description.unidentified"]
+        "htmlFields": [
+          "description.value",
+          "description.unidentified"
+        ]
       },
       "mobilia": {
-        "htmlFields": ["description.value", "description.unidentified"]
+        "htmlFields": [
+          "description.value",
+          "description.unidentified"
+        ]
       },
       "poder": {
-        "htmlFields": ["description.value", "description.unidentified"]
+        "htmlFields": [
+          "description.value",
+          "description.unidentified"
+        ]
       },
       "race": {
-        "htmlFields": ["description.value", "description.unidentified"]
+        "htmlFields": [
+          "description.value",
+          "description.unidentified"
+        ]
       },
       "tesouro": {
-        "htmlFields": ["description.value", "description.unidentified"]
+        "htmlFields": [
+          "description.value",
+          "description.unidentified"
+        ]
       }
     }
   },
@@ -91,13 +142,6 @@
       "label": "Poderes",
       "system": "tormenta20",
       "path": "./packs/poderes",
-      "type": "Item"
-    },
-    {
-      "name": "poderes-distincao",
-      "label": "Poderes de Distinção",
-      "system": "tormenta20",
-      "path": "./packs/poderes-distincao",
       "type": "Item"
     },
     {
@@ -188,6 +232,13 @@
       "system": "tormenta20",
       "path": "./packs/macros",
       "type": "Macro"
+    },
+    {
+      "name": "efeitos",
+      "label": "Efeitos",
+      "system": "tormenta20",
+      "path": "./packs/efeitos",
+      "type": "ActiveEffect"
     }
   ],
   "packFolders": [
@@ -195,7 +246,10 @@
       "name": "Actors",
       "sorting": "m",
       "color": "#000000",
-      "packs": ["ameacas", "convocacoes"]
+      "packs": [
+        "ameacas",
+        "convocacoes"
+      ]
     },
     {
       "name": "Items",
@@ -205,7 +259,6 @@
         "racas",
         "classes",
         "poderes",
-        "poderes-distincao",
         "equipamentos",
         "equipamentos-magicos",
         "magias",
@@ -218,19 +271,26 @@
       "name": "Journals",
       "sorting": "m",
       "color": "#000000",
-      "packs": ["basico"]
+      "packs": [
+        "basico"
+      ]
     },
     {
       "name": "RollTables",
       "sorting": "m",
       "color": "#000000",
-      "packs": ["tabelas-de-tesouro"]
+      "packs": [
+        "tabelas-de-tesouro"
+      ]
     },
     {
-      "name": "Macros",
+      "name": "Outros",
       "sorting": "m",
       "color": "#000000",
-      "packs": ["macros"]
+      "packs": [
+        "efeitos",
+        "macros"
+      ]
     }
   ],
   "languages": [
@@ -247,8 +307,16 @@
   ],
   "flags": {
     "hotReload": {
-      "extensions": ["css", "hbs", "json"],
-      "paths": ["tormenta20.css", "templates", "lang"]
+      "extensions": [
+        "css",
+        "hbs",
+        "json"
+      ],
+      "paths": [
+        "tormenta20.css",
+        "templates",
+        "lang"
+      ]
     }
   },
   "grid": {

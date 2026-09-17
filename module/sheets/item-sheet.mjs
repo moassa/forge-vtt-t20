@@ -99,6 +99,7 @@ export default class ItemSheetT20 extends foundry.appv1.sheets.ItemSheet {
 	/** @override */
 	async getData(options) {
 		const sheetData = await super.getData(options);
+		sheetData.user = game.user;
 		const item = sheetData.item;
 		const source = item.toObject();
 		const rollOptions = {};
@@ -195,7 +196,7 @@ export default class ItemSheetT20 extends foundry.appv1.sheets.ItemSheet {
 			},
 
 			// Prepare Active Effects
-			effects: ActiveEffectT20.prepareActiveEffectCategories(item.effects),
+			effects: await ActiveEffectT20.prepareActiveEffectCategories(item.effects),
 			// Resource to Consume
 			abilityConsumptionTargets: this._getItemConsumptionTargets(item.system),
 			rolltags: foundry.applications.elements.HTMLStringTagsElement.create({
@@ -261,6 +262,8 @@ export default class ItemSheetT20 extends foundry.appv1.sheets.ItemSheet {
 	activateListeners(html) {
 		super.activateListeners(html);
 		if (this.isEditable) {
+			html.find(".behaviors-control").click(this._onBehaviorsControl.bind(this));
+
 			html.find(".rolls-control").click(this._onRollsControl.bind(this));
 			html.find(".parts-control").click(this._onPartsControl.bind(this));
 
@@ -560,6 +563,14 @@ export default class ItemSheetT20 extends foundry.appv1.sheets.ItemSheet {
 			rolls[key].parts.splice(Number(li.dataset.rollPart), 1);
 			return this.item.update({ "system.rolls": rolls });
 		}
+	}
+
+	_onBehaviorsControl(event) {
+		event.preventDefault();
+		new tormenta20.applications.api.DocumentFieldSheet({
+			document: this.document,
+			fields: ["system.area_behaviors"]
+		}).render(true);
 	}
 
 	async _onRollsControl(event) {

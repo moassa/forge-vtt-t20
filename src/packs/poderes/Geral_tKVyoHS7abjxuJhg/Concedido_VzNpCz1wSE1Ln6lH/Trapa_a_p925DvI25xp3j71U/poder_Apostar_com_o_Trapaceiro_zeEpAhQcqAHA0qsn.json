@@ -1,0 +1,66 @@
+{
+  "name": "Apostar com o Trapaceiro",
+  "type": "poder",
+  "img": "systems/tormenta20/icons/poderes/concedidos-trapaca.webp",
+  "system": {
+    "description": {
+      "value": "<p style=\"text-align:justify\">Quando faz um teste de perícia, você pode gastar 1 PM para apostar com Hyninn. Você e o mestre rolam [[/selfroll 1d20]]{1d20}, mas o mestre mantém o resultado dele em segredo. Você então escolhe entre usar seu próprio resultado ou o resultado oculto do mestre (neste caso, ele revela o resultado). e</p>",
+      "unidentified": ""
+    },
+    "source": "Tormenta20 — Edição Jogo do Ano, p. 132",
+    "ativacao": {
+      "execucao": "free",
+      "custo": 0,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "duracao": {
+      "value": 0,
+      "units": "inst",
+      "special": ""
+    },
+    "range": {
+      "value": null,
+      "units": ""
+    },
+    "efeito": "",
+    "alcance": "none",
+    "area": "",
+    "resistencia": {
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [],
+    "tipo": "concedido",
+    "subtipo": "Trapaça",
+    "origin": "",
+    "tags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "rolltags": [],
+    "automationtags": []
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.0",
+    "coreVersion": "14.366",
+    "createdTime": 1788042524971,
+    "modifiedTime": 1788042524971,
+    "lastModifiedBy": "4fJviA1Q4qcjwsna",
+    "duplicateSource": null,
+    "exportSource": null,
+    "compendiumSource": null
+  },
+  "_id": "zeEpAhQcqAHA0qsn",
+  "folder": "p925DvI25xp3j71U",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!zeEpAhQcqAHA0qsn"
+}

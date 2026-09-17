@@ -1,0 +1,94 @@
+{
+  "name": "Couro de Dragão",
+  "type": "consumivel",
+  "img": "systems/tormenta20/icons/itens/gerais/couro-de-dragao.webp",
+  "system": {
+    "description": {
+      "value": "<p><span><strong>[Tesouro Especial] <strong>[Material Especial]</strong></strong></span></p>\n<p>Cobiçado por artesãos em toda Arton, o couro escamado de um dragão verdadeiro é um material especial que pode ser empregado para fabricar certos itens superiores. Tanto o couro bruto quanto itens de couro de dragão não existem à venda; a única maneira de obter esse material é derrotar um dragão. <span>(CD para extrair depende do dragão).</span></p>\n\n\n<p><span><strong>Armaduras leves e escudos</strong> (exigem uma peça para ser fabricado): Defesa +1, redução de dano 10 contra o tipo de dano do sopro do dragão e resistência a magia +2. </span></p>\n<p><span><strong>Armaduras pesadas</strong> (exigem três peças): Defesa +2, redução de dano 20 contra o tipo de dano do sopro do dragão e resistência a magia +5. </span></p>\n<p><span><strong>Esotérico </strong>(Exige 1 Peça). Quando lança uma magia que cause dano do mesmo tipo do sopro do dragão, você pode gastar 1 PM para aumentar o dano da magia em +1 por dado.</span></p>",
+      "unidentified": ""
+    },
+    "source": "Tormenta20 — Edição Jogo do Ano, p. 311",
+    "carregado": true,
+    "peso": 0,
+    "espacos": 1,
+    "qtd": 1,
+    "preco": 0,
+    "pv": {
+      "value": 0,
+      "max": 0
+    },
+    "rd": 0,
+    "ativacao": {
+      "execucao": "",
+      "custo": 0,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "duracao": {
+      "value": 0,
+      "units": "inst",
+      "special": ""
+    },
+    "range": {
+      "value": null,
+      "units": ""
+    },
+    "consume": {
+      "type": "",
+      "target": "",
+      "amount": null,
+      "mpMultiplier": false
+    },
+    "efeito": "",
+    "alcance": "none",
+    "alvo": "",
+    "area": "",
+    "resistencia": {
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [],
+    "tipo": "material",
+    "origin": "",
+    "tags": [],
+    "chatFlavor": "",
+    "subtipo": "",
+    "chatGif": "",
+    "upgrades": {
+      "melhoria1": "",
+      "melhoria2": "",
+      "melhoria3": "",
+      "melhoria4": "",
+      "material": "",
+      "encanto1": "",
+      "encanto2": "",
+      "encanto3": ""
+    },
+    "rolltags": [],
+    "automationtags": [],
+    "enableAutoUpgrades": true
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.0",
+    "coreVersion": "14.366",
+    "createdTime": 1788042414274,
+    "modifiedTime": 1788042414274,
+    "lastModifiedBy": "4fJviA1Q4qcjwsna",
+    "duplicateSource": null,
+    "exportSource": null,
+    "compendiumSource": null
+  },
+  "_id": "DW3ObnlHoKVffcrS",
+  "folder": "5PDivJJGRX0EFLEP",
+  "sort": 300000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!DW3ObnlHoKVffcrS"
+}

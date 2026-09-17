@@ -1,0 +1,78 @@
+<section class="tab {{tab.id}} {{tab.cssClass}}" data-tab="{{tab.id}}" data-group="{{tab.group}}">
+  {{> "systems/tormenta20/templatesV2/sheets/actor/parts/header-character.hbs"}}
+  <div class="left flexcol">
+    <div class="flexrow attributes">
+      {{#each atributos as |atributo key|}}
+        {{> "systems/tormenta20/templatesV2/sheets/actor/parts/attribute.hbs"}}
+      {{/each}}
+    </div>
+    <div class="flexrow resources">
+      {{> "systems/tormenta20/templatesV2/sheets/actor/parts/resource.hbs"
+        label="T20.HitPoints"
+        schema=schema.fields.attributes.fields.pv
+        resource=system.attributes.pv
+        source=source.attributes.pv
+      }}
+      {{> "systems/tormenta20/templatesV2/sheets/actor/parts/resource.hbs"
+        label="T20.ManaPoints"
+        schema=schema.fields.attributes.fields.pm
+        resource=system.attributes.pm
+        source=source.attributes.pm
+      }}
+      {{> "systems/tormenta20/templatesV2/sheets/actor/parts/defense.hbs"
+        label="T20.Defense"
+        schema=schema.fields.attributes.fields.defesa
+        defense=system.attributes.defesa
+        source=source.attributes.defesa
+      }}
+      {{#each resources as |resource key|}}
+        {{> "systems/tormenta20/templatesV2/sheets/actor/parts/resource.hbs"}}
+      {{/each}}
+    </div>
+    <div class="flexrow weapons">
+      {{> "systems/tormenta20/templatesV2/sheets/actor/parts/item-list.hbs"
+        list=itemList.weapons
+      }}
+    </div>
+    <div class="flexrow equipment">
+      equipment
+    </div>
+    <div class="flexrow abilities">
+      abilities
+    </div>
+    <div class="flexrow spells">
+      spells
+    </div>
+    <div class="flexcol traits">
+      traits
+    </div>
+  </div>
+  <div class="right flexcol">
+    <div class="flexcol skills">
+      skills
+    </div>
+    <div class="inventory">
+      inventory
+    </div>
+  </div>
+  <style>
+    .tormenta20-v2.character.sheet {
+      .tab.sheet {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(auto, 1fr);
+
+        header {
+          grid-column: span 2 / span 2;
+        }
+
+        div.left,
+        div.right {
+          grid-row: span 2 / span 2;
+          grid-row-start: 2;
+        }
+      }
+
+    }
+  </style>
+</section>

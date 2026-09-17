@@ -4,7 +4,38 @@
 /*  Chat Cards
 /* ----------------------------------------- */
 
+.chat-message {
+  .scene-ended {
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 1.5em;
+    font-weight: 400;
+    line-height: 1em;
+    margin: 0;
+  }
+}
+
+.message-content.tormenta20 {
+  &.sustain {
+    display: flex;
+    flex-direction: column;
+
+    ul {
+      li {
+        font-size: var(--font-size-16);
+
+        img {
+          width: 28px;
+          flex: 0 0 28px;
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+}
+
 .tormenta20.chat-card {
+
   .card-header {
     font-size: 12px;
     padding: 3px 0;
@@ -22,6 +53,7 @@
       border: unset;
       .signika();
       color: @colorOlive;
+
       &:hover {
         color: #111;
         text-shadow: 0 0 10px red;
@@ -87,14 +119,17 @@
     background: #c7d0c0;
     border: 1px solid #006c00;
   }
+
   &.failure {
     color: inherit;
     background: #ffdddd;
     border: 1px solid #6e0000;
   }
+
   &.critical {
     color: #006c00;
   }
+
   &.fumble {
     color: red;
   }
@@ -119,22 +154,27 @@
     * {
       font-size: 14px;
     }
+
     &.damage-health {
       background-color: red;
       background-color: rgba(255, 0, 0, 0.5);
     }
+
     &.damage-heal {
       background-color: lime;
       background-color: rgba(0, 255, 0, 0.5);
     }
+
     &.damage-mana {
       background-color: cyan;
       background-color: rgba(0, 255, 255, 0.5);
     }
+
     &.damage-hptemp {
       background-color: magenta;
       background-color: rgba(255, 0, 255, 0.5);
     }
+
     &.damage-mptemp {
       background-color: deepskyblue;
       background-color: rgba(0, 191, 255, 0.5);
@@ -147,10 +187,12 @@
     p {
       text-align: justify;
     }
+
     h4 {
       font-size: var(--font-size-14);
     }
   }
+
   > button {
     border: @borderGroove !important;
     background: rgba(255, 255, 240, 0.8) !important;
@@ -227,12 +269,15 @@
       &.right {
         right: 1px;
       }
+
       &.left {
         left: 1px;
       }
+
       &.formula {
         top: 0px;
       }
+
       &.result {
         bottom: 1px;
       }
@@ -251,7 +296,9 @@
     button {
       border: @borderGroove;
     }
+
     position: relative;
+
     span,
     button img {
       width: 28px;

@@ -1,0 +1,82 @@
+{
+  "_id": "lH4WuC99PGlKzRgc",
+  "name": "Vassoura Voadora",
+  "type": "tesouro",
+  "img": "systems/tormenta20/icons/itens/itens-magicos/vassoura-voadora.webp",
+  "effects": [],
+  "folder": "BgJUCrqjG6EVBIfP",
+  "sort": 4299219,
+  "flags": {},
+  "system": {
+    "description": {
+      "value": "<p>Como um tapete voador, mas pode carregar duas pessoas (ou 40 espaços).</p>",
+      "unidentified": ""
+    },
+    "source": "Tormenta20 — Edição Jogo do Ano, p. 345",
+    "carregado": true,
+    "peso": 0,
+    "espacos": 0,
+    "qtd": 1,
+    "preco": 21000,
+    "pv": {
+      "value": 0,
+      "max": 0
+    },
+    "rd": 0,
+    "container": false,
+    "rolls": [],
+    "origin": "",
+    "tags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "ativacao": {
+      "custo": 0,
+      "condicao": "",
+      "execucao": "",
+      "qtd": "",
+      "special": ""
+    },
+    "consume": {
+      "amount": 0,
+      "mpMultiplier": false,
+      "target": "",
+      "type": ""
+    },
+    "duracao": {
+      "units": "inst",
+      "value": 0,
+      "special": ""
+    },
+    "range": {
+      "units": "",
+      "value": 0
+    },
+    "alcance": "",
+    "alvo": "",
+    "area": "",
+    "efeito": "",
+    "resistencia": {
+      "txt": "",
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0
+    },
+    "rolltags": [],
+    "automationtags": []
+  },
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.0",
+    "coreVersion": "14.366",
+    "createdTime": 1788042454295,
+    "modifiedTime": 1788042454295,
+    "lastModifiedBy": "4fJviA1Q4qcjwsna",
+    "duplicateSource": null,
+    "exportSource": null,
+    "compendiumSource": null
+  },
+  "_key": "!items!lH4WuC99PGlKzRgc"
+}

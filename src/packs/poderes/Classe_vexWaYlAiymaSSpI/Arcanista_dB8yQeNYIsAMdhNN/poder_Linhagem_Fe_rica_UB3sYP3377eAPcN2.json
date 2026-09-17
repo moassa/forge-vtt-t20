@@ -1,0 +1,68 @@
+{
+  "_id": "UB3sYP3377eAPcN2",
+  "name": "Linhagem Feérica",
+  "type": "poder",
+  "img": "systems/tormenta20/icons/poderes/classes/conjuradores/linhagem-feerica.webp",
+  "effects": [],
+  "folder": "dB8yQeNYIsAMdhNN",
+  "sort": 0,
+  "flags": {},
+  "system": {
+    "description": {
+      "value": "<p>Seu sangue foi tocado pelas fadas.</p><p style=\"text-align:justify\"><strong>Básica.</strong> Você se torna treinado em Enganação e aprende uma magia de 1º círculo de encantamento ou ilusão, arcana ou divina, a sua escolha.</p><p style=\"text-align:justify\"><strong>Aprimorada.</strong> A CD para resistir a suas magias de encantamento e ilusão aumenta em +2 e suas magias dessas escolas custam –1 PM.</p><p style=\"text-align:justify\"><strong>Superior.</strong> Você recebe +2 em Carisma. Se uma criatura passar no teste de resistência contra uma magia de encantamento ou ilusão lançada por você, você fica alquebrado até o final da cena.</p>",
+      "unidentified": ""
+    },
+    "source": "Tormenta20 — Edição Jogo do Ano, p. 39",
+    "ativacao": {
+      "execucao": "",
+      "custo": 0,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "duracao": {
+      "value": 0,
+      "units": "inst",
+      "special": ""
+    },
+    "range": {
+      "value": null,
+      "units": ""
+    },
+    "efeito": "",
+    "alcance": "none",
+    "area": "",
+    "resistencia": {
+      "pericia": "",
+      "atributo": "sab",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [],
+    "tipo": "ability",
+    "subtipo": "Arcanista",
+    "tags": [
+      "Arcanista"
+    ],
+    "origin": "",
+    "chatFlavor": "",
+    "chatGif": "",
+    "rolltags": [],
+    "automationtags": []
+  },
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.0",
+    "coreVersion": "14.366",
+    "createdTime": 1788042524957,
+    "modifiedTime": 1788042524957,
+    "lastModifiedBy": "4fJviA1Q4qcjwsna",
+    "duplicateSource": null,
+    "exportSource": null,
+    "compendiumSource": null
+  },
+  "_key": "!items!UB3sYP3377eAPcN2"
+}

@@ -1,0 +1,72 @@
+{
+  "name": "Minotauro",
+  "type": "race",
+  "img": "systems/tormenta20/icons/racas/minotauro.webp",
+  "system": {
+    "description": {
+      "value": "<p>@EMBED[Compendium.tormenta20-dev-env.basico-rules.JournalEntry.D5UPztr7I9a68jWW.JournalEntryPage.OAauuWwkmomUgDqk]{Minotauro}</p>",
+      "unidentified": ""
+    },
+    "source": "",
+    "origin": "",
+    "tags": [],
+    "rolltags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "atributos": {
+      "for": 2,
+      "des": 1,
+      "con": 0,
+      "int": 0,
+      "sab": -1,
+      "car": 0
+    },
+    "atributosDinamicos": {
+      "value": [],
+      "description": "+1 em Três Atributos Diferentes"
+    },
+    "grants": [
+      {
+        "title": "",
+        "desc": "",
+        "type": "multi",
+        "choices": [
+          {
+            "uuid": "Compendium.tormenta20.poderes.Item.ebkvViYlLzxFy8XO"
+          },
+          {
+            "uuid": "Compendium.tormenta20.poderes.Item.R4mqRNcLHRzrqLly"
+          },
+          {
+            "uuid": "Compendium.tormenta20.poderes.Item.KuNWTgJXHsg6tfzy"
+          },
+          {
+            "uuid": "Compendium.tormenta20.poderes.Item.xn9RfAp79NWrXSYI"
+          }
+        ]
+      }
+    ],
+    "automationtags": [],
+    "skills": []
+  },
+  "effects": [],
+  "folder": null,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.0",
+    "createdTime": 1788042553945,
+    "modifiedTime": 1788042553945,
+    "lastModifiedBy": "4fJviA1Q4qcjwsna",
+    "compendiumSource": null
+  },
+  "_id": "UknA6Hsp6YvqPuuA",
+  "sort": 600000,
+  "_key": "!items!UknA6Hsp6YvqPuuA"
+}

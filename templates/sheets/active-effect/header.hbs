@@ -1,0 +1,12 @@
+<header class="flexrow sheet-header img-name">
+	<img src="{{source.img}}" data-action="editImage" data-edit="img" alt="{{localize " EFFECT.FIELDS.img.label"}}">
+	<div class="flexcol">
+		<input name="name" type="text" value="{{source.name}}" placeholder="{{localize " EFFECT.FIELDS.name.label"}}" aria-label="{{localize " EFFECT.FIELDS.name.label"}}">
+		{{formGroup
+			schema.fields.targets
+			value=source.system.targets
+			type="checkboxes"
+			localize=true
+		}}
+	</div>
+</header>

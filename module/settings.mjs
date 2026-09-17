@@ -281,14 +281,19 @@ export const SystemSettings = function () {
 		type: Boolean
 	});
 
-	game.settings.register("tormenta20", "overrideMeasuredTemplates", {
-		name: "T20.SettingsOverrideMeasuredTemplates",
-		hint: "T20.SettingsOverrideMeasuredTemplatesHint",
+	game.settings.register("tormenta20", "segmentedScene", {
+		name: "T20.SettingSegmentedScene",
+		hint: "T20.SettingSegmentedSceneHint",
 		scope: "world",
 		config: true,
-		default: true,
-		type: Boolean,
-		requiresReload: true
+		default: { value: null, max: null },
+		type: new foundry.data.fields.SchemaField({
+			value: new foundry.data.fields.NumberField({ nullable: true, initial: null }),
+			max: new foundry.data.fields.NumberField({ nullable: true, initial: null })
+		}),
+		onChange: () => {
+			return ui.players.render();
+		}
 	});
 
 	game.settings.register("tormenta20", "drawRanges", {

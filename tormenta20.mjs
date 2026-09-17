@@ -10,21 +10,18 @@ import { SystemSettings } from "./module/settings.mjs";
 import { preloadHandlebarsTemplates } from "./module/templates.mjs";
 
 // Import Documents
+import RollT20 from "./module/dice/roll.mjs";
 import ActiveEffectT20 from "./module/documents/active-effects.mjs";
 import ActorT20 from "./module/documents/actor.mjs";
-import ChatMessageTormenta20 from "./module/documents/chat-message.mjs";
+import ChatMessageT20 from "./module/documents/chat-message.mjs";
 import ItemT20 from "./module/documents/item.mjs";
-import RollT20 from "./module/documents/roll.mjs";
 import TokenDocumentT20 from "./module/documents/token.mjs";
 globalThis.Roll = RollT20;
 
-// Import Canvas
-import AbilityTemplate from "./module/canvas/ability-template.mjs";
+// Import canvas data
 import TokenRulerT20 from "./module/canvas/token-ruler.mjs";
 import TokenT20 from "./module/canvas/token.mjs";
 
-// Import Sheets
-import ActiveEffectConfigT20 from "./module/sheets/active-effects.mjs";
 import ActorSheetT20Bases from "./module/sheets/actor-bases.mjs";
 import ActorSheetT20Character from "./module/sheets/actor-character.mjs";
 import HazardSheetT20 from "./module/sheets/actor-hazard.mjs";
@@ -34,7 +31,6 @@ import ActorSheetT20CharacterTabbed from "./module/sheets/actor-tabbed.mjs";
 import RaceSheetT20 from "./module/sheets/item-race-sheet.mjs";
 import ItemSheetT20 from "./module/sheets/item-sheet.mjs";
 
-// Import Applications
 import AbilityUseDialog from "./module/apps/ability-use-dialog.mjs";
 import ActorSettings from "./module/apps/actor-settings.mjs";
 import CharacterProgression from "./module/apps/character-progression.mjs";
@@ -46,8 +42,14 @@ import TokenHUDT20 from "./module/apps/token-hud.mjs";
 import TraitSelector from "./module/apps/trait-selector.mjs";
 // import CombatTrackerT20 from "./module/apps/combat.mjs";
 
-// Import Helpers
-import * as models from "./module/dataModel/_module.mjs";
+// UPDATED
+import * as applications from "./module/applications/_module.mjs";
+import * as canvas from "./module/canvas/_module.mjs";
+import * as models from "./module/data/_module.mjs";
+import * as documents from "./module/documents/_module.mjs";
+
+// NOT UPDATED
+import * as dataModels from "./module/dataModel/_module.mjs";
 import * as fields from "./module/dataModel/fields/_module.mjs";
 import * as dice from "./module/dice/dice.mjs";
 import * as hooks from "./module/hooks.mjs";
@@ -56,16 +58,17 @@ import "./module/modules.mjs";
 import * as utils from "./module/utils.mjs";
 
 // import {getSystemActorData,  getSystemItemData} from "./dataModel/data.mjs";
-import TemplateLayerT20 from "./module/canvas/template-layer.mjs";
-import ActorDirectoryTormenta20 from "./module/sidebar/actor-directory.mjs";
-import ChatLogTormenta20 from "./module/sidebar/chat-log.mjs";
-import CompendiumDirectoryT20 from "./module/sidebar/compendium-directory.mjs";
+import RegionLayerT20 from "./module/canvas/region-layer.mjs";
 
 /* -------------------------------------------- */
 /*  Foundry VTT Initialization                  */
 /* -------------------------------------------- */
 globalThis.tormenta20 = {
+	canvas,
+	documents,
+	models,
 	applications: {
+		...applications,
 		AbilityUseDialog,
 		ActorSheetT20Character,
 		ActorSheetT20CharacterTabbed,
@@ -81,19 +84,17 @@ globalThis.tormenta20 = {
 	},
 	data: {
 		fields,
-		models
-	},
-	canvas: {
-		AbilityTemplate,
-		TemplateLayerT20,
-		TokenT20
+		models: dataModels
 	},
 	config: T20,
 	dice: dice,
 	conditions: T20.conditions,
 	entities: {
 		ActorT20,
-		ItemT20
+		ItemT20,
+		ActiveEffectT20,
+		ChatMessageT20,
+		TokenDocumentT20
 	},
 	macros: macros,
 	utils,
@@ -104,46 +105,40 @@ globalThis.tormenta20 = {
 Hooks.once("init", async function () {
 	console.log("T20 | Initializing the Tormenta20 Game System");
 	game.tormenta20 = tormenta20;
-	CONFIG.ActiveEffect.legacyTransferral = true;
 	// Record Cnfiguration Values
 	CONFIG.T20 = T20;
-	CONFIG.Actor.documentClass = ActorT20;
-	CONFIG.Item.documentClass = ItemT20;
-	CONFIG.ActiveEffect.documentClass = ActiveEffectT20;
+	CONFIG.Actor.documentClass = documents.ActorT20;
+	CONFIG.Item.documentClass = documents.ItemT20;
+	CONFIG.ActiveEffect.documentClass = documents.ActiveEffectT20;
+	CONFIG.Token.documentClass = documents.TokenDocumentT20;
 
-	CONFIG.Token.documentClass = TokenDocumentT20;
 	CONFIG.Token.objectClass = TokenT20;
 	CONFIG.Token.rulerClass = TokenRulerT20;
 	CONFIG.Token.hudClass = TokenHUDT20;
 	TokenRulerT20.applyMovementConfig();
 	CONFIG.time.roundTime = 6;
 
-	CONFIG.Canvas.layers.templates.layerClass = TemplateLayerT20;
-	CONFIG.MeasuredTemplate.defaults.angle = 90;
-	CONFIG.MeasuredTemplate.objectClass = AbilityTemplate;
+	/* DOCUMENT: Region */
+	CONFIG.Canvas.layers.regions.layerClass = RegionLayerT20;
 
 	// Register T20 stuff
-	CONFIG.statusEffects = T20.statusEffectIcons;
+	// CONFIG.statusEffects = T20.statusEffectIcons;
 	CONFIG.conditions = T20.conditions;
-
-	CONFIG.controlIcons.defeated = CONFIG.statusEffects.filter((x) => x.id === "inconsciente")[0].icon;
-	CONFIG.specialStatusEffects.BLIND = "cego";
-	CONFIG.specialStatusEffects.DEFEATED = "morto";
-	CONFIG.specialStatusEffects.INVISIBLE = "invisivel";
-
-	// T20 cone RAW should be 53.13 degrees
-	// CONFIG.MeasuredTemplate.defaults.angle = 53.13;
 
 	// Register System Settings
 	SystemSettings();
 
-	// Patch Core Functions
-	CONFIG.ui.actors = ActorDirectoryTormenta20;
-	CONFIG.ui.chat = ChatLogTormenta20;
-	// CONFIG.ui.combat = CombatTrackerT20;
-	CONFIG.ui.compendium = CompendiumDirectoryT20;
+	// Core Apps
+	CONFIG.ui.players = applications.ui.PlayersT20;
+	// Sidebars
+	CONFIG.ui.actors = applications.sidebar.ActorDirectoryT20;
+	CONFIG.ui.chat = applications.sidebar.ChatLogT20;
+	CONFIG.ui.combat = applications.sidebar.CombatTrackerT20;
 
-	CONFIG.ChatMessage.documentClass = ChatMessageTormenta20;
+	CONFIG.ChatMessage.documentClass = documents.ChatMessageT20;
+	CONFIG.Combat.documentClass = documents.CombatT20;
+	CONFIG.Region.documentClass = documents.RegionT20;
+
 	CONFIG.Combat.initiative = {
 		formula: "1d20 + @pericias.inic.value",
 		decimals: 2
@@ -160,25 +155,48 @@ Hooks.once("init", async function () {
 	CONFIG.Dice.rolls.DamageRoll = dice.damageRoll;
 
 	// DATA MODEL
+	CONFIG.Actor.dataModels = {
+		bases: tormenta20.data.models.BasesData,
+		character: tormenta20.data.models.CharacterData,
+		npc: tormenta20.data.models.MenaceData,
+		simple: tormenta20.data.models.SimpleData,
+		hazard: tormenta20.data.models.HazardData
+	};
 
-	CONFIG.Actor.dataModels.bases = tormenta20.data.models.BasesData;
-	CONFIG.Actor.dataModels.character = tormenta20.data.models.CharacterData;
-	CONFIG.Actor.dataModels.npc = tormenta20.data.models.MenaceData;
-	CONFIG.Actor.dataModels.simple = tormenta20.data.models.SimpleData;
-	CONFIG.Actor.dataModels.hazard = tormenta20.data.models.HazardData;
+	CONFIG.Item.dataModels = {
+		arma: tormenta20.data.models.WeaponData,
+		classe: tormenta20.data.models.ClassData,
+		comodo: tormenta20.data.models.RoomData,
+		consumivel: tormenta20.data.models.ConsumableData,
+		equipamento: tormenta20.data.models.EquipmentData,
+		magia: tormenta20.data.models.SpellData,
+		mobilia: tormenta20.data.models.FurnitureData,
+		poder: tormenta20.data.models.PowerData,
+		race: tormenta20.data.models.RaceData,
+		tesouro: tormenta20.data.models.LootData
+	};
 
-	CONFIG.Item.dataModels.arma = tormenta20.data.models.WeaponData;
-	CONFIG.Item.dataModels.classe = tormenta20.data.models.ClassData;
-	CONFIG.Item.dataModels.comodo = tormenta20.data.models.RoomData;
-	CONFIG.Item.dataModels.consumivel = tormenta20.data.models.ConsumableData;
-	CONFIG.Item.dataModels.equipamento = tormenta20.data.models.EquipmentData;
-	CONFIG.Item.dataModels.magia = tormenta20.data.models.SpellData;
-	CONFIG.Item.dataModels.mobilia = tormenta20.data.models.FurnitureData;
-	CONFIG.Item.dataModels.poder = tormenta20.data.models.PowerData;
-	CONFIG.Item.dataModels.race = tormenta20.data.models.RaceData;
-	CONFIG.Item.dataModels.tesouro = tormenta20.data.models.LootData;
+	CONFIG.ActiveEffect.dataModels = {
+		base: tormenta20.models.effect.BaseEffect
+	};
+
+	CONFIG.ActiveEffect.expiryAction = "delete";
+	CONFIG.ActiveEffect.expiryEvents = {
+		sceneEnd: "T20.TimeScene",
+		sustainEnd: "T20.sustainEnd"
+	};
 
 	// Register sheet application classes
+	const { DocumentSheetConfig } = foundry.applications.apps;
+
+	DocumentSheetConfig.registerSheet(
+		ActiveEffect,
+		"tormenta20",
+		tormenta20.applications.sheets.effect.ActiveEffectConfigT20,
+		{ makeDefault: true, label: "T20.ActiveEffectSheet" }
+	);
+
+	/* Old */
 	foundry.documents.collections.Actors.unregisterSheet("core", foundry.appv1.sheets.ActorSheet);
 	foundry.documents.collections.Actors.registerSheet("tormenta20", ActorSheetT20Bases, {
 		types: ["bases"],
@@ -225,18 +243,9 @@ Hooks.once("init", async function () {
 		label: "T20.ItemSheet"
 	});
 
-	foundry.applications.apps.DocumentSheetConfig.unregisterSheet(
-		ActiveEffect,
-		"core",
-		foundry.applications.sheets.ActiveEffectConfig
-	);
-	foundry.applications.apps.DocumentSheetConfig.registerSheet(ActiveEffect, "tormenta20", ActiveEffectConfigT20, {
-		makeDefault: true,
-		label: "T20.ActiveEffectSheet"
-	});
-
+	// Register enrichers
+	CONFIG.TextEditor.enrichers = [applications.ux.enrichers.applyEffect];
 	// Core Application Overrides
-	// CONFIG.ui.compendium = CompendiumDirectoryT20;
 	// Preload Handlebars Templates
 	preloadHandlebarsTemplates();
 	registerHandlebarsHelpers();

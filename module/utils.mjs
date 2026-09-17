@@ -1,6 +1,54 @@
-/* FROM 5e */
 /* -------------------------------------------- */
-/*  Config Pre-Localization                     */
+/*  Tormenta20                                  */
+/* -------------------------------------------- */
+
+/**
+ * Search the actors that must have their effects refreshed and call the registry
+ * @param {*} combat
+ */
+export async function endScene() {
+	const combat = game.combat;
+	if (combat) {
+		const confirm = await foundry.applications.api.DialogV2.confirm({
+			window: { icon: "fa-solid fa-xmark", title: "COMBAT.EndTitle" },
+			content: `<p>${_loc("COMBAT.EndConfirmation")}</p>`,
+			yes: { callback: () => true },
+			modal: true
+		});
+		if (!confirm) return;
+	}
+	const expiredEffects = {};
+	const context = {
+		combat: combat,
+		actors: combat
+			? new Set(combat.combatants.map((i) => i.actor))
+			: new Set(game.actors.filter((i) => i.type == "character")),
+		expiredEffects: expiredEffects
+	};
+
+	const segmentedScene = game.settings.get("tormenta20", "segmentedScene");
+	await ActiveEffect.registry.refresh("sceneEnd", context);
+	if (segmentedScene.max) {
+		segmentedScene.value = 0;
+		game.settings.set("tormenta20", "segmentedScene", segmentedScene);
+	}
+	if (combat) await combat.delete(); // Ending a scene should end a combat too;
+	const content = document.createElement("div");
+	content.innerHTML = `<h3 class="scene-ended"><i class="fa-solid fa-clapperboard"></i> ${_loc("T20.sceneEnded")}</h3>`;
+	const list = document.createElement("ul");
+	for (const expired of Object.values(expiredEffects)) {
+		const li = document.createElement("li");
+		li.innerHTML = expired.join(", ").replace(",", "");
+		list.append(li);
+	}
+	content.append(list);
+	ChatMessage.create({
+		content: content.outerHTML
+	});
+}
+
+/* -------------------------------------------- */
+/*  Config Pre-Localization (From 5e)           */
 /* -------------------------------------------- */
 
 /**
@@ -90,17 +138,9 @@ function _localizeObject(obj, keys) {
 	}
 }
 
-export function uuidToObject(uuid) {
-	uuid.split(".").reduce(function (result, value, index, array) {
-		if (!value) value = `undefined${index}`;
-		if (index % 2 === 0) result[value] = array[index + 1];
-		return result;
-	}, {});
-}
-
-export function stringify(obj) {
-	return JSON.stringify(obj, null, 3);
-}
+/* -------------------------------------------- */
+/*  Statblock Importer                          */
+/* -------------------------------------------- */
 
 /**
  * Tira o plural de palavras em Português.
@@ -144,59 +184,9 @@ export function wordToNumber(str) {
 	);
 }
 
-export function fontAwesomeIcon(glyph, { style = "solid", fixedWidth = false } = {}) {
-	const styleClass = `fa-${style}`;
-	const glyphClass = glyph.startsWith("fa-") ? glyph : `fa-${glyph}`;
-	const icon = document.createElement("i");
-	icon.classList.add(styleClass, glyphClass);
-	if (fixedWidth) icon.classList.add("fa-fw");
-
-	return icon;
-}
-
-export function htmlQuery(parent, selectors) {
-	if (!(parent instanceof Element || parent instanceof Document)) return null;
-	return parent.querySelector(selectors);
-}
-
-export function createHTMLElement(nodeName, { classes = [], dataset = {}, children = [], innerHTML } = {}) {
-	const element = document.createElement(nodeName);
-	if (classes.length > 0) element.classList.add(...classes);
-
-	for (const [key, value] of Object.entries(dataset).filter(([, v]) => v !== false)) {
-		element.dataset[key] = value === true ? "" : String(value);
-	}
-
-	if (innerHTML) {
-		element.innerHTML = innerHTML;
-	} else {
-		for (const child of children) {
-			const childElement = child instanceof HTMLElement ? child : new Text(child);
-			element.appendChild(childElement);
-		}
-	}
-
-	return element;
-}
-
-/**
- * Convert a bonus value to a simple integer for displaying on the sheet.
- * @param {number|string|null} bonus  Bonus formula.
- * @param {object} [data={}]          Data to use for replacing @ strings.
- * @returns {number}                  Simplified bonus as an integer.
- * @protected
- */
-export function simplifyBonus(bonus, data = {}) {
-	if (!bonus) return 0;
-	if (Number.isNumeric(bonus)) return Number(bonus);
-	try {
-		const roll = new Roll(bonus, data);
-		return roll.isDeterministic ? roll.evaluateSync().total : 0;
-	} catch (error) {
-		console.error(error);
-		return 0;
-	}
-}
+/* -------------------------------------------- */
+/*  Statblock Importer                          */
+/* -------------------------------------------- */
 
 /**
  * Convert strings formatadas como "1/4" em valores numéricos.

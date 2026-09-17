@@ -10,7 +10,7 @@ export const ApplyButtons = function (app, html, data) {
 	if (!chatHTML) return;
 
 	let button;
-	// let btnparent;
+
 	let btncontainer;
 	// Get Element To Append to;
 	// btnparent = chatHTML.querySelectorAll('.roll:not(.roll--dano) .dice-formula')[0];
@@ -27,24 +27,21 @@ export const ApplyButtons = function (app, html, data) {
 		return b;
 	};
 
-	// btnparent = chatHTML.querySelectorAll(".roll:not(.roll--dano)")[0];
+	const containerCheck = chatHTML.querySelectorAll(".roll:not(.roll--dano)");
+	for (const check of containerCheck) {
+		break;
+		btncontainer = document.createElement("span");
+		btncontainer.classList.add("dice-btn", "formula", "right");
+		// button = btnCreate('<i class="fa fa-redo"></i>', ["chat-reroll"], "Re-rolar");
+		btncontainer.append(button);
 
-	// if (false && btnparent) {
-	// 	btncontainer = document.createElement("span");
-	// 	btncontainer.classList.add("dice-btn", "formula", "right");
-
-	// 	button = btnCreate('<i class="fas fa-redo"></i>', ["chat-reroll"], "Re-rolar");
-	// 	btncontainer.append(button);
-
-	// 	btnparent.append(btncontainer);
-	// }
+		check.append(btncontainer);
+	}
 
 	// Get Element To Append to;
-	// btnparent = chatHTML.querySelectorAll('.roll--dano .dice-total')[0];
-	// btnparent = chatHTML.querySelectorAll('.roll.roll--dano')[0];
-	let btnparents = chatHTML.querySelectorAll(".roll.roll--dano");
+	const containerDamage = chatHTML.querySelectorAll(".roll.roll--dano");
 
-	for (const btnparent of btnparents) {
+	for (const btnparent of containerDamage) {
 		if (btnparent) {
 			// Buttons Left
 			btncontainer = document.createElement("span");
@@ -101,23 +98,15 @@ export const hideDieFlavor = function (ChatMessage, html, data) {
 /* -------------------------------------------- */
 
 /**
- * TODO [Delayed to V10 to use Message With Multi Rolls]
  * Call Reroll Method for selected roll and update chat card
  * @param {HTMLElement} roll The chat entry which contains the roll data
  */
-// function _onChatReRoll(event) {
-// 	event.preventDefault();
-// 	const btn = event.currentTarget;
-// 	const chatCardId = btn.closest(".chat-message").dataset.messageId;
-// 	const message = game.messages.get(chatCardId);
-// }
-
-// function _onChatSpendCatarse(event) {
-// 	event.preventDefault();
-// 	const btn = event.currentTarget;
-// 	const chatCardId = btn.closest(".chat-message").dataset.messageId;
-// 	const message = game.messages.get(chatCardId);
-// }
+export function _onChatReRoll(event) {
+	event.preventDefault();
+	const btn = event.currentTarget;
+	const chatCardId = btn.closest(".chat-message").dataset.messageId;
+	const message = game.messages.get(chatCardId);
+}
 
 function _callApplyDamage(roll, multiplier, type = "dano") {
 	if (canvas.tokens.controlled.length) {
@@ -189,20 +178,6 @@ export async function applyChatCardDamage(li, multiplier, type = "dano") {
 	}
 }
 
-// function applyChatCardDamageOld(message, multiplier) {
-// 	if (canvas.tokens.controlled.length) {
-// 		let roll = message.find(".roll--dano") ?? message.find(".dice-roll");
-// 		const amount = roll.find(".dice-total").text();
-// 		return Promise.all(
-// 			canvas.tokens.controlled.map((t) => {
-// 				const a = t.actor;
-// 				return a.applyDamage(amount, multiplier, true);
-// 			})
-// 		);
-// 	}
-// 	ui.notifications.warn("É necessario selecionar um ou mais tokens, para aplicar os valores rolados");
-// }
-
 /**
  * Get mana cost value and call Actor spend mana Method
  * @param {Event} event   The originating click event
@@ -270,34 +245,27 @@ export function _onChatCardToggleDamage(event) {
 }
 
 /**
- * Retrieve AbilityTemplate data and Draw on Canvas
+ * Place a new Region from ability data
  * @param {Event} event   The originating click event
  * @private
  */
 export function _onChatPlaceTemplate(event) {
 	event.preventDefault();
-	const chatCardId = event.currentTarget.closest(".chat-message").dataset.messageId;
-	const chatCard = game.messages.get(chatCardId);
+	const messageId = event.currentTarget.closest(".chat-message").dataset.messageId;
+	const message = game.messages.get(messageId);
 	const button = event.currentTarget;
 	const card = button.closest(".chat-card");
 
 	const actor = game.actors.get(card.dataset.actorId);
 	if (!actor) return;
 
-	// const storedData = chatCard.getFlag("tormenta20", "itemData");
-	const storedTemplate = chatCard.getFlag("tormenta20", "template");
-	// let item = new game.tormenta20.entities.ItemT20(storedData, {name:'temp',type:'tesouro',parent: actor});
-	let item = { system: storedTemplate, actor: actor };
-	// new game.tormenta20.entities.ItemT20()
-	// new game.tormenta20.canvas.AbilityTemplate()
-	if (!item) return;
-	item.system.area = storedTemplate.area;
-	item.system.alcance = storedTemplate.alcance;
-
-	const template = game.tormenta20.canvas.AbilityTemplate.fromItem(item);
-	if (template) {
-		template.drawPreview();
-	}
+	const storedTemplate = message.getFlag("tormenta20", "template");
+	const { alcance, area } = storedTemplate;
+	const item = {
+		name: card.querySelector(".item-name").innerText,
+		system: { alcance, area }
+	};
+	canvas.regions.placeRegionT20(false, { item, message });
 }
 
 /**

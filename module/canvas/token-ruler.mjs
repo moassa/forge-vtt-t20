@@ -3,6 +3,51 @@
  * @extends {Token}
  */
 export default class TokenRulerT20 extends foundry.canvas.placeables.tokens.TokenRuler {
+	static #MOVEMENT_ACTIONS = {
+		blink: {
+			label: "T20.MovementTeleport"
+		},
+		burrow: {
+			canSelect: (token) => !(token instanceof TokenDocument) || token.movementTypes.has("burrow")
+		},
+		climb: {
+			canSelect: (token) => !(token instanceof TokenDocument) || !token.hasStatusEffect("caido"),
+			getCostFunction: (token, _options) => {
+				if (token.movementTypes.has("climb")) return (cost) => cost;
+				return (cost) => cost * 2;
+			}
+		},
+		fly: {
+			canSelect: (token) => {
+				return !(token instanceof TokenDocument) || (token.movementTypes.has("fly") && !token.hasStatusEffect("caido"));
+			}
+		},
+		hover: {
+			label: "T20.MovementHover",
+			icon: CONFIG.Token.movement.actions.fly.icon,
+			img: "systems/tormenta20/icons/svg/fairy.svg",
+			order: 1,
+			canSelect: (token) =>
+				!(token instanceof TokenDocument) || (token.movementTypes.has("hover") && !token.hasStatusEffect("caido")),
+			deriveTerrainDifficulty: ({ fly }) => fly
+		},
+		jump: {
+			canSelect: (token) => !(token instanceof TokenDocument) || !token.hasStatusEffect("caido"),
+			deriveTerrainDifficulty: ({ fly }) => fly,
+			getCostFunction: () => (cost) => cost
+		},
+		swim: {
+			canSelect: (token) => !(token instanceof TokenDocument) || !token.hasStatusEffect("caido"),
+			getCostFunction: (token, _options) => {
+				if (token.movementTypes.has("swim")) return (cost) => cost;
+				return (cost) => cost * 2;
+			}
+		},
+		walk: {
+			label: "T20.MovementWalk"
+		}
+	};
+
 	/**
 	 * @inheritdoc
 	 * @param {DeepReadonly<Omit<TokenRulerWaypoint, "index"|"center"|"size"|"ray">>} waypoint
@@ -33,55 +78,7 @@ export default class TokenRulerT20 extends foundry.canvas.placeables.tokens.Toke
 	}
 
 	static applyMovementConfig() {
-		const sourceActions = CONFIG.Token.movement.actions;
-		foundry.utils.mergeObject(
-			CONFIG.Token.movement.actions,
-			{
-				"-=crawl": null,
-				blink: {
-					label: "T20.MovementTeleport"
-				},
-				burrow: {
-					// canSelect: (token) => token.hasStatusEffect("burrow")
-					canSelect: (token) => !(token instanceof TokenDocument) || token.movementTypes.has("burrow")
-				},
-				climb: {
-					canSelect: (token) => !(token instanceof TokenDocument) || !token.hasStatusEffect("caido"),
-					getCostFunction: (token, _options) => {
-						if (token.movementTypes.has("climb")) return (cost) => cost;
-						return (cost) => cost * 2;
-					}
-				},
-				fly: {
-					canSelect: (token) =>
-						!(token instanceof TokenDocument) || (token.movementTypes.has("fly") && !token.hasStatusEffect("caido"))
-				},
-				hover: {
-					label: "T20.MovementHover",
-					icon: sourceActions.fly.icon,
-					img: "systems/tormenta20/icons/svg/fairy.svg",
-					order: 1,
-					canSelect: (token) =>
-						!(token instanceof TokenDocument) || (token.movementTypes.has("hover") && !token.hasStatusEffect("caido")),
-					deriveTerrainDifficulty: ({ fly }) => fly
-				},
-				jump: {
-					canSelect: (token) => !(token instanceof TokenDocument) || !token.hasStatusEffect("caido"),
-					deriveTerrainDifficulty: ({ fly }) => fly,
-					getCostFunction: () => (cost) => cost
-				},
-				swim: {
-					canSelect: (token) => !(token instanceof TokenDocument) || !token.hasStatusEffect("caido"),
-					getCostFunction: (token, _options) => {
-						if (token.movementTypes.has("swim")) return (cost) => cost;
-						return (cost) => cost * 2;
-					}
-				},
-				walk: {
-					label: "T20.MovementWalk"
-				}
-			},
-			{ performDeletions: true }
-		);
+		foundry.utils.mergeObject(CONFIG.Token.movement.actions, this.#MOVEMENT_ACTIONS);
+		delete CONFIG.Token.movement.actions.crawl;
 	}
 }

@@ -1,0 +1,72 @@
+{
+  "name": "Trog",
+  "type": "race",
+  "img": "systems/tormenta20/icons/racas/trog.webp",
+  "system": {
+    "description": {
+      "value": "<p>@EMBED[Compendium.tormenta20-dev-env.basico-rules.JournalEntry.D5UPztr7I9a68jWW.JournalEntryPage.lpArEa2JOgGucvyo]{Trog}</p>",
+      "unidentified": ""
+    },
+    "source": "",
+    "origin": "",
+    "tags": [],
+    "rolltags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "atributos": {
+      "for": 1,
+      "des": 0,
+      "con": 2,
+      "int": -1,
+      "sab": 0,
+      "car": 0
+    },
+    "atributosDinamicos": {
+      "value": [],
+      "description": "+1 em Três Atributos Diferentes"
+    },
+    "grants": [
+      {
+        "title": "",
+        "desc": "",
+        "type": "multi",
+        "choices": [
+          {
+            "uuid": "Compendium.tormenta20.poderes.Item.KOxJPGUZSjZp9T9l"
+          },
+          {
+            "uuid": "Compendium.tormenta20.poderes.Item.2z58hpmL9p4VNyPW"
+          },
+          {
+            "uuid": "Compendium.tormenta20.poderes.Item.3AyZ8AOGrzH0rHMw"
+          },
+          {
+            "uuid": "Compendium.tormenta20.poderes.Item.0uPMzPcd5TJqZ0GD"
+          }
+        ]
+      }
+    ],
+    "automationtags": [],
+    "skills": []
+  },
+  "effects": [],
+  "folder": null,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.0",
+    "createdTime": 1788042553945,
+    "modifiedTime": 1788042553945,
+    "lastModifiedBy": "4fJviA1Q4qcjwsna",
+    "compendiumSource": null
+  },
+  "_id": "sbKTQCQbVmuNCP15",
+  "sort": 200000,
+  "_key": "!items!sbKTQCQbVmuNCP15"
+}

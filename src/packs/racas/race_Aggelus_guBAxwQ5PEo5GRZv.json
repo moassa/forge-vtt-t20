@@ -1,0 +1,66 @@
+{
+  "name": "Aggelus",
+  "type": "race",
+  "img": "systems/tormenta20/icons/racas/suraggel.webp",
+  "system": {
+    "description": {
+      "value": "<p>@EMBED[Compendium.tormenta20-dev-env.basico-rules.JournalEntry.D5UPztr7I9a68jWW.JournalEntryPage.88YcCFJ0OmXvOdQ9]{Suraggel}</p>",
+      "unidentified": ""
+    },
+    "source": "",
+    "origin": "",
+    "tags": [],
+    "rolltags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "atributos": {
+      "for": 0,
+      "des": 0,
+      "con": 0,
+      "int": 0,
+      "sab": 2,
+      "car": 1
+    },
+    "atributosDinamicos": {
+      "value": [],
+      "description": "+1 em Três Atributos Diferentes"
+    },
+    "grants": [
+      {
+        "title": "",
+        "desc": "",
+        "type": "multi",
+        "choices": [
+          {
+            "uuid": "Compendium.tormenta20.poderes.Item.WEQnmmUNI1guD5HV"
+          },
+          {
+            "uuid": "Compendium.tormenta20.poderes.Item.vMgjBrfxU9XzEm8t"
+          }
+        ]
+      }
+    ],
+    "automationtags": [],
+    "skills": []
+  },
+  "effects": [],
+  "folder": null,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.0",
+    "createdTime": 1788042553943,
+    "modifiedTime": 1788042553943,
+    "lastModifiedBy": "4fJviA1Q4qcjwsna",
+    "compendiumSource": null
+  },
+  "_id": "guBAxwQ5PEo5GRZv",
+  "sort": 500000,
+  "_key": "!items!guBAxwQ5PEo5GRZv"
+}

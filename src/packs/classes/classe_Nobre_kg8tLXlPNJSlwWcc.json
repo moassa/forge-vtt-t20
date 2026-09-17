@@ -1,0 +1,47 @@
+{
+  "_id": "kg8tLXlPNJSlwWcc",
+  "name": "Nobre",
+  "type": "classe",
+  "img": "systems/tormenta20/icons/classes/nobre.webp",
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "system": {
+    "description": {
+      "value": "",
+      "unidentified": ""
+    },
+    "source": "",
+    "niveis": 1,
+    "pvPorNivel": 4,
+    "pmPorNivel": 4,
+    "inicial": false,
+    "rolls": [],
+    "origin": "",
+    "tags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "pericias": {
+      "inatas": "Diplomacia (Car) ou Intimidação (Car), Vontade (Sab), mais 4 a sua escolha entre Adestramento (Car), Atuação (Car), Cavalgar (Des), Conhecimento (Int), Diplomacia (Car), Enganação (Car), Fortitude (Con), Guerra (Int), Iniciativa (Des), Intimidação (Car), Intuição (Sab), Investiga- ção (Int), Jogatina (Car), Luta (For), Nobreza (Int), Ofício (Int), Percepção (Sab) e Pontaria (Des).",
+      "numero": 4
+    },
+    "rolltags": [],
+    "automationtags": []
+  },
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.0",
+    "coreVersion": "14.366",
+    "createdTime": 1788042388016,
+    "modifiedTime": 1788042388016,
+    "lastModifiedBy": "4fJviA1Q4qcjwsna",
+    "duplicateSource": null,
+    "exportSource": null,
+    "compendiumSource": null
+  },
+  "_key": "!items!kg8tLXlPNJSlwWcc"
+}

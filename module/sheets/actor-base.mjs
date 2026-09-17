@@ -95,13 +95,13 @@ export default class ActorSheetT20 extends foundry.appv1.sheets.ActorSheet {
 		// Basic data
 		const sheetData = {
 			isGM: game.user.isGM,
-			actor: actorData,
-			source: source.system,
-			system: actorData.system,
+			actor: this.actor,
+			source: this.actor.system._source,
+			system: this.actor.system,
 			uuid: this.actor.uuid,
 			// data: actorData.system.toObject(false),
 			items: actorData.items,
-			effects: ActiveEffectT20.prepareActiveEffectCategories(this.actor.effects),
+			effects: await ActiveEffectT20.prepareActiveEffectCategories(this.actor.effects),
 			owner: this.actor.isOwner,
 			limited: this.actor.limited,
 			options: this.options,
@@ -461,8 +461,7 @@ export default class ActorSheetT20 extends foundry.appv1.sheets.ActorSheet {
 				icon: "<i class='fas fa-ruler-combined'></i>",
 				condition: item.hasAreaTarget,
 				callback: () => {
-					const template = game.tormenta20.canvas.AbilityTemplate.fromItem(item);
-					if (template) template.drawPreview();
+					canvas.regions.placeRegionT20(false, { item });
 				}
 			});
 			options.push({
@@ -772,7 +771,7 @@ export default class ActorSheetT20 extends foundry.appv1.sheets.ActorSheet {
 	 */
 	_onItemRoll(event) {
 		event.preventDefault();
-		const usageConfig = game.settings.get("tormenta20", "UsageConfig") === "default";
+
 		let itemId;
 
 		if (event.currentTarget.closest(".item").dataset.itemId) {
@@ -780,7 +779,10 @@ export default class ActorSheetT20 extends foundry.appv1.sheets.ActorSheet {
 		} else itemId = event.currentTarget.dataset.itemId;
 		const item = this.actor.items.get(itemId);
 		if (!item) return;
-		const hasEffectsOrRolls = !!item.validOnUseEffects.length || !!item.system.rolls.length;
+		return item.roll({ event });
+
+		const usageConfig = game.settings.get("tormenta20", "UsageConfig") === "default";
+		const hasEffectsOrRolls = !!item.applicableOnUseEffects.length || !!item.system.rolls.length;
 		const rollConfigs = {
 			configureDialog: hasEffectsOrRolls && (usageConfig ? !event.shiftKey : event.shiftKey),
 			event
@@ -840,13 +842,18 @@ export default class ActorSheetT20 extends foundry.appv1.sheets.ActorSheet {
 		let choices = {};
 		if (a.dataset.options === "conditionTypes") {
 			// Don't bother alphabetically sorting, it's worse UI/UX
-			for (const [fk, fv] of Object.entries(CONFIG.T20.conditions)) {
-				const cat = fv.flags?.tormenta20?.category;
-				if (cat in CONFIG.T20.effectTypes) {
-					if (!choices[cat]) choices[cat] = { label: CONFIG.T20.effectTypes[cat], choices: {} };
-					choices[cat].choices[fk] = fv.name;
+			for (const status of CONFIG.statusEffects) {
+				const category = status.category;
+				if (category in CONFIG.T20.effectTypes) {
+					if (!choices[category]) {
+						choices[category] = {
+							label: CONFIG.T20.effectTypes[category],
+							choices: {}
+						};
+					}
+					choices[category].choices[status.id] = status.name;
 				} else {
-					choices[fk] = { label: fv.name, choices: [] };
+					choices[status.id] = { label: status.name, choices: [] };
 				}
 			}
 		} else {

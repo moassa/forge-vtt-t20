@@ -1135,8 +1135,6 @@ T20.NPCParams = (cr) => {
 	let idx = T20.NDparams.cr.indexOf(cr.toString());
 
 	if (idx < 0) {
-		// ui.notifications.warn(game.i18n.format("T20.CRInvalid", {cr: cr}));
-		// console.warn(game.i18n.format("T20.CRInvalid", {cr: cr}));
 		idx = 0;
 	}
 

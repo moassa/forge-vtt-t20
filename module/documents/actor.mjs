@@ -1,4 +1,3 @@
-import ItemT20 from "../documents/item.mjs";
 // import { T20 } from '../config.mjs';
 import AbilityUseDialog from "../apps/ability-use-dialog.mjs";
 import { applyOnUseEffects } from "../apps/ability-use.mjs";
@@ -9,17 +8,14 @@ import { d20Roll, simplifyRollFormula } from "../dice/dice.mjs";
  * Extend the base Actor class to implement additional system-specific logic.
  */
 export default class ActorT20 extends Actor {
-	static getDefaultArtwork(itemData) {
-		let img = this.DEFAULT_ICON;
-		if (itemData.type === "npc") {
-			img = "systems/tormenta20/icons/svg/orc-head.svg";
-		} else if (itemData.type === "simple") {
-			img = "systems/tormenta20/icons/svg/portrait.svg";
-		} else if (itemData.type === "bases") {
-			img = "systems/tormenta20/icons/svg/castle.svg";
-		} else if (itemData.type === "hazard") {
-			img = "icons/svg/hazard.svg";
-		}
+	static getDefaultArtwork(actorData) {
+		const types = {
+			npc: "systems/tormenta20/icons/svg/orc-head.svg",
+			simple: "systems/tormenta20/icons/svg/portrait.svg",
+			bases: "systems/tormenta20/icons/svg/castle.svg",
+			hazard: "icons/svg/hazard.svg"
+		};
+		const img = types[actorData.type] ?? this.DEFAULT_ICON;
 		return { img, texture: { src: img } };
 	}
 
@@ -27,29 +23,13 @@ export default class ActorT20 extends Actor {
 	/*  Properties                                  */
 	/* -------------------------------------------- */
 
-	/**
-	 * Provide an object which organizes all augmenting ActiveEffects by their type
-	 * @type {Object<documents.ActiveEffect[]>}
-	 */
-	get aprimoramentosTypes() {
-		const tipos = ["arma", "atributo", "consumivel", "magia", "pericia", "poder"];
-		const types = Object.fromEntries(game.system.documentTypes.Item.map((t) => [t, []]));
-		for (let i of this.effects.values()) {
-			if (!i.getFlag("tormenta20", "onuse")) continue;
-			for (let j of tipos) {
-				if (i.getFlag("tormenta20", j)) types[i.type].push(i);
-			}
-		}
-		return types;
-	}
-
 	get modifiedFields() {
-		return this.effects.reduce((acc, ef) => {
+		return this.appliedEffects.reduce((acc, ef) => {
 			if (ef.modifiesActor) {
 				for (let ch of ef.changes) {
 					if ([3, 4].includes(ch.value)) continue;
 					if (!acc[ch.key]) acc[ch.key] = [];
-					acc[ch.key].push({ label: ef.name, value: ch.value, mode: ch.mode });
+					acc[ch.key].push({ label: ef.name, value: ch.value, type: ch.type });
 				}
 			}
 			return acc;
@@ -93,13 +73,7 @@ export default class ActorT20 extends Actor {
 	/* -------------------------------------------- */
 
 	get nivel() {
-		return this.items.reduce((acc, item) => {
-			if (item.type === "classe") {
-				const classLevels = parseInt(item.system.niveis) || 1;
-				acc += classLevels;
-			}
-			return acc;
-		}, 0);
+		return this.itemTypes.classe.reduce((acc, i) => (acc += i.system.niveis), 0);
 	}
 
 	/* -------------------------------------------- */
@@ -172,7 +146,6 @@ export default class ActorT20 extends Actor {
 		const html = await foundry.applications.handlebars.renderTemplate(template, content);
 		const chatData = {
 			user: game.user.id,
-			type: CONST.CHAT_MESSAGE_STYLES.OTHER,
 			content: html
 		};
 		ChatMessage.create(chatData);
@@ -273,6 +246,7 @@ export default class ActorT20 extends Actor {
 			let healMods = this.system.modificadores?.cura || {};
 			data.curaGeral = simplifyRollFormula(healMods.geral?.filter(Boolean).join(" + "), data) || 0;
 			data.curaMagica = simplifyRollFormula(healMods.mag?.filter(Boolean).join(" + "), data) || 0;
+			data.curaALQ = simplifyRollFormula(healMods.alq?.filter(Boolean).join(" + "), data) || 0;
 		}
 
 		return data;
@@ -287,64 +261,6 @@ export default class ActorT20 extends Actor {
 		const niveis = T20.xpPorNivel;
 		return niveis[Math.min(nivel, niveis.length - 1)];
 	}
-
-	/* -------------------------------------------- */
-
-	/**
-	 * Add a list of itens to the actor
-	 * TODO at Advancement
-	 * @param {Array.<ItemT20>} itens - The itens being added to the Actor;
-	 * @returns {Promise<ItemT20[]>}
-	 **/
-	async addEmbeddedItems(items) {
-		let itemsToAdd = items;
-		if (itemsToAdd.length === 0) return;
-		// create the selected items with this actor as parent
-		return ItemT20.createDocuments(
-			itemsToAdd.map((i) => i.toJSON()),
-			{ parent: this }
-		);
-	}
-
-	/**
-	 * Update Actor Attributes following NPC builder guide
-	 * @param {String} cr    - The Challenge Rating to get values from;
-	 * @param {String} attr  - The attribute being changed;
-	 */
-	// _setCRAttrs(cr, attr) {
-	// 	if (this.type != "npc") return;
-	// 	let updateData = {};
-	// 	const crData = CONFIG.T20.NPCParams(cr);
-	// 	let skills = {};
-	// 	skills.fort = this.system.builder.attributes.fort ?? {};
-	// 	skills.refl = this.system.builder.attributes.refl ?? {};
-	// 	skills.vont = this.system.builder.attributes.vont ?? {};
-	// 	const ranks = ["botsave", "midsave", "topsave"];
-	// 	const attrs = ["attack", "damage", "defense", "hp", "dc", "topsave", "midsave", "botsave", "skills"];
-
-	// 	if (attr === "all") {
-	// 		for (let att of attrs) {
-	// 			updateData[`system.builder.attributes.${att}.value`] = crData[att];
-	// 			updateData[`system.builder.attributes.${att}.cr`] = cr;
-	// 		}
-	// 	} else if (attr === "skills") {
-	// 		updateData[`system.builder.attributes.${attr}.value`] = crData.topskill;
-	// 		updateData[`system.builder.attributes.${attr}.cr`] = cr;
-	// 	} else {
-	// 		updateData[`system.builder.attributes.${attr}.value`] = crData[attr];
-	// 		updateData[`system.builder.attributes.${attr}.cr`] = cr;
-	// 	}
-	// 	if (["all", "topsave", "midsave", "botsave"].includes(attr)) {
-	// 		for (let [key, skill] of Object.entries(skills)) {
-	// 			let r = skill.rank ?? 0;
-	// 			if (attr === "all" || attr === ranks[r]) {
-	// 				updateData[`system.builder.attributes.${key}.value`] = crData[ranks[r]];
-	// 				updateData[`system.builder.attributes.${key}.cr`] = cr;
-	// 			}
-	// 		}
-	// 	}
-	// 	this.update(updateData);
-	// }
 
 	/* -------------------------------------------- */
 	/*  Event Handlers                              */
@@ -656,7 +572,6 @@ export default class ActorT20 extends Actor {
 			user: game.user.id,
 			content: html,
 			speaker: ChatMessage.getSpeaker({ actor: this }),
-			type: CONST.CHAT_MESSAGE_STYLES.OTHER,
 			flags: {
 				tormenta20: {
 					minimal: true,
@@ -666,8 +581,8 @@ export default class ActorT20 extends Actor {
 		};
 
 		let rollMode = "publicroll";
-		if (this.type === "npc" && show !== "npcs") rollMode = "selfroll";
-		ChatMessage.applyRollMode(chatData, rollMode);
+		if (this.type === "npc" && show !== "npcs") rollMode = "self";
+		ChatMessage.applyMode(chatData, rollMode);
 		ChatMessage.create(chatData, {});
 	}
 
@@ -773,8 +688,19 @@ export default class ActorT20 extends Actor {
 			isOwned: true,
 			...pericia
 		};
-		let needsConfiguration;
+		itemData.applicableOnUseEffects = [];
+		for (let [path, doc] of this.traverseEmbeddedDocuments()) {
+			if (doc.documentName != "ActiveEffect") continue;
+			if (doc.isTemporary && path != "effects") continue;
+			const type = "skill";
+			if (!doc.system.onuse) continue;
+			const { types, names } = doc.system.abilityUse;
+			if (!types.has(type)) continue;
+			if (names.size && !names.has(itemData.name)) continue;
+			itemData.applicableOnUseEffects.push(doc);
+		}
 
+		let needsConfiguration;
 		const UsageConfig = game.settings.get("tormenta20", "UsageConfig");
 		if (UsageConfig === "default") needsConfiguration = !(options.event?.shiftKey ?? false);
 		else needsConfiguration = options.event?.shiftKey ?? false;
@@ -784,17 +710,23 @@ export default class ActorT20 extends Actor {
 			configuration = await AbilityUseDialog.create(itemData);
 			if (!configuration) return;
 			rConfig = foundry.utils.mergeObject(rConfig, configuration);
-
 			rollMode = configuration.rollMode;
 		} else {
-			let active = this.effects.filter(
-				(ef) => ef.getFlag("tormenta20", "onuse") && ef.getFlag("tormenta20", "pericia") && !ef.disabled
-			);
-			configuration.aprs = active.reduce((o, ef) => {
-				o[ef.id] = { aplica: 1, custo: ef.flags.tormenta20.custo };
-				return o;
+			configuration.aprs = itemData.applicableOnUseEffects.reduce((acc, ef) => {
+				if (!ef.system.abilityUse.automatic) return acc;
+				acc[ef.id] = { aplica: 1, custo: ef.system.abilityUse.custo || 0 };
+				return acc;
 			}, {});
-			rConfig = applyOnUseEffects(itemData, configuration);
+
+			// let active = this.effects.filter(
+			// 	(ef) => ef.system.onuse && ef.system.abilityUse.types.has("pericia") && !ef.disabled
+			// );
+			// configuration.aprs = applicableOnUseEffects.reduce((acc, ef) => {
+			// 	if (!ef.system.abilityUse.automatic) return acc;
+			// 	acc[ef.id] = { aplica: 1, custo: ef.system.abilityUse.custo };
+			// 	return o;
+			// }, {});
+			rConfig = await applyOnUseEffects(itemData, configuration);
 		}
 
 		rConfig.itemData = itemData;
@@ -894,6 +826,17 @@ export default class ActorT20 extends Actor {
 			rollData: abl,
 			custo: 0
 		};
+		itemData.applicableOnUseEffects = [];
+		for (let [path, doc] of this.traverseEmbeddedDocuments()) {
+			if (doc.documentName != "ActiveEffect") continue;
+			if (doc.isTemporary && path != "effects") continue;
+			const type = "ability";
+			if (!doc.system.onuse) continue;
+			const { types, names } = doc.system.abilityUse;
+			if (!types.has(type)) continue;
+			if (names.size && !names.has(itemData.name)) continue;
+			itemData.applicableOnUseEffects.push(doc);
+		}
 
 		let rConfig = {};
 		let needsConfiguration;
@@ -914,14 +857,23 @@ export default class ActorT20 extends Actor {
 		}
 		// Aways Active Effect
 		else {
-			let active = this.effects.filter(
-				(ef) => ef.getFlag("tormenta20", "onuse") && ef.getFlag("tormenta20", "atributo") && !ef.disabled
-			);
-			configuration.aprs = active.reduce((o, ef) => {
-				o[ef.id] = { aplica: 1, custo: ef.flags.tormenta20.custo };
-				return o;
+			configuration.aprs = itemData.applicableOnUseEffects.reduce((acc, ef) => {
+				if (!ef.system.abilityUse.automatic) return acc;
+				acc[ef.id] = { aplica: 1, custo: ef.system.abilityUse.custo || 0 };
+				return acc;
 			}, {});
-			rConfig = applyOnUseEffects(itemData, configuration);
+			rConfig = await applyOnUseEffects(itemData, configuration);
+			// OLD
+			if (false) {
+				let active = this.effects.filter(
+					(ef) => ef.system.onuse && ef.system.abilityUse.types.has("atributo") && !ef.disabled
+				);
+				configuration.aprs = active.reduce((o, ef) => {
+					o[ef.id] = { aplica: 1, custo: ef.flags.tormenta20.custo };
+					return o;
+				}, {});
+				rConfig = await applyOnUseEffects(itemData, configuration);
+			}
 		}
 		rConfig.itemData = itemData;
 		// rollData
@@ -1004,7 +956,6 @@ export default class ActorT20 extends Actor {
 		// Create the ChatMessage data object
 		const chatData = {
 			user: game.user.id,
-			// type: CONST.CHAT_MESSAGE_STYLES.ROLL,
 			rolls: [options.itemData.rolled],
 			content: html,
 			flavor: options.chatFlavor || "",
@@ -1019,7 +970,7 @@ export default class ActorT20 extends Actor {
 		// chatData.rolls = options.itemData.rolled;
 
 		// Apply the roll mode to adjust message visibility
-		ChatMessage.applyRollMode(chatData, rollMode || game.settings.get("core", "rollMode"));
+		ChatMessage.applyMode(chatData, rollMode || game.settings.get("core", "rollMode"));
 
 		// Create the Chat Message or return its data
 		if (createMessage) {

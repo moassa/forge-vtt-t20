@@ -29,7 +29,6 @@ export default class CharacterData extends CreatureData {
 
 	/** @inheritdoc */
 	static migrateData(data) {
-		// console.warn('migrateData', data);
 		if (data.detalhes?.tipo && !Object.keys(T20.creatureTypes).includes(data.detalhes.tipo)) {
 			let cType = Object.keys(T20.creatureTypes).find((c) => data.detalhes.tipo.match(c));
 			data.detalhes.tipo = cType ?? "hum";

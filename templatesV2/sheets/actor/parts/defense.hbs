@@ -1,0 +1,23 @@
+<div class="defense flexcol">
+  <div>{{localize label}}</div>
+  <div class="" data-tooltip="{{1}}">
+    {{formInput
+      schema.fields.value
+      value=defense.value
+      dataset=(object tooltip=schema.fields.atributo.label)
+      disabled=true
+    }}
+  </div>
+  <div class="flexrow">
+    {{formInput
+      schema.fields.atributo
+      value=source.atributo
+      dataset=(object tooltip=schema.fields.atributo.label)
+    }}
+    {{formInput
+      schema.fields.outros
+      value=source.outros
+      dataset=(object tooltip=schema.fields.outros.label)
+    }}
+  </div>
+</div>

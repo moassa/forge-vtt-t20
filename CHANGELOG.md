@@ -1,5 +1,27 @@
 # Lista de Mudanças
 
+# Versão 1.6.0
+- Migrações para v14
+- Corrigido: Configuração de deslocamentos.
+- Removido: Implementação da Busca por documentos na aba de Compêndios, a feature agora é nativa do Foundry.
+- Removido: Implementação de Measured Templates, substituida pelas Regiões.
+- Adicionado: Implementação de Region Templates para controle de areas de efeito.
+- Removido: LegacyTranferal Efeitos passivos transferidos para o ator são aplicados diretamente do item.
+- Adicionado: Propriedades guardadas nas `flags` dos Efeitos foram movidas para o campos próprios.
+- Adicionado: Compêndios de Efeitos para Condições, Melhorias e Encantos. O sistema também criara Compêndios locais para facilitar a customização de efeitos e criar efeitos de suplementos.
+- Atualizado: `ActiveEffect._fromStatusEffect` copiara efeitos do compêndio.
+- Adicionado: Eventos de Expiração de Efeitos. Adicionado Cena e Sustentado.
+- Atualizado: Controle de Encerramento de Cena agora utiliza o método `ActiveEffectRegistry.refresh`.
+- Adicionado: Mensagem e controle de Efeitos Sustentados que serão mantidos/encerrados.
+- Adicionado: Controle de Cena na UI de jogadores.
+- Adicionado: Configuração de Segmentos de Cena da regra de Exploração
+de Masmorras (HdA pg.312).
+- Corrigido: Rolagem de Recuperação de Mana e PV/PM Temporário aplicavam bonus de dano
+- Atualizado: Efeitos de Dano Contínuo, o caminho `dano` foi abandonado em favor de `danoContinuo`. Efeitos com este caminho executarão a formula no campo value no inicio do turno do Ator.
+- Adicionado. Items podem configurar Comportamentos de Regiões (Region Behaviors). Este campo só pode ser editado pelo mestre, por motivos de segurança.
+- Adicionado. Suporte para Aura.
+- Adicionado. Enricher para condições. `@STATUS[id]` gera um link pro efeito e um botão para aplicar o efeito aos tokens selecionados.
+
 # Versão 1.5.015
 - Corrigido: Perda de Vida era afetada por RD;
 - Corrigido: Exibição de Tipo de Habilidade/Poder na ficha padrão.

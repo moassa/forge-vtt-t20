@@ -1,0 +1,23 @@
+{
+  "folder": "2G9nqjSzgxMa2POf",
+  "name": "A3 Transmutação",
+  "sorting": "a",
+  "type": "Item",
+  "_id": "O4DBcowkyxvx1PFy",
+  "sort": 0,
+  "flags": {},
+  "_stats": {
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.0",
+    "coreVersion": "14.366",
+    "createdTime": 1788042470652,
+    "modifiedTime": 1788042470652,
+    "lastModifiedBy": "4fJviA1Q4qcjwsna",
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "description": "",
+  "color": null,
+  "_key": "!folders!O4DBcowkyxvx1PFy"
+}

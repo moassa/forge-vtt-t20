@@ -18,7 +18,6 @@
       "tesouro": "Treasure"
     }
   },
-
   "T20": {
     "S3": "/* ---------------- SYSTEM ---------------- */",
     "Title": "Tormenta20 System",
@@ -45,7 +44,6 @@
     "Empty": "Empty",
     "Handling": "Handling",
     "Wearing": "Wearing",
-
     "Die": "Die",
     "Dice": "Data",
     "Bonus": "Bonus",
@@ -77,10 +75,8 @@
     "SpecificItems": "Specific Items",
     "AllowMultApply": "Allow multiple applications?",
     "IgnoreEffectImunity": "Ignore Imunity",
-
     "Class": "Class",
     "Classes": "Classes",
-
     "Inventory": "Inventory",
     "Encumbrance": "Encumbrance",
     "Currency": "Currencies",
@@ -92,7 +88,6 @@
     "CurrencySilverAbbr": "T$",
     "CurrencyCopper": "Copper",
     "CurrencyCopperAbbr": "TC",
-
     "Type": "Type",
     "Cost": "Cost",
     "PMCost": "Cost in PM",
@@ -102,14 +97,11 @@
     "Submit": "Submit",
     "CommaSeparated": "Separate with a semicolon",
     "CheckBonus": "Test Bonus",
-
     "Roll": "Rolling",
     "Rolls": "Rolls",
-
     "Quantity": "Quantity",
     "QuantityAbbr": "Qty",
     "Race": "Race",
-
     "Activation": "Activation",
     "Weight": "Weight",
     "Price": "Price",
@@ -117,9 +109,7 @@
     "SlotsAbbr": "Slt.",
     "Carrying": "Loading",
     "Container": "Container",
-
     "Goal": "Goal",
-
     "S4": "/* -------------- ABILITIES --------------- */",
     "Ability": "Attribute",
     "Abilities": "Attributes",
@@ -141,11 +131,9 @@
     "AbilityModifier": "Modifier",
     "AbilityModifierAbbr": "Mod.",
     "AbilityModifierBonus": "Attribute Mod",
-
     "AbilityPromptText": "???",
     "AbilityPromptTitle": "Attribute Test {attribute}",
     "AbilityUseHint": "{type} usage setting: {name}",
-
     "S5": "/* ---------------- SKILLS ---------------- */",
     "Skill": "Skill",
     "Skills": "Skills",
@@ -214,7 +202,6 @@
     "Trained": "Trained",
     "SkillTrainedOnly": "Trained Only",
     "SkillTrainBonus": "Training Bonus",
-
     "S6": "/* -------------- ATTRIBUTES -------------- */",
     "Level": "Level",
     "Levels": "Levels",
@@ -245,17 +232,14 @@
     "UpdateSpellKeyAbility": "Update Spell Attributes",
     "Background": "Origin",
     "Deity": "Divinity",
-
     "AbilityCheck": "Attribute Test",
     "SkillCheck": "Skill Check",
-
     "ResourcePrimary": "Resource 1",
     "ResourceSecondary": "Resource 2",
     "ResourceTertiary": "Resource 3",
     "ResourceDeathSave": "Death Failed",
     "ResourceShadow": "Shadow Points",
     "ResourceCatarse": "Catharse",
-
     "Attack": "Attack",
     "Attacks": "Attacks",
     "AttackRoll": "Attack Roll",
@@ -284,7 +268,6 @@
     "BonusDanoAD": "Range Damage Rolls Bonus",
     "BonusCDMagia": "Global Bonus on Spell DC",
     "Bonuses": "Global Bonus Modifiers",
-
     "ShowRacialAbilityBonus": "Show 'Racial Attribute' field",
     "ShowTemporaryAbilityBonus": "Show 'Temporary Bonus' field",
     "ShowCurrencyPlatinum": "Show Platinum field",
@@ -297,9 +280,7 @@
     "ShowDC": "Show foes DC to players.",
     "ShowRD": "Show RD",
     "ShowResources": "Show Resources",
-
     "S7": "/* ----------------- TYPES ---------------- */",
-
     "DamImm": "Damage Immunity",
     "StatusImm": "Condition Immunity",
     "StatusEffects": "Conditions",
@@ -323,12 +304,10 @@
     "DamageRadiant": "Light",
     "DamageSlashing": "Cutting",
     "DamageRoll": "Damage Roll",
-
     "Healing": "Healing",
     "HealingTemp": "Temporary HP",
     "ManaRecovery": "Mana Recovery",
     "ManaTemp": "Temporary MP",
-
     "Action": "Action",
     "ActionPassive": "Passive",
     "ActionNormal": "Default",
@@ -343,9 +322,7 @@
     "ActionPl": "Actions",
     "ActionOther": "Other",
     "ActionOthers": "Other",
-
     "SaveDC": "{skill} (DC {cd})",
-
     "Enhancement": "Enhancement",
     "Enhancements": "Enhancements",
     "Enchantment": "Enchantment",
@@ -358,7 +335,6 @@
     "Weared": "Weared",
     "Wielded": "Wielded",
     "WieldedDual": "Wielded (Two Hands)",
-
     "ClassLevels": "Class Levels",
     "ClassHPLevels": "Hit Points Per Level",
     "ClassMPLevels": "Mana Points per Level",
@@ -366,7 +342,6 @@
     "ClassSkillsNumber": "Amount of Starting Skills",
     "ClassSkillsEligible": "Class Skills",
     "ClassSkillsChosen": "Chosen Class Skills",
-
     "Item": "Item",
     "Items": "Items",
     "Power": "Power",
@@ -384,14 +359,12 @@
     "PowerSubTypeDestiny": "Destiny",
     "PowerSubTypeSpell": "Magic",
     "PowerSubTypeTormenta": "Tormenta",
-
     "Spell": "Magic",
     "Spells": "Spells",
     "SpellArc": "Arcana",
     "SpellDiv": "Divine",
     "SpellUni": "Universal",
     "SpellEng": "Gadget",
-
     "SpellSchool": "School",
     "SchoolAbj": "Abjuration",
     "SchoolAdv": "Divination",
@@ -401,7 +374,6 @@
     "SchoolIlu": "Illusion",
     "SchoolNec": "Necromancy",
     "SchoolTra": "Transmutation",
-
     "Cantrip": "Cantrip",
     "SpellCircle": "Circle",
     "SpellLevel": "{lvl}th Circle",
@@ -410,22 +382,17 @@
     "SpellLevel3": "3rd Circle",
     "SpellLevel4": "4th Circle",
     "SpellLevel5": "5th Circle",
-
     "SpellPrepPrepared": "Prepared",
     "SpellPrepPreparedAbbr": "Prep",
-
     "ConsumeTitle": "Consumable",
     "ConsumeAmmunition": "Ammunition",
     "ConsumeAttribute": "Resource",
     "ConsumeMaterial": "Material",
     "ConsumeMPMultiplier": "Multiply consumption per mana use",
-
     "AbbreviationKgs": "kgs",
     "AbbreviationConc": "Conc.",
-
     "Resistance": "Resistance",
     "Resistances": "Resistances",
-
     "MovementConfig": "Configure this creature's movement and special movement.",
     "Movement": "Movement",
     "MovementBurrow": "Burrow",
@@ -435,7 +402,6 @@
     "MovementWalk": "Walk",
     "MovementHover": "Hover",
     "MovementUnits": "Units",
-
     "Size": "Size",
     "SizeGargantuan": "Colossal",
     "SizeHuge": "Huge",
@@ -443,7 +409,6 @@
     "SizeMedium": "Medium",
     "SizeSmall": "Small",
     "SizeTiny": "Tiny",
-
     "CreatureType": "Creature Type",
     "CreatureBeast": "Animal",
     "CreatureBeastPl": "Animals",
@@ -467,14 +432,11 @@
     "CreatureTypeSelectorCustom": "Custom Type",
     "CreatureTypeSelectorSubtype": "Subtype",
     "ResistancesConfig": "Resistors configuration",
-
     "Weapon": "Weapon",
     "Weapons": "Weapons",
-
     "WeaponProficiency": "Proficiency",
     "WeaponPurpose": "Purpose",
     "WeaponWielding": "Wielding",
-
     "WeaponSimple": "Simple Weapon",
     "WeaponMartial": "Martial Weapon",
     "WeaponExotic": "Exotic Weapon",
@@ -485,40 +447,33 @@
     "WeaponMartialProficiency": "Martial Weapons",
     "WeaponExoticProficiency": "Exotic Weapons",
     "WeaponFireArmProficiency": "Firearms",
-
     "WeaponThrowing": "Distance (Throwing)",
     "WeaponRanged": "Ranged (Firing)",
     "WeaponMelee": "Melee",
     "WeaponMeleeThrowing": "Melee (Throwing)",
-
     "WeaponLight": "Light",
     "WeaponOneHand": "One Hand",
     "WeaponTwoHanded": "Two Hands",
-
     "WeaponPropertiesAdaptable": "Adaptable",
     "WeaponPropertiesFinesse": "Agile",
     "WeaponPropertiesReach": "Elongated",
     "WeaponPropertiesUnbalanced": "Unbalanced",
     "WeaponPropertiesDouble": "Double",
     "WeaponPropertiesVersatile": "Versatile",
-
     "WeaponPropertiesThr": "Throw",
     "WeaponPropertiesRan": "Distance",
     "WeaponPropertiesTwo": "Two Hands",
     "WeaponPropertiesLgt": "Light",
     "WeaponPropertiesAmm": "Ammo",
-
     "WeaponSizeReduced": "Reduced",
     "WeaponSizeNormal": "Normal",
     "WeaponSizeEnlarged": "Enlarged",
     "WeaponSizeGiant": "Giant",
-
     "ActivationCost": "Execution",
     "Duration": "Duration",
     "Range": "Range",
     "Target": "Target",
     "Area": "Area",
-
     "DistAny": "Unlimited",
     "DistM": "Meters",
     "DistKM": "Kilometers",
@@ -527,7 +482,6 @@
     "DistShort": "Short",
     "DistMedium": "Average",
     "DistLong": "Long",
-
     "TimeInst": "Instant",
     "TimeTurn": "Turn",
     "TimeRound": "Round",
@@ -538,14 +492,17 @@
     "TimeYear": "Year",
     "TimePerm": "Permanent",
     "TimeScene": "Scene",
+    "endScene": "End Scend",
+    "sceneEnded": "Scene Ended",
+    "sceneSegments": "Segments: {value} of {max}",
     "TimeSust": "Sustained",
-
+    "sustainEffects": "Sustain Effects",
+    "sustainEnd": "Sustain End",
     "Senses": "Senses",
     "SenseDimVision": "Light-Day Vision",
     "SenseDarkVision": "Darkvision",
     "SenseBlindSight": "Blindsight",
     "SenseScent": "Faro",
-
     "Equipment": "Equipment",
     "Equipments": "Equipment",
     "Armor": "Armor",
@@ -562,22 +519,24 @@
     "EquipmentClothing": "Clothing",
     "EquipmentTool": "Tool",
     "EquipmentEsoteric": "Esoteric",
-
     "ItemEquippedType": "Use Type",
     "ItemSlotHand": "Handled",
     "ItemSlotBody": "Dress",
     "ItemSlotBoth": "Both",
-
     "Consumable": "Consumable",
     "Consumables": "Consumables",
-
     "ConsumableCreated": "{actor} created {name}",
     "ConsumableSpellName": "{item} from {name}",
     "ConsumableSubtypePotion": "Potion",
     "ConsumableSubtypeGranade": "Grenade",
     "ConsumableSubtypeOil": "Oil",
     "ConsumableSubtypeScroll": "Scroll",
-
+    "ConsumableTypeAmmo": "Ammo",
+    "ConsumableTypeScroll": "Scroll",
+    "ConsumableTypeAlchemy": "Alchemy",
+    "ConsumableTypePotion": "Potion",
+    "ConsumableTypeMaterial": "Material",
+    "ConsumableTypeFood": "Food",
     "EffectTypeArcane": "Arcane",
     "EffectTypeStun": "Stun",
     "EffectTypeWeariness": "Tiredness",
@@ -596,20 +555,16 @@
     "EffectTypeSenses": "Senses",
     "EffectTypeDarkness": "Darkness",
     "EffectTypePoison": "Poison",
-
     "Treasure": "Treasure",
     "Treasures": "Treasures",
     "LootAndTreasures": "Items and Treasures",
-
     "ArmorMaxAblBonus": "Maximum Attribute Bonus",
     "ArmorPenalty": "Armor Penalty",
-
     "Critical": "Critical",
     "CriticalHit": "Critical Hit",
     "CriticalHitThreshold": "Threat Threshold",
     "CriticalHitMultiplier": "Critical Hit Multiplier",
     "ChatFlavor": "Message Personalization",
-
     "S8": "/* ---------------- USAGE ----------------- */",
     "AbilityUseConsumablePMHint": "Using this {type} will consume {PM} cost of {pm} remaining.",
     "AbilityUseConsumableQuantityHint": "Using this {type} will consume 1 of {qty} {resource}s remaining.",
@@ -622,31 +577,23 @@
     "SavingThrows": "Save Throws",
     "ActionSave": "Save Test",
     "ActionUtil": "Utility",
-
     "PlaceAbilityTemplate": "Place Area of Effect",
-
     "ActionWarningItemNotOwned": "An item must belong to a character to use it.",
     "ActionWarningNoItem": "The item {item} is not present on Actor {name}",
     "ActionWarningNoToken": "You must have one or more Tokens selected to use this option.",
-
     "AddEmbeddedItemPromptHint": "Do you want to add these items to the character sheet?",
     "SelectItemsPromptTitle": "Select Items",
-
     "ConsumeWarningNoResource": "{name} indicates the consumption of {type}, but it was not specified which one!",
     "ConsumeWarningNoSource": "The resource {type} specified for using {name} does not exist!",
     "ItemNoUses": "There are no more units available from {name}.",
     "InsufficientMana": "Insufficient mana to use {name}.",
-
     "S09": "/* ------------ Item Upgrades ------------ */",
-
     "WIPEnhancements": "Note: Not all enhancements in this section have been automated. The icons below indicate whether they have been automated or not, as per the legend.",
     "WIPEnhancementsImplemented": "Automated",
     "WIPEnhancementsNotImplemented": "Not Automated",
     "WIPEnhancementsNotSelected": "Not Selected",
-
     "EnhancementsAutomationEnable": "Enable Enhancement Automation",
     "EnhancementsAutomationEnableHint": "If enabled, the effects of enhancements will be automatically applied",
-
     "SpecialMaterial": "Special Material",
     "SpecialMaterialRubySteel": "Ruby-Steel",
     "SpecialMaterialAdamant": "Adamant",
@@ -655,7 +602,6 @@
     "SpecialMaterialRedMatter": "Red Matter",
     "SpecialMaterialMithril": "Mithral",
     "SpecialMaterialRainbowMetal": "Rainbow Metal",
-
     "WeaponUpgradesAccurate": "Accurate",
     "WeaponUpgradesPungent": "Pungent",
     "WeaponUpgradesCruel": "Cruel",
@@ -667,7 +613,6 @@
     "WeaponUpgradesSpecialMaterial": "Special Material",
     "WeaponUpgradesScope": "Telescopic Scope",
     "WeaponUpgradesPrecise": "Precise",
-
     "ArmorUpgradesAdjusted": "Adjusted",
     "ArmorUpgradesUnderMeasure": "Custom",
     "ArmorUpgradesDelicate": "Delicate",
@@ -677,21 +622,17 @@
     "ArmorUpgradesReinforced": "Reinforced",
     "ArmorUpgradesSealed": "Sealed",
     "ShieldUpgradesThorny": "Prickly",
-
     "EsotericUpgradesEnergetic": "Energetic",
     "EsotericUpgradesHarmonized": "Harmonized",
     "EsotericUpgradesSpecialMaterial": "Special Material",
     "EsotericUpgradesPowerful": "Powerful",
     "EsotericUpgradesEnhancer": "Enhancer",
     "EsotericUpgradesVigilant": "Vigilant",
-
     "ToolUpgradesEnhanced": "Enhanced",
-
     "ItemUpgradesGoldPlated": "Gold Plated",
     "ItemUpgradesGemsStudded": "Studded with Gems",
     "ItemUpgradesDiscreet": "Discrete",
     "ItemUpgradesMacabre": "Macabre",
-
     "WeaponUpgradesTooltipAccurate": "Made to be more accurate and balanced, the weapon provides +1 on attack rolls.",
     "WeaponUpgradesTooltipPungent": "Tempered several times to acquire perfect edge or balance, the weapon provides a +2 on attack rolls. Prerequisite: Accurate.",
     "WeaponUpgradesTooltipCruel": "Burds, thorns, and even additional blades make for a cruel weapon. It provides +1 to damage rolls.",
@@ -703,7 +644,6 @@
     "WeaponUpgradesTooltipSpecialMaterial": "The weapon, armor, shield, or esoteric item is made from, or plated with, a special material. Each material provides a benefit, stackable with other enhancement benefits, but has an additional price that must be paid in addition to the price of the upgrade. See the following section for a description of special materials. Crafting an item from a special material is an upgrade because special materials require more complex work than ordinary materials.",
     "WeaponUpgradesTooltipScope": "Increases weapon range by one category (from short to medium, from medium to long) and Sneak Attack skill range to medium. This upgrade can only be applied to missile weapons (except slings) .",
     "WeaponUpgradesTooltipPrecise": "Special care was taken when tempering this weapon's steel so that its edge is always razor-sharp. The threat range increases by 1 point. A weapon cannot be precise and massive.",
-
     "ArmorUpgradesTooltipAdjusted": "Made with precisely measured parts, the item has its armor penalty reduced by 1.",
     "ArmorUpgradesTooltipUnderMeasure": "While many armors are made specifically for a wearer, this one has gone through an extensive period of tweaking and refinement, fitting your body perfectly. Reduces the armor penalty by 2, but only for the wearer specific (for others, it behaves like an adjusted item). Prerequisite: Adjusted.",
     "ArmorUpgradesTooltipDelicate": "Only the lightest materials have been used for this armor. Plates are the minimum thickness necessary to provide the protection they should. This upgrade can only be applied to heavy armor and allows the character to apply 1 point of his Defense Dexterity (or another attribute, if you use it instead of Dex). Armor cannot be both delicate and reinforced.",
@@ -713,23 +653,18 @@
     "ArmorUpgradesTooltipReinforced": "Additional plates, an extra layer of chainmail or padding, double protection on joints and vulnerable areas... The Defense bonus and armor penalty of an armor or shield with this upgrade are increased by 1 . Armor cannot be strong and delicate.",
     "ArmorUpgradesTooltipSealed": "The armor has been crafted in such a way as to protect the wearer's entire body, leaving no room for even a safety pin! This enhancement provides a +1 bonus on saving throws, but can only be applied to armor heavy.",
     "ShieldUpgradesTooltipThorny": "Increases the damage of a shield attack by one step.",
-
     "EsotericUpgradesTooltipEnergetic": "Alchemical catalysts inserted into the item cause it to empower magical energies. Your spells that deal damage deal +1d6 points of damage of the same type.",
     "EsotericUpgradesTooltipHarmonized": "Choose a spell. Its cost decreases by –1 MP. You can change the spell affected by the item with a ritual that requires one day and T$100 in ingredients.",
     "EsotericUpgradesTooltipSpecialMaterial": "The weapon, armor, shield, or esoteric item is made of, or plated with, a special material. Each material provides a bbenefit, cumulative with other upgrade benefits, but has an additional price that must be paid in addition to the upgrade price. See the following section for the description of special materials. Crafting an item from special material is an improvement because special materials require more complex work than regular materials.",
     "EsotericUpgradesTooltipPowerful": "The DC to resist your spells increases by +1.",
     "EsotericUpgradesTooltipEnhancer": "A mystical gem inserted into the item allows you to accumulate more mana than you would normally be able to. The limit of MP you can spend on spells is increased by +1.",
     "EsotericUpgradesTooltipVigilant": "Item uses part of your personal mana to generate a field that deflects attacks. You get +2 Defense.",
-
     "ToolUpgradesTooltipEnhanced": "The item is heavily crafted with the finest materials. This upgrade can only be applied to a tool or tool that modifies a skill (reduces an age or provides a bonus) and gives +1 to that skill (or increases the bonus provided by +1.) Therefore, an enhanced medicine case gives +1 to Healing, while a gold kid glove provides +2 to Thievery. This enhancement cannot be applied to Fighting and Marksmanship.",
-
     "ItemUpgradesTooltipGoldPlated": "A favorite upgrade of pompous nobles or adventurers who have just gotten rich. Provides +2 Diplomacy. The GM can change the bonus to a –2 penalty against people who despise ostentation. Also, it can attract the lust of thieves.",
     "ItemUpgradesTooltipGemsStudded": "It's easy to be persuaded by someone opulent enough to sport a gem-studded item. Provides +2 Deception. Like a gold-plated item, a gem-studded item can attract the lust of thieves. ",
     "ItemUpgradesTooltipDiscreet": "The item is either disguised as another innocuous item (like a rapier hidden in a cane) or modified to be telescopic (so it can fold into itself to take up less space). The item takes up –1 space (minimum 1) and provides +5 on Thievery checks to be concealed.",
     "ItemUpgradesTooltipGhoulish": "A macabre item is painted with dried blood, carved in the shape of a skull, or decorated with pieces of ears, fingers, and eyes. This frightening appearance provides a +2 to Intimidation checks, but imposes a – 2 on Diplomacy checks.",
-
     "S10": "/* ------------ Item Enchants ------------ */",
-
     "WeaponEnchantKeen": "Menacing",
     "WeaponEnchantBane": "Anticreature",
     "WeaponEnchantThrowable": "Throwable",
@@ -758,7 +693,6 @@
     "WeaponEnchantSepulchral": "Grave",
     "WeaponEnchantSpeed": "Fast",
     "WeaponEnchantPoisonous": "Poisonous",
-
     "EquipmentEnchantmentAbascanth": "Abascanth",
     "EquipmentEnchantmentBlessed": "Blessed",
     "EquipmentEnchantmentAcrobatic": "Acrobatic",
@@ -784,7 +718,6 @@
     "EquipmentEnchantmentBlinding": "Shiny",
     "EquipmentEnchantmentShadow": "Dark",
     "EquipmentEnchantmentZealous": "Zealous",
-
     "WeaponEnchantTooltipKeen": "Weapon threat range doubles. For example, a menacing longsword has threat range 17. Effects that double the threat range are applied before any effects that increase it.",
     "WeaponEnchantTooltipBane": "The weapon is lethal against one type of creature (or a race of humanoids). Once per round, when you attack a creature of that type, you can spend 2 MP. If you do and the attack hits, deals +4d8 damage. To determine creature type at random, roll 1d6: 1) animal; 2) construct; 3) spirit; 4) monster; 5) undead; 6) a race of humanoids.",
     "WeaponEnchantTooltipThrowable": "The weapon can be thrown at short range. If it could already be thrown, its range increases by one category. After the attack, if free, the weapon flies back to you. Catching it is a reaction .",
@@ -813,7 +746,6 @@
     "WeaponEnchantTooltipSepulchral": "The weapon deals +1d8 dark damage. Once per round, when you attack, you can spend 2 MP. If you do, the damage bonus increases to +2d8, but you take 1d8 points of damage. dark damage. A tomb weapon drains surrounding heat.",
     "WeaponEnchantTooltipSpeed": "You gain the Extra Attack skill from the warrior, but you can only use it with this weapon. If you already have it, the cost to use it with this weapon decreases by –1 MP instead. ",
     "WeaponEnchantTooltipPoisonous": "Once per round, when you attack, you can spend 2 MP. If you do and the attack hits, the victim becomes poisoned, losing 1d12 hit points per round for 3 rounds. A poisonous weapon sheds a green, viscous liquid.",
-
     "EquipmentEnchantmentTooltipAbascanth": "You have +5 spell resistance.",
     "EquipmentEnchantmentTooltipBlessed": "You gain darkness reduction 10 and +5 on saving throws against necromancy effects. A blessed item is decorated with engravings of holy symbols of gods of good.",
     "EquipmentEnchantmentTooltipAcrobatic": "You gain +5 Acrobatics and ignore the item's armor penalty to checks for that skill.",
@@ -839,9 +771,7 @@
     "EquipmentEnchantmentTooltipBlinding": "You can spend a move action and 2 MP to emit a flash of light. All enemies within close range must make a Reflex save (Cha DC) or be blinded for one round. A gleaming item it's polished and shiny.",
     "EquipmentEnchantmentTooltipShadow": "You gain +5 Stealth and ignore the item's armor penalty to checks for that skill. A shadow item is dark, matte, and well-oiled so it doesn't make noise.",
     "EquipmentEnchantmentTooltipZealous": "Once per round, if an adjacent ally is targeted by an attack, you may spend 1 MP to become the target of the attack, which then resolves normally.",
-
     "S11": "/* --------------- DataModelFields --------------- */",
-
     "AbilityValue": "Attribute Value {parent}",
     "AbilityBonusValue": "Attribute Bonus Value {parent}",
     "AbilityBaseValue": "Attribute Base Value {parent}",
@@ -997,9 +927,7 @@
     "ItemSpellPrepared": "Spell Prepared State",
     "ItemSpellSchool": "School of Magic",
     "ItemIsContainer": "Item Container State",
-
     "S97": "/* --------------- Builder --------------- */",
-
     "MonstrousReform": "Monstrographic Reform",
     "FoeCreationGuide": "THREAT CREATION GUIDE",
     "FoeCreationGuideDisclaimer": "The texts and tables are part of the Threat Creation Manual, presented in Dragão Brasil 180 (available at www.dragaobrasil.com.br)",
@@ -1010,10 +938,8 @@
     "RacialAbilityRule": "Racial Attribute Rule",
     "RAR.Default": "Default (T20)",
     "RAR.Flex": "Flexible Attributes (SF)",
-
     "FoeConcept": "Concept",
     "BulderFoeRole": "Role",
-
     "FoeRoleCombatant": "Combatant",
     "FoeRoleCaster": "Caster",
     "FoeRoleTrickster": "Trickster",
@@ -1022,7 +948,6 @@
     "FoeRoleSolo": "Solo",
     "FoeRoleCaptain": "Captain",
     "FoeRoleBoss": "Boss",
-
     "NPCB_Concept": "Concept and Name",
     "NPCB_Type": "Type and Size",
     "NPCB_CR": "Challenge Level",
@@ -1031,33 +956,26 @@
     "NPCB_Powers": "Abilities",
     "NPCB_Traits": "Secondary Stats",
     "NPCB_Loot": "Equipment and Treasure",
-
     "NPCB_Bipedal": "Bipedal",
     "NPCB_Quadrupedal": "Quadrupedal",
     "NPCB_Flying": "Flying",
     "NPCB_Climber": "Climber",
     "NPCB_Burrower": "Burrower",
     "NPCB_Swimmer": "Swimmer",
-
     "Current": "Current",
     "NPCB_MeanDamage": "Average Damage",
     "NPCB_MeanDamageHint": "Average damage sum for all weapons.",
-
     "NPCB_MoveSlow": "Slow",
     "NPCB_MoveNormal": "Normal",
     "NPCB_MoveFast": "Fast",
-
     "NPCB_Category": "Category",
     "NPCB_SizeNRange": "Space / Range",
     "NPCB_SizeFurtNManeuver": "Stealth / Maneuvers",
-
     "NCPB_SkillGood": "Per. Strong",
     "NCPB_SkillBad": "Per. Weak",
-
     "NPCB_SaveGood": "Res. Strong",
     "NPCB_SaveNormal": "Average Res.",
     "NPCB_SaveBad": "Res. Weak",
-
     "NPCB_ConceptHint": "Think of the threat's name and concept, a brief description (eg, 'winged reptile that breathes fire', 'purist combatant that uses magic', 'large humanoid that tanks and hits'); \n Choose a role for the threat that will serve as a benchmark of what it can do and how it can be used.",
     "NPCB_TypeHint": "Choose the creature's type. The type defines the nature, determines what abilities and spells can affect the creature, and some provide special abilities.\nThen define the size and speed.",
     "NPCB_CRHint": "Choose the creature's CR according to the group's level. Use the game thresholds as a reference and compare with other creatures with a similar concept. \n The statistics presented in the next steps consider a group of 4 characters combo , you can adjust according to your group.",
@@ -1066,27 +984,22 @@
     "NPCB_PowersHint": "Choose the creatures' abilities, think 1 or 2 per tier of the game. Balance the choices between special forms of attack, defensive abilities, and sensory or movement abilities.",
     "NPCB_TraitsHint": "To define the attribute values, choose values compatible with the concept of the creature according to the table. \nThen define the skills that the creature is trained in and define their value by the normal rules, using CR as skill level character.",
     "NPCB_LootHint": "Based on the creature's stats and tier, define the equipment it brings (Eg if a humanoid creature has high defense, its treasure can include armor and shield). \nAlso, define your treasure that you want. it will yield to the party according to the treasure table in Chapter 7 of Tempest20.",
-
     "NPCB_FoeRoleCombatantHint": "COMBATANT. High Offensive and Defensive power. Examples: mercenary, bear.",
     "NPCB_FoeRoleCasterHint": "CASTLER. Offensive and Defensive power reduced, but with area damage effects, conditions and terrain control. Examples: mage, gadgeteer.",
     "NPCB_FoeRoleTricksterHint": "CHEATER. Decreased Offensive and Defensive power, but with confusing and damaging effects, such as social or specialist skills. Examples: courtier, rogue.",
     "NPCB_FoeRoleLackeyDBHint": "MINION. High Offensive and low Defensive power, easy to defeat but capable of causing trouble. Examples: henchmen, soldiers.",
     "NPCB_FoeRoleCaptainHint": "CAPTAIN. Varied power, usually accompanying minions and with abilities to provide them with bonuses. Examples: necromancer, sergeant.",
     "NPCB_FoeRoleBossHint": "BOSS. Varied power, but able to fight alone, with multiple actions in a round, area damage effects, conditions and high range.",
-
     "NPCB_FoeRoleSpecialHint": "Special. The creature has several special abilities and/or is designed to be used in situations outside of direct combat (for example, it can be used to trick or rob the characters). This role is mainly occupied by characters. spellcasters or leaders (creatures whose abilities empower others, and therefore must be used in conjunction with minions). Make sure to review a special creature's sheet before using it!",
     "NPCB_FoeRoleSoloHint": "Solo. The creature was built to face the characters alone. It has balanced stats; especially, it has a lot of hit points, to ensure that the combat lasts a good time (around 3 to 5 rounds) . This role is mostly occupied by big monsters and villains.",
     "NPCB_FoeRoleLackeyHint": "Minion. The creature was built to take on characters in large numbers. Because of this, you'll usually use minions with a CR lower than the party's level. For example, a 5th-level party might take on a bunch of CR 1 minions. Minions have higher attack and damage values, to ensure they remain a real threat to characters, even though their CR will be lower than their level, but less hitpoints, to be defeated more quickly and don't make combat excessively slow. This role is primarily occupied by humanoids and small monsters.",
-
     "CreatureBeastHint": "BEAST. Creatures with limited intelligence, with natural weapons and abilities like poison, web, and can have darkvision or low-light vision.",
     "CreatureConstructHint": "CONSTRUCT. Animated objects or artificial creatures. Have the abilities: immunity to disease, fatigue, bleed, sleep, and poison; do not need to breathe, eat, and sleep; do not recover hit points from rest and skills healing spells, except those that specifically affect constructs; darkvision.",
     "CreatureSpiritHint": "SPIRIT. Beings from other planes. May have darkvision or low-light vision.",
     "CreatureHumanoidHint": "HUMANOID. Creatures that have full or partial human anatomy and form cultures and societies. Every humanoid has a race or subtype;",
     "CreatureMonstrosityHint": "MONSTER. Creatures with strange anatomy, supernatural abilities. Can have darkvision.",
     "CreatureUndeadHint": "UNDEAD. Corpses animated by negative energy. Have the following abilities: immunity to disease, fatigue, bleeding, sleep, and poison; do not need to breathe, eat, and sleep; take damage from magical healing ( Will effect's CD is halved) and recover HP with dark damage; darkvision.",
-
     "S98": "/* --------------- Settings --------------- */",
-
     "BasesSheet": "Bases Sheet",
     "CharacterSheet": "Character Sheet",
     "CharacterSheetTabbed": "Character Sheet - Tabs",
@@ -1094,9 +1007,7 @@
     "CharacterBuilderSheet": "NPC creation",
     "SettingSheetSettings": "Sheet Settings",
     "HazardSheet": "Complex Hazard Sheet",
-
     "ActorTraitSelection": "Trait Selection",
-
     "SettingDisableExperience": "Advance by Milestones",
     "SettingDisableExperienceHint": "Characters do not receive experience points. Instead, they level up whenever they reach a certain milestone in the story.",
     "SettingsLimitedSheet": "Limited Sheet Visibility",
@@ -1109,7 +1020,6 @@
     "SettingAutomaticManaSpendHint": "When using a power or spell, the character's mana is spent automatically",
     "SettingFoeSheetCompactSpell": "Compact Spell List",
     "SettingFoeSheetCompactSpellHint": "Foes: Show compact spell list",
-
     "SettingDiagonalMovement": "Diagonal Movement",
     "SettingDiagonalMovementHint": "Sets which diagonal movement rule will be used in the system.",
     "SettingDiagonalMovementMANHATTAN": "Default (3m)",
@@ -1131,12 +1041,8 @@
     "SettingEmcumbrancreRuleSlots": "Spacing Rule, Dragão Brasil #171",
     "SettingsCampaignSettingRule": "Game Setting",
     "SettingsCampaignSettingHint": "Change rules according to Game scenarios.",
-    "SettingsOverrideMeasuredTemplates": "System Ability Templates",
-    "SettingsOverrideMeasuredTemplatesHint": "Measured Templates follow the Core Rulebook rules",
-
     "SettingEquipmentSlots": "Wrapped/Worn Items Control",
     "SettingEquipmentSlotsHint": "Changes how to control equipped items.",
-
     "S80": "/* --------------- Bases --------------- */",
     "BaseSizeMininmal": "Minimal",
     "BaseSizeModest": "Modest",
@@ -1158,14 +1064,11 @@
     "BasesSecurityBonus": "Security Bonus",
     "BasesSecurityTotal": "Total Security",
     "PowerTypeBase": "Base Power",
-
     "S90": "/* --------------- Status --------------- */",
-
     "StatusTypeFear": "Fear Condition",
     "StatusTypeParalyze": "Paralysis Condition",
     "StatusTypeSenses": "Senses condition",
     "StatusTypeFatigue": "Fatigue Condition",
-
     "S99": "/* --------------- Creature --------------- */",
     "S0": "/* --------------- END --------------- */",
     "VIZAEL": "VIZAEL"

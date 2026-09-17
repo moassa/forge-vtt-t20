@@ -230,14 +230,13 @@ export async function rollChatMessage({
 	// Create the ChatMessage data object
 	const chatData = {
 		user: game.user._id,
-		// type: CONST.CHAT_MESSAGE_STYLES.ROLL,
 		content: html,
 		rolls: rolls,
 		speaker: ChatMessage.getSpeaker()
 	};
 
 	// Apply the roll mode to adjust message visibility
-	ChatMessage.applyRollMode(chatData, game.settings.get("core", "rollMode"));
+	ChatMessage.applyMode(chatData, game.settings.get("core", "rollMode"));
 
 	// Create the Chat Message or return its data
 	ChatMessage.create(chatData);

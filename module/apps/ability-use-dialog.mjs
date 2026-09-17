@@ -1,4 +1,7 @@
 import { applyOnUseEffects } from "./ability-use.mjs";
+
+const TextEditor = foundry.applications.ux.TextEditor.implementation;
+
 /**
  * A specialized Dialog subclass for ability usage
  * @type {Dialog}
@@ -66,15 +69,16 @@ export default class AbilityUseDialog extends Dialog {
 				}
 			}
 		}
-		const span = html.querySelector(".total-cost .cost");
-		const { initialCost } = span.dataset;
+		const inputCost = html.querySelector(".total-cost .cost");
+		const { initialCost } = inputCost.dataset;
 		totalCost += Number(initialCost);
+		hasCost = Number(initialCost) > 0;
 		const bonusCost = html.querySelector("input[name=ajustecusto]");
 		if (bonusCost) {
 			totalCost += Number(bonusCost.value);
 		}
 
-		span.value = hasCost ? Math.max(totalCost, 1) : 0;
+		inputCost.value = hasCost ? Math.max(totalCost, 1) : 0;
 	}
 
 	/* -------------------------------------------- */
@@ -91,58 +95,18 @@ export default class AbilityUseDialog extends Dialog {
 		if (!item.isOwned) ui.notifications.error(game.i18n.localize("T20.ActionWarningItemNotOwned"));
 		// Prepare data
 		const itemData = item.system;
-		const pmCost = itemData?.custo > 0;
-		let aprimoramentos = [];
-
-		function filterAE(ae, keys = [], tags = []) {
-			const name = item.name;
-			let items = ae.getFlag("tormenta20", "items");
-			items = items ? items.split(";").map((i) => i.trim()) : [];
-			if (!foundry.utils.isEmpty(items) && !items.includes(name)) return false;
-			for (let k of keys) {
-				if (!ae.flags?.tormenta20 || !ae.flags?.tormenta20[k]) return false;
-			}
-			return true;
-		}
-
-		const relate = {
-			atributo: "ability",
-			pericia: "skill",
-			arma: "attack",
-			magia: "spell",
-			poder: "power",
-			consumivel: "consumable",
-			equipamento: "equipment"
-		};
-		let utype = "";
-		switch (item.type) {
-			case "atributo":
-			case "pericia":
-				utype = relate[item.type];
-				aprimoramentos = [...item.actor.effects.filter((ae) => filterAE(ae, ["onuse", utype]))];
-				item.validOnUseEffects = aprimoramentos;
-				break;
-			case "arma":
-			case "magia":
-			case "poder":
-			case "equipamento":
-			case "consumivel":
-				utype = relate[item.type];
-				aprimoramentos = [
-					...item.effects.filter((ae) => filterAE(ae, ["onuse", "self"])),
-					...item.actor.effects.filter((ae) => filterAE(ae, ["onuse", utype]))
-				];
-				break;
-		}
+		const pmCost = itemData?.ativacao.custo > 0;
+		let aprimoramentos = item.applicableOnUseEffects;
 
 		if (!["atributo", "pericia"].includes(item.type) && !itemData.rolls?.length && !aprimoramentos.length) {
 			return applyOnUseEffects(item, {});
 		}
 		let initialCost = 0;
-		initialCost += pmCost ? Number(itemData?.custo) : 0;
+		initialCost += pmCost ? Number(itemData?.ativacao.custo) : 0;
 		for (const ef of aprimoramentos) {
+			await this.prepareDescription(ef);
 			if (ef.disabled) continue;
-			const cost = ef.getFlag("tormenta20", "custo");
+			const cost = ef.system.abilityUse.custo;
 			initialCost += Number.isNumeric(cost) ? Number(cost) : 0;
 		}
 
@@ -163,9 +127,11 @@ export default class AbilityUseDialog extends Dialog {
 			itype: item.type,
 			consumeMP: pmCost,
 			aprimoramentos: aprimoramentos,
-			rollMode: game.settings.get("core", "rollMode"),
-			rollModes: CONFIG.Dice.rollModes,
-			rollKeeping: event?.altKey ? "khd20" : event?.ctrlKey ? "kld20" : "",
+			messageMode: game.settings.get("core", "messageMode"),
+			// rollModes: CONFIG.Dice.rollModes,
+			messageModes: CONFIG.ChatMessage.modes,
+			// rollKeeping: event?.altKey ? "khd20" : event?.ctrlKey ? "kld20" : "",
+			rollKeeping: "",
 			rollKeep: { khd20: "Melhor de 2d20", kld20: "Pior de 2d20" },
 			errors: []
 		};
@@ -177,7 +143,7 @@ export default class AbilityUseDialog extends Dialog {
 		);
 
 		// Create the Dialog and return data as a Promise
-		const icon = item.type === "magia" ? "fas fa-magic" : "fa-fist-raised";
+		const icon = item.type === "magia" ? "fa-hand-sparkles" : "fa-hand-fist";
 		const label =
 			item.type === "magia" ? game.i18n.localize("T20.AbilityUseCast") : game.i18n.localize("T20.AbilityUseUse");
 
@@ -192,7 +158,7 @@ export default class AbilityUseDialog extends Dialog {
 					use: {
 						icon: `<i class="fas ${icon}"></i>`,
 						label: label,
-						callback: (html) => {
+						callback: async (html) => {
 							const fd = new foundry.applications.ux.FormDataExtended(html[0].querySelector("form"));
 							let op = applyOnUseEffects(item, fd.object);
 							resolve(foundry.utils.mergeObject(fd.object, op));
@@ -206,7 +172,7 @@ export default class AbilityUseDialog extends Dialog {
 				dlg.data.buttons.brew = {
 					icon: '<i class="fas fa-flask"></i>',
 					label: game.i18n.localize("T20.BrewPotion"),
-					callback: (html) => {
+					callback: async (html) => {
 						const fd = new foundry.applications.ux.FormDataExtended(html[0].querySelector("form"));
 						fd.object.brew = true;
 						let op = applyOnUseEffects(item, fd.object);
@@ -218,5 +184,20 @@ export default class AbilityUseDialog extends Dialog {
 			dlg.position.width = 600;
 			dlg.render(true);
 		});
+	}
+
+	static async prepareDescription(effect) {
+		const label = document.createElement("label");
+		label.innerText = `${effect.name}:`;
+		if (!effect.description) {
+			const description = document.createElement("p");
+			description.prepend(label);
+			effect.descriptionEnriched = description.outerHTML;
+		} else {
+			let description = await TextEditor.enrichHTML(effect.description);
+			description = foundry.utils.parseHTML(description);
+			description.prepend(label, " ");
+			effect.descriptionEnriched = description.outerHTML;
+		}
 	}
 }

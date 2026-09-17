@@ -1,0 +1,82 @@
+{
+  "name": "Manto cerimonial",
+  "type": "tesouro",
+  "img": "systems/tormenta20/icons/itens/gerais/manto-cerimonial.webp",
+  "system": {
+    "description": {
+      "value": "<p><strong>[Item de Origem]</strong><br><br><br><br><br><br><br><br><br><br></p>",
+      "unidentified": ""
+    },
+    "source": "Tormenta20 — Edição Jogo do Ano, p. 91",
+    "carregado": true,
+    "peso": 1,
+    "espacos": 0,
+    "qtd": 1,
+    "preco": 0,
+    "pv": {
+      "value": 0,
+      "max": 0
+    },
+    "rd": 0,
+    "container": false,
+    "rolls": [],
+    "origin": "",
+    "chatFlavor": "",
+    "tags": [],
+    "chatGif": "",
+    "ativacao": {
+      "custo": 0,
+      "condicao": "",
+      "execucao": "",
+      "qtd": "",
+      "special": ""
+    },
+    "consume": {
+      "amount": 0,
+      "mpMultiplier": false,
+      "target": "",
+      "type": ""
+    },
+    "duracao": {
+      "units": "inst",
+      "value": 0,
+      "special": ""
+    },
+    "range": {
+      "units": "",
+      "value": 0
+    },
+    "alcance": "",
+    "alvo": "",
+    "area": "",
+    "efeito": "",
+    "resistencia": {
+      "txt": "",
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0
+    },
+    "rolltags": [],
+    "automationtags": []
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.0",
+    "coreVersion": "14.366",
+    "createdTime": 1788042414277,
+    "modifiedTime": 1788042414277,
+    "lastModifiedBy": "4fJviA1Q4qcjwsna",
+    "duplicateSource": null,
+    "exportSource": null,
+    "compendiumSource": null
+  },
+  "_id": "y7N3CVY9eZmSEIj6",
+  "folder": "3kNyXnAknru6qWyM",
+  "sort": 700000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!y7N3CVY9eZmSEIj6"
+}

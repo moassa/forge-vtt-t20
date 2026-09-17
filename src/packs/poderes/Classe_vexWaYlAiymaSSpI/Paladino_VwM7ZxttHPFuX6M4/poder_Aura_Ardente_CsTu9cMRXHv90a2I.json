@@ -1,0 +1,148 @@
+{
+  "_id": "CsTu9cMRXHv90a2I",
+  "name": "Aura Ardente",
+  "type": "poder",
+  "img": "systems/tormenta20/icons/classes/paladino.webp",
+  "effects": [
+    {
+      "name": "Aura Ardente",
+      "img": "icons/svg/upgrade.svg",
+      "origin": null,
+      "tint": "#ffffff",
+      "transfer": false,
+      "system": {
+        "onuse": true,
+        "changes": [
+          {
+            "key": "danoContinuo",
+            "type": "custom",
+            "value": "5[luz] + @car",
+            "phase": "initial",
+            "priority": null
+          }
+        ],
+        "targets": [],
+        "status": null,
+        "abilityUse": {
+          "description": "",
+          "automatic": true,
+          "aumenta": false,
+          "custo": null,
+          "names": [
+            "Aura Sagrada"
+          ],
+          "types": []
+        },
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "disposition": []
+        }
+      },
+      "duration": {
+        "units": "seconds",
+        "expiry": null,
+        "value": null,
+        "expired": false
+      },
+      "disabled": true,
+      "_id": "mpNE9uLbBREOeD8v",
+      "type": "base",
+      "start": null,
+      "description": "",
+      "statuses": [],
+      "showIcon": 1,
+      "folder": null,
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.0",
+        "createdTime": 1788042525058,
+        "modifiedTime": 1788042525058,
+        "lastModifiedBy": "4fJviA1Q4qcjwsna",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!items.effects!CsTu9cMRXHv90a2I.mpNE9uLbBREOeD8v"
+    }
+  ],
+  "folder": "VwM7ZxttHPFuX6M4",
+  "sort": 0,
+  "flags": {},
+  "system": {
+    "description": {
+      "value": "<p style=\"text-align:justify\">Enquanto sua aura estiver ativa, no início de cada um de seus turnos, espíritos e mortos-vivos a sua escolha dentro dela sofrem dano de luz igual a 5 + seu Carisma. Pré-requisito: 10° nível de paladino. e</p>",
+      "unidentified": ""
+    },
+    "source": "Tormenta20 — Edição Jogo do Ano, p. 83",
+    "ativacao": {
+      "execucao": "passive",
+      "custo": 0,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "duracao": {
+      "value": 0,
+      "units": "inst",
+      "special": ""
+    },
+    "range": {
+      "value": null,
+      "units": ""
+    },
+    "efeito": "",
+    "alcance": "none",
+    "area": "",
+    "resistencia": {
+      "pericia": "",
+      "atributo": "sab",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [
+      {
+        "name": "Dano",
+        "key": "dano0",
+        "type": "dano",
+        "parts": [
+          [
+            "5+@car",
+            "luz",
+            ""
+          ]
+        ],
+        "versatil": "",
+        "adaptavel": ""
+      }
+    ],
+    "tipo": "classe",
+    "subtipo": "Paladino",
+    "chatFlavor": "",
+    "tags": [
+      "magico"
+    ],
+    "origin": "",
+    "chatGif": "",
+    "rolltags": [],
+    "automationtags": []
+  },
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.0",
+    "coreVersion": "14.366",
+    "createdTime": 1788042525058,
+    "modifiedTime": 1788042525058,
+    "lastModifiedBy": "4fJviA1Q4qcjwsna",
+    "duplicateSource": null,
+    "exportSource": null,
+    "compendiumSource": null
+  },
+  "_key": "!items!CsTu9cMRXHv90a2I"
+}

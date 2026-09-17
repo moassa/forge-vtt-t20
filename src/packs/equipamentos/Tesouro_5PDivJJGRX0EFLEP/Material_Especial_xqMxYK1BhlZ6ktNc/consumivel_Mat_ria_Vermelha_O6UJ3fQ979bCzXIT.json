@@ -1,0 +1,94 @@
+{
+  "name": "Matéria Vermelha",
+  "type": "consumivel",
+  "img": "systems/tormenta20/icons/itens/gerais/materia-vermelha.webp",
+  "system": {
+    "description": {
+      "value": "<p><span><strong>[Material Especial]</strong></span></p>\n<p>Qualquer material de origem aberrante — desde suas garras e carapaças, até minérios e partes de estruturas encontradas em áreas de Tormenta — apresenta propriedades parecidas, sendo conhecido como “matéria vermelha”. Estes itens assustadores impõem ao usuário penalidade de –2 em perícias baseadas em Carisma (exceto Intimidação).<br><strong>Arma.</strong> Causa +1d6 de dano extra. Porém, sempre que você acerta um ataque com a arma, perde 1 ponto de vida. Aberrantes são imunes tanto ao dano adicional de matéria vermelha quanto à perda de vida por usar armas desse material.<br><strong>Armadura e Escudo.</strong> Por sua aparência “borrada”, fornecem chance de falha para cada ataque: 10% para escudos e armaduras leves, 25% para armaduras pesadas (cumulativas entre si). Aberrante ignoram este efeito.<br><strong>Esotérico.</strong> Você e todos os seus inimigos em alcance curto sofrem –2 em testes de resistência contra efeitos mágicos.</p>\n\n\n<p><span><strong>Preço:</strong></span></p>\n<p><span><span>Armas: +T$ 1500</span></span></p>\n<p><span><span>Armaduras pesadas:<span style=\"font-family:var(--font-primary);font-size:var(--font-size-14)\">+T$ 18000</span></span></span></p>\n<p><span><span>Armaduras leves e Escudo: +T$ 6000</span></span></p>\n<p><span><span>Esotéricos: <span style=\"font-family:var(--font-primary);font-size:var(--font-size-14)\">+T$ 3000</span></span></span></p>",
+      "unidentified": ""
+    },
+    "source": "Tormenta20 — Edição Jogo do Ano, p. 167",
+    "carregado": true,
+    "peso": 0,
+    "espacos": 1,
+    "qtd": 1,
+    "preco": 18000,
+    "pv": {
+      "value": 0,
+      "max": 0
+    },
+    "rd": 0,
+    "ativacao": {
+      "execucao": "",
+      "custo": 0,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "duracao": {
+      "value": 0,
+      "units": "inst",
+      "special": ""
+    },
+    "range": {
+      "value": null,
+      "units": ""
+    },
+    "consume": {
+      "type": "",
+      "target": "",
+      "amount": null,
+      "mpMultiplier": false
+    },
+    "efeito": "",
+    "alcance": "none",
+    "alvo": "",
+    "area": "",
+    "resistencia": {
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [],
+    "tipo": "material",
+    "chatFlavor": "",
+    "origin": "",
+    "subtipo": "",
+    "tags": [],
+    "chatGif": "",
+    "upgrades": {
+      "melhoria1": "",
+      "melhoria2": "",
+      "melhoria3": "",
+      "melhoria4": "",
+      "material": "",
+      "encanto1": "",
+      "encanto2": "",
+      "encanto3": ""
+    },
+    "rolltags": [],
+    "automationtags": [],
+    "enableAutoUpgrades": true
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.0",
+    "coreVersion": "14.366",
+    "createdTime": 1788042414276,
+    "modifiedTime": 1788042414276,
+    "lastModifiedBy": "4fJviA1Q4qcjwsna",
+    "duplicateSource": null,
+    "exportSource": null,
+    "compendiumSource": null
+  },
+  "_id": "O6UJ3fQ979bCzXIT",
+  "folder": "xqMxYK1BhlZ6ktNc",
+  "sort": 500000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!O6UJ3fQ979bCzXIT"
+}

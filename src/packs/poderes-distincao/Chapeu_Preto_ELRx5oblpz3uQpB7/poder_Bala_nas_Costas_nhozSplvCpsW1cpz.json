@@ -1,0 +1,142 @@
+{
+  "name": "Bala nas Costas",
+  "type": "poder",
+  "img": "systems/tormenta20/icons/poderes/distincao.webp",
+  "system": {
+    "description": {
+      "value": "<blockquote>\n<p>Se um chap&eacute;u preto realmente h&aacute;bil quiser mat&aacute;-lo, voc&ecirc; n&atilde;o ficar&aacute; sabendo &mdash; j&aacute; estar&aacute; morto.</p>\n</blockquote>\n<p>Sempre que atacar um oponente pela primeira vez na cena, voc&ecirc; pode gastar 1 PM para receber +10 na margem de amea&ccedil;a deste ataque.</p>\n<p>Pr&eacute;-requisitos: Cora&ccedil;&atilde;o duro, dois outros poderes de chap&eacute;u preto.</p>",
+      "chat": "",
+      "unidentified": ""
+    },
+    "source": "Tormenta20 — Distinções, p. 20",
+    "ativacao": {
+      "execucao": "",
+      "custo": 0,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "duracao": {
+      "value": 0,
+      "units": "",
+      "special": ""
+    },
+    "target": {
+      "value": null,
+      "width": null,
+      "units": "",
+      "type": ""
+    },
+    "range": {
+      "value": null,
+      "units": ""
+    },
+    "consume": {
+      "type": "",
+      "target": "",
+      "amount": null,
+      "mpMultiplier": false
+    },
+    "efeito": "",
+    "alcance": "none",
+    "alvo": "",
+    "area": "",
+    "resistencia": {
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [],
+    "tipo": "distincao",
+    "subtipo": "Chapeu Preto",
+    "origin": "",
+    "tags": [
+      "ChapeuPreto"
+    ],
+    "chatFlavor": "",
+    "chatGif": ""
+  },
+  "effects": [
+    {
+      "origin": "Item.nhozSplvCpsW1cpz",
+      "tint": "#ffffff",
+      "flags": {
+        "tormenta20": {
+          "onuse": true,
+          "durationScene": false,
+          "self": false,
+          "attack": true,
+          "skill": false,
+          "ability": false,
+          "power": false,
+          "equipment": false,
+          "spell": false,
+          "consumable": false,
+          "items": "",
+          "aumenta": false,
+          "custo": "1"
+        }
+      },
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": null,
+        "expired": false
+      },
+      "disabled": false,
+      "_id": "ikIlF2FnhhxqkSDr",
+      "transfer": true,
+      "_stats": {
+        "coreVersion": "14.365",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Bala nas Costas",
+      "img": "icons/skills/targeting/crosshair-pointed-orange.webp",
+      "type": "base",
+      "system": {
+        "changes": [
+          {
+            "key": "criticoM",
+            "value": -10,
+            "priority": 0,
+            "type": "add"
+          }
+        ]
+      },
+      "description": "",
+      "statuses": [],
+      "sort": 0,
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "_key": "!items.effects!nhozSplvCpsW1cpz.ikIlF2FnhhxqkSDr"
+    }
+  ],
+  "flags": {},
+  "_stats": {
+    "systemId": "tormenta20",
+    "systemVersion": "1.4.116",
+    "coreVersion": "14.365",
+    "createdTime": 1667074044311,
+    "modifiedTime": 1684614605298,
+    "lastModifiedBy": "t20builder000000",
+    "duplicateSource": null,
+    "exportSource": null,
+    "compendiumSource": null
+  },
+  "_id": "nhozSplvCpsW1cpz",
+  "folder": "ELRx5oblpz3uQpB7",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!nhozSplvCpsW1cpz"
+}

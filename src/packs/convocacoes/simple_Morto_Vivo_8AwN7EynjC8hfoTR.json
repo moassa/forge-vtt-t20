@@ -1,0 +1,726 @@
+{
+  "name": "Morto-Vivo",
+  "type": "simple",
+  "img": "systems/tormenta20/icons/ameacas/zumbi.png",
+  "system": {
+    "atributos": {
+      "for": {
+        "value": 0,
+        "base": 0,
+        "racial": 0,
+        "bonus": 0
+      },
+      "des": {
+        "value": 0,
+        "base": 0,
+        "racial": 0,
+        "bonus": 0
+      },
+      "con": {
+        "value": 0,
+        "base": 0,
+        "racial": 0,
+        "bonus": 0
+      },
+      "int": {
+        "value": 0,
+        "base": 0,
+        "racial": 0,
+        "bonus": 0
+      },
+      "sab": {
+        "value": 0,
+        "base": 0,
+        "racial": 0,
+        "bonus": 0
+      },
+      "car": {
+        "value": 0,
+        "base": 0,
+        "racial": 0,
+        "bonus": 0
+      }
+    },
+    "attributes": {
+      "carga": {
+        "value": 0,
+        "base": 10,
+        "bonus": [],
+        "max": 0,
+        "pct": 0,
+        "encumbered": false,
+        "atributo": "for",
+        "limit": 0
+      },
+      "defesa": {
+        "atributo": "des",
+        "pda": 0,
+        "value": 10,
+        "base": 10,
+        "outros": 0,
+        "condi": 0,
+        "bonus": []
+      },
+      "movement": {
+        "burrow": {
+          "base": 0,
+          "bonus": []
+        },
+        "climb": {
+          "base": 0,
+          "bonus": []
+        },
+        "fly": {
+          "base": 0,
+          "bonus": []
+        },
+        "swim": {
+          "base": 0,
+          "bonus": []
+        },
+        "walk": {
+          "base": 9,
+          "bonus": []
+        },
+        "hover": false,
+        "unit": "m",
+        "tags": []
+      },
+      "pv": {
+        "value": 0,
+        "temp": 0,
+        "min": 0,
+        "max": 3
+      },
+      "pm": {
+        "value": 0,
+        "temp": 0,
+        "min": 0,
+        "max": 3
+      },
+      "sentidos": {
+        "value": [],
+        "custom": ""
+      }
+    },
+    "detalhes": {
+      "biography": {
+        "value": "",
+        "public": ""
+      }
+    },
+    "dinheiro": {
+      "tc": 0,
+      "tl": 0,
+      "to": 0,
+      "tp": 0
+    },
+    "modificadores": {
+      "custoPM": 0,
+      "atributos": {
+        "for": [],
+        "des": [],
+        "con": [],
+        "int": [],
+        "sab": [],
+        "car": [],
+        "fisicos": [],
+        "mentais": [],
+        "geral": []
+      },
+      "dano": {
+        "ad": [],
+        "alq": [],
+        "cac": [],
+        "geral": [],
+        "mag": []
+      },
+      "pericias": {
+        "geral": [],
+        "resistencia": [],
+        "semataque": [],
+        "ataque": [],
+        "atr": {
+          "for": [],
+          "des": [],
+          "con": [],
+          "int": [],
+          "sab": [],
+          "car": []
+        }
+      },
+      "ataque": {
+        "geral": [],
+        "cac": [],
+        "ad": []
+      },
+      "cura": {
+        "geral": [],
+        "mag": [],
+        "alq": []
+      }
+    },
+    "pericias": {
+      "acro": {
+        "atributo": "for",
+        "treinado": false,
+        "st": false,
+        "pda": false,
+        "size": false,
+        "outros": 0,
+        "custom": false,
+        "label": ""
+      },
+      "ades": {
+        "atributo": "for",
+        "treinado": false,
+        "st": false,
+        "pda": false,
+        "size": false,
+        "outros": 0,
+        "custom": false,
+        "label": ""
+      },
+      "atle": {
+        "atributo": "for",
+        "treinado": false,
+        "st": false,
+        "pda": false,
+        "size": false,
+        "outros": 0,
+        "custom": false,
+        "label": ""
+      },
+      "atua": {
+        "atributo": "for",
+        "treinado": false,
+        "st": false,
+        "pda": false,
+        "size": false,
+        "outros": 0,
+        "custom": false,
+        "label": ""
+      },
+      "cava": {
+        "atributo": "for",
+        "treinado": false,
+        "st": false,
+        "pda": false,
+        "size": false,
+        "outros": 0,
+        "custom": false,
+        "label": ""
+      },
+      "conh": {
+        "atributo": "for",
+        "treinado": false,
+        "st": false,
+        "pda": false,
+        "size": false,
+        "outros": 0,
+        "custom": false,
+        "label": ""
+      },
+      "cura": {
+        "atributo": "for",
+        "treinado": false,
+        "st": false,
+        "pda": false,
+        "size": false,
+        "outros": 0,
+        "custom": false,
+        "label": ""
+      },
+      "dipl": {
+        "atributo": "for",
+        "treinado": false,
+        "st": false,
+        "pda": false,
+        "size": false,
+        "outros": 0,
+        "custom": false,
+        "label": ""
+      },
+      "enga": {
+        "atributo": "for",
+        "treinado": false,
+        "st": false,
+        "pda": false,
+        "size": false,
+        "outros": 0,
+        "custom": false,
+        "label": ""
+      },
+      "fort": {
+        "atributo": "for",
+        "treinado": false,
+        "st": false,
+        "pda": false,
+        "size": false,
+        "outros": 0,
+        "custom": false,
+        "label": ""
+      },
+      "furt": {
+        "atributo": "for",
+        "treinado": false,
+        "st": false,
+        "pda": false,
+        "size": false,
+        "outros": 0,
+        "custom": false,
+        "label": ""
+      },
+      "guer": {
+        "atributo": "for",
+        "treinado": false,
+        "st": false,
+        "pda": false,
+        "size": false,
+        "outros": 0,
+        "custom": false,
+        "label": ""
+      },
+      "inic": {
+        "atributo": "for",
+        "treinado": false,
+        "st": false,
+        "pda": false,
+        "size": false,
+        "outros": 0,
+        "custom": false,
+        "label": ""
+      },
+      "inti": {
+        "atributo": "for",
+        "treinado": false,
+        "st": false,
+        "pda": false,
+        "size": false,
+        "outros": 0,
+        "custom": false,
+        "label": ""
+      },
+      "intu": {
+        "atributo": "for",
+        "treinado": false,
+        "st": false,
+        "pda": false,
+        "size": false,
+        "outros": 0,
+        "custom": false,
+        "label": ""
+      },
+      "inve": {
+        "atributo": "for",
+        "treinado": false,
+        "st": false,
+        "pda": false,
+        "size": false,
+        "outros": 0,
+        "custom": false,
+        "label": ""
+      },
+      "joga": {
+        "atributo": "for",
+        "treinado": false,
+        "st": false,
+        "pda": false,
+        "size": false,
+        "outros": 0,
+        "custom": false,
+        "label": ""
+      },
+      "ladi": {
+        "atributo": "for",
+        "treinado": false,
+        "st": false,
+        "pda": false,
+        "size": false,
+        "outros": 0,
+        "custom": false,
+        "label": ""
+      },
+      "luta": {
+        "atributo": "for",
+        "treinado": false,
+        "st": false,
+        "pda": false,
+        "size": false,
+        "outros": 0,
+        "custom": false,
+        "label": ""
+      },
+      "mist": {
+        "atributo": "for",
+        "treinado": false,
+        "st": false,
+        "pda": false,
+        "size": false,
+        "outros": 0,
+        "custom": false,
+        "label": ""
+      },
+      "nobr": {
+        "atributo": "for",
+        "treinado": false,
+        "st": false,
+        "pda": false,
+        "size": false,
+        "outros": 0,
+        "custom": false,
+        "label": ""
+      },
+      "perc": {
+        "atributo": "for",
+        "treinado": false,
+        "st": false,
+        "pda": false,
+        "size": false,
+        "outros": 0,
+        "custom": false,
+        "label": ""
+      },
+      "pilo": {
+        "atributo": "for",
+        "treinado": false,
+        "st": false,
+        "pda": false,
+        "size": false,
+        "outros": 0,
+        "custom": false,
+        "label": ""
+      },
+      "pont": {
+        "atributo": "for",
+        "treinado": false,
+        "st": false,
+        "pda": false,
+        "size": false,
+        "outros": 0,
+        "custom": false,
+        "label": ""
+      },
+      "refl": {
+        "atributo": "for",
+        "treinado": false,
+        "st": false,
+        "pda": false,
+        "size": false,
+        "outros": 0,
+        "custom": false,
+        "label": ""
+      },
+      "reli": {
+        "atributo": "for",
+        "treinado": false,
+        "st": false,
+        "pda": false,
+        "size": false,
+        "outros": 0,
+        "custom": false,
+        "label": ""
+      },
+      "sobr": {
+        "atributo": "for",
+        "treinado": false,
+        "st": false,
+        "pda": false,
+        "size": false,
+        "outros": 0,
+        "custom": false,
+        "label": ""
+      },
+      "vont": {
+        "atributo": "for",
+        "treinado": false,
+        "st": false,
+        "pda": false,
+        "size": false,
+        "outros": 0,
+        "custom": false,
+        "label": ""
+      }
+    },
+    "resources": {
+      "primary": {
+        "value": 0,
+        "max": 0,
+        "label": "Recurso 1"
+      },
+      "secondary": {
+        "value": 0,
+        "max": 0,
+        "label": "Recurso 2"
+      },
+      "tertiary": {
+        "value": 0,
+        "max": 0,
+        "label": "Recurso 3"
+      },
+      "deathsave": {
+        "value": 0,
+        "max": 3,
+        "label": "Falha na Morte"
+      },
+      "shadow": {
+        "value": 0,
+        "max": 5,
+        "label": "Pontos de Sombra"
+      },
+      "catarse": {
+        "value": 0,
+        "max": 3,
+        "label": "Catarse"
+      }
+    },
+    "tracos": {
+      "ic": {
+        "value": [],
+        "custom": ""
+      },
+      "resistencias": {
+        "dano": {
+          "value": 0,
+          "imunidade": false,
+          "vulnerabilidade": false,
+          "base": 0,
+          "bonus": [],
+          "excecao": 0,
+          "danoPorDado": false
+        },
+        "perda": {
+          "value": 0,
+          "imunidade": false,
+          "vulnerabilidade": false,
+          "base": 0,
+          "bonus": [],
+          "excecao": 0,
+          "danoPorDado": false
+        },
+        "acido": {
+          "value": 0,
+          "imunidade": false,
+          "vulnerabilidade": false,
+          "base": 0,
+          "bonus": [],
+          "excecao": 0,
+          "danoPorDado": false
+        },
+        "corte": {
+          "value": 0,
+          "imunidade": false,
+          "vulnerabilidade": false,
+          "base": 0,
+          "bonus": [],
+          "excecao": 0,
+          "danoPorDado": false
+        },
+        "eletricidade": {
+          "value": 0,
+          "imunidade": false,
+          "vulnerabilidade": false,
+          "base": 0,
+          "bonus": [],
+          "excecao": 0,
+          "danoPorDado": false
+        },
+        "essencia": {
+          "value": 0,
+          "imunidade": false,
+          "vulnerabilidade": false,
+          "base": 0,
+          "bonus": [],
+          "excecao": 0,
+          "danoPorDado": false
+        },
+        "fogo": {
+          "value": 0,
+          "imunidade": false,
+          "vulnerabilidade": false,
+          "base": 0,
+          "bonus": [],
+          "excecao": 0,
+          "danoPorDado": false
+        },
+        "frio": {
+          "value": 0,
+          "imunidade": false,
+          "vulnerabilidade": false,
+          "base": 0,
+          "bonus": [],
+          "excecao": 0,
+          "danoPorDado": false
+        },
+        "impacto": {
+          "value": 0,
+          "imunidade": false,
+          "vulnerabilidade": false,
+          "base": 0,
+          "bonus": [],
+          "excecao": 0,
+          "danoPorDado": false
+        },
+        "luz": {
+          "value": 0,
+          "imunidade": false,
+          "vulnerabilidade": false,
+          "base": 0,
+          "bonus": [],
+          "excecao": 0,
+          "danoPorDado": false
+        },
+        "psiquico": {
+          "value": 0,
+          "imunidade": false,
+          "vulnerabilidade": false,
+          "base": 0,
+          "bonus": [],
+          "excecao": 0,
+          "danoPorDado": false
+        },
+        "perfuracao": {
+          "value": 0,
+          "imunidade": false,
+          "vulnerabilidade": false,
+          "base": 0,
+          "bonus": [],
+          "excecao": 0,
+          "danoPorDado": false
+        },
+        "trevas": {
+          "value": 0,
+          "imunidade": false,
+          "vulnerabilidade": false,
+          "base": 0,
+          "bonus": [],
+          "excecao": 0,
+          "danoPorDado": false
+        }
+      },
+      "tamanho": "med",
+      "idiomas": {
+        "value": []
+      },
+      "profArmaduras": {
+        "value": []
+      },
+      "profArmas": {
+        "value": []
+      }
+    }
+  },
+  "prototypeToken": {
+    "name": "Morto-Vivo",
+    "displayName": 50,
+    "actorLink": false,
+    "texture": {
+      "src": "systems/tormenta20/icons/ameacas/zumbi.png",
+      "scaleX": 1,
+      "scaleY": 1,
+      "tint": "#ffffff",
+      "anchorX": 0.5,
+      "anchorY": 0.5,
+      "fit": "contain",
+      "alphaThreshold": 0.75
+    },
+    "width": 1,
+    "height": 1,
+    "lockRotation": false,
+    "rotation": 0,
+    "alpha": 1,
+    "disposition": 1,
+    "displayBars": 0,
+    "bar1": {
+      "attribute": "attributes.pv"
+    },
+    "bar2": {
+      "attribute": "attributes.pm"
+    },
+    "light": {
+      "alpha": 0.5,
+      "angle": 360,
+      "bright": 0,
+      "color": null,
+      "coloration": 1,
+      "dim": 0,
+      "attenuation": 0.5,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "type": null,
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      },
+      "negative": false,
+      "priority": 0
+    },
+    "sight": {
+      "enabled": false,
+      "range": 0,
+      "angle": 360,
+      "visionMode": "basic",
+      "color": null,
+      "attenuation": 0.1,
+      "brightness": 0,
+      "saturation": 0,
+      "contrast": 0
+    },
+    "detectionModes": {},
+    "flags": {},
+    "randomImg": false,
+    "occludable": {
+      "radius": 0
+    },
+    "ring": {
+      "enabled": false,
+      "colors": {
+        "ring": null,
+        "background": null
+      },
+      "effects": 1,
+      "subject": {
+        "scale": 1,
+        "texture": null
+      }
+    },
+    "turnMarker": {
+      "mode": 1,
+      "animation": null,
+      "src": null,
+      "disposition": false
+    },
+    "movementAction": null,
+    "appendNumber": false,
+    "prependAdjective": false,
+    "depth": 1
+  },
+  "items": [],
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.0",
+    "coreVersion": "14.366",
+    "createdTime": 1788042336158,
+    "modifiedTime": 1788042336158,
+    "lastModifiedBy": "4fJviA1Q4qcjwsna",
+    "duplicateSource": null,
+    "exportSource": null,
+    "compendiumSource": null
+  },
+  "_id": "8AwN7EynjC8hfoTR",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!actors!8AwN7EynjC8hfoTR"
+}

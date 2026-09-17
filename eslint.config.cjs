@@ -30,6 +30,9 @@ module.exports = defineConfig([
 			globals: {
 				...globals.browser,
 				...globals.jquery,
+				_del: false,
+				_loc: false,
+				_replace: false,
 				CONFIG: false,
 				CONST: false,
 				PIXI: false,

@@ -1,0 +1,21 @@
+<div class="flexcol">
+  <div>{{label}}</div>
+  <button class="inline-control" data-action="rollAttribute">{{atr.value}}</button>
+  <div class="flexrow">
+    {{formInput
+      schema.fields.base
+      value=source.base
+      dataset=(object tooltip=schema.fields.base.label)
+    }}
+    {{formInput
+      schema.fields.racial
+      value=source.racial
+      dataset=(object tooltip=schema.fields.racial.label)
+    }}
+    {{formInput
+      schema.fields.bonus
+      value=source.bonus
+      dataset=(object tooltip=schema.fields.bonus.label)
+    }}
+  </div>
+</div>

@@ -1,0 +1,28 @@
+<ul class="plain embedded-list equipment">
+  <header class="flexrow">
+    <div class="flex3">{{localize "T20.Equipment"}}</div>
+    <div class="defense" data-tooltip="{{localize 'T20.Defense'}}/{{localize 'T20.ArmorPenalty'}}">
+      <i class="fa-solid fa-shield"></i>/<i class="fa-solid fa-person-hiking"></i>
+    </div>
+    <div class="controls">
+
+    </div>
+  </header>
+  {{#each equipment as | item |}}
+    <li class="flexrow entry" data-entry-id="{{item.id}}">
+      <div class="embedded item flex3">
+        <img src="{{item.source}}" data-action="roll" data-entry-id="{{item.id}}" data-tooltip="T20.Roll">
+        <label data-action="edit" data-entry-id="{{item.id}}"> {{item.name}} </label>
+      </div>
+      <div class="defense">
+        {{item.system.defense}} / {{item.system.pda}}
+      </div>
+      <div class="controls">
+        <button class="inline-control icon fa-solid fa-shirt"
+          data-action="toggle"
+          data-entry-id="{{item.id}}"
+          data-field-path="system.equipado"></button>
+      </div>
+    </li>
+  {{/each}}
+</ul>

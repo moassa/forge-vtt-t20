@@ -12,7 +12,7 @@ T20ToolsUpgrades.enhanced = {
 		{
 			key: "system.modificadores.pericias.geral",
 			value: "1",
-			mode: 2,
+			type: "add",
 			priority: 0
 		}
 	],

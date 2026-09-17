@@ -1,0 +1,66 @@
+{
+  "name": "Armadilheiro",
+  "type": "poder",
+  "img": "icons/weapons/bows/shortbow-recurve-yellow.webp",
+  "system": {
+    "description": {
+      "value": "<p style=\"text-align:justify\">Você soma sua Sabedoria no dano e na CD de suas armadilhas (cumulativo). Pré-requisitos: um poder de armadilha, 5º nível de caçador.</p>",
+      "unidentified": ""
+    },
+    "source": "Tormenta20 — Edição Jogo do Ano, p. 50",
+    "ativacao": {
+      "execucao": "passive",
+      "custo": 0,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "duracao": {
+      "value": 0,
+      "units": "inst",
+      "special": ""
+    },
+    "range": {
+      "value": null,
+      "units": ""
+    },
+    "efeito": "",
+    "alcance": "none",
+    "area": "",
+    "resistencia": {
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [],
+    "tipo": "classe",
+    "subtipo": "Caçador",
+    "origin": "",
+    "tags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "rolltags": [],
+    "automationtags": []
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.0",
+    "coreVersion": "14.366",
+    "createdTime": 1788042524959,
+    "modifiedTime": 1788042524959,
+    "lastModifiedBy": "4fJviA1Q4qcjwsna",
+    "duplicateSource": null,
+    "exportSource": null,
+    "compendiumSource": null
+  },
+  "_id": "BbyD7D88aPwW46E0",
+  "folder": "iT3rUBmGhu5hbNic",
+  "sort": 1100000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!BbyD7D88aPwW46E0"
+}

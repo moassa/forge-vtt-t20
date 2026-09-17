@@ -1,0 +1,23 @@
+{
+  "folder": "QGUINw3j11V74Mmz",
+  "name": "Humano",
+  "sorting": "a",
+  "type": "Item",
+  "_id": "OHxuzam0yAATcoQ8",
+  "sort": 0,
+  "flags": {},
+  "_stats": {
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.0",
+    "coreVersion": "14.366",
+    "createdTime": 1788042524597,
+    "modifiedTime": 1788042524597,
+    "lastModifiedBy": "4fJviA1Q4qcjwsna",
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "description": "",
+  "color": null,
+  "_key": "!folders!OHxuzam0yAATcoQ8"
+}

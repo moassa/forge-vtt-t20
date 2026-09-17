@@ -1,7 +1,7 @@
 import { simplifyRollFormula } from "../../../dice/dice.mjs";
 import Tormenta20TypeData from "../../base.mjs";
 
-import { MappingField, PenaltyField, SkillData } from "../../helpers.mjs";
+import { PenaltyField } from "../../helpers.mjs";
 
 const fields = foundry.data.fields;
 
@@ -20,10 +20,9 @@ export default class CreatureData extends Tormenta20TypeData {
 			detalhes: this.schemaDetails(type),
 			dinheiro: this.schemaCurrency(type),
 			modificadores: this.schemaModifiers(type),
-			pericias: new MappingField(new fields.EmbeddedDataField(SkillData), {
-				initialKeys: T20.pericias,
-				initialValue: this._initialSkillValue.bind(this),
-				initialKeysOnly: false
+			pericias: new fields.TypedObjectField(
+				this.schemaSkill(), {
+				initial: this._initialSkillValue(),
 			}),
 			resources: new fields.TypedObjectField(
 				new fields.SchemaField({
@@ -112,16 +111,23 @@ export default class CreatureData extends Tormenta20TypeData {
 		return super.migrateData(data);
 	}
 
-	static _initialSkillValue(key, initial, existing) {
-		const config = T20.pericias[key];
-		if (!config) return existing ?? initial;
-		const target = foundry.utils.deepClone(existing ?? initial);
-		target.atributo = config.abl ?? initial.atributo;
-		target.pda = config.armorPenalty ?? initial.st;
-		target.st = config.trainedOnly ?? initial.pda;
-		target.size = config.sizeMod ?? initial.size;
-		target.custom = config.custom ?? initial.custom;
-		return target;
+	static _initialSkillValue() {
+		const initial = {};
+		for (const [key, skill] of Object.entries(T20.pericias)) {
+			const data = {
+				treinado: false,
+				outros: 0,
+				custom: false,
+				label: "",
+			}
+			data.atributo = skill.abl ?? "for";
+			data.st = skill.trainedOnly ?? false;
+			data.pda = skill.armorPenalty ?? false;
+			data.size = skill.sizeMod ?? false;
+			data.custom = skill.custom ?? false;
+			initial[key] = data;
+		}
+		return initial;
 	}
 
 	/* ACTOR SCHEMAS */
@@ -162,6 +168,63 @@ export default class CreatureData extends Tormenta20TypeData {
 
 		let schema = {};
 		Object.keys(T20.atributos).forEach((abl) => (schema[abl] = getSchema()));
+		return new fields.SchemaField(schema);
+	}
+
+	static schemaSkill() {
+		let schema = {
+			atributo: new fields.StringField({
+				required: true,
+				nullable: false,
+				blank: false,
+				choices: T20.atributos,
+				initial: "for",
+				label: "T20.SkillAbility",
+				hint: "T20.SkillAbilityHint"
+			}),
+			treinado: new fields.BooleanField({ label: "T20.SkillTrained", hint: "T20.SkillTrainedHint" }),
+			st: new fields.BooleanField({ label: "T20.SkillTrainedOnly", hint: "T20.SkillTrainedOnlyHint" }),
+			pda: new fields.BooleanField({ label: "T20.SkillArmorPenalty", hint: "T20.SkillArmorPenaltyHint" }),
+			size: new fields.BooleanField({ label: "T20.SkillSizeModifier", hint: "T20.SkillSizeModifierHint" }),
+			value: new fields.NumberField({
+				persisted: false,
+				required: true,
+				nullable: false,
+				initial: 0,
+				min: 0,
+				label: "T20.SkillValue",
+				hint: "T20.SkillValueHint"
+			}),
+			outros: new fields.NumberField({
+				required: true,
+				nullable: false,
+				initial: 0,
+				label: "T20.SkillOtherValue",
+				hint: "T20.SkillOtherValueHint"
+			}),
+			condi: new fields.NumberField({
+				persisted: false,
+				required: true,
+				nullable: false,
+				initial: 0,
+				label: "T20.SkillStatusEffectValue",
+				hint: "T20.SkillStatusEffectValueHint"
+			}),
+			bonus: new fields.ArrayField(new fields.StringField(), {
+				persisted: false,
+				label: "T20.SkillEffectsValues",
+				hint: "T20.SkillEffectsValuesHint"
+			}),
+			custom: new fields.BooleanField({ label: "T20.SkillCustom", hint: "T20.SkillCustomHint" }),
+			label: new fields.StringField({
+				required: true,
+				nullable: false,
+				initial: "",
+				label: "T20.SkillLabel",
+				hint: "T20.SkillLabelHint"
+			})
+			// order: new fields.NumberField({ required: true, nullable:false, initial:0 }),
+		};
 		return new fields.SchemaField(schema);
 	}
 
@@ -743,7 +806,11 @@ export default class CreatureData extends Tormenta20TypeData {
 				mag: new fields.ArrayField(new fields.StringField(), {
 					label: "T20.ModsDamageSpellEffectsValues",
 					hint: "T20.ModsDamageSpellEffectsValuesHint"
-				})
+				}),
+				alq: new fields.ArrayField(new fields.StringField(), {
+					label: "T20.ModsDamageAlchemyEffectsValues",
+					hint: "T20.ModsDamageAlchemyEffectsValuesHint"
+				}),
 			}),
 			dano: new fields.SchemaField({
 				ad: new fields.ArrayField(new fields.StringField(), {

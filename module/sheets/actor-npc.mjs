@@ -218,7 +218,6 @@ export default class ActorSheetT20NPC extends ActorSheetT20 {
 		// Weapon Types
 		inventario.arma.melee = inventario.arma.items.filter((f) => f.type === "arma" && f.melee).length;
 		inventario.arma.ranged = inventario.arma.items.filter((f) => f.type === "arma" && f.ranged).length;
-		// console.log(inventario.arma);
 		// Organize spells and count the number of prepared spells
 		const grimorio = {
 			1: { spells: [], custo: 1 },

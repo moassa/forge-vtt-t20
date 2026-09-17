@@ -1,611 +1,1173 @@
 export const T20Conditions = {};
 
 T20Conditions.abalado = {
-	name: "Abalado",
+	uuid: "Compendium.world.statuses.ActiveEffect.ABALADO000000000",
 	id: "abalado",
-	duration: { rounds: 999 },
+	name: "Abalado",
+	img: "systems/tormenta20/icons/conditions/abalado.svg",
 	statuses: ["abalado"],
-	icon: "systems/tormenta20/icons/conditions/abalado.svg",
-	flags: {
-		tormenta20: {
-			condition: true,
-			durationScene: true,
-			stack: "apavorado",
-			category: "medo"
-		}
+	duration: {
+		expiry: "sceneEnd"
 	},
-	changes: [{ key: "system.pericias.*.condi", mode: 3, value: -2 }]
+	system: {
+		changes: [
+			{
+				key: "system.pericias.*.condi",
+				value: -2,
+				type: "downgrade"
+			}
+		],
+		status: {
+			category: "medo",
+			stack: "apavorado"
+		}
+	}
 };
 
 T20Conditions.agarrado = {
-	name: "Agarrado",
+	uuid: "Compendium.world.statuses.ActiveEffect.AGARRADO00000000",
 	id: "agarrado",
-	duration: { rounds: 999 },
+	name: "Agarrado",
+	img: "systems/tormenta20/icons/conditions/agarrado.svg",
 	statuses: ["agarrado"],
-	icon: "systems/tormenta20/icons/conditions/agarrado.svg",
-	flags: {
-		tormenta20: {
-			condition: true,
-			childEffect: ["desprevenido", "imovel"],
-			category: "movimento"
-		}
+	duration: {
+		expiry: "sceneEnd"
 	},
-	changes: [
-		{ key: "system.pericias.luta.condi", mode: 3, value: -2 },
-		{ key: "system.pericias.pont.condi", mode: 3, value: -2 }
-	]
+	system: {
+		changes: [
+			{
+				key: "system.pericias.luta.condi",
+				value: -2,
+				type: "downgrade"
+			},
+			{
+				key: "system.pericias.pont.condi",
+				value: -2,
+				type: "downgrade"
+			}
+		],
+		status: {
+			category: "movimento",
+			childEffect: ["desprevenido", "imovel"]
+		}
+	}
 };
 
 T20Conditions.alquebrado = {
-	name: "Alquebrado",
+	uuid: "Compendium.world.statuses.ActiveEffect.ALQUEBRADO000000",
 	id: "alquebrado",
-	duration: { rounds: 999 },
+	name: "Alquebrado",
+	img: "systems/tormenta20/icons/conditions/alquebrado.svg",
 	statuses: ["alquebrado"],
-	icon: "systems/tormenta20/icons/conditions/alquebrado.svg",
-	flags: {
-		tormenta20: { condition: true, durationScene: true, category: "mental" }
+	duration: {
+		expiry: "sceneEnd"
 	},
-	changes: [{ key: "system.modificadores.custoPM", mode: 2, value: 1 }]
-};
-
-T20Conditions.apavorado = {
-	name: "Apavorado",
-	id: "apavorado",
-	duration: { rounds: 999 },
-	statuses: ["apavorado"],
-	icon: "systems/tormenta20/icons/conditions/apavorado.svg",
-	flags: {
-		tormenta20: { condition: true, durationScene: true, category: "medo" }
-	},
-	changes: [{ key: "system.pericias.*.condi", mode: 3, value: -5 }]
-};
-
-T20Conditions.atordoado = {
-	name: "Atordoado",
-	id: "atordoado",
-	duration: { rounds: 999 },
-	statuses: ["atordoado"],
-	icon: "systems/tormenta20/icons/conditions/atordoado.svg",
-	flags: {
-		tormenta20: {
-			condition: true,
-			durationScene: true,
-			childEffect: ["desprevenido"],
+	system: {
+		changes: [
+			{
+				key: "system.modificadores.custoPM",
+				value: 1,
+				type: "add"
+			}
+		],
+		status: {
 			category: "mental"
 		}
 	}
 };
 
+T20Conditions.apavorado = {
+	uuid: "Compendium.world.statuses.ActiveEffect.APAVORADO0000000",
+	id: "apavorado",
+	name: "Apavorado",
+	img: "systems/tormenta20/icons/conditions/apavorado.svg",
+	statuses: ["apavorado"],
+	duration: {
+		expiry: "sceneEnd"
+	},
+	system: {
+		changes: [
+			{
+				key: "system.pericias.*.condi",
+				value: -5,
+				type: "downgrade"
+			}
+		],
+		status: {
+			category: "medo"
+		}
+	}
+};
+
+T20Conditions.atordoado = {
+	uuid: "Compendium.world.statuses.ActiveEffect.ATORDOADO0000000",
+	id: "atordoado",
+	name: "Atordoado",
+	img: "systems/tormenta20/icons/conditions/atordoado.svg",
+	statuses: ["atordoado"],
+	duration: {
+		expiry: "sceneEnd"
+	},
+	system: {
+		status: {
+			category: "mental",
+			childEffect: ["desprevenido"]
+		}
+	}
+};
+
 T20Conditions.caido = {
-	name: "Caído",
+	uuid: "Compendium.world.statuses.ActiveEffect.CAIDO00000000000",
 	id: "caido",
-	duration: { rounds: 999 },
+	name: "Caído",
+	img: "systems/tormenta20/icons/conditions/caido.svg",
 	statuses: ["caido"],
-	icon: "systems/tormenta20/icons/conditions/caido.svg",
-	flags: { tormenta20: { condition: true } },
-	changes: [
-		{ key: "system.pericias.luta.condi", mode: 3, value: -5 },
-		{ key: "system.attributes.defesa.outros", mode: 3, value: -5 },
-		{ key: "system.attributes.movement.*.base", mode: 3, value: 1.5 }
-	]
+	duration: {
+		expiry: "sceneEnd"
+	},
+	system: {
+		changes: [
+			{
+				key: "system.pericias.luta.condi",
+				value: -5,
+				type: "downgrade"
+			},
+			{
+				key: "system.attributes.defesa.outros",
+				value: -5,
+				type: "downgrade"
+			},
+			{
+				key: "system.attributes.movement.*.base",
+				value: 1.5,
+				type: "downgrade"
+			}
+		],
+		status: {}
+	}
 };
 
 T20Conditions.cego = {
-	name: "Cego",
+	uuid: "Compendium.world.statuses.ActiveEffect.CEGO000000000000",
 	id: "cego",
-	duration: { rounds: 999 },
+	name: "Cego",
+	img: "systems/tormenta20/icons/conditions/cego.svg",
 	statuses: ["cego"],
-	icon: "systems/tormenta20/icons/conditions/cego.svg",
-	flags: {
-		tormenta20: {
-			condition: true,
-			durationScene: true,
-			childEffect: ["desprevenido", "lento"],
-			category: "sentidos"
-		}
+	duration: {
+		expiry: "sceneEnd"
 	},
-	changes: [
-		{ key: "system.pericias.acro.condi", mode: 3, value: -5 },
-		{ key: "system.pericias.atle.condi", mode: 3, value: -5 },
-		{ key: "system.pericias.cava.condi", mode: 3, value: -5 },
-		{ key: "system.pericias.furt.condi", mode: 3, value: -5 },
-		{ key: "system.pericias.inic.condi", mode: 3, value: -5 },
-		{ key: "system.pericias.luta.condi", mode: 3, value: -5 },
-		{ key: "system.pericias.pilo.condi", mode: 3, value: -5 },
-		{ key: "system.pericias.pont.condi", mode: 3, value: -5 },
-		{ key: "system.pericias.refl.condi", mode: 3, value: -5 }
-	]
+	system: {
+		changes: [
+			{
+				key: "system.pericias.acro.condi",
+				value: -5,
+				type: "downgrade"
+			},
+			{
+				key: "system.pericias.atle.condi",
+				value: -5,
+				type: "downgrade"
+			},
+			{
+				key: "system.pericias.cava.condi",
+				value: -5,
+				type: "downgrade"
+			},
+			{
+				key: "system.pericias.furt.condi",
+				value: -5,
+				type: "downgrade"
+			},
+			{
+				key: "system.pericias.inic.condi",
+				value: -5,
+				type: "downgrade"
+			},
+			{
+				key: "system.pericias.luta.condi",
+				value: -5,
+				type: "downgrade"
+			},
+			{
+				key: "system.pericias.pilo.condi",
+				value: -5,
+				type: "downgrade"
+			},
+			{
+				key: "system.pericias.pont.condi",
+				value: -5,
+				type: "downgrade"
+			},
+			{
+				key: "system.pericias.refl.condi",
+				value: -5,
+				type: "downgrade"
+			}
+		],
+		status: {
+			category: "sentidos",
+			childEffect: ["desprevenido", "lento"]
+		}
+	}
 };
 
 T20Conditions.confuso = {
-	name: "Confuso",
+	uuid: "Compendium.world.statuses.ActiveEffect.CONFUSO000000000",
 	id: "confuso",
-	duration: { rounds: 999 },
+	name: "Confuso",
+	img: "systems/tormenta20/icons/conditions/confuso.svg",
 	statuses: ["confuso"],
-	icon: "systems/tormenta20/icons/conditions/confuso.svg",
-	flags: {
-		tormenta20: { condition: true, durationScene: true, category: "mental" }
+	duration: {
+		expiry: "sceneEnd"
+	},
+	system: {
+		status: {
+			category: "mental"
+		}
 	}
 };
 
 T20Conditions.debilitado = {
-	name: "Debilitado",
+	uuid: "Compendium.world.statuses.ActiveEffect.DEBILITADO000000",
 	id: "debilitado",
-	duration: { rounds: 999 },
+	name: "Debilitado",
+	img: "systems/tormenta20/icons/conditions/debilitado.svg",
 	statuses: ["debilitado"],
-	icon: "systems/tormenta20/icons/conditions/debilitado.svg",
-	flags: {
-		tormenta20: { condition: true, durationScene: true, stack: "inconsciente" }
+	duration: {
+		expiry: "sceneEnd"
 	},
-	changes: [
-		{ key: "system.modificadores.atributos.for", mode: 2, value: -5 },
-		{ key: "system.modificadores.atributos.des", mode: 2, value: -5 },
-		{ key: "system.modificadores.atributos.con", mode: 2, value: -5 },
-		{ key: "system.pericias.acro.condi", mode: 3, value: -5 },
-		{ key: "system.pericias.atle.condi", mode: 3, value: -5 },
-		{ key: "system.pericias.cava.condi", mode: 3, value: -5 },
-		{ key: "system.pericias.fort.condi", mode: 3, value: -5 },
-		{ key: "system.pericias.furt.condi", mode: 3, value: -5 },
-		{ key: "system.pericias.inic.condi", mode: 3, value: -5 },
-		{ key: "system.pericias.luta.condi", mode: 3, value: -5 },
-		{ key: "system.pericias.pilo.condi", mode: 3, value: -5 },
-		{ key: "system.pericias.pont.condi", mode: 3, value: -5 },
-		{ key: "system.pericias.refl.condi", mode: 3, value: -5 }
-	]
+	system: {
+		changes: [
+			{
+				key: "system.modificadores.atributos.for",
+				value: -5,
+				type: "add"
+			},
+			{
+				key: "system.modificadores.atributos.des",
+				value: -5,
+				type: "add"
+			},
+			{
+				key: "system.modificadores.atributos.con",
+				value: -5,
+				type: "add"
+			},
+			{
+				key: "system.pericias.acro.condi",
+				value: -5,
+				type: "downgrade"
+			},
+			{
+				key: "system.pericias.atle.condi",
+				value: -5,
+				type: "downgrade"
+			},
+			{
+				key: "system.pericias.cava.condi",
+				value: -5,
+				type: "downgrade"
+			},
+			{
+				key: "system.pericias.fort.condi",
+				value: -5,
+				type: "downgrade"
+			},
+			{
+				key: "system.pericias.furt.condi",
+				value: -5,
+				type: "downgrade"
+			},
+			{
+				key: "system.pericias.inic.condi",
+				value: -5,
+				type: "downgrade"
+			},
+			{
+				key: "system.pericias.luta.condi",
+				value: -5,
+				type: "downgrade"
+			},
+			{
+				key: "system.pericias.pilo.condi",
+				value: -5,
+				type: "downgrade"
+			},
+			{
+				key: "system.pericias.pont.condi",
+				value: -5,
+				type: "downgrade"
+			},
+			{
+				key: "system.pericias.refl.condi",
+				value: -5,
+				type: "downgrade"
+			}
+		],
+		status: {
+			stack: "inconsciente"
+		}
+	}
 };
 
 T20Conditions.desprevenido = {
-	name: "Desprevenido",
+	uuid: "Compendium.world.statuses.ActiveEffect.DESPREVENIDO0000",
 	id: "desprevenido",
-	duration: { rounds: 999 },
+	name: "Desprevenido",
+	img: "systems/tormenta20/icons/conditions/desprevenido.svg",
 	statuses: ["desprevenido"],
-	icon: "systems/tormenta20/icons/conditions/desprevenido.svg",
-	flags: { tormenta20: { condition: true, durationScene: true } },
-	changes: [
-		{ key: "system.pericias.refl.condi", mode: 3, value: -5 },
-		{ key: "system.attributes.defesa.condi", mode: 3, value: -5 }
-	]
+	duration: {
+		expiry: "sceneEnd"
+	},
+	system: {
+		changes: [
+			{
+				key: "system.pericias.refl.condi",
+				value: -5,
+				type: "downgrade"
+			},
+			{
+				key: "system.attributes.defesa.condi",
+				value: -5,
+				type: "downgrade"
+			}
+		],
+		status: {}
+	}
 };
 
 T20Conditions.doente = {
-	name: "Doente",
+	uuid: "Compendium.world.statuses.ActiveEffect.DOENTE0000000000",
 	id: "doente",
-	duration: { rounds: 999 },
+	name: "Doente",
+	img: "systems/tormenta20/icons/conditions/doente.svg",
 	statuses: ["doente"],
-	icon: "systems/tormenta20/icons/conditions/doente.svg",
-	flags: {
-		tormenta20: {
-			condition: true,
-			durationScene: true,
+	duration: {
+		expiry: "sceneEnd"
+	},
+	system: {
+		status: {
 			category: "metabolismo"
 		}
 	}
 };
 
 T20Conditions.emchamas = {
-	name: "Em Chamas",
+	uuid: "Compendium.world.statuses.ActiveEffect.EMCHAMAS00000000",
 	id: "emchamas",
-	duration: { rounds: 999 },
+	name: "Em Chamas",
+	img: "systems/tormenta20/icons/conditions/em-chamas.svg",
 	statuses: ["emchamas"],
-	icon: "systems/tormenta20/icons/conditions/em-chamas.svg",
-	flags: { tormenta20: { condition: true, durationScene: true } },
-	changes: [{ key: "dano", mode: 0, value: "1d6[fogo]" }]
+	duration: {
+		expiry: "sceneEnd"
+	},
+	system: {
+		changes: [
+			{
+				key: "dano",
+				value: "1d6[fogo]",
+				type: "custom"
+			}
+		],
+		status: {}
+	}
 };
 
 T20Conditions.enfeiticado = {
-	name: "Enfeitiçado",
+	uuid: "Compendium.world.statuses.ActiveEffect.ENFEITICADO00000",
 	id: "enfeiticado",
-	duration: { rounds: 999 },
+	name: "Enfeitiçado",
+	img: "systems/tormenta20/icons/conditions/enfeiticado.svg",
 	statuses: ["enfeiticado"],
-	icon: "systems/tormenta20/icons/conditions/enfeiticado.svg",
-	flags: {
-		tormenta20: { condition: true, durationScene: true, category: "mental" }
+	duration: {
+		expiry: "sceneEnd"
+	},
+	system: {
+		status: {
+			category: "mental"
+		}
 	}
 };
 
 T20Conditions.enjoado = {
-	name: "Enjoado",
+	uuid: "Compendium.world.statuses.ActiveEffect.ENJOADO000000000",
 	id: "enjoado",
-	duration: { rounds: 999 },
+	name: "Enjoado",
+	img: "systems/tormenta20/icons/conditions/enjoado.svg",
 	statuses: ["enjoado"],
-	icon: "systems/tormenta20/icons/conditions/enjoado.svg",
-	flags: {
-		tormenta20: {
-			condition: true,
-			durationScene: true,
+	duration: {
+		expiry: "sceneEnd"
+	},
+	system: {
+		status: {
 			category: "metabolismo"
 		}
 	}
 };
 
 T20Conditions.enredado = {
-	name: "Enredado",
+	uuid: "Compendium.world.statuses.ActiveEffect.ENREDADO00000000",
 	id: "enredado",
-	duration: { rounds: 999 },
+	name: "Enredado",
+	img: "systems/tormenta20/icons/conditions/enredado.svg",
 	statuses: ["enredado"],
-	icon: "systems/tormenta20/icons/conditions/enredado.svg",
-	flags: {
-		tormenta20: {
-			condition: true,
-			durationScene: true,
-			childEffect: ["lento", "vulneravel"],
-			category: "movimento"
-		}
+	duration: {
+		expiry: "sceneEnd"
 	},
-	changes: [
-		{ key: "system.pericias.luta.condi", mode: 3, value: -2 },
-		{ key: "system.pericias.pont.condi", mode: 3, value: -2 }
-	]
+	system: {
+		changes: [
+			{
+				key: "system.pericias.luta.condi",
+				value: -2,
+				type: "downgrade"
+			},
+			{
+				key: "system.pericias.pont.condi",
+				value: -2,
+				type: "downgrade"
+			}
+		],
+		status: {
+			category: "movimento",
+			childEffect: ["lento", "vulneravel"]
+		}
+	}
 };
 
 T20Conditions.envenenado = {
-	name: "Envenenado",
+	uuid: "Compendium.world.statuses.ActiveEffect.ENVENENADO000000",
 	id: "envenenado",
-	duration: { rounds: 999 },
+	name: "Envenenado",
+	img: "systems/tormenta20/icons/conditions/envenenado.svg",
 	statuses: ["envenenado"],
-	icon: "systems/tormenta20/icons/conditions/envenenado.svg",
-	flags: {
-		tormenta20: { condition: true, durationScene: true, category: "veneno" }
+	duration: {
+		expiry: "sceneEnd"
+	},
+	system: {
+		status: {
+			category: "veneno"
+		}
 	}
 };
 
 T20Conditions.esmorecido = {
-	name: "Esmorecido",
+	uuid: "Compendium.world.statuses.ActiveEffect.ESMORECIDO000000",
 	id: "esmorecido",
-	duration: { rounds: 999 },
+	name: "Esmorecido",
+	img: "systems/tormenta20/icons/conditions/esmorecido.svg",
 	statuses: ["esmorecido"],
-	icon: "systems/tormenta20/icons/conditions/esmorecido.svg",
-	flags: {
-		tormenta20: { condition: true, durationScene: true, category: "mental" }
+	duration: {
+		expiry: "sceneEnd"
 	},
-	changes: [
-		{ key: "system.modificadores.atributos.int", mode: 2, value: -5 },
-		{ key: "system.modificadores.atributos.sab", mode: 2, value: -5 },
-		{ key: "system.modificadores.atributos.car", mode: 2, value: -5 },
-		{ key: "system.pericias.ades.condi", mode: 3, value: -5 },
-		{ key: "system.pericias.atua.condi", mode: 3, value: -5 },
-		{ key: "system.pericias.conh.condi", mode: 3, value: -5 },
-		{ key: "system.pericias.cura.condi", mode: 3, value: -5 },
-		{ key: "system.pericias.dipl.condi", mode: 3, value: -5 },
-		{ key: "system.pericias.enga.condi", mode: 3, value: -5 },
-		{ key: "system.pericias.guer.condi", mode: 3, value: -5 },
-		{ key: "system.pericias.inti.condi", mode: 3, value: -5 },
-		{ key: "system.pericias.intu.condi", mode: 3, value: -5 },
-		{ key: "system.pericias.inve.condi", mode: 3, value: -5 },
-		{ key: "system.pericias.joga.condi", mode: 3, value: -5 },
-		{ key: "system.pericias.mist.condi", mode: 3, value: -5 },
-		{ key: "system.pericias.nobr.condi", mode: 3, value: -5 },
-		// {key: "system.pericias.ofic.condi", mode:3, value:-5},
-		{ key: "system.pericias.perc.condi", mode: 3, value: -5 },
-		{ key: "system.pericias.reli.condi", mode: 3, value: -5 },
-		{ key: "system.pericias.sobr.condi", mode: 3, value: -5 },
-		{ key: "system.pericias.vont.condi", mode: 3, value: -5 }
-	]
+	system: {
+		changes: [
+			{
+				key: "system.modificadores.atributos.int",
+				value: -5,
+				type: "add"
+			},
+			{
+				key: "system.modificadores.atributos.sab",
+				value: -5,
+				type: "add"
+			},
+			{
+				key: "system.modificadores.atributos.car",
+				value: -5,
+				type: "add"
+			},
+			{
+				key: "system.pericias.ades.condi",
+				value: -5,
+				type: "downgrade"
+			},
+			{
+				key: "system.pericias.atua.condi",
+				value: -5,
+				type: "downgrade"
+			},
+			{
+				key: "system.pericias.conh.condi",
+				value: -5,
+				type: "downgrade"
+			},
+			{
+				key: "system.pericias.cura.condi",
+				value: -5,
+				type: "downgrade"
+			},
+			{
+				key: "system.pericias.dipl.condi",
+				value: -5,
+				type: "downgrade"
+			},
+			{
+				key: "system.pericias.enga.condi",
+				value: -5,
+				type: "downgrade"
+			},
+			{
+				key: "system.pericias.guer.condi",
+				value: -5,
+				type: "downgrade"
+			},
+			{
+				key: "system.pericias.inti.condi",
+				value: -5,
+				type: "downgrade"
+			},
+			{
+				key: "system.pericias.intu.condi",
+				value: -5,
+				type: "downgrade"
+			},
+			{
+				key: "system.pericias.inve.condi",
+				value: -5,
+				type: "downgrade"
+			},
+			{
+				key: "system.pericias.joga.condi",
+				value: -5,
+				type: "downgrade"
+			},
+			{
+				key: "system.pericias.mist.condi",
+				value: -5,
+				type: "downgrade"
+			},
+			{
+				key: "system.pericias.nobr.condi",
+				value: -5,
+				type: "downgrade"
+			},
+			{
+				key: "system.pericias.perc.condi",
+				value: -5,
+				type: "downgrade"
+			},
+			{
+				key: "system.pericias.reli.condi",
+				value: -5,
+				type: "downgrade"
+			},
+			{
+				key: "system.pericias.sobr.condi",
+				value: -5,
+				type: "downgrade"
+			},
+			{
+				key: "system.pericias.vont.condi",
+				value: -5,
+				type: "downgrade"
+			}
+		],
+		status: {
+			category: "mental"
+		}
+	}
 };
 
 T20Conditions.exausto = {
-	name: "Exausto",
+	uuid: "Compendium.world.statuses.ActiveEffect.EXAUSTO000000000",
 	id: "exausto",
-	duration: { rounds: 999 },
+	name: "Exausto",
+	img: "systems/tormenta20/icons/conditions/exausto.svg",
 	statuses: ["exausto"],
-	icon: "systems/tormenta20/icons/conditions/exausto.svg",
-	flags: {
-		tormenta20: {
-			condition: true,
-			durationScene: true,
-			stack: "inconsciente",
+	duration: {
+		expiry: "sceneEnd"
+	},
+	system: {
+		status: {
+			category: "cansaco",
 			childEffect: ["debilitado", "lento", "vulneravel"],
-			category: "cansaco"
+			stack: "inconsciente"
 		}
 	}
 };
 
 T20Conditions.fascinado = {
-	name: "Fascinado",
+	uuid: "Compendium.world.statuses.ActiveEffect.FASCINADO0000000",
 	id: "fascinado",
-	duration: { rounds: 999 },
+	name: "Fascinado",
+	img: "systems/tormenta20/icons/conditions/fascinado.svg",
 	statuses: ["fascinado"],
-	icon: "systems/tormenta20/icons/conditions/fascinado.svg",
-	flags: {
-		tormenta20: { condition: true, durationScene: true, category: "mental" }
+	duration: {
+		expiry: "sceneEnd"
 	},
-	changes: [{ key: "system.pericias.perc.condi", mode: 3, value: -5 }]
+	system: {
+		changes: [
+			{
+				key: "system.pericias.perc.condi",
+				value: -5,
+				type: "downgrade"
+			}
+		],
+		status: {
+			category: "mental"
+		}
+	}
 };
 
 T20Conditions.fatigado = {
-	name: "Fatigado",
+	uuid: "Compendium.world.statuses.ActiveEffect.FATIGADO00000000",
 	id: "fatigado",
-	duration: { rounds: 999 },
+	name: "Fatigado",
+	img: "systems/tormenta20/icons/conditions/fatigado.svg",
 	statuses: ["fatigado"],
-	icon: "systems/tormenta20/icons/conditions/fatigado.svg",
-	flags: {
-		tormenta20: {
-			condition: true,
-			durationScene: true,
-			stack: "exausto",
+	duration: {
+		expiry: "sceneEnd"
+	},
+	system: {
+		status: {
+			category: "cansaco",
 			childEffect: ["fraco", "vulneravel"],
-			category: "cansaco"
+			stack: "exausto"
 		}
 	}
 };
 
 T20Conditions.fraco = {
-	name: "Fraco",
+	uuid: "Compendium.world.statuses.ActiveEffect.FRACO00000000000",
 	id: "fraco",
-	duration: { rounds: 999 },
+	name: "Fraco",
+	img: "systems/tormenta20/icons/conditions/fraco.svg",
 	statuses: ["fraco"],
-	icon: "systems/tormenta20/icons/conditions/fraco.svg",
-	flags: {
-		tormenta20: { condition: true, durationScene: true, stack: "debilitado" }
+	duration: {
+		expiry: "sceneEnd"
 	},
-	changes: [
-		{ key: "system.modificadores.atributos.for", mode: 2, value: -2 },
-		{ key: "system.modificadores.atributos.des", mode: 2, value: -2 },
-		{ key: "system.modificadores.atributos.con", mode: 2, value: -2 },
-		{ key: "system.pericias.acro.condi", mode: 3, value: -2 },
-		{ key: "system.pericias.atle.condi", mode: 3, value: -2 },
-		{ key: "system.pericias.cava.condi", mode: 3, value: -2 },
-		{ key: "system.pericias.fort.condi", mode: 3, value: -2 },
-		{ key: "system.pericias.furt.condi", mode: 3, value: -2 },
-		{ key: "system.pericias.inic.condi", mode: 3, value: -2 },
-		{ key: "system.pericias.luta.condi", mode: 3, value: -2 },
-		{ key: "system.pericias.pilo.condi", mode: 3, value: -2 },
-		{ key: "system.pericias.pont.condi", mode: 3, value: -2 },
-		{ key: "system.pericias.refl.condi", mode: 3, value: -2 }
-	]
+	system: {
+		changes: [
+			{
+				key: "system.modificadores.atributos.for",
+				value: -2,
+				type: "add"
+			},
+			{
+				key: "system.modificadores.atributos.des",
+				value: -2,
+				type: "add"
+			},
+			{
+				key: "system.modificadores.atributos.con",
+				value: -2,
+				type: "add"
+			},
+			{
+				key: "system.pericias.acro.condi",
+				value: -2,
+				type: "downgrade"
+			},
+			{
+				key: "system.pericias.atle.condi",
+				value: -2,
+				type: "downgrade"
+			},
+			{
+				key: "system.pericias.cava.condi",
+				value: -2,
+				type: "downgrade"
+			},
+			{
+				key: "system.pericias.fort.condi",
+				value: -2,
+				type: "downgrade"
+			},
+			{
+				key: "system.pericias.furt.condi",
+				value: -2,
+				type: "downgrade"
+			},
+			{
+				key: "system.pericias.inic.condi",
+				value: -2,
+				type: "downgrade"
+			},
+			{
+				key: "system.pericias.luta.condi",
+				value: -2,
+				type: "downgrade"
+			},
+			{
+				key: "system.pericias.pilo.condi",
+				value: -2,
+				type: "downgrade"
+			},
+			{
+				key: "system.pericias.pont.condi",
+				value: -2,
+				type: "downgrade"
+			},
+			{
+				key: "system.pericias.refl.condi",
+				value: -2,
+				type: "downgrade"
+			}
+		],
+		status: {
+			stack: "debilitado"
+		}
+	}
 };
 
 T20Conditions.frustrado = {
-	name: "Frustrado",
+	uuid: "Compendium.world.statuses.ActiveEffect.FRUSTRADO0000000",
 	id: "frustrado",
-	duration: { rounds: 999 },
+	name: "Frustrado",
+	img: "systems/tormenta20/icons/conditions/frustrado.svg",
 	statuses: ["frustrado"],
-	icon: "systems/tormenta20/icons/conditions/frustrado.svg",
-	flags: {
-		tormenta20: {
-			condition: true,
-			durationScene: true,
-			stack: "esmorecido",
-			category: "mental"
-		}
+	duration: {
+		expiry: "sceneEnd"
 	},
-	changes: [
-		{ key: "system.modificadores.atributos.int", mode: 2, value: -2 },
-		{ key: "system.modificadores.atributos.sab", mode: 2, value: -2 },
-		{ key: "system.modificadores.atributos.car", mode: 2, value: -2 },
-		{ key: "system.pericias.ades.condi", mode: 3, value: -2 },
-		{ key: "system.pericias.atua.condi", mode: 3, value: -2 },
-		{ key: "system.pericias.conh.condi", mode: 3, value: -2 },
-		{ key: "system.pericias.cura.condi", mode: 3, value: -2 },
-		{ key: "system.pericias.dipl.condi", mode: 3, value: -2 },
-		{ key: "system.pericias.enga.condi", mode: 3, value: -2 },
-		{ key: "system.pericias.guer.condi", mode: 3, value: -2 },
-		{ key: "system.pericias.inti.condi", mode: 3, value: -2 },
-		{ key: "system.pericias.intu.condi", mode: 3, value: -2 },
-		{ key: "system.pericias.inve.condi", mode: 3, value: -2 },
-		{ key: "system.pericias.joga.condi", mode: 3, value: -2 },
-		{ key: "system.pericias.mist.condi", mode: 3, value: -2 },
-		{ key: "system.pericias.nobr.condi", mode: 3, value: -2 },
-		// {key: "system.pericias.ofic.condi", mode:3, value:-2},
-		{ key: "system.pericias.perc.condi", mode: 3, value: -2 },
-		{ key: "system.pericias.reli.condi", mode: 3, value: -2 },
-		{ key: "system.pericias.sobr.condi", mode: 3, value: -2 },
-		{ key: "system.pericias.vont.condi", mode: 3, value: -2 }
-	]
+	system: {
+		changes: [
+			{
+				key: "system.modificadores.atributos.int",
+				value: -2,
+				type: "add"
+			},
+			{
+				key: "system.modificadores.atributos.sab",
+				value: -2,
+				type: "add"
+			},
+			{
+				key: "system.modificadores.atributos.car",
+				value: -2,
+				type: "add"
+			},
+			{
+				key: "system.pericias.ades.condi",
+				value: -2,
+				type: "downgrade"
+			},
+			{
+				key: "system.pericias.atua.condi",
+				value: -2,
+				type: "downgrade"
+			},
+			{
+				key: "system.pericias.conh.condi",
+				value: -2,
+				type: "downgrade"
+			},
+			{
+				key: "system.pericias.cura.condi",
+				value: -2,
+				type: "downgrade"
+			},
+			{
+				key: "system.pericias.dipl.condi",
+				value: -2,
+				type: "downgrade"
+			},
+			{
+				key: "system.pericias.enga.condi",
+				value: -2,
+				type: "downgrade"
+			},
+			{
+				key: "system.pericias.guer.condi",
+				value: -2,
+				type: "downgrade"
+			},
+			{
+				key: "system.pericias.inti.condi",
+				value: -2,
+				type: "downgrade"
+			},
+			{
+				key: "system.pericias.intu.condi",
+				value: -2,
+				type: "downgrade"
+			},
+			{
+				key: "system.pericias.inve.condi",
+				value: -2,
+				type: "downgrade"
+			},
+			{
+				key: "system.pericias.joga.condi",
+				value: -2,
+				type: "downgrade"
+			},
+			{
+				key: "system.pericias.mist.condi",
+				value: -2,
+				type: "downgrade"
+			},
+			{
+				key: "system.pericias.nobr.condi",
+				value: -2,
+				type: "downgrade"
+			},
+			{
+				key: "system.pericias.perc.condi",
+				value: -2,
+				type: "downgrade"
+			},
+			{
+				key: "system.pericias.reli.condi",
+				value: -2,
+				type: "downgrade"
+			},
+			{
+				key: "system.pericias.sobr.condi",
+				value: -2,
+				type: "downgrade"
+			},
+			{
+				key: "system.pericias.vont.condi",
+				value: -2,
+				type: "downgrade"
+			}
+		],
+		status: {
+			category: "mental",
+			stack: "esmorecido"
+		}
+	}
 };
 
 T20Conditions.imovel = {
-	name: "Imóvel",
+	uuid: "Compendium.world.statuses.ActiveEffect.IMOVEL0000000000",
 	id: "imovel",
-	duration: { rounds: 999 },
+	name: "Imóvel",
+	img: "systems/tormenta20/icons/conditions/imovel.svg",
 	statuses: ["imovel"],
-	icon: "systems/tormenta20/icons/conditions/imovel.svg",
-	flags: {
-		tormenta20: { condition: true, durationScene: true, category: "movimento" }
+	duration: {
+		expiry: "sceneEnd"
 	},
-	changes: [
-		{ key: "system.attributes.movement.walk.base", mode: 3, value: 0 },
-		{ key: "system.attributes.movement.burrow.base", mode: 3, value: 0 },
-		{ key: "system.attributes.movement.climb.base", mode: 3, value: 0 },
-		{ key: "system.attributes.movement.fly.base", mode: 3, value: 0 },
-		{ key: "system.attributes.movement.swim.base", mode: 3, value: 0 }
-	]
+	system: {
+		changes: [
+			{
+				key: "system.attributes.movement.walk.base",
+				value: 0,
+				type: "downgrade"
+			},
+			{
+				key: "system.attributes.movement.burrow.base",
+				value: 0,
+				type: "downgrade"
+			},
+			{
+				key: "system.attributes.movement.climb.base",
+				value: 0,
+				type: "downgrade"
+			},
+			{
+				key: "system.attributes.movement.fly.base",
+				value: 0,
+				type: "downgrade"
+			},
+			{
+				key: "system.attributes.movement.swim.base",
+				value: 0,
+				type: "downgrade"
+			}
+		],
+		status: {
+			category: "movimento"
+		}
+	}
 };
 
 T20Conditions.inconsciente = {
-	name: "Inconsciente",
+	uuid: "Compendium.world.statuses.ActiveEffect.INCONSCIENTE0000",
 	id: "inconsciente",
-	duration: { rounds: 999 },
+	name: "Inconsciente",
+	img: "systems/tormenta20/icons/conditions/inconsciente.svg",
 	statuses: ["inconsciente"],
-	icon: "systems/tormenta20/icons/conditions/inconsciente.svg",
-	flags: {
-		tormenta20: {
-			condition: true,
-			durationScene: true,
+	duration: {
+		expiry: "sceneEnd"
+	},
+	system: {
+		status: {
 			childEffect: ["indefeso"]
 		}
 	}
 };
 
 T20Conditions.indefeso = {
-	name: "Indefeso",
+	uuid: "Compendium.world.statuses.ActiveEffect.INDEFESO00000000",
 	id: "indefeso",
-	duration: { rounds: 999 },
+	name: "Indefeso",
+	img: "systems/tormenta20/icons/conditions/indefeso.svg",
 	statuses: ["indefeso"],
-	icon: "systems/tormenta20/icons/conditions/indefeso.svg",
-	flags: {
-		tormenta20: {
-			condition: true,
-			durationScene: true,
+	duration: {
+		expiry: "sceneEnd"
+	},
+	system: {
+		changes: [
+			{
+				key: "system.attributes.defesa.condi",
+				value: -10,
+				type: "downgrade"
+			}
+		],
+		status: {
 			childEffect: ["desprevenido"]
 		}
-	},
-	changes: [{ key: "system.attributes.defesa.condi", mode: 3, value: -10 }]
-};
-
-T20Conditions.invisivel = {
-	name: "Invisível",
-	id: "invisivel",
-	duration: { rounds: 999 },
-	statuses: ["invisivel"],
-	icon: "icons/svg/invisible.svg",
-	flags: { tormenta20: { condition: true, durationScene: true } }
-};
-
-T20Conditions.lento = {
-	name: "Lento",
-	id: "lento",
-	duration: { rounds: 999 },
-	statuses: ["lento"],
-	icon: "systems/tormenta20/icons/conditions/lento.svg",
-	flags: {
-		tormenta20: { condition: true, durationScene: true, category: "movimento" }
 	}
 };
 
-T20Conditions.morto = {
-	name: "Morto",
-	id: "morto",
-	duration: { rounds: 999 },
-	statuses: ["morto"],
-	icon: "systems/tormenta20/icons/conditions/morto.svg",
-	flags: { tormenta20: { condition: true } }
-};
-
-T20Conditions.ofuscado = {
-	name: "Ofuscado",
-	id: "ofuscado",
-	duration: { rounds: 999 },
-	statuses: ["ofuscado"],
-	icon: "systems/tormenta20/icons/conditions/ofuscado.svg",
-	flags: {
-		tormenta20: { condition: true, durationScene: true, category: "sentidos" }
+T20Conditions.invisivel = {
+	uuid: "Compendium.world.statuses.ActiveEffect.INVISIVEL0000000",
+	id: "invisivel",
+	name: "Invisível",
+	img: "icons/svg/invisible.svg",
+	statuses: ["invisivel"],
+	duration: {
+		expiry: "sceneEnd"
 	},
-	changes: [
-		{ key: "system.pericias.perc.condi", mode: 3, value: -2 },
-		{ key: "system.pericias.luta.condi", mode: 3, value: -2 },
-		{ key: "system.pericias.pont.condi", mode: 3, value: -2 }
-	]
+	system: {
+		status: {}
+	}
 };
 
-T20Conditions.paralisado = {
-	name: "Paralisado",
-	id: "paralisado",
-	duration: { rounds: 999 },
-	statuses: ["paralisado"],
-	icon: "systems/tormenta20/icons/conditions/paralisado.svg",
-	flags: {
-		tormenta20: {
-			condition: true,
-			durationScene: true,
-			childEffect: ["imovel", "indefeso"],
+T20Conditions.lento = {
+	uuid: "Compendium.world.statuses.ActiveEffect.LENTO00000000000",
+	id: "lento",
+	name: "Lento",
+	img: "systems/tormenta20/icons/conditions/lento.svg",
+	statuses: ["lento"],
+	duration: {
+		expiry: "sceneEnd"
+	},
+	system: {
+		status: {
 			category: "movimento"
 		}
 	}
 };
 
+T20Conditions.morto = {
+	uuid: "Compendium.world.statuses.ActiveEffect.MORTO00000000000",
+	id: "morto",
+	name: "Morto",
+	img: "systems/tormenta20/icons/conditions/morto.svg",
+	statuses: ["morto"],
+	duration: {
+		expiry: "sceneEnd"
+	},
+	system: {
+		status: {}
+	}
+};
+
+T20Conditions.ofuscado = {
+	uuid: "Compendium.world.statuses.ActiveEffect.OFUSCADO00000000",
+	id: "ofuscado",
+	name: "Ofuscado",
+	img: "systems/tormenta20/icons/conditions/ofuscado.svg",
+	statuses: ["ofuscado"],
+	duration: {
+		expiry: "sceneEnd"
+	},
+	system: {
+		changes: [
+			{
+				key: "system.pericias.perc.condi",
+				value: -2,
+				type: "downgrade"
+			},
+			{
+				key: "system.pericias.luta.condi",
+				value: -2,
+				type: "downgrade"
+			},
+			{
+				key: "system.pericias.pont.condi",
+				value: -2,
+				type: "downgrade"
+			}
+		],
+		status: {
+			category: "sentidos"
+		}
+	}
+};
+
+T20Conditions.paralisado = {
+	uuid: "Compendium.world.statuses.ActiveEffect.PARALISADO000000",
+	id: "paralisado",
+	name: "Paralisado",
+	img: "systems/tormenta20/icons/conditions/paralisado.svg",
+	statuses: ["paralisado"],
+	duration: {
+		expiry: "sceneEnd"
+	},
+	system: {
+		status: {
+			category: "movimento",
+			childEffect: ["imovel", "indefeso"]
+		}
+	}
+};
+
 T20Conditions.pasmo = {
-	name: "Pasmo",
+	uuid: "Compendium.world.statuses.ActiveEffect.PASMO00000000000",
 	id: "pasmo",
-	duration: { rounds: 999 },
+	name: "Pasmo",
+	img: "systems/tormenta20/icons/conditions/pasmo.svg",
 	statuses: ["pasmo"],
-	icon: "systems/tormenta20/icons/conditions/pasmo.svg",
-	flags: {
-		tormenta20: { condition: true, durationScene: true, category: "mental" }
+	duration: {
+		expiry: "sceneEnd"
+	},
+	system: {
+		status: {
+			category: "mental"
+		}
 	}
 };
 
 T20Conditions.petrificado = {
-	name: "Petrificado",
+	uuid: "Compendium.world.statuses.ActiveEffect.PETRIFICADO00000",
 	id: "petrificado",
-	duration: { rounds: 999 },
+	name: "Petrificado",
+	img: "systems/tormenta20/icons/conditions/petrificado.svg",
 	statuses: ["petrificado"],
-	icon: "systems/tormenta20/icons/conditions/petrificado.svg",
-	flags: {
-		tormenta20: {
-			condition: true,
-			durationScene: true,
-			childEffect: ["inconsciente"],
-			category: "metamorfose"
-		}
+	duration: {
+		expiry: "sceneEnd"
 	},
-	changes: [{ key: "system.tracos.resistencias.dano.value", mode: 3, value: 8 }]
+	system: {
+		changes: [
+			{
+				key: "system.tracos.resistencias.dano.value",
+				value: 8,
+				type: "downgrade"
+			}
+		],
+		status: {
+			category: "metamorfose",
+			childEffect: ["inconsciente"]
+		}
+	}
 };
 
 T20Conditions.sangrando = {
-	name: "Sangrando",
+	uuid: "Compendium.world.statuses.ActiveEffect.SANGRANDO0000000",
 	id: "sangrando",
-	duration: { rounds: 999 },
+	name: "Sangrando",
+	img: "systems/tormenta20/icons/conditions/sangrando.svg",
 	statuses: ["sangrando"],
-	icon: "systems/tormenta20/icons/conditions/sangrando.svg",
-	flags: {
-		tormenta20: {
-			condition: true,
-			durationScene: true,
+	duration: {
+		expiry: "sceneEnd"
+	},
+	system: {
+		changes: [
+			{
+				key: "dano",
+				value: "1d6[perda]",
+				type: "custom"
+			}
+		],
+		status: {
 			category: "metabolismo"
 		}
-	},
-	changes: [{ key: "dano", mode: 0, value: "1d6[perda]" }]
+	}
 };
 
 T20Conditions.sustentando = {
-	name: "Sustentando",
+	uuid: "Compendium.world.statuses.ActiveEffect.SUSTENTANDO00000",
 	id: "sustentando",
-	duration: { rounds: 999 },
+	name: "Sustentando",
+	img: "systems/tormenta20/icons/conditions/sustentando.svg",
 	statuses: ["sustentando"],
-	icon: "systems/tormenta20/icons/conditions/sustentando.svg",
-	flags: { tormenta20: { condition: true, durationScene: true } },
-	changes: [{ key: "sustentado", mode: 0, value: "" }]
+	duration: {
+		expiry: "sceneEnd"
+	},
+	system: {
+		changes: [
+			{
+				key: "sustentado",
+				value: "",
+				type: "custom"
+			}
+		],
+		status: {}
+	}
 };
 
 T20Conditions.surdo = {
-	name: "Surdo",
+	uuid: "Compendium.world.statuses.ActiveEffect.SURDO00000000000",
 	id: "surdo",
-	duration: { rounds: 999 },
+	name: "Surdo",
+	img: "systems/tormenta20/icons/conditions/surdo.svg",
 	statuses: ["surdo"],
-	icon: "systems/tormenta20/icons/conditions/surdo.svg",
-	flags: {
-		tormenta20: { condition: true, durationScene: true, category: "sentidos" }
+	duration: {
+		expiry: "sceneEnd"
 	},
-	changes: [{ key: "system.pericias.inic.condi", mode: 3, value: -5 }]
+	system: {
+		changes: [
+			{
+				key: "system.pericias.inic.condi",
+				value: -5,
+				type: "downgrade"
+			}
+		],
+		status: {
+			category: "sentidos"
+		}
+	}
 };
 
 T20Conditions.surpreendido = {
-	name: "Surpreendido",
+	uuid: "Compendium.world.statuses.ActiveEffect.SURPREENDIDO0000",
 	id: "surpreendido",
-	duration: { rounds: 999 },
+	name: "Surpreendido",
+	img: "systems/tormenta20/icons/conditions/surpreendido.svg",
 	statuses: ["surpreendido"],
-	icon: "systems/tormenta20/icons/conditions/surpreendido.svg",
-	flags: {
-		tormenta20: {
-			condition: true,
-			durationScene: true,
+	duration: {
+		expiry: "sceneEnd"
+	},
+	system: {
+		status: {
 			childEffect: ["desprevenido"]
 		}
 	}
 };
 
 T20Conditions.vulneravel = {
-	name: "Vulnerável",
+	uuid: "Compendium.world.statuses.ActiveEffect.VULNERAVEL000000",
 	id: "vulneravel",
-	duration: { rounds: 999 },
+	name: "Vulnerável",
+	img: "systems/tormenta20/icons/conditions/vulneravel.svg",
 	statuses: ["vulneravel"],
-	icon: "systems/tormenta20/icons/conditions/vulneravel.svg",
-	flags: { tormenta20: { condition: true, durationScene: true } },
-	changes: [{ key: "system.attributes.defesa.condi", mode: 3, value: -2 }]
+	duration: {
+		expiry: "sceneEnd"
+	},
+	system: {
+		changes: [
+			{
+				key: "system.attributes.defesa.condi",
+				value: -2,
+				type: "downgrade"
+			}
+		],
+		status: {}
+	}
 };
 
 T20Conditions.sobrecarregado = {
-	name: "Sobrecarregado",
+	uuid: "Compendium.world.statuses.ActiveEffect.SOBRECARREGADO00",
 	id: "sobrecarregado",
-	duration: { rounds: 999 },
+	name: "Sobrecarregado",
+	img: "systems/tormenta20/icons/conditions/sobrecarregado.svg",
 	statuses: ["sobrecarregado"],
-	icon: "systems/tormenta20/icons/conditions/sobrecarregado.svg",
-	flags: {
-		tormenta20: { condition: true, durationScene: true, category: "movimento" }
+	duration: {
+		expiry: "sceneEnd"
 	},
-	changes: [
-		{ key: "system.attributes.defesa.pda", mode: 2, value: 5 }
-		// { key: "system.attributes.movement.*.bonus", mode: 2, value: -3 }
-	]
+	system: {
+		changes: [
+			{
+				key: "system.attributes.defesa.pda",
+				value: 5,
+				type: "add"
+			}
+		],
+		status: {
+			category: "movimento"
+		}
+	}
 };

@@ -107,19 +107,53 @@ export default class ItemT20 extends Item {
 		};
 
 		for (let i of this.effects.values()) {
-			if (!i.getFlag("tormenta20", "onuse")) continue;
-			if (i.getFlag("tormenta20", "self")) effects.push(i);
+			if (!i.system.onuse) continue;
+			if (i.system.abilityUse.types.has("self")) effects.push(i);
 		}
 
 		for (let i of this.actor.effects.values()) {
-			if (!i.getFlag("tormenta20", "onuse")) continue;
-			let items = i.getFlag("tormenta20", "items");
-			if (i.getFlag("tormenta20", types[type])) {
-				effects.push(i);
-			} else if (items && items.match(name) >= 0) effects.push(i);
+			if (!i.system.onuse) continue;
+			if (i.system.abilityUse.types.has(types[type])) effects.push(i);
+			else if (i.system.abilityUse.names.has(name)) effects.push(i);
 		}
 
 		return effects;
+	}
+
+	/**
+	 * Traverse parent actor and filter all applicable on use Effects
+	 * @returns {object[]}
+	 */
+	_allApplicableOnUseEffects() {
+		if (!this.isEmbedded) return [];
+		const relate = {
+			atributo: "ability",
+			pericia: "skill",
+			arma: "attack",
+			magia: "spell",
+			poder: "power",
+			consumivel: "consumable",
+			equipamento: "equipment"
+		};
+		const itemAbilityUseType = relate[this.type];
+		// Filter on use effects applied automatic
+		const applicableOnUseEffects = [];
+		const includeEffect = (effect) => {
+			if (!effect.system.onuse) return;
+			// Temporary effects may only be applied when they are on actors
+			if (effect.isTemporary && effect.parent.documentName == "Item") return;
+			const type = effect.parent.id == this.id ? "self" : itemAbilityUseType;
+			const { types, names } = effect.system.abilityUse;
+			if (!types.has(type) && !names.has(this.name)) return;
+			applicableOnUseEffects.push(effect);
+		};
+		for (const effect of this.effects) includeEffect(effect);
+		for (const item of this.actor.items) {
+			if (item.id == this.id) continue;
+			for (const effect of item.effects) includeEffect(effect);
+		}
+		for (const effect of this.actor.effects) includeEffect(effect);
+		return applicableOnUseEffects;
 	}
 
 	/**
@@ -147,14 +181,6 @@ export default class ItemT20 extends Item {
 	/* -------------------------------------------- */
 	/*  Data Initialization                         */
 	/* -------------------------------------------- */
-
-	clone(data = {}, options = {}) {
-		const item = super.clone(data, options);
-		if (item.parent) {
-			item.prepareFinalAttributes();
-		}
-		return item;
-	}
 
 	/* -------------------------------------------- */
 	/*  DataPreparation                             */
@@ -587,13 +613,14 @@ export default class ItemT20 extends Item {
 	 *                                        the prepared chat message data (if false).
 	 * @return {Promise<ChatMessage|object|void>}
 	 */
-	async roll({ configureDialog = true, rollMode, createMessage = true, extra = {} } = {}) {
-		const item = this.clone({ keepId: true });
-		rollMode = game.settings.get("core", "rollMode");
+	async roll({ configureDialog = true, rollMode, createMessage = true, event, extra = {} } = {}) {
+		const usageConfig = game.settings.get("tormenta20", "UsageConfig") === "default";
+		const item = this.clone({}, { keepId: true });
+		if (item.parent) item.prepareFinalAttributes();
+		rollMode = game.settings.get("core", "messageMode");
 		const equipmentSlots = game.settings.get("tormenta20", "equipmentSlots");
 		const id = this.system; // Item system data
 		const actor = this.actor;
-
 		let createMeasuredTemplate;
 		const resource = id.consume || {}; // Resource consumption
 
@@ -617,42 +644,55 @@ export default class ItemT20 extends Item {
 		let hasManaCost = id.ativacao?.custo > 0;
 		let options = {};
 
+		item.applicableOnUseEffects = item._allApplicableOnUseEffects();
+		const hasEffectsOrRolls = !!item.applicableOnUseEffects.length || !!item.system.rolls.length;
+		configureDialog = hasEffectsOrRolls && (usageConfig ? !event.shiftKey : event.shiftKey);
 		// Display a configuration dialog to customize the usage
 		const needsConfiguration = consumeResource || consumeMana;
 		let configuration = {};
 		if (configureDialog) {
 			configuration = await AbilityUseDialog.create(item);
-			// configuration = await new AbilityUseDialog(item).render(true);
 			if (!configuration) return;
-
 			options = configuration;
-			// Determine consumption preferences
-			// createMeasuredTemplate = Boolean(configuration.placeTemplate);
-			// consumeSelf = Boolean(configuration.consumeSelf);
-			// consumeQuantity = Boolean(configuration.consumeUse);
-			// consumeResource = Boolean(configuration.consumeResource);
-			// consumeMana = Boolean(configuration.consumeMana);
 			rollMode = configuration.rollMode ?? rollMode;
 		} else {
-			let itActive = this.actor.effects.filter((ef) => ef.getFlag("tormenta20", "onuse") && !ef.disabled);
-			let acActive = this.effects.filter((ef) => ef.getFlag("tormenta20", "onuse") && !ef.disabled);
-			let active = itActive.concat(acActive);
-			const relate = {
-				atributo: "ability",
-				pericia: "skill",
-				arma: "attack",
-				magia: "spell",
-				poder: "power",
-				consumivel: "consumable",
-				equipamento: "equipment"
-			};
-			let efType = relate[item.type];
-			active = active.filter((ef) => ef.flags.tormenta20[efType] || ef.flags.tormenta20.self);
-			configuration.aprs = active.reduce((o, ef) => {
-				o[ef.id] = { aplica: 1, custo: ef.flags.tormenta20.custo || "0" };
-				return o;
+			configuration.aprs = item.applicableOnUseEffects.reduce((acc, ef) => {
+				if (!ef.system.abilityUse.automatic) return acc;
+				acc[ef.id] = { aplica: 1, custo: ef.system.abilityUse.custo || 0 };
+				return acc;
 			}, {});
-			options = applyOnUseEffects(item, configuration);
+			options = await applyOnUseEffects(item, configuration);
+
+			if (false) {
+				const relate = {
+					atributo: "ability",
+					pericia: "skill",
+					arma: "attack",
+					magia: "spell",
+					poder: "power",
+					consumivel: "consumable",
+					equipamento: "equipment"
+				};
+				const itemAbilityUseType = relate[item.type];
+				// Filter on use effects applied automatic
+				const automaticEffects = [];
+				for (let [path, doc] of this.actor.traverseEmbeddedDocuments()) {
+					if (doc.documentName != "ActiveEffect") continue;
+					if (!doc.system.onuse) continue;
+					if (!doc.system.abilityUse.automatic) continue;
+					const { types, names } = doc.system.abilityUse;
+					if (!types.has(itemAbilityUseType) && !types.has("self")) continue;
+					if (names.size && !names.has(item.name)) continue;
+					automaticEffects.push(doc);
+				}
+				// Effects from this Item Appear First
+				automaticEffects.sort((a, b) => (a.parent.id == item.id ? -1 : 1));
+				configuration.aprs = automaticEffects.reduce((acc, ef) => {
+					acc[ef.id] = { aplica: 1, custo: ef.system.abilityUse.custo || 0 };
+					return acc;
+				}, {});
+				options = await applyOnUseEffects(item, configuration);
+			}
 		}
 		consumeMana = consumeMana ? consumeMana : consumeMana != item.system.ativacao?.custo > 0;
 		hasManaCost = hasManaCost ? hasManaCost : hasManaCost != item.system.ativacao?.custo > 0;
@@ -705,6 +745,13 @@ export default class ItemT20 extends Item {
 		if (!options.truque && consumeMana) {
 			consumeMana = Math.max(item.system.ativacao.custo, 1);
 		} else consumeMana = false;
+		options.manaCost = Math.max(item.system.ativacao?.custo, 0) || (options.hasManaCost ? 1 : null);
+		if (this.parent) {
+			const extraCost = this.parent.system.modificadores.custoPM;
+			options.manaCost += extraCost;
+		}
+		if (options.truque) options.manaCost = 0;
+		else if (options.halfCost) options.manaCost = Math.floor(options.manaCost / 2);
 
 		const consumeSettings = consumeResource || consumeMana || consumeQuantity || consumeSelf;
 		if (consumeSettings) {
@@ -726,7 +773,7 @@ export default class ItemT20 extends Item {
 				this.actor.updateEmbeddedDocuments("Item", [itemUpdates]);
 			}
 			if (!foundry.utils.isEmpty(manaUpdate)) {
-				this.actor.spendMana(manaUpdate.value, 0, false);
+				this.actor.spendMana(options.manaCost, 0, false);
 			}
 			if (!foundry.utils.isEmpty(resourceUpdates)) {
 				this.actor.update(resourceUpdates);
@@ -773,20 +820,12 @@ export default class ItemT20 extends Item {
 			return ChatMessage.create({ content: msg });
 		}
 
-		// Reference aspects of the item data necessary for usage
-		const hasArea = item.hasAreaTarget; // Is the ability usage an AoE?
-		// Define follow-up actions resulting from the item usage
-		createMeasuredTemplate = hasArea; // Trigger a template creation
-		// Initiate measured template creation
-		if (canvas.scene && createMeasuredTemplate) {
-			const template = game.tormenta20.canvas.AbilityTemplate.fromItem(item);
-			if (template) {
-				template.drawPreview();
-				options.template = {
-					area: item.system.area,
-					alcance: item.system.alcance
-				};
-			}
+		// Add region template data
+		if (canvas.scene && item.hasAreaTarget) {
+			options.template = {
+				area: item.system.area,
+				alcance: item.system.alcance
+			};
 		}
 
 		options.itemId = this.id;
@@ -1011,28 +1050,33 @@ export default class ItemT20 extends Item {
 		const token = this.actor.token;
 		let rolls = [];
 
-		let manaCost = Math.max(this.system.ativacao?.custo, 0) || (options.hasManaCost ? 1 : null);
-		if (this.parent) {
-			const extraCost = this.parent.system.modificadores.custoPM;
-			manaCost += extraCost;
-		}
-		if (options.truque) manaCost = 0;
-		else if (options.halfCost) manaCost = Math.floor(manaCost / 2);
-
 		const templateData = {
 			actor: this.actor,
 			tokenId: token?.uuid || null,
 			itemId: options.itemId,
 			item: this,
-			custo: manaCost,
+			custo: options.manaCost,
 			system: await this.getChatData(),
 			labels: this.labels,
 			truque: options.truque,
 			onUseEffects: options.onUseEffects,
 			effects: options.effects,
 			placeTemplate: options.template,
-			rolls: []
+			rolls: [],
+			statuses: new Set()
 		};
+		const descriptions = [
+			templateData.item.system.description.value.stripDiacritics(),
+			...templateData.onUseEffects.map((i) => i.description.stripDiacritics())
+		];
+		for (const status of CONFIG.statusEffects) {
+			if (["invisivel", "morto", "sustentando"].includes(status.id)) continue;
+			const pattern = new RegExp([status.id, status.id.replace(/o$/, "a")].join("|"), "ig");
+			if (descriptions.some((text) => text.match(pattern))) {
+				templateData.statuses.add(status.id);
+			}
+		}
+		templateData.statuses = [...templateData.statuses];
 
 		if (this.system.rolled) {
 			for (let [key, roll] of Object.entries(this.system.rolled)) {
@@ -1052,6 +1096,7 @@ export default class ItemT20 extends Item {
 		// Create the ChatMessage data object
 		const chatData = {
 			user: game.user.id,
+			type: "base",
 			rolls,
 			content: html,
 			flavor: options.chatFlavor || this.system.chatFlavor || "",
@@ -1066,7 +1111,7 @@ export default class ItemT20 extends Item {
 		};
 
 		// Apply the roll mode to adjust message visibility
-		ChatMessage.applyRollMode(chatData, rollMode || game.settings.get("core", "rollMode"));
+		ChatMessage.applyMode(chatData, rollMode || game.settings.get("core", "rollMode"));
 
 		// Create the Chat Message or return its data
 		return createMessage ? ChatMessage.create(chatData) : chatData;
@@ -1180,7 +1225,10 @@ export default class ItemT20 extends Item {
 			pericia = itemData.rolls.find((i) => i.type === "ataque")?.parts[1][0];
 			lancinante = Object.values(itemData.upgrades)?.includes("lancinating");
 		}
-		for (let r of itemData.rolls.filter((i) => i.type === "dano")) {
+		const recoveryTypes = new Set(["curatpv", "curapm", "curatpm"]);
+		for (let r of itemData.rolls) {
+			if (r.type !== "dano") continue;
+			const isRecovery = r.parts.some((p) => recoveryTypes.has(p[1]));
 			const isHealing = r.parts.some((p) => p[1] === "curapv");
 			const perda = r.parts.some((p) => p[1] === "perda");
 			const isSpell = this.type === "magia";
@@ -1209,11 +1257,13 @@ export default class ItemT20 extends Item {
 				}
 				return [dano, tipo, extra];
 			});
-			if (isHealing) {
+			if (isRecovery) {
+				// Ganho de PVPM Temporários e Recuperação de Mana não aplica modificadores extras
+			} else if (isHealing) {
 				const bonuses = foundry.utils.getProperty(actorData, "modificadores.cura") || {};
 				if (bonuses.geral?.filter(Boolean).length) parts.push(["@curaGeral", "", ""]);
 				if (isSpell && bonuses.mag?.filter(Boolean).length) parts.push(["@curaMagica", "", ""]);
-				else if (isAlchemical && bonuses.alq?.filter(Boolean).length) parts.push(["@danoALQ", "", ""]);
+				else if (isAlchemical && bonuses.alq?.filter(Boolean).length) parts.push(["@curaALQ", "", ""]);
 			} else if (!perda) {
 				const bonuses = foundry.utils.getProperty(actorData, "modificadores.dano") || {};
 				if (bonuses.geral?.filter(Boolean).length) parts.push(["@dano", "", ""]);

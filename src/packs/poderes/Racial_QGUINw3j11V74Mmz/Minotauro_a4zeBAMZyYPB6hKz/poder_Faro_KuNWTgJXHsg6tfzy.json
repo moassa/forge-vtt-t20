@@ -1,0 +1,131 @@
+{
+  "name": "Faro",
+  "type": "poder",
+  "img": "systems/tormenta20/icons/racas/minotauro.webp",
+  "effects": [
+    {
+      "name": "Faro",
+      "img": "systems/tormenta20/icons/racas/minotauro.webp",
+      "origin": "Item.6nOyp5hEPdHJenBO",
+      "tint": "#ffffff",
+      "flags": {
+        "tormenta20": {}
+      },
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": null,
+        "expired": false
+      },
+      "disabled": false,
+      "_id": "KBa1fdanq3AR9NzX",
+      "type": "base",
+      "system": {
+        "changes": [
+          {
+            "key": "system.attributes.sentidos.value",
+            "value": "faro",
+            "priority": null,
+            "type": "add",
+            "phase": "initial"
+          }
+        ],
+        "targets": [],
+        "status": null,
+        "onuse": false,
+        "abilityUse": {
+          "description": "",
+          "automatic": false,
+          "aumenta": false,
+          "custo": null,
+          "names": [],
+          "types": []
+        },
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "disposition": []
+        }
+      },
+      "description": "",
+      "transfer": true,
+      "statuses": [],
+      "sort": 0,
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.0",
+        "lastModifiedBy": "4fJviA1Q4qcjwsna",
+        "createdTime": 1788042525118,
+        "modifiedTime": 1788042525118
+      },
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "_key": "!items.effects!KuNWTgJXHsg6tfzy.KBa1fdanq3AR9NzX"
+    }
+  ],
+  "folder": "a4zeBAMZyYPB6hKz",
+  "flags": {},
+  "system": {
+    "description": {
+      "value": "<p style=\"text-align:justify\">A criatura tem olfato apurado. Contra inimigos em alcance curto que não possa perceber, ela não fica desprevenida e camuflagem total lhe causa apenas 20% de chance de falha.</p>",
+      "unidentified": ""
+    },
+    "source": "Tormenta20 — Edição Jogo do Ano, p. 25",
+    "ativacao": {
+      "execucao": "passive",
+      "custo": 0,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "duracao": {
+      "value": 0,
+      "units": "inst",
+      "special": ""
+    },
+    "range": {
+      "value": null,
+      "units": ""
+    },
+    "efeito": "",
+    "alcance": "none",
+    "area": "",
+    "resistencia": {
+      "pericia": "",
+      "atributo": "sab",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [],
+    "tipo": "racial",
+    "subtipo": "Minotauro",
+    "origin": "",
+    "tags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "rolltags": [],
+    "automationtags": []
+  },
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.0",
+    "createdTime": 1788042525118,
+    "modifiedTime": 1788042525118,
+    "lastModifiedBy": "4fJviA1Q4qcjwsna",
+    "compendiumSource": null
+  },
+  "_id": "KuNWTgJXHsg6tfzy",
+  "sort": 300000,
+  "_key": "!items!KuNWTgJXHsg6tfzy"
+}

@@ -25,7 +25,7 @@ T20ArmorUpgrades.general.adjusted = {
 		{
 			key: "system.attributes.defesa.pda",
 			value: "-1",
-			mode: 2,
+			type: "add",
 			priority: 0
 		}
 	],
@@ -48,7 +48,7 @@ T20ArmorUpgrades.general.undermeasure = {
 		{
 			key: "system.attributes.defesa.pda",
 			value: "-2",
-			mode: 2,
+			type: "add",
 			priority: 0
 		}
 	],
@@ -78,7 +78,7 @@ T20ArmorUpgrades.general.polished = {
 		{
 			key: "system.attributes.defesa.bonus",
 			value: "5",
-			mode: 2,
+			type: "add",
 			priority: 0
 		}
 	],
@@ -102,13 +102,13 @@ T20ArmorUpgrades.general.reinforced = {
 		{
 			key: "system.attributes.defesa.bonus",
 			value: "1",
-			mode: 2,
+			type: "add",
 			priority: 0
 		},
 		{
 			key: "system.attributes.defesa.pda",
 			value: "1",
-			mode: 2,
+			type: "add",
 			priority: 0
 		}
 	],
@@ -133,7 +133,7 @@ T20ArmorUpgrades.pesada.delicate = {
 		{
 			key: "system.attributes.defesa.bonus",
 			value: "1",
-			mode: 2,
+			type: "add",
 			priority: 0
 		}
 	],
@@ -157,7 +157,7 @@ T20ArmorUpgrades.pesada.sealed = {
 		{
 			key: "system.modificadores.pericias.resistencia",
 			value: "1",
-			mode: 2,
+			type: "add",
 			priority: 0
 		}
 	],

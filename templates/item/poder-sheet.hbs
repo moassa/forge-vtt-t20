@@ -21,7 +21,7 @@
 					<select name="system.tipo">
 						{{selectOptions config.powerType selected=item.system.tipo localize=true}}
 					</select>
-					<input type="text" title="Subtipo" list="list-subtipo" name="system.subtipo" value="{{item.system.subtipo}}"/>
+					<input type="text" title="Subtipo" list="list-subtipo" name="system.subtipo" value="{{item.system.subtipo}}" />
 					<datalist id="list-subtipo">
 						{{selectOptions config.powerSubType localize=true}}
 					</datalist>
@@ -35,8 +35,7 @@
 						name="system.ativacao.custo"
 						value="{{item.system.ativacao.custo}}"
 						data-dtype="Number"
-						placeholder="0"
-					/>
+						placeholder="0" />
 				</div>
 			</div>
 			<div class="form-group input-select">
@@ -52,8 +51,7 @@
 								placeholder="{{localize 'T20.Description'}}"
 								title="{{localize 'T20.Description'}}"
 								name="system.ativacao.special"
-								value="{{item.system.ativacao.special}}"
-							/>
+								value="{{item.system.ativacao.special}}" />
 						</div>
 					{{else}}
 						<input type="hidden" name="system.ativacao.special" value="" />
@@ -65,8 +63,7 @@
 								name="system.ativacao.qtd"
 								value="{{item.system.ativacao.qtd}}"
 								placeholder="{{localize 'T20.Quantity'}}"
-								title="{{localize 'T20.Quantity'}}"
-							/>
+								title="{{localize 'T20.Quantity'}}" />
 						</div>
 					{{else}}
 						<input type="hidden" name="system.ativacao.qtd" value="" />
@@ -88,6 +85,9 @@
 				<label>{{localize "T20.Area"}}</label>
 				<div class="form-fields">
 					<input type="text" name="system.area" value="{{item.system.area}}" data-dtype="String" />
+					{{#if user.isGM}}
+						<button type="button" class="behaviors-control inline-control icon fa-solid fa-child-reaching" data-tooltip="Config Behaviors"></button>
+					{{/if}}
 				</div>
 			</div>
 			<div class="form-group">
@@ -104,8 +104,7 @@
 							type="text"
 							name="system.duracao.value"
 							value="{{item.system.duracao.value}}"
-							placeholder="{{localize 'T20.Quantity'}}"
-						/>
+							placeholder="{{localize 'T20.Quantity'}}" />
 					{{/if}}
 					<select name="system.duracao.units">
 						{{selectOptions config.timePeriods selected=item.system.duracao.units localize=true}}
@@ -115,8 +114,7 @@
 							type="text"
 							name="system.duracao.special"
 							value="{{item.system.duracao.special}}"
-							placeholder="{{localize 'T20.Description'}}"
-						/>
+							placeholder="{{localize 'T20.Description'}}" />
 					{{/if}}
 				</div>
 			</div>

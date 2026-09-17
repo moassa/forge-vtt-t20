@@ -1,0 +1,208 @@
+{
+  "_id": "ujmPaJ9SNjtVnfLB",
+  "name": "Tocha",
+  "type": "arma",
+  "img": "systems/tormenta20/icons/itens/gerais/tocha.webp",
+  "effects": [
+    {
+      "name": "Tocha",
+      "img": "icons/sundries/lights/torch-brown-lit.webp",
+      "origin": null,
+      "tint": "#ffffff",
+      "transfer": false,
+      "system": {
+        "onuse": false,
+        "changes": [
+          {
+            "key": "token.light.bright",
+            "type": "override",
+            "value": 9,
+            "phase": "initial",
+            "priority": null
+          }
+        ],
+        "targets": [],
+        "status": null,
+        "abilityUse": {
+          "description": "",
+          "automatic": false,
+          "aumenta": false,
+          "custo": null,
+          "names": [],
+          "types": []
+        },
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "disposition": []
+        }
+      },
+      "duration": {
+        "units": "seconds",
+        "expiry": "sceneEnd",
+        "value": null,
+        "expired": false
+      },
+      "disabled": false,
+      "_id": "mwwjq5MGEt5uehMx",
+      "type": "base",
+      "start": null,
+      "description": "",
+      "statuses": [],
+      "showIcon": 1,
+      "folder": null,
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.0",
+        "createdTime": 1788042414291,
+        "modifiedTime": 1788042414291,
+        "lastModifiedBy": "4fJviA1Q4qcjwsna",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!items.effects!ujmPaJ9SNjtVnfLB.mwwjq5MGEt5uehMx"
+    }
+  ],
+  "folder": "0G5uMjOsWAFaPYAZ",
+  "sort": 25,
+  "flags": {},
+  "system": {
+    "description": {
+      "value": "<p style=\"text-align:justify\">Um bastão de madeira com algum combustível na ponta (geralmente trapos embebidos em parafina). Acender uma tocha é uma ação padrão. Ela ilumina um raio de 9m e dura uma cena. Pode ser usada como uma arma simples leve (dano 1d4 de impacto mais 1 de fogo, crítico x2).</p>",
+      "unidentified": ""
+    },
+    "source": "Tormenta20 — Edição Jogo do Ano, p. 157",
+    "carregado": true,
+    "peso": 0,
+    "espacos": 1,
+    "qtd": 1,
+    "preco": 0.1,
+    "pv": {
+      "value": 0,
+      "max": 0
+    },
+    "rd": 0,
+    "ativacao": {
+      "execucao": "passive",
+      "custo": 0,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "rolls": [
+      {
+        "name": "Ataque",
+        "key": "ataque0",
+        "type": "ataque",
+        "parts": [
+          [
+            "1d20",
+            "",
+            ""
+          ],
+          [
+            "luta",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            ""
+          ]
+        ],
+        "adaptavel": "",
+        "versatil": ""
+      },
+      {
+        "name": "Dano",
+        "key": "dano1",
+        "type": "dano",
+        "parts": [
+          [
+            "1d4",
+            "impacto",
+            ""
+          ],
+          [
+            "padrao",
+            "",
+            ""
+          ],
+          [
+            "1",
+            "fogo",
+            ""
+          ]
+        ],
+        "adaptavel": "",
+        "versatil": ""
+      }
+    ],
+    "origin": "",
+    "tags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "upgrades": {
+      "melhoria1": "",
+      "melhoria2": "",
+      "melhoria3": "",
+      "melhoria4": "",
+      "material": "",
+      "encanto1": "",
+      "encanto2": "",
+      "encanto3": ""
+    },
+    "rolltags": [],
+    "automationtags": [],
+    "enableAutoUpgrades": true,
+    "equipado": 0,
+    "equipado2": {
+      "slot": 0,
+      "type": "hand"
+    },
+    "consume": {
+      "amount": 0,
+      "mpMultiplier": false,
+      "target": "",
+      "type": ""
+    },
+    "alcance": "",
+    "ataques": 0,
+    "tipoUso": "sim",
+    "proficiencia": "simples",
+    "proposito": "corpo-a-corpo",
+    "empunhadura": "leve",
+    "criticoM": 20,
+    "criticoX": 2,
+    "propriedades": {
+      "ada": false,
+      "agi": false,
+      "alo": false,
+      "des": false,
+      "dup": false,
+      "ver": false,
+      "hib": false
+    },
+    "size": "normal"
+  },
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.0",
+    "coreVersion": "14.366",
+    "createdTime": 1788042414291,
+    "modifiedTime": 1788042414291,
+    "lastModifiedBy": "4fJviA1Q4qcjwsna",
+    "duplicateSource": null,
+    "exportSource": null,
+    "compendiumSource": null
+  },
+  "_key": "!items!ujmPaJ9SNjtVnfLB"
+}

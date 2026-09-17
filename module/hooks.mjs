@@ -1,8 +1,17 @@
-import { endSegment } from "./apps/time-segment.mjs";
 import * as chat from "./chat.mjs";
+import { migrateWorld } from "./data/migrations.mjs";
 import * as macros from "./macros.mjs";
 
 export default function () {
+	/* -------------------------------------------------- */
+	/*   Setup Hook                                       */
+	/* -------------------------------------------------- */
+
+	Hooks.once("setup", () => {
+		prepareStatusesCompendium();
+		// prepareUpgradesCompendium();
+	});
+
 	/**
 	 * Once the entire VTT framework is initialized, check to see if we should perform a data migration
 	 */
@@ -15,225 +24,82 @@ export default function () {
 			}
 		});
 
-		ui.compendium.compileSearchIndex();
-
-		if (game.user.isGM) {
-			const systemMigrationVersion = game.settings.get("tormenta20", "systemMigrationVersion");
-			// Define o padrão dos token de PJ
-			if (systemMigrationVersion < "1.5.000") {
-				const prototypeTokenOverrides = game.settings.get("core", "prototypeTokenOverrides");
-				await game.settings.set(
-					"core",
-					"prototypeTokenOverrides",
-					foundry.utils.mergeObject(prototypeTokenOverrides.toObject(), {
-						character: { disposition: CONST.TOKEN_DISPOSITIONS.FRIENDLY, sight: { enabled: true } }
-					})
-				);
-			}
-			if (systemMigrationVersion && systemMigrationVersion < "1.5.006") {
-				const packs = game.packs.filter((p) => p.metadata.type === "Actor" && p.metadata.packageType !== "system");
-				const consertaAtores = async (actors, pack) => {
-					for (const actor of actors) {
-						if (actor.type !== "npc") continue;
-						const treino = actor.treino;
-						const changes = {};
-						try {
-							for (const pericia of Object.keys(CONFIG.T20.resistencias)) {
-								const { outros, value } = actor.system.pericias[pericia];
-								const newBonus = 2 * outros - value;
-								changes[`system.pericias.${pericia}.outros`] = newBonus;
-							}
-							if (actor.items.size) {
-								const pericias = new Set();
-								const bonus = {};
-
-								for (const arma of actor.itemTypes.arma) {
-									const rolls = arma.toObject().system.rolls;
-									const index = rolls.findIndex((r) => r.type === "ataque");
-									if (index === -1) continue;
-									const ataque = rolls[index];
-									const pericia = ataque.parts[1][0];
-									pericias.add(pericia);
-									if (!bonus[pericia]) bonus[pericia] = [];
-									bonus[pericia].push(ataque.parts[2][0]);
-								}
-								for (const pericia of pericias) {
-									const value = actor.system.pericias[pericia].value;
-									const menorBonus = Math.min(...bonus[pericia]);
-									const newBonus = menorBonus - value - treino;
-									changes[`system.pericias.${pericia}.treinado`] = true;
-									changes[`system.pericias.${pericia}.outros`] = newBonus;
-								}
-								for (const arma of actor.itemTypes.arma) {
-									const rolls = arma.toObject().system.rolls;
-
-									const index = rolls.findIndex((r) => r.type === "ataque");
-									if (index === -1) continue;
-									const ataque = rolls[index];
-									const pericia = ataque.parts[1][0];
-									ataque.parts[2][0] = Number(ataque.parts[2][0]) - Math.min(...bonus[pericia]);
-									await arma.update({ [`system.rolls`]: rolls });
-								}
-							}
-							await actor.update(changes);
-						} catch (err) {
-							if (pack) {
-								err.message = `Falha ao migrar o ator ${actor.name} no compêndio ${pack.collection}: ${err.message}`;
-							} else err.message = `Falha ao migrar o ator ${actor.name}`;
-							console.error(err);
-						}
-					}
-				};
-				ui.notifications.info(
-					"Iniciando conserto de resistências e ataques em Ameaças. Espere um momento e não feche o jogo",
-					{
-						console: false,
-						permanent: true
-					}
-				);
-				for (const pack of packs) {
-					const wasLocked = pack.locked;
-					try {
-						await pack.configure({ locked: false });
-						const actors = await pack.getDocuments();
-						consertaAtores(actors, pack);
-					} finally {
-						await pack.configure({ locked: wasLocked });
-					}
-				}
-				consertaAtores(game.actors.filter((a) => a.type === "npc"));
-				ui.notifications.info("Conserto concluído", { console: false, permanent: true });
-			}
-			if (systemMigrationVersion && systemMigrationVersion < "1.5.007") {
-				const packs = game.packs.filter((p) => p.metadata.type === "Actor" && p.metadata.packageType !== "system");
-				const consertaAtores = async (actors, pack) => {
-					for (const actor of actors) {
-						if (actor.type !== "npc") continue;
-						const changes = {};
-						try {
-							if (actor.system.atributos.des.value !== 0) {
-								const defBase = actor.system.attributes.defesa.base;
-								changes["system.attributes.defesa.base"] = defBase - actor.system.atributos.des.value;
-							}
-							await actor.update(changes);
-						} catch (err) {
-							if (pack) {
-								err.message = `Falha ao migrar o ator ${actor.name} no compêndio ${pack.collection}: ${err.message}`;
-							} else err.message = `Falha ao migrar o ator ${actor.name}`;
-							console.error(err);
-						}
-					}
-				};
-				ui.notifications.info("Iniciando conserto de defesas em Ameaças. Espere um momento e não feche o jogo", {
-					console: false,
-					permanent: true
-				});
-				for (const pack of packs) {
-					const wasLocked = pack.locked;
-					try {
-						await pack.configure({ locked: false });
-						const actors = await pack.getDocuments();
-						consertaAtores(actors, pack);
-					} finally {
-						await pack.configure({ locked: wasLocked });
-					}
-				}
-				consertaAtores(game.actors.filter((a) => a.type === "npc"));
-				ui.notifications.info("Conserto concluído", { console: false, permanent: true });
-			}
-			if (systemMigrationVersion && systemMigrationVersion < "1.5.010") {
-				const packs = game.packs.filter((p) => p.metadata.type === "Actor" && p.metadata.packageType !== "system");
-				const consertaAtores = async (actors, pack) => {
-					for (const actor of actors) {
-						if (!actor.system.pericias) continue;
-						const changes = {};
-						try {
-							const initial = new tormenta20.data.fields.SkillData();
-							const cls = CONFIG.Actor.dataModels[actor.type];
-							if (actor.system.pericias.ofi0) changes["system.pericias.-=ofi0"] = null;
-							if (actor.system.pericias._pc0) changes["system.pericias.-=_pc0"] = null;
-							if (
-								actor.system.pericias.acro?.st
-								&& actor.system.pericias.reli?.pda
-								&& actor.system.pericias.guer?.pda
-							) {
-								for (const [key, value] of Object.entries(actor.system.pericias)) {
-									changes[`system.pericias.${key}`] = cls._initialSkillValue(key, initial, value);
-								}
-							}
-							for (const key of CONFIG.T20.oficios) {
-								if (!actor.system.pericias[key]) {
-									changes[`system.pericias.${key}`] = cls._initialSkillValue(key, initial, CONFIG.T20.pericias[key]);
-								}
-							}
-							await actor.update(changes);
-						} catch (err) {
-							if (pack) {
-								err.message = `Falha ao migrar o ator ${actor.name} no compêndio ${pack.collection}: ${err.message}`;
-							} else err.message = `Falha ao migrar o ator ${actor.name}`;
-							console.error(err);
-						}
-					}
-				};
-				ui.notifications.info(
-					"Iniciando migração do sistema Tormenta20 1.5.010. Espere um momento e não feche o jogo",
-					{
-						console: false,
-						permanent: true
-					}
-				);
-				for (const pack of packs) {
-					const wasLocked = pack.locked;
-					try {
-						await pack.configure({ locked: false });
-						const actors = await pack.getDocuments();
-						consertaAtores(actors, pack);
-					} finally {
-						await pack.configure({ locked: wasLocked });
-					}
-				}
-				consertaAtores(game.actors.filter((a) => !!a.system.pericias));
-				ui.notifications.info("Migração concluída", { console: false, permanent: true });
-			}
-			if (systemMigrationVersion && systemMigrationVersion < "1.5.012") {
-				// Fix Skills with Armor Penalty
-				const fixed = new CONFIG.Actor.dataModels.character();
-
-				const updateData = {};
-				Object.entries(fixed.pericias).reduce((acc, [key, value]) => {
-					acc[`system.pericias.${key}.pda`] = value.pda;
-					acc[`system.pericias.${key}.st`] = value.st;
-					return acc;
-				}, updateData);
-
-				const characters = game.actors.filter((i) => i.type == "character");
-				for (let character of characters) await character.update(updateData);
-			}
-			game.actors
-				.filter((f) => !f._stats.systemVersion || f._stats.systemVersion < "1.5.000")
-				.forEach((actor) => {
-					actor.items
-						.filter((item) => item.flags?.favorito)
-						.forEach((item) => item.setFlag("tormenta20", "favorito", true));
-				});
-			let oldActors = game.actors.filter((f) => !f._stats.systemVersion || f._stats.systemVersion < "1.4.100");
-			// Migration
-			for (const actor of oldActors) {
-				let updateData = {};
-				for (let [key, ability] of Object.entries(actor._source.system.atributos)) {
-					updateData[`system.atributos.${key}.base`] = Math.floor((ability.value - 10) / 2);
-					updateData[`system.atributos.${key}.bonus`] = ability.bonus !== 0 ? ability.bonus / 2 : 0;
-				}
-
-				if (actor.type === "npc") {
-					updateData["system.attributes.defesa.base"] = 10 + actor._source.system.attributes.defesa.outros;
-					updateData["system.attributes.defesa.outros"] = 0;
-				}
-				await actor.update(updateData);
-			}
-			return game.settings.set("tormenta20", "systemMigrationVersion", game.system.version);
-		}
+		let pack = game.packs.get("world.statuses");
+		if (!pack.locked) await pack.configure({ locked: true });
 	});
+
+	/**
+	 * Create World Status Compendiums and populate with system effects;
+	 */
+	async function prepareStatusesCompendium() {
+		let pack = game.packs.get("world.statuses");
+		if (!pack) {
+			pack = await foundry.documents.collections.CompendiumCollection.createCompendium({
+				label: "Condições",
+				name: "statuses",
+				type: "ActiveEffect",
+				ownership: {
+					ASSISTANT: "OWNER",
+					PLAYER: "OBSERVER"
+				}
+			});
+			// Copy Effects from system compendium;
+			const effects = game.packs.get("tormenta20.efeitos");
+			const docs = await effects.getDocuments();
+			const create = [];
+			for (const doc of docs) {
+				if (doc.folder.id == "69zW3EVSgASXTmsp") {
+					create.push(doc.toObject());
+				}
+			}
+			await ActiveEffect.createDocuments(create, { keepId: true, pack: "world.statuses" });
+		}
+		const TextEditor = foundry.applications.ux.TextEditor.implementation;
+		CONFIG.statusEffects = {};
+		const docs = await pack.getDocuments();
+		for (const effect of docs) {
+			const identifier = effect.statuses.first();
+			CONFIG.statusEffects[identifier] = {
+				id: identifier,
+				uuid: effect.uuid,
+				name: effect.name,
+				img: effect.img,
+				link: effect.toAnchor().outerHTML,
+				category: effect.system.status?.category,
+				description: await TextEditor.enrichHTML(effect.description),
+				// SOME PLACES RETRIEVE EFFECT DATA FROM SYNCHRONOUSLY T20.conditions
+				// MORE WORK IS REQUIRED TO CONVERT THOSE PLACES TO ASYNC
+				_source: effect.clone({}, { keepId: false }).toObject()
+			};
+		}
+
+		CONFIG.controlIcons.defeated = CONFIG.statusEffects.inconsciente.img;
+		CONFIG.specialStatusEffects.BLIND = "cego";
+		CONFIG.specialStatusEffects.DEFEATED = "morto";
+		CONFIG.specialStatusEffects.INVISIBLE = "invisivel";
+	}
+
+	/**
+	 * Create World Equipment Upgrade Compendium and populate with system effects;
+	 */
+	async function prepareUpgradesCompendium() {
+		let pack = game.packs.get("world.upgrades");
+		if (!pack) {
+			pack = await foundry.documents.collections.CompendiumCollection.createCompendium({
+				label: "Melhorias e Encantos",
+				name: "upgrades",
+				type: "ActiveEffect"
+			});
+		}
+		CONFIG.upgradeEffects = [];
+		const docs = await pack.getDocuments();
+		docs.forEach((effect) => {
+			const { category, item } = effect.system.upgrade;
+			CONFIG.upgradeEffects.category = {};
+		});
+	}
+
+	Hooks.once("ready", migrateWorld);
 
 	/* -------------------------------------------- */
 	/*  Other Hooks                                 */
@@ -262,7 +128,8 @@ export default function () {
 	});
 
 	/* Chat Hooks */
-	Hooks.on("renderChatMessageHTML", (app, html, data) => {
+	Hooks.on("renderChatMessageHTML", tormenta20.documents.ChatMessageT20.renderChatMessageHTML);
+	Hooks.on("renderChatMessageHTML_DEPRECATED", (app, html, data) => {
 		chat.hideDieFlavor(app, html, data);
 		chat.ApplyButtons(app, html, data);
 		// Highlight critical success or failure die
@@ -297,18 +164,6 @@ export default function () {
 			.querySelectorAll(".chat-spend-mana")
 			.forEach((el) => el.addEventListener("click", chat._onChatSpendMana.bind(this)));
 	});
-
-	/* Add hook for End of Scene */
-	Hooks.on("renderCombatTracker", async (app, html) => endSegment(app, html));
-
-	/* Debug hook */
-	// Hooks.on("modifyTokenAttribute", async (attribute, value, isDelta, isBar) => {
-	// console.log("Debug hook: Debug hook");
-	// }) ;
-	/* Measured Templates*/
-	// Hooks.on("preCreateActiveEffect", (ActiveEffect, object, options, userId) => {
-
-	// });
 
 	Hooks.on("getSceneControlButtons", (controls) => {
 		controls.tokens.tools.range = {
