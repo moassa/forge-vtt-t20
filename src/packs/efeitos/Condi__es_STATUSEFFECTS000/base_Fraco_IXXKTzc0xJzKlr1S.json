@@ -1,0 +1,140 @@
+{
+  "_id": "IXXKTzc0xJzKlr1S",
+  "folder": "STATUSEFFECTS000",
+  "name": "Fraco",
+  "img": "systems/tormenta20/icons/conditions/fraco.svg",
+  "statuses": [
+    "fraco"
+  ],
+  "duration": {
+    "expiry": "sceneEnd",
+    "value": null,
+    "units": "seconds",
+    "expired": false
+  },
+  "system": {
+    "changes": [
+      {
+        "key": "system.modificadores.atributos.for",
+        "value": -2,
+        "type": "add",
+        "phase": "initial"
+      },
+      {
+        "key": "system.modificadores.atributos.des",
+        "value": -2,
+        "type": "add",
+        "phase": "initial"
+      },
+      {
+        "key": "system.modificadores.atributos.con",
+        "value": -2,
+        "type": "add",
+        "phase": "initial"
+      },
+      {
+        "key": "system.pericias.acro.condi",
+        "value": -2,
+        "type": "downgrade",
+        "phase": "initial"
+      },
+      {
+        "key": "system.pericias.atle.condi",
+        "value": -2,
+        "type": "downgrade",
+        "phase": "initial"
+      },
+      {
+        "key": "system.pericias.cava.condi",
+        "value": -2,
+        "type": "downgrade",
+        "phase": "initial"
+      },
+      {
+        "key": "system.pericias.fort.condi",
+        "value": -2,
+        "type": "downgrade",
+        "phase": "initial"
+      },
+      {
+        "key": "system.pericias.furt.condi",
+        "value": -2,
+        "type": "downgrade",
+        "phase": "initial"
+      },
+      {
+        "key": "system.pericias.inic.condi",
+        "value": -2,
+        "type": "downgrade",
+        "phase": "initial"
+      },
+      {
+        "key": "system.pericias.luta.condi",
+        "value": -2,
+        "type": "downgrade",
+        "phase": "initial"
+      },
+      {
+        "key": "system.pericias.pilo.condi",
+        "value": -2,
+        "type": "downgrade",
+        "phase": "initial"
+      },
+      {
+        "key": "system.pericias.pont.condi",
+        "value": -2,
+        "type": "downgrade",
+        "phase": "initial"
+      },
+      {
+        "key": "system.pericias.refl.condi",
+        "value": -2,
+        "type": "downgrade",
+        "phase": "initial"
+      }
+    ],
+    "status": {
+      "category": "",
+      "ignoreImunity": false,
+      "upgrade": "",
+      "childEffect": []
+    },
+    "targets": [],
+    "onuse": false,
+    "abilityUse": {
+      "description": "",
+      "automatic": false,
+      "aumenta": false,
+      "custo": null,
+      "names": [],
+      "types": []
+    },
+    "aura": {
+      "isAura": false,
+      "range": 0,
+      "disposition": []
+    }
+  },
+  "type": "base",
+  "disabled": false,
+  "start": null,
+  "description": "",
+  "origin": null,
+  "tint": "#ffffff",
+  "transfer": false,
+  "showIcon": 1,
+  "sort": 0,
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.2",
+    "createdTime": 1790107995427,
+    "modifiedTime": 1790107995427,
+    "lastModifiedBy": "fMILAiVcmBGZmE6r",
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "_key": "!effects!IXXKTzc0xJzKlr1S"
+}

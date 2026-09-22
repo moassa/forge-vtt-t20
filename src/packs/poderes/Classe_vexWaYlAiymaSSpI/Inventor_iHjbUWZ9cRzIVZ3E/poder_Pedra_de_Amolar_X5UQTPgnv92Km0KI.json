@@ -134,13 +134,7 @@
       "_key": "!items.effects!X5UQTPgnv92Km0KI.gO5pvVfOsdwVQCyc"
     }
   ],
-  "flags": {
-    "scene-packer": {
-      "sourceId": "Item.k9pNoC1oHJE7mlLu",
-      "defaultPermission": 3,
-      "hash": "8f14c5ea9d56586d1a7680b13472b96fad47a9ea"
-    }
-  },
+  "flags": {},
   "system": {
     "description": {
       "value": "<p style=\"text-align:justify\">Você pode gastar uma ação de movimento e uma quantidade de PM a sua escolha (limitado por sua Inteligência) para aprimorar uma arma corpo a corpo que esteja empunhando. Para cada PM que gastar, você recebe +1 em rolagens de dano com a arma até o final da cena. Pré-requisito: Armeiro.</p>",

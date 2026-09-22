@@ -187,13 +187,7 @@
       "_key": "!items.effects!DpTB2ElpvJ9mK0Bn.l3HTmKDlPQazjYWp"
     }
   ],
-  "flags": {
-    "scene-packer": {
-      "sourceId": "Item.rOO6U1bkk4xrlize",
-      "defaultPermission": 2,
-      "hash": "489a612a8235f62cd560028b82b1bf4c35524979"
-    }
-  },
+  "flags": {},
   "system": {
     "description": {
       "value": "<p>Um vigia ou animal de guarda, sempre atento aos arredores.</p><p>Iniciante: +2 em Percepção e Iniciativa.</p><p>Veterano: você pode usar Esquiva Sobrenatural.</p><p>Mestre: você pode usar Olhos nas Costas.</p>",

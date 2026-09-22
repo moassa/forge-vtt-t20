@@ -68,13 +68,7 @@
       "_key": "!items.effects!XbndSZpX3PC0tiWv.7th2Z9Rheq6XuBUb"
     }
   ],
-  "flags": {
-    "scene-packer": {
-      "sourceId": "Item.GZ7cWm67y0usx8dL",
-      "defaultPermission": 3,
-      "hash": "368f30ffe894755f715f580be6a8be736485c4bb"
-    }
-  },
+  "flags": {},
   "system": {
     "description": {
       "value": "<p style=\"text-align:justify\">Você recebe proficiência com armaduras pesadas e escudos. Quando usa armadura, pode usar sua Inteligência em vez de Destreza na Defesa (mas continua não podendo somar um atributo na Defesa quando usa armadura pesada). Pré-requisito: treinado em Ofício (armeiro).</p>",

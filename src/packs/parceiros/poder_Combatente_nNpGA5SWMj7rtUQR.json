@@ -260,13 +260,7 @@
       "_key": "!items.effects!nNpGA5SWMj7rtUQR.Q5PEZSKgxKFlG2RJ"
     }
   ],
-  "flags": {
-    "scene-packer": {
-      "sourceId": "Item.rOO6U1bkk4xrlize",
-      "defaultPermission": 2,
-      "hash": "489a612a8235f62cd560028b82b1bf4c35524979"
-    }
-  },
+  "flags": {},
   "system": {
     "description": {
       "value": "<p style=\"text-align:justify\">Um bucaneiro, guerreiro, paladino ou animal de caça.</p><p style=\"text-align:justify\">Iniciante: +2 em testes de ataque.</p><p style=\"text-align:justify\">Veterano: muda para +3 em testes de ataque.</p><p style=\"text-align:justify\">Mestre: muda para +4 em testes de ataque e, uma vez por rodada, você pode gastar 5 PM para fazer um ataque extra.</p>",

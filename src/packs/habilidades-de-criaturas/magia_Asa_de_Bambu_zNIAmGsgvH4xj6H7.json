@@ -4,7 +4,7 @@
   "img": "systems/tormenta20/icons/poderes/ameacas/asas.webp",
   "effects": [
     {
-      "_id": "CRX7wBp8q9Zkv9z2",
+      "_id": "jkMo8Pe9SYGpqSbo",
       "disabled": false,
       "duration": {
         "value": null,
@@ -65,7 +65,7 @@
       "start": null,
       "showIcon": 1,
       "folder": null,
-      "_key": "!items.effects!zNIAmGsgvH4xj6H7.CRX7wBp8q9Zkv9z2"
+      "_key": "!items.effects!zNIAmGsgvH4xj6H7.jkMo8Pe9SYGpqSbo"
     }
   ],
   "flags": {},

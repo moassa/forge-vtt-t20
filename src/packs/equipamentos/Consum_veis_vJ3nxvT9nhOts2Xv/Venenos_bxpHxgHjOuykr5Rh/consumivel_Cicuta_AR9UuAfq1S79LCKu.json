@@ -60,13 +60,7 @@
       "_key": "!items.effects!AR9UuAfq1S79LCKu.5XSvsZTSYDDlssKn"
     }
   ],
-  "flags": {
-    "scene-packer": {
-      "sourceId": "Item.pkBZQTP7NKsIys9H",
-      "defaultPermission": 2,
-      "hash": "5ddb6fc6cd97205ce56c8f3f1e6d87f141382a43"
-    }
-  },
+  "flags": {},
   "system": {
     "description": {
       "value": "<p style=\"text-align:justify\">Planta cuja ingestão pode causar náusea, dores e até morte. Ingestão, perde 1d12 PV por rodada durante 3 rodadas (perde 1d12 PV).</p>",

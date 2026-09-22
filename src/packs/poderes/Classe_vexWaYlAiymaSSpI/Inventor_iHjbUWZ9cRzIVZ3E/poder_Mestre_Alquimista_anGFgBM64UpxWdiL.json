@@ -3,13 +3,7 @@
   "type": "poder",
   "img": "icons/commodities/tech/cog-brass.webp",
   "effects": [],
-  "flags": {
-    "scene-packer": {
-      "sourceId": "Item.rIZqrA7uAFQzu8Rn",
-      "defaultPermission": 3,
-      "hash": "4a37f388886a24c6a47dc5e9abfc577e56ddf7d6"
-    }
-  },
+  "flags": {},
   "system": {
     "description": {
       "value": "<p>Você pode fabricar poções com fórmulas que conheça de qualquer círculo. Pré-requisitos: Int 3, Sab 3, Alquimista Iniciado, 10º nível de inventor.</p>",

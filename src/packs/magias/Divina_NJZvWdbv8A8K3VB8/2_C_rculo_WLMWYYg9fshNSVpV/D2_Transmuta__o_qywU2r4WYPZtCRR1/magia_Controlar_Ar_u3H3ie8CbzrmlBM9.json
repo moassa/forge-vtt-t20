@@ -4,7 +4,7 @@
   "img": "icons/magic/air/wind-tornado-cyclone-white.webp",
   "effects": [
     {
-      "_id": "fwMTgwpZsj9p70EF",
+      "_id": "LK7HkAuongxQDnyX",
       "flags": {
         "tormenta20": {}
       },
@@ -81,7 +81,7 @@
       "start": null,
       "showIcon": 1,
       "folder": null,
-      "_key": "!items.effects!u3H3ie8CbzrmlBM9.fwMTgwpZsj9p70EF"
+      "_key": "!items.effects!u3H3ie8CbzrmlBM9.LK7HkAuongxQDnyX"
     },
     {
       "origin": "Item.u3H3ie8CbzrmlBM9",

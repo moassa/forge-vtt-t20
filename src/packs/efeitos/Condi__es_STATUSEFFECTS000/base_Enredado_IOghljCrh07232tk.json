@@ -1,0 +1,77 @@
+{
+  "_id": "IOghljCrh07232tk",
+  "folder": "STATUSEFFECTS000",
+  "name": "Enredado",
+  "img": "systems/tormenta20/icons/conditions/enredado.svg",
+  "statuses": [
+    "enredado"
+  ],
+  "duration": {
+    "expiry": "sceneEnd",
+    "value": null,
+    "units": "seconds",
+    "expired": false
+  },
+  "system": {
+    "changes": [
+      {
+        "key": "system.pericias.luta.condi",
+        "value": -2,
+        "type": "downgrade",
+        "phase": "initial"
+      },
+      {
+        "key": "system.pericias.pont.condi",
+        "value": -2,
+        "type": "downgrade",
+        "phase": "initial"
+      }
+    ],
+    "status": {
+      "category": "movimento",
+      "childEffect": [
+        "lento",
+        "vulneravel"
+      ],
+      "ignoreImunity": false,
+      "upgrade": ""
+    },
+    "targets": [],
+    "onuse": false,
+    "abilityUse": {
+      "description": "",
+      "automatic": false,
+      "aumenta": false,
+      "custo": null,
+      "names": [],
+      "types": []
+    },
+    "aura": {
+      "isAura": false,
+      "range": 0,
+      "disposition": []
+    }
+  },
+  "type": "base",
+  "disabled": false,
+  "start": null,
+  "description": "",
+  "origin": null,
+  "tint": "#ffffff",
+  "transfer": false,
+  "showIcon": 1,
+  "sort": 0,
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.2",
+    "createdTime": 1790107995426,
+    "modifiedTime": 1790107995426,
+    "lastModifiedBy": "fMILAiVcmBGZmE6r",
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "_key": "!effects!IOghljCrh07232tk"
+}

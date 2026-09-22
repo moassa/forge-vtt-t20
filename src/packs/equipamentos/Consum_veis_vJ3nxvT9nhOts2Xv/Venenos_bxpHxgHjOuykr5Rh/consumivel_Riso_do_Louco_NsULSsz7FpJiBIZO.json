@@ -116,13 +116,7 @@
       "_key": "!items.effects!NsULSsz7FpJiBIZO.X5wMMnLxH1S11gww"
     }
   ],
-  "flags": {
-    "scene-packer": {
-      "sourceId": "Item.zNvgJw5ApQiPD2jZ",
-      "defaultPermission": 2,
-      "hash": "d07237c3649a06d840853ff0b5e0bc5d8a3a05e0"
-    }
-  },
+  "flags": {},
   "system": {
     "description": {
       "value": "<p>Este gás púrpura faz a vítima rir descontroladamente e agir de forma caótica.</p>\n<p><strong>Tipo: </strong><em>Inalação.</em></p>\n<p><strong>Efeito:</strong> <em>Vítima fica confusa (confusa por 1 rodada).</em></p>",

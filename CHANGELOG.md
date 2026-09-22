@@ -1,5 +1,9 @@
 # Lista de Mudanças
 
+# Versão 1.6.3
+- Corrigido: Compendium de efeitos.
+- Corrigido: Efeitos de Uso com id duplicado.
+
 # Versão 1.6.0
 - Migrações para v14
 - Corrigido: Configuração de deslocamentos.

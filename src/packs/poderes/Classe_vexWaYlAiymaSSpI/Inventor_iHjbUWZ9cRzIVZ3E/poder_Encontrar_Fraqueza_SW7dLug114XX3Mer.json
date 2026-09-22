@@ -68,13 +68,7 @@
       "_key": "!items.effects!SW7dLug114XX3Mer.d3jSj7fxvdNKWGms"
     }
   ],
-  "flags": {
-    "scene-packer": {
-      "sourceId": "Item.1qsEfu0MrnD1VRGz",
-      "defaultPermission": 3,
-      "hash": "2af2a8c35fee345003981f097748ec1d8c62276b"
-    }
-  },
+  "flags": {},
   "system": {
     "description": {
       "value": "<p style=\"text-align:justify\">A partir do 7º nível, você pode gastar uma ação de movimento e 2 PM para analisar um objeto em alcance curto. Se fizer isso, ignora a redução de dano dele. Você também pode usar esta habilidade para encontrar uma fraqueza em um inimigo. Se ele estiver de armadura ou for um construto, você recebe +2 em seus testes de ataque contra ele. Os benefícios desta habilidade duram até o fim da cena.</p>",

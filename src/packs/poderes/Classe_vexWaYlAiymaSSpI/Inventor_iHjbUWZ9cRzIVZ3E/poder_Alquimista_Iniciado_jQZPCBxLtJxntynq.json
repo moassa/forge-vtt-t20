@@ -3,16 +3,7 @@
   "type": "poder",
   "img": "systems/tormenta20/icons/classes/inventor.webp",
   "effects": [],
-  "flags": {
-    "gm-notes": {
-      "notes": null
-    },
-    "scene-packer": {
-      "sourceId": "Item.tSXuwsAPKs88m43v",
-      "defaultPermission": 3,
-      "hash": "76b869f3c8222df3a20e3667453fd504a447abd5"
-    }
-  },
+  "flags": {},
   "system": {
     "description": {
       "value": "<p style=\"text-align:justify\">Você recebe um livro de fórmulas e pode fabricar poções com fórmulas que conheça de 1º e 2º círculos. Veja as páginas 333 e 341 para as regras de poções. Pré-requisitos: Int 1, Sab 1, treinado em Ofício (alquimista).</p>",

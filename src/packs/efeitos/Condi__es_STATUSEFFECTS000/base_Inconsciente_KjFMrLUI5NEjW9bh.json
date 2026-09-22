@@ -1,0 +1,63 @@
+{
+  "_id": "KjFMrLUI5NEjW9bh",
+  "folder": "STATUSEFFECTS000",
+  "name": "Inconsciente",
+  "img": "systems/tormenta20/icons/conditions/inconsciente.svg",
+  "statuses": [
+    "inconsciente"
+  ],
+  "duration": {
+    "expiry": "sceneEnd",
+    "value": null,
+    "units": "seconds",
+    "expired": false
+  },
+  "system": {
+    "status": {
+      "childEffect": [
+        "indefeso"
+      ],
+      "category": "",
+      "ignoreImunity": false,
+      "upgrade": ""
+    },
+    "changes": [],
+    "targets": [],
+    "onuse": false,
+    "abilityUse": {
+      "description": "",
+      "automatic": false,
+      "aumenta": false,
+      "custo": null,
+      "names": [],
+      "types": []
+    },
+    "aura": {
+      "isAura": false,
+      "range": 0,
+      "disposition": []
+    }
+  },
+  "type": "base",
+  "disabled": false,
+  "start": null,
+  "description": "",
+  "origin": null,
+  "tint": "#ffffff",
+  "transfer": false,
+  "showIcon": 1,
+  "sort": 0,
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.2",
+    "createdTime": 1790107995428,
+    "modifiedTime": 1790107995428,
+    "lastModifiedBy": "fMILAiVcmBGZmE6r",
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "_key": "!effects!KjFMrLUI5NEjW9bh"
+}

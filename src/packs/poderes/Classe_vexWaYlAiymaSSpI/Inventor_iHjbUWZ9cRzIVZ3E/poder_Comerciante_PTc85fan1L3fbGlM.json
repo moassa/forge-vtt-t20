@@ -3,13 +3,7 @@
   "type": "poder",
   "img": "systems/tormenta20/icons/poderes/classes/especialistas/comerciante.webp",
   "effects": [],
-  "flags": {
-    "scene-packer": {
-      "sourceId": "Item.Mh7xqsRcDPg2EHVH",
-      "defaultPermission": 3,
-      "hash": "4c9803ee462c8bce4b725112552d12fb37eaa084"
-    }
-  },
+  "flags": {},
   "system": {
     "description": {
       "value": "<p style=\"text-align:justify\">No 3º nível, você pode vender itens 10% mais caro (não cumulativo com barganha).</p>",

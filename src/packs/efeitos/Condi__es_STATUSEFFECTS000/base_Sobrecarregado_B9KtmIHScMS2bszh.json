@@ -1,0 +1,68 @@
+{
+  "_id": "B9KtmIHScMS2bszh",
+  "folder": "STATUSEFFECTS000",
+  "name": "Sobrecarregado",
+  "img": "systems/tormenta20/icons/conditions/sobrecarregado.svg",
+  "statuses": [
+    "sobrecarregado"
+  ],
+  "duration": {
+    "expiry": "sceneEnd",
+    "value": null,
+    "units": "seconds",
+    "expired": false
+  },
+  "system": {
+    "changes": [
+      {
+        "key": "system.attributes.defesa.pda",
+        "value": 5,
+        "type": "add",
+        "phase": "initial"
+      }
+    ],
+    "status": {
+      "category": "movimento",
+      "ignoreImunity": false,
+      "upgrade": "",
+      "childEffect": []
+    },
+    "targets": [],
+    "onuse": false,
+    "abilityUse": {
+      "description": "",
+      "automatic": false,
+      "aumenta": false,
+      "custo": null,
+      "names": [],
+      "types": []
+    },
+    "aura": {
+      "isAura": false,
+      "range": 0,
+      "disposition": []
+    }
+  },
+  "type": "base",
+  "disabled": false,
+  "start": null,
+  "description": "",
+  "origin": null,
+  "tint": "#ffffff",
+  "transfer": false,
+  "showIcon": 1,
+  "sort": 0,
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.2",
+    "createdTime": 1790107995431,
+    "modifiedTime": 1790107995431,
+    "lastModifiedBy": "fMILAiVcmBGZmE6r",
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "_key": "!effects!B9KtmIHScMS2bszh"
+}

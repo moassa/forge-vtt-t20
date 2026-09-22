@@ -216,13 +216,7 @@
       "_key": "!items.effects!BNhavlxkPCr8P4Vi.6RK2uZN4xhG3eyow"
     }
   ],
-  "flags": {
-    "scene-packer": {
-      "sourceId": "Item.rOO6U1bkk4xrlize",
-      "defaultPermission": 2,
-      "hash": "489a612a8235f62cd560028b82b1bf4c35524979"
-    }
-  },
+  "flags": {},
   "system": {
     "description": {
       "value": "<p style=\"text-align:justify\">Um ladino ou outro tipo furtivo e letal.</p><p style=\"text-align:justify\">Iniciante: você pode usar a habilidade Ataque Furtivo +1d6. Se já possui a habilidade, o bônus é cumulativo.</p><p style=\"text-align:justify\">Veterano: além do Ataque Furtivo, fornece bônus por flanquear contra um inimigo por rodada.</p><p style=\"text-align:justify\">Mestre: muda o dano do Ataque Furtivo para +2d6.</p><p style=\"text-align:justify\">Note que, além de fornecer +2 em testes de ataque corpo a corpo, o bônus por flanquear facilita que o personagem use seu Ataque Furtivo.</p>",

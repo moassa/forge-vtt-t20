@@ -70,13 +70,7 @@
       "_key": "!items.effects!4FWvcrP6aXQIH4L8.Me3eOcFZnqlgYBOf"
     }
   ],
-  "flags": {
-    "scene-packer": {
-      "sourceId": "Item.q23HNld6PL6iI5Im",
-      "defaultPermission": 3,
-      "hash": "d218a0679a7b1025ac1fe0118d0e73c923192aa8"
-    }
-  },
+  "flags": {},
   "system": {
     "description": {
       "value": "<p style=\"text-align:justify\">Quando usa uma arma corpo a corpo feita por você mesmo, o dano dela aumenta em um passo. Pré-requisitos: Armeiro, 5º nível de inventor.</p>",

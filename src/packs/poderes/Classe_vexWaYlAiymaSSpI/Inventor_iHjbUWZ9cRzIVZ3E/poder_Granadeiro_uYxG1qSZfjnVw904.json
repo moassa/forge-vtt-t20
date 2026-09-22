@@ -3,13 +3,7 @@
   "type": "poder",
   "img": "icons/commodities/tech/cog-brass.webp",
   "effects": [],
-  "flags": {
-    "scene-packer": {
-      "sourceId": "Item.zsoIEBCeDpk6zOrI",
-      "defaultPermission": 3,
-      "hash": "35f360d9c0bc93231b7f4e47fc216b1f683149aa"
-    }
-  },
+  "flags": {},
   "system": {
     "description": {
       "value": "<p style=\"text-align:justify\">Você pode arremessar itens alquímicos e poções em alcance médio. Você pode usar sua Inteligência em vez de Destreza para calcular a CD do teste de resistência desses itens. Pré-requisito: Alquimista de Batalha.</p>",

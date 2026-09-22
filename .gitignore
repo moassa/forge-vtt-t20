@@ -18,4 +18,6 @@ dist/
 packs/*
 !packs/_source/
 foundry/
-src/packs-yml/
+
+# WIP
+local/

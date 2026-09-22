@@ -2,7 +2,7 @@
   "id": "tormenta20",
   "title": "Tormenta20",
   "description": "Sistema NÃO OFICIAL de Tormenta20 para FoundryVTT!",
-  "version": "1.6.2",
+  "version": "1.6.3",
   "compatibility": {
     "minimum": "14",
     "verified": "14",
@@ -243,53 +243,60 @@
   ],
   "packFolders": [
     {
-      "name": "Actors",
+      "name": "Tormenta20",
       "sorting": "m",
-      "color": "#000000",
-      "packs": [
-        "ameacas",
-        "convocacoes"
-      ]
-    },
-    {
-      "name": "Items",
-      "sorting": "m",
-      "color": "#000000",
-      "packs": [
-        "racas",
-        "classes",
-        "poderes",
-        "equipamentos",
-        "equipamentos-magicos",
-        "magias",
-        "habilidades-de-criaturas",
-        "pocoes",
-        "parceiros"
-      ]
-    },
-    {
-      "name": "Journals",
-      "sorting": "m",
-      "color": "#000000",
-      "packs": [
-        "basico"
-      ]
-    },
-    {
-      "name": "RollTables",
-      "sorting": "m",
-      "color": "#000000",
-      "packs": [
-        "tabelas-de-tesouro"
-      ]
-    },
-    {
-      "name": "Outros",
-      "sorting": "m",
-      "color": "#000000",
-      "packs": [
-        "efeitos",
-        "macros"
+      "color": "#b72a2b",
+      "folders": [
+        {
+          "name": "Actors",
+          "sorting": "m",
+          "color": "#000000",
+          "packs": [
+            "ameacas",
+            "convocacoes"
+          ]
+        },
+        {
+          "name": "Items",
+          "sorting": "m",
+          "color": "#000000",
+          "packs": [
+            "racas",
+            "classes",
+            "poderes",
+            "equipamentos",
+            "equipamentos-magicos",
+            "magias",
+            "habilidades-de-criaturas",
+            "pocoes",
+            "parceiros"
+          ]
+        },
+        {
+          "name": "Journals",
+          "sorting": "m",
+          "color": "#000000",
+          "packs": [
+            "basico"
+          ]
+        },
+        {
+          "name": "RollTables",
+          "sorting": "m",
+          "color": "#000000",
+          "packs": [
+            "tabelas-de-tesouro"
+          ]
+        },
+        {
+          "name": "Outros",
+          "sorting": "m",
+          "color": "#000000",
+          "packs": [
+            "efeitos",
+            "macros"
+          ]
+        }
       ]
     }
   ],

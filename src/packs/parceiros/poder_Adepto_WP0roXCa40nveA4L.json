@@ -178,13 +178,7 @@
       "_key": "!items.effects!WP0roXCa40nveA4L.zAiMFoC0tnMOshiZ"
     }
   ],
-  "flags": {
-    "scene-packer": {
-      "sourceId": "Item.rOO6U1bkk4xrlize",
-      "defaultPermission": 2,
-      "hash": "489a612a8235f62cd560028b82b1bf4c35524979"
-    }
-  },
+  "flags": {},
   "system": {
     "description": {
       "value": "<p>Um conjurador capaz de ajudá-lo a lançar suas magias.</p><p>Iniciante: o custo para lançar suas magias de 1º círculo diminui –1 PM.</p><p>Veterano: como acima, mas também reduz o custo de suas magias de 2º círculo.</p><p>Mestre: como acima, e esta redução se torna cumulativa com outras reduções.</p>",

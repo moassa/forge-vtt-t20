@@ -60,13 +60,7 @@
       "_key": "!items.effects!5D42HnDgEirhlxS5.geUCxtXFwXidnoZg"
     }
   ],
-  "flags": {
-    "scene-packer": {
-      "sourceId": "Item.TuPjWGAvbeedIJhb",
-      "defaultPermission": 2,
-      "hash": "45611845a538afe14423f5017dc46d7b2023722b"
-    }
-  },
+  "flags": {},
   "system": {
     "description": {
       "value": "<p style=\"text-align:justify\">Planta extremamente tóxica que afeta o sistema nervoso da vítima. Ingestão, vítima fica paralisada (lenta) por 3 rodadas. A CD para fabricar e para resistir a este veneno aumenta em +5.</p>",

@@ -132,13 +132,7 @@
       "_key": "!items.effects!BwcAOABGJj95Tw4o.1Rq5pAoTZeBBWMbV"
     }
   ],
-  "flags": {
-    "scene-packer": {
-      "sourceId": "Item.xptzhv7HHWlmDpT6",
-      "defaultPermission": 3,
-      "hash": "b18ee32ef2ad688b8b14aaf7678ce124ffe1a28a"
-    }
-  },
+  "flags": {},
   "system": {
     "description": {
       "value": "<p style=\"text-align:justify\">Você pode gastar uma hora e 2 PM para fazer a manutenção do equipamento de seu grupo. Cada membro do grupo escolhe uma arma, armadura ou escudo para manutenção. Armas recebem +1 em testes de ataque, armaduras e escudos aumentam seu bônus na Defesa em +1. Os benefícios duram um dia. Pré-requisito: treinado em Ofício (armeiro).</p>",

@@ -68,13 +68,7 @@
       "_key": "!items.effects!IWpWSfSXeQbEPw4Z.okKdUuTe3Potb7fU"
     }
   ],
-  "flags": {
-    "scene-packer": {
-      "sourceId": "Item.C7NhXZepS8p8Jg38",
-      "defaultPermission": 3,
-      "hash": "e64d08caff2831f86b1bf63fc9f93f82814fc593"
-    }
-  },
+  "flags": {},
   "system": {
     "description": {
       "value": "<p style=\"text-align:justify\">Você pode usar sua Inteligência na Defesa quando usa armadura pesada. Se fizer isso, não pode somar sua Destreza, mesmo que outras habilidades ou efeitos permitam isso. Pré-requisitos: Couraceiro, 8º nível de inventor.</p>",

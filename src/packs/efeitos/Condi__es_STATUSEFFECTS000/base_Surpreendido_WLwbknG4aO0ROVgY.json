@@ -1,0 +1,63 @@
+{
+  "_id": "WLwbknG4aO0ROVgY",
+  "folder": "STATUSEFFECTS000",
+  "name": "Surpreendido",
+  "img": "systems/tormenta20/icons/conditions/surpreendido.svg",
+  "statuses": [
+    "surpreendido"
+  ],
+  "duration": {
+    "expiry": "sceneEnd",
+    "value": null,
+    "units": "seconds",
+    "expired": false
+  },
+  "system": {
+    "status": {
+      "childEffect": [
+        "desprevenido"
+      ],
+      "category": "",
+      "ignoreImunity": false,
+      "upgrade": ""
+    },
+    "changes": [],
+    "targets": [],
+    "onuse": false,
+    "abilityUse": {
+      "description": "",
+      "automatic": false,
+      "aumenta": false,
+      "custo": null,
+      "names": [],
+      "types": []
+    },
+    "aura": {
+      "isAura": false,
+      "range": 0,
+      "disposition": []
+    }
+  },
+  "type": "base",
+  "disabled": false,
+  "start": null,
+  "description": "",
+  "origin": null,
+  "tint": "#ffffff",
+  "transfer": false,
+  "showIcon": 1,
+  "sort": 0,
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.2",
+    "createdTime": 1790107995430,
+    "modifiedTime": 1790107995430,
+    "lastModifiedBy": "fMILAiVcmBGZmE6r",
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "_key": "!effects!WLwbknG4aO0ROVgY"
+}

@@ -3,13 +3,7 @@
   "type": "poder",
   "img": "icons/commodities/tech/cog-brass.webp",
   "effects": [],
-  "flags": {
-    "scene-packer": {
-      "sourceId": "Item.ipbMzDzA1QNs0XO6",
-      "defaultPermission": 3,
-      "hash": "f7b7522ebaea31f383130b6c4d07479917a1ec43"
-    }
-  },
+  "flags": {},
   "system": {
     "description": {
       "value": "<p style=\"text-align:justify\">Todas as comidas que você cozinha têm seu bônus numérico aumentado em +1. Pré-requisito: treinado em Ofício (cozinheiro).</p>",

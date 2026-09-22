@@ -141,13 +141,7 @@
       "_key": "!items.effects!AXrNhUoxQF0LswWD.FlMkwsqn6MatZUJB"
     }
   ],
-  "flags": {
-    "scene-packer": {
-      "sourceId": "Item.6ACN5lemHXGOouMc",
-      "defaultPermission": 3,
-      "hash": "f4da95ebab173c1377dbf0d3883e0cc3371c1971"
-    }
-  },
+  "flags": {},
   "system": {
     "description": {
       "value": "<p style=\"text-align:justify\">Você pode gastar uma ação padrão e uma quantidade de PM a sua escolha (limitado pela sua Inteligência) para aprimorar uma arma de ataque à distância. Para cada PM que gastar, você recebe +1 em rolagens de dano com a arma até o final da cena. Pré-requisito: Balística.</p>",

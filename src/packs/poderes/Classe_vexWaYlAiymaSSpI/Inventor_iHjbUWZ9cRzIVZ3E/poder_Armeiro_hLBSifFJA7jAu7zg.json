@@ -3,13 +3,7 @@
   "type": "poder",
   "img": "systems/tormenta20/icons/classes/inventor.webp",
   "effects": [],
-  "flags": {
-    "scene-packer": {
-      "sourceId": "Item.4TbsE24xptk5BNp3",
-      "defaultPermission": 3,
-      "hash": "f24308a0c4246a2008fb5757d72ba2375c4de0cc"
-    }
-  },
+  "flags": {},
   "system": {
     "description": {
       "value": "<p style=\"text-align:justify\">Você recebe proficiência com armas marciais corpo a corpo. Quando empunha uma arma corpo a corpo, pode usar sua Inteligência em vez de Força nos testes de ataque e rolagens de dano. Pré-requisitos: treinado em Luta e Ofício (armeiro).</p>",

@@ -60,13 +60,7 @@
       "_key": "!items.effects!bOB6wziZ6QSoP5Gc.1oavfzDRZov8ik8m"
     }
   ],
-  "flags": {
-    "scene-packer": {
-      "sourceId": "Item.ysNO31VnHbYQXDnE",
-      "defaultPermission": 2,
-      "hash": "f833ca1330e3bed65b2d30c53c9a910bddc60436"
-    }
-  },
+  "flags": {},
   "system": {
     "description": {
       "value": "<p>Um gás sonífero. Inalação, vítima fica inconsciente (enjoada por 1 rodada).</p>",

@@ -4,7 +4,7 @@
   "img": "systems/tormenta20/icons/poderes/ameacas/gritador.webp",
   "effects": [
     {
-      "_id": "Nzx93ileTOT6jhFR",
+      "_id": "MjcGQxQNTzd5zzi3",
       "disabled": false,
       "duration": {
         "value": null,
@@ -72,7 +72,7 @@
       "start": null,
       "showIcon": 1,
       "folder": null,
-      "_key": "!items.effects!f0LosNC45Jb0g0H7.Nzx93ileTOT6jhFR"
+      "_key": "!items.effects!f0LosNC45Jb0g0H7.MjcGQxQNTzd5zzi3"
     }
   ],
   "flags": {},

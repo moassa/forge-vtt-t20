@@ -3,13 +3,7 @@
   "type": "poder",
   "img": "systems/tormenta20/icons/poderes/classes/especialistas/fabricar-item-superior.webp",
   "effects": [],
-  "flags": {
-    "scene-packer": {
-      "sourceId": "Item.mauEhocS2jzPigNH",
-      "defaultPermission": 3,
-      "hash": "0f22f2e46adebd9f2acc1ea35d3fa2434defd096"
-    }
-  },
+  "flags": {},
   "system": {
     "description": {
       "value": "<p style=\"text-align:justify\">No 2º nível, você recebe um item superior com preço de até T$ 2.000 e passa a poder fabricar itens superiores com uma melhoria. Veja o Capítulo 3: Equipamento para a lista de melhorias.</p><p style=\"text-align:justify\">Nos níveis 5, 8 e 11, você pode substituir esse item por um item superior com duas, três e quatro melhorias, respectivamente, e passa a poder fabricar itens superiores com essa quantidade de melhorias. Considera-se que você estava trabalhando nos itens e você não gasta dinheiro ou tempo neles (mas gasta em itens que fabricar futuramente).</p>",

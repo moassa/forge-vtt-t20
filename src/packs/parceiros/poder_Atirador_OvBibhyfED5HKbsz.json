@@ -202,13 +202,7 @@
       "_key": "!items.effects!OvBibhyfED5HKbsz.SBHFvdLgWNHSVRCs"
     }
   ],
-  "flags": {
-    "scene-packer": {
-      "sourceId": "Item.rOO6U1bkk4xrlize",
-      "defaultPermission": 2,
-      "hash": "489a612a8235f62cd560028b82b1bf4c35524979"
-    }
-  },
+  "flags": {},
   "system": {
     "description": {
       "value": "<p>Um arqueiro, besteiro ou outro combatente à distância.</p><p>Iniciante: uma vez por rodada, você recebe +1d6 em uma rolagem de dano à distância.</p><p>Veterano: muda para +1d10.</p><p>Mestre: muda para +2d8.</p>",

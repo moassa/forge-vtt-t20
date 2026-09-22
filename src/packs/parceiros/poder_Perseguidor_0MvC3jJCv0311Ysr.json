@@ -187,13 +187,7 @@
       "_key": "!items.effects!0MvC3jJCv0311Ysr.PuhMZiugbVf0SWMk"
     }
   ],
-  "flags": {
-    "scene-packer": {
-      "sourceId": "Item.rOO6U1bkk4xrlize",
-      "defaultPermission": 2,
-      "hash": "489a612a8235f62cd560028b82b1bf4c35524979"
-    }
-  },
+  "flags": {},
   "system": {
     "description": {
       "value": "<p style=\"text-align:justify\">Um caçador, animal farejador ou outro especialista em localizar alvos.</p><p style=\"text-align:justify\">Iniciante: +2 em Percepção e Sobrevivência.</p><p style=\"text-align:justify\">Veterano: você pode usar Sentidos Aguçados.</p><p style=\"text-align:justify\">Mestre: você pode usar Percepção às Cegas.</p>",

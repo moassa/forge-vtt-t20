@@ -3,13 +3,7 @@
   "type": "poder",
   "img": "icons/commodities/tech/cog-brass.webp",
   "effects": [],
-  "flags": {
-    "scene-packer": {
-      "sourceId": "Item.YQi7wgNyw2XPuIvz",
-      "defaultPermission": 3,
-      "hash": "8ca673fb54df9858f38c74ee6ef933866de8992c"
-    }
-  },
+  "flags": {},
   "system": {
     "description": {
       "value": "<p style=\"text-align:justify\">Escolha um número de perícias treinadas igual a sua Inteligência, exceto bônus temporários. Quando faz um teste dessas perícias, você pode gastar 1 PM para escolher 10 em qualquer situação, exceto testes de ataque.</p>",

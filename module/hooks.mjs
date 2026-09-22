@@ -26,6 +26,24 @@ export default function () {
 
 		let pack = game.packs.get("world.statuses");
 		if (!pack.locked) await pack.configure({ locked: true });
+
+		/**
+		 * Fix OnUse Effects with duplicated effect ids
+		 */
+		for (let actor of game.actors) {
+			const uniqueIds = new Set();
+			for (let item of actor.items) {
+				for (let effect of item.effects) {
+					if (!uniqueIds.has(effect.id)) uniqueIds.add(effect.id);
+					else {
+						await effect.clone({}, { save: true });
+						await effect.delete();
+					}
+				}
+			}
+		}
+
+		/** */
 	});
 
 	/**

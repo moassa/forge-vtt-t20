@@ -1,0 +1,182 @@
+{
+  "_id": "ZbLEWlSGx98kr7Bv",
+  "folder": "STATUSEFFECTS000",
+  "name": "Esmorecido",
+  "img": "systems/tormenta20/icons/conditions/esmorecido.svg",
+  "statuses": [
+    "esmorecido"
+  ],
+  "duration": {
+    "expiry": "sceneEnd",
+    "value": null,
+    "units": "seconds",
+    "expired": false
+  },
+  "system": {
+    "changes": [
+      {
+        "key": "system.modificadores.atributos.int",
+        "value": -5,
+        "type": "add",
+        "phase": "initial"
+      },
+      {
+        "key": "system.modificadores.atributos.sab",
+        "value": -5,
+        "type": "add",
+        "phase": "initial"
+      },
+      {
+        "key": "system.modificadores.atributos.car",
+        "value": -5,
+        "type": "add",
+        "phase": "initial"
+      },
+      {
+        "key": "system.pericias.ades.condi",
+        "value": -5,
+        "type": "downgrade",
+        "phase": "initial"
+      },
+      {
+        "key": "system.pericias.atua.condi",
+        "value": -5,
+        "type": "downgrade",
+        "phase": "initial"
+      },
+      {
+        "key": "system.pericias.conh.condi",
+        "value": -5,
+        "type": "downgrade",
+        "phase": "initial"
+      },
+      {
+        "key": "system.pericias.cura.condi",
+        "value": -5,
+        "type": "downgrade",
+        "phase": "initial"
+      },
+      {
+        "key": "system.pericias.dipl.condi",
+        "value": -5,
+        "type": "downgrade",
+        "phase": "initial"
+      },
+      {
+        "key": "system.pericias.enga.condi",
+        "value": -5,
+        "type": "downgrade",
+        "phase": "initial"
+      },
+      {
+        "key": "system.pericias.guer.condi",
+        "value": -5,
+        "type": "downgrade",
+        "phase": "initial"
+      },
+      {
+        "key": "system.pericias.inti.condi",
+        "value": -5,
+        "type": "downgrade",
+        "phase": "initial"
+      },
+      {
+        "key": "system.pericias.intu.condi",
+        "value": -5,
+        "type": "downgrade",
+        "phase": "initial"
+      },
+      {
+        "key": "system.pericias.inve.condi",
+        "value": -5,
+        "type": "downgrade",
+        "phase": "initial"
+      },
+      {
+        "key": "system.pericias.joga.condi",
+        "value": -5,
+        "type": "downgrade",
+        "phase": "initial"
+      },
+      {
+        "key": "system.pericias.mist.condi",
+        "value": -5,
+        "type": "downgrade",
+        "phase": "initial"
+      },
+      {
+        "key": "system.pericias.nobr.condi",
+        "value": -5,
+        "type": "downgrade",
+        "phase": "initial"
+      },
+      {
+        "key": "system.pericias.perc.condi",
+        "value": -5,
+        "type": "downgrade",
+        "phase": "initial"
+      },
+      {
+        "key": "system.pericias.reli.condi",
+        "value": -5,
+        "type": "downgrade",
+        "phase": "initial"
+      },
+      {
+        "key": "system.pericias.sobr.condi",
+        "value": -5,
+        "type": "downgrade",
+        "phase": "initial"
+      },
+      {
+        "key": "system.pericias.vont.condi",
+        "value": -5,
+        "type": "downgrade",
+        "phase": "initial"
+      }
+    ],
+    "status": {
+      "category": "mental",
+      "ignoreImunity": false,
+      "upgrade": "",
+      "childEffect": []
+    },
+    "targets": [],
+    "onuse": false,
+    "abilityUse": {
+      "description": "",
+      "automatic": false,
+      "aumenta": false,
+      "custo": null,
+      "names": [],
+      "types": []
+    },
+    "aura": {
+      "isAura": false,
+      "range": 0,
+      "disposition": []
+    }
+  },
+  "type": "base",
+  "disabled": false,
+  "start": null,
+  "description": "",
+  "origin": null,
+  "tint": "#ffffff",
+  "transfer": false,
+  "showIcon": 1,
+  "sort": 0,
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.2",
+    "createdTime": 1790107995426,
+    "modifiedTime": 1790107995426,
+    "lastModifiedBy": "fMILAiVcmBGZmE6r",
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "_key": "!effects!ZbLEWlSGx98kr7Bv"
+}

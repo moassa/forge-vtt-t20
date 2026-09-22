@@ -1,7 +1,7 @@
 {
   "name": "tormenta20",
   "version": "1.0.0",
-  "description": "CSS compiler for the tormenta20 system",
+  "description": "Tormenta20 System for Foundry Virtual Tabletop",
   "scripts": {
     "build": "rollup -c",
     "build:watch": "rollup -cw",
@@ -13,7 +13,7 @@
     "lint:warnings": "eslint --max-warnings 0 --ext .js,.cjs,.mjs .",
     "lint:errors": "eslint --quiet --ext .js,.cjs,.mjs .",
     "lint:fix:errors": "eslint --quiet --ext .js,.cjs,.mjs --fix .",
-    "postinstall2": "npm run build:ci",
+    "postinstall": "npm run build:ci",
     "update-manifest": "node ./utils/update-manifest.js"
   },
   "browserslist": [
@@ -24,7 +24,7 @@
   "private": true,
   "devDependencies": {
     "@eslint/js": "^9.26.0",
-    "@foundryvtt/foundryvtt-cli": "^1.0.4",
+    "@foundryvtt/foundryvtt-cli": "^3.0.4",
     "@guanghechen/rollup-plugin-copy": "^6.0.7",
     "@html-eslint/eslint-plugin": "^0.26.0",
     "@html-eslint/parser": "^0.26.0",

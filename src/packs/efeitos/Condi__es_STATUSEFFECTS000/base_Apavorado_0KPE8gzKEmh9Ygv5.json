@@ -1,0 +1,68 @@
+{
+  "_id": "0KPE8gzKEmh9Ygv5",
+  "folder": "STATUSEFFECTS000",
+  "name": "Apavorado",
+  "img": "systems/tormenta20/icons/conditions/apavorado.svg",
+  "statuses": [
+    "apavorado"
+  ],
+  "duration": {
+    "expiry": "sceneEnd",
+    "value": null,
+    "units": "seconds",
+    "expired": false
+  },
+  "system": {
+    "changes": [
+      {
+        "key": "system.pericias.*.condi",
+        "value": -5,
+        "type": "downgrade",
+        "phase": "initial"
+      }
+    ],
+    "status": {
+      "category": "medo",
+      "ignoreImunity": false,
+      "upgrade": "",
+      "childEffect": []
+    },
+    "targets": [],
+    "onuse": false,
+    "abilityUse": {
+      "description": "",
+      "automatic": false,
+      "aumenta": false,
+      "custo": null,
+      "names": [],
+      "types": []
+    },
+    "aura": {
+      "isAura": false,
+      "range": 0,
+      "disposition": []
+    }
+  },
+  "type": "base",
+  "disabled": false,
+  "start": null,
+  "description": "",
+  "origin": null,
+  "tint": "#ffffff",
+  "transfer": false,
+  "showIcon": 1,
+  "sort": 0,
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.2",
+    "createdTime": 1790107995424,
+    "modifiedTime": 1790107995424,
+    "lastModifiedBy": "fMILAiVcmBGZmE6r",
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "_key": "!effects!0KPE8gzKEmh9Ygv5"
+}

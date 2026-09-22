@@ -5,7 +5,7 @@
   "img": "systems/tormenta20/icons/poderes/combate.webp",
   "effects": [
     {
-      "_id": "9BWBCqRZgO7RdAKJ",
+      "_id": "ZYbgPzEh8zIet07Q",
       "flags": {
         "tormenta20": {}
       },
@@ -68,7 +68,7 @@
       "start": null,
       "showIcon": 1,
       "folder": null,
-      "_key": "!items.effects!Fm42qXLskwRTg4sK.9BWBCqRZgO7RdAKJ"
+      "_key": "!items.effects!Fm42qXLskwRTg4sK.ZYbgPzEh8zIet07Q"
     },
     {
       "origin": "Item.Fm42qXLskwRTg4sK",

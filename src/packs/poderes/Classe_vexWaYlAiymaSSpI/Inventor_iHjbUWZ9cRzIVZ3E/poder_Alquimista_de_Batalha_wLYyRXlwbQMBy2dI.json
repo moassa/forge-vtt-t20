@@ -70,13 +70,7 @@
       "_key": "!items.effects!wLYyRXlwbQMBy2dI.RxIKyHHa5FVdk2Uf"
     }
   ],
-  "flags": {
-    "scene-packer": {
-      "sourceId": "Item.Sae0HU2rLnUfjp0a",
-      "defaultPermission": 3,
-      "hash": "e1aad2efacccf30e9c1a9a29bb3fbe06a2b445ea"
-    }
-  },
+  "flags": {},
   "system": {
     "description": {
       "value": "<p style=\"text-align:justify\">Quando usa um preparado alquímico ou poção que cause dano, você soma sua Inteligência na rolagem de dano. Pré-requisito: Alquimista Iniciado.</p>",

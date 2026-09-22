@@ -136,13 +136,7 @@
       "_key": "!items.effects!3wD3n0qjYTFvkQon.MiTli7H3WvU4mRTV"
     }
   ],
-  "flags": {
-    "scene-packer": {
-      "sourceId": "Item.t60Sf1sKaQm9EBta",
-      "defaultPermission": 3,
-      "hash": "d2a39b857438ea93e8e01e337036c3b5d521ad22"
-    }
-  },
+  "flags": {},
   "system": {
     "description": {
       "value": "<p style=\"text-align:justify\">Quando usa um preparado alquímico que cause dano, você pode gastar uma quantidade de PM a sua escolha (limitado por sua Inteligência). Para cada PM que gastar, o item causa um dado extra de dano do mesmo tipo. Pré-requisito: treinado em Ofício (alquimista).</p>",

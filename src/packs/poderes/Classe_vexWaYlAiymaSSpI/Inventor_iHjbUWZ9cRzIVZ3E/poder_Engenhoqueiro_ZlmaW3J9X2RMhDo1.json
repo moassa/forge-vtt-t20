@@ -3,13 +3,7 @@
   "type": "poder",
   "img": "systems/tormenta20/icons/poderes/classes/especialistas/engenhoca.webp",
   "effects": [],
-  "flags": {
-    "scene-packer": {
-      "sourceId": "Item.v05qSBchUvQbGngy",
-      "defaultPermission": 3,
-      "hash": "baae1d18a76b89c3c01b6c5aa6b10dc7fffeb431"
-    }
-  },
+  "flags": {},
   "system": {
     "description": {
       "value": "<p style=\"text-align:justify\">Você pode fabricar engenhocas. Veja as regras para isso na página 70. Pré-requisitos: Int 3, treinado em Ofício (engenhoqueiro).</p>",
