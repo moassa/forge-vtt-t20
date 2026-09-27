@@ -289,10 +289,10 @@ export default class BaseEffect extends ActiveEffectTypeDataModel {
 
 		// Avoid duplicate effects from RegionBehaviors
 		const ancestors = this.parent.getAncestors();
-		if (ancestors.actor == this.parent.parent) return false;
-		else if (this.parent.parent.effects.some((e) => e.name == this.parent.name)) return false;
+		if (ancestors.behavior && ancestors.actor == this.parent.parent) return false;
 
 		if (foundry.utils.getProperty(data, "system.aura.isAura")) {
+			if (this.parent.parent.effects.some((e) => e.name == this.parent.name)) return false;
 			if (ancestors.behavior) {
 				if (this.targets.size) {
 					const originToken = ancestors.actor.token ?? ancestors.actor.getActiveTokens().at(0);
@@ -302,7 +302,7 @@ export default class BaseEffect extends ActiveEffectTypeDataModel {
 						else if (t == "ally") return parentToken.disposition == originToken.disposition;
 						else if (t == "enemy") return parentToken.disposition != originToken.disposition;
 					});
-					if (allowed.every((i) => i == false)) return false;
+					if (this.targets.size && allowed.every((i) => i == false)) return false;
 				}
 
 				this.parent.updateSource({

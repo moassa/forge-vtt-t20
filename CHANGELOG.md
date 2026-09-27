@@ -1,5 +1,8 @@
 # Lista de Mudanças
 
+# Versão 1.6.4
+- Corrigido: Criação de efeitos
+
 # Versão 1.6.3
 - Corrigido: Compendium de efeitos.
 - Corrigido: Efeitos de Uso com id duplicado.

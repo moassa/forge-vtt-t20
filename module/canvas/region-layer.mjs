@@ -79,7 +79,10 @@ export default class RegionLayerT20 extends foundry.canvas.layers.RegionLayer {
 				type: "move"
 			},
 			visibility: CONST.REGION_VISIBILITY.OBSERVER,
-			ownership: { [game.user.id]: CONST.DOCUMENT_OWNERSHIP_LEVELS.OWNER }
+			ownership: {
+				default: CONST.DOCUMENT_OWNERSHIP_LEVELS.OBSERVER,
+				[game.user.id]: CONST.DOCUMENT_OWNERSHIP_LEVELS.OWNER
+			}
 		};
 	}
 

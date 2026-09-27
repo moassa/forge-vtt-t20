@@ -36,6 +36,7 @@ export default function () {
 			const uniqueIds = new Set();
 			for (let item of actor.items) {
 				for (let effect of item.effects) {
+					if (!effect.system.onuse) continue;
 					if (!uniqueIds.has(effect.id)) uniqueIds.add(effect.id);
 					else {
 						await effect.clone({}, { save: true });
