@@ -87,6 +87,27 @@ export default class ActiveEffectT20 extends foundry.documents.ActiveEffect {
 	/*  Methods                                     */
 	/* -------------------------------------------- */
 
+	/**
+	 * Retrive all documents in this document origin
+	 * @returns <object>
+	 **/
+	getAncestors() {
+		let parent = foundry.utils.fromUuidSync(this.origin);
+		const ancestors = {};
+		while (parent) {
+			const type = parent.collectionName.replace(/s$/, "");
+			if (type) ancestors[type] = parent;
+			parent = parent.parent;
+		}
+		parent = foundry.utils.fromUuidSync(this._stats.duplicateSource);
+		while (parent) {
+			const type = parent.collectionName.replace(/s$/, "");
+			if (type) ancestors[type] = parent;
+			parent = parent.parent;
+		}
+		return ancestors;
+	}
+
 	/** @inheritdoc */
 	shouldApplyChange(change, options) {
 		if (!super.shouldApplyChange(change, options)) return false;
@@ -97,7 +118,7 @@ export default class ActiveEffectT20 extends foundry.documents.ActiveEffect {
 			const aura = this.system.aura;
 			for (const behavior of Object.values(aura.behaviors)) {
 				if (behavior.type != "applyActiveEffect") continue;
-				if (!behavior.targets.has("self")) return false;
+				if (!this.system.targets.has("self")) return false;
 			}
 		}
 		return true;
@@ -238,11 +259,6 @@ export default class ActiveEffectT20 extends foundry.documents.ActiveEffect {
 	async _preCreate(data, options, user) {
 		const allowed = await super._preCreate(data, options, user);
 		if (allowed === false) return false;
-		if (this._stats.duplicateSource) {
-			// Avoid duplicate effects from RegionBehaviors
-			const origin = foundry.utils.fromUuidSync(this._stats.duplicateSource);
-			if (origin?.actor == this.parent) return false;
-		}
 		if (this.parent && ["comodo", "mobilia"].includes(this.parent.type)) {
 			this.updateSource({ transfer: !this.parent.system.residentes });
 		}

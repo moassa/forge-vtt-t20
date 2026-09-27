@@ -3,6 +3,11 @@
  */
 export default class RegionLayerT20 extends foundry.canvas.layers.RegionLayer {
 	/**
+	 * Avoid Aura Manager multiple calls
+	 */
+	auraManagerState = 0;
+
+	/**
 	 *
 	 * @param {Object} shape ShapeData required for creating the shape
 	 * @param {Object} options Data that may modify this;
@@ -168,4 +173,75 @@ export default class RegionLayerT20 extends foundry.canvas.layers.RegionLayer {
 		if (!data.rangePreview) {
 		}
 	}
+
+
+	/**
+	 * Iterate over scene actors and regions managing creation, update and deletion of auras
+	 */
+	async manageAuras() {
+		if (!game.user.isActiveGM) return;
+		if (!game.settings.get("tormenta20", "experimentalAuras")) return;
+
+		if (this.auraManagerState) return;
+		this.auraManagerState = 1;
+		// Traverse all token actors and create effects for auras
+		for (const token of canvas.scene.tokens) {
+			for (const effect of token.actor?.effects) {
+				if (!effect.system.aura?.isAura) continue;
+				const aura = canvas.scene.regions.find(r => r.getFlag("tormenta20", "effect") == effect.uuid);
+				if (!aura) await this._createAura(effect, token);
+			}
+		}
+		// Delete aura with missing effects
+		for (const region of canvas.scene.regions) {
+			const uuid = region.getFlag("tormenta20", "effect");
+			if (!uuid) continue;
+			const effect = foundry.utils.fromUuidSync(region.getFlag("tormenta20", "effect"));
+			if (!effect || !effect.active) {
+				await region.delete();
+			}
+		}
+		this.auraManagerState = 0;
+	}
+
+	async _createAura(effect, token) {
+		const aura = effect.system.aura;
+		const behaviors = aura.behaviors
+			? JSON.parse(effect.system._source.aura.behaviors.replace("@uuid", effect.uuid))
+			: [];
+
+		const regionData = canvas.regions.getAttachedRegionTemplateData(token, aura.range);
+		foundry.utils.mergeObject(regionData, {
+			flags: { tormenta20: { effect: effect.uuid } },
+			behaviors: behaviors,
+			name: `${effect.name} (Aura)`,
+			ownership: token.actor.ownership,
+		});
+		// return;
+		await CONFIG.Region.documentClass.implementation.create(regionData, {
+			parent: canvas.scene
+		});
+	}
+
+	getAttachedRegionTemplateData(token, range = 9) {
+		if (!token.persisted) throw new Error("The Token must be persisted.");
+		const regionData = canvas.regions.getRegionTemplateData();
+
+		const { x, y, elevation, width, height, depth, shape, level } = token._source;
+		const { distance, distancePixels } = token.parent.dimensions;
+		const radius = range * distancePixels;
+		return {
+			...regionData,
+			shapes: [{
+				type: "emanation",
+				base: { type: "token", x, y, width, height, shape, hole: false },
+				radius,
+				gridBased: true,
+			}],
+			elevation: { bottom: elevation - range, top: elevation + (depth * distance) + range },
+			attachment: { token: token.id },
+			levels: [level]
+		}
+	}
+
 }

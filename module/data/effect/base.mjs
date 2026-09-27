@@ -8,42 +8,42 @@ export default class BaseEffect extends ActiveEffectTypeDataModel {
 	static defineSchema() {
 		const schema = super.defineSchema();
 		schema.targets = new fields.SetField(
-			new fields.StringField(
-				{
-					required: true,
-					choices: {
-						self: "T20.Self",
-						ally: "T20.Ally",
-						enemy: "T20.Enemy"
-					}
-				},
-				{
-					required: true,
-					label: "T20.EffectTargets",
-					initial: []
+			new fields.StringField({
+				required: true,
+				choices: {
+					self: "T20.Self",
+					ally: "T20.Ally",
+					enemy: "T20.Enemy"
 				}
-			)
-		);
-		schema.status = new fields.SchemaField(
-			{
-				category: new fields.StringField({
+			}), {
+			required: true,
+			label: "T20.EffectTargets",
+			initial: []
+		});
+		schema.status = new fields.SchemaField({
+			category: new fields.StringField({
+				required: true,
+				blank: true,
+				label: "T20.EFFECT.STATUS.category.label"
+			}),
+			ignoreImunity: new fields.BooleanField({
+				required: true,
+				initial: false,
+				label: "T20.EFFECT.STATUS.ignoreImunity.label"
+			}),
+			upgrade: new fields.StringField({
+				required: true,
+				blank: true,
+				label: "T20.EFFECT.STATUS.upgrade.label"
+			}),
+			childEffect: new fields.SetField(
+				new fields.StringField({
 					required: true,
-					blank: true
-				}),
-				ignoreImunity: new fields.BooleanField({
-					required: true,
-					initial: false
-				}),
-				upgrade: new fields.StringField({ required: true, blank: true }),
-				childEffect: new fields.SetField(
-					new fields.StringField({
-						required: true,
-						blank: false
-					})
-				)
-			},
-			{ nullable: true, initial: null }
-		);
+					blank: false
+				}), {
+				label: "T20.EFFECT.STATUS.childEffect.label"
+			})
+		}, { nullable: true, initial: null });
 
 		schema.onuse = new fields.BooleanField({
 			required: true,
@@ -97,31 +97,20 @@ export default class BaseEffect extends ActiveEffectTypeDataModel {
 			isAura: new fields.BooleanField({
 				required: true,
 				initial: false,
-				label: "T20.TimeScene"
+				label: "T20.EFFECT.AURA.IsAura.label"
 			}),
 			range: new fields.NumberField({
 				required: true,
 				min: 0,
-				initial: 0
+				initial: 0,
+				label: "T20.EFFECT.AURA.range.label"
 			}),
 			behaviors: new fields.JSONField({
 				gmOnly: true,
+				nullable: true,
 				label: "DOCUMENT.RegionBehaviors",
-				hint: "T20.ConfigRegionBehavionHint"
+				hint: "T20.ConfigRegionBehaviorHint",
 			}),
-			disposition: new fields.SetField(
-				new fields.StringField({
-					required: true,
-					choices: {
-						self: "T20.Self",
-						allies: "T20.Aliados",
-						enemies: "T20.Enemies"
-					}
-				}),
-				{
-					label: "T20.AuraTransfer"
-				}
-			)
 		});
 		return schema;
 	}
@@ -155,7 +144,7 @@ export default class BaseEffect extends ActiveEffectTypeDataModel {
 		if (this.parent.target.documentName != "Actor") return false;
 		let suppressed = super.isSuppressed ?? false;
 		if (!suppressed) suppressed = this.isSupressedByEquipment;
-		if (!suppressed) suppressed = this.isSupressedByTarget;
+		// if (!suppressed) suppressed = this.isSupressedByTarget;
 		if (this.status) {
 			if (!suppressed) suppressed = this.isSuppressedByInheritance;
 			if (!suppressed) suppressed = this.isSuppressedByDuplicated;
@@ -177,23 +166,26 @@ export default class BaseEffect extends ActiveEffectTypeDataModel {
 
 	get isSupressedByTarget() {
 		if (!this.targets?.size) return false;
-		if (!this.origin) return false;
-		const origin = fromUuidSync(this.origin);
-		const originToken =
-			origin.documentName == "Actor"
-				? (origin.parent.actor.token ?? origin.parent.actor.getActiveTokens().at(0))
-				: origin.documentName == "RegionBehavior"
-					? origin.region.attachment.token
-					: null;
+		if (!this.parent.origin) return false;
+		const origin = foundry.utils.fromUuidSync(this.parent.origin);
+		const ancestors = this.parent.getAncestors();
+		console.log(ancestors);
+		const originToken = ancestors.token ?? ancestors.actor?.getActiveTokens(true, true).at(0);
+		// origin.documentName == "Actor"
+		// 	? (origin.parent.actor.token ?? origin.parent.actor.getActiveTokens().at(0))
+		// 	: origin.documentName == "RegionBehavior"
+		// 		? origin.region.attachment.token
+		// 		: null;
 
-		const parentToken = this.parent.actor.token ?? this.parent.actor.getActiveTokens().at(0);
+		const parentToken = this.parent.actor.token ?? this.parent.actor.getActiveTokens(true, true).at(0);
 		if (!parentToken || !originToken) return false;
 		const isSelf = parentToken.actor == originToken.actor;
 		const isAlly = parentToken.disposition == originToken.disposition;
-		if (this.targets.has("self") && !isSelf) return true;
-		if (this.targets.has("ally") && !isAlly) return true;
-		if (this.targets.has("enemy") && isAlly) return true;
-		return false;
+
+		if (this.targets.has("self") && isSelf) return false;
+		if (this.targets.has("ally") && isAlly) return false;
+		if (this.targets.has("enemy") && !isAlly) return false;
+		return true;
 	}
 
 	/* -------------------------------------------- */
@@ -264,7 +256,7 @@ export default class BaseEffect extends ActiveEffectTypeDataModel {
 	/* -------------------------------------------- */
 
 	/** @inheritDoc */
-	prepareBaseData() {}
+	prepareBaseData() { }
 
 	/* -------------------------------------------- */
 
@@ -283,25 +275,84 @@ export default class BaseEffect extends ActiveEffectTypeDataModel {
 	/* -------------------------------------------- */
 
 	/** @inheritDoc */
-	// async _preCreate(data, options, user) {
-	// 	const allowed = await super._preCreate(data, options, user);
-	// 	if (allowed === false) return false;
-	// }
+	async _preCreate(data, options, user) {
+		if (await super._preCreate(data, options, user) === false) return false;
+
+		if (!user.isActiveGM) return;
+
+		// Avoid duplicate effects from RegionBehaviors
+		const ancestors = this.parent.getAncestors();
+		if (ancestors.actor == this.parent.parent) return false;
+		else if (this.parent.parent.effects.some(e => e.name == this.parent.name)) return false;
+
+		if (foundry.utils.getProperty(data, "system.aura.isAura")) {
+			if (ancestors.behavior) {
+				if (this.targets.size) {
+					const originToken = ancestors.actor.token ?? ancestors.actor.getActiveTokens().at(0);
+					const parentToken = this.parent.actor.token ?? this.parent.actor.getActiveTokens().at(0);
+					let allowed = [...this.targets].map(t => {
+						if (t == "self") return parentToken.actor == originToken.actor;
+						else if (t == "ally") return parentToken.disposition == originToken.disposition;
+						else if (t == "enemy") return parentToken.disposition != originToken.disposition;
+					});
+					if (allowed.every(i => i == false)) return false;
+				}
+
+				this.parent.updateSource({
+					"system.aura.isAura": false,
+					"system.aura.range": null,
+					"system.aura.behaviors": [],
+				});
+			}
+		}
+
+		if (data.duration?.expiry == "sustainEnd" && data.origin) {
+			if (foundry.utils.fromUuidSync(data.origin)) return;
+			const [uuid, id] = data.origin.split(".ActiveEffect.");
+			const origin = foundry.utils.fromUuidSync(uuid);
+			const sustainEffect = (await ActiveEffect.fromStatusEffect("sustentando")).toObject();
+			sustainEffect._id = id;
+			sustainEffect.name += ` (${data.name})`;
+			await ActiveEffect.create(sustainEffect, {
+				keepId: true,
+				parent: origin,
+			});
+		}
+	}
 
 	/** @inheritDoc */
 	_onCreate(data, options, userId) {
 		super._onCreate(data, options, userId);
-		if (game.userId != userId) return;
-		if (this.status) this._createChildStatus();
+		if (game.user.isActiveGM) {
+			if (this.aura.isAura) canvas.regions.manageAuras(); // this._createAura();
+		}
+		if (game.userId == userId) {
+			if (this.status) this._createChildStatus();
+		}
+
 	}
 
+	/** @inheritDoc */
+	_onUpdate(data, options, userId) {
+		super._onUpdate(data, options, userId);
+		if (game.user.isActiveGM) {
+			if (this.aura.isAura) canvas.regions.manageAuras();
+		}
+		if (game.userId == userId) {
+		}
+	}
 	/* -------------------------------------------- */
 
 	/** @inheritdoc */
 	_onDelete(options, userId) {
 		super._onDelete(options, userId);
-		if (game.userId !== userId) return;
-		if (this.status) this._deleteChildStatus();
+		if (game.user.isActiveGM) {
+			if (this.parent.statuses.first() == "sustentando") this._deleteSustainEffects();
+			if (this.aura.isAura) canvas.regions.manageAuras();
+		}
+		if (game.userId == userId) {
+			if (this.status) this._deleteChildStatus();
+		}
 	}
 
 	/* -------------------------------------------- */
@@ -327,6 +378,7 @@ export default class BaseEffect extends ActiveEffectTypeDataModel {
 
 	/* -------------------------------------------- */
 
+
 	_deleteChildStatus() {
 		if (!this.parent.isEmbedded) return;
 		if (this.parent.parent?.documentName != "Actor") return;
@@ -334,5 +386,25 @@ export default class BaseEffect extends ActiveEffectTypeDataModel {
 		const effects = this.parent.actor.effects.filter((ef) => ef.origin == this.parent.uuid).map((ef) => ef.id);
 		if (foundry.utils.isEmpty(effects)) return;
 		this.parent.actor.deleteEmbeddedDocuments("ActiveEffect", effects);
+	}
+
+	/* -------------------------------------------- */
+
+	async _deleteSustainEffects() {
+		if (!this.parent.isEmbedded) return;
+		if (this.parent.parent?.documentName != "Actor") return;
+		const uuid = this.parent.uuid;
+		const toDelete = [];
+		for (const actor of game.actors) {
+			const ids = actor.effects.filter(i => i.origin == uuid).map(i => i.id);
+			if (!ids.length) continue;
+			toDelete.push({
+				ids: ids,
+				action: "delete",
+				documentName: "ActiveEffect",
+				parent: actor
+			});
+		}
+		foundry.documents.modifyBatch(toDelete);
 	}
 }

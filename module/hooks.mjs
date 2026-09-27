@@ -24,6 +24,8 @@ export default function () {
 			}
 		});
 
+		if (!game.user.isActiveGM) return;
+
 		let pack = game.packs.get("world.statuses");
 		if (!pack.locked) await pack.configure({ locked: true });
 
@@ -122,6 +124,11 @@ export default function () {
 	/* -------------------------------------------- */
 	/*  Other Hooks                                 */
 	/* -------------------------------------------- */
+
+	// Manage Auras
+	Hooks.on("canvasReady", (_) => {
+		if (game.user.isActiveGM) canvas.regions.manageAuras();
+	});
 
 	// Render Sidebar
 	Hooks.on("renderSettings", (app, html) => {

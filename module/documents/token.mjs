@@ -29,4 +29,18 @@ export default class TokenDocumentT20 extends TokenDocument {
 			Object.keys(movement).filter((key) => movement[key]?.value > 0 || (key == "hover" && movement[key]))
 		);
 	}
+
+
+
+	/* -------------------------------------------- */
+	/*  Database Operations                         */
+	/* -------------------------------------------- */
+
+	/** @inheritDoc */
+	_onCreate(data, options, userId) {
+		super._onCreate(data, options, userId);
+		if (game.user.isActiveGM) {
+			canvas.regions.manageAuras();
+		}
+	}
 }

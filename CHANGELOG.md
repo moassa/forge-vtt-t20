@@ -3,6 +3,8 @@
 # Versão 1.6.3
 - Corrigido: Compendium de efeitos.
 - Corrigido: Efeitos de Uso com id duplicado.
+- Corrigido: Implementação de Efeitos Sustentados, um efeito com evento de expiração "Para de Sustentar", criará uma condição sustentando e no ator fonte do efeito e vinculará os efeitos a esta condição.
+- Corrigido: Implementação de Auras, um efeito com configuração de aura ira criar uma região de emanação vinculada ao Token de seu Ator pai quando criado, bem como quando um novo token for criado para aquele ator, ou quando uma nova cena for ativada. Quando removido a região também será apagada.
 
 # Versão 1.6.0
 - Migrações para v14

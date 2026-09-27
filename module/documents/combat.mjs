@@ -32,7 +32,7 @@ export default class CombatT20 extends foundry.documents.Combat {
 	async _manageSustainedEffects(combatant, context) {
 		if (!combatant.actor) return;
 		if (!game.user.isActiveGM) return;
-		if (!combatant.actor.effects.some((e) => e.isSustained)) return;
+		if (!combatant.actor.effects.some(e => e.statuses.first() == "sustentando")) return;
 		const messageData = {
 			author: game.user.id,
 			speaker: ChatMessage.getSpeaker({ actor: combatant.actor }),

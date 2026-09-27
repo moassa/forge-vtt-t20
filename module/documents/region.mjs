@@ -14,6 +14,7 @@ export default class RegionT20 extends foundry.documents.RegionDocument {
 
 	async _onCreateBehaviors(data, options, userId) {
 		if (!game.user.isActiveGM) return;
+		console.log("_onCreateBehaviors", this, data);
 		const message = game.messages.get(this.getFlag("tormenta20", "message"));
 		if (!message) return;
 		const item = message.getFlag("tormenta20", "itemData");
@@ -30,6 +31,7 @@ export default class RegionT20 extends foundry.documents.RegionDocument {
 						if (chatEffects) {
 							chatEffects.at(0)._id = foundry.utils.randomID();
 							chatEffects.at(0).origin = `${this.uuid}.RegionBehavior.${behavior._id}`;
+							console.log(chatEffects);
 							const created = await message.speakerActor.createEmbeddedDocuments("ActiveEffect", chatEffects, {
 								keepId: true
 							});
@@ -39,7 +41,10 @@ export default class RegionT20 extends foundry.documents.RegionDocument {
 					behavior.system.effects = uuids;
 				}
 			}
+			console.log(behaviors);
 			this.createEmbeddedDocuments("RegionBehavior", behaviors, { keepId: true });
-		} catch {}
+		} catch (error) {
+			console.error(error);
+		}
 	}
 }

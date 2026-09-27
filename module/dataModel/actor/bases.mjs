@@ -88,4 +88,24 @@ export default class BasesData extends Tormenta20TypeData {
 		const bonus = this.seguranca?.bonus ?? 0;
 		this.seguranca.total = base + bonus;
 	}
+
+	/* -------------------------------------------- */
+	/*  Database Operations                         */
+	/* -------------------------------------------- */
+
+	/** @inheritdoc */
+	async _preCreate(data, options, user) {
+		if (await super._preCreate(data, options, user) === false) return false;
+
+		const updates = foundry.utils.mergeObject({
+			prototypeToken: {
+				actorLink: true,
+				disposition: CONST.TOKEN_DISPOSITIONS.FRIENDLY,
+				sight: {
+					enabled: true,
+				},
+			},
+		}, data, { insertKeys: false, insertValues: false });
+		this.parent.updateSource(updates);
+	}
 }

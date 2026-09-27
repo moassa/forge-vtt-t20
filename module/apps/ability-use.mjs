@@ -871,6 +871,9 @@ function applyOnUseEffects(rolledItem, configuration = {}) {
 		// Determine which turn it will be proc an effect over time
 		// tempEffect.origin = ef.uuid ?? item.uuid ?? actor.uuid;
 		tempEffect.origin = actor.uuid;
+		if (tempEffect.duration.expiry == "sustainEnd") {
+			tempEffect.origin += `.ActiveEffect.${foundry.utils.randomID()}`;
+		}
 		options.effects.push([tempEffect, ...children]);
 	});
 

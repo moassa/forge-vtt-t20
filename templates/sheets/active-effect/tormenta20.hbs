@@ -1,0 +1,63 @@
+<section class="tab tormenta20 {{#if tab.active}}active{{/if}}" data-group="{{tab.group}}" data-tab="{{tab.id}}">
+	<fieldset>
+		{{formGroup
+			schema.fields.targets
+			value=source.system.targets
+			type="checkboxes"
+			localize=true
+		}}
+	</fieldset>
+	<fieldset>
+		<legend class="flexrow">
+			{{localize "T20.StatusEffect"}}
+			<button class="inline-control icon fa-solid fa-lock{{#if source.system.status}}-open{{/if}}" data-action="toggle" data-field-path="system.status"></button>
+		</legend>
+		{{formGroup
+			schema.fields.status.fields.category
+			value=source.system.status.category
+			disabled=(not system.status)
+			localize=true
+		}}
+		{{formGroup
+			schema.fields.status.fields.ignoreImunity
+			value=source.system.status.ignoreImunity
+			disabled=(not system.status)
+			localize=true
+		}}
+		{{formGroup
+			schema.fields.status.fields.upgrade
+			value=source.system.status.upgrade
+			disabled=(not system.status)
+			localize=true
+		}}
+		{{formGroup
+			schema.fields.status.fields.childEffect
+			value=source.system.status.childEffect
+			disabled=(not system.status)
+			localize=true
+		}}
+	</fieldset>
+	<fieldset>
+		<legend>{{localize "T20.AuraEffect"}}</legend>
+		{{formGroup
+			schema.fields.aura.fields.isAura
+			value=source.system.aura.isAura
+			localize=true
+		}}
+		{{formGroup
+			schema.fields.aura.fields.range
+			value=source.system.aura.range
+			localize=true
+		}}
+		{{#if user.isGM}}
+			<div class="form-group">
+				<label>
+					{{localize schema.fields.aura.fields.behaviors.label}}
+				</label>
+				<div class="form-fields">
+					<button type="button" class="icon fa-solid fa-child-reaching" data-action="editJson" data-field-path="system.aura.behaviors" data-tooltip="Config Behaviors"></button>
+				</div>
+			</div>
+		{{/if}}
+	</fieldset>
+</section>

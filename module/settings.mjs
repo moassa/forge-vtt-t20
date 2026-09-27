@@ -302,4 +302,13 @@ export const SystemSettings = function () {
 		default: false,
 		type: Boolean
 	});
+
+	game.settings.register("tormenta20", "experimentalAuras", {
+		scope: "world",
+		config: false,
+		type: Boolean,
+		initial: true,
+		requiresReload: true
+	});
+
 };

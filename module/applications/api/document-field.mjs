@@ -55,6 +55,10 @@ export default class DocumentFieldSheet extends HandlebarsApplicationMixin(Docum
 		for (const [path, value] of Object.entries(formData.object)) {
 			const field = this.document.getFieldForProperty(path);
 			if (field instanceof foundry.data.fields.JSONField) {
+				if (!value) {
+					foundry.utils.setProperty(submitData, path, _del);
+					continue;
+				}
 				try {
 					JSON.parse(value);
 				} catch (error) {

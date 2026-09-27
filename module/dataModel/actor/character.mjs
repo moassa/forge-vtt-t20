@@ -67,4 +67,25 @@ export default class CharacterData extends CreatureData {
 		AttributesFields.prepareMovement.call(this, rollData);
 		AttributesFields.prepareDamageResistances.call(this, rollData);
 	}
+
+
+	/* -------------------------------------------- */
+	/*  Database Operations                         */
+	/* -------------------------------------------- */
+
+	/** @inheritdoc */
+	async _preCreate(data, options, user) {
+		if (await super._preCreate(data, options, user) === false) return false;
+
+		const updates = foundry.utils.mergeObject({
+			prototypeToken: {
+				actorLink: true,
+				disposition: CONST.TOKEN_DISPOSITIONS.FRIENDLY,
+				sight: {
+					enabled: true,
+				},
+			},
+		}, data, { insertKeys: false, insertValues: false });
+		this.parent.updateSource(updates);
+	}
 }

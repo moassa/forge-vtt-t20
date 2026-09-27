@@ -268,8 +268,7 @@ export default class ActorT20 extends Actor {
 
 	/** @inheritdoc */
 	async _preCreate(data, options, user) {
-		await super._preCreate(data, options, user);
-		// console.error("_preCreate");
+		if (await super._preCreate(data, options, user) === false) return false;
 		// SkillSet
 		const system = game.settings.get("tormenta20", "gameSystem");
 		const updateData = {};
@@ -298,12 +297,6 @@ export default class ActorT20 extends Actor {
 				}
 				this.updateSource(updateData);
 				break;
-		}
-		const sourceId = this._stats?.compendiumSource;
-		if (!sourceId?.startsWith("Compendium.")) {
-			if (["character", "bases"].includes(this.type)) {
-				updateData.prototypeToken = { actorLink: true };
-			}
 		}
 		this.updateSource(updateData);
 	}

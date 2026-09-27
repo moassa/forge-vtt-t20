@@ -10,7 +10,7 @@
       "duration": {
         "value": null,
         "units": "seconds",
-        "expiry": "sceneEnd",
+        "expiry": "sustainEnd",
         "expired": false
       },
       "origin": "Compendium.tormenta20.poderes.VPLIpFxeBH3BYY2t",
@@ -22,10 +22,10 @@
       "_stats": {
         "coreVersion": "14.366",
         "systemId": "tormenta20",
-        "systemVersion": "1.6.0",
+        "systemVersion": "1.6.3",
         "createdTime": 1788042525059,
-        "modifiedTime": 1788042525059,
-        "lastModifiedBy": "4fJviA1Q4qcjwsna",
+        "modifiedTime": 1790459162599,
+        "lastModifiedBy": "fMILAiVcmBGZmE6r",
         "compendiumSource": null,
         "duplicateSource": null,
         "exportSource": null
@@ -58,9 +58,10 @@
           "types": []
         },
         "aura": {
-          "isAura": false,
-          "range": 0,
-          "disposition": []
+          "isAura": true,
+          "range": 9,
+          "disposition": [],
+          "behaviors": "[\n  {\n    \"type\": \"applyActiveEffect\",\n    \"name\": \"Aura Sagrada\",\n    \"system\": {\n      \"effects\": [\n        \"@uuid\"\n      ]\n    }\n  },\n  {\n    \"type\": \"adjustDarknessLevel\",\n    \"name\": \"Aura Iluminação\",\n    \"system\": {\n      \"mode\": 0,\n      \"modifier\": 0\n    }\n  }\n]"
         }
       },
       "description": "",
@@ -99,7 +100,7 @@
     },
     "efeito": "",
     "alcance": "short",
-    "area": "aura",
+    "area": "",
     "resistencia": {
       "pericia": "",
       "atributo": "sab",
@@ -113,7 +114,6 @@
     "origin": "",
     "tags": [],
     "chatGif": "",
-    "area_behaviors": "[\n  {\n    \"type\": \"applyActiveEffect\",\n    \"name\": \"Aura Sagrada\",\n    \"system\": {\n      \"effects\": [\n        \"Aura Sagrada\"\n      ]\n    }\n  },\n  {\n    \"type\": \"adjustDarknessLevel\",\n    \"name\": \"Aura Iluminação\",\n    \"system\": {\n      \"mode\": 0,\n      \"modifier\": 0\n    }\n  }\n]",
     "rolltags": [],
     "automationtags": []
   },
@@ -122,11 +122,11 @@
   },
   "_stats": {
     "systemId": "tormenta20",
-    "systemVersion": "1.6.0",
+    "systemVersion": "1.6.3",
     "coreVersion": "14.366",
     "createdTime": 1788042525059,
-    "modifiedTime": 1788042525059,
-    "lastModifiedBy": "4fJviA1Q4qcjwsna",
+    "modifiedTime": 1790459069361,
+    "lastModifiedBy": "fMILAiVcmBGZmE6r",
     "duplicateSource": null,
     "exportSource": null,
     "compendiumSource": null

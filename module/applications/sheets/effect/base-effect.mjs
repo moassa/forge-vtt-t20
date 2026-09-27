@@ -41,7 +41,9 @@ export default class ActiveEffectBaseSheet extends Tormenta20ApplicationMixin({
 			closeOnSubmit: false
 		},
 		actions: {
-			resetStart: ActiveEffectBaseSheet.#onResetStart
+			resetStart: ActiveEffectBaseSheet.#onResetStart,
+			editJson: ActiveEffectBaseSheet.#onEditJson,
+			toggle: ActiveEffectBaseSheet.#onToggle,
 		},
 		position: { width: 560 }
 	};
@@ -63,6 +65,9 @@ export default class ActiveEffectBaseSheet extends Tormenta20ApplicationMixin({
 		onuse: {
 			template: "systems/tormenta20/templates/sheets/active-effect/onuse.hbs"
 		},
+		tormenta20: {
+			template: "systems/tormenta20/templates/sheets/active-effect/tormenta20.hbs"
+		},
 		changes: {
 			template: "templates/sheets/active-effect/changes.hbs",
 			templates: ["templates/sheets/active-effect/change.hbs"],
@@ -77,7 +82,8 @@ export default class ActiveEffectBaseSheet extends Tormenta20ApplicationMixin({
 				{ id: "details", icon: "fa-solid fa-book" },
 				{ id: "duration", icon: "fa-solid fa-clock" },
 				{ id: "onuse", icon: "fa-solid fa-hand-fist", label: "T20.OnUseEffect" },
-				{ id: "changes", icon: "fa-solid fa-gears" }
+				{ id: "changes", icon: "fa-solid fa-gears" },
+				{ id: "tormenta20", icon: "fa-solid fa-spaghetti-monster-flying", label: "T20" },
 			],
 			initial: "details",
 			labelPrefix: "EFFECT.TABS"
@@ -104,6 +110,8 @@ export default class ActiveEffectBaseSheet extends Tormenta20ApplicationMixin({
 			case "onuse":
 				await this._prepareOnUsePartContext(partContext, context);
 				break;
+			case "tormenta20":
+				break;
 			// case "details": await this._prepareDetailsPartContext(partContext, context);
 			// 	break;
 			// case "duration": await this._prepareDurationPartContext(partContext, context);
@@ -116,7 +124,7 @@ export default class ActiveEffectBaseSheet extends Tormenta20ApplicationMixin({
 
 	/* -------------------------------------------- */
 
-	async _prepareOnUsePartContext(partContext, context) {}
+	async _prepareOnUsePartContext(partContext, context) { }
 
 	/**
 	 * Prepare data relative to Details core and system fields
@@ -206,4 +214,23 @@ export default class ActiveEffectBaseSheet extends Tormenta20ApplicationMixin({
 			start: this.document.constructor.getEffectStart()
 		});
 	}
+
+	static #onToggle(event, target) {
+		const { fieldPath } = target.dataset;
+		const current = foundry.utils.getProperty(this.document, fieldPath);
+		const field = this.document.getFieldForProperty(fieldPath);
+		this.document.update({
+			[fieldPath]: current ? null : field.clean({}),
+		});
+	}
+
+
+	static #onEditJson(event, target) {
+		const { fieldPath } = target.dataset;
+		new tormenta20.applications.api.DocumentFieldSheet({
+			document: this.document,
+			fields: [fieldPath]
+		}).render(true);
+	}
+
 }
