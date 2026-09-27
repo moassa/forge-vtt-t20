@@ -20,21 +20,24 @@ export default class SimpleData extends CreatureData {
 		AttributesFields.prepareDamageResistances.call(this, rollData);
 	}
 
-
 	/* -------------------------------------------- */
 	/*  Database Operations                         */
 	/* -------------------------------------------- */
 
 	/** @inheritdoc */
 	async _preCreate(data, options, user) {
-		if (await super._preCreate(data, options, user) === false) return false;
+		if ((await super._preCreate(data, options, user)) === false) return false;
 
-		const updates = foundry.utils.mergeObject({
-			prototypeToken: {
-				actorLink: false,
-				disposition: CONST.TOKEN_DISPOSITIONS.NEUTRAL,
+		const updates = foundry.utils.mergeObject(
+			{
+				prototypeToken: {
+					actorLink: false,
+					disposition: CONST.TOKEN_DISPOSITIONS.NEUTRAL
+				}
 			},
-		}, data, { insertKeys: false, insertValues: false });
+			data,
+			{ insertKeys: false, insertValues: false }
+		);
 		this.parent.updateSource(updates);
 	}
 }

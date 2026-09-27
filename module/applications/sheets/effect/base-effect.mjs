@@ -43,7 +43,7 @@ export default class ActiveEffectBaseSheet extends Tormenta20ApplicationMixin({
 		actions: {
 			resetStart: ActiveEffectBaseSheet.#onResetStart,
 			editJson: ActiveEffectBaseSheet.#onEditJson,
-			toggle: ActiveEffectBaseSheet.#onToggle,
+			toggle: ActiveEffectBaseSheet.#onToggle
 		},
 		position: { width: 560 }
 	};
@@ -83,7 +83,7 @@ export default class ActiveEffectBaseSheet extends Tormenta20ApplicationMixin({
 				{ id: "duration", icon: "fa-solid fa-clock" },
 				{ id: "onuse", icon: "fa-solid fa-hand-fist", label: "T20.OnUseEffect" },
 				{ id: "changes", icon: "fa-solid fa-gears" },
-				{ id: "tormenta20", icon: "fa-solid fa-spaghetti-monster-flying", label: "T20" },
+				{ id: "tormenta20", icon: "fa-solid fa-spaghetti-monster-flying", label: "T20" }
 			],
 			initial: "details",
 			labelPrefix: "EFFECT.TABS"
@@ -124,7 +124,7 @@ export default class ActiveEffectBaseSheet extends Tormenta20ApplicationMixin({
 
 	/* -------------------------------------------- */
 
-	async _prepareOnUsePartContext(partContext, context) { }
+	async _prepareOnUsePartContext(partContext, context) {}
 
 	/**
 	 * Prepare data relative to Details core and system fields
@@ -220,10 +220,9 @@ export default class ActiveEffectBaseSheet extends Tormenta20ApplicationMixin({
 		const current = foundry.utils.getProperty(this.document, fieldPath);
 		const field = this.document.getFieldForProperty(fieldPath);
 		this.document.update({
-			[fieldPath]: current ? null : field.clean({}),
+			[fieldPath]: current ? null : field.clean({})
 		});
 	}
-
 
 	static #onEditJson(event, target) {
 		const { fieldPath } = target.dataset;
@@ -232,5 +231,4 @@ export default class ActiveEffectBaseSheet extends Tormenta20ApplicationMixin({
 			fields: [fieldPath]
 		}).render(true);
 	}
-
 }

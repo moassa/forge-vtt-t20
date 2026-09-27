@@ -68,18 +68,21 @@ export default class MenaceData extends CreatureData {
 
 	/** @inheritdoc */
 	async _preCreate(data, options, user) {
-		if (await super._preCreate(data, options, user) === false) return false;
+		if ((await super._preCreate(data, options, user)) === false) return false;
 
-		const updates = foundry.utils.mergeObject({
-			prototypeToken: {
-				actorLink: false,
-				disposition: CONST.TOKEN_DISPOSITIONS.HOSTILE,
-				sight: {
-					enabled: true,
-				},
+		const updates = foundry.utils.mergeObject(
+			{
+				prototypeToken: {
+					actorLink: false,
+					disposition: CONST.TOKEN_DISPOSITIONS.HOSTILE,
+					sight: {
+						enabled: true
+					}
+				}
 			},
-		}, data, { insertKeys: false, insertValues: false });
+			data,
+			{ insertKeys: false, insertValues: false }
+		);
 		this.parent.updateSource(updates);
 	}
-
 }

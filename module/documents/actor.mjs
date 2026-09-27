@@ -268,7 +268,7 @@ export default class ActorT20 extends Actor {
 
 	/** @inheritdoc */
 	async _preCreate(data, options, user) {
-		if (await super._preCreate(data, options, user) === false) return false;
+		if ((await super._preCreate(data, options, user)) === false) return false;
 		// SkillSet
 		const system = game.settings.get("tormenta20", "gameSystem");
 		const updateData = {};

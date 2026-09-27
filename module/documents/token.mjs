@@ -30,8 +30,6 @@ export default class TokenDocumentT20 extends TokenDocument {
 		);
 	}
 
-
-
 	/* -------------------------------------------- */
 	/*  Database Operations                         */
 	/* -------------------------------------------- */

@@ -84,14 +84,18 @@ export default class HazardData extends Tormenta20TypeData {
 
 	/** @inheritdoc */
 	async _preCreate(data, options, user) {
-		if (await super._preCreate(data, options, user) === false) return false;
+		if ((await super._preCreate(data, options, user)) === false) return false;
 
-		const updates = foundry.utils.mergeObject({
-			prototypeToken: {
-				actorLink: false,
-				disposition: CONST.TOKEN_DISPOSITIONS.HOSTILE,
+		const updates = foundry.utils.mergeObject(
+			{
+				prototypeToken: {
+					actorLink: false,
+					disposition: CONST.TOKEN_DISPOSITIONS.HOSTILE
+				}
 			},
-		}, data, { insertKeys: false, insertValues: false });
+			data,
+			{ insertKeys: false, insertValues: false }
+		);
 		this.parent.updateSource(updates);
 	}
 }

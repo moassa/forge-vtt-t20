@@ -310,5 +310,4 @@ export const SystemSettings = function () {
 		initial: true,
 		requiresReload: true
 	});
-
 };

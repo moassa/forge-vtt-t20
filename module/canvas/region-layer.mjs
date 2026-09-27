@@ -174,7 +174,6 @@ export default class RegionLayerT20 extends foundry.canvas.layers.RegionLayer {
 		}
 	}
 
-
 	/**
 	 * Iterate over scene actors and regions managing creation, update and deletion of auras
 	 */
@@ -188,7 +187,7 @@ export default class RegionLayerT20 extends foundry.canvas.layers.RegionLayer {
 		for (const token of canvas.scene.tokens) {
 			for (const effect of token.actor?.effects) {
 				if (!effect.system.aura?.isAura) continue;
-				const aura = canvas.scene.regions.find(r => r.getFlag("tormenta20", "effect") == effect.uuid);
+				const aura = canvas.scene.regions.find((r) => r.getFlag("tormenta20", "effect") == effect.uuid);
 				if (!aura) await this._createAura(effect, token);
 			}
 		}
@@ -215,7 +214,7 @@ export default class RegionLayerT20 extends foundry.canvas.layers.RegionLayer {
 			flags: { tormenta20: { effect: effect.uuid } },
 			behaviors: behaviors,
 			name: `${effect.name} (Aura)`,
-			ownership: token.actor.ownership,
+			ownership: token.actor.ownership
 		});
 		// return;
 		await CONFIG.Region.documentClass.implementation.create(regionData, {
@@ -232,16 +231,17 @@ export default class RegionLayerT20 extends foundry.canvas.layers.RegionLayer {
 		const radius = range * distancePixels;
 		return {
 			...regionData,
-			shapes: [{
-				type: "emanation",
-				base: { type: "token", x, y, width, height, shape, hole: false },
-				radius,
-				gridBased: true,
-			}],
-			elevation: { bottom: elevation - range, top: elevation + (depth * distance) + range },
+			shapes: [
+				{
+					type: "emanation",
+					base: { type: "token", x, y, width, height, shape, hole: false },
+					radius,
+					gridBased: true
+				}
+			],
+			elevation: { bottom: elevation - range, top: elevation + depth * distance + range },
 			attachment: { token: token.id },
 			levels: [level]
-		}
+		};
 	}
-
 }

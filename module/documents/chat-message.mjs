@@ -147,7 +147,7 @@ export default class ChatMessageT20 extends ChatMessage {
 		const { messageId } = target.closest("li").dataset;
 		const message = game.messages.get(messageId);
 		const actor = message.speakerActor;
-		const effects = actor.effects.filter(e => e.statuses.first() == "sustentando");
+		const effects = actor.effects.filter((e) => e.statuses.first() == "sustentando");
 		const choices = effects.map((e) => ({ value: e.id, label: e.name, img: e.img }));
 
 		const { sustain } = await foundry.applications.api.Dialog.input({

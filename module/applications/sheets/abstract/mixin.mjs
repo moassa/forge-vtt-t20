@@ -13,11 +13,11 @@ export default function Tormenta20ApplicationMixin({ Base, dragndrop = false, mi
 
 	const mixedClass = hasHAM
 		? dragndrop
-			? class extends DragAndDropMixin(BaseClass) { }
+			? class extends DragAndDropMixin(BaseClass) {}
 			: BaseClass
 		: dragndrop
-			? class extends DragAndDropMixin(HandlebarsApplicationMixin(BaseClass)) { }
-			: class extends HandlebarsApplicationMixin(BaseClass) { };
+			? class extends DragAndDropMixin(HandlebarsApplicationMixin(BaseClass)) {}
+			: class extends HandlebarsApplicationMixin(BaseClass) {};
 
 	// Then mix with any other template
 	for (const mixin of mixins) {
@@ -69,7 +69,7 @@ export default function Tormenta20ApplicationMixin({ Base, dragndrop = false, mi
 		 * Register context menu entries and fire hooks.
 		 * @protected
 		 */
-		_createContextMenus() { }
+		_createContextMenus() {}
 
 		/* -------------------------------------------- */
 
