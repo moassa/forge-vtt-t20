@@ -1,0 +1,69 @@
+{
+  "type": "base",
+  "name": "Ajustada",
+  "img": "icons/commodities/treasure/plaque-stone-hammer.webp",
+  "description": "<p style=\"text-align:justify\">Feito com peças medidas com precisão, o item tem a sua penalidade de armadura diminuída em 1.</p>",
+  "transfer": true,
+  "folder": "gxfHe0g9enTvYwgb",
+  "_id": "w3JoRmXaQASrkEjH",
+  "system": {
+    "changes": [
+      {
+        "key": "system.attributes.defesa.pda",
+        "type": "add",
+        "value": -1,
+        "phase": "initial",
+        "priority": null
+      }
+    ],
+    "targets": [],
+    "status": null,
+    "onuse": false,
+    "abilityUse": {
+      "description": "",
+      "automatic": false,
+      "aumenta": false,
+      "custo": null,
+      "names": [],
+      "types": []
+    },
+    "aura": {
+      "isAura": false,
+      "range": 0
+    },
+    "upgrade": {
+      "type": "improvement",
+      "itemType": [
+        "armor",
+        "shield"
+      ]
+    },
+    "identifier": "adjusted"
+  },
+  "disabled": false,
+  "start": null,
+  "duration": {
+    "value": null,
+    "units": "seconds",
+    "expiry": null,
+    "expired": false
+  },
+  "origin": null,
+  "tint": "#ffffff",
+  "statuses": [],
+  "showIcon": 1,
+  "sort": 100000,
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": 1791680634932,
+    "modifiedTime": 1791680634932,
+    "lastModifiedBy": "fMILAiVcmBGZmE6r",
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "_key": "!effects!w3JoRmXaQASrkEjH"
+}

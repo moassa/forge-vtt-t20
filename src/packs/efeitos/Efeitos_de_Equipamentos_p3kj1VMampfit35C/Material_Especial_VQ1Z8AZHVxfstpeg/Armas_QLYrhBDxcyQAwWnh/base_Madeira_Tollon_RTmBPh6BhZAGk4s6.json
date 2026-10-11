@@ -1,0 +1,62 @@
+{
+  "type": "base",
+  "name": "Madeira Tollon",
+  "img": "icons/commodities/metal/ingot-stamped-spiral.webp",
+  "description": "<p style=\"text-align:justify\">A Floresta de Tollon produz um tipo de madeira negra, dura como aço e dotada de propriedades mágicas. Apenas armas de madeira — arcos, bordões, clavas, lanças, piques e tacapes —, escudos leves e esotéricos podem ser feitos com madeira Tollon.</p><p>Arma. Conta como mágica para vencer redução de dano. Além disso, habilidades ativadas ao se fazer um ataque ou usar a ação agredir têm seu custo em PM reduzido em –1.</p>",
+  "transfer": false,
+  "folder": "QLYrhBDxcyQAwWnh",
+  "_id": "RTmBPh6BhZAGk4s6",
+  "system": {
+    "changes": [],
+    "targets": [],
+    "status": null,
+    "onuse": true,
+    "abilityUse": {
+      "description": "",
+      "automatic": false,
+      "aumenta": false,
+      "custo": -1,
+      "names": [],
+      "types": [
+        "self"
+      ]
+    },
+    "aura": {
+      "isAura": false,
+      "range": 0
+    },
+    "upgrade": {
+      "type": "material",
+      "itemType": [
+        "weapon"
+      ]
+    },
+    "identifier": "dark-wood"
+  },
+  "disabled": false,
+  "start": null,
+  "duration": {
+    "value": null,
+    "units": "seconds",
+    "expiry": null,
+    "expired": false
+  },
+  "origin": null,
+  "tint": "#ffffff",
+  "statuses": [],
+  "showIcon": 1,
+  "sort": 125000,
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": 1791680622838,
+    "modifiedTime": 1791693572892,
+    "lastModifiedBy": "fMILAiVcmBGZmE6r",
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "_key": "!effects!RTmBPh6BhZAGk4s6"
+}

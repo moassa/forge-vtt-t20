@@ -1,0 +1,70 @@
+{
+  "type": "base",
+  "name": "Espinhosa (Escudo)",
+  "img": "icons/commodities/treasure/plaque-stone-hammer.webp",
+  "description": "<p>Aumenta o dano de um ataque com escudo em um passo.</p>",
+  "transfer": false,
+  "folder": "gxfHe0g9enTvYwgb",
+  "_id": "JtHXuCDwo44zN0i6",
+  "system": {
+    "changes": [
+      {
+        "key": "passos",
+        "type": "custom",
+        "value": 1,
+        "phase": "initial",
+        "priority": null
+      }
+    ],
+    "targets": [],
+    "status": null,
+    "onuse": true,
+    "abilityUse": {
+      "description": "",
+      "automatic": true,
+      "aumenta": false,
+      "custo": null,
+      "names": [],
+      "types": [
+        "self"
+      ]
+    },
+    "aura": {
+      "isAura": false,
+      "range": 0
+    },
+    "upgrade": {
+      "type": "improvement",
+      "itemType": [
+        "shield"
+      ]
+    },
+    "identifier": "thorny"
+  },
+  "disabled": false,
+  "start": null,
+  "duration": {
+    "value": null,
+    "units": "seconds",
+    "expiry": null,
+    "expired": false
+  },
+  "origin": null,
+  "tint": "#ffffff",
+  "statuses": [],
+  "showIcon": 1,
+  "sort": 125000,
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": 1791680634926,
+    "modifiedTime": 1791693572891,
+    "lastModifiedBy": "fMILAiVcmBGZmE6r",
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "_key": "!effects!JtHXuCDwo44zN0i6"
+}

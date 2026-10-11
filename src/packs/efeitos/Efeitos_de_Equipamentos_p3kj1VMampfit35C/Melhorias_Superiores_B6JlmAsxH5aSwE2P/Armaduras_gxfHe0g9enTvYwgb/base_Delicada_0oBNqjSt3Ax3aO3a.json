@@ -1,0 +1,68 @@
+{
+  "type": "base",
+  "name": "Delicada",
+  "img": "icons/commodities/treasure/plaque-stone-hammer.webp",
+  "description": "<p style=\"text-align:justify\">Apenas os materiais mais leves foram usados nesta armadura. As placas têm a espessura mínima necessária para oferecer a proteção que devem. Esta melhoria só pode ser aplicada a armaduras pesadas e permite que o personagem aplique 1 ponto de sua Destreza na Defesa (ou de outro atributo, caso o utilize em vez de Des). Uma armadura não pode ser delicada e reforçada.</p>",
+  "transfer": true,
+  "folder": "gxfHe0g9enTvYwgb",
+  "_id": "0oBNqjSt3Ax3aO3a",
+  "system": {
+    "changes": [
+      {
+        "key": "system.attributes.defesa.bonus",
+        "type": "add",
+        "value": 1,
+        "phase": "initial",
+        "priority": null
+      }
+    ],
+    "targets": [],
+    "status": null,
+    "onuse": false,
+    "abilityUse": {
+      "description": "",
+      "automatic": false,
+      "aumenta": false,
+      "custo": null,
+      "names": [],
+      "types": []
+    },
+    "aura": {
+      "isAura": false,
+      "range": 0
+    },
+    "upgrade": {
+      "type": "improvement",
+      "itemType": [
+        "armor"
+      ]
+    },
+    "identifier": "delicate"
+  },
+  "disabled": false,
+  "start": null,
+  "duration": {
+    "value": null,
+    "units": "seconds",
+    "expiry": null,
+    "expired": false
+  },
+  "origin": null,
+  "tint": "#ffffff",
+  "statuses": [],
+  "showIcon": 1,
+  "sort": 200000,
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": 1791680634923,
+    "modifiedTime": 1791680634923,
+    "lastModifiedBy": "fMILAiVcmBGZmE6r",
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "_key": "!effects!0oBNqjSt3Ax3aO3a"
+}

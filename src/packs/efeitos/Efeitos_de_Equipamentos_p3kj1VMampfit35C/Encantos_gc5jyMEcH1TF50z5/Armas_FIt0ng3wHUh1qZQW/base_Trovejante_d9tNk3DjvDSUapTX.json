@@ -1,0 +1,70 @@
+{
+  "type": "base",
+  "name": "Trovejante",
+  "img": "icons/commodities/treasure/token-engraved-purple-glowing.webp",
+  "description": "<p style=\"text-align:justify\">A arma emite um trovão ribombante a cada golpe. Quando você faz um acerto crítico, a vítima fica atordoada por uma rodada (apenas uma vez por cena; Fort CD For ou Des, a sua escolha, evita).</p>",
+  "transfer": false,
+  "folder": "FIt0ng3wHUh1qZQW",
+  "_id": "d9tNk3DjvDSUapTX",
+  "system": {
+    "changes": [
+      {
+        "key": "condicao",
+        "type": "add",
+        "value": "atordoado",
+        "phase": "initial",
+        "priority": null
+      }
+    ],
+    "targets": [],
+    "status": null,
+    "onuse": true,
+    "abilityUse": {
+      "description": "",
+      "automatic": false,
+      "aumenta": false,
+      "custo": null,
+      "names": [],
+      "types": [
+        "self"
+      ]
+    },
+    "aura": {
+      "isAura": false,
+      "range": 0
+    },
+    "upgrade": {
+      "type": "enchantment",
+      "itemType": [
+        "weapon"
+      ]
+    },
+    "identifier": "thundering"
+  },
+  "disabled": false,
+  "start": null,
+  "duration": {
+    "value": null,
+    "units": "seconds",
+    "expiry": null,
+    "expired": false
+  },
+  "origin": null,
+  "tint": "#ffffff",
+  "statuses": [],
+  "showIcon": 1,
+  "sort": 100782,
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": 1791680533113,
+    "modifiedTime": 1791680533113,
+    "lastModifiedBy": "fMILAiVcmBGZmE6r",
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "_key": "!effects!d9tNk3DjvDSUapTX"
+}

@@ -1,0 +1,23 @@
+{
+  "type": "ActiveEffect",
+  "folder": "B6JlmAsxH5aSwE2P",
+  "name": "Geral",
+  "color": null,
+  "sorting": "a",
+  "_id": "mp07JXiOHgQV5w4V",
+  "description": "",
+  "sort": 0,
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": 1791680634883,
+    "modifiedTime": 1791680634883,
+    "lastModifiedBy": "fMILAiVcmBGZmE6r",
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "_key": "!folders!mp07JXiOHgQV5w4V"
+}

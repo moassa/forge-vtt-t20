@@ -1,0 +1,70 @@
+{
+  "type": "base",
+  "name": "Atroz",
+  "img": "icons/commodities/treasure/plaque-stone-hammer.webp",
+  "description": "<p style=\"text-align:justify\">A arma é um amontoado de pontas, ganchos e protuberâncias. É difícil empunhá-la sem se machucar, mas ela fornece +2 nas rolagens de dano. Pré-requisito: Cruel.</p>",
+  "transfer": false,
+  "folder": "T2CiVz6V1dO87uKa",
+  "_id": "OyFN0qEU2rNNknFc",
+  "system": {
+    "changes": [
+      {
+        "key": "dano",
+        "type": "add",
+        "value": 1,
+        "phase": "initial",
+        "priority": null
+      }
+    ],
+    "targets": [],
+    "status": null,
+    "onuse": true,
+    "abilityUse": {
+      "description": "",
+      "automatic": true,
+      "aumenta": false,
+      "custo": null,
+      "names": [],
+      "types": [
+        "self"
+      ]
+    },
+    "aura": {
+      "isAura": false,
+      "range": 0
+    },
+    "upgrade": {
+      "type": "improvement",
+      "itemType": [
+        "weapon"
+      ]
+    },
+    "identifier": "atrocious"
+  },
+  "disabled": false,
+  "start": null,
+  "duration": {
+    "value": null,
+    "units": "seconds",
+    "expiry": null,
+    "expired": false
+  },
+  "origin": null,
+  "tint": "#ffffff",
+  "statuses": [],
+  "showIcon": 1,
+  "sort": 100000,
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": 1791680634927,
+    "modifiedTime": 1791680634927,
+    "lastModifiedBy": "fMILAiVcmBGZmE6r",
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "_key": "!effects!OyFN0qEU2rNNknFc"
+}

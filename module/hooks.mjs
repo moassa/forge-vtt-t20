@@ -7,11 +7,6 @@ export default function () {
 	/*   Setup Hook                                       */
 	/* -------------------------------------------------- */
 
-	Hooks.once("setup", () => {
-		prepareStatusesCompendium();
-		// prepareUpgradesCompendium();
-	});
-
 	/**
 	 * Once the entire VTT framework is initialized, check to see if we should perform a data migration
 	 */
@@ -24,10 +19,9 @@ export default function () {
 			}
 		});
 
+		prepareStatusesCompendium();
+		prepareUpgradesCompendium();
 		if (!game.user.isActiveGM) return;
-
-		let pack = game.packs.get("world.statuses");
-		if (!pack.locked) await pack.configure({ locked: true });
 
 		/**
 		 * Fix OnUse Effects with duplicated effect ids
@@ -54,7 +48,8 @@ export default function () {
 	 */
 	async function prepareStatusesCompendium() {
 		let pack = game.packs.get("world.statuses");
-		if (!pack) {
+
+		if (!pack && game.user.isActiveGM) {
 			pack = await foundry.documents.collections.CompendiumCollection.createCompendium({
 				label: "Condições",
 				name: "statuses",
@@ -64,6 +59,9 @@ export default function () {
 					PLAYER: "OBSERVER"
 				}
 			});
+		}
+		if (!pack.index.size && game.user.isActiveGM) {
+			await pack.configure({ locked: false });
 			// Copy Effects from system compendium;
 			const effects = game.packs.get("tormenta20.efeitos");
 			const docs = await effects.getDocuments();
@@ -75,6 +73,8 @@ export default function () {
 			}
 			await ActiveEffect.createDocuments(create, { keepId: true, pack: "world.statuses" });
 		}
+
+		// Prepare CONFIG data
 		const TextEditor = foundry.applications.ux.TextEditor.implementation;
 		CONFIG.statusEffects = {};
 		const docs = await pack.getDocuments();
@@ -98,26 +98,69 @@ export default function () {
 		CONFIG.specialStatusEffects.BLIND = "cego";
 		CONFIG.specialStatusEffects.DEFEATED = "morto";
 		CONFIG.specialStatusEffects.INVISIBLE = "invisivel";
+
+		if (game.user.isActiveGM) await pack.configure({ locked: true });
 	}
 
 	/**
 	 * Create World Equipment Upgrade Compendium and populate with system effects;
 	 */
 	async function prepareUpgradesCompendium() {
-		let pack = game.packs.get("world.upgrades");
-		if (!pack) {
+		const collectionName = "world.item-upgrades";
+		let pack = game.packs.get(collectionName);
+		if (!pack && game.user.isActiveGM) {
 			pack = await foundry.documents.collections.CompendiumCollection.createCompendium({
 				label: "Melhorias e Encantos",
-				name: "upgrades",
-				type: "ActiveEffect"
+				name: "item-upgrades",
+				type: "ActiveEffect",
+				ownership: {
+					ASSISTANT: "OWNER",
+					PLAYER: "OBSERVER"
+				}
 			});
 		}
+		if (!pack.index.size && game.user.isActiveGM) {
+			await pack.configure({ locked: false });
+			const effects = game.packs.get("tormenta20.efeitos");
+			const docs = await effects.getDocuments();
+
+			const folders = effects.folders
+				.filter((f) => f.ancestors.some((f) => f._id == "p3kj1VMampfit35C"))
+				.map((f) => f.toObject());
+			await Folder.implementation.createDocuments(folders, {
+				pack: collectionName,
+				keepId: true
+			});
+
+			const create = docs
+				.filter((d) => d.folder?.ancestors.some((f) => f._id == "p3kj1VMampfit35C"))
+				.map((d) => d.toObject());
+			await ActiveEffect.createDocuments(create, {
+				pack: collectionName,
+				keepId: true
+			});
+		}
+
+		// Prepare CONFIG data
 		CONFIG.upgradeEffects = [];
+		const TextEditor = foundry.applications.ux.TextEditor.implementation;
 		const docs = await pack.getDocuments();
-		docs.forEach((effect) => {
-			const { category, item } = effect.system.upgrade;
-			CONFIG.upgradeEffects.category = {};
-		});
+		for (const effect of docs) {
+			CONFIG.upgradeEffects.push({
+				identifier: effect.system.identifier,
+				uuid: effect.uuid,
+				name: effect.name,
+				img: effect.img,
+				link: effect.toAnchor().outerHTML,
+				type: effect.system.upgrade?.type,
+				group: effect.folder.name,
+				itemType: effect.system.upgrade?.itemType,
+				description: await TextEditor.enrichHTML(effect.description)
+			});
+		}
+		CONFIG.upgradeEffects.sort((a, b) => a.name.localeCompare(b.name));
+
+		if (game.user.isActiveGM) await pack.configure({ locked: true });
 	}
 
 	Hooks.once("ready", migrateWorld);

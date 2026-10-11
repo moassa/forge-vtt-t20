@@ -1,0 +1,69 @@
+{
+  "type": "base",
+  "name": "Invulnerável (Armadura)",
+  "img": "icons/commodities/treasure/token-engraved-purple-glowing.webp",
+  "description": "<p style=\"text-align:justify\">Você recebe redução de dano 2 (para escudos) ou 5 (para armaduras).</p>",
+  "transfer": true,
+  "folder": "hFPvogqtIU1d1ewk",
+  "_id": "9qtyaxELLc4xqkMk",
+  "system": {
+    "changes": [
+      {
+        "key": "system.attributes.defesa.bonus",
+        "type": "add",
+        "value": 5,
+        "phase": "initial",
+        "priority": null
+      }
+    ],
+    "targets": [],
+    "status": null,
+    "onuse": false,
+    "abilityUse": {
+      "description": "",
+      "automatic": false,
+      "aumenta": false,
+      "custo": null,
+      "names": [],
+      "types": []
+    },
+    "aura": {
+      "isAura": false,
+      "range": 0
+    },
+    "upgrade": {
+      "type": "enchantment",
+      "itemType": [
+        "armor",
+        "shield"
+      ]
+    },
+    "identifier": "invulnerable"
+  },
+  "disabled": false,
+  "start": null,
+  "duration": {
+    "value": null,
+    "units": "seconds",
+    "expiry": null,
+    "expired": false
+  },
+  "origin": null,
+  "tint": "#ffffff",
+  "statuses": [],
+  "showIcon": 1,
+  "sort": 600000,
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": 1791680533105,
+    "modifiedTime": 1791693572891,
+    "lastModifiedBy": "fMILAiVcmBGZmE6r",
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "_key": "!effects!9qtyaxELLc4xqkMk"
+}

@@ -374,80 +374,69 @@ export default class Tormenta20ItemData extends Tormenta20TypeData {
 		return schema;
 	}
 
-	static schemaUpgrades(type = "arma") {
-		let schema = {
-			upgrades: new fields.SchemaField({
-				melhoria1: new fields.StringField({
-					required: true,
-					blank: true,
-					initial: "",
-					label: "T20.ItemSuperiorUpgrades",
-					hint: "T20.ItemSuperiorUpgradesHint"
-				}),
-				melhoria2: new fields.StringField({
-					required: true,
-					blank: true,
-					initial: "",
-					label: "T20.ItemSuperiorUpgrades",
-					hint: "T20.ItemSuperiorUpgradesHint"
-				}),
-				melhoria3: new fields.StringField({
-					required: true,
-					blank: true,
-					initial: "",
-					label: "T20.ItemSuperiorUpgrades",
-					hint: "T20.ItemSuperiorUpgradesHint"
-				}),
-				melhoria4: new fields.StringField({
-					required: true,
-					blank: true,
-					initial: "",
-					label: "T20.ItemSuperiorUpgrades",
-					hint: "T20.ItemSuperiorUpgradesHint"
-				}),
-				material: new fields.StringField({
-					required: true,
-					blank: true,
-					initial: "",
-					label: "T20.ItemSpecialMaterial",
-					hint: "T20.ItemSpecialMaterialHint"
-				}),
-				encanto1: new fields.StringField({
-					required: true,
-					blank: true,
-					initial: "",
-					label: "T20.ItemEnchantmentUpgrade",
-					hint: "T20.ItemEnchantmentUpgradeHint"
-				}),
-				encanto2: new fields.StringField({
-					required: true,
-					blank: true,
-					initial: "",
-					label: "T20.ItemEnchantmentUpgrade",
-					hint: "T20.ItemEnchantmentUpgradeHint"
-				}),
-				encanto3: new fields.StringField({
-					required: true,
-					blank: true,
-					initial: "",
-					label: "T20.ItemEnchantmentUpgrade",
-					hint: "T20.ItemEnchantmentUpgradeHint"
-				})
+	static schemaUpgrades() {
+		const schema = {};
+		schema.itemType = new fields.SetField(
+			new fields.StringField({
+				required: true,
+				blank: false,
+				choices: {
+					weapon: "T20.EFFECT.UPGRADE.itemType.choices.weapon",
+					armor: "T20.EFFECT.UPGRADE.itemType.choices.armor",
+					shield: "T20.EFFECT.UPGRADE.itemType.choices.shield",
+					esoteric: "T20.EFFECT.UPGRADE.itemType.choices.esoteric",
+					tool: "T20.EFFECT.UPGRADE.itemType.choices.tool",
+					clothing: "T20.EFFECT.UPGRADE.itemType.choices.clothing",
+					accessory: "T20.EFFECT.UPGRADE.itemType.choices.accessory"
+				}
 			}),
-			// melhorias: new fields.ObjectField(),
-			// encantos: new fields.ObjectField(),
-			enableAutoUpgrades: new fields.BooleanField({
-				required: false,
-				nullable: false,
-				initial: true,
-				label: "T20.EnhancementsAutomationEnable",
-				hint: "T20.EnhancementsAutomationEnableHint"
-			})
-		};
-
-		if (type === "arma") {
+			{
+				label: "T20.EFFECT.UPGRADE.itemType.label"
+			}
+		);
+		const categories = ["improvement", "material", "enchantment", "curse", "innovation"];
+		for (const category of categories) {
+			schema[category] = new fields.SetField(
+				new fields.StringField({
+					required: true,
+					blank: false
+				}),
+				{
+					label: `T20.EFFECT.UPGRADE.type.choices.${category}`
+				}
+			);
 		}
-		return schema;
+		const oldFields = ["melhoria", "materialEspecial", "encanto"];
+		for (const category of oldFields) {
+			for (let index = 1; index < 5; index++) {
+				let key = category == "material" ? category : `${category}${index}`;
+				const { label, hint } =
+					category == "material"
+						? { label: "T20.ItemSpecialMaterial", hint: "T20.ItemSpecialMaterialHint" }
+						: category == "materialEspecial"
+							? { label: "T20.ItemSuperiorUpgrades", hint: "T20.ItemSuperiorUpgradesHint" }
+							: { label: "T20.ItemEnchantmentUpgrade", hint: "T20.ItemEnchantmentUpgradeHint" };
+				schema[key] = new fields.StringField({
+					required: true,
+					blank: true,
+					initial: "",
+					label: label,
+					hint: hint
+				});
+				if (category == "materialEspecial") break;
+				if (category == "encanto" && index == 3) break;
+			}
+		}
+		schema.enableAutoUpgrades = new fields.BooleanField({
+			required: false,
+			nullable: false,
+			initial: true,
+			label: "T20.EnhancementsAutomationEnable",
+			hint: "T20.EnhancementsAutomationEnableHint"
+		});
+		return {
+			upgrades: new fields.SchemaField(schema, { label: "T20.ItemUpgrades" })
+		};
 	}
 
 	static schemaItemGrants(type = "classe") {
@@ -481,6 +470,10 @@ export default class Tormenta20ItemData extends Tormenta20TypeData {
 	static migrateData(source) {
 		if (typeof source.description === "string") {
 			source.description = { value: source.description, unidentified: "" };
+		}
+		if (typeof source.upgrades?.material === "string") {
+			source.upgrades.materialEspecial = source.upgrades?.material;
+			source.upgrades.material = [];
 		}
 		return source;
 	}
@@ -548,5 +541,50 @@ export default class Tormenta20ItemData extends Tormenta20TypeData {
 			});
 			changes.system.description.value = html.innerHTML;
 		}
+	}
+
+	/** @inheritdoc */
+	_onUpdate(changed, options, userId) {
+		super._onUpdate(changed, options, userId);
+
+		if (game.userId == userId && changed.system && "upgrades" in changed.system)
+			this._manageUpgradeEffects(changed, userId);
+	}
+
+	async _manageUpgradeEffects(changed) {
+		const item = this.parent;
+		const categories = ["improvement", "material", "enchantment", "curse", "innovation"];
+		const toCreate = [];
+		const toDelete = [];
+
+		for (const [key, value] of Object.entries(changed.system.upgrades)) {
+			if (!categories.includes(key)) continue;
+			const effects = item.effects.filter((i) => i.system.upgrade?.type == key);
+			for (const uuid of value) {
+				const existing = effects.find((ef) => ef._stats.compendiumSource == uuid);
+				if (!existing) {
+					let data = await fromUuid(uuid);
+					data = game.items.fromCompendium(data);
+					toCreate.push(data);
+				}
+			}
+			for (const effect of effects) {
+				if (!value.includes(effect._stats.compendiumSource)) toDelete.push(effect.id);
+			}
+		}
+		const operations = [];
+		operations.push({
+			data: toCreate,
+			documentName: "ActiveEffect",
+			action: "create",
+			parent: item
+		});
+		operations.push({
+			ids: toDelete,
+			action: "delete",
+			documentName: "ActiveEffect",
+			parent: item
+		});
+		await foundry.documents.modifyBatch(operations);
 	}
 }

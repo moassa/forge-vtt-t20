@@ -1,0 +1,23 @@
+{
+  "type": "ActiveEffect",
+  "folder": "gc5jyMEcH1TF50z5",
+  "name": "Acessórios",
+  "color": null,
+  "sorting": "a",
+  "_id": "GgoVSU5ySEv4iUDG",
+  "description": "",
+  "sort": 0,
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": 1791691418499,
+    "modifiedTime": 1791691418499,
+    "lastModifiedBy": "fMILAiVcmBGZmE6r",
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "_key": "!folders!GgoVSU5ySEv4iUDG"
+}

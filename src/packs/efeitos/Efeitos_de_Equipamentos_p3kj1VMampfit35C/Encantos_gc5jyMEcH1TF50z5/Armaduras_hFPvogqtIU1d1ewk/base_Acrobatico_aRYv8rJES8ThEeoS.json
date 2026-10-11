@@ -1,0 +1,76 @@
+{
+  "type": "base",
+  "name": "Acrobático",
+  "img": "icons/commodities/treasure/token-engraved-purple-glowing.webp",
+  "description": "<p style=\"text-align:justify\">Você recebe +5 em Acrobacia e ignora a penalidade de armadura do item para testes dessa perícia.</p>",
+  "transfer": true,
+  "folder": "hFPvogqtIU1d1ewk",
+  "_id": "aRYv8rJES8ThEeoS",
+  "system": {
+    "changes": [
+      {
+        "key": "system.pericias.acro.bonus",
+        "type": "add",
+        "value": 5,
+        "phase": "initial",
+        "priority": null
+      },
+      {
+        "key": "system.pericias.acro.bonus",
+        "type": "add",
+        "value": "@item.pda",
+        "phase": "initial",
+        "priority": null
+      }
+    ],
+    "targets": [],
+    "status": null,
+    "onuse": false,
+    "abilityUse": {
+      "description": "",
+      "automatic": false,
+      "aumenta": false,
+      "custo": null,
+      "names": [],
+      "types": []
+    },
+    "aura": {
+      "isAura": false,
+      "range": 0
+    },
+    "upgrade": {
+      "type": "enchantment",
+      "itemType": [
+        "armor",
+        "shield"
+      ]
+    },
+    "identifier": "acrobatic"
+  },
+  "disabled": false,
+  "start": null,
+  "duration": {
+    "value": null,
+    "units": "seconds",
+    "expiry": null,
+    "expired": false
+  },
+  "origin": null,
+  "tint": "#ffffff",
+  "statuses": [],
+  "showIcon": 1,
+  "sort": 1900000,
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": 1791680533113,
+    "modifiedTime": 1791692868954,
+    "lastModifiedBy": "fMILAiVcmBGZmE6r",
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "_key": "!effects!aRYv8rJES8ThEeoS"
+}

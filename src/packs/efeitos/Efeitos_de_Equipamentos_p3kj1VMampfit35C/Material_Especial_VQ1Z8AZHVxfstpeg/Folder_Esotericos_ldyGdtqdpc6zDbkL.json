@@ -1,0 +1,23 @@
+{
+  "type": "ActiveEffect",
+  "folder": "VQ1Z8AZHVxfstpeg",
+  "name": "Esotéricos",
+  "color": null,
+  "sorting": "a",
+  "_id": "ldyGdtqdpc6zDbkL",
+  "description": "",
+  "sort": 0,
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": 1791680622809,
+    "modifiedTime": 1791680622809,
+    "lastModifiedBy": "fMILAiVcmBGZmE6r",
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "_key": "!folders!ldyGdtqdpc6zDbkL"
+}

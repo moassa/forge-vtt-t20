@@ -1,0 +1,23 @@
+{
+  "type": "ActiveEffect",
+  "folder": "p3kj1VMampfit35C",
+  "name": "Maldições",
+  "color": null,
+  "sorting": "a",
+  "_id": "bNRJPvNWZHkkKQyc",
+  "description": "",
+  "sort": 0,
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": 1791691437677,
+    "modifiedTime": 1791691437677,
+    "lastModifiedBy": "fMILAiVcmBGZmE6r",
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "_key": "!folders!bNRJPvNWZHkkKQyc"
+}

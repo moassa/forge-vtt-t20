@@ -6,7 +6,7 @@
 		<a class="item" data-tab="description">{{ localize "T20.Description" }}</a>
 		<a class="item" data-tab="details">{{ localize "T20.Details" }}</a>
 		{{#if (or (eq item.system.tipo 'leve' ) (eq item.system.tipo 'pesada' ) (eq item.system.tipo 'escudo' ) (eq item.system.tipo 'esoterico' ) (eq item.system.tipo 'traje' ) (eq item.system.tipo 'ferramenta'))}}
-		<a class="item" data-tab="enhancements">{{ localize "T20.Enhancements" }}</a>
+			<a class="item" data-tab="enhancements">{{ localize "T20.Enhancements" }}</a>
 		{{/if}}
 
 		<a class="item" data-tab="effects">{{ localize "T20.Effects" }}</a>
@@ -45,12 +45,12 @@
 				</div>
 			</div>
 			{{#if (eq item.system.tipo "pesada")}}
-			<div class="form-group">
-				<label>{{ localize "T20.ArmorMaxAblBonus" }}</label>
-				<div class="form-fields">
-					<input type="number" name="system.armadura.maxAtr" value="{{item.system.armadura.maxAtr}}" data-dtype="Number" />
+				<div class="form-group">
+					<label>{{ localize "T20.ArmorMaxAblBonus" }}</label>
+					<div class="form-fields">
+						<input type="number" name="system.armadura.maxAtr" value="{{item.system.armadura.maxAtr}}" data-dtype="Number" />
+					</div>
 				</div>
-			</div>
 			{{/if}}
 			<div class="form-group">
 				<label>{{ localize "T20.ArmorPenalty" }}</label>
@@ -61,7 +61,7 @@
 			<div class="form-group">
 				<label>{{ localize "T20.PMCost" }}</label>
 				<div class="form-fields">
-					<input type="number" data-dtype="Number" placeholder="0" name="system.ativacao.custo" value="{{item.system.ativacao.custo}}"/>
+					<input type="number" data-dtype="Number" placeholder="0" name="system.ativacao.custo" value="{{item.system.ativacao.custo}}" />
 				</div>
 			</div>
 			{{!-- Rolls --}}
@@ -72,8 +72,8 @@
 		</div>
 
 		{{#if (or (eq item.system.tipo "leve") (eq item.system.tipo "pesada") (eq item.system.tipo "escudo") (eq item.system.tipo "esoterico") (eq item.system.tipo "traje") (eq item.system.tipo "ferramenta")) }}
-		{{!-- Enhancements Tab --}}
-		{{> "tormenta20.item-enhancements"}}
+			{{!-- Enhancements Tab --}}
+			{{> "tormenta20.item-enhancements"}}
 		{{/if}}
 
 		<div class="tab effects" data-group="primary" data-tab="effects">

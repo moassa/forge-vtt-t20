@@ -1,0 +1,77 @@
+{
+  "type": "base",
+  "name": "Destruidora",
+  "img": "icons/commodities/treasure/token-engraved-purple-glowing.webp",
+  "description": "<p style=\"text-align:justify\">Se usada contra construtos e objetos (com a manobra quebrar), a arma fornece +2 no teste de ataque e causa +2d8 de dano.</p>",
+  "transfer": false,
+  "folder": "FIt0ng3wHUh1qZQW",
+  "_id": "zTuM6pGiVHrrgzU6",
+  "system": {
+    "changes": [
+      {
+        "key": "ataque",
+        "type": "add",
+        "value": 2,
+        "phase": "initial",
+        "priority": null
+      },
+      {
+        "key": "dano",
+        "type": "add",
+        "value": "2d8",
+        "phase": "initial",
+        "priority": null
+      }
+    ],
+    "targets": [],
+    "status": null,
+    "onuse": true,
+    "abilityUse": {
+      "description": "",
+      "automatic": false,
+      "aumenta": false,
+      "custo": null,
+      "names": [],
+      "types": [
+        "self"
+      ]
+    },
+    "aura": {
+      "isAura": false,
+      "range": 0
+    },
+    "upgrade": {
+      "type": "enchantment",
+      "itemType": [
+        "weapon"
+      ]
+    },
+    "identifier": "destructive"
+  },
+  "disabled": false,
+  "start": null,
+  "duration": {
+    "value": null,
+    "units": "seconds",
+    "expiry": null,
+    "expired": false
+  },
+  "origin": null,
+  "tint": "#ffffff",
+  "statuses": [],
+  "showIcon": 1,
+  "sort": 1000000,
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": 1791680533118,
+    "modifiedTime": 1791680533118,
+    "lastModifiedBy": "fMILAiVcmBGZmE6r",
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "_key": "!effects!zTuM6pGiVHrrgzU6"
+}

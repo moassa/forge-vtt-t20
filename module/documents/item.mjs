@@ -1223,7 +1223,8 @@ export default class ItemT20 extends Item {
 		if (this.type === "arma") {
 			critical = itemData.rolled?.Ataque?._critical || false;
 			pericia = itemData.rolls.find((i) => i.type === "ataque")?.parts[1][0];
-			lancinante = Object.values(itemData.upgrades)?.includes("lancinating");
+			// lancinante = Object.values(itemData.upgrades)?.includes("lancinating");
+			lancinante = this.effects.some((i) => i.system.identifier == "lancinating");
 		}
 		const recoveryTypes = new Set(["curatpv", "curapm", "curatpm"]);
 		for (let r of itemData.rolls) {

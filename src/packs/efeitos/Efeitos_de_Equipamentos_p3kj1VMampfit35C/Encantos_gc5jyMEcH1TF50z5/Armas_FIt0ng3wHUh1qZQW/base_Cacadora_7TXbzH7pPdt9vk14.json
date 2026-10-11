@@ -1,0 +1,60 @@
+{
+  "type": "base",
+  "name": "Caçadora",
+  "img": "icons/commodities/treasure/token-engraved-purple-glowing.webp",
+  "description": "<p style=\"text-align:justify\">A arma persegue o alvo, anulando penalidades por camuflagem leve e total e por cobertura leve. Caso a arma seja de ataque à distância, seu alcance também aumenta em uma categoria.</p>",
+  "transfer": false,
+  "folder": "FIt0ng3wHUh1qZQW",
+  "_id": "7TXbzH7pPdt9vk14",
+  "system": {
+    "changes": [],
+    "targets": [],
+    "status": null,
+    "onuse": false,
+    "abilityUse": {
+      "description": "",
+      "automatic": false,
+      "aumenta": false,
+      "custo": null,
+      "names": [],
+      "types": []
+    },
+    "aura": {
+      "isAura": false,
+      "range": 0
+    },
+    "upgrade": {
+      "type": "enchantment",
+      "itemType": [
+        "weapon"
+      ]
+    },
+    "identifier": "seeking"
+  },
+  "disabled": false,
+  "start": null,
+  "duration": {
+    "value": null,
+    "units": "seconds",
+    "expiry": null,
+    "expired": false
+  },
+  "origin": null,
+  "tint": "#ffffff",
+  "statuses": [],
+  "showIcon": 1,
+  "sort": 1700000,
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": 1791680533103,
+    "modifiedTime": 1791680533103,
+    "lastModifiedBy": "fMILAiVcmBGZmE6r",
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "_key": "!effects!7TXbzH7pPdt9vk14"
+}

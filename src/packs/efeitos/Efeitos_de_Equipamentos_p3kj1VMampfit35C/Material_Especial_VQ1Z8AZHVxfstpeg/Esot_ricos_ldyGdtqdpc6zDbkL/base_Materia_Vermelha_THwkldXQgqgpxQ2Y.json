@@ -1,0 +1,77 @@
+{
+  "type": "base",
+  "name": "Matéria Vermelha",
+  "img": "icons/commodities/metal/ingot-stamped-spiral.webp",
+  "description": "<p style=\"text-align:justify\">Qualquer material de origem lefeu — desde suas garras e carapaças, até minérios e partes de estruturas encontradas em áreas de Tormenta — apresenta propriedades parecidas, sendo conhecido como “matéria vermelha”. Estes itens assustadores impõem ao usuário penalidade de –2 em perícias baseadas em Carisma (exceto Intimidação).</p><p style=\"text-align:justify\">Esotérico. Você e todos os seus inimigos em alcance curto sofrem –2 em testes de resistência contra efeitos mágicos.</p>",
+  "transfer": false,
+  "folder": "ldyGdtqdpc6zDbkL",
+  "_id": "THwkldXQgqgpxQ2Y",
+  "system": {
+    "changes": [
+      {
+        "key": "roll",
+        "type": "add",
+        "value": -2,
+        "phase": "initial",
+        "priority": null
+      }
+    ],
+    "targets": [
+      "self",
+      "enemy"
+    ],
+    "status": null,
+    "onuse": true,
+    "abilityUse": {
+      "description": "",
+      "automatic": false,
+      "aumenta": false,
+      "custo": null,
+      "names": [
+        "Fortitude",
+        "Reflexos",
+        "Vontade"
+      ],
+      "types": [
+        "skill"
+      ]
+    },
+    "aura": {
+      "isAura": true,
+      "range": 9
+    },
+    "upgrade": {
+      "type": "material",
+      "itemType": [
+        "esoteric"
+      ]
+    },
+    "identifier": "red-matter"
+  },
+  "disabled": false,
+  "start": null,
+  "duration": {
+    "value": null,
+    "units": "seconds",
+    "expiry": null,
+    "expired": false
+  },
+  "origin": null,
+  "tint": "#ffffff",
+  "statuses": [],
+  "showIcon": 1,
+  "sort": 112500,
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": 1791680622839,
+    "modifiedTime": 1791693572892,
+    "lastModifiedBy": "fMILAiVcmBGZmE6r",
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "_key": "!effects!THwkldXQgqgpxQ2Y"
+}

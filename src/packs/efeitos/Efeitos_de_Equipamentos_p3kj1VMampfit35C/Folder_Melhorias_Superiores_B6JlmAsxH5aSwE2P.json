@@ -1,0 +1,23 @@
+{
+  "type": "ActiveEffect",
+  "folder": "p3kj1VMampfit35C",
+  "name": "Melhorias Superiores",
+  "color": null,
+  "sorting": "a",
+  "_id": "B6JlmAsxH5aSwE2P",
+  "description": "",
+  "sort": 300000,
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": 1791680634882,
+    "modifiedTime": 1791680664820,
+    "lastModifiedBy": "fMILAiVcmBGZmE6r",
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "_key": "!folders!B6JlmAsxH5aSwE2P"
+}

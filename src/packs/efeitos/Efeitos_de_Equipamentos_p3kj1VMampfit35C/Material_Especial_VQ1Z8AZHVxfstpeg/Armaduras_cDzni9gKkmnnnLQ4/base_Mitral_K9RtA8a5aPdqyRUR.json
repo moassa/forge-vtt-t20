@@ -1,0 +1,69 @@
+{
+  "type": "base",
+  "name": "Mitral",
+  "img": "icons/commodities/metal/ingot-stamped-spiral.webp",
+  "description": "<p style=\"text-align:justify\">Metal raro e valioso, o mitral é prateado, brilhante e mais leve que aço. Itens de mitral ocupam –1 espaço (mínimo 1).</p><p style=\"text-align:justify\">Armadura e Escudo. Tem sua penalidade de armadura diminuída em 2. Armaduras pesadas de mitral permitem que você aplique até dois pontos de sua Destreza na Defesa.</p>",
+  "transfer": false,
+  "folder": "cDzni9gKkmnnnLQ4",
+  "_id": "K9RtA8a5aPdqyRUR",
+  "system": {
+    "changes": [
+      {
+        "key": "system.attributes.defesa.pda",
+        "type": "add",
+        "value": -2,
+        "phase": "initial",
+        "priority": null
+      }
+    ],
+    "targets": [],
+    "status": null,
+    "onuse": false,
+    "abilityUse": {
+      "description": "",
+      "automatic": false,
+      "aumenta": false,
+      "custo": null,
+      "names": [],
+      "types": []
+    },
+    "aura": {
+      "isAura": false,
+      "range": 0
+    },
+    "upgrade": {
+      "type": "material",
+      "itemType": [
+        "armor",
+        "shield"
+      ]
+    },
+    "identifier": "mithril"
+  },
+  "disabled": false,
+  "start": null,
+  "duration": {
+    "value": null,
+    "units": "seconds",
+    "expiry": null,
+    "expired": false
+  },
+  "origin": null,
+  "tint": "#ffffff",
+  "statuses": [],
+  "showIcon": 1,
+  "sort": 106250,
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": 1791680622837,
+    "modifiedTime": 1791693572891,
+    "lastModifiedBy": "fMILAiVcmBGZmE6r",
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "_key": "!effects!K9RtA8a5aPdqyRUR"
+}

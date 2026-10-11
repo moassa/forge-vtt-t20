@@ -1,0 +1,70 @@
+{
+  "type": "base",
+  "name": "Energético",
+  "img": "icons/commodities/treasure/plaque-stone-hammer.webp",
+  "description": "<p style=\"text-align:justify\">Catalisadores alquímicos inseridos no item fazem com que ele potencialize energias mágicas. Suas magias que causam dano causam +1d6 pontos de dano do mesmo de tipo.</p>",
+  "transfer": false,
+  "folder": "HJhZP2JCLYDtAoPP",
+  "_id": "JgoKMzmYyp3wuFYu",
+  "system": {
+    "changes": [
+      {
+        "key": "dano",
+        "type": "add",
+        "value": "1d6",
+        "phase": "initial",
+        "priority": null
+      }
+    ],
+    "targets": [],
+    "status": null,
+    "onuse": true,
+    "abilityUse": {
+      "description": "",
+      "automatic": true,
+      "aumenta": false,
+      "custo": null,
+      "names": [],
+      "types": [
+        "spell"
+      ]
+    },
+    "aura": {
+      "isAura": false,
+      "range": 0
+    },
+    "upgrade": {
+      "type": "improvement",
+      "itemType": [
+        "esoteric"
+      ]
+    },
+    "identifier": "energetic"
+  },
+  "disabled": false,
+  "start": null,
+  "duration": {
+    "value": null,
+    "units": "seconds",
+    "expiry": null,
+    "expired": false
+  },
+  "origin": null,
+  "tint": "#ffffff",
+  "statuses": [],
+  "showIcon": 1,
+  "sort": 200000,
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": 1791680634926,
+    "modifiedTime": 1791680634926,
+    "lastModifiedBy": "fMILAiVcmBGZmE6r",
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "_key": "!effects!JgoKMzmYyp3wuFYu"
+}

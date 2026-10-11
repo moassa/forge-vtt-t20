@@ -1,0 +1,68 @@
+{
+  "type": "base",
+  "name": "Selada",
+  "img": "icons/commodities/treasure/plaque-stone-hammer.webp",
+  "description": "<p style=\"text-align:justify\">A armadura foi forjada de forma a proteger todo o corpo do usuário, sem deixar espaço para nem mesmo um alfinete! Esta melhoria fornece um bônus de +1 em testes de resistência, mas só pode ser aplicado em armaduras pesadas.</p>",
+  "transfer": true,
+  "folder": "gxfHe0g9enTvYwgb",
+  "_id": "mYcKdul62VpjASLX",
+  "system": {
+    "changes": [
+      {
+        "key": "system.modificadores.pericias.resistencia",
+        "type": "add",
+        "value": 1,
+        "phase": "initial",
+        "priority": null
+      }
+    ],
+    "targets": [],
+    "status": null,
+    "onuse": false,
+    "abilityUse": {
+      "description": "",
+      "automatic": false,
+      "aumenta": false,
+      "custo": null,
+      "names": [],
+      "types": []
+    },
+    "aura": {
+      "isAura": false,
+      "range": 0
+    },
+    "upgrade": {
+      "type": "improvement",
+      "itemType": [
+        "armor"
+      ]
+    },
+    "identifier": "sealed"
+  },
+  "disabled": false,
+  "start": null,
+  "duration": {
+    "value": null,
+    "units": "seconds",
+    "expiry": null,
+    "expired": false
+  },
+  "origin": null,
+  "tint": "#ffffff",
+  "statuses": [],
+  "showIcon": 1,
+  "sort": 103125,
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": 1791680634930,
+    "modifiedTime": 1791680634930,
+    "lastModifiedBy": "fMILAiVcmBGZmE6r",
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "_key": "!effects!mYcKdul62VpjASLX"
+}

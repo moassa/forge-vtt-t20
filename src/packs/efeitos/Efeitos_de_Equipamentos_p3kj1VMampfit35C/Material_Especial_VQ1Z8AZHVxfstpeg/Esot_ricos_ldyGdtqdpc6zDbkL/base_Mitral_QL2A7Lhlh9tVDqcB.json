@@ -1,0 +1,70 @@
+{
+  "type": "base",
+  "name": "Mitral",
+  "img": "icons/commodities/metal/ingot-stamped-spiral.webp",
+  "description": "<p style=\"text-align:justify\">Metal raro e valioso, o mitral é prateado, brilhante e mais leve que aço. Itens de mitral ocupam –1 espaço (mínimo 1).</p><p style=\"text-align:justify\">Esotérico. Permite que você pague +2 PM ao lançar uma magia para aumentar a CD dela em +2.</p>",
+  "transfer": false,
+  "folder": "ldyGdtqdpc6zDbkL",
+  "_id": "QL2A7Lhlh9tVDqcB",
+  "system": {
+    "changes": [
+      {
+        "key": "cd",
+        "type": "add",
+        "value": 2,
+        "phase": "initial",
+        "priority": null
+      }
+    ],
+    "targets": [],
+    "status": null,
+    "onuse": true,
+    "abilityUse": {
+      "description": "",
+      "automatic": false,
+      "aumenta": false,
+      "custo": 2,
+      "names": [],
+      "types": [
+        "spell"
+      ]
+    },
+    "aura": {
+      "isAura": false,
+      "range": 0
+    },
+    "upgrade": {
+      "type": "material",
+      "itemType": [
+        "esoteric"
+      ]
+    },
+    "identifier": "mithril"
+  },
+  "disabled": false,
+  "start": null,
+  "duration": {
+    "value": null,
+    "units": "seconds",
+    "expiry": null,
+    "expired": false
+  },
+  "origin": null,
+  "tint": "#ffffff",
+  "statuses": [],
+  "showIcon": 1,
+  "sort": 106250,
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": 1791680622838,
+    "modifiedTime": 1791693572892,
+    "lastModifiedBy": "fMILAiVcmBGZmE6r",
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "_key": "!effects!QL2A7Lhlh9tVDqcB"
+}

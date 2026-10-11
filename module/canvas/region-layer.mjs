@@ -46,7 +46,7 @@ export default class RegionLayerT20 extends foundry.canvas.layers.RegionLayer {
 
 	parseShapeData(item) {
 		const alcance = item.system.alcance;
-		const area = item.system.area.stripDiacritics().replace(",", ".");
+		const area = item.system.area.toLowerCase().stripDiacritics().replace(",", ".");
 		const shape = {
 			name: item.name
 		};

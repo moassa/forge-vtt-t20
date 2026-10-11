@@ -1,0 +1,23 @@
+{
+  "type": "ActiveEffect",
+  "folder": "VQ1Z8AZHVxfstpeg",
+  "name": "Armaduras",
+  "color": null,
+  "sorting": "a",
+  "_id": "cDzni9gKkmnnnLQ4",
+  "description": "",
+  "sort": 0,
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": 1791680622809,
+    "modifiedTime": 1791680622809,
+    "lastModifiedBy": "fMILAiVcmBGZmE6r",
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "_key": "!folders!cDzni9gKkmnnnLQ4"
+}

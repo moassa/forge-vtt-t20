@@ -60,4 +60,21 @@
 			</div>
 		{{/if}}
 	</fieldset>
+	<fieldset>
+		<legend>
+			<legend>{{localize schema.fields.upgrade.label}}</legend>
+		</legend>
+		{{formGroup
+			schema.fields.upgrade.fields.type
+			value=source.system.upgrade.type
+			localize=true
+		}}
+		{{formGroup
+			schema.fields.upgrade.fields.itemType
+			value=source.system.upgrade.itemType
+			type="checkboxes"
+			stacked=true
+			localize=true
+		}}
+	</fieldset>
 </section>

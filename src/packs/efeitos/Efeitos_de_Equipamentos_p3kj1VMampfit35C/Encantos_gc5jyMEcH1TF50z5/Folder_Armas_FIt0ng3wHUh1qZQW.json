@@ -1,0 +1,23 @@
+{
+  "type": "ActiveEffect",
+  "folder": "gc5jyMEcH1TF50z5",
+  "name": "Armas",
+  "color": null,
+  "sorting": "a",
+  "_id": "FIt0ng3wHUh1qZQW",
+  "description": "",
+  "sort": 0,
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": 1791680533044,
+    "modifiedTime": 1791680533044,
+    "lastModifiedBy": "fMILAiVcmBGZmE6r",
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "_key": "!folders!FIt0ng3wHUh1qZQW"
+}

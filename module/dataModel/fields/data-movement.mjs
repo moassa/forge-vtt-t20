@@ -35,7 +35,7 @@ export default class MovementData extends Tormenta20DataModel {
 			hint: "T20.MovementUnitTypeHint"
 		});
 		schema.tags = new fields.SetField(new fields.StringField(), {
-			label: "T20.Tag"
+			label: "T20.Tags"
 		});
 		return schema;
 	}

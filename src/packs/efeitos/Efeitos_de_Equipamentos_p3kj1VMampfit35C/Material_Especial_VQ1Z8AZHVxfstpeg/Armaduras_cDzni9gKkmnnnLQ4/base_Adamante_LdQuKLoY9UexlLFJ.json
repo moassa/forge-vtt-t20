@@ -1,0 +1,76 @@
+{
+  "type": "base",
+  "name": "Adamante",
+  "img": "icons/commodities/metal/ingot-stamped-spiral.webp",
+  "description": "<p style=\"text-align:justify\">Encontrado apenas em meteoritos (e por isso também chamado de “ferro-meteórico”), o adamante é um metal escuro, fosco e mais denso que o aço.</p><p style=\"text-align:justify\">Fornece redução de dano: armaduras leves e escudos, RD 2; armaduras pesadas, RD 5.</p>",
+  "transfer": true,
+  "folder": "cDzni9gKkmnnnLQ4",
+  "_id": "LdQuKLoY9UexlLFJ",
+  "system": {
+    "changes": [
+      {
+        "key": "system.tracos.resistencias.dano.bonus",
+        "type": "add",
+        "value": 2,
+        "phase": "initial",
+        "priority": null
+      },
+      {
+        "key": "system.tracos.resistencias.dano.bonus",
+        "type": "add",
+        "value": 5,
+        "phase": "initial",
+        "priority": null
+      }
+    ],
+    "targets": [],
+    "status": null,
+    "onuse": false,
+    "abilityUse": {
+      "description": "",
+      "automatic": false,
+      "aumenta": false,
+      "custo": null,
+      "names": [],
+      "types": []
+    },
+    "aura": {
+      "isAura": false,
+      "range": 0
+    },
+    "upgrade": {
+      "type": "material",
+      "itemType": [
+        "armor",
+        "shield"
+      ]
+    },
+    "identifier": "adamant"
+  },
+  "disabled": false,
+  "start": null,
+  "duration": {
+    "value": null,
+    "units": "seconds",
+    "expiry": null,
+    "expired": false
+  },
+  "origin": null,
+  "tint": "#ffffff",
+  "statuses": [],
+  "showIcon": 1,
+  "sort": 200000,
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": 1791680622837,
+    "modifiedTime": 1791693572891,
+    "lastModifiedBy": "fMILAiVcmBGZmE6r",
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "_key": "!effects!LdQuKLoY9UexlLFJ"
+}

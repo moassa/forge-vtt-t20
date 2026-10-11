@@ -1,0 +1,63 @@
+{
+  "type": "base",
+  "name": "Material Especial",
+  "img": "icons/commodities/treasure/plaque-stone-hammer.webp",
+  "description": "<p style=\"text-align:justify\">A arma, armadura, escudo ou item esotérico é feito de, ou banhado com, um material especial. Cada material fornece um benefício, cumulativo com outros benefícios de melhorias, mas possui um preço adicional que deve ser pago além do preço da melhoria. Veja a seção a seguir para a descrição dos materiais especiais. Fabricar um item de material especial é uma melhoria porque materiais especiais exigem um trabalho mais complexo do que materiais comuns.</p>",
+  "transfer": false,
+  "folder": "mp07JXiOHgQV5w4V",
+  "_id": "v4q3ecS1ReJEH51E",
+  "system": {
+    "changes": [],
+    "targets": [],
+    "status": null,
+    "onuse": false,
+    "abilityUse": {
+      "description": "",
+      "automatic": false,
+      "aumenta": false,
+      "custo": null,
+      "names": [],
+      "types": []
+    },
+    "aura": {
+      "isAura": false,
+      "range": 0
+    },
+    "upgrade": {
+      "type": "improvement",
+      "itemType": [
+        "weapon",
+        "armor",
+        "shield",
+        "esoteric"
+      ]
+    },
+    "identifier": "specialmaterial"
+  },
+  "disabled": false,
+  "start": null,
+  "duration": {
+    "value": null,
+    "units": "seconds",
+    "expiry": null,
+    "expired": false
+  },
+  "origin": null,
+  "tint": "#ffffff",
+  "statuses": [],
+  "showIcon": 1,
+  "sort": 106250,
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": 1791680634932,
+    "modifiedTime": 1791693572892,
+    "lastModifiedBy": "fMILAiVcmBGZmE6r",
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "_key": "!effects!v4q3ecS1ReJEH51E"
+}

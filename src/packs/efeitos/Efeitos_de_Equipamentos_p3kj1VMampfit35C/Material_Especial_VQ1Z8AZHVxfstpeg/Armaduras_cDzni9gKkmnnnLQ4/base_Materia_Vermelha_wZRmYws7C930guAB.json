@@ -1,0 +1,90 @@
+{
+  "type": "base",
+  "name": "Matéria Vermelha",
+  "img": "icons/commodities/metal/ingot-stamped-spiral.webp",
+  "description": "<p style=\"text-align:justify\">Qualquer material de origem lefeu — desde suas garras e carapaças, até minérios e partes de estruturas encontradas em áreas de Tormenta — apresenta propriedades parecidas, sendo conhecido como “matéria vermelha”. Estes itens assustadores impõem ao usuário penalidade de –2 em perícias baseadas em Carisma (exceto Intimidação).</p><p style=\"text-align:justify\">Armadura e Escudo. Por sua aparência “borrada”, fornecem chance de falha para cada ataque: 10% para escudos e armaduras leves, 25% para armaduras pesadas (cumulativas entre si). Lefeu ignoram este efeito.</p>",
+  "transfer": true,
+  "folder": "cDzni9gKkmnnnLQ4",
+  "_id": "wZRmYws7C930guAB",
+  "system": {
+    "changes": [
+      {
+        "key": "system.pericias.ades.bonus",
+        "type": "add",
+        "value": -2,
+        "phase": "initial",
+        "priority": null
+      },
+      {
+        "key": "system.pericias.atua.bonus",
+        "type": "add",
+        "value": -2,
+        "phase": "initial",
+        "priority": null
+      },
+      {
+        "key": "system.pericias.dipl.bonus",
+        "type": "add",
+        "value": -2,
+        "phase": "initial",
+        "priority": null
+      },
+      {
+        "key": "system.pericias.enga.bonus",
+        "type": "add",
+        "value": -2,
+        "phase": "initial",
+        "priority": null
+      }
+    ],
+    "targets": [],
+    "status": null,
+    "onuse": false,
+    "abilityUse": {
+      "description": "",
+      "automatic": false,
+      "aumenta": false,
+      "custo": null,
+      "names": [],
+      "types": []
+    },
+    "aura": {
+      "isAura": false,
+      "range": 0
+    },
+    "upgrade": {
+      "type": "material",
+      "itemType": [
+        "armor",
+        "shield"
+      ]
+    },
+    "identifier": "red-matter"
+  },
+  "disabled": false,
+  "start": null,
+  "duration": {
+    "value": null,
+    "units": "seconds",
+    "expiry": null,
+    "expired": false
+  },
+  "origin": null,
+  "tint": "#ffffff",
+  "statuses": [],
+  "showIcon": 1,
+  "sort": 112500,
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": 1791680622841,
+    "modifiedTime": 1791693572893,
+    "lastModifiedBy": "fMILAiVcmBGZmE6r",
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "_key": "!effects!wZRmYws7C930guAB"
+}

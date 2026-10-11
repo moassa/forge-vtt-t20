@@ -1,0 +1,69 @@
+{
+  "type": "base",
+  "name": "Protetor",
+  "img": "icons/commodities/treasure/token-engraved-purple-glowing.webp",
+  "description": "<p style=\"text-align:justify\">Você recebe +2 em testes de resistência.</p>",
+  "transfer": false,
+  "folder": "hFPvogqtIU1d1ewk",
+  "_id": "S4FlovY4Qj03y6KB",
+  "system": {
+    "changes": [
+      {
+        "key": "system.modificadores.pericias.resistencia",
+        "type": "add",
+        "value": 2,
+        "phase": "initial",
+        "priority": null
+      }
+    ],
+    "targets": [],
+    "status": null,
+    "onuse": false,
+    "abilityUse": {
+      "description": "",
+      "automatic": false,
+      "aumenta": false,
+      "custo": null,
+      "names": [],
+      "types": []
+    },
+    "aura": {
+      "isAura": false,
+      "range": 0
+    },
+    "upgrade": {
+      "type": "enchantment",
+      "itemType": [
+        "armor",
+        "shield"
+      ]
+    },
+    "identifier": "protector"
+  },
+  "disabled": false,
+  "start": null,
+  "duration": {
+    "value": null,
+    "units": "seconds",
+    "expiry": null,
+    "expired": false
+  },
+  "origin": null,
+  "tint": "#ffffff",
+  "statuses": [],
+  "showIcon": 1,
+  "sort": 400000,
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": 1791680533111,
+    "modifiedTime": 1791692868953,
+    "lastModifiedBy": "fMILAiVcmBGZmE6r",
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "_key": "!effects!S4FlovY4Qj03y6KB"
+}

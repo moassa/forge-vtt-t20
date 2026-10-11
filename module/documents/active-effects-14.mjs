@@ -6,7 +6,7 @@ import { effectMigration } from "./migrations.mjs";
  */
 export default class ActiveEffectT20 extends foundry.documents.ActiveEffect {
 	/* Boolean cache supressed status between updates */
-	#suppressed;
+	_suppressed;
 
 	/**
 	 * Verify if the entry has an uuid and retrieve a cloned document if true
@@ -45,9 +45,9 @@ export default class ActiveEffectT20 extends foundry.documents.ActiveEffect {
 
 	/** @override */
 	get isSuppressed() {
-		if (this.#suppressed) return this.#suppressed;
-		this.#suppressed = super.isSuppressed;
-		return this.#suppressed;
+		if (this._suppressed) return this._suppressed;
+		this._suppressed = super.isSuppressed;
+		return this._suppressed;
 	}
 
 	/* -------------------------------------------- */
@@ -236,6 +236,14 @@ export default class ActiveEffectT20 extends foundry.documents.ActiveEffect {
 	/*  Data Preparation                            */
 	/* -------------------------------------------- */
 
+	/** @inheritDoc */
+	prepareData() {
+		this._suppressed = null;
+		super.prepareData();
+	}
+
+	/* -------------------------------------------- */
+
 	/**
 	 * Prepare derived data related to active effect duration
 	 * @internal
@@ -317,10 +325,9 @@ export default class ActiveEffectT20 extends foundry.documents.ActiveEffect {
 					},
 					disabled: ["inactive", "onuse"].includes(type)
 				};
-				if (event.type == "contextmenu") {
-					return await owner.createEmbeddedDocuments("ActiveEffect", [effectData], { renderSheet: true });
-				}
-				return new ActiveEffectWizard(owner, effectData).render({ force: true });
+				if (event.shiftKey) return new ActiveEffectWizard(owner, effectData).render({ force: true });
+
+				return await owner.createEmbeddedDocuments("ActiveEffect", [effectData], { renderSheet: true });
 			}
 			case "create-status": {
 				const statusEffect = await ActiveEffect.fromStatusEffect(a.dataset.statusId);

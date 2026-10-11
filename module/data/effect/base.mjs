@@ -7,6 +7,10 @@ export default class BaseEffect extends ActiveEffectTypeDataModel {
 	/** @inheritDoc */
 	static defineSchema() {
 		const schema = super.defineSchema();
+		schema.identifier = new fields.StringField({
+			required: true
+		});
+
 		schema.targets = new fields.SetField(
 			new fields.StringField({
 				required: true,
@@ -119,6 +123,43 @@ export default class BaseEffect extends ActiveEffectTypeDataModel {
 				hint: "T20.ConfigRegionBehaviorHint"
 			})
 		});
+		schema.upgrade = new fields.SchemaField(
+			{
+				type: new fields.StringField({
+					nullable: true,
+					initial: null,
+					choices: {
+						improvement: "T20.EFFECT.UPGRADE.type.choices.improvement",
+						material: "T20.EFFECT.UPGRADE.type.choices.material",
+						enchantment: "T20.EFFECT.UPGRADE.type.choices.enchantment",
+						curse: "T20.EFFECT.UPGRADE.type.choices.curse",
+						innovation: "T20.EFFECT.UPGRADE.type.choices.innovation"
+					},
+					label: "T20.EFFECT.UPGRADE.type.label"
+				}),
+				itemType: new fields.SetField(
+					new fields.StringField({
+						required: true,
+						blank: false,
+						choices: {
+							weapon: "T20.EFFECT.UPGRADE.itemType.choices.weapon",
+							armor: "T20.EFFECT.UPGRADE.itemType.choices.armor",
+							shield: "T20.EFFECT.UPGRADE.itemType.choices.shield",
+							esoteric: "T20.EFFECT.UPGRADE.itemType.choices.esoteric",
+							tool: "T20.EFFECT.UPGRADE.itemType.choices.tool",
+							clothing: "T20.EFFECT.UPGRADE.itemType.choices.clothing",
+							accessory: "T20.EFFECT.UPGRADE.itemType.choices.accessory"
+						}
+					}),
+					{
+						label: "T20.EFFECT.UPGRADE.itemType.label"
+					}
+				)
+			},
+			{
+				label: "T20.EFFECT.UPGRADE.label"
+			}
+		);
 		return schema;
 	}
 
@@ -150,8 +191,8 @@ export default class BaseEffect extends ActiveEffectTypeDataModel {
 		if (!this.parent.target) return false;
 		if (this.parent.target.documentName != "Actor") return false;
 		let suppressed = super.isSuppressed ?? false;
-		if (!suppressed) suppressed = this.isSupressedByEquipment;
-		// if (!suppressed) suppressed = this.isSupressedByTarget;
+		if (!suppressed) suppressed = this.isSuppressedByEquipment;
+		// if (!suppressed) suppressed = this.isSuppressedByTarget;
 		if (this.status) {
 			if (!suppressed) suppressed = this.isSuppressedByInheritance;
 			if (!suppressed) suppressed = this.isSuppressedByDuplicated;
@@ -163,7 +204,7 @@ export default class BaseEffect extends ActiveEffectTypeDataModel {
 
 	/* -------------------------------------------- */
 
-	get isSupressedByEquipment() {
+	get isSuppressedByEquipment() {
 		const item = this.parent.item;
 		if (item) return item.areEffectsSuppressed;
 		return false;
@@ -171,7 +212,7 @@ export default class BaseEffect extends ActiveEffectTypeDataModel {
 
 	/* -------------------------------------------- */
 
-	get isSupressedByTarget() {
+	get isSuppressedByTarget() {
 		if (!this.targets?.size) return false;
 		if (!this.parent.origin) return false;
 		const origin = foundry.utils.fromUuidSync(this.parent.origin);
@@ -292,7 +333,8 @@ export default class BaseEffect extends ActiveEffectTypeDataModel {
 		if (ancestors.behavior && ancestors.actor == this.parent.parent) return false;
 
 		if (foundry.utils.getProperty(data, "system.aura.isAura")) {
-			if (this.parent.parent.effects.some((e) => e.name == this.parent.name)) return false;
+			if (ancestors.actor?.effects.some((e) => e.name == ancestors.item?.name)) return false;
+
 			if (ancestors.behavior) {
 				if (this.targets.size) {
 					const originToken = ancestors.actor.token ?? ancestors.actor.getActiveTokens().at(0);

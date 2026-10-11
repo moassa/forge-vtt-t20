@@ -132,7 +132,7 @@ export default class CreatureData extends Tormenta20TypeData {
 
 	/* ACTOR SCHEMAS */
 	static schemaAbilities(type = "character") {
-		let getSchema = () => {
+		let getSchema = (attr) => {
 			return new fields.SchemaField({
 				value: new fields.NumberField({
 					required: true,
@@ -140,6 +140,7 @@ export default class CreatureData extends Tormenta20TypeData {
 					initial: 0,
 					min: -5,
 					label: "T20.AbilityValue",
+					label: "T20.Value",
 					hint: "T20.AbilityValueHint"
 				}),
 				base: new fields.NumberField({
@@ -147,6 +148,7 @@ export default class CreatureData extends Tormenta20TypeData {
 					nullable: false,
 					initial: 0,
 					label: "T20.AbilityBaseValue",
+					label: "T20.Base",
 					hint: "T20.AbilityBaseValueHint"
 				}),
 				racial: new fields.NumberField({
@@ -154,6 +156,7 @@ export default class CreatureData extends Tormenta20TypeData {
 					nullable: false,
 					initial: 0,
 					label: "T20.AbilityRacialValue",
+					label: "T20.Racial",
 					hint: "T20.AbilityRacialValueHint"
 				}),
 				bonus: new fields.NumberField({
@@ -161,14 +164,19 @@ export default class CreatureData extends Tormenta20TypeData {
 					nullable: false,
 					initial: 0,
 					label: "T20.AbilityBonusValue",
+					label: "T20.Bonus",
 					hint: "T20.AbilityBonusValueHint"
 				})
+			}, {
+				label: T20.atributos[attr]
 			});
 		};
 
 		let schema = {};
-		Object.keys(T20.atributos).forEach((abl) => (schema[abl] = getSchema()));
-		return new fields.SchemaField(schema);
+		Object.keys(T20.atributos).forEach((attr) => (schema[attr] = getSchema(attr)));
+		return new fields.SchemaField(schema, {
+			label: "T20.Ability"
+		});
 	}
 
 	static schemaSkill() {
@@ -179,7 +187,7 @@ export default class CreatureData extends Tormenta20TypeData {
 				blank: false,
 				choices: T20.atributos,
 				initial: "for",
-				label: "T20.SkillAbility",
+				label: "T20.Ability",
 				hint: "T20.SkillAbilityHint"
 			}),
 			treinado: new fields.BooleanField({ label: "T20.SkillTrained", hint: "T20.SkillTrainedHint" }),
@@ -192,14 +200,14 @@ export default class CreatureData extends Tormenta20TypeData {
 				nullable: false,
 				initial: 0,
 				min: 0,
-				label: "T20.SkillValue",
+				label: "T20.Value",
 				hint: "T20.SkillValueHint"
 			}),
 			outros: new fields.NumberField({
 				required: true,
 				nullable: false,
 				initial: 0,
-				label: "T20.SkillOtherValue",
+				label: "T20.Other",
 				hint: "T20.SkillOtherValueHint"
 			}),
 			condi: new fields.NumberField({
@@ -207,12 +215,13 @@ export default class CreatureData extends Tormenta20TypeData {
 				required: true,
 				nullable: false,
 				initial: 0,
-				label: "T20.SkillStatusEffectValue",
+				label: "T20.Condition",
 				hint: "T20.SkillStatusEffectValueHint"
 			}),
 			bonus: new fields.ArrayField(new fields.StringField(), {
+				required: true,
 				persisted: false,
-				label: "T20.SkillEffectsValues",
+				label: "T20.Bonus",
 				hint: "T20.SkillEffectsValuesHint"
 			}),
 			custom: new fields.BooleanField({ label: "T20.SkillCustom", hint: "T20.SkillCustomHint" }),
@@ -235,7 +244,7 @@ export default class CreatureData extends Tormenta20TypeData {
 				blank: false,
 				choices: T20.atributos,
 				initial: "des",
-				label: "T20.DefenseAbilityBonus",
+				label: "T20.Ability",
 				hint: "T20.DefenseAbilityBonusHint"
 			}),
 			pda: new PenaltyField({
@@ -249,14 +258,14 @@ export default class CreatureData extends Tormenta20TypeData {
 				required: true,
 				nullable: false,
 				initial: 10,
-				label: "T20.DefenseValue",
+				label: "T20.Value",
 				hint: "T20.DefenseValueHint"
 			}),
 			base: new fields.NumberField({
 				required: true,
 				nullable: false,
 				initial: 10,
-				label: "T20.DefenseBaseValue",
+				label: "T20.Base",
 				hint: "T20.DefenseBaseValueHint"
 			}),
 			outros: new fields.NumberField({
@@ -270,11 +279,11 @@ export default class CreatureData extends Tormenta20TypeData {
 				required: true,
 				nullable: false,
 				initial: 0,
-				label: "T20.DefenseStatusEffectsValue",
+				label: "T20.Condition",
 				hint: "T20.DefenseStatusEffectsValueHint"
 			}),
 			bonus: new fields.ArrayField(new fields.StringField(), {
-				label: "T20.DefenseEffectValues",
+				label: "T20.Bonus",
 				hint: "T20.DefenseEffectValuesHint"
 			})
 		};
@@ -286,7 +295,9 @@ export default class CreatureData extends Tormenta20TypeData {
 			delete schema.outros;
 			delete schema.condi;
 		}
-		return new fields.SchemaField(schema);
+		return new fields.SchemaField(schema, {
+			label: "T20.Defense"
+		});
 	}
 
 	static schemaEncumbrance(type = "character") {
@@ -304,7 +315,8 @@ export default class CreatureData extends Tormenta20TypeData {
 				nullable: false,
 				blank: false,
 				choices: T20.atributos,
-				initial: "for"
+				initial: "for",
+				label: "T20.Ability"
 			}),
 			base: new fields.NumberField({
 				required: true,
@@ -343,6 +355,8 @@ export default class CreatureData extends Tormenta20TypeData {
 				hint: "T20.EncumbrancePercentageHint"
 			}),
 			encumbered: new fields.BooleanField({ label: "T20.EncumbranceStatus", hint: "T20.EncumbranceStatusHint" })
+		}, {
+			label: "T20.Encumbrance"
 		});
 	}
 
@@ -403,15 +417,15 @@ export default class CreatureData extends Tormenta20TypeData {
 	}
 
 	// label: "T20.Value", hint: "T20.Hint"
-	static schemaResources(type = "character") {
-		return new fields.SchemaField({
+	static schemaResources(key, type = "character") {
+		const schema = {
 			value: new fields.NumberField({
 				required: true,
 				nullable: false,
 				initial: 0,
 				step: 1,
 				integer: true,
-				label: "T20.ResourceValue",
+				label: "T20.Value",
 				hint: "T20.ResourceValueHint"
 			}),
 			temp: new fields.NumberField({
@@ -421,7 +435,7 @@ export default class CreatureData extends Tormenta20TypeData {
 				min: 0,
 				step: 1,
 				integer: true,
-				label: "T20.ResourceTemporaryValue",
+				label: "T20.Temporary",
 				hint: "T20.ResourceTemporaryHint"
 			}),
 			min: new fields.NumberField({
@@ -440,6 +454,47 @@ export default class CreatureData extends Tormenta20TypeData {
 				label: "T20.ResourceMaxValue",
 				hint: "T20.ResourceMaxValueHint"
 			})
+		};
+
+		if (type == "character") {
+			schema.atributos = new fields.SchemaField(
+				Object.fromEntries(
+					Object.keys(T20.atributos)
+						.filter((atr) => key !== "pv" || atr !== "con")
+						.map((abl) => [abl, new fields.BooleanField({
+							label: T20.atributos[abl]
+						})])
+				), {
+				label: "T20.Abilities"
+			});
+			schema.bonus = new fields.SchemaField({
+				nivel: new fields.ArrayField(new fields.StringField(), {
+					min: 1,
+					initial: ["0"],
+					label: "T20.PerLevel"
+				}),
+				nivelPar: new fields.ArrayField(new fields.StringField(), {
+					min: 1,
+					initial: ["0"],
+					label: "T20.PerEvenLevel"
+				}),
+				nivelImpar: new fields.ArrayField(new fields.StringField(), {
+					min: 1,
+					initial: ["0"],
+					label: "T20.PerOddLevel"
+				}),
+				total: new fields.ArrayField(new fields.StringField(), {
+					min: 1,
+					initial: ["0"],
+					label: "T20.Total"
+				})
+			}, {
+				label: "T20.Bonus"
+			});
+		}
+
+		return new fields.SchemaField(schema, {
+			label: key == "pv" ? "T20.HitPoints" : "T20.ManaPoints"
 		});
 	}
 
@@ -463,10 +518,12 @@ export default class CreatureData extends Tormenta20TypeData {
 			}),
 			defesa: this.schemaDefense(),
 			// movement: this.schemaMovement(),
-			movement: new fields.EmbeddedDataField(_fields.MovementData),
+			movement: new fields.EmbeddedDataField(_fields.MovementData, {
+				label: "T20.Movement"
+			}),
 			nivel: this.schemaLevel(type),
-			pv: this.schemaResources(),
-			pm: this.schemaResources(),
+			pv: this.schemaResources("pv", type),
+			pm: this.schemaResources("pm", type),
 			sentidos: this.schemaSenses(),
 			treino: new fields.NumberField({
 				required: true,
@@ -478,31 +535,7 @@ export default class CreatureData extends Tormenta20TypeData {
 		};
 		if (type === "character") {
 			for (const key of ["pv", "pm"]) {
-				schema[key].fields.atributos = new fields.SchemaField(
-					Object.fromEntries(
-						Object.keys(T20.atributos)
-							.filter((atr) => key !== "pv" || atr !== "con")
-							.map((abl) => [abl, new fields.BooleanField()])
-					)
-				);
-				schema[key].fields.bonus = new fields.SchemaField({
-					nivel: new fields.ArrayField(new fields.StringField(), {
-						min: 1,
-						initial: ["0"]
-					}),
-					nivelPar: new fields.ArrayField(new fields.StringField(), {
-						min: 1,
-						initial: ["0"]
-					}),
-					nivelImpar: new fields.ArrayField(new fields.StringField(), {
-						min: 1,
-						initial: ["0"]
-					}),
-					total: new fields.ArrayField(new fields.StringField(), {
-						min: 1,
-						initial: ["0"]
-					})
-				});
+
 			}
 		} else if (type === "npc") {
 			schema.nd = new fields.StringField({
@@ -882,14 +915,14 @@ export default class CreatureData extends Tormenta20TypeData {
 	}
 
 	static schemaResistances(type = "character") {
-		let getSchema = () => {
+		let getSchema = (key) => {
 			return new fields.SchemaField({
 				value: new fields.NumberField({
 					required: true,
 					nullable: false,
 					initial: 0,
 					min: 0,
-					label: "T20.DamageReductionValue",
+					label: "T20.Value",
 					hint: "T20.DamageReductionValueHint"
 				}),
 				base: new fields.NumberField({
@@ -897,11 +930,11 @@ export default class CreatureData extends Tormenta20TypeData {
 					nullable: false,
 					initial: 0,
 					min: 0,
-					label: "T20.DamageReductionBaseValue",
+					label: "T20.Base",
 					hint: "T20.DamageReductionBaseValueHint"
 				}),
 				bonus: new fields.ArrayField(new fields.StringField(), {
-					label: "T20.DamageReductionEffectValues",
+					label: "T20.Bonus",
 					hint: "T20.DamageReductionEffectValuesHint"
 				}),
 				excecao: new fields.NumberField({
@@ -909,18 +942,30 @@ export default class CreatureData extends Tormenta20TypeData {
 					nullable: false,
 					initial: 0,
 					min: 0,
-					label: "T20.DamageReductionException",
+					label: "T20.Exception",
 					hint: "T20.DamageReductionExceptionHint"
 				}),
-				imunidade: new fields.BooleanField({ label: "T20.DamageReductionImunity", hint: "T20.DamageReductionImunityHint" }),
-				vulnerabilidade: new fields.BooleanField({ label: "T20.DamageReductionVulnerability", hint: "T20.DamageReductionVulnerabilityHint" }),
-				danoPorDado: new fields.BooleanField()
+				imunidade: new fields.BooleanField({
+					label: "T20.Immunity",
+					hint: "T20.DamageReductionImunityHint"
+				}),
+				vulnerabilidade: new fields.BooleanField({
+					label: "T20.Vulnerability",
+					hint: "T20.DamageReductionVulnerabilityHint"
+				}),
+				danoPorDado: new fields.BooleanField({
+					label: "T20.PerDie"
+				})
+			}, {
+				label: T20.damageTypes[key]
 			});
 		};
 
 		let schema = {};
-		Object.keys(T20.damageTypes).forEach((dmg) => (schema[dmg] = getSchema()));
-		return new fields.SchemaField(schema);
+		Object.keys(T20.damageTypes).forEach((dmg) => (schema[dmg] = getSchema(dmg)));
+		return new fields.SchemaField(schema, {
+			label: "T20.DR"
+		});
 	}
 
 	static schemaTraits(type = "character") {

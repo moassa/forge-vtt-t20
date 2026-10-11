@@ -1,0 +1,76 @@
+{
+  "type": "base",
+  "name": "Gelo Eterno",
+  "img": "icons/commodities/metal/ingot-stamped-spiral.webp",
+  "description": "<p style=\"text-align:justify\">As gélidas Montanhas Uivantes produzem gelo que nunca derrete. Expedições de aventureiros exploram essa região glacial perigosa à caça deste material fantástico.</p><p style=\"text-align:justify\">Armaduras e Escudos: armaduras leves e escudos, redução 5; armaduras pesadas, redução 10.</p>",
+  "transfer": true,
+  "folder": "cDzni9gKkmnnnLQ4",
+  "_id": "tdrbB9k7sDcQbhPr",
+  "system": {
+    "changes": [
+      {
+        "key": "system.tracos.resistencias.frio.bonus",
+        "type": "add",
+        "value": 5,
+        "phase": "initial",
+        "priority": null
+      },
+      {
+        "key": "system.tracos.resistencias.frio.bonus",
+        "type": "add",
+        "value": 10,
+        "phase": "initial",
+        "priority": null
+      }
+    ],
+    "targets": [],
+    "status": null,
+    "onuse": false,
+    "abilityUse": {
+      "description": "",
+      "automatic": false,
+      "aumenta": false,
+      "custo": null,
+      "names": [],
+      "types": []
+    },
+    "aura": {
+      "isAura": false,
+      "range": 0
+    },
+    "upgrade": {
+      "type": "material",
+      "itemType": [
+        "armor",
+        "shield"
+      ]
+    },
+    "identifier": "everlasting-ice"
+  },
+  "disabled": false,
+  "start": null,
+  "duration": {
+    "value": null,
+    "units": "seconds",
+    "expiry": null,
+    "expired": false
+  },
+  "origin": null,
+  "tint": "#ffffff",
+  "statuses": [],
+  "showIcon": 1,
+  "sort": 150000,
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": 1791680622841,
+    "modifiedTime": 1791693572892,
+    "lastModifiedBy": "fMILAiVcmBGZmE6r",
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "_key": "!effects!tdrbB9k7sDcQbhPr"
+}

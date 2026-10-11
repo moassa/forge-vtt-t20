@@ -206,9 +206,27 @@ export default class ItemSheetT20 extends foundry.appv1.sheets.ItemSheet {
 				value: item.system.rolltags
 			}).outerHTML
 		});
-
+		sheetData.upgrades = this._getAvailableUpgrades();
 		sheetData.documentName = "Item";
 		return sheetData;
+	}
+
+	/* -------------------------------------------- */
+
+	_getAvailableUpgrades() {
+		if (!foundry.utils.hasProperty(this.item, "system.upgrades")) return;
+
+		const upgrades = {};
+		const item = this.item;
+		const itemType = item.system.upgrades.itemType;
+		const categories = ["improvement", "material", "enchantment", "curse", "innovation"];
+		for (const type of categories) {
+			upgrades[type] = CONFIG.upgradeEffects
+				.filter((e) => e.type == type && itemType.some((t) => e.itemType.has(t)))
+				.map((e) => ({ value: e.uuid, label: e.name, group: e.group }));
+		}
+
+		return upgrades;
 	}
 
 	/* -------------------------------------------- */
@@ -278,8 +296,10 @@ export default class ItemSheetT20 extends foundry.appv1.sheets.ItemSheet {
 				ActiveEffectT20.onManageActiveEffect(ev, this.item);
 			});
 			html.find(".effect-control").on("click contextmenu", (ev) => ActiveEffectT20.onManageActiveEffect(ev, this.item));
+
 			if (this.item.system.enableAutoUpgrades) {
 				html.find(".tab.enhancements .updateUpgrades").change(async (ev) => {
+					return; // Deprecated will be removed
 					const { value } = ev.currentTarget;
 					const { name } = ev.currentTarget.dataset;
 					const key = name.replace("system.upgrades.", "");

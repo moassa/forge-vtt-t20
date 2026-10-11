@@ -1,5 +1,14 @@
 # Lista de Mudanças
 
+# Versão 1.6.5
+- Adicionado: Sugestões de campos na configuração de Efeitos.
+- Adicionado: Compendium de Melhorias e Encantos (e Similares).
+- Adicionado: Efeitos possuem campos para serem considerados upgrades de items Tipo define a que categoria pertence (Melhoria, Encanto) e Tipo Item define compatibilidade com item.
+- Alterado: Assistente de criação de efeitos é chamado com Shift+Click.
+- Alterado: Nos equipamentos as Melhorias, Encantos (e Similares) agora são listas.
+- Corrigido: Criação de area de efeito não identificava o formato da área se o texto estivesse com letra maiuscula.
+- Corrigido: Efeitos em equipamentos não alterava seu estado de supressão quando o item era equipado/desequipado.
+
 # Versão 1.6.4
 - Corrigido: Criação de efeitos
 

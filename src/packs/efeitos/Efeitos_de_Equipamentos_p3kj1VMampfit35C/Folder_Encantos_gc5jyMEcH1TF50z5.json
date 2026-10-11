@@ -1,0 +1,23 @@
+{
+  "type": "ActiveEffect",
+  "folder": "p3kj1VMampfit35C",
+  "name": "Encantos",
+  "color": null,
+  "sorting": "a",
+  "_id": "gc5jyMEcH1TF50z5",
+  "description": "",
+  "sort": 100000,
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": 1791680533044,
+    "modifiedTime": 1791680661273,
+    "lastModifiedBy": "fMILAiVcmBGZmE6r",
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "_key": "!folders!gc5jyMEcH1TF50z5"
+}

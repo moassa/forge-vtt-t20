@@ -1,4 +1,5 @@
 import * as abstract from "../abstract/_module.mjs";
+const Autocomplete = foundry.applications.ux.Autocomplete;
 
 const { DocumentSheet } = foundry.applications.api;
 const { ActiveEffectConfig } = foundry.applications.sheets;
@@ -90,6 +91,24 @@ export default class ActiveEffectBaseSheet extends Tormenta20ApplicationMixin({
 		}
 	};
 
+	/**
+	 * The auto-complete menu.
+	 * @type {Autocomplete}
+	 */
+	#autocomplete = new foundry.applications.ux.Autocomplete({ onSelect: this.#onAutocomplete.bind(this) });
+
+	/**
+	 * Current input for auto-complete menu.
+	 * @type {HTMLInputElement}
+	 */
+	#autocompleteInput;
+
+	/**
+	 * Auto-complete context suggestions.
+	 * @type {{ identifier: string, label: string }[]}
+	 */
+	autocompleteContext;
+
 	/* -------------------------------------------- */
 	/* Rendering                                    */
 	/* -------------------------------------------- */
@@ -97,6 +116,124 @@ export default class ActiveEffectBaseSheet extends Tormenta20ApplicationMixin({
 	/** @inheritDoc */
 	async _onRender(context, options) {
 		await super._onRender(context, options);
+
+		this._createAutoComplete();
+	}
+
+	/* -------------------------------------------- */
+
+	/**
+	 * Register autocomplete entries.
+	 * @protected
+	 */
+	_createAutoComplete() {
+		this._prepareAutocompleteContext();
+		const changeInputs = this.element.querySelectorAll(`.tab.changes li .key input`);
+
+		const activateAutocomplete = (event, input) => {
+			if (input.value) {
+				const value = new RegExp(input.value.slugify(), "gi");
+				const filtered = this.autocompleteContext.filter(
+					(i) => i.identifier.match(value) || i.label.slugify().match(value)
+				);
+				if (filtered.length) {
+					this.#autocomplete.activate(input, filtered);
+					this.#autocompleteInput = input;
+				} else {
+					this.#autocomplete.dismiss();
+					this.#autocompleteInput = undefined;
+				}
+			} else {
+				this.#autocomplete.dismiss();
+				this.#autocompleteInput = undefined;
+			}
+			// Dismiss is click somewhere else
+			if (this.#autocomplete.element) {
+				const controller = new AbortController();
+				document.addEventListener(
+					"click",
+					(event) => {
+						if (event.target.closest("menu#autocomplete")) {
+						} else if (event.target == this.#autocompleteInput) {
+						} else {
+							this.#autocomplete.dismiss();
+							controller.abort();
+						}
+					},
+					{ signal: controller.signal }
+				);
+			}
+		};
+
+		for (const input of [...changeInputs]) {
+			input.addEventListener("focus", (event) => {
+				activateAutocomplete(event, input);
+			});
+			input.addEventListener("keyup", (event) => {
+				if (["Escape", "Enter", "Tab", "ArrowDown", "ArrowUp"].includes(event.key)) return;
+				activateAutocomplete(event, input);
+			});
+		}
+	}
+
+	/**
+	 * Prepare autocomplete properties
+	 * @protected
+	 */
+	_prepareAutocompleteContext() {
+		if (this.autocompleteContext) return this.autocompleteContext;
+		const actor = new CONFIG.Actor.documentClass({
+			type: "character",
+			name: "autocomplete"
+		});
+		const character = actor.system;
+		const paths = {};
+		const choices = [];
+
+		function register(key, property, path = "", record = null) {
+			path = [path, key].filterJoin(".");
+			const field = character.getFieldForProperty(path);
+			// console.log(key, property, field);
+
+			if (!field) {
+				return;
+			} else if (field.element) {
+				for (let [k, p] of Object.entries(property)) {
+					register(k, p, path, property[k]);
+				}
+			} else if (field.fields) {
+				for (let [k, p] of Object.entries(property)) {
+					register(k, p, path, record);
+				}
+			} else if (field instanceof foundry.data.fields.StringField && !field.choices) {
+			} else if (path.startsWith("dinheiro")) {
+			} else if (path.startsWith("pericias") && ["value", "other"].includes(key)) {
+			} else if (path.startsWith("attributes.p") && key == "value") {
+			} else if (!path.startsWith("atributos") && key == "other") {
+			} else if (["min", "max", "temp", "base", "name"].includes(key)) {
+			} else {
+				let parent = field.parent;
+				let labels = [field.label];
+				const skip = ["tracos", "attributes", "modificadores", "system"];
+				while (parent) {
+					if (skip.includes(parent.name)) break;
+					if (parent.parent?.name == "modificadores") break;
+					const label = parent.name == "element" ? record.label || record.name : parent.label || parent.name;
+					labels.unshift(label);
+					parent = parent.parent;
+				}
+				const label = labels.map((l) => _loc(l)).filterJoin(" ");
+				paths[`system.${path}`] = label;
+				choices.push({
+					identifier: `system.${path}`,
+					label: label
+				});
+			}
+		}
+
+		for (let [key, property] of Object.entries(character)) register(key, property);
+
+		this.autocompleteContext = choices;
 	}
 
 	/* -------------------------------------------- */
@@ -207,6 +344,19 @@ export default class ActiveEffectBaseSheet extends Tormenta20ApplicationMixin({
 
 	/* -------------------------------------------- */
 	/*  Event Listeners & Handlers                  */
+	/* -------------------------------------------- */
+
+	/**
+	 * Handle selecting an auto-complete option.
+	 * @param {string} identifier        The selected entry's identifier.
+	 * @param {string} label             The selected entry's label.
+	 * @param {object} [options]
+	 * @param {string} [options.prefix]  The originally matched prefix.
+	 */
+	#onAutocomplete(identifier, label, { prefix } = {}) {
+		this.#autocompleteInput.value = identifier;
+	}
+
 	/* -------------------------------------------- */
 
 	static #onResetStart(event, target) {
