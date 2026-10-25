@@ -195,8 +195,8 @@ export default class AbilityUseDialog extends Dialog {
 			effect.descriptionEnriched = description.outerHTML;
 		} else {
 			let description = await TextEditor.enrichHTML(effect.description);
-			description = foundry.utils.parseHTML(description);
-			description.prepend(label, " ");
+			description = foundry.utils.parseHTML(`<div>${description}</div>`);
+			description.querySelector("p")?.prepend(label);
 			effect.descriptionEnriched = description.outerHTML;
 		}
 	}

@@ -1,5 +1,4 @@
 import TraitSelector from "../apps/trait-selector.mjs";
-import ActiveEffectT20 from "../documents/active-effects.mjs";
 import ItemT20 from "../documents/item.mjs";
 
 /**
@@ -196,7 +195,7 @@ export default class ItemSheetT20 extends foundry.appv1.sheets.ItemSheet {
 			},
 
 			// Prepare Active Effects
-			effects: await ActiveEffectT20.prepareActiveEffectCategories(item.effects),
+			effects: await tormenta20.documents.ActiveEffectT20.prepareActiveEffectCategories(item.effects),
 			// Resource to Consume
 			abilityConsumptionTargets: this._getItemConsumptionTargets(item.system),
 			rolltags: foundry.applications.elements.HTMLStringTagsElement.create({
@@ -293,9 +292,11 @@ export default class ItemSheetT20 extends foundry.appv1.sheets.ItemSheet {
 				$(list).toggleClass("active");
 			});
 			html.find(".effect-control-status").click((ev) => {
-				ActiveEffectT20.onManageActiveEffect(ev, this.item);
+				tormenta20.documents.ActiveEffectT20.onManageActiveEffect(ev, this.item);
 			});
-			html.find(".effect-control").on("click contextmenu", (ev) => ActiveEffectT20.onManageActiveEffect(ev, this.item));
+			html
+				.find(".effect-control")
+				.on("click contextmenu", (ev) => tormenta20.documents.ActiveEffectT20.onManageActiveEffect(ev, this.item));
 
 			if (this.item.system.enableAutoUpgrades) {
 				html.find(".tab.enhancements .updateUpgrades").change(async (ev) => {

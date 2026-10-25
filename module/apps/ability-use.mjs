@@ -427,10 +427,6 @@ function applyEffectChanges(ch, qty, ef, optEffectList, effectList, effectChange
 	else if (ch.key === "condicao") {
 		let status = CONFIG.statusEffects[ch.value.toLowerCase().trim()]?._source;
 		if (status) effectList.push(new ActiveEffect(status));
-		if (false) {
-			let tef = game.tormenta20.conditions[ch.value.toLowerCase().trim()];
-			if (tef) effectList.push(new ActiveEffect(tef));
-		}
 	}
 	// Modify effect
 	else if (ch.key.startsWith("+")) {
@@ -638,16 +634,13 @@ function applyOnUseEffects(rolledItem, configuration = {}) {
 	for (let ef of onUseEffects) {
 		// Prepare onUseEffects chat content;
 		let ouEff = {};
-		ouEff.description = ef.description
-			? item.id == ef.parent.id
-				? foundry.utils.parseHTML(ef.description).innerText
-				: `${ef.name} - ${foundry.utils.parseHTML(ef.description).innerText}`
-			: ef.name;
-		// ouEff.descriptionOld = item.type == "arma"
-		// 	? item.id == ef.parent.id
-		// 		? `${ef.parent.name} - ${ef.name}`
-		// 		: ef.sourceName
-		// 	: ef.name;
+
+		if (ef.description) {
+			const description = [...foundry.utils.parseHTML(`${ef.description}<p></p>`)]
+				.map((i) => i.innerText)
+				.filterJoin("<br>");
+			ouEff.description = item.id == ef.parent.id ? description : `${ef.name} - ${description}`;
+		} else ouEff.description = ef.name;
 
 		if ([game.i18n.localize("Unknown"), actor.name].includes(ouEff.description)) ouEff.description = ef.name;
 		ouEff.cost = Number(applied[ef.id]?.custo) * applied[ef.id]?.aplica || applied[ef.id]?.custo;

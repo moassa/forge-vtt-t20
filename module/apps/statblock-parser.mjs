@@ -654,7 +654,7 @@ export default class StatblockParser extends FormApplication {
 
 		if (!item) {
 			type = isGeneric ? "tesouro" : type;
-			item = new game.tormenta20.entities.ItemT20({
+			item = new tormenta20.documents.ItemT20({
 				type: type,
 				name: words.join(" ")
 			}).toObject();

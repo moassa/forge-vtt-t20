@@ -1,5 +1,10 @@
 # Lista de Mudanças
 
+# Versão 1.6.6
+- Corrigido: ID da pasta de condições durante setup do compendium.
+- Corrigido: Parsing da descrição de efeitos com múltiplos elementos (impedindo que ficha e configuração de uso fossem abertas).
+- Removido: Dados de condições na configuração.
+
 # Versão 1.6.5
 - Adicionado: Sugestões de campos na configuração de Efeitos.
 - Adicionado: Compendium de Melhorias e Encantos (e Similares).

@@ -67,7 +67,7 @@ export default function () {
 			const docs = await effects.getDocuments();
 			const create = [];
 			for (const doc of docs) {
-				if (doc.folder.id == "69zW3EVSgASXTmsp") {
+				if (doc.folder.id == "STATUSEFFECTS000") {
 					create.push(doc.toObject());
 				}
 			}
@@ -88,8 +88,8 @@ export default function () {
 				link: effect.toAnchor().outerHTML,
 				category: effect.system.status?.category,
 				description: await TextEditor.enrichHTML(effect.description),
-				// SOME PLACES RETRIEVE EFFECT DATA FROM SYNCHRONOUSLY T20.conditions
-				// MORE WORK IS REQUIRED TO CONVERT THOSE PLACES TO ASYNC
+				// SOME PLACES RETRIEVED EFFECT DATA FROM T20.conditions SYNCHRONOUSLY
+				// CONVERTING THEM TO ASYNC WILL REQUIRE MORE WORK
 				_source: effect.clone({}, { keepId: false }).toObject()
 			};
 		}

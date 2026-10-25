@@ -1,5 +1,3 @@
-import ActiveEffectT20 from "../documents/active-effects.mjs";
-
 import AbilityCalculator from "../apps/ability-calculator.mjs";
 import ActorSettings from "../apps/actor-settings.mjs";
 import ActorMovementConfig from "../apps/movement-config.mjs";
@@ -101,7 +99,7 @@ export default class ActorSheetT20 extends foundry.appv1.sheets.ActorSheet {
 			uuid: this.actor.uuid,
 			// data: actorData.system.toObject(false),
 			items: actorData.items,
-			effects: await ActiveEffectT20.prepareActiveEffectCategories(this.actor.effects),
+			effects: await tormenta20.documents.ActiveEffectT20.prepareActiveEffectCategories(this.actor.effects),
 			owner: this.actor.isOwner,
 			limited: this.actor.limited,
 			options: this.options,
@@ -266,8 +264,12 @@ export default class ActorSheetT20 extends foundry.appv1.sheets.ActorSheet {
 			.change(this._onQtyChange.bind(this));
 
 		// Active Effect management
-		html.find(".effect-control").on("click contextmenu", (ev) => ActiveEffectT20.onManageActiveEffect(ev, this.actor));
-		html.find(".effect").on("contextmenu", (ev) => ActiveEffectT20.onManageActiveEffect(ev, this.actor));
+		html
+			.find(".effect-control")
+			.on("click contextmenu", (ev) => tormenta20.documents.ActiveEffectT20.onManageActiveEffect(ev, this.actor));
+		html
+			.find(".effect")
+			.on("contextmenu", (ev) => tormenta20.documents.ActiveEffectT20.onManageActiveEffect(ev, this.actor));
 		// html.find('li.effect').on("dragstart", ev => this._onDragStart.bind(ev, this));
 		let handler = (ev) => this._onDragStart(ev);
 		html.find("li.effect").each((i, li) => {

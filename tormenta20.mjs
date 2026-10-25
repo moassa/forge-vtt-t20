@@ -88,14 +88,6 @@ globalThis.tormenta20 = {
 	},
 	config: T20,
 	dice: dice,
-	conditions: T20.conditions,
-	entities: {
-		ActorT20,
-		ItemT20,
-		ActiveEffectT20,
-		ChatMessageT20,
-		TokenDocumentT20
-	},
 	macros: macros,
 	utils,
 	rollItemMacro: macros.rollItemMacro,
@@ -123,8 +115,6 @@ Hooks.once("init", async function () {
 
 	// Register T20 stuff
 	// CONFIG.statusEffects = T20.statusEffectIcons;
-	CONFIG.conditions = T20.conditions;
-
 	// Register System Settings
 	SystemSettings();
 

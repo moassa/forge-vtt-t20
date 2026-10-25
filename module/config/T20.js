@@ -1,5 +1,4 @@
-import { T20Conditions } from "../conditions/conditions.mjs";
-import { T20Upgrades } from "../upgrades/upgrades.mjs";
+import { T20Upgrades } from "../upgrades/upgrades.mjs"; /** @deprecated will be removed */
 import { preLocalize } from "../utils.mjs";
 import { AMEACATYPES, CHALLENGELEVEL } from "./ameaca.js";
 export const T20 = {};
@@ -28,9 +27,6 @@ CONFIG.ChatMessage.template = "systems/tormenta20/templates/chat/chat-message.hb
 /* ---------------------------------------- */
 /*  Effect Data                             */
 /* ---------------------------------------- */
-Object.freeze(T20Conditions);
-T20.conditions = T20Conditions;
-T20.statusEffectIcons = Object.values(T20Conditions);
 
 T20.effectTypes = {
 	arcano: "T20.EffectTypeArcane",
@@ -52,14 +48,18 @@ T20.effectTypes = {
 	veneno: "T20.EffectTypePoison"
 };
 preLocalize("effectTypes", { sort: true });
-T20.conditionTypes = foundry.utils.mergeObject(
-	{ ...T20.effectTypes },
-	T20.statusEffectIcons.reduce(function (o, s) {
-		o[s.id] = s.name;
-		return o;
-	}, {})
-);
-preLocalize("conditionTypes", { sort: true });
+Object.defineProperty(T20, "conditionTypes", {
+	get: () => {
+		return {
+			...T20.effectTypes,
+			...Object.entries(CONFIG.statusEffects).reduce((acc, [key, status]) => {
+				acc[key] = status.name;
+				return acc;
+			}, {})
+		};
+	}
+});
+
 /* ---------------------------------------- */
 /*  System Data                             */
 /* ---------------------------------------- */

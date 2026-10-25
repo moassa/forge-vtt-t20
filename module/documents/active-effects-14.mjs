@@ -399,8 +399,8 @@ export default class ActiveEffectT20 extends foundry.documents.ActiveEffect {
 					e.descriptionEnriched = description.outerHTML;
 				} else {
 					let description = await TextEditor.enrichHTML(e.description);
-					description = foundry.utils.parseHTML(description);
-					description.prepend(label);
+					description = foundry.utils.parseHTML(`<div>${description}</div>`);
+					description.querySelector("p")?.prepend(label);
 					e.descriptionEnriched = description.outerHTML;
 				}
 			}
