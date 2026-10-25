@@ -229,7 +229,10 @@ export default class ItemT20 extends Item {
 		// Take no further action for un-owned items
 		if (!this.isOwned) return { rollData, parts };
 		const actorData = this.actor.system;
-		const flags = this.actor.flags.tormenta20 || {};
+		// FLAGS
+		const hasFinesse =
+			game.settings.get("tormenta20", "lightFinesseWeapons") || this.actor.getFlag("tormenta20", "acuidade");
+		const hasPotentThrow = this.actor.getFlag("tormenta20", "arremessoPotente");
 
 		// Add skill bonus
 		if (roll.parts[1][0]) {
@@ -240,20 +243,21 @@ export default class ItemT20 extends Item {
 			// Change Skill Ability modifier
 			let atributo = roll.parts[1][1];
 			if (!atributo) {
-				const { empunhadura, proposito } = this.system;
+				const { empunhadura, proposito, propriedades } = this.system;
 				const { for: forca, des } = actorData.atributos;
-				const usarAcuidade =
-					(game.settings.get("tormenta20", "lightFinesseWeapons") || flags?.acuidade) && des.value > forca.value;
+				const isFinesse = empunhadura == "leve" || propriedades.agi;
+				const usarAcuidade = isFinesse && hasFinesse && des.value > forca.value;
+
 				switch (proposito) {
 					case "arremesso":
-						if (flags?.arremessoPotente) atributo = "for";
+						if (hasPotentThrow) atributo = "for";
 						break;
 					case "disparo":
 						break;
 					case "corpo-a-corpo":
 					case "corpo-a-corpo-arremesso":
 					default: {
-						if (usarAcuidade && empunhadura === "leve") atributo = "des";
+						if (usarAcuidade) atributo = "des";
 					}
 				}
 			}
@@ -1216,7 +1220,10 @@ export default class ItemT20 extends Item {
 	async rollDamage({ critical = false, event = null, options = {} } = {}) {
 		const itemData = this.system;
 		const actorData = this.actor.system;
-		const flags = this.actor.flags.tormenta20 || {};
+		// FLAGS
+		const hasFinesse = game.settings.get("tormenta20", "lightFinesseWeapons") || this.actor.getFlag("tormenta20", "acuidade");
+		const hasShootingStyle = this.actor.getFlag("tormenta20", "estiloDisparo");
+
 		let pericia;
 		let lancinante = false;
 		options.type = "damage";
@@ -1234,26 +1241,29 @@ export default class ItemT20 extends Item {
 			const perda = r.parts.some((p) => p[1] === "perda");
 			const isSpell = this.type === "magia";
 			const isAlchemical = this.type === "consumivel" && this.system.tipo === "alchemy";
-			const parts = r.parts.map(([dano, tipo, extra]) => {
+
+			const parts = r.parts.map(([dano, tipo, extra], index) => {
 				if (["curatpv", "curapm", "curatpm", "perda"].includes(tipo)) {
 					return [dano, tipo, extra];
 				}
-				if (dano === "padrao") {
-					const { empunhadura, proposito } = this.system;
-					const { for: forca, des } = actorData.atributos;
-					const usarAcuidade =
-						(game.settings.get("tormenta20", "lightFinesseWeapons") || flags?.acuidade) && des.value > forca.value;
-					switch (proposito) {
-						case "disparo":
-							dano = flags?.estiloDisparo ? "@des" : "";
-							break;
-						case "arremesso":
-							dano = usarAcuidade ? "@des" : "@for";
-							break;
-						case "corpo-a-corpo":
-						case "corpo-a-corpo-arremesso":
-						default:
-							dano = usarAcuidade && empunhadura === "leve" ? "@des" : "@for";
+				if (this.type === "arma" && index == 1) {
+					const { empunhadura, proposito, propriedades } = this.system;
+					const isFinesse = empunhadura == "leve" || propriedades.agi;
+					if (isFinesse && ["padrao", "for", "des"].includes(dano)) {
+						const { for: forca, des } = actorData.atributos;
+						const usarAcuidade = isFinesse && hasFinesse && des.value > forca.value;
+						switch (proposito) {
+							case "disparo":
+								dano = hasShootingStyle ? "@des" : "";
+								break;
+							case "arremesso":
+								dano = usarAcuidade ? "@des" : "@for";
+								break;
+							case "corpo-a-corpo":
+							case "corpo-a-corpo-arremesso":
+							default:
+								dano = usarAcuidade ? "@des" : "@for";
+						}
 					}
 				}
 				return [dano, tipo, extra];

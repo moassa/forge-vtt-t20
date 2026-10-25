@@ -3,6 +3,7 @@
 # Versão 1.6.6
 - Corrigido: ID da pasta de condições durante setup do compendium.
 - Corrigido: Parsing da descrição de efeitos com múltiplos elementos (impedindo que ficha e configuração de uso fossem abertas).
+- Corrigido: Condições pro uso de acuidade no ataque e dano de armas leves e ageis.
 - Removido: Dados de condições na configuração.
 
 # Versão 1.6.5
