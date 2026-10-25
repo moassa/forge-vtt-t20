@@ -1221,7 +1221,8 @@ export default class ItemT20 extends Item {
 		const itemData = this.system;
 		const actorData = this.actor.system;
 		// FLAGS
-		const hasFinesse = game.settings.get("tormenta20", "lightFinesseWeapons") || this.actor.getFlag("tormenta20", "acuidade");
+		const hasFinesse =
+			game.settings.get("tormenta20", "lightFinesseWeapons") || this.actor.getFlag("tormenta20", "acuidade");
 		const hasShootingStyle = this.actor.getFlag("tormenta20", "estiloDisparo");
 
 		let pericia;
