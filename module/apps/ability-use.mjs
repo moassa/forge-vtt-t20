@@ -191,7 +191,9 @@ const applyRollChanges = (ch, qty, ef, item, id, rollMods, options) => {
 			} // To add one extra dice from source 1d => 2d6 + 1d6
 			else if (ch.key === "dano" && ch.value.match(/^\dd$/)) {
 				let n = parseInt(ch.value) ?? 0;
-				if (n) rollMods[r.key][p].extraDie = n;
+				if (n) {
+					rollMods[r.key][p].extraDie = n;
+				}
 				continue;
 			} // To ignore part of Damage Reduction
 			else if (ch.key === "ignoraRD") {
@@ -604,22 +606,6 @@ function applyOnUseEffects(rolledItem, configuration = {}) {
 
 	//
 	const effectChanges = [];
-	if (false) {
-		const changes = [];
-		[effectList, optEffectList].forEach(function (list) {
-			list.forEach(function (ef, index) {
-				changes.push([]);
-				ef.system.changes.forEach(function (ch) {
-					changes[index].push({
-						key: ch.key,
-						value: Number(ch.value) || ch.value,
-						type: ch.type,
-						priority: ch.priority
-					});
-				});
-			});
-		});
-	}
 
 	// SORT
 	onUseEffects.sort((a, b) =>
